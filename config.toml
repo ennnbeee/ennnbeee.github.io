@@ -1,0 +1,129 @@
+baseURL = 'https://ennnbeee.github.io/'
+languageCode = 'en-gb'
+title = 'ENNNBEEE vs MEM'
+theme = "PaperMod"
+paginate = 5
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+pygmentsUseClasses = true
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "production"
+title = "ENNNBEEE vs MEM"
+description = "Battles against Endpoint Manager"
+keywords = [ "Blog", "Portfolio", "PaperMod" ]
+author = "Me"
+images = [ "<link or path of image for opengraph, twitter-cards>" ]
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = false
+ShowReadingTime = false
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = false
+tocopen = false
+
+  [params.assets]
+  #favicon = "<link / abs url>"
+  #favicon16x16 = "<link / abs url>"
+  #favicon32x32 = "<link / abs url>"
+  #apple_touch_icon = "<link / abs url>"
+  #safari_pinned_tab = "<link / abs url>"
+
+  [params.label]
+  text = "ENNBEE vs MEM"
+  #icon = "/apple-touch-icon.png"
+  iconHeight = 35
+
+  [params.profileMode]
+  enabled = false
+  title = "ExampleSite"
+  subtitle = "This is subtitle"
+  imageUrl = "<img location>"
+  imageWidth = 120
+  imageHeight = 120
+  imageTitle = "my image"
+
+    [[params.profileMode.buttons]]
+    name = "Posts"
+    url = "posts"
+
+    [[params.profileMode.buttons]]
+    name = "Tags"
+    url = "tags"
+
+  [params.homeInfoParams]
+  Title = "Battles against Endpoint Manager"
+  Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Sapien eget mi proin sed libero enim sed. Sem fringilla ut morbi tincidunt augue interdum. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Mattis rhoncus urna neque viverra justo nec ultrices. Felis eget velit aliquet sagittis id consectetur. Faucibus in ornare quam viverra orci sagittis eu. Euismod lacinia at quis risus sed vulputate odio ut. Lacinia at quis risus sed vulputate odio."
+
+  [[params.socialIcons]]
+  #name = "twitter"
+  #url = "https://twitter.com/"
+
+  [[params.socialIcons]]
+  #name = "stackoverflow"
+  #url = "https://stackoverflow.com"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
+
+[params.analytics.google]
+#SiteVerificationTag = "XYZabc"
+
+[params.analytics.bing]
+#SiteVerificationTag = "XYZabc"
+
+[params.analytics.yandex]
+#SiteVerificationTag = "XYZabc"
+
+  [params.cover]
+  hidden = true
+  hiddenInList = true
+  hiddenInSingle = true
+
+  [params.editPost]
+  URL = "https://github.com/ennnbeee/ennnbeee.github.io/content"
+  Text = "Suggest Changes"
+  appendFilePath = true
+
+  [params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1_000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = [ "title", "permalink", "summary", "content" ]
+
+[[menu.main]]
+identifier = "categories"
+name = "categories"
+url = "/categories/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+#identifier = "example"
+#name = "example.org"
+#url = "https://example.org"
+#weight = 30
