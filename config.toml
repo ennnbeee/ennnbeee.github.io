@@ -3,6 +3,8 @@ languageCode = 'en-gb'
 title = 'ENNNBEEE vs MEM'
 theme = "PaperMod"
 paginate = 5
+publishDir = "docs"
+
 
 enableRobotsTXT = true
 buildDrafts = false
