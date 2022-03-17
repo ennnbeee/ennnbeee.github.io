@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ENNNBEEE vs MEM</title>
+    <title>MEM v NB</title>
     <link>https://ennnbeee.github.io/</link>
-    <description>Recent content on ENNNBEEE vs MEM</description>
+    <description>Recent content on MEM v NB</description>
     <image>
       <url>https://ennnbeee.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://ennnbeee.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
@@ -19,6 +19,7 @@
       <guid>https://ennnbeee.github.io/posts/my-first-post/</guid>
       <description>Desc Text.</description>
     </item>
+    
     
   </channel>
 </rss>
