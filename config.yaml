@@ -1,4 +1,4 @@
-baseURL: 'https://ennnbeee.github.io/'
+baseURL: 'http://memv.ennbee.uk'
 languageCode: en-gb
 title: MEM v NB
 theme: PaperMod
@@ -46,7 +46,7 @@ params:
     enabled: false
     title: ExampleSite
     subtitle: This is subtitle
-    imageUrl: <img location>
+    #imageUrl: <img location>
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
@@ -68,8 +68,6 @@ params:
       viverra orci sagittis eu. Euismod lacinia at quis risus sed vulputate odio
       ut. Lacinia at quis risus sed vulputate odio.
   socialIcons:
-    - {}
-    - {}
     - name: github
       url: 'https://github.com/'
   analytics:
@@ -77,11 +75,11 @@ params:
     bing: {}
     yandex: {}
   cover:
-    hidden: true
+    hidden: false
     hiddenInList: true
     hiddenInSingle: true
   editPost:
-    URL: 'https://github.com/ennnbeee/ennnbeee.github.io/content'
+    URL: 'https://github.com/ennnbeee/ennnbeee.github.io/tree/main/content/posts'
     Text: Suggest Changes
     appendFilePath: true
   fuseOpts:
@@ -91,11 +89,7 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    keys:
-      - title
-      - permalink
-      - summary
-      - content
+    keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
     - identifier: categories
@@ -114,4 +108,4 @@ outputs:
     home:
         - HTML
         - RSS
-        - JSON # is necessary
+        - JSON
