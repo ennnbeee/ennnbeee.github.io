@@ -1,6 +1,6 @@
 baseURL: 'http://memv.ennbee.uk'
 languageCode: en-gb
-title: MEM v NB
+title: MEMvENNBEE
 theme: PaperMod
 paginate: 5
 publishDir: docs
@@ -14,11 +14,12 @@ minify:
   minifyOutput: true
 params:
   env: production
-  title: MEM v NB
-  description: Battles against Endpoint Manager
+  #title: MEM v NB
+  #description: Battles with Endpoint Manager
   keywords:
     - Blog
-    - Portfolio
+    - Technology
+    - Endpoint Manager
     - PaperMod
   author: Me
   images:
@@ -40,7 +41,7 @@ params:
   tocopen: false
   assets: {}
   label:
-    text: MEM v NB
+    text: MEMvENNBEE
     iconHeight: 35
   profileMode:
     enabled: false
@@ -56,20 +57,16 @@ params:
       - name: Tags
         url: tags
   homeInfoParams:
-    Title: Battles against Endpoint Manager
+    Title: Battles with Endpoint Manager
     Content: >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel
-      quam elementum pulvinar. Sapien eget mi proin sed libero enim sed. Sem
-      fringilla ut morbi tincidunt augue interdum. Feugiat nibh sed pulvinar
-      proin gravida hendrerit lectus a. Pellentesque eu tincidunt tortor aliquam
-      nulla facilisi. Mattis rhoncus urna neque viverra justo nec ultrices.
-      Felis eget velit aliquet sagittis id consectetur. Faucibus in ornare quam
-      viverra orci sagittis eu. Euismod lacinia at quis risus sed vulputate odio
-      ut. Lacinia at quis risus sed vulputate odio.
+      For those who like me, face the endless fight for, with and against Microsoft Endpoint Manager.
+
+      
   socialIcons:
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/njbenton/'
     - name: github
-      url: 'https://github.com/'
+      url: 'https://github.com/ennnbeee/mem-scripts/'
   analytics:
     google: {}
     bing: {}
