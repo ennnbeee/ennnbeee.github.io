@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on MEM v NB</title>
+    <title>Tags on MEMvENNBEE</title>
     <link>http://memv.ennbee.uk/tags/</link>
-    <description>Recent content in Tags on MEM v NB</description>
+    <description>Recent content in Tags on MEMvENNBEE</description>
     <image>
       <url>http://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 15 Sep 2020 11:30:03 +0000</lastBuildDate><atom:link href="http://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Mar 2022 16:44:09 +0000</lastBuildDate><atom:link href="http://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>first</title>
-      <link>http://memv.ennbee.uk/tags/first/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <title>bitlocker</title>
+      <link>http://memv.ennbee.uk/tags/bitlocker/</link>
+      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
-      <guid>http://memv.ennbee.uk/tags/first/</guid>
+      <guid>http://memv.ennbee.uk/tags/bitlocker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>endpoint</title>
+      <link>http://memv.ennbee.uk/tags/endpoint/</link>
+      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
+      
+      <guid>http://memv.ennbee.uk/tags/endpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>intune</title>
+      <link>http://memv.ennbee.uk/tags/intune/</link>
+      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
+      
+      <guid>http://memv.ennbee.uk/tags/intune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>http://memv.ennbee.uk/tags/windows/</link>
+      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
+      
+      <guid>http://memv.ennbee.uk/tags/windows/</guid>
       <description></description>
     </item>
     
