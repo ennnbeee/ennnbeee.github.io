@@ -28,31 +28,31 @@ Here's how...
 
 ## Step 1: Create the Script
 This [Microsoft script](https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users) has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the **$hottotrot** variable is used to denote whether to continue or not:
-```POwerShell {linenos=table,hl_lines=["11"],linenostart=1}
-    $HotToTrot ="false"
-    #Checks Windows Recovery Environment and enables if disabled
-    if($WinREStatus -like '*Windows RE status:         Enabled*'){
-        $HotToTrot = "True"
-        Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker $HotToTrot"
-    }
-    Else{
-        Try{
-            $WinREEnable = reagentc.exe /enable
-            if($WinREEnable -like '*Operation Successful*'){
-                $HotToTrot = "True"
-                Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot"
-            }
-            Else{
-                $HotToTrot ="false"
-                Write-Verbose -Message "Unable to enabled WinRE, HotToTrot set to $HotToTrot"
-            }
+```Powershell {linenos=table,hl_lines=["11"],linenostart=1}
+$HotToTrot ="false"
+#Checks Windows Recovery Environment and enables if disabled
+if($WinREStatus -like '*Windows RE status:         Enabled*'){
+    $HotToTrot = "True"
+    Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker $HotToTrot"
+}
+Else{
+    Try{
+        $WinREEnable = reagentc.exe /enable
+        if($WinREEnable -like '*Operation Successful*'){
+            $HotToTrot = "True"
+            Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot"
         }
-        Catch{
+        Else{
             $HotToTrot ="false"
-            Write-Verbose -Message "Unable to enabled WinRE"
+            Write-Verbose -Message "Unable to enabled WinRE, HotToTrot set to $HotToTrot"
         }
     }
-    if($HotToTrot -eq 'True')
+    Catch{
+        $HotToTrot ="false"
+        Write-Verbose -Message "Unable to enabled WinRE"
+    }
+}
+if($HotToTrot -eq 'True')
 ```
 ## Step 2: Test the Script
 

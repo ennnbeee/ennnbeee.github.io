@@ -31,30 +31,30 @@ The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't config
 </span><span class=lnt>22
 </span><span class=lnt>23
 </span><span class=lnt>24
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-POwerShell data-lang=POwerShell><span class=line><span class=cl>    <span class=nv>$HotToTrot</span> <span class=p>=</span><span class=s2>&#34;false&#34;</span>
-</span></span><span class=line><span class=cl>    <span class=c>#Checks Windows Recovery Environment and enables if disabled</span>
-</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span><span class=nv>$WinREStatus</span> <span class=o>-like</span> <span class=s1>&#39;*Windows RE status:         Enabled*&#39;</span><span class=p>){</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$HotToTrot</span> <span class=p>=</span> <span class=s2>&#34;True&#34;</span>
-</span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;WinRE Partion Enabled and good to enable BitLocker $HotToTrot&#34;</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=k>Else</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>Try</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>            <span class=nv>$WinREEnable</span> <span class=p>=</span> <span class=n>reagentc</span><span class=p>.</span><span class=n>exe</span> <span class=p>/</span><span class=n>enable</span>
-</span></span><span class=line><span class=cl>            <span class=k>if</span><span class=p>(</span><span class=nv>$WinREEnable</span> <span class=o>-like</span> <span class=s1>&#39;*Operation Successful*&#39;</span><span class=p>){</span>
-</span></span><span class="line hl"><span class=cl>                <span class=nv>$HotToTrot</span> <span class=p>=</span> <span class=s2>&#34;True&#34;</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;WinRE Partion Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot&#34;</span>
-</span></span><span class=line><span class=cl>            <span class=p>}</span>
-</span></span><span class=line><span class=cl>            <span class=k>Else</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nv>$HotToTrot</span> <span class=p>=</span><span class=s2>&#34;false&#34;</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;Unable to enabled WinRE, HotToTrot set to $HotToTrot&#34;</span>
-</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-Powershell data-lang=Powershell><span class=line><span class=cl><span class=nv>$HotToTrot</span> <span class=p>=</span><span class=s2>&#34;false&#34;</span>
+</span></span><span class=line><span class=cl><span class=c>#Checks Windows Recovery Environment and enables if disabled</span>
+</span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=nv>$WinREStatus</span> <span class=o>-like</span> <span class=s1>&#39;*Windows RE status:         Enabled*&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=nv>$HotToTrot</span> <span class=p>=</span> <span class=s2>&#34;True&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;WinRE Partion Enabled and good to enable BitLocker $HotToTrot&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=k>Else</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>Try</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$WinREEnable</span> <span class=p>=</span> <span class=n>reagentc</span><span class=p>.</span><span class=n>exe</span> <span class=p>/</span><span class=n>enable</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span><span class=nv>$WinREEnable</span> <span class=o>-like</span> <span class=s1>&#39;*Operation Successful*&#39;</span><span class=p>){</span>
+</span></span><span class="line hl"><span class=cl>            <span class=nv>$HotToTrot</span> <span class=p>=</span> <span class=s2>&#34;True&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;WinRE Partion Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot&#34;</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
-</span></span><span class=line><span class=cl>        <span class=k>Catch</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>Else</span><span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=nv>$HotToTrot</span> <span class=p>=</span><span class=s2>&#34;false&#34;</span>
-</span></span><span class=line><span class=cl>            <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;Unable to enabled WinRE&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;Unable to enabled WinRE, HotToTrot set to $HotToTrot&#34;</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=k>if</span><span class=p>(</span><span class=nv>$HotToTrot</span> <span class=o>-eq</span> <span class=s1>&#39;True&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>Catch</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$HotToTrot</span> <span class=p>=</span><span class=s2>&#34;false&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=n>-Message</span> <span class=s2>&#34;Unable to enabled WinRE&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=nv>$HotToTrot</span> <span class=o>-eq</span> <span class=s1>&#39;True&#39;</span><span class=p>)</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=step-2-test-the-script>Step 2: Test the Script<a hidden class=anchor aria-hidden=true href=#step-2-test-the-script>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
