@@ -8,7 +8,6 @@ enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
-pygmentsUseClasses: true
 minify:
   disableXML: true
   minifyOutput: true
@@ -39,7 +38,8 @@ params:
   hideSummary: false
   showtoc: false
   tocopen: false
-  assets: {}
+  assets:
+    disableHLJS: true
   label:
     text: MEMvENNBEE
     iconHeight: 35
@@ -106,3 +106,11 @@ outputs:
         - HTML
         - RSS
         - JSON
+markup:
+    highlight:
+        # anchorLineNos: true
+        codeFences: true
+        guessSyntax: true
+        lineNos: true
+        # noClasses: false
+        style: monokai
