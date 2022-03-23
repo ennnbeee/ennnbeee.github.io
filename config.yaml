@@ -20,7 +20,7 @@ params:
     - Technology
     - Endpoint Manager
     - PaperMod
-  author: Me
+  author: Nick Benton
   images:
     - '<link or path of image for opengraph, twitter-cards>'
   DateFormat: 'January 2, 2006'
@@ -41,7 +41,8 @@ params:
   assets:
     disableHLJS: true
   label:
-    text: MEMvENNBEE
+    text: MEM v ENNBEE
+    icon: fight.png
     iconHeight: 35
   profileMode:
     enabled: false

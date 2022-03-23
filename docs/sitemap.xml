@@ -2,28 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://memv.ennbee.uk/tags/android/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/endpoint/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/intune/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/posts/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/</loc>
+    <lastmod>2022-03-21T18:07:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/autopilot/</loc>
+    <lastmod>2022-03-20T21:01:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/windows/</loc>
+    <lastmod>2022-03-20T21:01:33+00:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/posts/hybrid-join-computer-rename/</loc>
+    <lastmod>2022-03-20T21:01:33+00:00</lastmod>
+  </url><url>
     <loc>http://memv.ennbee.uk/tags/bitlocker/</loc>
     <lastmod>2022-03-17T16:44:09+00:00</lastmod>
   </url><url>
     <loc>http://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</loc>
-    <lastmod>2022-03-17T16:44:09+00:00</lastmod>
-  </url><url>
-    <loc>http://memv.ennbee.uk/tags/endpoint/</loc>
-    <lastmod>2022-03-17T16:44:09+00:00</lastmod>
-  </url><url>
-    <loc>http://memv.ennbee.uk/tags/intune/</loc>
-    <lastmod>2022-03-17T16:44:09+00:00</lastmod>
-  </url><url>
-    <loc>http://memv.ennbee.uk/</loc>
-    <lastmod>2022-03-17T16:44:09+00:00</lastmod>
-  </url><url>
-    <loc>http://memv.ennbee.uk/posts/</loc>
-    <lastmod>2022-03-17T16:44:09+00:00</lastmod>
-  </url><url>
-    <loc>http://memv.ennbee.uk/tags/</loc>
-    <lastmod>2022-03-17T16:44:09+00:00</lastmod>
-  </url><url>
-    <loc>http://memv.ennbee.uk/tags/windows/</loc>
     <lastmod>2022-03-17T16:44:09+00:00</lastmod>
   </url><url>
     <loc>http://memv.ennbee.uk/categories/</loc>

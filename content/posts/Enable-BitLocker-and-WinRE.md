@@ -1,18 +1,18 @@
 ---
-title: "Enable BitLocker and WinRE on failed Intune Devices"
+title: "Microsoft BitLocker: BitLocker and WinRE on failed Intune Devices"
 date: 2022-03-17T16:44:09Z
 draft: false
 description: ""
 tags: ["endpoint", "intune", "windows", "bitlocker"]
 ShowToc: true
 cover:
-    image: "/bitlocker.jpg" # image path/url
+    image: "/img/bitlocker.jpg" # image path/url
     alt: "Enable BitLocker and WinRE on failed Intune Devices" # alt text
     caption: "Enable BitLocker and WinRE on failed Intune Devices" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-![Image](/bitlocker.jpg#center)
+![Image](/img/bitlocker.jpg#center)
 
 
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...
@@ -26,7 +26,7 @@ So how do we go about enabling WinRE if it exists, setup BitLocker encryption, *
 
 Here's how...
 
-## Step 1: Update the Script
+## Step 1: Updating the Script
 This [Microsoft script](https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users) has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the **$HotToTrot** variable is used to denote whether to continue or not.
 
 The below is the added section to check and enable, or attempt to enable, WinRE:
@@ -290,6 +290,6 @@ Stop-Transcript
 ## Step 4: Deploying through Endpoint Manager
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
- ![Image](/Bitlocker_WinRE_Script.png#center)
+ ![Image](/img/Bitlocker_WinRE_Script.png#center)
  
  Bingo! One battle won, onto the next.
