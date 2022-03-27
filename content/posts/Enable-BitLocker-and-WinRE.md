@@ -6,13 +6,13 @@ description: ""
 tags: ["endpoint", "intune", "windows", "bitlocker"]
 ShowToc: true
 cover:
-    image: "/img/bitlocker.jpg" # image path/url
+    image: "/img/bitlocker.png" # image path/url
     alt: "Enable BitLocker and WinRE on failed Intune Devices" # alt text
     caption: "Enable BitLocker and WinRE on failed Intune Devices" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-![Image](/img/bitlocker.jpg#center)
+![Image](/img/bitlocker.png#center)
 
 
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...

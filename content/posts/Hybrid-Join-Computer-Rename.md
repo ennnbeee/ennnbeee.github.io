@@ -6,13 +6,13 @@ description: ""
 tags: ["endpoint", "intune", "windows", "autopilot"]
 ShowToc: true
 cover:
-    image: "/img/Computer-Rename.png" # image path/url
+    image: "/img/computer-rename.png" # image path/url
     alt: "Rename Hybrid Azure AD Joined devices" # alt text
     caption: "Rename Hybrid Azure AD Joined devices" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-![Image](/img/Computer-Rename.png#center)
+![Image](/img/computer-rename.png#center)
 
 You've probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that's it.
 
