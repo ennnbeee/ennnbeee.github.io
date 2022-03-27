@@ -18,7 +18,7 @@ You've probably hit the limitation with Windows Autopilot Hybrid Azure AD Join d
 
 You've also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by [Michael Niehaus](https://oofhours.com/2020/05/19/renaming-autopilot-deployed-hybrid-azure-ad-join-devices/) can help.
 
-## Step 1: Adding the variables
+## Adding the variables
 The post linked above details the steps required to ensure that the computer object itself has the ability to initiate the rename, and the below script has been changed to use existing device information, such as serial, instead of a webservice:
 
 - On-premises domain variable 
@@ -29,16 +29,16 @@ This means that it can be deployed to existing environments without the need to 
 
 The first section details the parameters that can used and updated.
 
-```powershell {linenos=true,linenostart=28}
+```powershell {linenos=false,hl_lines=[2 3 4]}
 #Sets the variables for the customer
 $domain = "onprem.local" #local domain
 $ComputerPrefix = "PRE-" #Prefix
 $waittime = "60" #sets the restart wait time in minutes
 ```
-## Step 2: Getting the device name
+## Getting the device name
 This next section pulls back the serial number and ensures that the computer name is less than 15 characters.
 
-```powershell {linenos=true,linenostart=81}
+```powershell {linenos=false,hl_lines=[2 3 4]}
 #Get serial and removes commas
 $Serial = Get-WmiObject Win32_bios | Select-Object -ExpandProperty SerialNumber
 $newName = $ComputerPrefix + $Serial
@@ -49,15 +49,15 @@ if ($newName.Length -ge 15) {
     $newName = $newName.substring(0, 15)
 }
 ```
-## Step 3: The wait variable
+## The waiting game
 Using **New-TimeSpan** we can convert the **$waittime** variable into whatever time format we need, and as we're using the shutdown command, we need seconds:
 
-```powershell {linenos=true,linenostart=108}
+```powershell  {linenos=false,hl_lines=[1 2 3]}
 $waitinseconds = (New-TimeSpan -Minutes $waittime).Seconds
 Write-Host "Initiating a restart in $waitime minutes"
 & shutdown.exe /g /t $waitinseconds /f /c "Restarting the computer in $wait minutes due to a computer name change. Please save your work."
 ```
-## Step 4: The whole shebang
+## The whole thing
 The full script can be found below, I would **strongly** advise testing this prior to pushing it out via Endpoint Manager.
 
 ```powershell {linenos=true,linenostart=1}

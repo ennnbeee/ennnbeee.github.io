@@ -16,25 +16,25 @@ cover:
 
 With the change to Android 10+ requiring a [wireless network](https://support.google.com/work/android/thread/88876136?hl=en) to go through the Fully Managed device enrolment, you may be asking, "Well what if my users don't have access to a wireless network?", don't fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
  
-## Step 1: Get the QR Code Data
+## Get the QR Code Data
 Use QR Reader on an existing phone or using an [online reader](https://zxing.org/w/decode.jspx) to get the full QR code data:
 
-```json
+```json {linenos=false}
 {"android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME":"com.google.android.apps.work.clouddpc/.receivers.CloudDeviceAdminReceiver","android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM":"I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg","android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION":"https://play.google.com/managed/downloadManagingApp?identifier=setup","android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE":{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"TOKENVALUE"}}
 ```
 
-## Step 2: Updating the JSON content
+## Updating the JSON content
 Add in the below code snippet before the **"android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE"** section:
 
-```json
+```json {linenos=false}
 "android.app.extra.PROVISIONING_USE_MOBILE_DATA":true,
 ```
 
 So the fulll JSON string should look like the below, with the **TOKENVALUE** obviously the correct one:
 	
-```json
+```json {linenos=false}
 {"android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME":"com.google.android.apps.work.clouddpc/.receivers.CloudDeviceAdminReceiver","android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM":"I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg","android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION":"https://play.google.com/managed/downloadManagingApp?identifier=setup","android.app.extra.PROVISIONING_USE_MOBILE_DATA":true,"android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE":{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"TOKENVALUE"}}
 ```    
 
-## Step 3: Create a new QR Code    
+## Create a new QR Code    
 Copy the string and paste it into an [online QR code generator](https://www.webtoolkitonline.com/qrcode-generator.html) to generate the new QR code. This can then be provided to your users, pending testing, to allow them to enrol their new Android device in Endpoint Manager, whether connected to wireless or mobile data.

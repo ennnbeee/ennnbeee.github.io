@@ -1,5 +1,5 @@
 ---
-title: "Windows Update for Business: Production Deployment Rings"
+title: "Windows Update for Business: 50:50 Production Deployment Rings"
 date: 2022-03-27T20:07:23+01:00
 draft: false
 description: ""
@@ -22,7 +22,7 @@ Well Azure AD dynamic groups are you friend on this one, and they may not be as 
 Here is quick way to split production phased deployments of WUfB rings to dynamic device groups, based based on the device name ending in an odd or even number.
 
 ## Sample Devices
-Let use the follwoing device names as examples:
+Lets use the following device names as examples:
 ```txt {linenos=false,hl_lines=0}
 NC013572
 DC013575
@@ -33,7 +33,7 @@ ERESSRC4587877
 In these examples, **NC** is Notebook Computer and **DC** Desktop Computer, your mileage may vary based on how the devices are named.
 
 ## Dynamic Device Membership Rule
-For devices that end with even numbers, we're looking for the ones ending with 0, 2, 4, 6, and 8, and odd for odd, we'll, it's the other numbers...but we could do with a bit more logic than just this, so we'll throw in that the device has a 'C' in the name.
+For devices that end with even numbers, we're looking for the ones ending with 0, 2, 4, 6, and 8, and odd numbers, well, it's the other numbers...but we could do with a bit more logic than just this, so we'll throw in that the device has a 'C' in the name.
 
 ### Even Devices
 ```txt {linenos=false,hl_lines=0}

@@ -1,6 +1,6 @@
 baseURL: 'http://memv.ennbee.uk'
 languageCode: en-gb
-title: MEMvENNBEE
+title: MEM v ENNBEE
 theme: PaperMod
 paginate: 5
 publishDir: docs
@@ -59,9 +59,8 @@ params:
         url: tags
   homeInfoParams:
     Title: Battles with Endpoint Manager
-    Content: >-
-      For those who like me, face the endless fight for, with, and against Microsoft Endpoint Manager.
-
+    Content: >
+      For those, who like me, face the endless daily fight for, with, and against Microsoft Endpoint Manager. Hopefully this blog gives you some assistance with your own battle managing end-user devices.
       
   socialIcons:
     - name: linkedin
@@ -74,7 +73,7 @@ params:
     yandex: {}
   cover:
     hidden: false
-    hiddenInList: true
+    hiddenInList: false
     hiddenInSingle: true
   editPost:
     URL: 'https://github.com/ennnbeee/ennnbeee.github.io/tree/main/content/posts'
@@ -90,10 +89,10 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 20
+    #- identifier: categories
+    #  name: categories
+    #  url: /categories/
+    #  weight: 20
     - identifier: tags
       name: tags
       url: /tags/

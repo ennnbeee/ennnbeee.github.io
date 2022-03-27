@@ -18,7 +18,7 @@ cover:
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...
 
 What you'll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:
-```txt {linenos=false,hl_lines=1}
+```txt {linenos=false,hl_lines=[1]}
 The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't configured
 ```
 
@@ -26,12 +26,12 @@ So how do we go about enabling WinRE if it exists, setup BitLocker encryption, *
 
 Here's how...
 
-## Step 1: Updating the Script
+## Updating the Script
 This [Microsoft script](https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users) has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the **$HotToTrot** variable is used to denote whether to continue or not.
 
 The below is the added section to check and enable, or attempt to enable, WinRE:
 
-```powershell {linenos=true,linenostart=11}
+```powershell {linenos=false}
 $HotToTrot ="false"
 #Checks Windows Recovery Environment and enables if disabled
 if($WinREStatus -like '*Windows RE status:         Enabled*'){
@@ -57,10 +57,10 @@ Else{
 }
 if($HotToTrot -eq 'True')
 ```
-## Step 2: Fix the Script
+## Fixing the Script
 The script has logic in place to escrow the recovery key to Azure AD, using either the **BackupToAAD-BitLockerKeyProtector** commandlet or, if this isn't available, using a call to GraphAPI. The below sections needed to be updated due to where the Azure AD Join information is now stored in the registry:
 
-```powershell {linenos=true,linenostart=102}
+```powershell {linenos=false,hl_lines=[25 26 28 29]}
 # Check if we can use BackupToAAD-BitLockerKeyProtector commandlet
 if (Get-Command -Name "BackupToAAD-BitLockerKeyProtector" -ErrorAction "SilentlyContinue") {
     
@@ -111,7 +111,7 @@ else {
     }
 }
 ```
-## Step 3: Putting it all together
+## Putting it all together
 The full script can be found below, I would **strongly** advise testing this prior to pushing it out via Endpoint Manager.
 
 ```powershell {linenos=true,linenostart=1}
@@ -287,7 +287,7 @@ Stop-Transcript
 
 ```
 
-## Step 4: Deploying through Endpoint Manager
+## Deploying through Endpoint Manager
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
  ![Image](/img/Bitlocker_WinRE_Script.png#center)
