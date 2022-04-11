@@ -19,7 +19,7 @@ You might have been asked the question, especially from SCCM users, about how yo
 
 Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.
 
-Here is quick way to split production phased deployments of WUfB rings to dynamic device groups, based based on the device name.
+Here is quick way to split production phased deployments of WUfB rings to dynamic device groups, based on the device name.
 
 ## Sample Devices
 Lets use the following device names as examples:
