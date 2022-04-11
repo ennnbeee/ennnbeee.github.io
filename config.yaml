@@ -77,7 +77,7 @@ params:
     hiddenInList: false
     hiddenInSingle: true
   editPost:
-    URL: 'https://github.com/ennnbeee/ennnbeee.github.io/tree/main/content/posts'
+    URL: 'https://github.com/ennnbeee/ennnbeee.github.io/tree/main/content/'
     Text: Suggest Changes
     appendFilePath: true
   fuseOpts:
