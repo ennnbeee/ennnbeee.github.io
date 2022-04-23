@@ -59,10 +59,15 @@ params:
         url: tags
   homeInfoParams:
     Title: Battles with Endpoint Manager
-    Content: >-
-      For those, who like me, face the endless daily fight for, with, and against Microsoft Endpoint Manager. Hopefully this blog gives you some assistance with your own battle managing end-user devices.
+    Content: >
+            For those, who like me, face the endless daily fight for, with, and against Microsoft Endpoint Manager. 
 
-      ***Disclaimer:** The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned.*
+            - Hopefully this blog gives you some assistance with your own battle managing end-user devices.
+
+            -
+
+            - **Disclaimer:** The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned.
+
   socialIcons:
     - name: linkedin
       url: 'https://www.linkedin.com/in/njbenton/'

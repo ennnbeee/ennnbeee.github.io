@@ -216,6 +216,6 @@ Stop-Transcript
 #  Deployment using Endpoint Manager
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
-![Image](/img/Computer_Rename_Script.png#center)
+![Image](/img/computer-name-script.png#left)
  
  Bingo! another battle won.

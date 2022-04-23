@@ -290,6 +290,6 @@ Stop-Transcript
 # Script Deployment with Endpoint Manager
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
- ![Image](/img/Bitlocker_WinRE_Script.png#center)
+ ![Image](/img/bitlocker-script.png#left)
  
  Bingo! One battle won, onto the next.

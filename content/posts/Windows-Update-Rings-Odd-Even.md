@@ -3,7 +3,7 @@ title: "Windows Update for Business: Autopilot 50:50 Production Deployment Rings
 date: 2022-04-10T20:07:23+01:00
 draft: false
 description: ""
-tags: ["endpoint", "intune", "windows","updates","autopilot"]
+tags: ["endpoint", "intune", "windows","updates","autopilot","groups"]
 ShowToc: true
 cover:
     image: "/img/update-rings.png" # image path/url

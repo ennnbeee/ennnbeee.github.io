@@ -3,11 +3,11 @@ title: "Windows Autopilot: The Power of Group Tags"
 date: 2022-04-23T10:03:55+01:00
 draft: false
 description: ""
-tags: ["endpoint", "intune", "autopilot"]
+tags: ["endpoint", "intune", "autopilot","windows","groups"]
 ShowToc: true
 cover:
     image: "/img/autopilot-tags.png" # image path/url
-    alt: "" # alt text
+    alt: "Autopilot Group Tags" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page

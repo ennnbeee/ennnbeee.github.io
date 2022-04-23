@@ -8,6 +8,9 @@
     <loc>http://memv.ennbee.uk/tags/endpoint/</loc>
     <lastmod>2022-04-23T10:03:55+01:00</lastmod>
   </url><url>
+    <loc>http://memv.ennbee.uk/tags/groups/</loc>
+    <lastmod>2022-04-23T10:03:55+01:00</lastmod>
+  </url><url>
     <loc>http://memv.ennbee.uk/tags/intune/</loc>
     <lastmod>2022-04-23T10:03:55+01:00</lastmod>
   </url><url>
@@ -20,13 +23,25 @@
     <loc>http://memv.ennbee.uk/tags/</loc>
     <lastmod>2022-04-23T10:03:55+01:00</lastmod>
   </url><url>
+    <loc>http://memv.ennbee.uk/tags/windows/</loc>
+    <lastmod>2022-04-23T10:03:55+01:00</lastmod>
+  </url><url>
     <loc>http://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</loc>
     <lastmod>2022-04-23T10:03:55+01:00</lastmod>
   </url><url>
-    <loc>http://memv.ennbee.uk/tags/updates/</loc>
-    <lastmod>2022-04-10T20:07:23+01:00</lastmod>
+    <loc>http://memv.ennbee.uk/tags/macos/</loc>
+    <lastmod>2022-04-21T11:55:11+01:00</lastmod>
   </url><url>
-    <loc>http://memv.ennbee.uk/tags/windows/</loc>
+    <loc>http://memv.ennbee.uk/posts/ncsc-macos-settings/</loc>
+    <lastmod>2022-04-21T11:55:11+01:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/ncsc/</loc>
+    <lastmod>2022-04-21T11:55:11+01:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/security/</loc>
+    <lastmod>2022-04-21T11:55:11+01:00</lastmod>
+  </url><url>
+    <loc>http://memv.ennbee.uk/tags/updates/</loc>
     <lastmod>2022-04-10T20:07:23+01:00</lastmod>
   </url><url>
     <loc>http://memv.ennbee.uk/posts/windows-update-rings-odd-even/</loc>

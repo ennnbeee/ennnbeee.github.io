@@ -22,6 +22,16 @@ So what if you have multiple deployment profiles, or different device use cases 
     </item>
     
     <item>
+      <title>National Cyber Security Centre (NCSC): MacOS Security Settings</title>
+      <link>http://memv.ennbee.uk/posts/ncsc-macos-settings/</link>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
+      
+      <guid>http://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.
+NCSC do provide documented guides for macOS along with a GitHub repo containing a script and a list of recommended security settings, but what do these look like in Endpoint Manager?</description>
+    </item>
+    
+    <item>
       <title>Windows Update for Business: Autopilot 50:50 Production Deployment Rings</title>
       <link>http://memv.ennbee.uk/posts/windows-update-rings-odd-even/</link>
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
