@@ -13,7 +13,7 @@ cover:
     hidden: true # only hide on current single page
 ---
 ![Image](/img/autopilot-tags.png#center)
-# Introduction
+
 So you're using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you're probably already familiar with the Autopilot [dynamic group queries](https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot) used for targetting these devices, right? Good.
 
 So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices? You probably do...what's that you say, you're using static groups to manage these? Let me show you the way forward.

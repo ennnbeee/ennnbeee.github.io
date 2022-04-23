@@ -14,7 +14,6 @@ cover:
 ---
 ![Image](/img/bitlocker.png#center)
 
-# Introduction
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...
 
 What you'll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:

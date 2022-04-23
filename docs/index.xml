@@ -17,7 +17,7 @@
       <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</guid>
-      <description>Introduction So you&amp;rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&amp;rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+      <description>So you&amp;rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&amp;rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
 So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?</description>
     </item>
     
@@ -27,8 +27,9 @@ So what if you have multiple deployment profiles, or different device use cases 
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/windows-update-rings-odd-even/</guid>
-      <description>Introduction You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
-Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.</description>
+      <description>You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
+Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.
+Configuration Below is quick and easy way to split production phased deployments of WUfB rings to dynamic device groups, based on the device name format.</description>
     </item>
     
     <item>
@@ -37,7 +38,7 @@ Well Azure AD dynamic groups are you friend on this one, and they may not be as 
       <pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</guid>
-      <description>Introduction With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
+      <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
 Configuration The below sections detail the steps to generate a new QR code for enrollment, allowing the use of Mobile Data.</description>
     </item>
     
@@ -47,7 +48,7 @@ Configuration The below sections detail the steps to generate a new QR code for 
       <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
-      <description>Introduction You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.
+      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.
 You&amp;rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
 Configuration The below sections detail the steps carried out to modify the script to work without the need for an Azure web application, and can be deployed locally to rename devices.</description>
     </item>
@@ -58,7 +59,7 @@ Configuration The below sections detail the steps carried out to modify the scri
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>Introduction You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
+      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
 What you&amp;rsquo;ll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:
 The OS volume is unprotected | Windows Recovery Environment (WinRE) isn&amp;#39;t configured Configuration So how do we go about enabling WinRE if it exists, setup BitLocker encryption, and grab the BitLocker recovery key and ping it to Azure AD?</description>
     </item>

@@ -14,7 +14,6 @@ cover:
 ---
 ![Image](/img/android-enrol.png#center)
 
-# Introduction
 With the change to Android 10+ requiring a [wireless network](https://support.google.com/work/android/thread/88876136?hl=en) to go through the Fully Managed device enrolment, you may be asking, "Well what if my users don't have access to a wireless network?", don't fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
 
 # Configuration

@@ -17,7 +17,7 @@
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>Introduction You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
+      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
 What you&amp;rsquo;ll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:
 The OS volume is unprotected | Windows Recovery Environment (WinRE) isn&amp;#39;t configured Configuration So how do we go about enabling WinRE if it exists, setup BitLocker encryption, and grab the BitLocker recovery key and ping it to Azure AD?</description>
     </item>
