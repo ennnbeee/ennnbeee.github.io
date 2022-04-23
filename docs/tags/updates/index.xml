@@ -17,9 +17,8 @@
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/windows-update-rings-odd-even/</guid>
-      <description>You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
-Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.
-Here is quick way to split production phased deployments of WUfB rings to dynamic device groups, based on the device name.</description>
+      <description>Introduction You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
+Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.</description>
     </item>
     
   </channel>

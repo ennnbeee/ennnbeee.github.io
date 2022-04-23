@@ -14,7 +14,7 @@ cover:
 ---
 ![Image](/img/bitlocker.png#center)
 
-
+# Introduction
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...
 
 What you'll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:
@@ -22,6 +22,7 @@ What you'll see in either the Bitlocker-API event log, or within the Encryption 
 The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't configured
 ```
 
+# Configuration
 So how do we go about enabling WinRE if it exists, setup BitLocker encryption, **and** grab the BitLocker recovery key and ping it to Azure AD?
 
 Here's how...
@@ -111,7 +112,7 @@ else {
     }
 }
 ```
-## Putting it all together
+## Putting it All Together
 The full script can be found below, I would **strongly** advise testing this prior to pushing it out via Endpoint Manager.
 
 ```powershell {linenos=true,linenostart=1}
@@ -287,7 +288,7 @@ Stop-Transcript
 
 ```
 
-## Deploying through Endpoint Manager
+# Script Deployment with Endpoint Manager
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
  ![Image](/img/Bitlocker_WinRE_Script.png#center)

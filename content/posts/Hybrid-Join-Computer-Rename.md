@@ -14,11 +14,15 @@ cover:
 ---
 ![Image](/img/computer-name.png#center)
 
+# Introduction
 You've probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that's it.
 
 You've also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by [Michael Niehaus](https://oofhours.com/2020/05/19/renaming-autopilot-deployed-hybrid-azure-ad-join-devices/) can help.
 
-## Adding the variables
+# Configuration
+The below sections detail the steps carried out to modify the script to work without the need for an Azure web application, and can be deployed locally to rename devices.
+
+## Adding the Variables
 The post linked above details the steps required to ensure that the computer object itself has the ability to initiate the rename, and the below script has been changed to use existing device information, such as serial, instead of a webservice:
 
 - On-premises domain variable 
@@ -35,7 +39,7 @@ $domain = "onprem.local" #local domain
 $ComputerPrefix = "PRE-" #Prefix
 $waittime = "60" #sets the restart wait time in minutes
 ```
-## Getting the device name
+## Getting the Device Name
 This next section pulls back the serial number and ensures that the computer name is less than 15 characters.
 
 ```powershell {linenos=false,hl_lines=[2 3 4]}
@@ -49,7 +53,7 @@ if ($newName.Length -ge 15) {
     $newName = $newName.substring(0, 15)
 }
 ```
-## The waiting game
+## The Waiting Game
 Using **New-TimeSpan** we can convert the **$waittime** variable into whatever time format we need, and as we're using the shutdown command, we need seconds:
 
 ```powershell  {linenos=false,hl_lines=[1 2 3]}
@@ -57,7 +61,7 @@ $waitinseconds = (New-TimeSpan -Minutes $waittime).Seconds
 Write-Host "Initiating a restart in $waitime minutes"
 & shutdown.exe /g /t $waitinseconds /f /c "Restarting the computer in $wait minutes due to a computer name change. Please save your work."
 ```
-## The whole thing
+## The Whole Thing
 The full script can be found below, I would **strongly** advise testing this prior to pushing it out via Endpoint Manager.
 
 ```powershell {linenos=true,linenostart=1}
@@ -210,7 +214,7 @@ else
 Stop-Transcript
 ```
 
-## Step 4: Deploying through Endpoint Manager
+#  Deployment using Endpoint Manager
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
 ![Image](/img/Computer_Rename_Script.png#center)
