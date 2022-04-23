@@ -85,7 +85,7 @@ If you're really all up in there with Endpoint Manager, you're probably using Ro
 
 
 # Conclusion
-What we have here, is a relatively painless way of tagging devices in any way you want to, kind like creating a classic Organisational Structure but way more interesting and with the ability to do so without being constrained to a flat structure.
+What we have here, is a relatively painless way of tagging devices in any way you want to, kind of like creating a classic Organisational Structure but way more interesting and with the ability to do so without being constrained to a flat structure.
 
 The next step is to clearly define your naming convention and syntax for the Group Tags, and have fun I guess.
 
