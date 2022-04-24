@@ -1,7 +1,7 @@
 ---
 title: "Windows Autopilot: The Power of Group Tags"
 date: 2022-04-23T10:03:55+01:00
-draft: false
+draft: true
 description: ""
 tags: ["endpoint", "intune", "autopilot","windows","groups"]
 ShowToc: true

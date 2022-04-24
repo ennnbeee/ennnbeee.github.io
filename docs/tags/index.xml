@@ -10,49 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 23 Apr 2022 10:03:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>autopilot</title>
-      <link>https://memv.ennbee.uk/tags/autopilot/</link>
-      <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 21 Apr 2022 11:55:11 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>endpoint</title>
       <link>https://memv.ennbee.uk/tags/endpoint/</link>
-      <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/endpoint/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>groups</title>
-      <link>https://memv.ennbee.uk/tags/groups/</link>
-      <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/groups/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>intune</title>
       <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/intune/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://memv.ennbee.uk/tags/windows/</link>
-      <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -84,11 +57,38 @@
     </item>
     
     <item>
+      <title>autopilot</title>
+      <link>https://memv.ennbee.uk/tags/autopilot/</link>
+      <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>groups</title>
+      <link>https://memv.ennbee.uk/tags/groups/</link>
+      <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/groups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>updates</title>
       <link>https://memv.ennbee.uk/tags/updates/</link>
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/updates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://memv.ennbee.uk/tags/windows/</link>
+      <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/windows/</guid>
       <description></description>
     </item>
     

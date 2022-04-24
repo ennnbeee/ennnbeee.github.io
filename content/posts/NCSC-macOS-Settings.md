@@ -26,7 +26,18 @@ All the below security settings utilise the **Custom configuration template** fo
 Sounds perfect right? Details on how to create these profiles are below, but for now, let's look at the NCSC settings and their associated mobileconfig files.
 
 ### Automatic Updates
-Now the NCSC guidelines advise that Operating System and Software updates should be applied automatically, with no deferal of when they are available or installed. Sadly, there isn't an option in Endpoint Manager to enforce this setting, but we can acheive this using a custom profile and generated mobileconfig file.
+Now the NCSC guidelines advise that Operating System and Software updates should be applied automatically, with no deferal of when they are available or installed. 
+
+From the NCSC documentation:
+
+| Settings | Status | Comments |
+| --- | --- | --- |
+| Defer macOS Updates	 | No | n/a |
+| Defer app Updates	 | No | n/a |
+
+This one is pretty definite in what it wants.
+
+Sadly, there isn't an option in Endpoint Manager to enforce this setting, but we can acheive this using a custom profile and generated mobileconfig file.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -98,6 +109,15 @@ Now the NCSC guidelines advise that Operating System and Software updates should
 ### Fast User Switching and Automatic Logon
 Apparently Fast User Switching is a bad thing, as is automatically logging in, so they want this disabled too.
 
+From the NCSC documentation:
+
+| Settings | Status | Comments |
+| --- | --- | --- |
+| Enable Fast User Switching | No | n/a |
+| Disable automatic login	| Yes | n/a |
+
+I wish they would stick with either 'Enable' or 'Disable', the mixture is headache inducing. However, mobileconfig file to the rescue.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -162,6 +182,14 @@ Apparently Fast User Switching is a bad thing, as is automatically logging in, s
 ### Hiding System Preferences
 This one makes more sense, as you don't want users meddling with certain System Preferences such as, iCloud, Sharing, Starup Disk and Security.
 
+From the NCSC documentation:
+
+| Settings | Status | Comments |
+| --- | --- | --- |
+| Restrict items in System Preferences | Yes (disable selected items): iCloud Profiles Security & Privacy Startup Disk Sharing (enables remote management) Siri Xsan - If not in use FibreChannel - if not in use	| n/a |
+
+Now you *could* flat out disable them, but remember, NCSC is a guideline, so we're just going to hide them instead...
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -218,6 +246,17 @@ This one makes more sense, as you don't want users meddling with certain System 
 ```
 ### Time Servers
 Not so sure on this one, must be down to ensuring that the system time is correct for validation of certificates...maybe.
+
+From the NCSC documentation:
+
+| Settings | Status | Comments |
+| --- | --- | --- |
+| Time Server | Specify time server by device location | Organisations should refer to their MDM documentation for instructions on setting this up |
+
+See what I mean about it being complicated, thanks NCSC.
+
+Anyways, here's the mobileconfig file setting the time servers to be `time.euro.apple.com` if you're in Europe obviously.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -236,7 +275,7 @@ Not so sure on this one, must be down to ensuring that the system time is correc
 							<key>mcx_preference_settings</key>
 							<dict>
 								<key>timeServer</key>
-								<string>time.google.com,time.euro.apple.com</string>
+								<string>time.euro.apple.com</string>
 							</dict>
 						</dict>
 					</array>
