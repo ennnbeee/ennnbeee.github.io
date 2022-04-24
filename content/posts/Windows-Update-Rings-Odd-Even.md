@@ -10,10 +10,8 @@ cover:
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 ---
-![Image](/img/update-rings.png#center)
-
 You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
 
 Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.

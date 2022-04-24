@@ -8,12 +8,10 @@ ShowToc: true
 cover:
     image: "/img/bitlocker.png" # image path/url
     alt: "Enable BitLocker and WinRE on failed Intune Devices" # alt text
-    caption: "Enable BitLocker and WinRE on failed Intune Devices" # display caption under cover
+    caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 ---
-![Image](/img/bitlocker.png#center)
-
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...
 
 What you'll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:
@@ -287,7 +285,7 @@ Stop-Transcript
 
 ```
 
-# Script Deployment with Endpoint Manager
+# Script Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
  ![Image](/img/bitlocker-script.png#left)

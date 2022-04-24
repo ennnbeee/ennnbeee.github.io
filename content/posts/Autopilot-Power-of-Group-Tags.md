@@ -10,10 +10,8 @@ cover:
     alt: "Autopilot Group Tags" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 ---
-![Image](/img/autopilot-tags.png#center)
-
 So you're using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you're probably already familiar with the Autopilot [dynamic group queries](https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot) used for targetting these devices, right? Good.
 
 So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices? You probably do...what's that you say, you're using static groups to manage these? Let me show you the way forward.
@@ -21,6 +19,9 @@ So what if you have multiple deployment profiles, or different device use cases 
 # Configuration
 If you've got this far, you'll probably know that Windows Autopilot is the modern deployment method for Windows 10/11 devices, allowing an organistaion to pre-register corporate-owned devices (using their unique hardware hashes) and link these devices to the Azure AD tenant. Once the device is attached to the tenant, it is considered a trusted device that can be enrolled using Autopilot.
 
+Below is an overview of the Windows Autopilot process, the bit we're talking about is the Hardware Vendor adding the Device IDs; this is where the Vendor can also add Group Tags.
+
+![Image](/img/autopilot-tags-process.png#center)
 ## Group Tags
 A hidden gem with Autopilot service, is the **Group Tag** attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported.
 

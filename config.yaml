@@ -8,6 +8,8 @@ enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
+#pygmentsUseClasses: true
 minify:
   disableXML: true
   minifyOutput: true
@@ -20,13 +22,15 @@ params:
     - Technology
     - Endpoint Manager
     - PaperMod
+    - Microsoft
+    - Intune
   author: Nick Benton
   images:
     - '<link or path of image for opengraph, twitter-cards>'
   DateFormat: 'January 2, 2006'
   defaultTheme: auto
   disableThemeToggle: false
-  ShowReadingTime: false
+  ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
@@ -36,7 +40,7 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: false
   assets:
     disableHLJS: true
@@ -80,7 +84,7 @@ params:
   cover:
     hidden: false
     hiddenInList: false
-    hiddenInSingle: true
+    hiddenInSingle: false
   editPost:
     URL: 'https://github.com/ennnbeee/ennnbeee.github.io/tree/main/content/'
     Text: Suggest Changes

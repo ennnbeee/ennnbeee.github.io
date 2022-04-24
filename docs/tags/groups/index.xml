@@ -17,7 +17,7 @@
       <pubDate>Sat, 23 Apr 2022 10:03:55 +0100</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</guid>
-      <description>So you&amp;rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&amp;rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+      <description>So you&amp;rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&amp;rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
 So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?</description>
     </item>
     

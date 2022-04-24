@@ -8,12 +8,10 @@ ShowToc: true
 cover:
     image: "/img/computer-name.png" # image path/url
     alt: "Rename Hybrid Azure AD Joined devices" # alt text
-    caption: "Rename Hybrid Azure AD Joined devices" # display caption under cover
+    caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 ---
-![Image](/img/computer-name.png#center)
-
 You've probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that's it.
 
 You've also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by [Michael Niehaus](https://oofhours.com/2020/05/19/renaming-autopilot-deployed-hybrid-azure-ad-join-devices/) can help.
@@ -213,7 +211,7 @@ else
 Stop-Transcript
 ```
 
-#  Deployment using Endpoint Manager
+#  Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
 ![Image](/img/computer-name-script.png#left)

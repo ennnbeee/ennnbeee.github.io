@@ -10,10 +10,8 @@ cover:
     alt: "macOS Security" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: false # only hide on current single page
 ---
-![Image](/img/ncsc-macos.png#center)
-
 If you've ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you'll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, *complicated*.
 
 NCSC do provide documented [guides](https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos) for macOS along with a [GitHub repo](https://github.com/ukncsc/Device-Security-Guidance-Configuration-Packs/tree/main/Apple/macOS) containing a script and a list of recommended security settings, but what do these look like in Endpoint Manager? And what if you need to make changes? What about if you have exceptions?

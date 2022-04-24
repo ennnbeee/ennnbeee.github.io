@@ -17,7 +17,7 @@
       <pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate>
       
       <guid>http://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</guid>
-      <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
+      <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
 Configuration The below sections detail the steps to generate a new QR code for enrollment, allowing the use of Mobile Data.</description>
     </item>
     
