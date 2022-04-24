@@ -26,7 +26,7 @@ All the below security settings utilise the **Custom configuration template** fo
 Sounds perfect right? Details on how to create these profiles are below, but for now, let's look at the NCSC settings and their associated mobileconfig files.
 
 ### Automatic Updates
-Now the NCSC guidelines advise that Operating System and Software updates should be applied automatically, with no deferal of when they are available or installed. 
+Now the NCSC guidelines advise that Operating System and Software updates should be applied automatically, with no deferral of when they are available or installed. 
 
 From the NCSC documentation:
 
@@ -37,7 +37,7 @@ From the NCSC documentation:
 
 This one is pretty definite in what it wants.
 
-Sadly, there isn't an option in Endpoint Manager to enforce this setting, but we can acheive this using a custom profile and generated mobileconfig file.
+Sadly, there isn't an option in Endpoint Manager to enforce this setting, but we can achieve this using a custom profile and generated mobileconfig file.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -180,7 +180,7 @@ I wish they would stick with either 'Enable' or 'Disable', the mixture is headac
 </plist>
 ```
 ### Hiding System Preferences
-This one makes more sense, as you don't want users meddling with certain System Preferences such as, iCloud, Sharing, Starup Disk and Security.
+This one makes more sense, as you don't want users meddling with certain System Preferences such as, iCloud, Sharing, Startup Disk and Security.
 
 From the NCSC documentation:
 
@@ -255,7 +255,7 @@ From the NCSC documentation:
 
 See what I mean about it being complicated, thanks NCSC.
 
-Anyways, here's the mobileconfig file setting the time servers to be `time.euro.apple.com` if you're in Europe obviously.
+Anyway, here's the mobileconfig file setting the time servers to be `time.euro.apple.com` if you're in Europe obviously.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -338,4 +338,4 @@ Now that we have the required mobileconfig files, and that you've saved them wit
 6. Repeat for all the mobileconfig files created.
 
 # Summary
-This was a bit of a whirlwind tour of Custom Configuration Profiles for macOS, and there is a huge amount that can be controlled, managed, and dictacted using them. If you have a macOS device, you can use Apple Configuration 2 to create these files, if you don't, then have fun with the [Apple Developer Device Management Guide](https://developer.apple.com/documentation/devicemanagement), like I did...
+This was a bit of a whirlwind tour of Custom Configuration Profiles for macOS, and there is a huge amount that can be controlled, managed, and dictated using them. If you have a macOS device, you can use Apple Configuration 2 to create these files, if you don't, then have fun with the [Apple Developer Device Management Guide](https://developer.apple.com/documentation/devicemanagement), like I did...

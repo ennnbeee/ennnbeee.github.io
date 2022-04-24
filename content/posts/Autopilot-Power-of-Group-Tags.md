@@ -17,7 +17,7 @@ So you're using Windows Autopilot in some shape or form to deploy Windows 10/11 
 So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices? You probably do...what's that you say, you're using static groups to manage these? Let me show you the way forward.
 
 # Configuration
-If you've got this far, you'll probably know that Windows Autopilot is the modern deployment method for Windows 10/11 devices, allowing an organistaion to pre-register corporate-owned devices (using their unique hardware hashes) and link these devices to the Azure AD tenant. Once the device is attached to the tenant, it is considered a trusted device that can be enrolled using Autopilot.
+If you've got this far, you'll probably know that Windows Autopilot is the modern deployment method for Windows 10/11 devices, allowing an organisation to pre-register corporate-owned devices (using their unique hardware hashes) and link these devices to the Azure AD tenant. Once the device is attached to the tenant, it is considered a trusted device that can be enrolled using Autopilot.
 
 Below is an overview of the Windows Autopilot process, the bit we're talking about is the Hardware Vendor adding the Device IDs; this is where the Vendor can also add Group Tags.
 
@@ -75,7 +75,7 @@ And this this one with all Azure AD joined Laptops with Admin users in Payroll i
 (device.devicePhysicalIds -any (_ -match "^\[OrderID\]:AJ-LT.*ADM-PAY.*"))
 ```
 
-You get the picture...the posibilities for both the syntax and the dynamic groups using [Regex](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference) are pretty much endless, and should be tailored to how you manage devices in Endpoint Manager.
+You get the picture...the possibilities for both the syntax and the dynamic groups using [Regex](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference) are pretty much endless, and should be tailored to how you manage devices in Endpoint Manager.
 
 ## Application
 With the creation of these groups, you can now assign, well, pretty much anything in Endpoint Manager, to them. 

@@ -20,7 +20,7 @@ You've also probably been asked whether you can configure the device name to mat
 The below sections detail the steps carried out to modify the script to work without the need for an Azure web application, and can be deployed locally to rename devices.
 
 ## Adding the Variables
-The post linked above details the steps required to ensure that the computer object itself has the ability to initiate the rename, and the below script has been changed to use existing device information, such as serial, instead of a webservice:
+The post linked above details the steps required to ensure that the computer object itself has the ability to initiate the rename, and the below script has been changed to use existing device information, such as serial, instead of a web service:
 
 - On-premises domain variable 
 - Computer name prefix variable

@@ -34,14 +34,14 @@ $HotToTrot ="false"
 #Checks Windows Recovery Environment and enables if disabled
 if($WinREStatus -like '*Windows RE status:         Enabled*'){
     $HotToTrot = "True"
-    Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker $HotToTrot"
+    Write-Verbose -Message "WinRE Partition Enabled and good to enable BitLocker $HotToTrot"
 }
 Else{
     Try{
         $WinREEnable = reagentc.exe /enable
         if($WinREEnable -like '*Operation Successful*'){
             $HotToTrot = "True"
-            Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot"
+            Write-Verbose -Message "WinRE Partition Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot"
         }
         Else{
             $HotToTrot ="false"
@@ -166,14 +166,14 @@ try {
     #Checks Windows Recovery Environment and enables if disabled
     if($WinREStatus -like '*Windows RE status:         Enabled*'){
         $HotToTrot = "True"
-        Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker $HotToTrot"
+        Write-Verbose -Message "WinRE Partition Enabled and good to enable BitLocker $HotToTrot"
     }
     Else{
         Try{
             $WinREEnable = reagentc.exe /enable
             if($WinREEnable -like '*Operation Successful*'){
                 $HotToTrot = "True"
-                Write-Verbose -Message "WinRE Partion Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot"
+                Write-Verbose -Message "WinRE Partition Enabled and good to enable BitLocker, HotToTrot set to $HotToTrot"
             }
             Else{
                 $HotToTrot ="false"

@@ -27,9 +27,8 @@ NCSC do provide documented guides for macOS along with a GitHub repo containin
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-update-rings-odd-even/</guid>
-      <description>You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
-Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.
-Configuration Below is quick and easy way to split production phased deployments of WUfB rings to dynamic device groups, based on the device name format.</description>
+      <description>You might have been asked the question, especially from Config Manager (SCCM) users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
+Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.</description>
     </item>
     
     <item>
@@ -39,7 +38,7 @@ Configuration Below is quick and easy way to split production phased deployments
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</guid>
       <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
-Configuration The below sections detail the steps to generate a new QR code for enrollment, allowing the use of Mobile Data.</description>
+Configuration The below sections detail the steps to generate a new QR code for enrolment, allowing the use of Mobile Data.</description>
     </item>
     
     <item>
