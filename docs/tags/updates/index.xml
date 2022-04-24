@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>updates on MEM v ENNBEE</title>
-    <link>http://memv.ennbee.uk/tags/updates/</link>
+    <link>https://memv.ennbee.uk/tags/updates/</link>
     <description>Recent content in updates on MEM v ENNBEE</description>
     <image>
-      <url>http://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 10 Apr 2022 20:07:23 +0100</lastBuildDate><atom:link href="http://memv.ennbee.uk/tags/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 20:07:23 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/updates/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows Update for Business: Autopilot 50:50 Production Deployment Rings</title>
-      <link>http://memv.ennbee.uk/posts/windows-update-rings-odd-even/</link>
+      <link>https://memv.ennbee.uk/posts/windows-update-rings-odd-even/</link>
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
       
-      <guid>http://memv.ennbee.uk/posts/windows-update-rings-odd-even/</guid>
+      <guid>https://memv.ennbee.uk/posts/windows-update-rings-odd-even/</guid>
       <description>You might have been asked the question, especially from SCCM users, about how you split out production groups for Windows Update for Business (WUfB) Update Rings in an intelligent way using Microsoft Endpoint Manager and Azure AD groups for Autopilot devices.
 Well Azure AD dynamic groups are you friend on this one, and they may not be as powerful as SCCM collection queries, but they get the job done.
 Configuration Below is quick and easy way to split production phased deployments of WUfB rings to dynamic device groups, based on the device name format.</description>
