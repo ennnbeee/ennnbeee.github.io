@@ -19,7 +19,7 @@ NCSC do provide documented [guides](https://www.ncsc.gov.uk/collection/device-se
 # Configuration
 I'm not going to detail all of these NCSC settings in this post, otherwise I'll do myself out of a job, but I can help with the security settings don't exist natively within the [macOS Device Restriction template](https://docs.microsoft.com/en-us/mem/intune/configuration/device-restrictions-macos).
 
-## Custom Configuration
+## Custom Configuration Template
 All the below security settings utilise the **Custom configuration template** for macOS...straight from the horses mouth:
 > *"The custom configuration template allows IT admins to assign settings that aren't built into Intune yet. For macOS devices, you can import a .mobileconfig file that you created using Profile Manager or a different tool."*
 
