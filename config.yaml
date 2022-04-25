@@ -1,6 +1,6 @@
 baseURL: 'https://memv.ennbee.uk'
 languageCode: en-gb
-title: MEM v ENNBEE
+title: MEM v ENNBEE - Battles with Endpoint Manager
 theme: PaperMod
 paginate: 5
 publishDir: docs
@@ -31,13 +31,13 @@ params:
   defaultTheme: auto
   disableThemeToggle: false
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
   showtoc: true

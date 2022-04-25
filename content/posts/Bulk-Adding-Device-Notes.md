@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "Device Management: Bulk Adding Device Notes"
+date: 2022-04-25T09:22:55+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune"]
