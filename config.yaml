@@ -46,7 +46,7 @@ params:
     disableHLJS: true
   label:
     text: MEM v ENNBEE
-    icon: fight.png
+    icon: https://memv.ennbee.uk/fight.png
     iconHeight: 35
   profileMode:
     enabled: false
