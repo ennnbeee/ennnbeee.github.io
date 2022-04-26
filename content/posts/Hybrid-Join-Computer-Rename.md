@@ -51,7 +51,7 @@ if ($newName.Length -ge 15) {
 }
 ```
 ## The Waiting Game
-Using **New-TimeSpan** we can convert the **$waittime** variable into whatever time format we need, and as we're using the shutdown command, we need seconds:
+Using `New-TimeSpan` we can convert the `$waittime` variable into whatever time format we need, and as we're using the shutdown command, we need seconds:
 
 ```powershell  {linenos=false,hl_lines=[1 2 3]}
 $waitinseconds = (New-TimeSpan -Minutes $waittime).Seconds
@@ -61,7 +61,8 @@ Write-Host "Initiating a restart in $waitime minutes"
 ## The Whole Thing
 The full script can be found below, I would **strongly** advise testing this prior to pushing it out via Endpoint Manager.
 
-```powershell {linenos=true,linenostart=1}
+{{< collapse summary="Click to see the full script...">}}
+```powershell
 <#PSScriptInfo
 .VERSION 1.1
 .GUID 3b42d8c8-cda5-4411-a623-90d812a8e29e
@@ -210,6 +211,7 @@ else
 
 Stop-Transcript
 ```
+{{< /collapse>}}
 
 #  Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.

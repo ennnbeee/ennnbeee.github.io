@@ -1,6 +1,6 @@
 ---
-title: "Windows Autopilot: The Power of Group Tags"
-date: 2022-04-28T10:03:55+01:00
+title: "Windows Autopilot: The Hidden Power of Group Tags"
+date: 2022-04-23T10:03:55+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune", "autopilot","windows","groups"]
@@ -56,22 +56,22 @@ Now that we have sorted out the syntax and conventions, it's now time to create 
 
 ### Example Groups
 The below dynamic query would contain all Azure AD Joined Autopilot Laptops:
-```PowerShell
+```PowerShell {linenos = false}
 (device.devicePhysicalIds -any (_ –startsWith "[OrderID]:AJ-LT"))
 ```
 
 This one contains all the Autopilot Desktops in Finance, whether Hybrid Joined or Azure AD Joined:
-```PowerShell
+```PowerShell {linenos = false}
 (device.devicePhysicalIds -any (_ -match "^\[OrderID\]:.*DT.*FIN.*"))
 ```
 
 This this one with all Laptops in France:
-```PowerShell
+```PowerShell {linenos = false}
 (device.devicePhysicalIds -any (_ -match "^\[OrderID\]:.*LT.*FR$"))
 ```
 
 And this this one with all Azure AD joined Laptops with Admin users in Payroll in all countries:
-```PowerShell
+```PowerShell {linenos = false}
 (device.devicePhysicalIds -any (_ -match "^\[OrderID\]:AJ-LT.*ADM-PAY.*"))
 ```
 

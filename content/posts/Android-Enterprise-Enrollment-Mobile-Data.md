@@ -25,13 +25,13 @@ Use QR Reader on an existing phone or using an [online reader](https://zxing.org
 ```
 
 ## Updating the JSON content
-Add in the below code snippet before the **"android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE"** section:
+Add in the below code snippet before the `android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE` section:
 
 ```json {linenos=false}
 "android.app.extra.PROVISIONING_USE_MOBILE_DATA":true,
 ```
 
-So the full JSON string should look like the below, with the **TOKENVALUE** obviously the correct one:
+So the full JSON string should look like the below, with the `TOKENVALUE` obviously the correct one:
 	
 ```json {linenos=false}
 {"android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME":"com.google.android.apps.work.clouddpc/.receivers.CloudDeviceAdminReceiver","android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM":"I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg","android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION":"https://play.google.com/managed/downloadManagingApp?identifier=setup","android.app.extra.PROVISIONING_USE_MOBILE_DATA":true,"android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE":{"com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"TOKENVALUE"}}

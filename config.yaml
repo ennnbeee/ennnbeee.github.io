@@ -6,10 +6,10 @@ paginate: 5
 publishDir: docs
 enableRobotsTXT: true
 buildDrafts: false
-buildFuture: false
+buildFuture: true
 buildExpired: false
 enableEmoji: true
-#pygmentsUseClasses: true
+pygmentsUseClasses: false
 minify:
   disableXML: true
   minifyOutput: true
@@ -118,9 +118,9 @@ outputs:
         - JSON
 markup:
     highlight:
-        # anchorLineNos: true
+        anchorLineNos: false
         codeFences: true
         guessSyntax: true
-        lineNos: true
-        # noClasses: false
+        lineNos: false
+        noClasses: true
         style: monokai

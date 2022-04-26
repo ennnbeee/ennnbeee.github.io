@@ -25,11 +25,11 @@ So how do we go about enabling WinRE if it exists, setup BitLocker encryption, *
 Here's how...
 
 ## Updating the Script
-This [Microsoft script](https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users) has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the **$HotToTrot** variable is used to denote whether to continue or not.
+This [Microsoft script](https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users) has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the `$HotToTrot` variable is used to denote whether to continue or not.
 
 The below is the added section to check and enable, or attempt to enable, WinRE:
 
-```powershell {linenos=false}
+```powershell
 $HotToTrot ="false"
 #Checks Windows Recovery Environment and enables if disabled
 if($WinREStatus -like '*Windows RE status:         Enabled*'){
@@ -56,9 +56,9 @@ Else{
 if($HotToTrot -eq 'True')
 ```
 ## Fixing the Script
-The script has logic in place to escrow the recovery key to Azure AD, using either the **BackupToAAD-BitLockerKeyProtector** commandlet or, if this isn't available, using a call to GraphAPI. The below sections needed to be updated due to where the Azure AD Join information is now stored in the registry:
+The script has logic in place to escrow the recovery key to Azure AD, using either the `BackupToAAD-BitLockerKeyProtector` commandlet or, if this isn't available, using a call to GraphAPI. The below sections needed to be updated due to where the Azure AD Join information is now stored in the registry:
 
-```powershell {linenos=false,hl_lines=[25 26 28 29]}
+```powershell {hl_lines=[25 26 28 29]},
 # Check if we can use BackupToAAD-BitLockerKeyProtector commandlet
 if (Get-Command -Name "BackupToAAD-BitLockerKeyProtector" -ErrorAction "SilentlyContinue") {
     
@@ -112,7 +112,8 @@ else {
 ## Putting it All Together
 The full script can be found below, I would **strongly** advise testing this prior to pushing it out via Endpoint Manager.
 
-```powershell {linenos=true,linenostart=1}
+{{< collapse summary="Click to see the full script...">}}
+```powershell
 <#PSScriptInfo 
     .VERSION 3.1
     .GUID f5187e3f-ed0a-4ce1-b438-d8f421619ca3 
@@ -284,6 +285,7 @@ catch {
 Stop-Transcript
 
 ```
+{{< /collapse >}}
 
 # Script Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
