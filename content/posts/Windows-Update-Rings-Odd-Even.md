@@ -21,7 +21,7 @@ Below is quick and easy way to split production phased deployments of WUfB rings
 
 ## Sample Devices
 Lets use the following device names as examples:
-```txt {linenos=false,hl_lines=0}
+```txt
 AVR-BDZX4M3
 AVR-3231EQSM
 PGT-45E8LN1S
@@ -34,16 +34,14 @@ In these examples, the computers have been named with a prefix **"XXX-"** as par
 We're going to create a Dynamic Device group in Azure AD that looks for Corporate Windows devices that match a pattern, in this case we're looking for odd numbers, and alternative letters. This should cover off all serial number types.
 
 ### "Odd" Devices
-```PowerShell {linenos=false,hl_lines=0}
+```PowerShell
 (device.deviceOSType -eq "Windows") and (device.deviceOSVersion -startsWith "10") and (device.deviceOwnership -eq "Company") and ((device.displayName -match "^*-1") or (device.displayName -match "^*-3") or (device.displayName -match "^*-5") or (device.displayName -match "^*-7") or (device.displayName -match "^*-9") or (device.displayName -match "^*-A") or (device.displayName -match "^*-C") or (device.displayName -match "^*-E") or (device.displayName -match "^*-G") or (device.displayName -match "^*-I") or (device.displayName -match "^*-K") or (device.displayName -match "^*-M") or (device.displayName -match "^*-O") or (device.displayName -match "^*-Q") or (device.displayName -match "^*-S") or (device.displayName -match "^*-U") or (device.displayName -match "^*-W") or (device.displayName -match "^*-Y"))
 ```
 
 This query will match Windows 10 devices, corporate owned, that start with any letter or letters then a **'-'** and devices that follow with an **odd** number or the alternative letters, so from the sample devices:
 
-```txt {linenos=false,hl_lines=[2 4]}
-AVR-BDZX4M3
+```txt
 AVR-3231EQSM
-PGT-45E8LN1S
 IT-CRJ7C39
 ```
 
@@ -54,11 +52,9 @@ IT-CRJ7C39
 
 This query will match Windows 10 devices, corporate owned, that start with any letter or letters then a **'-'** and devices that follow with an **even** number or the alternative letters, so from the sample devices:
 
-```txt {linenos=false,hl_lines=[1 3]}
+```txt
 AVR-BDZX4M3
-AVR-3231EQSM
 PGT-45E8LN1S
-IT-CRJ7C39
 ```
 
 # Wrapping It Up

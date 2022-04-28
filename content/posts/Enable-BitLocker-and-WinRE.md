@@ -15,9 +15,8 @@ cover:
 You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don't have a Windows Recovery Environment (WinRE) configured? Yep? Me too...
 
 What you'll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Endpoint Manager the following, glorious error:
-```txt {linenos=false,hl_lines=[1]}
-The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't configured
-```
+
+`The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't configured`
 
 # Configuration
 So how do we go about enabling WinRE if it exists, setup BitLocker encryption, **and** grab the BitLocker recovery key and ping it to Azure AD?
@@ -58,7 +57,7 @@ if($HotToTrot -eq 'True')
 ## Fixing the Script
 The script has logic in place to escrow the recovery key to Azure AD, using either the `BackupToAAD-BitLockerKeyProtector` commandlet or, if this isn't available, using a call to GraphAPI. The below sections needed to be updated due to where the Azure AD Join information is now stored in the registry:
 
-```powershell {hl_lines=[25 26 28 29]},
+```powershell
 # Check if we can use BackupToAAD-BitLockerKeyProtector commandlet
 if (Get-Command -Name "BackupToAAD-BitLockerKeyProtector" -ErrorAction "SilentlyContinue") {
     

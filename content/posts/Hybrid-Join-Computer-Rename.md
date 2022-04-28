@@ -30,7 +30,7 @@ This means that it can be deployed to existing environments without the need to 
 
 The first section details the parameters that can used and updated.
 
-```powershell {linenos=false,hl_lines=[2 3 4]}
+```powershell
 #Sets the variables for the customer
 $domain = "onprem.local" #local domain
 $ComputerPrefix = "PRE-" #Prefix
@@ -39,7 +39,7 @@ $waittime = "60" #sets the restart wait time in minutes
 ## Getting the Device Name
 This next section pulls back the serial number and ensures that the computer name is less than 15 characters.
 
-```powershell {linenos=false,hl_lines=[2 3 4]}
+```powershell
 #Get serial and removes commas
 $Serial = Get-WmiObject Win32_bios | Select-Object -ExpandProperty SerialNumber
 $newName = $ComputerPrefix + $Serial
@@ -53,7 +53,7 @@ if ($newName.Length -ge 15) {
 ## The Waiting Game
 Using `New-TimeSpan` we can convert the `$waittime` variable into whatever time format we need, and as we're using the shutdown command, we need seconds:
 
-```powershell  {linenos=false,hl_lines=[1 2 3]}
+```powershell
 $waitinseconds = (New-TimeSpan -Minutes $waittime).Seconds
 Write-Host "Initiating a restart in $waitime minutes"
 & shutdown.exe /g /t $waitinseconds /f /c "Restarting the computer in $wait minutes due to a computer name change. Please save your work."
