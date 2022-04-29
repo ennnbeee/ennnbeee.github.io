@@ -52,7 +52,7 @@ With this basic syntax in place, we can build out the Group Tag for devices:
 | HJ-DT-S-ADM-FIN-UK | Hybrid Azure AD Joined Desktop, configured as a Shared Device, with Admin rights, in Finance in the United Kingdom |
 
 ## Dynamic Groups
-Now that we have sorted out the syntax and conventions, it's now time to create some dynamic groups in Azure AD. We're not only going to create specific groups that **equal** the Group Tag, but groups that **match** the Group Tag. This allows assignment of Deployment Profiles, Configuration Profiles and Applications to all device types in a dynamic way, alleviated the need to manually manage groups.
+Now that we have sorted out the syntax and conventions, it's now time to create some dynamic groups in Azure AD. We're not only going to create specific groups that **equal** the Group Tag, but groups that **match** the Group Tag. This allows assignment of Deployment Profiles, Configuration Profiles and Applications to all device types in a dynamic way, alleviating the need to manually manage groups.
 
 ### Example Groups
 The below dynamic query would contain all Azure AD Joined Autopilot Laptops:
