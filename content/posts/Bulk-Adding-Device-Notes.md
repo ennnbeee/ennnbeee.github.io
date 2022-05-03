@@ -1,6 +1,6 @@
 ---
 title: "Endpoint Manager: Bulk Adding Device Notes"
-date: 2022-05-04T09:22:55+01:00
+date: 2022-05-03T17:22:55+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune", "graph"]
