@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 28 Apr 2022 10:03:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 May 2022 17:22:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Endpoint Manager: Bulk Adding Device Notes</title>
+      <link>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</link>
+      <pubDate>Tue, 03 May 2022 17:22:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
+      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.
+So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily stolen borrowed, updated and tweaked to allow for updating notes en masse.</description>
+    </item>
+    
     <item>
       <title>Windows Autopilot: The Hidden Power of Group Tags</title>
       <link>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</link>

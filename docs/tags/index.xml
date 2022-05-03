@@ -10,7 +10,34 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 28 Apr 2022 10:03:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 May 2022 17:22:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>endpoint</title>
+      <link>https://memv.ennbee.uk/tags/endpoint/</link>
+      <pubDate>Tue, 03 May 2022 17:22:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/endpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graph</title>
+      <link>https://memv.ennbee.uk/tags/graph/</link>
+      <pubDate>Tue, 03 May 2022 17:22:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>intune</title>
+      <link>https://memv.ennbee.uk/tags/intune/</link>
+      <pubDate>Tue, 03 May 2022 17:22:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/intune/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>autopilot</title>
       <link>https://memv.ennbee.uk/tags/autopilot/</link>
@@ -21,29 +48,11 @@
     </item>
     
     <item>
-      <title>endpoint</title>
-      <link>https://memv.ennbee.uk/tags/endpoint/</link>
-      <pubDate>Thu, 28 Apr 2022 10:03:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/endpoint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>groups</title>
       <link>https://memv.ennbee.uk/tags/groups/</link>
       <pubDate>Thu, 28 Apr 2022 10:03:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/groups/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>intune</title>
-      <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Thu, 28 Apr 2022 10:03:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/intune/</guid>
       <description></description>
     </item>
     
