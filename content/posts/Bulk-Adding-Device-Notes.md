@@ -1,6 +1,6 @@
 ---
 title: "Endpoint Manager: Bulk Adding Device Notes"
-date: 2022-04-25T09:22:55+01:00
+date: 2022-05-04T09:22:55+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune", "graph"]
@@ -12,17 +12,15 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
-Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100's of devices
+Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100's of devices.
 
-So luckily I stumbled upon a post by [Paul Wetter](https://wetterssource.com/get-device-notes-from-graph) about getting and setting notes on devices using [Graph API](https://docs.microsoft.com/en-us/graph/use-the-api), and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily ~~stolen~~ borrowed.
-
-Here are those additions.
+So luckily I stumbled upon a post by [Paul Wetter](https://wetterssource.com/get-device-notes-from-graph) about getting and setting notes on devices using [Graph API](https://docs.microsoft.com/en-us/graph/use-the-api), and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily ~~stolen~~ borrowed, updated and tweaked to allow for updating notes en masse.
 
 # Configuration
 I've broken down each section of the script for a bit of a walk through, the important thing with all of this is making sure you have the Microsoft Graph Intune PowerShell module installed - `Install-Module -Name Microsoft.Graph.Intune` and you've connected to MSGraph - `Connect-MSGraph`.
 
 ## Getting Device Notes
-The `Get-IntuneDeviceNotes` function leans on the Microsoft.Graph.Intune PowerShell module, to grab the Intune device ID using `Get-IntuneManagedDevice`, then grabs the device properties filter to the Device Notes property. This will help us in getting individual device notes, as we kinda don't want to lose any that have already been added.
+The `Get-IntuneDeviceNotes` function leans on the Microsoft.Graph.Intune PowerShell module, to grab the Intune device ID using `Get-IntuneManagedDevice`, then grabs the device properties filtered to the Device Notes property. This will help us in getting individual device notes, as we kinda don't want to lose any that have already been added.
 
 ```PowerShell
 Function Get-IntuneDeviceNotes{
