@@ -11,6 +11,8 @@ cover:
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
+hero: /img/autopilot-lang.png # image path/url
+excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 ---
 Ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn't crossed my mind, but then again, you encounter new use cases and requirement on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users.
 
