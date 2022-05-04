@@ -110,7 +110,15 @@ menu:
     - identifier: search
       name: search
       url: /search/
-      weight: 20
+      weight: 30
+    # - identifier: about
+    #  name: about
+    #  url: /about/
+    #  weight: 40
+    - identifier: archive
+      name: archive
+      url: /archive/
+      weight: 10
 outputs:
     home:
         - HTML
@@ -121,6 +129,6 @@ markup:
         anchorLineNos: false
         codeFences: true
         guessSyntax: true
-        lineNos: false
+        lineNos: true
         noClasses: true
-        style: monokai
+        style: dracula
