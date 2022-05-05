@@ -2,7 +2,7 @@ baseURL: 'https://memv.ennbee.uk'
 languageCode: en-gb
 title: MEM v ENNBEE - Battles with Endpoint Manager
 theme: hugo-PaperMod
-paginate: 4
+paginate: 5
 publishDir: docs
 enableRobotsTXT: true
 buildDrafts: false
