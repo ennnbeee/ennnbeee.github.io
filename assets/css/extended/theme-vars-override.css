@@ -1,0 +1,28 @@
+:root {
+    --theme: #fffafa;       /*Theme bg */
+    --entry: #f5f5f5;       /*Post and TOC bg */
+    --primary: #000000;     /*Header/Home Text*/
+    --secondary: #000000;   /*Home/Description Text */
+    --tertiary: #bfc1c2;    /*Scroll */
+    --content: #000000;     /*Post text content */
+    --hljs-bg: #;     /*Block code bg, unless using highlight */
+    --code-bg: #f5f5f5;     /*Text Code highlighting, table border, nav buttons */
+    --border: #bfc1c2;      /*Post Border and button hover */
+    --consent-bg: #bfc1c2;
+    --consent-ok: #23553a;
+    --consent-no: #c74d4d;
+}
+.dark {
+    --theme: #1b1b1b;       /*Theme bg */
+    --entry: #28282B;       /*Post and TOC bg */
+    --primary: #ffffff;     /*Header/Home Text*/
+    --secondary: #ffffff;   /*Home/Description Text */
+    --tertiary: #343434;    /*Scroll */
+    --content: #ffffff;     /*Post text content */
+    --hljs-bg: #;     /*Block code bg, unless using highlight */
+    --code-bg: #28282B;     /*Text Code highlighting, table border, nav buttons */
+    --border: #343434;      /*Post Border and button hover */
+    --consent-bg: #343434;
+    --consent-ok: #4bb67b;
+    --consent-no: #c74d4d;
+}

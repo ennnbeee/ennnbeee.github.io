@@ -78,7 +78,7 @@ params:
     - name: github
       url: 'https://github.com/ennnbeee/mem-scripts/'
   analytics:
-    google: {G-7V8RQ3VENZ}
+    google: {}
     bing: {}
     yandex: {}
   cover:
@@ -119,6 +119,10 @@ menu:
       name: archive
       url: /archive/
       weight: 10
+    - identifier: privacy
+      name: privacy
+      url: /privacy/
+      weight: 50
 outputs:
     home:
         - HTML
