@@ -14,3 +14,5 @@ cover:
 ---
 
 (device.deviceOwnership -eq "Corporate") and (device.enrollmentProfileName -in [""]) and (device.osVersion -startsWith "12.1")
+
+https://github.com/MicrosoftDocs/memdocs/blob/main/memdocs/intune/fundamentals/filters-device-properties.md

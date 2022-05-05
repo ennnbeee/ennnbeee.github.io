@@ -78,7 +78,7 @@ params:
     - name: github
       url: 'https://github.com/ennnbeee/mem-scripts/'
   analytics:
-    google: {}
+    google: {G-7V8RQ3VENZ}
     bing: {}
     yandex: {}
   cover:
