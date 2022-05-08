@@ -111,10 +111,10 @@ menu:
       name: search
       url: /search/
       weight: 30
-    # - identifier: about
-    #  name: about
-    #  url: /about/
-    #  weight: 40
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 40
     - identifier: archive
       name: archive
       url: /archive/

@@ -1,9 +1,9 @@
 ---
 title: "Windows Autopilot: Setting Available User Languages"
-date: 2022-04-29T16:22:53+01:00
+date: 2022-05-11T16:22:53+01:00
 draft: true
 description: ""
-tags: ["endpoint", "intune", "autopilot", "windows"]
+tags: ["endpoint", "intune", "autopilot", "windows", "accessibility"]
 ShowToc: true
 cover:
     image: "/img/autopilot-lang.png" # image path/url
@@ -83,11 +83,101 @@ So now we need a way to create a Scheduled Task and have it run the PowerShell s
 
 Luckily, I was using a script to map network drives, generated from [here](https://intunedrivemapping.azurewebsites.net/) to do something similar, time to not reinvent the wheel and just make use of someone else's hard work.
 
+Let's break down the sections of the script. 
+
+### Running as SYSTEM
+First off the detecting whether the script is being run under a `SYSTEM` context; this is important, as when deployed via Endpoint Manager the script **will** be running under this context, at this time we want the script to create the scheduled task, not run the containing PowerShell, in this instance the addition of user languages.
+
+```PowerShell
+function Test-RunningAsSystem {
+	[CmdletBinding()]
+	param()
+	process {
+		return [bool]($(whoami -user) -match "S-1-5-18")
+	}
+}
+```
+### Creating the Task
+Now we have determined whether we're running as `SYSTEM` or not, now time to create the Scheduled Task, and to have the script launched, using a dirty vbs file, to hide the PowerShell windows.
+
+```PowerShell
+if (Test-RunningAsSystem) {
+
+	Start-Transcript -Path $(Join-Path -Path $env:temp -ChildPath "WindowsLanguages-ST.log")
+	Write-Output "Running as System --> creating scheduled task which will run on user logon"
+
+	# Get the current script path and content and save it to the client
+
+	$currentScript = Get-Content -Path $($PSCommandPath)
+
+	$schtaskScript = $currentScript[(0) .. ($currentScript.IndexOf("#!SCHTASKCOMESHERE!#") - 1)]
+
+	$scriptSavePath = $(Join-Path -Path $env:ProgramData -ChildPath "Intune-Helper\Windows-Languages")
+
+	if (-not (Test-Path $scriptSavePath)) {
+
+		New-Item -ItemType Directory -Path $scriptSavePath -Force
+	}
+
+	$scriptSavePathName = "Set-WindowsLanguages.ps1"
+
+	$scriptPath = $(Join-Path -Path $scriptSavePath -ChildPath $scriptSavePathName)
+
+	$schtaskScript | Out-File -FilePath $scriptPath -Force
+
+	# Create dummy vbscript to hide PowerShell Window popping up at logon
+	
+	$vbsDummyScript = "
+	Dim shell,fso,file
+	Set shell=CreateObject(`"WScript.Shell`")
+	Set fso=CreateObject(`"Scripting.FileSystemObject`")
+	strPath=WScript.Arguments.Item(0)
+	If fso.FileExists(strPath) Then
+		set file=fso.GetFile(strPath)
+		strCMD=`"powershell -nologo -executionpolicy ByPass -command `" & Chr(34) & `"&{`" &_
+		file.ShortPath & `"}`" & Chr(34)
+		shell.Run strCMD,0
+	End If
+	"
+
+	$scriptSavePathName = "WindowsLanguages-VBSHelper.vbs"
+
+	$dummyScriptPath = $(Join-Path -Path $scriptSavePath -ChildPath $scriptSavePathName)
+
+	$vbsDummyScript | Out-File -FilePath $dummyScriptPath -Force
+
+	$wscriptPath = Join-Path $env:SystemRoot -ChildPath "System32\wscript.exe"
+
+	# Register a scheduled task to run for all users and execute the script on logon
+
+	$schtaskName = "Intune Helper - Windows Languages"
+	$schtaskDescription = "Applies Windows Languages using a PowerShell script."
+
+	$trigger = New-ScheduledTaskTrigger -AtLogOn
+	#Execute task in users context
+	$principal = New-ScheduledTaskPrincipal -GroupId "S-1-5-32-545" -Id "Author"
+	#call the vbscript helper and pass the PosH script as argument
+	$action = New-ScheduledTaskAction -Execute $wscriptPath -Argument "`"$dummyScriptPath`" `"$scriptPath`""
+	$settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+
+	$null = Register-ScheduledTask -TaskName $schtaskName -Trigger $trigger -Action $action  -Principal $principal -Settings $settings -Description $schtaskDescription -Force
+
+	Start-ScheduledTask -TaskName $schtaskName
+
+	Stop-Transcript
+}
+```
+Now we've got the bones of the script, we can put it all together and deploy it using Endpoint Manager. The full script can be found [here](https://github.com/ennnbeee/mem-scripts/blob/main/MEM/OS_Windows/Set-WindowsLanguages/Set-WindowsLanguages.ps1)
+
 ## Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
-![Image](/img/computer-name-script.png#left)
- 
- Bingo! another battle won.
+![Image](/img/autopilot-lang-deploy.png#left)
+
+Now we have a way to deploy additional languages to Windows 10 devices, and have the Keyboard input available when the user has logged onto the device.
+
+![Image](/img/autopilot-lang-settings.png#left)
 
 # Conclusion
+Pretty straight forward right? Plus, you can amend the languages within the script and redeploy, allowing you to add or remove any required languages for your users without having to deal with Language Packs.
+ 
