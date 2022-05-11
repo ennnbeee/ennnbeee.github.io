@@ -33,7 +33,7 @@ Use QR Reader on an existing phone or using an [online reader](https://zxing.org
 }
 ```
 
-## Updating the JSON content
+## Updating the JSON Content
 Add in the below code snippet before the `android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE` section:
 
 ```json

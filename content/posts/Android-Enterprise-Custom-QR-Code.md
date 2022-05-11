@@ -1,7 +1,7 @@
 ---
 title: "Android Enterprise: Customising the Enrolment QR Code"
-date: 2022-05-04T10:34:53+01:00
-draft: true
+date: 2022-05-11T10:34:53+01:00
+draft: false
 description: ""
 tags: ["endpoint", "intune", "android"]
 ShowToc: true
@@ -12,43 +12,51 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
-With the change to Android 10+ requiring a [wireless network](https://support.google.com/work/android/thread/88876136?hl=en) to go through the Fully Managed device enrolment, you may be asking, "Well what if my users don't have access to a wireless network?", don't fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
-
-[Android Enterprise Enrolment with Mobile Data](https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/)
+We've already looked at allowing [Android Enterprise enrolment using Mobile Data](https://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/) in a previous post, now it's time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
 
 # Configuration
-The below sections detail the steps to generate a new QR code for enrolment, allowing the use of Mobile Data.
+This time, it's adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process...anything to make life easier for users. 
 
-## Get the QR Code Data
-Use QR Reader on an existing phone or using an [online reader](https://zxing.org/w/decode.jspx) to get the full QR code data:
-
-> A String extra indicating the security type of the wifi network in `EXTRA_PROVISIONING_WIFI_SSID` and could be one of `NONE, WPA, WEP or EAP`.
-
-[WIFI_SECURITY_TYPE](https://developer.android.com/reference/android/app/admin/DevicePolicyManager#EXTRA_PROVISIONING_WIFI_SECURITY_TYPE)
+## Extracting the QR Code Data
+First off you'll need the QR code being used for your Android Enterprise enrolment, you can find this within the Android section of Endpoint Manager. Save this file to your computer and use an [online reader](https://products.aspose.app/barcode/recognize/qr) to get the full QR code data:
 
 ```json
 {
-    "android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME":"com.google.android.apps.work.clouddpc/.receivers.CloudDeviceAdminReceiver",
-    "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION":"https://play.google.com/managed/downloadManagingApp?identifier=setup",
-    "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM":"I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg",
-    "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE":{
-       "com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"SELECTED ENROLLMENT TOKEN"
-    },
-    "android.app.extra.PROVISIONING_WIFI_SSID":"WIFI_SSID",
-    "android.app.extra.PROVISIONING_WIFI_PASSWORD":"WIFI_PASSWORD",
-    "android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE":"NONE/WPA/WEP/EAP",
-    "android.app.extra.PROVISIONING_WIFI_HIDDEN":true/false
- }
+   "android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME":"com.google.android.apps.work.clouddpc/.receivers.CloudDeviceAdminReceiver",
+   "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM":"I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg",
+   "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION":"https://play.google.com/managed/downloadManagingApp?identifier=setup",
+   "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE":{
+      "com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"SELECTED ENROLMENT TOKEN"
+   }
+}
 ```
+## WiFi Settings
+We're now going to add in four new lines of data into the existing JSON content from the [Android Developer Reference Guide](https://developer.android.com/reference/android/app/admin/DevicePolicyManager):
 
-## Updating the JSON content
-Add in the below code snippet before the `android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE` section:
+- This is the SSID of the wireless network you want to connect to.
+   `"android.app.extra.PROVISIONING_WIFI_SSID":"WIFI_SSID"`
+- This is the password of the wireless network.
+   `"android.app.extra.PROVISIONING_WIFI_PASSWORD":"WIFI_PASSWORD"`
+- This is the security type of the network, select either `none`, `WPA`, `WEP` or `EAP`
+   `"android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE":"NONE/WPA/WEP/EAP"`
+- And finally whether the network is hidden to broadcast, using either `true` or `false`
+   `"android.app.extra.PROVISIONING_WIFI_HIDDEN":true/false`
+
+> *Now, please be aware that these settings are all available in plain text by anyone scanning the QR code, so I would recommend using a guest wireless network if you are going to allow you end users to use a corporate network to go through the enrolment process.*
+
+## Updating the JSON Data
+Now that we've got the required strings ready to be added, we need to update the existing JSON data. The below settings, need to go after the `android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE"` section:
 
 ```json
-"android.app.extra.PROVISIONING_USE_MOBILE_DATA":true,
+"android.app.extra.PROVISIONING_WIFI_SSID":"corp-guest-wifi",
+"android.app.extra.PROVISIONING_WIFI_PASSWORD":"supersecurepassword",
+"android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE":"WPA",
+"android.app.extra.PROVISIONING_WIFI_HIDDEN": false
 ```
 
-So the full JSON string should look like the below, with the `TOKENVALUE` obviously the correct one:
+## Full JSON Data
+
+So the full JSON string should look like the below, with the `SELECTED ENROLMENT TOKEN` the correct one from the original QR code:
 	
 ```json
 {
@@ -56,14 +64,20 @@ So the full JSON string should look like the below, with the `TOKENVALUE` obviou
     "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION":"https://play.google.com/managed/downloadManagingApp?identifier=setup",
     "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM":"I5YvS0O5hXY46mb01BlRjq4oJJGs2kuUcHvVkAPEXlg",
     "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE":{
-       "com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"SELECTED ENROLLMENT TOKEN"
+       "com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN":"SELECTED ENROLMENT TOKEN"
     },
-    "android.app.extra.PROVISIONING_WIFI_SSID":"",
-    "android.app.extra.PROVISIONING_WIFI_PASSWORD":"",
-    "android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE":"",
-    "android.app.extra.PROVISIONING_WIFI_HIDDEN":"false"
+    "android.app.extra.PROVISIONING_WIFI_SSID":"corp-guest-wifi",
+    "android.app.extra.PROVISIONING_WIFI_PASSWORD":"supersecurepassword",
+    "android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE":"WPA",
+    "android.app.extra.PROVISIONING_WIFI_HIDDEN": false
  }
-```    
+```   
 
-## Create a New QR Code    
-Copy the string and paste it into an [online QR code generator](https://www.webtoolkitonline.com/qrcode-generator.html) to generate the new QR code. This can then be provided to your users, pending testing, to allow them to enrol their new Android device in Endpoint Manager, whether connected to wireless or mobile data.
+## Creating a new QR Code
+For completions sake, we should validate the JSON formatting using an [online tool](https://jsonlint.com/) before we use a [QR Code Generator](https://www.the-qrcode-generator.com/) to create our new QR code:
+
+![Image](/img/android-custom-qr.png#center)
+
+
+# Finishing it Up
+This new QR Code can then be provided to your users, pending testing, to allow them to enrol their new Android device in Endpoint Manager when in range of your corporate guest wireless network.

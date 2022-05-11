@@ -1,7 +1,7 @@
 ---
 title: "Windows Autopilot: Setting Available User Languages"
-date: 2022-05-11T16:22:53+01:00
-draft: true
+date: 2022-05-14T16:22:53+01:00
+draft: false
 description: ""
 tags: ["endpoint", "intune", "autopilot", "windows", "accessibility"]
 ShowToc: true

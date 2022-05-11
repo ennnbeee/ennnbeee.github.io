@@ -10,7 +10,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 21 Mar 2022 18:07:33 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 May 2022 10:34:53 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android Enterprise: Customising the Enrolment QR Code</title>
+      <link>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</link>
+      <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</guid>
+      <description>We&amp;rsquo;ve already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&amp;rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
+Configuration This time, it&amp;rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&amp;hellip;anything to make life easier for users.
+Extracting the QR Code Data First off you&amp;rsquo;ll need the QR code being used for your Android Enterprise enrolment, you can find this within the Android section of Endpoint Manager.</description>
+    </item>
+    
     <item>
       <title>Android Enterprise: Enrolling Using Mobile Data</title>
       <link>https://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</link>

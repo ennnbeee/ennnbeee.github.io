@@ -6,7 +6,7 @@ paginate: 5
 publishDir: docs
 enableRobotsTXT: true
 buildDrafts: false
-buildFuture: true
+buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: false
