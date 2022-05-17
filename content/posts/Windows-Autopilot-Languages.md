@@ -1,6 +1,6 @@
 ---
 title: "Windows Autopilot: Setting Available User Languages"
-date: 2022-05-14T16:22:53+01:00
+date: 2022-05-23T16:22:53+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "autopilot", "windows", "accessibility"]
@@ -11,10 +11,8 @@ cover:
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
-hero: /img/autopilot-lang.png # image path/url
-excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 ---
-Ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn't crossed my mind, but then again, you encounter new use cases and requirement on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users.
+Ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn't crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users.
 
 # Configuration
 There are a number of posts out in the wild on how to fully change the Windows languages on a device by device basis, but in this instance we needed to keep the core language as `en-GB` but allow end users to select their preferred input language, and ensure that this language list can be modified in the event of new languages being required.
@@ -174,10 +172,10 @@ Save the above script and create a new PowerShell script deployment in [Endpoint
 
 ![Image](/img/autopilot-lang-deploy.png#left)
 
-Now we have a way to deploy additional languages to Windows 10 devices, and have the Keyboard input available when the user has logged onto the device.
+Now we have a way to deploy additional languages to Windows 10 devices, and have the Keyboard inputs available when the user has logged onto the device.
 
 ![Image](/img/autopilot-lang-settings.png#left)
 
-# Conclusion
-Pretty straight forward right? Plus, you can amend the languages within the script and redeploy, allowing you to add or remove any required languages for your users without having to deal with Language Packs.
+# Summary
+Pretty straight forward right? Plus, you can amend the languages within the script and re-deploy, allowing you to add or remove any required languages for your users without having to deal with Language Packs.
  

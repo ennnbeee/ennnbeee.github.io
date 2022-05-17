@@ -1,6 +1,6 @@
 ---
-title: "macOS: Kernel Extensions and MacBook M1"
-date: 2022-05-03T13:55:12+01:00
+title: "Cyber Security Essentials"
+date: 2022-05-16T08:28:58+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune"]
@@ -13,5 +13,7 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-https://github.com/MagerValp/MacModelShelf/blob/master/dump.markdown
-https://lifehacker.com/learn-the-secret-language-of-apple-serial-numbers-whil-1846693527
+https://isgovern.com/blog/microsoft-intune-to-help-with-cyber-essentials-compliance/
+
+
+https://iasme.co.uk/cyber-blog/changes-to-cyber-essentials-requirements-april-2021-update/

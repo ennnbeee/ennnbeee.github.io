@@ -1,4 +1,10 @@
 :root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 900px;
+    --header-height: 80px;
+    --footer-height: 60px;
     --theme: #fffafa;       /*Theme bg */
     --entry: #f5f5f5;       /*Post and TOC bg */
     --primary: #000000;     /*Header/Home Text*/
@@ -11,6 +17,7 @@
     --consent-bg: #bfc1c2;
     --consent-ok: #23774a;
     --consent-no: #c74d4d;
+    --hover: #bfc1c2;
 }
 .dark {
     --theme: #1b1b1b;       /*Theme bg */
@@ -25,4 +32,5 @@
     --consent-bg: #343434;
     --consent-ok: #4bb67b;
     --consent-no: #c74d4d;
+    --hover: #343434;
 }

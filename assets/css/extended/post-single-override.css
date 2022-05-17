@@ -1,3 +1,18 @@
 .toc {
     background: var(--entry);
 }
+
+.post-tags a {
+    display: block;
+    padding-inline-start: 14px;
+    padding-inline-end: 14px;
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 34px;
+    background: var(--entry);
+}
+
+.post-tags a:hover,
+.paginav a:hover {
+    background: var(--hover);
+}
