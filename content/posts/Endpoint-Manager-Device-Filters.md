@@ -1,12 +1,12 @@
 ---
-title: "Endpoint Manager: Device Filters vs Dynamic Groups"
+title: "Endpoint Manager: Dynamic Groups vs Device Filters"
 date: 2022-06-05T10:25:47+01:00
-draft: true
+draft: false
 description: ""
-tags: ["endpoint", "intune", "groups"]
+tags: ["endpoint", "intune", "groups", "filters"]
 ShowToc: true
 cover:
-    image: "/img/" # image path/url
+    image: "/img/filtervgroup.png" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -22,7 +22,7 @@ Before we jump into [Device Filters](https://docs.microsoft.com/en-us/mem/intune
 
 Firstly, I would highly recommend the use of these groups, especially for grouping devices, whether this be based on enrolment type, ownership, operating system type or version...and if you've got something or someone managing your user attributes, that you use them for user groups. Although the number of attributes that can be used is higher compared with Device Filters, there is a trade off.
 
-This sadly, is how quickly these groups update; Microsoft probably realised that people like me were using these groups in relation to device management, and also realised that the enumeration of the groups was using their precious Computer infrastructure, for free, shock. So Microsoft reduced how often these groups fully updated, to once every 24 hours.
+This sadly, is how quickly these groups update; Microsoft probably realised that people were using these groups in relation to device management, and also realised that the enumeration of the groups was using precious Compute infrastructure, for free, smh. So Microsoft reduced how often these groups fully updated to once every 24 hours.
 
 Now this is no good when we want to target settings and restrictions, or even just application deployment to these dynamically populated groups, we end up with delaying installations, configuration settings or even connectivity. Not a fan.
 
