@@ -20,6 +20,8 @@ Nick Benton is an **end-user computing specialist** with 15+ years experience in
 ---
 > *"Nick Benton is **bloody fantastic!**  I haven’t **learned so much useful information** since I left school, and that was a very very long time ago.  He has a **really nice manner, and is a brilliant trainer!** Thank you for organising this.  Far more useful than I could possibly put into words."*
 ---
+> *"Just some feedback to share from my side as well, **Nick was absolutely fantastic** on that call we had on Friday! **Really good engagement with every member of the team** that was on the call and handled every question brilliantly! It was clear **he really knew his stuff and I’m sure that level of expertise** will have positioned us well for further works with this customer on this project."* 
+
 
 ### Certifications
 

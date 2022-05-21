@@ -41,7 +41,7 @@ params:
   hidemeta: false
   hideSummary: false
   showtoc: true
-  tocopen: false
+  tocopen: true
   assets:
     disableHLJS: true
   label:
@@ -71,12 +71,14 @@ params:
             -
 
             - **Disclaimer:** The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned. All items provided should be tested prior to implementation and I hold no liability for the outcome of the recommendations provided.
-
+  ShowFullTextinRSS: false
   socialIcons:
     - name: linkedin
       url: 'https://www.linkedin.com/in/njbenton/'
     - name: github
       url: 'https://github.com/ennnbeee/mem-scripts/'
+    - name: rss
+      url: "https://memv.ennbee.uk/index.xml"
   analytics:
     google: {}
     bing: {}

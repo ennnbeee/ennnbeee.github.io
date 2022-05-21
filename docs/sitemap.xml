@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://memv.ennbee.uk/tags/accessibility/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/autopilot/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/endpoint/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/intune/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/posts/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/windows/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/posts/windows-autopilot-languages/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
     <loc>https://memv.ennbee.uk/tags/android/</loc>
     <lastmod>2022-05-11T10:34:53+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</loc>
-    <lastmod>2022-05-11T10:34:53+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/endpoint/</loc>
-    <lastmod>2022-05-11T10:34:53+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/intune/</loc>
-    <lastmod>2022-05-11T10:34:53+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/</loc>
-    <lastmod>2022-05-11T10:34:53+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/posts/</loc>
-    <lastmod>2022-05-11T10:34:53+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/</loc>
     <lastmod>2022-05-11T10:34:53+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</loc>
@@ -29,13 +41,7 @@
     <loc>https://memv.ennbee.uk/tags/graph/</loc>
     <lastmod>2022-05-05T17:22:55+01:00</lastmod>
   </url><url>
-    <loc>https://memv.ennbee.uk/tags/autopilot/</loc>
-    <lastmod>2022-04-28T10:03:55+01:00</lastmod>
-  </url><url>
     <loc>https://memv.ennbee.uk/tags/groups/</loc>
-    <lastmod>2022-04-28T10:03:55+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/windows/</loc>
     <lastmod>2022-04-28T10:03:55+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</loc>

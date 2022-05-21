@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>accessibility on MEM v ENNBEE - Battles with Endpoint Manager</title>
+    <link>https://memv.ennbee.uk/tags/accessibility/</link>
+    <description>Recent content in accessibility on MEM v ENNBEE - Battles with Endpoint Manager</description>
+    <image>
+      <url>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 21 May 2022 14:22:53 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/accessibility/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Autopilot: Configuring Available User Languages</title>
+      <link>https://memv.ennbee.uk/posts/windows-autopilot-languages/</link>
+      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-autopilot-languages/</guid>
+      <description>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&amp;rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.
+Configuration There are a number of posts out in the wild on how to fully change the Windows languages on a device by device basis, but in this instance we needed to keep the core language as en-GB but allow end users to select their preferred input language within Windows, and ensure that this language list can be modified in the event of new languages being required.</description>
+    </item>
+    
+  </channel>
+</rss>
