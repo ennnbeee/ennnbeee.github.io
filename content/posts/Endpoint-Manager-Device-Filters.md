@@ -33,11 +33,21 @@ Now this is no good when we want to target settings and restrictions, or even ju
 # Bring on the Filters
 So where Microsoft take away with one hand, they give with the other, and this is the new world of Device Filters. 
 
-![Image](/img/filtervgroup-eval-engine.png#left)
-
 At a high level, what makes filters so much better for use in Endpoint Manager comes down a couple of things:
 - The filter evaluation is done when the device enrols and/or checks in with the Intune service; this means the speed of evaluation is significantly faster than dynamic groups.
 - Filters are entirely reusable meaning we can now create one filter and use it for many areas within Endpoint Manager.
+
+![Image](/img/filtervgroup-eval-engine.png#left)
+
+Before a policy is applied to a device, filters dynamically evaluate applicability: 
+
+1. You create a filter for any platform based on some device properties.
+
+2. You assign a policy or app to the group. In the assignment, you add the filter in either include or exclude mode. For example, you "include" personal devices, or you "exclude" personal devices from the policy.
+
+3. The filter is evaluated when the device enrols or at any other time a policy evaluates.
+
+4. You see the filter results based on the evaluation. For example, the app or policies applies, or it doesn't apply.
 
 ## Not All Shiny
 
