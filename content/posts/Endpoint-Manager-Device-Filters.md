@@ -63,6 +63,8 @@ For example, Autopilot profiles don't support filters, and nor do Endpoint Secur
 However, a lot of crucial areas do, including Compliance, Configuration and Windows Update for Business profiles.
 ![Image](/img/filtervgroup-assignment-filter.png#left)
 
+*Groups looking good here.*
+
 ### Fewer Properties
 
 Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-device-properties#device-properties) to work with compared with Dynamic Groups, so any advanced filtering like with [Autopilot Group Tags](https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/) will still need to be done using Dynamic Groups.
@@ -73,7 +75,7 @@ Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-u
 **Dynamic Groups**
 ![Image](/img/filtervgroup-group-properties.png#left)
 
-Win for the Groups.
+*Win for the Groups.*
 
 
 ### Fewer Operators
@@ -86,10 +88,10 @@ Device Filters do not support advanced logic with the operators such as 'Match',
 **Dynamic Groups**
 ![Image](/img/filtervgroup-group-operators.png#left)
 
-Another win there, **2-0** to the Groups.
+*Another win there, **3-0** to the Groups.*
 
 # Overcome and Adapt
 
-Even with these limitations (and the 2-0 loss), the benefits still shine through over Dynamic Groups in many areas of Endpoint Manager, and I strongly recommend moving to using the 'All Devices' and 'All Users' in-built assignments in conjunction with Device Filters, just to make your life that little bit easier when managing devices.
+Even with these Device Filter limitations (and the 3-0 loss), the benefits of reusability and speed in which they are processed still shine through over Dynamic Groups in many areas of Endpoint Manager, and I strongly recommend moving to using the 'All Devices' and 'All Users' in-built assignments in conjunction with Device Filters, just to make your life that little bit easier when managing devices.
 
 You've come this far, so why not give creating them a shot and [create a filter](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters) or two?
