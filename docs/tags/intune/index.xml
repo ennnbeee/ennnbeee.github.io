@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 21 May 2022 14:22:53 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/intune/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 22:25:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/intune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Endpoint Manager: Dynamic Groups vs Device Filters</title>
+      <link>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</link>
+      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</guid>
+      <description>Now if you&amp;rsquo;ve ever spoken to me about Endpoint Manager and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.
+What if I told you, that there&amp;rsquo;s something on par with these holy grail groups, and maybe, just maybe, even better.</description>
+    </item>
+    
     <item>
       <title>Windows Autopilot: Configuring Available User Languages</title>
       <link>https://memv.ennbee.uk/posts/windows-autopilot-languages/</link>

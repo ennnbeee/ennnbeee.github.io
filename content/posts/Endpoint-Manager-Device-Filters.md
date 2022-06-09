@@ -1,6 +1,6 @@
 ---
 title: "Endpoint Manager: Dynamic Groups vs Device Filters"
-date: 2022-06-05T10:25:47+01:00
+date: 2022-06-08T22:25:47+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "groups", "filters"]
@@ -16,21 +16,70 @@ Now if you've ever spoken to me about Endpoint Manager and using Dynamic Groups 
 
 What if I told you, that there's something on par with these holy grail groups, and maybe, just *maybe*, even better.
 
-# Limitations of Dynamic Groups
+# My Beloved Dynamic Groups
 
-Before we jump into [Device Filters](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters), let us talk about Dynamic Groups a little...
+Before we jump into [Device Filters](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters), let us talk about [Dynamic Groups](https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-create-rule) a little...
 
-Firstly, I would highly recommend the use of these groups, especially for grouping devices, whether this be based on enrolment type, ownership, operating system type or version...and if you've got something or someone managing your user attributes, that you use them for user groups. Although the number of attributes that can be used is higher compared with Device Filters, there is a trade off.
+Firstly, I would highly recommend the use of these groups, especially for grouping devices, whether this be based on enrolment type, ownership, operating system type or version...and if you've got something or someone managing your user attributes, that you use them for user groups. 
 
-This sadly, is how quickly these groups update; Microsoft probably realised that people were using these groups in relation to device management, and also realised that the enumeration of the groups was using precious Compute infrastructure, for free, smh. So Microsoft reduced how often these groups fully updated to once every 24 hours.
+## The Limitations
+
+This sadly, is how quickly these groups update; Microsoft probably realised that people were using these groups in relation to device management, and also realised that the enumeration of the groups was using precious Compute infrastructure, for free, smh. 
+
+So Microsoft reduced how often these groups fully updated to once every 24 hours.
 
 Now this is no good when we want to target settings and restrictions, or even just application deployment to these dynamically populated groups, we end up with delaying installations, configuration settings or even connectivity. Not a fan.
 
 # Bring on the Filters
-So where Microsoft take away with one hand, they give with the other, and this is the new world of Device Filters. These, although have fewer attributes to query, allow 
+So where Microsoft take away with one hand, they give with the other, and this is the new world of Device Filters. 
+
+![Image](/img/filtervgroup-eval-engine.png#left)
+
+At a high level, what makes filters so much better for use in Endpoint Manager comes down a couple of things:
+- The filter evaluation is done when the device enrols and/or checks in with the Intune service; this means the speed of evaluation is significantly faster than dynamic groups.
+- Filters are entirely reusable meaning we can now create one filter and use it for many areas within Endpoint Manager.
+
+## Not All Shiny
+
+So we've talked about the limitations with Dynamic Groups, but we do need to talk about the limitations with Device Filters...
+
+### Inconsistent Assignments
+
+Not all areas of Endpoint Manager [support the use of Filters](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-supported-workloads) (as of today, though this will hopefully change), meaning that you can't provide a consistent application method of assignments.
+
+For example, Autopilot profiles don't support filters, and nor do Endpoint Security Profiles, nor PowerShell scripts, nor MAM policies. 
+![Image](/img/filtervgroup-assignment-nofilter.png#left)
+
+However, a lot of crucial areas do, including Compliance, Configuration and Windows Update for Business profiles.
+![Image](/img/filtervgroup-assignment-filter.png#left)
+
+### Fewer Properties
+
+Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-device-properties#device-properties) to work with compared with Dynamic Groups, so any advanced filtering will still need to be done using Dynamic Groups.
+
+**Device Filters**
+![Image](/img/filtervgroup-filter-properties.png#left)
+
+**Dynamic Groups**
+![Image](/img/filtervgroup-group-properties.png#left)
+
+Win for the Groups.
 
 
+### Fewer Operators
+ 
+Device Filters do not support advanced logic with the operators such as 'Match', so turbo advanced filtering such as [50:50 Windows Update Deployment Rings](https://memv.ennbee.uk/posts/windows-update-rings-odd-even/) need to be handled with groups still.
 
-(device.deviceOwnership -eq "Corporate") and (device.enrollmentProfileName -in [""]) and (device.osVersion -startsWith "12.1")
+**Device Filters**
+![Image](/img/filtervgroup-filter-operators.png#left)
 
-https://github.com/MicrosoftDocs/memdocs/blob/main/memdocs/intune/fundamentals/filters-device-properties.md
+**Dynamic Groups**
+![Image](/img/filtervgroup-group-operators.png#left)
+
+Another win there, **2-0** to the Groups.
+
+# Overcome and Adapt
+
+Even with these limitations, the benefits still shine through over Dynamic Groups in many areas of Endpoint Manager, and I strongly recommend moving to using the 'All Devices' and 'All Users' in-built assignments in conjunction with Device Filters, just to make your life that little bit easier when managing devices.
+
+You've come this far, so why not give creating them a shot and [create a filter](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters) or two?
