@@ -55,7 +55,7 @@ However, a lot of crucial areas do, including Compliance, Configuration and Wind
 
 ### Fewer Properties
 
-Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-device-properties#device-properties) to work with compared with Dynamic Groups, so any advanced filtering will still need to be done using Dynamic Groups.
+Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-device-properties#device-properties) to work with compared with Dynamic Groups, so any advanced filtering like with [Autopilot Group Tags](https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/) will still need to be done using Dynamic Groups.
 
 **Device Filters**
 ![Image](/img/filtervgroup-filter-properties.png#left)
