@@ -90,6 +90,6 @@ Another win there, **2-0** to the Groups.
 
 # Overcome and Adapt
 
-Even with these limitations, the benefits still shine through over Dynamic Groups in many areas of Endpoint Manager, and I strongly recommend moving to using the 'All Devices' and 'All Users' in-built assignments in conjunction with Device Filters, just to make your life that little bit easier when managing devices.
+Even with these limitations (and the 2-0 loss), the benefits still shine through over Dynamic Groups in many areas of Endpoint Manager, and I strongly recommend moving to using the 'All Devices' and 'All Users' in-built assignments in conjunction with Device Filters, just to make your life that little bit easier when managing devices.
 
 You've come this far, so why not give creating them a shot and [create a filter](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters) or two?
