@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>administration on MEM v ENNBEE - Battles with Endpoint Manager</title>
+    <link>https://memv.ennbee.uk/categories/administration/</link>
+    <description>Recent content in administration on MEM v ENNBEE - Battles with Endpoint Manager</description>
+    <image>
+      <url>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 08 Jun 2022 22:25:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/administration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Endpoint Manager: Dynamic Groups vs Device Filters</title>
+      <link>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</link>
+      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</guid>
+      <description>Now if you&amp;rsquo;ve ever spoken to me about Endpoint Manager and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.
+What if I told you, that there&amp;rsquo;s something on par with these holy grail groups, and maybe, just maybe, even better.</description>
+    </item>
+    
+    <item>
+      <title>Endpoint Manager: Bulk Adding Device Notes</title>
+      <link>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</link>
+      <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
+      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.
+So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily stolen borrowed, updated and tweaked to allow for updating notes en masse.</description>
+    </item>
+    
+  </channel>
+</rss>

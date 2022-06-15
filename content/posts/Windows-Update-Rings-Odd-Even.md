@@ -4,6 +4,7 @@ date: 2022-04-10T20:07:23+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "windows","updates","autopilot","groups"]
+categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
     image: "/img/update-rings.png" # image path/url

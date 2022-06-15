@@ -4,6 +4,7 @@ date: 2022-03-21T18:07:33Z
 draft: false
 description: ""
 tags: ["endpoint", "intune", "android"]
+categories: ["android"]
 ShowToc: true
 cover:
     image: "/img/android-enrol.png" # image path/url

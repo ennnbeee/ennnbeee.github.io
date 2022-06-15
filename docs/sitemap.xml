@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://memv.ennbee.uk/categories/administration/</loc>
+    <lastmod>2022-06-08T22:25:47+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/categories/</loc>
+    <lastmod>2022-06-08T22:25:47+01:00</lastmod>
+  </url><url>
     <loc>https://memv.ennbee.uk/tags/endpoint/</loc>
     <lastmod>2022-06-08T22:25:47+01:00</lastmod>
   </url><url>
@@ -32,13 +38,25 @@
     <loc>https://memv.ennbee.uk/tags/autopilot/</loc>
     <lastmod>2022-05-21T14:22:53+01:00</lastmod>
   </url><url>
+    <loc>https://memv.ennbee.uk/categories/autopilot/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/powershell/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
     <loc>https://memv.ennbee.uk/tags/windows/</loc>
+    <lastmod>2022-05-21T14:22:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/categories/windows/</loc>
     <lastmod>2022-05-21T14:22:53+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/windows-autopilot-languages/</loc>
     <lastmod>2022-05-21T14:22:53+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/tags/android/</loc>
+    <lastmod>2022-05-11T10:34:53+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/categories/android/</loc>
     <lastmod>2022-05-11T10:34:53+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</loc>
@@ -53,6 +71,9 @@
     <loc>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</loc>
     <lastmod>2022-04-28T10:03:55+01:00</lastmod>
   </url><url>
+    <loc>https://memv.ennbee.uk/categories/macos/</loc>
+    <lastmod>2022-04-21T11:55:11+01:00</lastmod>
+  </url><url>
     <loc>https://memv.ennbee.uk/tags/macos/</loc>
     <lastmod>2022-04-21T11:55:11+01:00</lastmod>
   </url><url>
@@ -63,6 +84,9 @@
     <lastmod>2022-04-21T11:55:11+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/tags/security/</loc>
+    <lastmod>2022-04-21T11:55:11+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/categories/security/</loc>
     <lastmod>2022-04-21T11:55:11+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/tags/updates/</loc>
@@ -86,8 +110,6 @@
     <loc>https://memv.ennbee.uk/about/</loc>
   </url><url>
     <loc>https://memv.ennbee.uk/archive/</loc>
-  </url><url>
-    <loc>https://memv.ennbee.uk/categories/</loc>
   </url><url>
     <loc>https://memv.ennbee.uk/privacy/</loc>
   </url><url>

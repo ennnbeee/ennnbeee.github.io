@@ -4,6 +4,7 @@ date: 2022-05-11T10:34:53+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "android"]
+categories: ["android"]
 ShowToc: true
 cover:
     image: "/img/android-custom.png" # image path/url

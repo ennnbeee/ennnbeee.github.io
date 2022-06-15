@@ -4,6 +4,7 @@ date: 2022-05-03T13:55:12+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune"]
+categories: ["macOS"]
 ShowToc: true
 cover:
     image: "/img/" # image path/url

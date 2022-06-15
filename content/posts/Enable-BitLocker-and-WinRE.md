@@ -3,7 +3,8 @@ title: "Microsoft BitLocker: BitLocker and WinRE on failed Intune Devices"
 date: 2022-03-17T16:44:09Z
 draft: false
 description: ""
-tags: ["endpoint", "intune", "windows", "bitlocker"]
+tags: ["endpoint", "intune", "windows", "bitlocker","powershell"]
+categories: ["windows"]
 ShowToc: true
 cover:
     image: "/img/bitlocker.png" # image path/url

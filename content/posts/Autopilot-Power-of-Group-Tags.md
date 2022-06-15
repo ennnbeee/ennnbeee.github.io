@@ -4,6 +4,7 @@ date: 2022-04-28T10:03:55+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "autopilot","windows","groups"]
+categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
     image: "/img/autopilot-tags.png" # image path/url

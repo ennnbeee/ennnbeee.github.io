@@ -3,7 +3,8 @@ title: "Windows Autopilot: Configuring Available User Languages"
 date: 2022-05-21T14:22:53+01:00
 draft: false
 description: ""
-tags: ["endpoint", "intune", "autopilot", "windows", "accessibility"]
+tags: ["endpoint", "intune", "autopilot", "windows", "accessibility","powershell"]
+categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
     image: "/img/autopilot-lang.png" # image path/url

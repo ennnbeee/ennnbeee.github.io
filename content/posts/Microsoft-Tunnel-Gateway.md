@@ -4,6 +4,7 @@ date: 2022-05-11T21:47:49+01:00
 draft: true
 description: ""
 tags: ["endpoint", "intune"]
+categories: ["iOS", "android"]
 ShowToc: true
 cover:
     image: "/img/" # image path/url

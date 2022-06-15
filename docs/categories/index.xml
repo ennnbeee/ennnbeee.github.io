@@ -9,6 +9,61 @@
       <link>https://memv.ennbee.uk/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 08 Jun 2022 22:25:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>administration</title>
+      <link>https://memv.ennbee.uk/categories/administration/</link>
+      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/administration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>autopilot</title>
+      <link>https://memv.ennbee.uk/categories/autopilot/</link>
+      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/autopilot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://memv.ennbee.uk/categories/windows/</link>
+      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://memv.ennbee.uk/categories/android/</link>
+      <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macOS</title>
+      <link>https://memv.ennbee.uk/categories/macos/</link>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://memv.ennbee.uk/categories/security/</link>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/security/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

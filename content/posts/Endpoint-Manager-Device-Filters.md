@@ -4,6 +4,7 @@ date: 2022-06-08T22:25:47+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "groups", "filters"]
+categories: ["administration"]
 ShowToc: true
 cover:
     image: "/img/filtervgroup.png" # image path/url

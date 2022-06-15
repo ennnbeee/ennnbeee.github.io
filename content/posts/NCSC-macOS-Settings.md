@@ -4,6 +4,7 @@ date: 2022-04-21T11:55:11+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune","ncsc","macos","security"]
+categories: ["macOS", "security"]
 ShowToc: true
 cover:
     image: "/img/ncsc-macos.png" # image path/url

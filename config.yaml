@@ -101,30 +101,30 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    #- identifier: categories
-    #  name: categories
-    #  url: /categories/
-    #  weight: 20
-    - identifier: tags
+    - identifier: categories
+      name: categories
+      url: categories/
+      weight: 10
+    - identifier: tag
       name: tags
-      url: /tags/
-      weight: 20
+      url: tags/
+      weight: 30
     - identifier: search
       name: search
-      url: /search/
-      weight: 30
+      url: search/
+      weight: 40
     - identifier: about
       name: about
-      url: /about/
-      weight: 40
+      url: about/
+      weight: 50
     - identifier: archive
       name: archive
-      url: /archive/
-      weight: 10
+      url: archive/
+      weight: 20
     - identifier: privacy
       name: privacy
-      url: /privacy/
-      weight: 50
+      url: privacy/
+      weight: 60
 outputs:
     home:
         - HTML

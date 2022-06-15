@@ -4,6 +4,7 @@ date: {{ .Date }}
 draft: true
 description: ""
 tags: ["endpoint", "intune"]
+categories: [""]
 ShowToc: true
 cover:
     image: "/img/" # image path/url

@@ -3,7 +3,8 @@ title: "Endpoint Manager: Bulk Adding Device Notes"
 date: 2022-05-05T17:22:55+01:00
 draft: false
 description: ""
-tags: ["endpoint", "intune", "graph"]
+tags: ["endpoint", "intune","powershell", "graph"]
+categories: ["administration"]
 ShowToc: true
 cover:
     image: "/img/bulk-notes.png" # image path/url

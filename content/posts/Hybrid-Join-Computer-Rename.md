@@ -3,7 +3,8 @@ title: "Windows Autopilot: Rename Hybrid Joined Devices"
 date: 2022-03-20T21:01:33Z
 draft: false
 description: ""
-tags: ["endpoint", "intune", "windows", "autopilot"]
+tags: ["endpoint", "intune", "windows", "autopilot","powershell"]
+categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
     image: "/img/computer-name.png" # image path/url
