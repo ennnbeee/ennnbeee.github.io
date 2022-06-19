@@ -4,7 +4,7 @@ date: 2022-06-19T15:55:02+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "autopilot","windows","powershell", "graph"]
-categories: ["windows", "autopilot"]
+categories: ["windows", "autopilot", "administration"]
 ShowToc: true
 cover:
     image: "/img/autopilot-bulk-tag.png" # image path/url

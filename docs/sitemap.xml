@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://memv.ennbee.uk/categories/administration/</loc>
+    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
+  </url><url>
     <loc>https://memv.ennbee.uk/tags/autopilot/</loc>
     <lastmod>2022-06-19T15:55:02+01:00</lastmod>
   </url><url>
@@ -40,9 +43,6 @@
   </url><url>
     <loc>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</loc>
     <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/categories/administration/</loc>
-    <lastmod>2022-06-08T22:25:47+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</loc>
     <lastmod>2022-06-08T22:25:47+01:00</lastmod>
