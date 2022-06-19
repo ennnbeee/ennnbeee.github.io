@@ -1,6 +1,6 @@
 ---
 title: "Windows Autopilot: Retrofitting Autopilot Group Tags"
-date: 2022-06-18T20:55:02+01:00
+date: 2022-06-19T15:55:02+01:00
 draft: false
 description: ""
 tags: ["endpoint", "intune", "autopilot","windows","powershell", "graph"]

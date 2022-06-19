@@ -10,13 +10,58 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 08 Jun 2022 22:25:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Jun 2022 15:55:02 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>autopilot</title>
+      <link>https://memv.ennbee.uk/tags/autopilot/</link>
+      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>endpoint</title>
       <link>https://memv.ennbee.uk/tags/endpoint/</link>
-      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
+      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/endpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graph</title>
+      <link>https://memv.ennbee.uk/tags/graph/</link>
+      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>intune</title>
+      <link>https://memv.ennbee.uk/tags/intune/</link>
+      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/intune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>https://memv.ennbee.uk/tags/powershell/</link>
+      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://memv.ennbee.uk/tags/windows/</link>
+      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -39,15 +84,6 @@
     </item>
     
     <item>
-      <title>intune</title>
-      <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/intune/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>accessibility</title>
       <link>https://memv.ennbee.uk/tags/accessibility/</link>
       <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
@@ -57,47 +93,11 @@
     </item>
     
     <item>
-      <title>autopilot</title>
-      <link>https://memv.ennbee.uk/tags/autopilot/</link>
-      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>powershell</title>
-      <link>https://memv.ennbee.uk/tags/powershell/</link>
-      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://memv.ennbee.uk/tags/windows/</link>
-      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>android</title>
       <link>https://memv.ennbee.uk/tags/android/</link>
       <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>graph</title>
-      <link>https://memv.ennbee.uk/tags/graph/</link>
-      <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/graph/</guid>
       <description></description>
     </item>
     
