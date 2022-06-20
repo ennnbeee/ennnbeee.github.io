@@ -440,7 +440,7 @@ So bring it all together into a [mega-script](https://github.com/ennnbeee/mem-sc
 ## Sniper Time
 Running the script with the CSV option:
 ```PowerShell
-.\Set-AutopilotGroupTag.ps1 -Method CSV -DefaultGroupTag 'AJ-LT-U-STD-ALL-UK'
+.\Set-AutopilotGroupTag.ps1 -Method CSV
 ```
 We first have to Authenticate, so enter in your username and the find the Azure AD login window:
 ![Image](/img/autopilot-bulk-tag-login.png#left)
