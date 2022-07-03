@@ -24,16 +24,14 @@ I'll talk about granularity of compliance settings, and the main reason to split
 
 So where you would want to mark a device as non-compliant immediately if there is no Antivirus installed, would you want it to be the same for the supported operating system builds? (Clue here, the answer is no).
 
-This is a very real-world configuration, if you're controlling the deferral and deadline settings Software Updates via Windows Update for Business, it wouldn't be fair and honourable for you to mark a device as non-compliant, and potentially block access to Office365 authenticated services, when the computer itself hasn't even received the update to be installed.
-
-This assumes that you're updating your Operating System Compliance Policies in line with the Microsoft Update Cadence and/or "Patch Tuesday", which you should be doing each month (Lose points if you're not).
+This is a very real-world configuration, if you're controlling the deferral and deadline settings of Software Updates via Windows Update for Business, it wouldn't be fair and honourable for you to mark a device as non-compliant, and potentially block access to Office 365 authenticated services, when the computer itself hasn't even received the update to be installed.
 
 ## Operating System Compliance
 So now we know we should be using separate policies per compliance setting, so let's look at Operating System Versions:
 ![Image](/img/os-compliance-min-max.png#center)
 
 With this setting you can configure the minimum and maximum operating system version, including build version using the below information to denote the format.
-> *The operating system version is defined as major.minor.build.revision.*
+> *The operating system version is defined as **major.minor.build.revision***
 
 Sounds great, **if and only if** all of your Windows 10 devices are all running the same Feature Update.
 
@@ -58,7 +56,7 @@ This is where the 'Valid operating system builds' section in the Compliance Poli
 So there we have it, a fast turnaround for a real-world problem. Now about updating this monthly...
 
 # Updating Compliance
-When you update a Compliance Policy, it will trigger the devices and/or users the policy is assigned to, to re-evaluate the conditions and follow the actions for non-compliance if necessary. So you **should** be updating the Operating System Compliance Policy every month, which, although it isn't a painful task, it is a repeatable one.
+When you update a Compliance Policy, it will trigger the devices the policy is assigned to, to re-evaluate the conditions and follow the actions for non-compliance if necessary. So you **should** be updating the Operating System Compliance Policy every month, which, although it isn't a painful task, it is a repeatable one.
 
 ## Needless Automation to the Rescue
 So what does any good Consultant do in this situation? They write some PowerShell to do the work for them, even if writing the PowerShell script probably took longer than just updating the Compliance Policy.
@@ -589,3 +587,5 @@ It did, and a cheeky description based on when the policy was last updated.
 This one was a bit long winded, but it does give you an insight in not only why granular compliance policies are important, but also how to work around limitations within them. The limitations, especially when your organisation is adhering to security frameworks and *need* specific operating system compliance are something you may have to battle with, or in this instance, just take my example and run.
 
 Luckily other Operating System compliance such as Android or iOS/iPadOS isn't as complicated to handle, but I might do a write up on that at some point...maybe a rainy day.
+
+Also, if you have the inclination, you could expand upon this script and have it run on a schedule, but you'll have to change the authentication method and associated permissions utilising an App Registration in Azure AD...sounds thrilling.
