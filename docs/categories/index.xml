@@ -10,13 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 19 Jun 2022 15:55:02 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 11:20:36 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>administration</title>
       <link>https://memv.ennbee.uk/categories/administration/</link>
-      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
+      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/administration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://memv.ennbee.uk/categories/windows/</link>
+      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/windows/</guid>
       <description></description>
     </item>
     
@@ -26,15 +35,6 @@
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/autopilot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://memv.ennbee.uk/categories/windows/</link>
-      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/windows/</guid>
       <description></description>
     </item>
     

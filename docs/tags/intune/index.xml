@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 19 Jun 2022 15:55:02 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/intune/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 11:20:36 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/intune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Endpoint Manager: Operating System Compliance Updates</title>
+      <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
+      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
+      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Endpoint Manager, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.
+Compliance If you&amp;rsquo;re already using Endpoint Manager compliance policies, good for you, and extra points if you&amp;rsquo;ve integrated these with Conditional Access policies. However, are you using Compliance Policies in the correct way, or even a way that makes sense?</description>
+    </item>
+    
     <item>
       <title>Windows Autopilot: Retrofitting Autopilot Group Tags</title>
       <link>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</link>

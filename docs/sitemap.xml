@@ -3,7 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://memv.ennbee.uk/categories/administration/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/categories/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/endpoint/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/intune/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/posts/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/tags/windows/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
+  </url><url>
+    <loc>https://memv.ennbee.uk/categories/windows/</loc>
+    <lastmod>2022-06-30T11:20:36+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/tags/autopilot/</loc>
     <lastmod>2022-06-19T15:55:02+01:00</lastmod>
@@ -11,34 +38,10 @@
     <loc>https://memv.ennbee.uk/categories/autopilot/</loc>
     <lastmod>2022-06-19T15:55:02+01:00</lastmod>
   </url><url>
-    <loc>https://memv.ennbee.uk/categories/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/endpoint/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
     <loc>https://memv.ennbee.uk/tags/graph/</loc>
     <lastmod>2022-06-19T15:55:02+01:00</lastmod>
   </url><url>
-    <loc>https://memv.ennbee.uk/tags/intune/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/posts/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
     <loc>https://memv.ennbee.uk/tags/powershell/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/tags/windows/</loc>
-    <lastmod>2022-06-19T15:55:02+01:00</lastmod>
-  </url><url>
-    <loc>https://memv.ennbee.uk/categories/windows/</loc>
     <lastmod>2022-06-19T15:55:02+01:00</lastmod>
   </url><url>
     <loc>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</loc>
