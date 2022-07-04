@@ -28,7 +28,7 @@ This is a very real-world configuration, if you're controlling the deferral and 
 
 ## Operating System Compliance
 So now we know we should be using separate policies per compliance setting, so let's look at Operating System Versions:
-![Image](/img/os-compliance-min-max.png#center)
+![Image](/img/os-compliance-min-max.png#left)
 
 With this setting you can configure the minimum and maximum operating system version, including build version using the below information to denote the format.
 > *The operating system version is defined as **major.minor.build.revision***
@@ -51,7 +51,7 @@ This is a problem, as do you really want to mark unpatched operating systems as 
 
 ### The Solution
 This is where the 'Valid operating system builds' section in the Compliance Policy comes into play, allowing you to split out each build in your End-user computing estate and each to have their own range of minimum and maximum:
-![Image](/img/os-compliance-os-builds.png#center)
+![Image](/img/os-compliance-os-builds.png#left)
 
 So there we have it, a fast turnaround for a real-world problem. Now about updating this monthly...
 
