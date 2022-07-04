@@ -1,5 +1,5 @@
 ---
-title: "Microsoft BitLocker: BitLocker and WinRE on failed Intune Devices"
+title: "Enabling BitLocker and WinRE on failed Windows Devices"
 date: 2022-03-17T16:44:09Z
 draft: false
 description: ""

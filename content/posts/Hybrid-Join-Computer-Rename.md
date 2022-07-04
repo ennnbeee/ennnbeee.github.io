@@ -1,5 +1,5 @@
 ---
-title: "Windows Autopilot: Rename Hybrid Joined Devices"
+title: "Rename Windows Autopilot Hybrid Joined Devices"
 date: 2022-03-20T21:01:33Z
 draft: false
 description: ""

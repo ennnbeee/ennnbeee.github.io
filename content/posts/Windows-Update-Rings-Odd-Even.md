@@ -1,5 +1,5 @@
 ---
-title: "Windows Update for Business: Autopilot 50:50 Production Deployment Rings"
+title: "Windows Update for Business 50:50 Production Deployment Rings"
 date: 2022-04-10T20:07:23+01:00
 draft: false
 description: ""

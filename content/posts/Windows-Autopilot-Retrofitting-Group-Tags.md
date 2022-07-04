@@ -1,5 +1,5 @@
 ---
-title: "Windows Autopilot: Retrofitting Autopilot Group Tags"
+title: "Retrofitting Windows Autopilot Group Tags"
 date: 2022-06-19T15:55:02+01:00
 draft: false
 description: ""

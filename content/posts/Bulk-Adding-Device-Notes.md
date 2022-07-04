@@ -1,5 +1,5 @@
 ---
-title: "Endpoint Manager: Bulk Adding Device Notes"
+title: "Bulk Adding Device Notes to Enrolled Devices"
 date: 2022-05-05T17:22:55+01:00
 draft: false
 description: ""

@@ -1,5 +1,5 @@
 ---
-title: "Windows Autopilot: Configuring Available User Languages"
+title: "Configuring Available User Languages on Windows Devices"
 date: 2022-05-21T14:22:53+01:00
 draft: false
 description: ""

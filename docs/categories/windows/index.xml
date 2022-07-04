@@ -12,7 +12,7 @@
     <language>en-gb</language>
     <lastBuildDate>Thu, 30 Jun 2022 11:20:36 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Endpoint Manager: Operating System Compliance Updates</title>
+      <title>Windows Operating System Compliance Updates</title>
       <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
       <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
       
@@ -22,7 +22,7 @@ Compliance If you&amp;rsquo;re already using Endpoint Manager compliance policie
     </item>
     
     <item>
-      <title>Windows Autopilot: Retrofitting Autopilot Group Tags</title>
+      <title>Retrofitting Windows Autopilot Group Tags</title>
       <link>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
       
@@ -32,7 +32,7 @@ As I like to practice what I preach, I&amp;rsquo;d left myself the task of updat
     </item>
     
     <item>
-      <title>Windows Autopilot: Configuring Available User Languages</title>
+      <title>Configuring Available User Languages on Windows Devices</title>
       <link>https://memv.ennbee.uk/posts/windows-autopilot-languages/</link>
       <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
       
@@ -42,7 +42,7 @@ Configuration There are a number of posts out in the wild on how to fully change
     </item>
     
     <item>
-      <title>Windows Autopilot: The Hidden Power of Group Tags</title>
+      <title>The Hidden Power of Windows Autopilot Group Tags</title>
       <link>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</link>
       <pubDate>Thu, 28 Apr 2022 10:03:55 +0100</pubDate>
       
@@ -52,7 +52,7 @@ So what if you have multiple deployment profiles, or different device use cases 
     </item>
     
     <item>
-      <title>Windows Update for Business: Autopilot 50:50 Production Deployment Rings</title>
+      <title>Windows Update for Business 50:50 Production Deployment Rings</title>
       <link>https://memv.ennbee.uk/posts/windows-update-rings-odd-even/</link>
       <pubDate>Sun, 10 Apr 2022 20:07:23 +0100</pubDate>
       
@@ -62,7 +62,7 @@ Well Azure AD dynamic groups are you friend on this one, and they may not be as 
     </item>
     
     <item>
-      <title>Windows Autopilot: Rename Hybrid Joined Devices</title>
+      <title>Rename Windows Autopilot Hybrid Joined Devices</title>
       <link>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</link>
       <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
       
@@ -73,7 +73,7 @@ Configuration The below sections detail the steps carried out to modify the scri
     </item>
     
     <item>
-      <title>Microsoft BitLocker: BitLocker and WinRE on failed Intune Devices</title>
+      <title>Enabling BitLocker and WinRE on failed Windows Devices</title>
       <link>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</link>
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       

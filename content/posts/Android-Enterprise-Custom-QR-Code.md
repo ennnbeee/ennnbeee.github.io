@@ -1,5 +1,5 @@
 ---
-title: "Android Enterprise: Customising the Enrolment QR Code"
+title: "Customising the Android Enterprise Enrolment QR Code"
 date: 2022-05-11T10:34:53+01:00
 draft: false
 description: ""

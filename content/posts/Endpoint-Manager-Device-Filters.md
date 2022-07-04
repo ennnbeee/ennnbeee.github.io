@@ -1,5 +1,5 @@
 ---
-title: "Endpoint Manager: Dynamic Groups vs Device Filters"
+title: "Dynamic Groups vs Device Filters"
 date: 2022-06-08T22:25:47+01:00
 draft: false
 description: ""

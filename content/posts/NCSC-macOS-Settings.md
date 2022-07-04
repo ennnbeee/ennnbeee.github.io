@@ -1,5 +1,5 @@
 ---
-title: "National Cyber Security Centre: MacOS Security Settings"
+title: "National Cyber Security Centre Security Settings for macOS"
 date: 2022-04-21T11:55:11+01:00
 draft: false
 description: ""

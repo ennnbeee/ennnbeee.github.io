@@ -1,5 +1,5 @@
 ---
-title: "Endpoint Manager: Operating System Compliance Updates"
+title: "Windows Operating System Compliance Updates"
 date: 2022-06-30T11:20:36+01:00
 draft: false
 description: ""

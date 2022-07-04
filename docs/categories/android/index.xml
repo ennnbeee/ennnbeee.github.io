@@ -12,7 +12,7 @@
     <language>en-gb</language>
     <lastBuildDate>Wed, 11 May 2022 10:34:53 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Android Enterprise: Customising the Enrolment QR Code</title>
+      <title>Customising the Android Enterprise Enrolment QR Code</title>
       <link>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</link>
       <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
       
@@ -23,7 +23,7 @@ Extracting the QR Code Data First off you&amp;rsquo;ll need the QR code being us
     </item>
     
     <item>
-      <title>Android Enterprise: Enrolling Using Mobile Data</title>
+      <title>Enrolling Android Enterprise devices Using Mobile Data</title>
       <link>https://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</link>
       <pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate>
       

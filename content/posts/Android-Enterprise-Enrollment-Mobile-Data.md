@@ -1,5 +1,5 @@
 ---
-title: "Android Enterprise: Enrolling Using Mobile Data"
+title: "Enrolling Android Enterprise devices Using Mobile Data"
 date: 2022-03-21T18:07:33Z
 draft: false
 description: ""

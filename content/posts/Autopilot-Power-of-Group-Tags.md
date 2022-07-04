@@ -1,5 +1,5 @@
 ---
-title: "Windows Autopilot: The Hidden Power of Group Tags"
+title: "The Hidden Power of Windows Autopilot Group Tags"
 date: 2022-04-28T10:03:55+01:00
 draft: false
 description: ""
