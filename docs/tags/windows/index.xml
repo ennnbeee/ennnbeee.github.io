@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 30 Jun 2022 11:20:36 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 20:34:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring Dell BIOS Settings with Endpoint Manager</title>
+      <link>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</link>
+      <pubDate>Sun, 10 Jul 2022 20:34:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</guid>
+      <description>What if you&amp;rsquo;ve only got Endpoint Manager to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&amp;rsquo;re in luck, I&amp;rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.</description>
+    </item>
+    
     <item>
       <title>Windows Operating System Compliance Updates</title>
       <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
