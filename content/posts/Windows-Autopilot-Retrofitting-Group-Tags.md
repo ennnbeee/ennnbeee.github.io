@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "autopilot","windows","powershell", "graph"]
 categories: ["windows", "autopilot", "administration"]
 ShowToc: true
 cover:
-    image: "/img/autopilot-bulk-tag.png" # image path/url
+    image: "/img/autopilot-bulk-tag.webp" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -26,7 +26,7 @@ Now I needed an easy way to tag specific devices with Group Tags, and then anyth
 # Ready, Aim
 For the first, we'll start with exporting the Autopilot Devices from the tenant, as this CSV file will contain the Serial Numbers we need further down the line.
 
-![Image](/img/autopilot-bulk-tag-export.png#left)
+![Image](/img/autopilot-bulk-tag-export.webp#left)
 
 Now with the CSV file, we really only need two headings, Serial Number and Group Tag. So open up your favourite editor and bin off every other heading. 
 
@@ -443,7 +443,7 @@ Running the script with the CSV option:
 .\Set-AutopilotGroupTag.ps1 -Method CSV
 ```
 We first have to Authenticate, so enter in your username and the find the Azure AD login window:
-![Image](/img/autopilot-bulk-tag-login.png#left)
+![Image](/img/autopilot-bulk-tag-login.webp#left)
 
 Now we need to provide the path to the CSV file:
 ```txt
@@ -452,10 +452,10 @@ Please provide the path to the CSV file containing a list of device serial numbe
 
 Now the script will run and update all the devices in the CSV file with their corresponding Group Tags:
 
-![Image](/img/autopilot-bulk-tag-csv.png#left)
+![Image](/img/autopilot-bulk-tag-csv.webp#left)
 
 And if we check in Endpoint Manager:
-![Image](/img/autopilot-bulk-tag-csv-tagged.png#left)
+![Image](/img/autopilot-bulk-tag-csv-tagged.webp#left)
 
 Which amazingly, the Group Tag matches the data in the CSV file we created earlier. Too early to call this a win outright, but we're on the way.
 
@@ -469,10 +469,10 @@ Similar setup to the CSV run, but this time the arguments look like the below:
 ```
 We're already authenticated, so we can skip that bit, and we're not using the CSV option so it will get straight to the good stuff:
 
-![Image](/img/autopilot-bulk-tag-online.png#left)
+![Image](/img/autopilot-bulk-tag-online.webp#left)
 
 And if we check in Endpoint Manager:
-![Image](/img/autopilot-bulk-tag-online-tagged.png#left)
+![Image](/img/autopilot-bulk-tag-online-tagged.webp#left)
 
 This Group Tag matches the `DefaultGroupTag` parameter we set when running the script. I'd call this one a win.
 

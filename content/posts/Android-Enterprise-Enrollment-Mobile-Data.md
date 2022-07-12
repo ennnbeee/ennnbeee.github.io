@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "android"]
 categories: ["android"]
 ShowToc: true
 cover:
-    image: "/img/android-enrol.png" # image path/url
+    image: "/img/android-enrol.webp" # image path/url
     alt: "Enrolling Android Enterprise devices on mobile data" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true

@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "autopilot", "windows", "accessibility","powershell
 categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
-    image: "/img/autopilot-lang.png" # image path/url
+    image: "/img/autopilot-lang.webp" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -171,11 +171,11 @@ Now we've got the bones of the script, we can put it all together and deploy it 
 ## Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
-![Image](/img/autopilot-lang-deploy.png#left)
+![Image](/img/autopilot-lang-deploy.webp#left)
 
 Now we have a way to deploy additional languages to Windows 10 devices, and have the Keyboard inputs available when the user has logged onto the device. The user just needs to select the language from the notification area.
 
-![Image](/img/autopilot-lang-settings.png#left)
+![Image](/img/autopilot-lang-settings.webp#left)
 
 # Summary
 Pretty straight forward right? Setting the language list, letting 'Windows Features on Demand' just download the required files, plus, you can amend the languages within the script and re-deploy, allowing you to add or remove any required languages for your users without having to deal with Language Packs.

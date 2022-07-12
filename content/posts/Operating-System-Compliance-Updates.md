@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "windows"]
 categories: ["administration", "windows"]
 ShowToc: true
 cover:
-    image: "/img/os-compliance.png" # image path/url
+    image: "/img/os-compliance.webp" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -28,7 +28,7 @@ This is a very real-world configuration, if you're controlling the deferral and 
 
 ## Operating System Compliance
 So now we know we should be using separate policies per compliance setting, so let's look at Operating System Versions:
-![Image](/img/os-compliance-min-max.png#left)
+![Image](/img/os-compliance-min-max.webp#left)
 
 With this setting you can configure the minimum and maximum operating system version, including build version using the below information to denote the format.
 > *The operating system version is defined as **major.minor.build.revision***
@@ -51,7 +51,7 @@ This is a problem, as do you really want to mark unpatched operating systems as 
 
 ### The Solution
 This is where the 'Valid operating system builds' section in the Compliance Policy comes into play, allowing you to split out each build in your End-user computing estate and each to have their own range of minimum and maximum:
-![Image](/img/os-compliance-os-builds.png#left)
+![Image](/img/os-compliance-os-builds.webp#left)
 
 So there we have it, a fast turnaround for a real-world problem. Now about updating this monthly...
 
@@ -574,13 +574,13 @@ Time to finally run this script and add some level of automation to this laborio
 ```
 
 Running the script will prompt you to provide a username and connect to Graph, please do this and login:
-![Image](/img/autopilot-bulk-tag-login.png#left)
+![Image](/img/autopilot-bulk-tag-login.webp#left)
 
 Then it does everything for you, and tells you about it:
-![Image](/img/os-compliance-script.png#left)
+![Image](/img/os-compliance-script.webp#left)
 
 Best we check the Compliance Policy to make sure it's done what I asked it to:
-![Image](/img/os-compliance-updated.png#left)
+![Image](/img/os-compliance-updated.webp#left)
 It did, and a cheeky description based on when the policy was last updated.
 
 # And Finally

@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "windows", "powershell"]
 categories: ["windows", "administration"]
 ShowToc: true
 cover:
-    image: "/img/dell-bios.png" # image path/url
+    image: "/img/dell-bios.webp" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -38,7 +38,7 @@ Save-Module -Name DellBIOSProvider -Path C:\Temp\Set-DellBIOS\
 
 The version at the time of writing of this module is 2.6.0, which has a reliance on some of the .dll files installed from the Visual C++ Redistributables: 
 
-![Image](/img/dell-bios-prereq.png#left)
+![Image](/img/dell-bios-prereq.webp#left)
 
 You can just copy the below required files from a machine with the Visual C++ Redistributables already installed and paste them in the `DellBiosProvider\2.6.0` folder we created saving the PowerShell module, this sounds better than packaging and pushing out more software:
 
@@ -197,7 +197,7 @@ From the path of where the tool exists, run the tool specifying the:
 - Output folder
 - Whether you want to create a catalog (you don't)
 
-![Image](/img/dell-bios-appwrap.png#left)
+![Image](/img/dell-bios-appwrap.webp#left)
 
 Now that you've got the Application, time to upload it to Endpoint Manager and configure some settings.
 
@@ -212,12 +212,12 @@ Now I know what you're saying, "Eurrggh password is in plain text, bad, not secu
 
 *Also, I didn't write an uninstall script, so just use the same command line for this, unless you fancy writing something yourself.*
 
-![Image](/img/dell-bios-appinstall.png#left)
+![Image](/img/dell-bios-appinstall.webp#left)
 
 ### App Requirements
 Make sure you select the correct architecture for your deployment, this time it's x64 as well as the Minimum Operating System based on the Dell BIOS Provider requirements or your own device estate settings.
 
-![Image](/img/dell-bios-appreqs.png#left)
+![Image](/img/dell-bios-appreqs.webp#left)
 
 ### App Detection Methods
 As we've taken all that time to create something to use for a detection method in the PowerShell script itself, we should probably reference it here. 
@@ -231,7 +231,7 @@ Now these detections are going to be based on what Settings and Values you're co
 - Operator: `Equals`
 - Value: `Uefi`
 
-![Image](/img/dell-bios-appdetect-boot.png#left)
+![Image](/img/dell-bios-appdetect-boot.webp#left)
 
 **SecureBoot**
 - Key path: `HKLM\SOFTWARE\IntuneHelper\DellBIOSProvider`
@@ -240,7 +240,7 @@ Now these detections are going to be based on what Settings and Values you're co
 - Operator: `Equals`
 - Value: `Enabled`
 
-![Image](/img/dell-bios-appdetect-secure.png#left)
+![Image](/img/dell-bios-appdetect-secure.webp#left)
 
 Complete the wizard as no other settings are required and deploy this App to a **test** device group.
 
@@ -249,13 +249,13 @@ We were kind enough to add some basic logging using the Transcript function of P
 
 ### Log File
 
-![Image](/img/dell-bios-log.png#left)
+![Image](/img/dell-bios-log.webp#left)
 It did.
 
 ### Registry Items
 Let's check the registry and make sure it's added in the correct values:
 
-![Image](/img/dell-bios-reg.png#left)
+![Image](/img/dell-bios-reg.webp#left)
 Yup.
 
 ### PowerShell

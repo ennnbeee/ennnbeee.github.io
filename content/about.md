@@ -4,7 +4,7 @@ hidemeta : true
 comments : false #optional
 showtoc: false
 ---
-![Nick Benton](/img/ennnbeee.png#center)
+![Nick Benton](/img/ennnbeee.webp#center)
 
 Nick Benton is an **end-user computing specialist** with 15+ years experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility. Nick is the **Senior Technical Consultant** in Endpoint Management at [Phoenix Software Ltd](https://www.phoenixs.co.uk/).
 
@@ -35,7 +35,7 @@ Nick Benton is an **end-user computing specialist** with 15+ years experience in
 
 | Badge | Title | Valid Date |
 | --- | --- | --- |
-| ![M365 Enterprise Administrator Expert](/img/microsoft365-enterprise-adminstrator-expert-600x600.png) | [Microsoft 365 Certified: Enterprise Administrator Expert](https://www.credly.com/badges/f39a8fee-7269-4a31-832e-a9a6a8ec7b45) | February 15, 2023 |
-| ![M365 Security Administrator Associate](/img/microsoft365-security-administrator-associate-600x600.png) | [Microsoft 365 Certified: Security Administrator Associate](https://www.credly.com/badges/1ddf4b7f-ce96-4e39-bc5e-c1d97edb506a) | February 15, 2023 |
-| ![M365 Modern Desktop Administrator Associate](/img/microsoft365-modern-desktop-associate-600x600.png) | [Microsoft 365 Certified: Modern Desktop Administrator Associate](https://www.credly.com/badges/33991b41-1fcf-4465-971e-20bba24e4ced) | June 24, 2023 |
-| ![Azure Fundamentals](/img/microsoft-azure-fundamentals.png) | [Microsoft Certified: Azure Fundamentals](https://www.credly.com/badges/6b9e7366-5e97-4311-818a-ab65fab821c9) | Perpetual |
+| ![M365 Enterprise Administrator Expert](/img/microsoft365-enterprise-adminstrator-expert-600x600.webp) | [Microsoft 365 Certified: Enterprise Administrator Expert](https://www.credly.com/badges/f39a8fee-7269-4a31-832e-a9a6a8ec7b45) | February 15, 2023 |
+| ![M365 Security Administrator Associate](/img/microsoft365-security-administrator-associate-600x600.webp) | [Microsoft 365 Certified: Security Administrator Associate](https://www.credly.com/badges/1ddf4b7f-ce96-4e39-bc5e-c1d97edb506a) | February 15, 2023 |
+| ![M365 Modern Desktop Administrator Associate](/img/microsoft365-modern-desktop-associate-600x600.webp) | [Microsoft 365 Certified: Modern Desktop Administrator Associate](https://www.credly.com/badges/33991b41-1fcf-4465-971e-20bba24e4ced) | June 24, 2023 |
+| ![Azure Fundamentals](/img/microsoft-azure-fundamentals.webp) | [Microsoft Certified: Azure Fundamentals](https://www.credly.com/badges/6b9e7366-5e97-4311-818a-ab65fab821c9) | Perpetual |

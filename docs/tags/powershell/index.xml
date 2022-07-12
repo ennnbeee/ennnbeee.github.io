@@ -18,7 +18,7 @@
       
       <guid>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</guid>
       <description>What if you&amp;rsquo;ve only got Endpoint Manager to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
-Well you&amp;rsquo;re in luck, I&amp;rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.</description>
+Well you&amp;rsquo;re in luck, I&amp;rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@ Well you&amp;rsquo;re in luck, I&amp;rsquo;ve thrown together something that can
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
-      <description>Now I don&amp;rsquo;t think I promised that I&amp;rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
-As I like to practice what I preach, I&amp;rsquo;d left myself the task of updating 1000&amp;rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.</description>
+      <description>Now I don&amp;rsquo;t think I promised that I&amp;rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&amp;rsquo;d left myself the task of updating 1000&amp;rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax. Thanks past me.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ Configuration There are a number of posts out in the wild on how to fully change
       
       <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
       <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.
-So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily stolen borrowed, updated and tweaked to allow for updating notes en masse.</description>
+So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily stolen borrowed, updated and tweaked to allow for updating notes en masse.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ So luckily I stumbled upon a post by Paul Wetter about getting and setting note
       
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
       <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.
-You&amp;rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
+You&amp;rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
 Configuration The below sections detail the steps carried out to modify the script to work without the need for an Azure web application, and can be deployed locally to rename devices.</description>
     </item>
     

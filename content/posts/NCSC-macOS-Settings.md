@@ -7,7 +7,7 @@ tags: ["endpoint", "intune","ncsc","macos","security"]
 categories: ["macOS", "security"]
 ShowToc: true
 cover:
-    image: "/img/ncsc-macos.png" # image path/url
+    image: "/img/ncsc-macos.webp" # image path/url
     alt: "macOS Security" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -328,13 +328,13 @@ Anyway, here's the mobileconfig file setting the time servers to be `time.euro.a
 Now that we have the required mobileconfig files, and that you've saved them with that file extension (it's basically glorified XML to be honest), we can look at creating these Custom Configuration Profiles:
 
 1. Browse to the [macOS Configuration page](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesMacOsMenu/configProfiles) and select 'Create profile'
-![Image](/img/ncsc-macos-config.png#left)
+![Image](/img/ncsc-macos-config.webp#left)
 2. Under 'Profile type' select 'Templates', then select 'Custom' and then select 'Create'
-![Image](/img/ncsc-macos-custom.png#left)
+![Image](/img/ncsc-macos-custom.webp#left)
 3. Give the Custom profile a suitable name and select 'Next'
-![Image](/img/ncsc-macos-name.png#left)
+![Image](/img/ncsc-macos-name.webp#left)
 4. Give the Custom configuration profile name a suitable name, ensure the Deployment channel is 'Device channel' and upload the mobileconfig file.
-![Image](/img/ncsc-macos-profile.png#left)
+![Image](/img/ncsc-macos-profile.webp#left)
 5. Select 'Next' and assign the profile to the required Device Group.
 6. Repeat for all the mobileconfig files created.
 

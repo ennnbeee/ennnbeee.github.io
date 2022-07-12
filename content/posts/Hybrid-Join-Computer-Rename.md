@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "windows", "autopilot","powershell"]
 categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
-    image: "/img/computer-name.png" # image path/url
+    image: "/img/computer-name.webp" # image path/url
     alt: "Rename Hybrid Azure AD Joined devices" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -65,6 +65,6 @@ The full script can be found [here](https://github.com/ennnbeee/mem-scripts/blob
 #  Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
-![Image](/img/computer-name-script.png#left)
+![Image](/img/computer-name-script.webp#left)
  
  Bingo! another battle won.

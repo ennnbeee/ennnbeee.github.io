@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "android"]
 categories: ["android"]
 ShowToc: true
 cover:
-    image: "/img/android-custom.png" # image path/url
+    image: "/img/android-custom.webp" # image path/url
     alt: "Customising Android Enterprise enrolment QR codes" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -77,7 +77,7 @@ So the full JSON string should look like the below, with the `SELECTED ENROLMENT
 ## Creating a new QR Code
 For completions sake, we should validate the JSON formatting using an [online tool](https://jsonlint.com/) before we use a [QR Code Generator](https://www.the-qrcode-generator.com/) to create our new QR code:
 
-![Image](/img/android-custom-qr.png#center)
+![Image](/img/android-custom-qr.webp#center)
 
 
 # Finishing it Up

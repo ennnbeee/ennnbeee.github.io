@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "autopilot","windows","groups"]
 categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
-    image: "/img/autopilot-tags.png" # image path/url
+    image: "/img/autopilot-tags.webp" # image path/url
     alt: "Autopilot Group Tags" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -22,7 +22,7 @@ If you've got this far, you'll probably know that Windows Autopilot is the moder
 
 Below is an overview of the Windows Autopilot process, the bit we're talking about is the Hardware Vendor adding the Device IDs; this is where the Vendor can also add Group Tags.
 
-![Image](/img/autopilot-tags-process.png#center)
+![Image](/img/autopilot-tags-process.webp#center)
 ## Group Tags
 A hidden gem with Autopilot service, is the **Group Tag** attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported.
 

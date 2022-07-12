@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "groups", "filters"]
 categories: ["administration"]
 ShowToc: true
 cover:
-    image: "/img/filtervgroup.png" # image path/url
+    image: "/img/filtervgroup.webp" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -38,7 +38,7 @@ At a high level, what makes filters so much better for use in Endpoint Manager c
 - The filter evaluation is done when the device enrols and/or checks in with the Intune service; this means the speed of evaluation is significantly faster than dynamic groups.
 - Filters are entirely reusable meaning we can now create one filter and use it for many areas within Endpoint Manager.
 
-![Image](/img/filtervgroup-eval-engine.png#left)
+![Image](/img/filtervgroup-eval-engine.webp#left)
 
 Before a policy is applied to a device, filters dynamically evaluate applicability: 
 
@@ -59,10 +59,10 @@ So we've talked about the limitations with Dynamic Groups, but we do need to tal
 Not all areas of Endpoint Manager [support the use of Filters](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-supported-workloads) (as of today, though this will hopefully change), meaning that you can't provide a consistent application method of assignments.
 
 For example, Autopilot profiles don't support filters, and nor do Endpoint Security Profiles, nor PowerShell scripts, nor MAM policies. 
-![Image](/img/filtervgroup-assignment-nofilter.png#left)
+![Image](/img/filtervgroup-assignment-nofilter.webp#left)
 
 However, a lot of crucial areas do, including Compliance, Configuration and Windows Update for Business profiles.
-![Image](/img/filtervgroup-assignment-filter.png#left)
+![Image](/img/filtervgroup-assignment-filter.webp#left)
 
 *Groups looking good here.*
 
@@ -71,10 +71,10 @@ However, a lot of crucial areas do, including Compliance, Configuration and Wind
 Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-us/mem/intune/fundamentals/filters-device-properties#device-properties) to work with compared with Dynamic Groups, so any advanced filtering like with [Autopilot Group Tags](https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/) will still need to be done using Dynamic Groups.
 
 **Device Filters**
-![Image](/img/filtervgroup-filter-properties.png#left)
+![Image](/img/filtervgroup-filter-properties.webp#left)
 
 **Dynamic Groups**
-![Image](/img/filtervgroup-group-properties.png#left)
+![Image](/img/filtervgroup-group-properties.webp#left)
 
 *Win for the Groups.*
 
@@ -84,10 +84,10 @@ Device Filters have fewer [attribute properties](https://docs.microsoft.com/en-u
 Device Filters do not support advanced logic with the operators such as 'Match', so turbo advanced filtering such as [50:50 Windows Update Deployment Rings](https://memv.ennbee.uk/posts/windows-update-rings-odd-even/) need to be handled with groups still.
 
 **Device Filters**
-![Image](/img/filtervgroup-filter-operators.png#left)
+![Image](/img/filtervgroup-filter-operators.webp#left)
 
 **Dynamic Groups**
-![Image](/img/filtervgroup-group-operators.png#left)
+![Image](/img/filtervgroup-group-operators.webp#left)
 
 *Another win there, **3-0** to the Groups.*
 

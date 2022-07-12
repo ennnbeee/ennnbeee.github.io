@@ -7,7 +7,7 @@ tags: ["endpoint", "intune","powershell", "graph"]
 categories: ["administration"]
 ShowToc: true
 cover:
-    image: "/img/bulk-notes.png" # image path/url
+    image: "/img/bulk-notes.webp" # image path/url
     alt: "Intune Device Notes" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -171,10 +171,10 @@ The full script can be found [here](https://github.com/ennnbeee/mem-scripts/blob
 
 ## The Results
 But once run successfully, you'll have devices with updated notes, so from this...
-![Image](/img/bulk-notes-before.png#left)
+![Image](/img/bulk-notes-before.webp#left)
 
 To this...
-![Image](/img/bulk-notes-after.png#left)
+![Image](/img/bulk-notes-after.webp#left)
 
 # Conclusion
 ***Yes*** this was a hacky script, ***yes*** I spent more time writing this post about it than putting the script together...but the script does the job and saves having to manually update the notes field. Plus now you know how to do it, you can put whatever you want either in the csv file, or use something else to populate the field. World and Oyster.

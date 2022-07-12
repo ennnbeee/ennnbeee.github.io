@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "windows","updates","autopilot","groups"]
 categories: ["windows", "autopilot"]
 ShowToc: true
 cover:
-    image: "/img/update-rings.png" # image path/url
+    image: "/img/update-rings.webp" # image path/url
     alt: "" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true

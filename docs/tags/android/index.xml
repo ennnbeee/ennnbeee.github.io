@@ -17,7 +17,7 @@
       <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</guid>
-      <description>We&amp;rsquo;ve already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&amp;rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
+      <description>We&amp;rsquo;ve already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&amp;rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
 Configuration This time, it&amp;rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&amp;hellip;anything to make life easier for users.
 Extracting the QR Code Data First off you&amp;rsquo;ll need the QR code being used for your Android Enterprise enrolment, you can find this within the Android section of Endpoint Manager.</description>
     </item>
@@ -28,7 +28,7 @@ Extracting the QR Code Data First off you&amp;rsquo;ll need the QR code being us
       <pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-enrollment-mobile-data/</guid>
-      <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
+      <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
 Configuration The below sections detail the steps to generate a new QR code for enrolment, allowing the use of Mobile Data.</description>
     </item>
     

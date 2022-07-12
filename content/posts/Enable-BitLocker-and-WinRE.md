@@ -7,7 +7,7 @@ tags: ["endpoint", "intune", "windows", "bitlocker","powershell"]
 categories: ["windows"]
 ShowToc: true
 cover:
-    image: "/img/bitlocker.png" # image path/url
+    image: "/img/bitlocker.webp" # image path/url
     alt: "Enable BitLocker and WinRE on failed Intune Devices" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -115,6 +115,6 @@ The full script can be found [here](https://github.com/ennnbeee/mem-scripts/blob
 # Script Deployment
 Save the above script and create a new PowerShell script deployment in [Endpoint manager](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell) using the following configuration settings, then deploy to a test group of devices.
 
- ![Image](/img/bitlocker-script.png#left)
+ ![Image](/img/bitlocker-script.webp#left)
  
  Bingo! One battle won, onto the next.
