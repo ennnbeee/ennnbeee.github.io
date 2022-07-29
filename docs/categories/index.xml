@@ -10,13 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 10 Jul 2022 20:34:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jul 2022 08:22:08 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>administration</title>
       <link>https://memv.ennbee.uk/categories/administration/</link>
-      <pubDate>Sun, 10 Jul 2022 20:34:37 +0100</pubDate>
+      <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/administration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>configmgr</title>
+      <link>https://memv.ennbee.uk/categories/configmgr/</link>
+      <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/configmgr/</guid>
       <description></description>
     </item>
     
