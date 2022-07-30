@@ -20,7 +20,7 @@ No is the answer, there I said it. Mainly because they require actual effort and
 So what do we do? `<spoiler>` Aggressive PowerShell scripts obviously. `</spoiler>`
 
 # The Approach
-We'll need to connect to the MECM PowerShell module, which is easy enough from the MECM server, then carry out the following actions:
+We'll need to connect to the MECM (pronounced 'MEHK-m' btw) PowerShell module, which is easy enough from the MECM server, then carry out the following actions:
 
 - Get the Device Collections with Direct Members
 - Capture the Direct Members
@@ -88,7 +88,7 @@ if ($Collection.CollectionRules -like "*SMS_CollectionRuleDirect*") {
     $QueryExpression = $QueryPart + $Members + ")"
 }
 ```
-This gives us a the complete query which we can use later on.
+This gives us the complete query string which we can use later on to create the Query Membership Rule.
 
 ## Updating the Rules
 Using [Add-CMDeviceCollectionQueryMembershipRule](https://docs.microsoft.com/en-us/powershell/module/configurationmanager/add-cmdevicecollectionquerymembershiprule?view=sccm-ps) we can create the new rule in the Collection using the variables we created earlier:
@@ -111,7 +111,11 @@ foreach ($DirectMember in $DirectMembers) {
 ```
 
 # Running the Script
-Now we have all the bits we needed in place (*cough logging cough*), we can launch the [script](https://github.com/ennnbeee/mem-scripts/blob/main/MECM/Set-CollectionDirectToQueryMembership/Set-CollectionDirectToQueryMembership.ps1) and use the option to select a Collection first as a test before we run it across the entire environment:
+Now we have all the bits we needed in place (*cough logging cough*), we can launch the [script](https://github.com/ennnbeee/mem-scripts/blob/main/MECM/Set-CollectionDirectToQueryMembership/Set-CollectionDirectToQueryMembership.ps1) and use the option to select a Collection first as a test before we run it across the entire environment.
+
+Let's run it on a test collection we know has direct members:
+![Image](/img/configmgr-dmc-direct.webp#left)
+
 
 Run the script from an Elevated PowerShell prompt on your Primary Site Server:
 ```PowerShell
@@ -140,8 +144,8 @@ With the new Query in place:
 ![Image](/img/configmgr-dmc-query.webp#left)
 
 # Go Forth and Fix
-With this smol but powerful script, you can remove and Direct Membership rule and use the more sustainable and less likely to cause your problems Query Rule, on either Collections you know have Direct Members, or if you're feeling brave, your entire set of Device Collections.
+With this small but powerful script, you can remove all Direct Membership rules and use the more sustainable (and less likely to cause you problems), Query Rule on either Collections you know have Direct Members, or if you're feeling brave, your entire set of Device Collections.
 
 This saves you having to manually create the Rules, or even the collections, which would mean re-deploying configuration, updates, applications etc. to a new Collection. 
 
-What a timesaver.
+What a time saver.

@@ -62,13 +62,16 @@ params:
       - name: Tags
         url: tags
   homeInfoParams:
-    Title: Battles with Endpoint Manager
+    Title: Battles with Microsoft Endpoint Manager
     Content: >
-            For those, who like me, face the endless daily fight for, with, and against Microsoft Endpoint Manager. 
-
-            - Hopefully this blog gives you some assistance with your own battle managing end-user devices.
+            Providing solutions and assistance to problems you probably didn't know existed with Microsoft Endpoint Management solutions, aimed toward those, like me, face the endless daily fight for, with, and against Microsoft Endpoint Manager and Microsoft Endpoint Configuration Manager. 
+            
 
             -
+
+            - Hopefully this site gives you some assistance with or at least insight into your own battles managing end-user devices.
+            
+            - 
 
             - **Disclaimer:** The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned. All items provided should be tested prior to implementation and I hold no liability for the outcome of the recommendations provided.
   ShowFullTextinRSS: false
