@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on MEM v ENNBEE: Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/collections/</link>
+    <description>Recent content in Collections on MEM v ENNBEE: Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Thu, 28 Jul 2022 08:22:08 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Converting Configuration Manager Direct Membership Collections</title>
+      <link>https://memv.ennbee.uk/posts/converting-direct-member-collections/</link>
+      <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/converting-direct-member-collections/</guid>
+      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/converting-direct-member-collections/feature-configmgr-dm.png" />
+    </item>
+    
+  </channel>
+</rss>

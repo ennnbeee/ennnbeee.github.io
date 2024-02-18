@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dell on MEM v ENNBEE: Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/dell/</link>
+    <description>Recent content in Dell on MEM v ENNBEE: Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Sun, 10 Jul 2022 20:34:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/dell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring Dell BIOS Settings with Microsoft Intune</title>
+      <link>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</link>
+      <pubDate>Sun, 10 Jul 2022 20:34:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</guid>
+      <description>What if you&amp;rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/dell-bios-settings-intune/feature-dell-bios.png" />
+    </item>
+    
+  </channel>
+</rss>

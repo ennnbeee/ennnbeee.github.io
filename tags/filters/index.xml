@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Filters on MEM v ENNBEE: Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/filters/</link>
+    <description>Recent content in Filters on MEM v ENNBEE: Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Wed, 08 Jun 2022 22:25:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/filters/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dynamic Groups vs Device Filters</title>
+      <link>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</link>
+      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</guid>
+      <description>Now if you&amp;rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/endpoint-manager-device-filters/feature-filtervgroup.png" />
+    </item>
+    
+  </channel>
+</rss>

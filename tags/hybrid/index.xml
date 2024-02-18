@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hybrid Azure AD on MEM v ENNBEE: Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/hybrid/</link>
+    <description>Recent content in Hybrid Azure AD on MEM v ENNBEE: Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Thu, 12 Jan 2023 20:10:32 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/hybrid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proactively Renaming Hybrid Azure AD Joined Devices</title>
+      <link>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</link>
+      <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</guid>
+      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/feature-computer-rename.png" />
+    </item>
+    
+    <item>
+      <title>Renaming Windows Autopilot Hybrid Joined Devices</title>
+      <link>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</link>
+      <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
+      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename/feature-computer-name.png" />
+    </item>
+    
+  </channel>
+</rss>

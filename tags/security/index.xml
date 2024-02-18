@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on MEM v ENNBEE: Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/security/</link>
+    <description>Recent content in Security on MEM v ENNBEE: Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Tue, 06 Feb 2024 21:03:00 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
+      <link>https://memv.ennbee.uk/posts/updating-windows-store-apps/</link>
+      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
+      <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
+    </item>
+    
+    <item>
+      <title>Using Entra ID Device Attributes for Conditional Access Exceptions</title>
+      <link>https://memv.ennbee.uk/posts/device-attributes-cap/</link>
+      <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/device-attributes-cap/</guid>
+      <description>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&amp;rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/device-attributes-cap/feature-dacap.png" />
+    </item>
+    
+    <item>
+      <title>Modernising Microsoft Intune Firewall Rule Policies</title>
+      <link>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</link>
+      <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
+      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/feature-firewall.png" />
+    </item>
+    
+    <item>
+      <title>Intelligent Phased Windows Update for Business Deployments</title>
+      <link>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</link>
+      <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
+      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/feature-wu.png" />
+    </item>
+    
+    <item>
+      <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link>
+      <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
+      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/feature-macosncsc.png" />
+    </item>
+    
+    <item>
+      <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
+      <link>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</link>
+      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
+      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/feature-epm.png" />
+    </item>
+    
+    <item>
+      <title>Detailed Compliance for Non-Microsoft Antivirus Solutions</title>
+      <link>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</link>
+      <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
+      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png" />
+    </item>
+    
+    <item>
+      <title>Updating Defender Antivirus Compliance Settings</title>
+      <link>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</link>
+      <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
+      <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png" />
+    </item>
+    
+    <item>
+      <title>Windows Operating System Compliance Updates</title>
+      <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
+      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
+      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/feature-os-compliance.png" />
+    </item>
+    
+    <item>
+      <title>macOS National Cyber Security Centre Security Settings in Intune</title>
+      <link>https://memv.ennbee.uk/posts/ncsc-macos-settings/</link>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/ncsc-macos-settings/feature-macosncsc.jpg" />
+    </item>
+    
+    <item>
+      <title>Enabling BitLocker and WinRE on failed Windows Devices</title>
+      <link>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</link>
+      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
+      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/feature-bitlocker.png" />
+    </item>
+    
+  </channel>
+</rss>
