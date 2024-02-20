@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -8,16 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
-  <meta name="title" content="A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE: Battles with Modern Device Management" />
+  <title>Update Rings for Managed macOS Devices &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
+  <meta name="title" content="Update Rings for Managed macOS Devices &middot; MEM v ENNBEE: Battles with Modern Device Management" />
   
-  <meta name="description" content="It&#39;s been a while since we&#39;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate." />
-  <meta name="keywords" content="intune, windows, updates, groups, security, " />
+  <meta name="description" content="So you&#39;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates." />
+  <meta name="keywords" content="intune, apple, macos, updates, groups, security, " />
   
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/flexible-update-deployments/" />
+  <link rel="canonical" href="http://localhost:1313/posts/macos-updates-phased-deployment/" />
   
   
   
@@ -69,17 +69,18 @@
   
   
   
-  <meta property="og:title" content="A Flexible Approach to Microsoft Update Deployments" />
-<meta property="og:description" content="Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID." />
+  <meta property="og:title" content="Update Rings for Managed macOS Devices" />
+<meta property="og:description" content="Using Microsoft Intune and Dynamic Security Groups in Entra ID to managed the deployment of security software updates to enrolled macOS Apple devices." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://memv.ennbee.uk/posts/flexible-update-deployments/" /><meta property="og:image" content="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-02-19T20:07:23+01:00" />
-<meta property="article:modified_time" content="2024-02-19T20:07:23+01:00" />
+<meta property="og:url" content="http://localhost:1313/posts/macos-updates-phased-deployment/" /><meta property="og:image" content="http://localhost:1313/posts/macos-updates-phased-deployment/feature-macosupdates.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-19T16:05:09+01:00" />
+<meta property="article:modified_time" content="2024-02-19T16:05:09+01:00" />
+
 
 
   <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" /><meta name="twitter:title" content="A Flexible Approach to Microsoft Update Deployments"/>
-<meta name="twitter:description" content="Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID."/>
+<meta name="twitter:image" content="http://localhost:1313/posts/macos-updates-phased-deployment/feature-macosupdates.png" /><meta name="twitter:title" content="Update Rings for Managed macOS Devices"/>
+<meta name="twitter:description" content="Using Microsoft Intune and Dynamic Security Groups in Entra ID to managed the deployment of security software updates to enrolled macOS Apple devices."/>
 
   
   <script type="application/ld+json">
@@ -87,26 +88,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "A Flexible Approach to Microsoft Update Deployments",
-    "headline": "A Flexible Approach to Microsoft Update Deployments",
-    "description": "Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID.",
-    "abstract": "It\u0026rsquo;s been a while since we\u0026rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.",
+    "name": "Update Rings for Managed macOS Devices",
+    "headline": "Update Rings for Managed macOS Devices",
+    "description": "Using Microsoft Intune and Dynamic Security Groups in Entra ID to managed the deployment of security software updates to enrolled macOS Apple devices.",
+    "abstract": "So you\u0026rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/flexible-update-deployments\/",
+    "url" : "http:\/\/localhost:1313\/posts\/macos-updates-phased-deployment\/",
     "author" : {
       "@type": "Person",
       "name": " "
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-02-19T20:07:23\u002b01:00",
-    "datePublished": "2024-02-19T20:07:23\u002b01:00",
+    "dateCreated": "2024-02-19T16:05:09\u002b01:00",
+    "datePublished": "2024-02-19T16:05:09\u002b01:00",
     
-    "dateModified": "2024-02-19T20:07:23\u002b01:00",
+    "dateModified": "2024-02-19T16:05:09\u002b01:00",
     
-    "keywords": ["intune","windows","updates","groups","security"],
+    "keywords": ["intune","apple","macos","updates","groups","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1758"
+    "wordCount": "977"
   }]
   </script>
 
@@ -733,7 +734,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/flexible-update-deployments/feature-updates.jpg);">
+    style="background-image:url(/posts/macos-updates-phased-deployment/feature-macosupdates.png);">
     
 
 
@@ -759,7 +760,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      A Flexible Approach to Microsoft Update Deployments
+      Update Rings for Managed macOS Devices
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -804,9 +805,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-02-19 20:07:23 &#43;0100 &#43;0100">19 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-02-19 16:05:09 &#43;0100 &#43;0100">19 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Flexible-Update-Deployments/index.md" 
+    <span id="views_posts\macos-updates-phased-deployment\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -843,6 +844,12 @@
 
   
   
+  <span class="pl-2"><span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Draft
+  </span>
+</span></span>
+  
 </div>
 
 
@@ -870,10 +877,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    Apple
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    macOS
   </span>
 </span>
   </span>
@@ -946,7 +961,7 @@
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
       Author
     </div>
-    <a  href="https://memv.ennbee.uk//authors/ennbee"  class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+    <a  href="http://localhost:1313//authors/ennbee"  class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       Nick Benton
     </a>
     
@@ -1055,25 +1070,26 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#precedence-settings">Precedence Settings</a></li>
     <li><a href="#deployment-approach">Deployment Approach</a></li>
     <li><a href="#deployment-groups">Deployment Groups</a>
       <ul>
         <li><a href="#inefficient-dynamic-groups">Inefficient Dynamic Groups</a></li>
         <li><a href="#efficient-dynamic-groups">Efficient Dynamic Groups</a></li>
-        <li><a href="#vip-groups">VIP Groups</a></li>
+        <li><a href="#device-filters-for-versions">Device Filters for Versions</a></li>
       </ul>
     </li>
-    <li><a href="#windows-update-rings">Windows Update Rings</a></li>
-    <li><a href="#office-update-rings">Office Update Rings</a>
+    <li><a href="#software-update-rings">Software Update Rings</a>
       <ul>
-        <li><a href="#phased-office-updates">Phased Office Updates</a></li>
+        <li><a href="#phased-software-updates">Phased Software Updates</a></li>
       </ul>
     </li>
-    <li><a href="#update-ring-assignment">Update Ring Assignment</a>
+    <li><a href="#microsoft-update-rings">Microsoft Update Rings</a>
       <ul>
-        <li><a href="#vip-ring-assignment">VIP Ring Assignment</a></li>
+        <li><a href="#phased-microsoft-updates">Phased Microsoft Updates</a></li>
       </ul>
     </li>
+    <li><a href="#feature-updates">Feature Updates</a></li>
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -1089,25 +1105,26 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#precedence-settings">Precedence Settings</a></li>
     <li><a href="#deployment-approach">Deployment Approach</a></li>
     <li><a href="#deployment-groups">Deployment Groups</a>
       <ul>
         <li><a href="#inefficient-dynamic-groups">Inefficient Dynamic Groups</a></li>
         <li><a href="#efficient-dynamic-groups">Efficient Dynamic Groups</a></li>
-        <li><a href="#vip-groups">VIP Groups</a></li>
+        <li><a href="#device-filters-for-versions">Device Filters for Versions</a></li>
       </ul>
     </li>
-    <li><a href="#windows-update-rings">Windows Update Rings</a></li>
-    <li><a href="#office-update-rings">Office Update Rings</a>
+    <li><a href="#software-update-rings">Software Update Rings</a>
       <ul>
-        <li><a href="#phased-office-updates">Phased Office Updates</a></li>
+        <li><a href="#phased-software-updates">Phased Software Updates</a></li>
       </ul>
     </li>
-    <li><a href="#update-ring-assignment">Update Ring Assignment</a>
+    <li><a href="#microsoft-update-rings">Microsoft Update Rings</a>
       <ul>
-        <li><a href="#vip-ring-assignment">VIP Ring Assignment</a></li>
+        <li><a href="#phased-microsoft-updates">Phased Microsoft Updates</a></li>
       </ul>
     </li>
+    <li><a href="#feature-updates">Feature Updates</a></li>
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -1175,11 +1192,24 @@
     </span>        
     
 </h2>
-<p>So this isn&rsquo;t the <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/"  >
-    first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
-    declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
-<p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview"   target="_blank">
-    Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
+<p><a href="https://learn.microsoft.com/en-us/mem/solutions/end-to-end-guides/macos-endpoints-get-started#software-updates"   target="_blank">
+    macOS Software Updates</a></p>
+<h2 class="relative group">Precedence Settings 
+    <div id="precedence-settings" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#precedence-settings" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>macOS precedence order:</p>
+<ol>
+<li>Managed software updates (Settings catalog &gt; Declarative Device Management &gt; Software Update)</li>
+<li>Update policies (Devices &gt; Update policies for macOS)</li>
+<li>Software updates (Settings catalog &gt; System Updates &gt; Software Update)</li>
+</ol>
 <h2 class="relative group">Deployment Approach 
     <div id="deployment-approach" class="anchor"></div>
     
@@ -1190,10 +1220,9 @@
     </span>        
     
 </h2>
-<p>Previously, we configured a set of <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/#windows-update-for-business-rings"  >
+<p>Previously, we configured a set of <a href="http://localhost:1313/posts/windows-update-phased-deployment/#windows-update-for-business-rings"  >
     four Update Rings</a>, but now we&rsquo;ll include an early adopters ring as a pre-production release, kind of a fail safe prior to your production deployment of updates; that final catch before you target the entire device estate.</p>
 <ul>
-<li><strong>Test</strong> - This should be devices that are dedicated for testing, ~1% of your device estate.</li>
 <li><strong>Pilot</strong> - This should be a stratified sample of either users or devices, ~5% of your device estate.</li>
 <li><strong>Pre-Production</strong> -  The early adopters deployment, ~15% of your device estate.</li>
 <li><strong>Initial Production</strong> - The first production deployment, ~30% of your device estate.</li>
@@ -1235,12 +1264,6 @@
 </thead>
 <tbody>
 <tr>
-<td>Test</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
 <td>Pilot</td>
 <td>Assigned</td>
 <td>TBC</td>
@@ -1249,19 +1272,19 @@
 <tr>
 <td>Pre-Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[0-1,a]&quot;)</code></td>
+<td><code>(device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[0-1,a]&quot;)</code></td>
 <td></td>
 </tr>
 <tr>
 <td>Initial Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
+<td><code>(device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
 <td></td>
 </tr>
 <tr>
 <td>Final Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
+<td><code>(device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
 <td></td>
 </tr>
 </tbody>
@@ -1320,12 +1343,6 @@
 </thead>
 <tbody>
 <tr>
-<td>Test</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
 <td>Pilot</td>
 <td>Assigned</td>
 <td>TBC</td>
@@ -1334,454 +1351,262 @@
 <tr>
 <td>Pre-Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
+<td><code>(device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
 <td></td>
 </tr>
 <tr>
 <td>Initial Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
+<td><code>(device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
 <td></td>
 </tr>
 <tr>
 <td>Final Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
+<td><code>(device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p>See, much more efficient.</p>
-<h3 class="relative group">VIP Groups 
-    <div id="vip-groups" class="anchor"></div>
+<h3 class="relative group">Device Filters for Versions 
+    <div id="device-filters-for-versions" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#vip-groups" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#device-filters-for-versions" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>What about those people who complain about when they&rsquo;re getting updates, I mean you could tell them <del>to jog on</del> that you can&rsquo;t change the behaviour, or you could cater for the more VIP user, and allow for their device to sit in a different update group.</p>
-<p>So more assigned groups are required for each potential exception or change to production level deployment options.</p>
 <table>
 <thead>
 <tr>
-<th>Group</th>
-<th>Type</th>
-<th>Membership</th>
-<th></th>
+<th>Filter</th>
+<th>Rule</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>VIP Pre-Production</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
+<td>macOS 13 and lower</td>
+<td><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and ((device.osVersion -startsWith &quot;11&quot;) or (device.osVersion -startsWith &quot;12&quot;) or (device.osVersion -startsWith &quot;13&quot;))</code></td>
 </tr>
 <tr>
-<td>VIP Initial Production</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>VIP Final Production</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
+<td>macOS 14 and newer</td>
+<td><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and ((device.osVersion -startsWith &quot;14&quot;) or (device.osVersion -startsWith &quot;15&quot;) or (device.osVersion -startsWith &quot;16&quot;))</code></td>
 </tr>
 </tbody>
 </table>
-<p>See, we can please the senior members of the company with IT solutions.</p>
-<h2 class="relative group">Windows Update Rings 
-    <div id="windows-update-rings" class="anchor"></div>
+<h2 class="relative group">Software Update Rings 
+    <div id="software-update-rings" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#windows-update-rings" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#software-update-rings" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, but still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
-    National Cyber Security Centre</a> 14-day window.</p>
-<table>
-<thead>
-<tr>
-<th>Update Ring</th>
-<th>Deferral</th>
-<th>Deadline</th>
-<th>Grace Period</th>
-<th>Updates Installed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td><code>0 days</code></td>
-<td><code>0 days</code></td>
-<td><code>1 day</code></td>
-<td>After 1 day, Wednesday</td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td><code>2 days</code></td>
-<td><code>0 days</code></td>
-<td><code>1 day</code></td>
-<td>After 3 days, Friday</td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td><code>5 days</code></td>
-<td><code>0 days</code></td>
-<td><code>2 days</code></td>
-<td>After 7 days, Tuesday</td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td><code>8 days</code></td>
-<td><code>0 days</code></td>
-<td><code>2 days</code></td>
-<td>After 10 days, Friday</td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td><code>11 days</code></td>
-<td><code>0 days</code></td>
-<td><code>3 days</code></td>
-<td>After 14 days, Tuesday</td>
-</tr>
-</tbody>
-</table>
-<p>You see something else new? Yes, I&rsquo;ve avoided weekends for updates following a chat with <a href="https://deploymentshare.com/"   target="_blank">
-    Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office, or being used to watch Netflix in bed.</p>
-<p>This also allows for our VIP users to pick which day they actually want updates to be installed and their devices and restarted, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
-<h2 class="relative group">Office Update Rings 
-    <div id="office-update-rings" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#office-update-rings" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Oooooh this one is new, and straight up robbed from Windows Autopatch, and although doesn&rsquo;t exist as a dedicated blade in Microsoft Intune, we can use the glorious <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
-    Settings Catalog</a> profiles to configure Office Update Channels, deferral, and deadline settings for Microsoft 365 App updates.</p>
-<p>To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
+<p><a href="https://learn.microsoft.com/en-us/mem/intune/protect/software-updates-macos#delay-visibility-of-updates"   target="_blank">
+    deferral</a></p>
+<p>by configuring the &lsquo;Defer software updates&rsquo; device restriction to &lsquo;Major and Minor OS software updates&rsquo; you can control when an enrolled device has visibility of macOS updates, just like with Windows Updates. To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Software Update</code>.</p>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
-<th>Detail</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Location for updates: (Device)</td>
-<td><code>http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6</code></td>
+<td>Automatically Install Mac OS Updates</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>Enable Automatic Updates</td>
-<td><code>Enabled</code></td>
+<td>Automatic Check Enabled</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>Hide option to enable or disable updates</td>
-<td><code>Enabled</code></td>
+<td>Allow Pre Release Installation</td>
+<td><code>False</code></td>
 </tr>
 <tr>
-<td>Hide Update Notifications</td>
-<td><code>Disabled</code></td>
+<td>Critical Update Install</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>Update Channel</td>
-<td><code>Enabled</code></td>
+<td>Automatically Install App Updates</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>Channel Name (Device)</td>
-<td><code>Monthly Enterprise Channel</code></td>
+<td>Restrict Software Update Require Admin To Install</td>
+<td><code>False</code></td>
 </tr>
 <tr>
-<td>Update Path</td>
-<td><code>Enabled</code></td>
+<td>Config Data Install</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td>Automatic Download</td>
+<td><code>True</code></td>
 </tr>
 </tbody>
 </table>
-<p>With the update channel configured to Monthly Enterprise, and a bit of a change to the user experience, let&rsquo;s see what else we can borrow.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >Make sure you assign this to all your devices in scope of updates, using either an existing group, or the built in &lsquo;All Devices&rsquo; group and a suitable <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
-    Device Filter</a>.</span>
-</div>
-
-<h3 class="relative group">Phased Office Updates 
-    <div id="phased-office-updates" class="anchor"></div>
+<h3 class="relative group">Phased Software Updates 
+    <div id="phased-software-updates" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#phased-office-updates" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#phased-software-updates" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>With a similar approach to the Windows Update Rings, we can create corresponding Settings Catalog profiles for our five deployment phases, aligning as best we can the end result, which is installed updates, to the restart of the updates delivered as part of the Windows Update ring configuration.</p>
-<p>All settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
+<p>To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Software Update</code>, and <code>Restrictions</code>.</p>
 <table>
 <thead>
 <tr>
 <th>Update Ring</th>
-<th>Delay downloading and installing updates for Office</th>
-<th>Days: (Device)</th>
-<th>Update Deadline</th>
-<th>Deadline: (Device)</th>
-<th>Updates Installed</th>
+<th>Force Delayed Software Updates</th>
+<th>Enforced Software Update Delay</th>
+<th>Force Delayed Major Software Updates</th>
+<th>Enforced Software Update Major OS Deferred Install Delay</th>
+<th>Enforced Software Update Minor OS Deferred Install Delay</th>
+<th>Force Delayed App Software Updates</th>
+<th>Enforced Software Update Non OS Deferred Install Delay</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Test</td>
-<td><code>Enabled</code></td>
-<td><code>0</code></td>
-<td><code>Enabled</code></td>
-<td><code>1</code></td>
-<td>After 1 day, Wednesday</td>
-</tr>
-<tr>
 <td>Pilot</td>
-<td><code>Enabled</code></td>
-<td><code>2</code></td>
-<td><code>Enabled</code></td>
-<td><code>1</code></td>
-<td>After 3 days, Friday</td>
+<td><code>True</code></td>
+<td>n/a</td>
+<td><code>True</code></td>
+<td>n/a</td>
+<td>n/a</td>
+<td><code>True</code></td>
+<td>n/a</td>
 </tr>
 <tr>
 <td>Pre-Production</td>
-<td><code>Enabled</code></td>
-<td><code>5</code></td>
-<td><code>Enabled</code></td>
-<td><code>2</code></td>
-<td>After 7 days, Tuesday</td>
+<td><code>True</code></td>
+<td><code>3 days</code></td>
+<td><code>True</code></td>
+<td><code>3 days</code></td>
+<td><code>3 days</code></td>
+<td><code>True</code></td>
+<td><code>3 days</code></td>
 </tr>
 <tr>
 <td>Initial Production</td>
-<td><code>Enabled</code></td>
-<td><code>8</code></td>
-<td><code>Enabled</code></td>
-<td><code>2</code></td>
-<td>After 10 days, Friday</td>
+<td><code>True</code></td>
+<td><code>7 days</code></td>
+<td><code>True</code></td>
+<td><code>7 days</code></td>
+<td><code>7 days</code></td>
+<td><code>True</code></td>
+<td><code>7 days</code></td>
 </tr>
 <tr>
 <td>Final Production</td>
-<td><code>Enabled</code></td>
-<td><code>11</code></td>
-<td><code>Enabled</code></td>
-<td><code>3</code></td>
-<td>After 14 days, Tuesday</td>
+<td><code>True</code></td>
+<td><code>14 days</code></td>
+<td><code>True</code></td>
+<td><code>14 days</code></td>
+<td><code>14 days</code></td>
+<td><code>True</code></td>
+<td><code>14 days</code></td>
 </tr>
 </tbody>
 </table>
-<p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps"   target="_blank">
-    update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
-<h2 class="relative group">Update Ring Assignment 
-    <div id="update-ring-assignment" class="anchor"></div>
+<h2 class="relative group">Microsoft Update Rings 
+    <div id="microsoft-update-rings" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#update-ring-assignment" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#microsoft-update-rings" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>After creating the Windows Update Rings, and our faux Office Update Rings, using the above settings, we can look at how we assign our phased deployment groups to each suitable ring.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >Feel free to alter the deferral, deadline, and grace periods where applicable to your device estate, but please if you want the experience to be as expected, use the below assignment targets.</span>
-</div>
-
+<p>To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Microsoft AutoUpdate (MAU)</code>.</p>
 <table>
 <thead>
 <tr>
-<th>Update Ring</th>
-<th>Included Groups</th>
-<th>Excluded Groups</th>
-<th></th>
+<th>Setting</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Test</td>
-<td><code>Test</code></td>
-<td>n/a</td>
-<td></td>
+<td>Disable Office Insider membership</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>Pilot</td>
-<td><code>Pilot</code></td>
-<td><code>Test</code></td>
-<td></td>
+<td>Number of minutes for the final countdown timer</td>
+<td><code>60</code></td>
 </tr>
 <tr>
-<td>Pre-Production</td>
-<td><code>Pre-Production</code></td>
-<td><code>Test</code>, <code>Pilot</code></td>
-<td></td>
+<td>Register app on launch</td>
+<td><code>True</code></td>
 </tr>
 <tr>
-<td>Initial Production</td>
-<td><code>Initial Production</code></td>
-<td><code>Test</code>, <code>Pilot</code></td>
-<td></td>
+<td>Update channel</td>
+<td><code>Current Channel</code></td>
 </tr>
 <tr>
-<td>Final Production</td>
-<td><code>Final Production</code></td>
-<td><code>Test</code>, <code>Pilot</code></td>
-<td></td>
+<td>Update check frequency (mins)</td>
+<td><code>240</code></td>
 </tr>
 </tbody>
 </table>
-<p>I&rsquo;m assuming here that you aren&rsquo;t putting VIP user devices in Test and Pilot, because you don&rsquo;t want to anger them, maybe do it on your last day 😅.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >This is an improvement on our previous version of Update Ring assignment, as we&rsquo;re not relying on excludes and dynamic groups to update to ensure there are no conflicts.</span>
-</div>
-
-<h3 class="relative group">VIP Ring Assignment 
-    <div id="vip-ring-assignment" class="anchor"></div>
+<h3 class="relative group">Phased Microsoft Updates 
+    <div id="phased-microsoft-updates" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#vip-ring-assignment" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#phased-microsoft-updates" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>To get the expected behaviour for our VIP groups, we need to consider what happens when we want to ensure a VIP device is in the correct Update Ring, which includes making sure there are no conflicts across the rings.</p>
-<p>Changing the assignments of our Update Rings to the below, will allow for the manual assignment based on a devices VIP group membership.</p>
 <table>
 <thead>
 <tr>
 <th>Update Ring</th>
-<th>Included Groups</th>
-<th>Excluded Groups</th>
-<th></th>
+<th>Deferred updates</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Test</td>
-<td><code>Test</code></td>
-<td>n/a</td>
-<td></td>
-</tr>
-<tr>
 <td>Pilot</td>
-<td><code>Pilot</code></td>
-<td><code>Test</code></td>
-<td></td>
+<td>n/a</td>
 </tr>
 <tr>
 <td>Pre-Production</td>
-<td><code>Pre-Production</code>, <code>VIP Pre-Production</code></td>
-<td><code>Test</code>, <code>Pilot</code>, <code>VIP Initial Production</code>, <code>VIP Final Production</code></td>
-<td></td>
+<td><code>Defer 3 days</code></td>
 </tr>
 <tr>
 <td>Initial Production</td>
-<td><code>Initial-Production</code>, <code>VIP Initial-Production</code></td>
-<td><code>Test</code>, <code>Pilot</code>, <code>VIP Pre-Production</code>, <code>VIP Final Production</code></td>
-<td></td>
+<td><code>Defer 7 days</code></td>
 </tr>
 <tr>
 <td>Final Production</td>
-<td><code>Final Production</code>, <code>VIP Final Production</code></td>
-<td><code>Test</code>, <code>Pilot</code>, <code>VIP Pre-Production</code>, <code>VIP Initial Production</code></td>
-<td></td>
+<td><code>Defer 14 days</code></td>
 </tr>
 </tbody>
 </table>
-<p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code>, which will captured by the &lsquo;Final Production&rsquo; dynamic group, is added to group <code>VIP Initial Production</code>, it will exclude the device from the Final Production Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
-<p>Adding in not only new include assignments, but exclude assignments, ensures that devices in these groups are assigned to the correct Update Ring.</p>
+<h2 class="relative group">Feature Updates 
+    <div id="feature-updates" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#feature-updates" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>DDM settings for builds.</p>
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     
@@ -1792,7 +1617,6 @@
     </span>        
     
 </h2>
-<p>All of this should give you the option to not only suitably phase Windows, Microsoft, and Office Updates, with each subsequent Update Ring starting only after the next, but also allow the shift of devices around without conflict where required, whether this is for VIP users or otherwise, providing your end users with clear details and days of when their device will not only get updated, but also restart, without too much of a headache, or interruption to their casual personal use of their corporate owned device.</p>
 
         </div>
                 
@@ -1806,7 +1630,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;title=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1825,7 +1649,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;text=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;text=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1843,7 +1667,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;resubmit=true&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://reddit.com/submit/?url=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;resubmit=true&amp;title=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1862,7 +1686,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;resubmit=true&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;resubmit=true&amp;title=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title=""
       aria-label=""
       >
@@ -1881,7 +1705,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;resubmit=true&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://t.me/share/url?url=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;resubmit=true&amp;title=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title=""
       aria-label=""
       >
@@ -1900,7 +1724,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;description=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;description=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1919,7 +1743,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;quote=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;quote=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1938,7 +1762,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;subject=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="mailto:?body=http://localhost:1313/posts/macos-updates-phased-deployment/&amp;subject=Update%20Rings%20for%20Managed%20macOS%20Devices"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -2017,9 +1841,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-07-17 20:07:23 &#43;0100 &#43;0100">17 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-07-17 20:07:23 &#43;0100 BST">17 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Windows-Update-Phased-Deployment/index.md" 
+    <span id="views_posts\Windows-Update-Phased-Deployment\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -2117,11 +1941,11 @@
   
   
 
-  <a href="/posts/updating-windows-store-apps/" class="min-w-full">
+  <a href="/posts/macos-ncsc-revisited/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/updating-windows-store-apps/feature-storeapps.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/macos-ncsc-revisited/feature-macosncsc.png);"></div>
         
       
 
@@ -2129,7 +1953,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/updating-windows-store-apps/">Keeping Windows Store Apps Updated with Microsoft Intune</div>
+          href="/posts/macos-ncsc-revisited/">Revisiting macOS National Cyber Security Centre Security Settings</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2170,9 +1994,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-02-06 21:03:00 &#43;0000 UTC">6 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-07-11 13:22:07 &#43;0100 BST">11 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Updating-Windows-Store-Apps/index.md" 
+    <span id="views_posts\macOS-NCSC-Revisited\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -2215,50 +2039,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    Apple
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Remediation
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apps/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Apps
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows Autopilot
+    macOS
   </span>
 </span>
   </span>
@@ -2267,6 +2059,22 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    NCSC
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configuration/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Configuration
   </span>
 </span>
   </span>
@@ -2282,7 +2090,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.
+          With the improved support for macOS devices in Microsoft Intune, it&rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.
         </div>
         
       </div>
@@ -2294,11 +2102,11 @@
   
   
 
-  <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
+  <a href="/posts/apple-os-updating-compliance/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/apple-os-updating-compliance/feature-appleos.png);"></div>
         
       
 
@@ -2306,7 +2114,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/defender-antivirus-compliance-updates/">Updating Defender Antivirus Compliance Settings</div>
+          href="/posts/apple-os-updating-compliance/">Updating Apple Operating System Compliance Policies</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2347,9 +2155,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-02-02 20:08:49 &#43;0000 UTC">2 February 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" 
+    <span id="views_posts\Apple-OS-Updating-Compliance\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -2392,26 +2200,26 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    Apple
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/defender/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ios/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Defender
+    iOS/iPadOS
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
+    macOS
   </span>
 </span>
   </span>
@@ -2428,14 +2236,6 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/antivirus/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Antivirus
   </span>
 </span>
   </span>
@@ -2467,7 +2267,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.
         </div>
         
       </div>
@@ -2484,8 +2284,8 @@
      
     
      <script>
-        var oid = "views_posts\/Flexible-Update-Deployments\/index.md"
-        var oid_likes = "likes_posts\/Flexible-Update-Deployments\/index.md"
+        var oid = "views_posts\\macos-updates-phased-deployment\\index.md"
+        var oid_likes = "likes_posts\\macos-updates-phased-deployment\\index.md"
       </script>
       
       
@@ -2507,6 +2307,28 @@
       <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
       <div class="flex justify-between pt-3">
         <span>
+          
+            <a class="flex group mr-3" href="/posts/flexible-update-deployments/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >A Flexible Approach to Microsoft Update Deployments</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-02-19 20:07:23 &#43;0100 &#43;0100">19 February 2024</time>
+                  
+                </span>
+              </span>
+            </a>
           
         </span>
         <span>
@@ -2632,7 +2454,7 @@
 </footer><div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://memv.ennbee.uk/"
+  data-url="http://localhost:1313/"
   style="z-index:500"
 >
   <div

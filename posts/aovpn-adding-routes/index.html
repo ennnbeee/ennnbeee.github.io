@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -8,16 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
-  <meta name="title" content="A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE: Battles with Modern Device Management" />
+  <title>Adding Always On VPN Routes with Intune and Configuration Manager &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
+  <meta name="title" content="Adding Always On VPN Routes with Intune and Configuration Manager &middot; MEM v ENNBEE: Battles with Modern Device Management" />
   
-  <meta name="description" content="It&#39;s been a while since we&#39;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate." />
-  <meta name="keywords" content="intune, windows, updates, groups, security, " />
+  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn’t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+  <meta name="keywords" content="intune, configmgr, vpn, windows, powershell, " />
   
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/flexible-update-deployments/" />
+  <link rel="canonical" href="http://localhost:1313/posts/aovpn-adding-routes/" />
   
   
   
@@ -69,17 +69,17 @@
   
   
   
-  <meta property="og:title" content="A Flexible Approach to Microsoft Update Deployments" />
-<meta property="og:description" content="Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID." />
+  <meta property="og:title" content="Adding Always On VPN Routes with Intune and Configuration Manager" />
+<meta property="og:description" content="Introduction # Now Microsoft Always On VPN is not yet in my wheel house of technical skills, but when customers are using Resource Access profiles in Configuration Manager which are now depreciated, you need to find a way to ensure that devices are still getting Always On VPN profiles." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://memv.ennbee.uk/posts/flexible-update-deployments/" /><meta property="og:image" content="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-02-19T20:07:23+01:00" />
-<meta property="article:modified_time" content="2024-02-19T20:07:23+01:00" />
+<meta property="og:url" content="http://localhost:1313/posts/aovpn-adding-routes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-25T10:38:47+01:00" />
+<meta property="article:modified_time" content="2023-04-25T10:38:47+01:00" />
 
 
-  <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" /><meta name="twitter:title" content="A Flexible Approach to Microsoft Update Deployments"/>
-<meta name="twitter:description" content="Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID."/>
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Adding Always On VPN Routes with Intune and Configuration Manager"/>
+<meta name="twitter:description" content="Introduction # Now Microsoft Always On VPN is not yet in my wheel house of technical skills, but when customers are using Resource Access profiles in Configuration Manager which are now depreciated, you need to find a way to ensure that devices are still getting Always On VPN profiles."/>
 
   
   <script type="application/ld+json">
@@ -87,26 +87,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "A Flexible Approach to Microsoft Update Deployments",
-    "headline": "A Flexible Approach to Microsoft Update Deployments",
-    "description": "Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID.",
-    "abstract": "It\u0026rsquo;s been a while since we\u0026rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.",
+    "name": "Adding Always On VPN Routes with Intune and Configuration Manager",
+    "headline": "Adding Always On VPN Routes with Intune and Configuration Manager",
+    
+    "abstract": "Introduction # Now Microsoft Always On VPN is not yet in my wheel house of technical skills, but when customers are using Resource Access profiles in Configuration Manager which are now depreciated, you need to find a way to ensure that devices are still getting Always On VPN profiles.",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/flexible-update-deployments\/",
+    "url" : "http:\/\/localhost:1313\/posts\/aovpn-adding-routes\/",
     "author" : {
       "@type": "Person",
       "name": " "
     },
-    "copyrightYear": "2024",
-    "dateCreated": "2024-02-19T20:07:23\u002b01:00",
-    "datePublished": "2024-02-19T20:07:23\u002b01:00",
+    "copyrightYear": "2023",
+    "dateCreated": "2023-04-25T10:38:47\u002b01:00",
+    "datePublished": "2023-04-25T10:38:47\u002b01:00",
     
-    "dateModified": "2024-02-19T20:07:23\u002b01:00",
+    "dateModified": "2023-04-25T10:38:47\u002b01:00",
     
-    "keywords": ["intune","windows","updates","groups","security"],
+    "keywords": ["intune","configmgr","vpn","windows","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1758"
+    "wordCount": "876"
   }]
   </script>
 
@@ -728,12 +728,18 @@
   
   
   
+ 
+  
+   
+  
+ 
+
 
 
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/flexible-update-deployments/feature-updates.jpg);">
+    style="background-image:url(/img/bgr.png);">
     
 
 
@@ -759,7 +765,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      A Flexible Approach to Microsoft Update Deployments
+      Adding Always On VPN Routes with Intune and Configuration Manager
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -804,9 +810,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-02-19 20:07:23 &#43;0100 &#43;0100">19 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-04-25 10:38:47 &#43;0100 BST">25 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Flexible-Update-Deployments/index.md" 
+    <span id="views_posts\AOVPN-Adding-Routes\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -843,6 +849,12 @@
 
   
   
+  <span class="pl-2"><span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Draft
+  </span>
+</span></span>
+  
 </div>
 
 
@@ -870,6 +882,22 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configmgr/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Configuration Manager
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/vpn/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Vpn
+  </span>
+</span>
+  </span>
+  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
@@ -878,26 +906,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Groups
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
+    PowerShell
   </span>
 </span>
   </span>
@@ -946,7 +958,7 @@
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
       Author
     </div>
-    <a  href="https://memv.ennbee.uk//authors/ennbee"  class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+    <a  href="http://localhost:1313//authors/ennbee"  class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       Nick Benton
     </a>
     
@@ -1055,26 +1067,19 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#deployment-approach">Deployment Approach</a></li>
-    <li><a href="#deployment-groups">Deployment Groups</a>
+    <li><a href="#configuration-manager">Configuration Manager</a>
       <ul>
-        <li><a href="#inefficient-dynamic-groups">Inefficient Dynamic Groups</a></li>
-        <li><a href="#efficient-dynamic-groups">Efficient Dynamic Groups</a></li>
-        <li><a href="#vip-groups">VIP Groups</a></li>
+        <li><a href="#configuration-item-discovery-script">Configuration Item Discovery Script</a></li>
+        <li><a href="#configuration-item-remediation-script">Configuration Item Remediation Script</a></li>
+        <li><a href="#configuration-items-and-baselines">Configuration Items and Baselines</a></li>
       </ul>
     </li>
-    <li><a href="#windows-update-rings">Windows Update Rings</a></li>
-    <li><a href="#office-update-rings">Office Update Rings</a>
+    <li><a href="#microsoft-intune">Microsoft Intune</a>
       <ul>
-        <li><a href="#phased-office-updates">Phased Office Updates</a></li>
+        <li><a href="#intune-detection-script">Intune Detection Script</a></li>
+        <li><a href="#intune-remediation-script">Intune Remediation Script</a></li>
       </ul>
     </li>
-    <li><a href="#update-ring-assignment">Update Ring Assignment</a>
-      <ul>
-        <li><a href="#vip-ring-assignment">VIP Ring Assignment</a></li>
-      </ul>
-    </li>
-    <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
   </div>
@@ -1089,26 +1094,19 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#deployment-approach">Deployment Approach</a></li>
-    <li><a href="#deployment-groups">Deployment Groups</a>
+    <li><a href="#configuration-manager">Configuration Manager</a>
       <ul>
-        <li><a href="#inefficient-dynamic-groups">Inefficient Dynamic Groups</a></li>
-        <li><a href="#efficient-dynamic-groups">Efficient Dynamic Groups</a></li>
-        <li><a href="#vip-groups">VIP Groups</a></li>
+        <li><a href="#configuration-item-discovery-script">Configuration Item Discovery Script</a></li>
+        <li><a href="#configuration-item-remediation-script">Configuration Item Remediation Script</a></li>
+        <li><a href="#configuration-items-and-baselines">Configuration Items and Baselines</a></li>
       </ul>
     </li>
-    <li><a href="#windows-update-rings">Windows Update Rings</a></li>
-    <li><a href="#office-update-rings">Office Update Rings</a>
+    <li><a href="#microsoft-intune">Microsoft Intune</a>
       <ul>
-        <li><a href="#phased-office-updates">Phased Office Updates</a></li>
+        <li><a href="#intune-detection-script">Intune Detection Script</a></li>
+        <li><a href="#intune-remediation-script">Intune Remediation Script</a></li>
       </ul>
     </li>
-    <li><a href="#update-ring-assignment">Update Ring Assignment</a>
-      <ul>
-        <li><a href="#vip-ring-assignment">VIP Ring Assignment</a></li>
-      </ul>
-    </li>
-    <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
   </div>
@@ -1175,625 +1173,323 @@
     </span>        
     
 </h2>
-<p>So this isn&rsquo;t the <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/"  >
-    first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
-    declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
-<p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview"   target="_blank">
-    Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
-<h2 class="relative group">Deployment Approach 
-    <div id="deployment-approach" class="anchor"></div>
+<p>Now <a href="https://learn.microsoft.com/en-us/windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-enhancements"   target="_blank">
+    Microsoft Always On VPN</a> is not yet in my wheel house of technical skills, but when customers are using <a href="https://learn.microsoft.com/en-us/mem/configmgr/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles"   target="_blank">
+    Resource Access profiles</a> in Configuration Manager which are now <a href="https://learn.microsoft.com/en-us/mem/configmgr/protect/plan-design/resource-access-deprecation-faq"   target="_blank">
+    depreciated</a>, you need to find a way to ensure that devices are still getting Always On VPN profiles.</p>
+<p>There are many ways of deploying an Always On VPN profile, many of which <a href="https://directaccess.richardhicks.com/tag/system-center-configuration-manager/"   target="_blank">
+    Richard M. Hicks</a> discusses on his blog, so we&rsquo;re not going to reinvent the wheel here, so I highly recommend reviewing your options whether this be Group Policy (<em>kill me</em>), Configuration Manager, or Microsoft Intune.</p>
+<p>What we care about, at least today, are the routes deployed as part of the VPN profile. What happens if you need to add new ones?</p>
+<h2 class="relative group">Configuration Manager 
+    <div id="configuration-manager" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deployment-approach" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#configuration-manager" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Previously, we configured a set of <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/#windows-update-for-business-rings"  >
-    four Update Rings</a>, but now we&rsquo;ll include an early adopters ring as a pre-production release, kind of a fail safe prior to your production deployment of updates; that final catch before you target the entire device estate.</p>
+<p>With Configuration Manager we can leverage the use of <a href="https://learn.microsoft.com/en-us/mem/configmgr/compliance/deploy-use/create-configuration-items"   target="_blank">
+    Configuration Items</a> and <a href="https://learn.microsoft.com/en-us/mem/configmgr/compliance/deploy-use/create-configuration-baselines"   target="_blank">
+    Configuration Baselines</a> to run a script on the Windows 10 and later devices, to check that the VPN profile has all required routes, and in the event that it doesn&rsquo;t, add them through a remediation script.</p>
+<h3 class="relative group">Configuration Item Discovery Script 
+    <div id="configuration-item-discovery-script" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#configuration-item-discovery-script" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The Configuration Item check PowerShell script can be modified with your own VPN profile name <code>$ProfileName</code> and your existing and new VPN Routes <code>$VPNRoutes</code>, this allows the script to compare the routes installed in the profile with the ones in the script.</p>
+<p>We&rsquo;ve configured the <code>$ScriptOutput</code> variable to be an array, as we need to be able to capture whether <strong>any</strong> routes are missing, and with a bit of logic and the use of <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-unique"   target="_blank">
+    <code>Get-Unique</code></a> we have an output that we can query to return a single value using <code>Write-Output</code> back to Configuration Manager to allow it to assess the compliance state of the script.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line hl"><span class="cl"><span class="nv">$ScriptOutput</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line hl"><span class="cl"><span class="nv">$ProfileName</span> <span class="p">=</span> <span class="s1">&#39;ENNBEE Device VPN&#39;</span>
+</span></span><span class="line hl"><span class="cl"><span class="nv">$VPNRoutes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">System</span><span class="p">.</span><span class="py">Collections</span><span class="p">.</span><span class="py">ArrayList</span>
+</span></span><span class="line hl"><span class="cl"><span class="nv">$VPNRoutes</span><span class="p">.</span><span class="py">AddRange</span><span class="p">(</span><span class="vm">@</span><span class="p">(</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.21.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.20.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;192.168.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.23.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.37.0.0/16&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;18.103.2.112/32&#39;</span>
+</span></span><span class="line hl"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nv">$VPN</span> <span class="p">=</span> <span class="nb">Get-VpnConnection</span> <span class="n">-AllUserConnection</span> <span class="n">-Name</span> <span class="nv">$ProfileName</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$VPN</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="k">in</span> <span class="nv">$VPNRoutes</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="n">-notin</span> <span class="vm">$</span><span class="p">(</span><span class="nv">$VPN</span><span class="p">.</span><span class="n">Routes</span><span class="p">).</span><span class="n">DestinationPrefix</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$ScriptOutput</span> <span class="p">+=</span> <span class="s1">&#39;RouteMissing&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$ScriptOutput</span> <span class="p">+=</span> <span class="s1">&#39;RouteInstalled&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ScriptOutput</span> <span class="p">+=</span> <span class="s1">&#39;VPNMissing&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="s1">&#39;Error&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$ScriptOutput</span> <span class="p">=</span> <span class="nv">$ScriptOutput</span> <span class="p">|</span> <span class="nb">Get-Unique</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$ScriptOutput</span> <span class="o">-contains</span> <span class="s1">&#39;RouteMissing&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;RouteMissing&#39;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">}</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">Elseif</span> <span class="p">(</span><span class="nv">$ScriptOutput</span> <span class="o">-eq</span> <span class="s1">&#39;RouteInstalled&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;RouteInstalled&#39;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">}</span>
+</span></span><span class="line hl"><span class="cl"><span class="k">Elseif</span> <span class="p">(</span><span class="nv">$ScriptOutput</span> <span class="o">-contains</span> <span class="s1">&#39;VPNMissing&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;VPNMissing&#39;</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 class="relative group">Configuration Item Remediation Script 
+    <div id="configuration-item-remediation-script" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#configuration-item-remediation-script" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Now that we have a way to check that the routes exist, we need a PowerShell script to add them to the VPN profile, both <code>$ProfileName</code> and <code>$VPNRoutes</code> should match the initial script for checking, and to save us attempting to add routes that already exist, we&rsquo;ve added some logic around this before we throw new ones at the VPN profile using <a href="https://learn.microsoft.com/en-us/powershell/module/vpnclient/add-vpnconnectionroute"   target="_blank">
+    <code>Add-VpnConnectionRoute</code></a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line hl"><span class="cl"><span class="nv">$ProfileName</span> <span class="p">=</span> <span class="s1">&#39;ENNBEE Device VPN&#39;</span>
+</span></span><span class="line hl"><span class="cl"><span class="nv">$VPNRoutes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">System</span><span class="p">.</span><span class="py">Collections</span><span class="p">.</span><span class="py">ArrayList</span>
+</span></span><span class="line hl"><span class="cl"><span class="nv">$VPNRoutes</span><span class="p">.</span><span class="py">AddRange</span><span class="p">(</span><span class="vm">@</span><span class="p">(</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.21.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.20.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;192.168.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.23.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;172.37.0.0/16&#39;</span><span class="p">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s1">&#39;18.103.2.112/32&#39;</span>
+</span></span><span class="line hl"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line hl"><span class="cl"><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nv">$VPN</span> <span class="p">=</span> <span class="nb">Get-VpnConnection</span> <span class="n">-AllUserConnection</span> <span class="n">-Name</span> <span class="nv">$ProfileName</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$VPN</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="k">in</span> <span class="nv">$VPNRoutes</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="n">-notin</span> <span class="vm">$</span><span class="p">(</span><span class="nv">$VPN</span><span class="p">.</span><span class="n">Routes</span><span class="p">).</span><span class="n">DestinationPrefix</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">Add-VpnConnectionRoute</span> <span class="n">-ConnectionName</span> <span class="nv">$ProfileName</span> <span class="n">-DestinationPrefix</span> <span class="nv">$VPNRoute</span> <span class="n">-Confirm</span> <span class="vm">$false</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="s1">&#39;Error&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 class="relative group">Configuration Items and Baselines 
+    <div id="configuration-items-and-baselines" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#configuration-items-and-baselines" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>With both scripts now in our arsenal, time to create a Configuration Item to utilise them.</p>
 <ul>
-<li><strong>Test</strong> - This should be devices that are dedicated for testing, ~1% of your device estate.</li>
-<li><strong>Pilot</strong> - This should be a stratified sample of either users or devices, ~5% of your device estate.</li>
-<li><strong>Pre-Production</strong> -  The early adopters deployment, ~15% of your device estate.</li>
-<li><strong>Initial Production</strong> - The first production deployment, ~30% of your device estate.</li>
-<li><strong>Final Production</strong> - The final production deployment, the remaining ~50% of the device estate.</li>
+<li>Create a new Configuration Item and give it a name
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="http://localhost:1313/posts/aovpn-adding-routes/img/aovpnroute-ci_hu8c8f22a133ba996d902bd2b6db51143a_42552_filter_996066243946645991.webp#left" alt="Config Item" />
+      
+    </figure>
+  
+
+</li>
+<li>Select the correct supported Windows 10 and later platforms
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="http://localhost:1313/posts/aovpn-adding-routes/img/aovpnroute-ciplatforms_hu6d60de8ea4946fd2011056954a86c357_75992_filter_9208123905729614385.webp#left" alt="Config Item Platforms" />
+      
+    </figure>
+  
+
+</li>
+<li>Paste in your discovery script
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="http://localhost:1313/posts/aovpn-adding-routes/img/aovpnroute-cidisc_huc53fc9233cf8f0d321e2b87728e4f851_112316_filter_16636540390208777351.webp#left" alt="Config Item Discovery" />
+      
+    </figure>
+  
+
+</li>
+<li>Paste in your remediation script
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="http://localhost:1313/posts/aovpn-adding-routes/img/aovpnroute-cirem_hu2a40499cff80245ede3c3e6810c75ab2_93378_filter_14050081456178253563.webp#left" alt="Config Item Remediation" />
+      
+    </figure>
+  
+
+</li>
+<li>Finally create a new Compliance rule
+
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="http://localhost:1313/posts/aovpn-adding-routes/img/aovpnroute-cicomp_hu21d2c0c611909d493887e83b15d52aaa_68610_filter_1517786406971357886.webp#left" alt="Config Item Summary" />
+      
+    </figure>
+  
+
+</li>
 </ul>
-<p>The aim is tht the above groupings are reusable and can be used across not just Windows Updates, but Office Updates, and Driver updates too. Let&rsquo;s look at the membership of these groups.</p>
-<h2 class="relative group">Deployment Groups 
-    <div id="deployment-groups" class="anchor"></div>
+<p>Add this to either an existing Configuration Baseline, or create a new one and deploy it to a target collection and sit back and wait for devices to check in, or, change the evaluation frequency of the deployment to something aggressive like every 15 minutes.</p>
+<blockquote>
+<p>_I&rsquo;d recommend that within the Configuration Baseline deployment settings, you don&rsquo;t allow for remediation until you know that the scripts are working in your environment.-</p>
+</blockquote>
+<h2 class="relative group">Microsoft Intune 
+    <div id="microsoft-intune" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deployment-groups" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#microsoft-intune" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Despite <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-improving-the-efficiency-of-dynamic-group-processing/ba-p/4049394"   target="_blank">
-    Microsoft</a> recommending to stop using the <code>match</code> operators in favour of <code>startsWith</code> there are times when you might have to ignore them, this could be one of those times when we look at how we split a device estate into the phased breakdowns we&rsquo;re looking to achieve.</p>
-<h3 class="relative group">Inefficient Dynamic Groups 
-    <div id="inefficient-dynamic-groups" class="anchor"></div>
+<p>You guessed it, it&rsquo;s <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations"   target="_blank">
+    Proactive Remediation</a> time, and as we&rsquo;ve already written the required detection and remediation scripts for Configuration Manager, we only need to tweak them slightly for use with Intune, mainly what is being <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements"   target="_blank">
+    output</a> as Intune needs the data captured with <code>Return</code> in place of <code>Write-Output</code>, and an exit code i.e., <code>exit 1</code>.</p>
+<h3 class="relative group">Intune Detection Script 
+    <div id="intune-detection-script" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#inefficient-dynamic-groups" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#intune-detection-script" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>For the members of Test and Pilot groups, these should be targeted members, not just any old device, so ensure you populate these groups with true test devices, and suitable pilot devices for update testing.</p>
-<p>You&rsquo;ll notice that this time we&rsquo;re using Dynamic Groups across all the pre-production and production groups, and using a new attribute of <code>deviceId</code>, which is a wonderful UUID associated with <em>all</em> Entra computer objects, and it being a UUID gives us a nice split of devices based on the queries used.</p>
-<table>
-<thead>
-<tr>
-<th>Group</th>
-<th>Type</th>
-<th>Membership</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[0-1,a]&quot;)</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>With the start of the <code>deviceId</code> only ever being in the range of <code>0-9</code> or <code>a-f</code> we&rsquo;ve an easy way to split our devices across the three production level groups, and ensure that we are capturing all devices, using the <code>match</code> operator, and the regular expression similar to <code>^[0-9,a-f]</code> to detect whether the <code>deviceId</code> starts with one of the values in the ranges provided.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >You may want to tweak the rules used here, to alter the size of each of the production groups, by changing the range of the <code>^[0-9,a-f]</code> query.</span>
-</div>
-
-<h3 class="relative group">Efficient Dynamic Groups 
-    <div id="efficient-dynamic-groups" class="anchor"></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$ScriptOutput</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ProfileName</span> <span class="p">=</span> <span class="s1">&#39;ENNBEE Device VPN&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$VPNRoutes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">System</span><span class="p">.</span><span class="py">Collections</span><span class="p">.</span><span class="py">ArrayList</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$VPNRoutes</span><span class="p">.</span><span class="py">AddRange</span><span class="p">(</span><span class="vm">@</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.21.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.20.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;192.168.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.23.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.37.0.0/16&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;18.103.2.112/32&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$VPN</span> <span class="p">=</span> <span class="nb">Get-VpnConnection</span> <span class="n">-AllUserConnection</span> <span class="n">-Name</span> <span class="nv">$ProfileName</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$VPN</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="k">in</span> <span class="nv">$VPNRoutes</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="n">-notin</span> <span class="vm">$</span><span class="p">(</span><span class="nv">$VPN</span><span class="p">.</span><span class="n">Routes</span><span class="p">).</span><span class="n">DestinationPrefix</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$ScriptOutput</span> <span class="p">+=</span> <span class="s1">&#39;RouteMissing&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$ScriptOutput</span> <span class="p">+=</span> <span class="s1">&#39;RouteInstalled&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ScriptOutput</span> <span class="p">+=</span> <span class="s1">&#39;VPNMissing&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$errMsg</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="py">Message</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$errMsg</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$ScriptOutput</span> <span class="p">=</span> <span class="nv">$ScriptOutput</span> <span class="p">|</span> <span class="nb">Get-Unique</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$ScriptOutput</span> <span class="o">-contains</span> <span class="s1">&#39;RouteMissing&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="k">Return</span> <span class="s1">&#39;RouteMissing&#39;</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">Elseif</span> <span class="p">(</span><span class="nv">$ScriptOutput</span> <span class="o">-eq</span> <span class="s1">&#39;RouteInstalled&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="k">Return</span> <span class="s1">&#39;RouteInstalled&#39;</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">Elseif</span> <span class="p">(</span><span class="nv">$ScriptOutput</span> <span class="o">-contains</span> <span class="s1">&#39;VPNMissing&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">    <span class="k">Return</span> <span class="s1">&#39;VPNMissing&#39;</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 class="relative group">Intune Remediation Script 
+    <div id="intune-remediation-script" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#efficient-dynamic-groups" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#intune-remediation-script" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>If you want to please Microsoft Daddy, then you could use these alternative queries for the groups, Test and Pilot are still assigned, so don&rsquo;t forget to populate those members.</p>
-<table>
-<thead>
-<tr>
-<th>Group</th>
-<th>Type</th>
-<th>Membership</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>See, much more efficient.</p>
-<h3 class="relative group">VIP Groups 
-    <div id="vip-groups" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#vip-groups" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>What about those people who complain about when they&rsquo;re getting updates, I mean you could tell them <del>to jog on</del> that you can&rsquo;t change the behaviour, or you could cater for the more VIP user, and allow for their device to sit in a different update group.</p>
-<p>So more assigned groups are required for each potential exception or change to production level deployment options.</p>
-<table>
-<thead>
-<tr>
-<th>Group</th>
-<th>Type</th>
-<th>Membership</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>VIP Pre-Production</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>VIP Initial Production</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-<tr>
-<td>VIP Final Production</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>See, we can please the senior members of the company with IT solutions.</p>
-<h2 class="relative group">Windows Update Rings 
-    <div id="windows-update-rings" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#windows-update-rings" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, but still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
-    National Cyber Security Centre</a> 14-day window.</p>
-<table>
-<thead>
-<tr>
-<th>Update Ring</th>
-<th>Deferral</th>
-<th>Deadline</th>
-<th>Grace Period</th>
-<th>Updates Installed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td><code>0 days</code></td>
-<td><code>0 days</code></td>
-<td><code>1 day</code></td>
-<td>After 1 day, Wednesday</td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td><code>2 days</code></td>
-<td><code>0 days</code></td>
-<td><code>1 day</code></td>
-<td>After 3 days, Friday</td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td><code>5 days</code></td>
-<td><code>0 days</code></td>
-<td><code>2 days</code></td>
-<td>After 7 days, Tuesday</td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td><code>8 days</code></td>
-<td><code>0 days</code></td>
-<td><code>2 days</code></td>
-<td>After 10 days, Friday</td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td><code>11 days</code></td>
-<td><code>0 days</code></td>
-<td><code>3 days</code></td>
-<td>After 14 days, Tuesday</td>
-</tr>
-</tbody>
-</table>
-<p>You see something else new? Yes, I&rsquo;ve avoided weekends for updates following a chat with <a href="https://deploymentshare.com/"   target="_blank">
-    Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office, or being used to watch Netflix in bed.</p>
-<p>This also allows for our VIP users to pick which day they actually want updates to be installed and their devices and restarted, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
-<h2 class="relative group">Office Update Rings 
-    <div id="office-update-rings" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#office-update-rings" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Oooooh this one is new, and straight up robbed from Windows Autopatch, and although doesn&rsquo;t exist as a dedicated blade in Microsoft Intune, we can use the glorious <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
-    Settings Catalog</a> profiles to configure Office Update Channels, deferral, and deadline settings for Microsoft 365 App updates.</p>
-<p>To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Location for updates: (Device)</td>
-<td><code>http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6</code></td>
-</tr>
-<tr>
-<td>Enable Automatic Updates</td>
-<td><code>Enabled</code></td>
-</tr>
-<tr>
-<td>Hide option to enable or disable updates</td>
-<td><code>Enabled</code></td>
-</tr>
-<tr>
-<td>Hide Update Notifications</td>
-<td><code>Disabled</code></td>
-</tr>
-<tr>
-<td>Update Channel</td>
-<td><code>Enabled</code></td>
-</tr>
-<tr>
-<td>Channel Name (Device)</td>
-<td><code>Monthly Enterprise Channel</code></td>
-</tr>
-<tr>
-<td>Update Path</td>
-<td><code>Enabled</code></td>
-</tr>
-</tbody>
-</table>
-<p>With the update channel configured to Monthly Enterprise, and a bit of a change to the user experience, let&rsquo;s see what else we can borrow.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >Make sure you assign this to all your devices in scope of updates, using either an existing group, or the built in &lsquo;All Devices&rsquo; group and a suitable <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
-    Device Filter</a>.</span>
-</div>
-
-<h3 class="relative group">Phased Office Updates 
-    <div id="phased-office-updates" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#phased-office-updates" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>With a similar approach to the Windows Update Rings, we can create corresponding Settings Catalog profiles for our five deployment phases, aligning as best we can the end result, which is installed updates, to the restart of the updates delivered as part of the Windows Update ring configuration.</p>
-<p>All settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
-<table>
-<thead>
-<tr>
-<th>Update Ring</th>
-<th>Delay downloading and installing updates for Office</th>
-<th>Days: (Device)</th>
-<th>Update Deadline</th>
-<th>Deadline: (Device)</th>
-<th>Updates Installed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td><code>Enabled</code></td>
-<td><code>0</code></td>
-<td><code>Enabled</code></td>
-<td><code>1</code></td>
-<td>After 1 day, Wednesday</td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td><code>Enabled</code></td>
-<td><code>2</code></td>
-<td><code>Enabled</code></td>
-<td><code>1</code></td>
-<td>After 3 days, Friday</td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td><code>Enabled</code></td>
-<td><code>5</code></td>
-<td><code>Enabled</code></td>
-<td><code>2</code></td>
-<td>After 7 days, Tuesday</td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td><code>Enabled</code></td>
-<td><code>8</code></td>
-<td><code>Enabled</code></td>
-<td><code>2</code></td>
-<td>After 10 days, Friday</td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td><code>Enabled</code></td>
-<td><code>11</code></td>
-<td><code>Enabled</code></td>
-<td><code>3</code></td>
-<td>After 14 days, Tuesday</td>
-</tr>
-</tbody>
-</table>
-<p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps"   target="_blank">
-    update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
-<h2 class="relative group">Update Ring Assignment 
-    <div id="update-ring-assignment" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#update-ring-assignment" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>After creating the Windows Update Rings, and our faux Office Update Rings, using the above settings, we can look at how we assign our phased deployment groups to each suitable ring.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >Feel free to alter the deferral, deadline, and grace periods where applicable to your device estate, but please if you want the experience to be as expected, use the below assignment targets.</span>
-</div>
-
-<table>
-<thead>
-<tr>
-<th>Update Ring</th>
-<th>Included Groups</th>
-<th>Excluded Groups</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td><code>Test</code></td>
-<td>n/a</td>
-<td></td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td><code>Pilot</code></td>
-<td><code>Test</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td><code>Pre-Production</code></td>
-<td><code>Test</code>, <code>Pilot</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td><code>Initial Production</code></td>
-<td><code>Test</code>, <code>Pilot</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td><code>Final Production</code></td>
-<td><code>Test</code>, <code>Pilot</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>I&rsquo;m assuming here that you aren&rsquo;t putting VIP user devices in Test and Pilot, because you don&rsquo;t want to anger them, maybe do it on your last day 😅.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >This is an improvement on our previous version of Update Ring assignment, as we&rsquo;re not relying on excludes and dynamic groups to update to ensure there are no conflicts.</span>
-</div>
-
-<h3 class="relative group">VIP Ring Assignment 
-    <div id="vip-ring-assignment" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#vip-ring-assignment" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>To get the expected behaviour for our VIP groups, we need to consider what happens when we want to ensure a VIP device is in the correct Update Ring, which includes making sure there are no conflicts across the rings.</p>
-<p>Changing the assignments of our Update Rings to the below, will allow for the manual assignment based on a devices VIP group membership.</p>
-<table>
-<thead>
-<tr>
-<th>Update Ring</th>
-<th>Included Groups</th>
-<th>Excluded Groups</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td><code>Test</code></td>
-<td>n/a</td>
-<td></td>
-</tr>
-<tr>
-<td>Pilot</td>
-<td><code>Pilot</code></td>
-<td><code>Test</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td><code>Pre-Production</code>, <code>VIP Pre-Production</code></td>
-<td><code>Test</code>, <code>Pilot</code>, <code>VIP Initial Production</code>, <code>VIP Final Production</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td><code>Initial-Production</code>, <code>VIP Initial-Production</code></td>
-<td><code>Test</code>, <code>Pilot</code>, <code>VIP Pre-Production</code>, <code>VIP Final Production</code></td>
-<td></td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td><code>Final Production</code>, <code>VIP Final Production</code></td>
-<td><code>Test</code>, <code>Pilot</code>, <code>VIP Pre-Production</code>, <code>VIP Initial Production</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code>, which will captured by the &lsquo;Final Production&rsquo; dynamic group, is added to group <code>VIP Initial Production</code>, it will exclude the device from the Final Production Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
-<p>Adding in not only new include assignments, but exclude assignments, ensures that devices in these groups are assigned to the correct Update Ring.</p>
-<h2 class="relative group">Summary 
-    <div id="summary" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>All of this should give you the option to not only suitably phase Windows, Microsoft, and Office Updates, with each subsequent Update Ring starting only after the next, but also allow the shift of devices around without conflict where required, whether this is for VIP users or otherwise, providing your end users with clear details and days of when their device will not only get updated, but also restart, without too much of a headache, or interruption to their casual personal use of their corporate owned device.</p>
-
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$ProfileName</span> <span class="p">=</span> <span class="s1">&#39;ENNBEE Device VPN&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$VPNRoutes</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">System</span><span class="p">.</span><span class="py">Collections</span><span class="p">.</span><span class="py">ArrayList</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$VPNRoutes</span><span class="p">.</span><span class="py">AddRange</span><span class="p">(</span><span class="vm">@</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.21.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.20.1.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;192.168.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.23.10.0/24&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;172.37.0.0/16&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;18.103.2.112/32&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$VPN</span> <span class="p">=</span> <span class="nb">Get-VpnConnection</span> <span class="n">-AllUserConnection</span> <span class="n">-Name</span> <span class="nv">$ProfileName</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$VPN</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="k">in</span> <span class="nv">$VPNRoutes</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nv">$VPNRoute</span> <span class="n">-notin</span> <span class="vm">$</span><span class="p">(</span><span class="nv">$VPN</span><span class="p">.</span><span class="n">Routes</span><span class="p">).</span><span class="n">DestinationPrefix</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">Add-VpnConnectionRoute</span> <span class="n">-ConnectionName</span> <span class="nv">$ProfileName</span> <span class="n">-DestinationPrefix</span> <span class="nv">$VPNRoute</span> <span class="n">-Confirm</span> <span class="vm">$false</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$errMsg</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="py">Message</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$errMsg</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
         </div>
                 
         
@@ -1806,7 +1502,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/aovpn-adding-routes/&amp;title=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1825,7 +1521,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;text=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/aovpn-adding-routes/&amp;text=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1843,7 +1539,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;resubmit=true&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://reddit.com/submit/?url=http://localhost:1313/posts/aovpn-adding-routes/&amp;resubmit=true&amp;title=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1862,7 +1558,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;resubmit=true&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/aovpn-adding-routes/&amp;resubmit=true&amp;title=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title=""
       aria-label=""
       >
@@ -1881,7 +1577,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;resubmit=true&amp;title=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://t.me/share/url?url=http://localhost:1313/posts/aovpn-adding-routes/&amp;resubmit=true&amp;title=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title=""
       aria-label=""
       >
@@ -1900,7 +1596,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;description=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/aovpn-adding-routes/&amp;description=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1919,7 +1615,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;quote=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/aovpn-adding-routes/&amp;quote=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1938,7 +1634,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/flexible-update-deployments/&amp;subject=A%20Flexible%20Approach%20to%20Microsoft%20Update%20Deployments"
+      href="mailto:?body=http://localhost:1313/posts/aovpn-adding-routes/&amp;subject=Adding%20Always%20On%20VPN%20Routes%20with%20Intune%20and%20Configuration%20Manager"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -1964,11 +1660,11 @@
   
   
 
-  <a href="/posts/windows-update-phased-deployment/" class="min-w-full">
+  <a href="/posts/configmgr-client-hybrid-autopilot/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-update-phased-deployment/feature-wu.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/configmgr-client-hybrid-autopilot/feature-cfg-ap.png);"></div>
         
       
 
@@ -1976,7 +1672,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/windows-update-phased-deployment/">Intelligent Phased Windows Update for Business Deployments</div>
+          href="/posts/configmgr-client-hybrid-autopilot/">Co-Managing Windows Autopilot Hybrid Join Devices</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2017,9 +1713,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-07-17 20:07:23 &#43;0100 &#43;0100">17 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-03-01 21:26:30 &#43;0000 UTC">1 March 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Windows-Update-Phased-Deployment/index.md" 
+    <span id="views_posts\ConfigMgr-Client-Hybrid-Autopilot\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -2062,195 +1758,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configmgr/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Groups
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-        
-        <div class="py-1 prose dark:prose-invert">
-          You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..
-        </div>
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
-  <a href="/posts/updating-windows-store-apps/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/updating-windows-store-apps/feature-storeapps.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/updating-windows-store-apps/">Keeping Windows Store Apps Updated with Microsoft Intune</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2024-02-06 21:03:00 &#43;0000 UTC">6 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
-    
-    <span id="views_posts/Updating-Windows-Store-Apps/index.md" 
-    
-        class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
-    <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Remediation
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apps/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Apps
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
+    Configuration Manager
   </span>
 </span>
   </span>
@@ -2263,10 +1774,26 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
+    Remediation
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
   </span>
 </span>
   </span>
@@ -2282,7 +1809,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.
+          Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?
         </div>
         
       </div>
@@ -2294,11 +1821,11 @@
   
   
 
-  <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
+  <a href="/posts/custom-compliance-third-party-av/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/custom-compliance-third-party-av/feature-av.png);"></div>
         
       
 
@@ -2306,7 +1833,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/defender-antivirus-compliance-updates/">Updating Defender Antivirus Compliance Settings</div>
+          href="/posts/custom-compliance-third-party-av/">Detailed Compliance for Non-Microsoft Antivirus Solutions</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2347,9 +1874,9 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-04-02 21:25:23 &#43;0100 BST">2 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
     
-    <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" 
+    <span id="views_posts\Custom-Compliance-Third-Party-AV\index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">
@@ -2400,22 +1927,6 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/defender/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Defender
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
@@ -2424,10 +1935,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
+    Security
   </span>
 </span>
   </span>
@@ -2467,7 +1978,168 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/hybrid-join-computer-rename-again/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/hybrid-join-computer-rename-again/feature-computer-rename.png);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/hybrid-join-computer-rename-again/">Proactively Renaming Hybrid Azure AD Joined Devices</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2023-01-12 20:10:32 &#43;0000 UTC">12 January 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+    
+    <span id="views_posts\Hybrid-Join-Computer-Rename-Again\index.md" 
+    
+        class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
+    <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows Autopilot
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Remediation
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hybrid/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Hybrid Azure AD
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&rsquo;t a good enough identification method for Windows devices.
         </div>
         
       </div>
@@ -2484,8 +2156,8 @@
      
     
      <script>
-        var oid = "views_posts\/Flexible-Update-Deployments\/index.md"
-        var oid_likes = "likes_posts\/Flexible-Update-Deployments\/index.md"
+        var oid = "views_posts\\AOVPN-Adding-Routes\\index.md"
+        var oid_likes = "likes_posts\\AOVPN-Adding-Routes\\index.md"
       </script>
       
       
@@ -2508,18 +2180,40 @@
       <div class="flex justify-between pt-3">
         <span>
           
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/macos-teams-new-backgrounds/">
+            <a class="flex group mr-3" href="/posts/automate-endpoint-privilege-management/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Custom Backgrounds for macOS New and Classic Microsoft Teams Apps</span
+                  >Automating Endpoint Privilege Management Policies with PowerShell</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-02-14 21:39:58 &#43;0000 UTC">14 February 2024</time>
+                    <time datetime="2023-06-01 18:58:40 &#43;0100 BST">1 June 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/custom-compliance-third-party-av/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Detailed Compliance for Non-Microsoft Antivirus Solutions</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-04-02 21:25:23 &#43;0100 BST">2 April 2023</time>
                   
                 </span>
               </span>
@@ -2632,7 +2326,7 @@
 </footer><div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://memv.ennbee.uk/"
+  data-url="http://localhost:1313/"
   style="z-index:500"
 >
   <div
