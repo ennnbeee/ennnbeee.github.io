@@ -106,7 +106,7 @@
     "keywords": ["intune","windows","updates","groups","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1684"
+    "wordCount": "1752"
   }]
   </script>
 
@@ -1176,10 +1176,10 @@
     
 </h2>
 <p>So this isn&rsquo;t the <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/"  >
-    first time</a> we&rsquo;ve looked at managing updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
-    declarative device management</a> looming for Apple and hopefully Windows devices covering software updates.</p>
+    first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
+    declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
 <p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview"   target="_blank">
-    Windows Autopatch</a> service, and getting hands on with it recently, it has prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
+    Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
 <h2 class="relative group">Deployment Approach 
     <div id="deployment-approach" class="anchor"></div>
     
@@ -1190,8 +1190,8 @@
     </span>        
     
 </h2>
-<p>Previously, we&rsquo;d looked at a set of <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/#windows-update-for-business-rings"  >
-    four Update Rings</a>, but now we&rsquo;ll include an early adopters ring as a pre-production release, kind of a fail safe prior to your production deployment of updates.</p>
+<p>Previously, we configured a set of <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/#windows-update-for-business-rings"  >
+    four Update Rings</a>, but now we&rsquo;ll include an early adopters ring as a pre-production release, kind of a fail safe prior to your production deployment of updates; that final catch before you target the entire device estate.</p>
 <ul>
 <li><strong>Test</strong> - This should be devices that are dedicated for testing, ~1% of your device estate.</li>
 <li><strong>Pilot</strong> - This should be a stratified sample of either users or devices, ~5% of your device estate.</li>
@@ -1199,7 +1199,7 @@
 <li><strong>Initial Production</strong> - The first production deployment, ~30% of your device estate.</li>
 <li><strong>Final Production</strong> - The final production deployment, the remaining ~50% of the device estate.</li>
 </ul>
-<p>The above groupings can be used across not just Windows Updates, but Office Updates, and Driver updates too. Let&rsquo;s look at the membership of these groups.</p>
+<p>The aim is tht the above groupings are reusable and can be used across not just Windows Updates, but Office Updates, and Driver updates too. Let&rsquo;s look at the membership of these groups.</p>
 <h2 class="relative group">Deployment Groups 
     <div id="deployment-groups" class="anchor"></div>
     
@@ -1211,7 +1211,7 @@
     
 </h2>
 <p>Despite <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-improving-the-efficiency-of-dynamic-group-processing/ba-p/4049394"   target="_blank">
-    Microsoft</a> recommending to stop using the <code>match</code> operators in favour of <code>startsWith</code> there are times when you just have to ignore them, this might be one of those times when we look at how we split a device estate into the phased breakdowns we&rsquo;re looking to achieve.</p>
+    Microsoft</a> recommending to stop using the <code>match</code> operators in favour of <code>startsWith</code> there are times when you might have to ignore them, this could be one of those times when we look at how we split a device estate into the phased breakdowns we&rsquo;re looking to achieve.</p>
 <h3 class="relative group">Inefficient Dynamic Groups 
     <div id="inefficient-dynamic-groups" class="anchor"></div>
     
@@ -1255,18 +1255,18 @@
 <tr>
 <td>Initial Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[b-c,2-4]&quot;)</code></td>
+<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
 <td></td>
 </tr>
 <tr>
 <td>Final Production</td>
 <td>Dynamic Device</td>
-<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[d-f,5-9]&quot;)</code></td>
+<td><code>(device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>With the start of the <code>deviceId</code> only ever being in the range of <code>0-9</code> or <code>a-f</code> we&rsquo;ve an easy way to split our devices across the three production level groups, and ensure that we are capturing all devices.</p>
+<p>With the start of the <code>deviceId</code> only ever being in the range of <code>0-9</code> or <code>a-f</code> we&rsquo;ve an easy way to split our devices across the three production level groups, and ensure that we are capturing all devices, using the <code>match</code> operator, and the regular expression similar to <code>^[0-9,a-f]</code> to detect whether the <code>deviceId</code> starts with one of the values in the ranges provided.</p>
 
   
 
@@ -1295,7 +1295,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >You may want to tweak the rules used here, to alter the size of each of the production groups.</span>
+    >You may want to tweak the rules used here, to alter the size of each of the production groups, by changing the range of the <code>^[0-9,a-f]</code> query.</span>
 </div>
 
 <h3 class="relative group">Efficient Dynamic Groups 
@@ -1308,7 +1308,7 @@
     </span>        
     
 </h3>
-<p>If you want to please Daddy Microsoft, then you could use these alternative queries for the groups, Test and Pilot are still assigned, so don&rsquo;t forget to populate those members.</p>
+<p>If you want to please Microsoft Daddy, then you could use these alternative queries for the groups, Test and Pilot are still assigned, so don&rsquo;t forget to populate those members.</p>
 <table>
 <thead>
 <tr>
@@ -1363,7 +1363,7 @@
     
 </h3>
 <p>What about those people who complain about when they&rsquo;re getting updates, I mean you could tell them <del>to jog on</del> that you can&rsquo;t change the behaviour, or you could cater for the more VIP user, and allow for their device to sit in a different update group.</p>
-<p>So more assigned groups are required for each potential production level deployment.</p>
+<p>So more assigned groups are required for each potential exception or change to production level deployment options.</p>
 <table>
 <thead>
 <tr>
@@ -1405,7 +1405,7 @@
     </span>        
     
 </h2>
-<p>Now with suitable groups at our disposal, we can create our Windows Update rings in Microsoft Intune for each of the five groups, and after reviewing and experiencing Windows Update rings, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
+<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, but still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
     National Cyber Security Centre</a> 14-day window.</p>
 <table>
 <thead>
@@ -1455,8 +1455,8 @@
 </tr>
 </tbody>
 </table>
-<p>You see something else new? Yes, I&rsquo;ve avoided weekends for updates, meaning that for a weekday based working week, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office, or being used to watch Netflix in bed.</p>
-<p>Also this allows for our VIP users to pick which day they actually want updates to be installed and their devices and restarted, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
+<p>You see something else new? Yes, I&rsquo;ve avoided weekends for updates, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office, or being used to watch Netflix in bed.</p>
+<p>This also allows for our VIP users to pick which day they actually want updates to be installed and their devices and restarted, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
 <h2 class="relative group">Office Update Rings 
     <div id="office-update-rings" class="anchor"></div>
     
@@ -1551,7 +1551,7 @@
     </span>        
     
 </h3>
-<p>With a similar approach to the Windows Update rings, we can create corresponding Settings Catalog profiles for our five deployment phases, aligning as best we can the end result, which is installed updates, to the restart of the updates delivered as part of the Windows Update ring configuration.</p>
+<p>With a similar approach to the Windows Update Rings, we can create corresponding Settings Catalog profiles for our five deployment phases, aligning as best we can the end result, which is installed updates, to the restart of the updates delivered as part of the Windows Update ring configuration.</p>
 <p>All settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
 <table>
 <thead>
@@ -1608,7 +1608,7 @@
 </tbody>
 </table>
 <p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps"   target="_blank">
-    update cadence</a> as our normal updates, then the installation time falls on the same days, lucky us, meaning that all updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
+    update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
 <h2 class="relative group">Update Ring Assignment 
     <div id="update-ring-assignment" class="anchor"></div>
     
@@ -1619,8 +1619,38 @@
     </span>        
     
 </h2>
-<p>After creating the Windows Update rings, and our faux Office Update rings, using the above settings, we can look at how we assign our created groups to each suitable ring.</p>
-<p>Feel free to alter the deferral, deadline, and grace periods where applicable to your device estate, but please if you want the experience to be as expected, use the below assignment targets.</p>
+<p>After creating the Windows Update Rings, and our faux Office Update Rings, using the above settings, we can look at how we assign our phased deployment groups to each suitable ring.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >Feel free to alter the deferral, deadline, and grace periods where applicable to your device estate, but please if you want the experience to be as expected, use the below assignment targets.</span>
+</div>
+
 <table>
 <thead>
 <tr>
@@ -1706,7 +1736,7 @@
     
 </h3>
 <p>To get the expected behaviour for our VIP groups, we need to consider what happens when we want to ensure a VIP device is in the correct Update Ring, which includes making sure there are no conflicts across the rings.</p>
-<p>Changing the assignments of our Update Rings to the below, will allow for the manual assignment based on group membership.</p>
+<p>Changing the assignments of our Update Rings to the below, will allow for the manual assignment based on a devices VIP group membership.</p>
 <table>
 <thead>
 <tr>
@@ -1749,7 +1779,7 @@
 </tr>
 </tbody>
 </table>
-<p>For example if device <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code>, which will captured by the Final Production dynamic group, is added to group <code>VIP Initial Production</code>, will exclude the device from the Final Production Update Ring, and assign the Update Ring for Initial Production, with the device restarting after updates on a Friday.</p>
+<p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code>, which will captured by the &lsquo;Final Production&rsquo; dynamic group, is added to group <code>VIP Initial Production</code>, it will exclude the device from the Final Production Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
 <p>Adding in not only new include assignments, but exclude assignments, ensures that devices in these groups are assigned to the correct Update Ring.</p>
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
