@@ -9,6 +9,16 @@
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Thu, 21 Mar 2024 09:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A Flexible Approach to Microsoft Update Deployments</title>
+      <link>https://memv.ennbee.uk/posts/flexible-update-deployments/</link>
+      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid>
+      <description>It&amp;rsquo;s been a while since we&amp;rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" />
+    </item>
+    
+    <item>
       <title>Custom Backgrounds for macOS New and Classic Microsoft Teams Apps</title>
       <link>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</link>
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>

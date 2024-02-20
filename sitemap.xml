@@ -15,6 +15,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://memv.ennbee.uk/posts/flexible-update-deployments/</loc>
+    <lastmod>2024-02-19T20:07:23+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</loc>
     <lastmod>2024-02-14T21:39:58+00:00</lastmod>
     <changefreq>daily</changefreq>
