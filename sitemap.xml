@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://memv.ennbee.uk/posts/flexible-update-deployments/</loc>
+    <lastmod>2024-02-19T20:07:23+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://memv.ennbee.uk/posts/</loc>
-    <lastmod>2024-03-21T09:12:49+00:00</lastmod>
+    <lastmod>2024-02-19T20:07:23+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://memv.ennbee.uk/</loc>
-    <lastmod>2024-03-21T09:12:49+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://memv.ennbee.uk/posts/flexible-update-deployments/</loc>
     <lastmod>2024-02-19T20:07:23+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
