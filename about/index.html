@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.6250ab7185ef261d30a20cc7cfb4e2c536ef83933b37021abb0f98a3e23e45c5b09f7d8d2f72d4e73aee4827a44c3bcd43fec7a0dea29e2ef419e7a26f005449.css"
-    integrity="sha512-YlCrcYXvJh0wogzHz7TixTbvg5M7NwIauw&#43;Yo&#43;I&#43;RcWwn32NL3LU5zruSCekTDvNQ/7HoN6ini70GeeibwBUSQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f8e01d8af8578071663655395423b7a23a272602e62f1aa65c5671e4560a510c4d4b77bbf2797292b3c55408da0948a30cd8212c87b76f00a88e0277238a1a21.css"
+    integrity="sha512-&#43;OAdivhXgHFmNlU5VCO3ojonJgLmLxqmXFZx5FYKUQxNS3e78nlykrPFVAjaCUijDNghLIe3bwCojgJ3I4oaIQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -105,7 +105,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1189"
+    "wordCount": "817"
   }]
   </script>
 
@@ -155,16 +155,6 @@
 
   
   
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM0CM5PL0C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EM0CM5PL0C');
-</script>
-
   
   
   <meta name="theme-color"/>
@@ -194,6 +184,72 @@
   
   
 </head>
+
+    <script>
+      if (localStorage.getItem("doNotTrack") === null) {
+        localStorage.setItem("doNotTrack", "1") 
+      }
+      var doNotTrack = localStorage.getItem("doNotTrack");
+    </script>
+    <div id="cookie-notice">
+    <span>We use necessary cookies to make our site work. We'd like to set additional cookies to understand site usage and make site improvements.</span>
+    <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Accept Cookies</a>
+    <a id="cookie-notice-deny" class="btn btn-primary btn-sm">Reject Cookies</a>
+    <a href="/privacy/" class="btn btn-primary btn-sm">Show Cookie Purposes</a></div>
+    <script>
+        function createCookie(name,value,days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+        function eraseCookie(name) {
+            createCookie(name,"",-1);
+        }
+
+        if(readCookie('cookie-notice-option')=='true') {
+            
+                    localStorage.setItem("doNotTrack", "0");
+            
+        } else if (readCookie('cookie-notice-option')!='false'){
+            document.getElementById('cookie-notice').style.display = 'block';
+        }
+
+        document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+            createCookie('cookie-notice-option','true',31);
+            document.getElementById('cookie-notice').style.display = 'none';
+            location.reload();
+        });
+
+        document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+            createCookie('cookie-notice-option','false',31);
+            document.getElementById('cookie-notice').style.display = 'none';
+            location.reload();
+        });
+    </script>
+    
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM0CM5PL0C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EM0CM5PL0C');
+</script>
 <body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
   <div id="the-top" class="absolute flex self-center">
@@ -964,101 +1020,7 @@
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#disclaimer">Disclaimer</a></li>
-    <li><a href="#privacy">Privacy</a>
-      <ul>
-        <li><a href="#about-cookies">About Cookies</a></li>
-        <li><a href="#analytics-providers">Analytics Providers</a></li>
-        <li><a href="#rejecting-cookies">Rejecting Cookies</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#disclaimer">Disclaimer</a></li>
-    <li><a href="#privacy">Privacy</a>
-      <ul>
-        <li><a href="#about-cookies">About Cookies</a></li>
-        <li><a href="#analytics-providers">Analytics Providers</a></li>
-        <li><a href="#rejecting-cookies">Rejecting Cookies</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
- 
-<script>
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = e.attr('id');
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
-        
-        onScroll();
-      });
-    }
-  })();
-</script>
-   </div>
-      </div>
-      
+    
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
@@ -1080,6 +1042,17 @@
     Phoenix Software Ltd</a> who are the Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments.</p>
 <p>I hold the certifications for <a href="https://learn.microsoft.com/en-us/users/ennnbeee/credentials"   target="_blank">
     Microsoft 365 Enterprise Administrator and Modern Desktop Administrator</a>, which I should do as I work with the products on a daily basis.</p>
+<h2 class="relative group">Disclaimer 
+    <div id="disclaimer" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#disclaimer" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned. All information is provided &ldquo;as is&rdquo; with no warranties, and should be tested prior to any implementation, and I hold no liability for the outcome of the information provided.</p>
 <h2 class="relative group">Testimonials 
     <div id="testimonials" class="anchor"></div>
     
@@ -1168,68 +1141,6 @@
 </blockquote>
 </div>
 
-<h2 class="relative group">Disclaimer 
-    <div id="disclaimer" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#disclaimer" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned. All information is provided &ldquo;as is&rdquo; with no warranties, and should be tested prior to any implementation, and I hold no liability for the outcome of the information provided.</p>
-<h2 class="relative group">Privacy 
-    <div id="privacy" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#privacy" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>This site collects usage data using Google Analytics 4 using cookies, giving us insight into the number of people that visit our website. All data is anonymised and we do not sell nor share any data with third parties.</p>
-<p>A cookie is a small file, typically of letters and numbers, downloaded on to a device when the user accesses our website. A cookie is stored on your hard drive.</p>
-<h3 class="relative group">About Cookies 
-    <div id="about-cookies" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#about-cookies" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer if you agree. Cookies contain information that is transferred to your computer&rsquo;s hard drive. Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and allows us to improve our website.</p>
-<p>By continuing to browse the website, you are agreeing to our use of cookies. We may use the following cookies:</p>
-<ul>
-<li>Analytical/performance cookies. They allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.</li>
-</ul>
-<h3 class="relative group">Analytics Providers 
-    <div id="analytics-providers" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#analytics-providers" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Please note that we use Google Analytics, which places cookies on your computer, to help the website analyse how visitors use the website. The information generated by the cookie about your use of the website (including a randomisation of your IP address) will be transmitted to and stored by Google for the purpose of evaluating your use of the website, compiling reports on website activity for website operators and providing to us other services relating to website activity and internet usage. You can prevent Google’s collection and use of data by downloading and installing the browser plug-in available under <a href="https://tools.google.com/dlpage/gaoptout"   target="_blank">
-    google.com/dlpage/gaoptout</a>. Please visit <a href="https://google.com/intl/en/policies/privacy/"   target="_blank">
-    google.com/intl/en/policies/privacy/</a> for further information on how Google uses your data.</p>
-<h3 class="relative group">Rejecting Cookies 
-    <div id="rejecting-cookies" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#rejecting-cookies" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>You block cookies by activating the setting on your browser that allows you to refuse the setting of all or some cookies or by choosing to deny Cookies when prompted, then no information will be collected whatsoever.</p>
 
         </div>
                 

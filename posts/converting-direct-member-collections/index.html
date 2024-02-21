@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.6250ab7185ef261d30a20cc7cfb4e2c536ef83933b37021abb0f98a3e23e45c5b09f7d8d2f72d4e73aee4827a44c3bcd43fec7a0dea29e2ef419e7a26f005449.css"
-    integrity="sha512-YlCrcYXvJh0wogzHz7TixTbvg5M7NwIauw&#43;Yo&#43;I&#43;RcWwn32NL3LU5zruSCekTDvNQ/7HoN6ini70GeeibwBUSQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f8e01d8af8578071663655395423b7a23a272602e62f1aa65c5671e4560a510c4d4b77bbf2797292b3c55408da0948a30cd8212c87b76f00a88e0277238a1a21.css"
+    integrity="sha512-&#43;OAdivhXgHFmNlU5VCO3ojonJgLmLxqmXFZx5FYKUQxNS3e78nlykrPFVAjaCUijDNghLIe3bwCojgJ3I4oaIQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -156,16 +156,6 @@
 
   
   
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM0CM5PL0C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EM0CM5PL0C');
-</script>
-
   
   
   <meta name="theme-color"/>
@@ -195,6 +185,72 @@
   
   
 </head>
+
+    <script>
+      if (localStorage.getItem("doNotTrack") === null) {
+        localStorage.setItem("doNotTrack", "1") 
+      }
+      var doNotTrack = localStorage.getItem("doNotTrack");
+    </script>
+    <div id="cookie-notice">
+    <span>We use necessary cookies to make our site work. We'd like to set additional cookies to understand site usage and make site improvements.</span>
+    <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Accept Cookies</a>
+    <a id="cookie-notice-deny" class="btn btn-primary btn-sm">Reject Cookies</a>
+    <a href="/privacy/" class="btn btn-primary btn-sm">Show Cookie Purposes</a></div>
+    <script>
+        function createCookie(name,value,days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+        function eraseCookie(name) {
+            createCookie(name,"",-1);
+        }
+
+        if(readCookie('cookie-notice-option')=='true') {
+            
+                    localStorage.setItem("doNotTrack", "0");
+            
+        } else if (readCookie('cookie-notice-option')!='false'){
+            document.getElementById('cookie-notice').style.display = 'block';
+        }
+
+        document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+            createCookie('cookie-notice-option','true',31);
+            document.getElementById('cookie-notice').style.display = 'none';
+            location.reload();
+        });
+
+        document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+            createCookie('cookie-notice-option','false',31);
+            document.getElementById('cookie-notice').style.display = 'none';
+            location.reload();
+        });
+    </script>
+    
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EM0CM5PL0C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EM0CM5PL0C');
+</script>
 <body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
   <div id="the-top" class="absolute flex self-center">

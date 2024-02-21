@@ -388,5 +388,15 @@
       
     </item>
     
+    <item>
+      <title>Privacy</title>
+      <link>https://memv.ennbee.uk/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/privacy/</guid>
+      <description>Introduction # This site collects usage data using Google Analytics 4 using cookies, giving us insight into the number of people that visit our website.</description>
+      
+    </item>
+    
   </channel>
 </rss>
