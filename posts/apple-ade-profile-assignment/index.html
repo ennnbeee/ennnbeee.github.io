@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f8e01d8af8578071663655395423b7a23a272602e62f1aa65c5671e4560a510c4d4b77bbf2797292b3c55408da0948a30cd8212c87b76f00a88e0277238a1a21.css"
-    integrity="sha512-&#43;OAdivhXgHFmNlU5VCO3ojonJgLmLxqmXFZx5FYKUQxNS3e78nlykrPFVAjaCUijDNghLIe3bwCojgJ3I4oaIQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e12751d001aebd5ad5ce4bf6071f78286accdfb7d47d813723872707fc480c28cdc4711cfe99bfe017cb9305a1d0a919ace08741d7689e5b714649b919118ad.css"
+    integrity="sha512-nhJ1HQAa69WtXOS/YHH3goaszft9R9gTcjhycH/EgMKM3EcRz&#43;mb/gF8uTBaHQqRms4IdB12ieW3FGSbkZEYrQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -1572,7 +1572,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
     
 </h2>
 <p>With that horrible mess we created, we can combine it all into a sub-par script, to actually assign these devices to the Enrolment Profiles.</p>
-<p>The <a href="https://github.com/ennnbeee/mem-scripts/blob/main/Intune/Enrolment/Invoke-ADEProfileAssignment/Invoke-ADEProfileAssignment.ps1"   target="_blank">
+<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Enrolment/ADEProfileAssignment/Invoke-ADEProfileAssignment.ps1"   target="_blank">
     full script</a> as always is in my GitHub repo, and gives you some nice messages along the way as it runs off plays with your Intune environment, it also catches errors, which I&rsquo;ve been told is important.</p>
 <p>The bits you care about now, and the final pay off to our work, can be found below, remember to include the functions and authentication otherwise everything will look a little red in the PowerShell console:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$CSVPath</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s1">&#39;Please provide the path to the CSV file containing a list of Serial Numbers and ADE Profile Names e.g. C:\temp\ADEDevices.csv&#39;</span>

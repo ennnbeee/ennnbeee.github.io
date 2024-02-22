@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f8e01d8af8578071663655395423b7a23a272602e62f1aa65c5671e4560a510c4d4b77bbf2797292b3c55408da0948a30cd8212c87b76f00a88e0277238a1a21.css"
-    integrity="sha512-&#43;OAdivhXgHFmNlU5VCO3ojonJgLmLxqmXFZx5FYKUQxNS3e78nlykrPFVAjaCUijDNghLIe3bwCojgJ3I4oaIQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e12751d001aebd5ad5ce4bf6071f78286accdfb7d47d813723872707fc480c28cdc4711cfe99bfe017cb9305a1d0a919ace08741d7689e5b714649b919118ad.css"
+    integrity="sha512-nhJ1HQAa69WtXOS/YHH3goaszft9R9gTcjhycH/EgMKM3EcRz&#43;mb/gF8uTBaHQqRms4IdB12ieW3FGSbkZEYrQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -1390,9 +1390,7 @@
 </h3>
 <p>The original script used a single variable <code>wallpaperurl</code> to capture the desktop wallpaper URL, which is nice and all, and obviously fits the Desktop Background purpose, but we&rsquo;d like to give our users options of Teams Backgrounds, so we&rsquo;ll use an <a href="https://www.freecodecamp.org/news/bash-array-how-to-declare-an-array-of-strings-in-a-bash-script/"   target="_blank">
     array</a> to hold our list of URLs to the background files (see I am learning).</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Scripts/Shell/TeamsBackgrounds/Msft_Nostalgia_Landscape.jpg&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Scripts/Shell/TeamsBackgrounds/SupportUkraine_Heart_TeamsBackground.jpg&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Scripts/Shell/TeamsBackgrounds/covermichael.jpg&#34;</span><span class="o">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://memv.ennbee.uk/bgr.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp-lt.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp.png&#34;</span><span class="o">)</span>
 </span></span></code></pre></div><p>For any additional URLs, you can add a new line to the array.</p>
 
   
@@ -1468,15 +1466,13 @@
     </span>        
     
 </h2>
-<p>The <a href="https://github.com/ennnbeee/mem-scripts/blob/main/Intune/Scripts/Shell/Script_downloadTeamsBackground.sh"   target="_blank">
+<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh"   target="_blank">
     full script</a> looks pretty much like the below, which is just a squishing together of the bits we&rsquo;ve already covered in this post.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#set -x</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Add new background URLs to the array</span>
-</span></span><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Apple/macOS/Apps/TeamsBackgrounds/Msft_Nostalgia_Landscape.jpg&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Apple/macOS/Apps/TeamsBackgrounds/SupportUkraine_Heart_TeamsBackground.jpg&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Apple/macOS/Apps/TeamsBackgrounds/covermichael.jpg&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://memv.ennbee.uk/bgr.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp-lt.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp.png&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">scriptname</span><span class="o">=</span><span class="s2">&#34;SetTeamsBackground&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">teamsapp</span><span class="o">=</span><span class="s2">&#34;/Applications/Microsoft Teams.app&#34;</span>

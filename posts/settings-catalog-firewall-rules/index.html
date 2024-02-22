@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f8e01d8af8578071663655395423b7a23a272602e62f1aa65c5671e4560a510c4d4b77bbf2797292b3c55408da0948a30cd8212c87b76f00a88e0277238a1a21.css"
-    integrity="sha512-&#43;OAdivhXgHFmNlU5VCO3ojonJgLmLxqmXFZx5FYKUQxNS3e78nlykrPFVAjaCUijDNghLIe3bwCojgJ3I4oaIQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e12751d001aebd5ad5ce4bf6071f78286accdfb7d47d813723872707fc480c28cdc4711cfe99bfe017cb9305a1d0a919ace08741d7689e5b714649b919118ad.css"
+    integrity="sha512-nhJ1HQAa69WtXOS/YHH3goaszft9R9gTcjhycH/EgMKM3EcRz&#43;mb/gF8uTBaHQqRms4IdB12ieW3FGSbkZEYrQ==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -1869,7 +1869,7 @@
     </span>        
     
 </h3>
-<p>The <a href="https://github.com/ennnbeee/mem-scripts/blob/main/Intune/EndpointSecurity/Invoke-ConvertFirewallRules/Invoke-ConvertFirewallRules.ps1"   target="_blank">
+<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/ConvertFirewallRules/Invoke-ConvertFirewallRules.ps1"   target="_blank">
     full script</a> which let&rsquo;s be honest, is what you&rsquo;re after, can be run using the below command, passing in the required variables for <code>User</code>, <code>PolicyName</code>, and <code>FirewallPolicies</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">./</span><span class="nb">Invoke-ConvertFirewallRules</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-User</span> <span class="s2">&#34;yourGAaccount@you.onmicrosoft.com&#34;</span> <span class="n">-PolicyName</span> <span class="s2">&#34;COPE_FW_RulesMigrated&#34;</span> <span class="n">-FirewallPolicies</span> <span class="s2">&#34;LegacyRules-0&#34;</span><span class="p">,</span> <span class="s2">&#34;LegacyRules-1&#34;</span><span class="p">,</span> <span class="s2">&#34;LegacyRules-2&#34;</span><span class="p">,</span> <span class="s2">&#34;LegacyRules-3&#34;</span>
 </span></span></code></pre></div><p>After authenticated to Graph, this will give us the below output having successfully created the new Settings Catalog policies.</p>
@@ -2062,7 +2062,7 @@
     </span>        
     
 </h2>
-<p>This, and the <a href="https://github.com/ennnbeee/mem-scripts/blob/main/Intune/EndpointSecurity/Invoke-ConvertFirewallRules/Invoke-ConvertFirewallRules.ps1"   target="_blank">
+<p>This, and the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/ConvertFirewallRules/Invoke-ConvertFirewallRules.ps1"   target="_blank">
     script</a>, as usual all came about from improving a Customers Microsoft Intune environment. The customer being very security focussed was blocking legitimately everything inbound and outbound unless there was a firewall rule; this included all Microsoft 365 endpoints.</p>
 <p>With their existing rules in legacy profiles, they had to have rules with <em>all</em> the IP addresses for these <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide"   target="_blank">
     Microsoft endpoints</a>, and keep these up-to-date across multiple profiles.</p>
