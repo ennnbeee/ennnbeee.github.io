@@ -106,7 +106,7 @@
     "keywords": ["intune","windows","updates","groups","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1758"
+    "wordCount": "1767"
   }]
   </script>
 
@@ -1409,7 +1409,7 @@
 </tr>
 </tbody>
 </table>
-<p>See, much more efficient.</p>
+<p>Much more efficient.</p>
 <h3 class="relative group">VIP Groups 
     <div id="vip-groups" class="anchor"></div>
     
@@ -1452,7 +1452,7 @@
 </tr>
 </tbody>
 </table>
-<p>See, we can please the senior members of the company with IT solutions.</p>
+<p>See, we <em>can</em> please the senior members of the company with IT solutions.</p>
 <h2 class="relative group">Windows Update Rings 
     <div id="windows-update-rings" class="anchor"></div>
     
@@ -1463,7 +1463,7 @@
     </span>        
     
 </h2>
-<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, but still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
+<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings personally instead of just recommending them, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
     National Cyber Security Centre</a> 14-day window.</p>
 <table>
 <thead>
@@ -1513,9 +1513,9 @@
 </tr>
 </tbody>
 </table>
-<p>You see something else new? Yes, I&rsquo;ve avoided weekends for updates following a chat with <a href="https://deploymentshare.com/"   target="_blank">
-    Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office, or being used to watch Netflix in bed.</p>
-<p>This also allows for our VIP users to pick which day they actually want updates to be installed and their devices and restarted, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
+<p>You see something else new? Yes, I&rsquo;ve avoided device restarts on weekends following a chat with fellow lover of Microsoft Intune, <a href="https://deploymentshare.com/"   target="_blank">
+    Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office and powered off, or being used to watch Netflix in bed.</p>
+<p>This also allows for our VIP users to pick which day they actually want their device to restart, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
 <h2 class="relative group">Office Update Rings 
     <div id="office-update-rings" class="anchor"></div>
     
@@ -1678,7 +1678,7 @@
     </span>        
     
 </h2>
-<p>After creating the Windows Update Rings, and our faux Office Update Rings, using the above settings, we can look at how we assign our phased deployment groups to each suitable ring.</p>
+<p>After creating the Windows Update Rings, and our faux Office Update Rings using the above settings, we cover how we assign our phased deployment groups to each suitable Update Ring.</p>
 
   
 
@@ -1838,8 +1838,8 @@
 </tr>
 </tbody>
 </table>
-<p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code>, which will captured by the &lsquo;Final Production&rsquo; dynamic group, is added to group <code>VIP Initial Production</code>, it will exclude the device from the Final Production Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
-<p>Adding in not only new include assignments, but exclude assignments, ensures that devices in these groups are assigned to the correct Update Ring.</p>
+<p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code> (which will captured by the &lsquo;Final Production&rsquo; dynamic group), is added to group <code>VIP Initial Production</code>, it will exclude the device from the &lsquo;Final Production&rsquo; Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
+<p>Adding in not only new include assignments, but exclude assignments, will ensure that devices in these groups are assigned to the correct Update Ring.</p>
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     
@@ -1850,7 +1850,8 @@
     </span>        
     
 </h2>
-<p>All of this should give you the option to not only suitably phase Windows, Microsoft, and Office Updates, with each subsequent Update Ring starting only after the next, but also allow the shift of devices around without conflict where required, whether this is for VIP users or otherwise, providing your end users with clear details and days of when their device will not only get updated, but also restart, without too much of a headache, or interruption to their casual personal use of their corporate owned device.</p>
+<p>All of this should give you the option to not only suitably phase Windows, Microsoft, and Office Updates, with each subsequent Update Ring starting only after the next, but also allow the shift of devices around without conflict, whether this is for VIP users or otherwise.</p>
+<p>It also provides your end users with clear details of the days of when their device will not only get updated, but also restart, without too much of a headache, or interruption to their casual personal use of their corporate owned device.</p>
 
         </div>
                 
