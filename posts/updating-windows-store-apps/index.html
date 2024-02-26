@@ -30,8 +30,12 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e12751d001aebd5ad5ce4bf6071f78286accdfb7d47d813723872707fc480c28cdc4711cfe99bfe017cb9305a1d0a919ace08741d7689e5b714649b919118ad.css"
-    integrity="sha512-nhJ1HQAa69WtXOS/YHH3goaszft9R9gTcjhycH/EgMKM3EcRz&#43;mb/gF8uTBaHQqRms4IdB12ieW3FGSbkZEYrQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c98382b8eea28162939d9107fe2b82c3cd5c8388b602d87cdfdf33f2f98335b896bd24a90d94cee292e7f692baa65b84a0eafb967a8c57a433d5868f939e763d.css"
+    integrity="sha512-yYOCuO6igWKTnZEH/iuCw81cg4i2Ath8398z8vmDNbiWvSSpDZTO4pLn9pK6pluEoOr7lnqMV6Qz1YaPk552PQ==" />
+  
+  
+  <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
+  integrity="sha512-WB/GQ9gRm2dKFXHKHgJXB7BJLp8W8P7e&#43;ETZJHrg&#43;nHWSbG2onBMAJrWz6cnQ5CgFBZcC/Er47vXNDmOyBXMWA=="></script>
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -106,7 +110,7 @@
     "keywords": ["intune","windows","updates","remediation","apps","powershell","autopilot","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "899"
+    "wordCount": "901"
   }]
   </script>
 
@@ -1375,7 +1379,11 @@
     
 </h3>
 <p>We can use the above, and a little logic to detect whether the result of the <code>LastScanError</code> is a zero or not, and if it&rsquo;s not a zero throw an <code>Exit 1</code> to allow a remediation to run.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+
+
+  
+    
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ps1" data-lang="ps1"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$wmiObj</span> <span class="p">=</span> <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$wmiObj</span><span class="p">.</span><span class="py">LastScanError</span> <span class="o">-ne</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps not updated.&#34;</span>
@@ -1389,8 +1397,10 @@
 </span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Unable to query Store App Update status.&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>On to the remediation portion.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  
+
+<p>On to the remediation portion.</p>
 <h3 class="relative group">Remediation Script 
     <div id="remediation-script" class="anchor"></div>
     
@@ -1402,7 +1412,11 @@
     
 </h3>
 <p>We&rsquo;ve already done the ground work with the previous queries to test the update of apps, so this one is very straightforward.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+
+
+  
+    
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ps1" data-lang="ps1"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">UpdateScanMethod</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps updated.&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">0</span>
@@ -1410,8 +1424,10 @@
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps not updated.&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  
+
+<p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
 <h2 class="relative group">Deploying the Remediation 
     <div id="deploying-the-remediation" class="anchor"></div>
     
@@ -1467,9 +1483,39 @@
     
 </h2>
 <p>All in all a quick and dirty solution to a very simple problem with new Windows Autopilot devices and existing Microsoft Intune managed Windows devices, at least this way they&rsquo;ll do what they should have done in the first place and just keep themselves updated.</p>
-<p>The detection and remediation scripts are available in my <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/UpdateStoreApps"   target="_blank">
-    Github Repo</a></p>
 <p>If only all the issues I encounter during my days could be solved with a simple Remediation script.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+<path fill="currentColor"  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >The detection and remediation scripts are available, as always in my <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/UpdateStoreApps"   target="_blank">
+    Github Repo</a>.</span>
+</div>
+
 
         </div>
                 

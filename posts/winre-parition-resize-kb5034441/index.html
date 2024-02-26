@@ -30,8 +30,12 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e12751d001aebd5ad5ce4bf6071f78286accdfb7d47d813723872707fc480c28cdc4711cfe99bfe017cb9305a1d0a919ace08741d7689e5b714649b919118ad.css"
-    integrity="sha512-nhJ1HQAa69WtXOS/YHH3goaszft9R9gTcjhycH/EgMKM3EcRz&#43;mb/gF8uTBaHQqRms4IdB12ieW3FGSbkZEYrQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c98382b8eea28162939d9107fe2b82c3cd5c8388b602d87cdfdf33f2f98335b896bd24a90d94cee292e7f692baa65b84a0eafb967a8c57a433d5868f939e763d.css"
+    integrity="sha512-yYOCuO6igWKTnZEH/iuCw81cg4i2Ath8398z8vmDNbiWvSSpDZTO4pLn9pK6pluEoOr7lnqMV6Qz1YaPk552PQ==" />
+  
+  
+  <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
+  integrity="sha512-WB/GQ9gRm2dKFXHKHgJXB7BJLp8W8P7e&#43;ETZJHrg&#43;nHWSbG2onBMAJrWz6cnQ5CgFBZcC/Er47vXNDmOyBXMWA=="></script>
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -106,7 +110,7 @@
     "keywords": ["intune","windows","updates","powershell","remediation"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1648"
+    "wordCount": "1614"
   }]
   </script>
 
@@ -1437,11 +1441,7 @@
     
 </h3>
 <p>To allow the script to work within a Remediation, we need to ensure that the data being passed back to Microsoft Intune is suitable, and other that wrapping the bulk of the script in some <code>Try</code> and <code>Catch</code> logic, and handling the output of the commands with <code>Write-Output</code> and corresponding <code>Exit</code> codes, there isn&rsquo;t a whole heap for us to do thankfully.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c">#Script to fix the recovery partition for KB5028997 by /u/InternetStranger4You, updated by Nick Benton</span>
-</span></span><span class="line"><span class="cl"><span class="c">#Mostly Powershell version of Microsoft&#39;s support article: https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf</span>
-</span></span><span class="line"><span class="cl"><span class="c">#Test in your own environment before running. Not responsible for any damages.</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c">#Run reagentc.exe /info and save the output</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Diagnostics</span><span class="p">.</span><span class="py">ProcessStartInfo</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span><span class="p">.</span><span class="py">FileName</span> <span class="p">=</span> <span class="s1">&#39;reagentc.exe&#39;</span>
