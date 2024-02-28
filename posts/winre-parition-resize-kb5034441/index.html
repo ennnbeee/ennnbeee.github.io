@@ -1313,7 +1313,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;Recovery Partition not found.&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>If the result of the comparison is that the <del>size of the partition is smaller than the 750MB configured in <code>$partitionSize</code></del> free space of the partition is smaller than the 250MB configured in <code>$freePartitionSpace</code>, then we&rsquo;ll report the status with <code>Write-Output</code> and <code>Exit 1</code>, otherwise, all is OK so we <code>Exit 0</code> still reporting something.</p>
 <h3 class="relative group">Then We Report 
@@ -1496,12 +1496,12 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s1">&#39;Recovery partition not found. Aborting script.&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;Unable to update Recovery Partition on the device.&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>With the script now in a more useful format, on to how we deploy this to a select group of test devices.</p>
 <h2 class="relative group">Deploying the Remediation 

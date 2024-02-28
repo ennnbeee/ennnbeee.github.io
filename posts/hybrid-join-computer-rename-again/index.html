@@ -110,7 +110,7 @@
     "keywords": ["intune","windows","autopilot","remediation","hybrid","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1379"
+    "wordCount": "1381"
   }]
   </script>
 
@@ -1324,7 +1324,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>With Proactive Remediation scripts, we need to pass back the results of this check, and any checks, with <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements"   target="_blank">
     Exit Codes</a> and some kind of descriptive text.</p>
@@ -1412,6 +1412,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h3 class="relative group">Deployment in Intune 
     <div id="deployment-in-intune" class="anchor"></div>

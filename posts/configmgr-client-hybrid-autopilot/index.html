@@ -110,7 +110,7 @@
     "keywords": ["intune","configmgr","autopilot","remediation","windows","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1223"
+    "wordCount": "1225"
   }]
   </script>
 
@@ -1515,7 +1515,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h4 class="relative group">Remediation Script 
     <div id="remediation-script" class="anchor"></div>
@@ -1545,6 +1545,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h3 class="relative group">Creating a Custom Script 
     <div id="creating-a-custom-script" class="anchor"></div>
