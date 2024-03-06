@@ -1223,7 +1223,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1237,6 +1239,8 @@
 <p>NCSC do provide documented <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos"   target="_blank">
     guides</a> for macOS along with a <a href="https://github.com/ukncsc/Device-Security-Guidance-Configuration-Packs/tree/main/Apple/macOS"   target="_blank">
     GitHub repo</a> containing a script and a list of recommended security settings, but what do these look like in Microsoft Intune? And what if you need to make changes? What about if you have exceptions?</p>
+
+
 <h2 class="relative group">Custom Configuration Template 
     <div id="custom-configuration-template" class="anchor"></div>
     
@@ -1254,6 +1258,8 @@
 <p><em>&ldquo;The custom configuration template allows IT admins to assign settings that aren&rsquo;t built into Intune yet. For macOS devices, you can import a .mobileconfig file that you created using Profile Manager or a different tool.&rdquo;</em></p>
 </blockquote>
 <p>Sounds perfect right? Details on how to create these profiles are below, but for now, let&rsquo;s look at the NCSC settings and their associated mobileconfig files.</p>
+
+
 <h3 class="relative group">Automatic Updates 
     <div id="automatic-updates" class="anchor"></div>
     
@@ -1354,7 +1360,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;/array&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
-</span></span></code></pre></div><h3 class="relative group">Fast User Switching and Automatic Logon 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Fast User Switching and Automatic Logon 
     <div id="fast-user-switching-and-automatic-logon" class="anchor"></div>
     
     <span
@@ -1447,7 +1455,9 @@
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl"> <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
-</span></span></code></pre></div><h3 class="relative group">Hiding System Preferences 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Hiding System Preferences 
     <div id="hiding-system-preferences" class="anchor"></div>
     
     <span
@@ -1528,7 +1538,9 @@
 </span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>User<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
-</span></span></code></pre></div><h3 class="relative group">Time Servers 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Time Servers 
     <div id="time-servers" class="anchor"></div>
     
     <span
@@ -1621,7 +1633,9 @@
 </span></span><span class="line"><span class="cl"> <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
-</span></span></code></pre></div><h3 class="relative group">Creating Custom Configuration Profiles 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Creating Custom Configuration Profiles 
     <div id="creating-custom-configuration-profiles" class="anchor"></div>
     
     <span
@@ -1697,6 +1711,8 @@
 <li>Select &lsquo;Next&rsquo; and assign the profile to the required Device Group.</li>
 <li>Repeat for all the mobileconfig files created.</li>
 </ol>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

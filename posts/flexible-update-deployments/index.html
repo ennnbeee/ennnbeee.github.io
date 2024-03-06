@@ -1227,7 +1227,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1242,6 +1244,8 @@
     declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
 <p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview"   target="_blank">
     Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
+
+
 <h2 class="relative group">Deployment Approach 
     <div id="deployment-approach" class="anchor"></div>
     
@@ -1253,7 +1257,7 @@
     
 </h2>
 <p>Previously, we configured a set of <a href="https://memv.ennbee.uk/posts/windows-update-phased-deployment/#windows-update-for-business-rings"  >
-    four Update Rings</a>, but now we&rsquo;ll include an early adopters ring as a pre-production release, kind of a fail safe prior to your production deployment of updates; that final catch before you target the entire device estate.</p>
+    four Update Rings</a>, but now we&rsquo;ll include an early adopters ring as a pre-production release, kind of a fail safe prior to your production deployment of updates; that final catch before you target the entire device estate:</p>
 <ul>
 <li><strong>Test</strong> - This should be devices that are dedicated for testing, ~1% of your device estate.</li>
 <li><strong>Pilot</strong> - This should be a stratified sample of either users or devices, ~5% of your device estate.</li>
@@ -1262,6 +1266,8 @@
 <li><strong>Final Production</strong> - The final production deployment, the remaining ~50% of the device estate.</li>
 </ul>
 <p>The aim is tht the above groupings are reusable and can be used across not just Windows Updates, but Office Updates, and Driver updates too. Let&rsquo;s look at the membership of these groups.</p>
+
+
 <h2 class="relative group">Deployment Groups 
     <div id="deployment-groups" class="anchor"></div>
     
@@ -1305,6 +1311,8 @@
 <p>To avoid this, I&rsquo;ve added in <code>(device.deviceManagementAppId -ne null)</code> to the group rules, only capturing those devices that are actually enrolled in Microsoft Intune.</p>
 </span>
 </div>
+
+
 
 <h3 class="relative group">Inefficient Dynamic Groups 
     <div id="inefficient-dynamic-groups" class="anchor"></div>
@@ -1392,6 +1400,8 @@
     >You may want to tweak the rules used here, to alter the size of each of the production groups, by changing the range of the <code>^[0-9,a-f]</code> query.</span>
 </div>
 
+
+
 <h3 class="relative group">Efficient Dynamic Groups 
     <div id="efficient-dynamic-groups" class="anchor"></div>
     
@@ -1446,6 +1456,8 @@
 </tbody>
 </table>
 <p>Much more efficient.</p>
+
+
 <h3 class="relative group">VIP Groups 
     <div id="vip-groups" class="anchor"></div>
     
@@ -1489,6 +1501,8 @@
 </tbody>
 </table>
 <p>See, we <em>can</em> please the senior members of the company with IT solutions.</p>
+
+
 <h2 class="relative group">Windows Update Rings 
     <div id="windows-update-rings" class="anchor"></div>
     
@@ -1552,6 +1566,8 @@
 <p>You see something else new? Yes, I&rsquo;ve avoided device restarts on weekends following a chat with fellow lover of Microsoft Intune, <a href="https://deploymentshare.com/"   target="_blank">
     Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office and powered off, or being used to watch Netflix in bed.</p>
 <p>This also allows for our VIP users to pick which day they actually want their device to restart, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
+
+
 <h2 class="relative group">Office Update Rings 
     <div id="office-update-rings" class="anchor"></div>
     
@@ -1636,6 +1652,8 @@
     Device Filter</a>.</span>
 </div>
 
+
+
 <h3 class="relative group">Phased Office Updates 
     <div id="phased-office-updates" class="anchor"></div>
     
@@ -1704,6 +1722,8 @@
 </table>
 <p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps"   target="_blank">
     update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
+
+
 <h2 class="relative group">Update Ring Assignment 
     <div id="update-ring-assignment" class="anchor"></div>
     
@@ -1820,6 +1840,8 @@
     >This is an improvement on our previous version of Update Ring assignment, as we&rsquo;re not relying on excludes and dynamic groups to update to ensure there are no conflicts.</span>
 </div>
 
+
+
 <h3 class="relative group">VIP Ring Assignment 
     <div id="vip-ring-assignment" class="anchor"></div>
     
@@ -1876,6 +1898,8 @@
 </table>
 <p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code> (which will captured by the &lsquo;Final Production&rsquo; dynamic group), is added to group <code>VIP Initial Production</code>, it will exclude the device from the &lsquo;Final Production&rsquo; Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
 <p>Adding in not only new include assignments, but exclude assignments, will ensure that devices in these groups are assigned to the correct Update Ring.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

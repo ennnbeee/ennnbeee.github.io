@@ -1255,7 +1255,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1269,6 +1271,8 @@
     Windows Operating System Compliance Updates</a> many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.</p>
 <p>That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.</p>
 <p>Exciting I know.</p>
+
+
 <h2 class="relative group">Compliance Policy Updates 
     <div id="compliance-policy-updates" class="anchor"></div>
     
@@ -1282,6 +1286,8 @@
 <p>To reiterate from the previous post, and to hammer the point home, you <strong>should</strong> be updating these types of policies on a regular basis. When you update a Compliance Policy, it will trigger the devices the policy is assigned to, to re-evaluate the conditions and follow the actions for non-compliance if necessary.</p>
 <p>For the Defender settings, the one we&rsquo;re wanting to update is <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#defender"   target="_blank">
     Microsoft Defender Antimalware minimum version</a>, which if left blank will accept any version of the service, but we should be requiring an up to date version here, you know, for security.</p>
+
+
 <h3 class="relative group">Existing Functions 
     <div id="existing-functions" class="anchor"></div>
     
@@ -1305,6 +1311,8 @@
 </ul>
 <p>We will also need to create a new one, to retrieve the latest Microsoft Defender Update using the <a href="https://support.microsoft.com/en-us/rss-feed-picker"   target="_blank">
     Microsoft Feed Picker</a> for Microsoft Defender Updates.</p>
+
+
 <h2 class="relative group">Getting Latest Platform Update Version 
     <div id="getting-latest-platform-update-version" class="anchor"></div>
     
@@ -1361,6 +1369,8 @@
     >Yes I know this is rough af, yes I know I am relying on the data existing on the page, yes I know that splitting out raw content into separate lines, selecting string data containing the information I want and stripping away everything but the numbers and periods is absolutely awful, this was a quick script OK, I&rsquo;ll give myself a dead leg as penance.</span>
 </div>
 
+
+
 <h3 class="relative group">A New Function is Born 
     <div id="a-new-function-is-born" class="anchor"></div>
     
@@ -1400,7 +1410,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Updating Compliance Policies 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Updating Compliance Policies 
     <div id="updating-compliance-policies" class="anchor"></div>
     
     <span
@@ -1412,6 +1424,8 @@
 </h2>
 <p>So with all the functions we need, we can attack the script that will actually update the Compliance Policy. As we&rsquo;ve done something similar previously, I don&rsquo;t need to use my brain too much to hack around with the existing <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/WindowsOSCompliance/Set-WindowsOSCompliance.ps1"   target="_blank">
     script</a>, but there are some key areas to focus on&hellip;</p>
+
+
 <h3 class="relative group">Getting the Defender Policy 
     <div id="getting-the-defender-policy" class="anchor"></div>
     
@@ -1424,7 +1438,9 @@
 </h3>
 <p>We need to make sure we&rsquo;re grabbing the Defender policies for Windows devices so a little bit of a filter here. We&rsquo;re using the <code>@odata.type</code> and the <code>defenderEnabled</code> data here.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$DefenderCompliancePolicies</span> <span class="p">=</span> <span class="nb">Get-DeviceCompliancePolicy</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="s1">&#39;@odata.type&#39;</span><span class="p">).</span><span class="py">contains</span><span class="p">(</span><span class="s1">&#39;windows10CompliancePolicy&#39;</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">defenderEnabled</span><span class="p">)</span> <span class="o">-ne</span> <span class="s1">&#39;&#39;</span> <span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Building the JSON Content 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Building the JSON Content 
     <div id="building-the-json-content" class="anchor"></div>
     
     <span
@@ -1460,7 +1476,9 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-host</span> <span class="s2">&#34;Defender Antivirus Compliance Policy - </span><span class="p">$(</span><span class="nv">$DefenderCompliancePolicy</span><span class="p">.</span><span class="n">displayname</span><span class="p">)</span><span class="s2"> already up to date&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Running the Script 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
     <span
@@ -1533,6 +1551,8 @@
 
 </p>
 <p>And it did, I&rsquo;m as surprised as you are tbh.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

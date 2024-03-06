@@ -1243,7 +1243,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1256,6 +1258,8 @@
 <p>This isn&rsquo;t the first time we&rsquo;ve looked at deploying <a href="https://memv.ennbee.uk/posts/macos-teams-backgrounds/"  >
     backgrounds</a> for Microsoft Teams on macOS, but it&rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&rsquo;t).</p>
 <p>Now that the &lsquo;New&rsquo; Microsoft Teams app is the de facto version available to download from Microsoft replacing the &lsquo;Classic&rsquo; one, we should at least look at how it handles uploaded backgrounds and if required update our existing script to support not only the &lsquo;Classic&rsquo; version, but the &lsquo;New&rsquo; version too.</p>
+
+
 <h2 class="relative group">Application Differences 
     <div id="application-differences" class="anchor"></div>
     
@@ -1267,6 +1271,8 @@
     
 </h2>
 <p>Before we go digging into the existing script to work out what has broken with the new version of app, we should check to see what, if any differences there are across both version for the purpose of our script.</p>
+
+
 <h3 class="relative group">Uploaded Background Locations 
     <div id="uploaded-background-locations" class="anchor"></div>
     
@@ -1277,7 +1283,7 @@
     </span>        
     
 </h3>
-<p>Digging around the internet, and on a macOS device with both apps installed, we can see that uploaded backgrounds from the client itself are stored in the below locations.</p>
+<p>Digging around the internet, and on a macOS device with both apps installed, we can see that uploaded backgrounds from the client itself are stored in the below locations:</p>
 <ul>
 <li>Classic App - <code>$HOME/Library/Application Support/Microsoft/Teams/Backgrounds/Uploads</code></li>
 <li>New App - <code>$HOME/Library/Containers/com.microsoft.teams2/Data/Library/Application Support/Microsoft/MSTeams/Backgrounds/Uploads</code></li>
@@ -1285,6 +1291,8 @@
 <p>So this is similar to the change in uploaded background location for the Windows version that <a href="https://mvp.microsoft.com/en-us/PublicProfile/5005162"   target="_blank">
     Florian Salzmann</a> found in their <a href="https://scloud.work/new-teams-virtual-background-with-intune/"   target="_blank">
     post</a> about updating backgrounds for the new Windows Teams client.</p>
+
+
 <h3 class="relative group">Application Name 
     <div id="application-name" class="anchor"></div>
     
@@ -1295,12 +1303,14 @@
     </span>        
     
 </h3>
-<p>Another thing to note, is how we were detecting whether the Teams app was installed, referencing the app name, which has also changed, only slightly though but it is still a change.</p>
+<p>Another thing to note, is how we were detecting whether the Teams app was installed, referencing the app name, which has also changed, only slightly though but it is still a change:</p>
 <ul>
 <li>Classic App - <code>Microsoft Teams classic.app</code></li>
 <li>New App - <code>Microsoft Teams (work or school).app</code></li>
 </ul>
 <p>Great, so we need to take into account the file path change, and the app name change. Anything else Microsoft?</p>
+
+
 <h3 class="relative group">Background File Names 
     <div id="background-file-names" class="anchor"></div>
     
@@ -1315,6 +1325,8 @@
     UUID</a> and created a thumbnail file of the same background, so something similar to the below.</p>
 <p><code>898ffbba-4997-4911-b2ab-b5d8ef4998d2.png</code> and <code>898ffbba-4997-4911-b2ab-b5d8ef4998d2_thumb.png</code></p>
 <p>OK, so we&rsquo;ll need a way to generate a UUID whilst we&rsquo;re at it. The &lsquo;Classic&rsquo; app doesn&rsquo;t care what the files are called, which might be useful.</p>
+
+
 <h2 class="relative group">Background Deployment Script 
     <div id="background-deployment-script" class="anchor"></div>
     
@@ -1326,7 +1338,7 @@
     
 </h2>
 <p>Let&rsquo;s start at least with the <a href="https://memv.ennbee.uk/posts/macos-teams-backgrounds/#teams-background-script"  >
-    existing script</a> and amend or update it to take into consideration the following.</p>
+    existing script</a> and amend or update it to take into consideration the following:</p>
 <ul>
 <li>Detection of whether a Teams app is installed.</li>
 <li>Detection of which of the &lsquo;Classic&rsquo; or &lsquo;New&rsquo; apps is installed.</li>
@@ -1334,6 +1346,8 @@
 <li>Managing the use of a UUID for the background files for the &lsquo;New&rsquo; app.</li>
 </ul>
 <p>Not a lot to consider, and with our new found exposure to Shell scripts, we should be more than capable 😐.</p>
+
+
 <h3 class="relative group">Variables and Logs 
     <div id="variables-and-logs" class="anchor"></div>
     
@@ -1361,6 +1375,8 @@
 </span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$logAndMetaDir</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span></code></pre></div><p>We&rsquo;re covering off the logic to create the log file directory whilst we&rsquo;re at it, so we can at least write the output of the script to a file <code>log</code> in this location.</p>
+
+
 <h3 class="relative group">Checking versions of the Teams App 
     <div id="checking-versions-of-the-teams-app" class="anchor"></div>
     
@@ -1391,6 +1407,8 @@
 </span></span><span class="line"><span class="cl">    <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>We can now call this function to populate the two defined variables, and also detect whether the variable is empty to detect whether Teams is actually installed or not.</p>
+
+
 <h3 class="relative group">Detecting if Teams is Installed 
     <div id="detecting-if-teams-is-installed" class="anchor"></div>
     
@@ -1422,6 +1440,8 @@
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span></code></pre></div><p>Ensure that you are deploying one of the app versions to your macOS devices using Microsoft Intune, before deploying the script, otherwise it&rsquo;s going to sit there and run in the background.</p>
+
+
 <h3 class="relative group">Creating the Uploads Directory 
     <div id="creating-the-uploads-directory" class="anchor"></div>
     
@@ -1441,6 +1461,8 @@
 </span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$teamsUpload</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span></code></pre></div><p>For the &lsquo;Classic&rsquo; app, unless you have actually uploaded a background through the client yourself, this directory doesn&rsquo;t exist.</p>
+
+
 <h3 class="relative group">Downloading the Backgrounds 
     <div id="downloading-the-backgrounds" class="anchor"></div>
     
@@ -1466,6 +1488,8 @@
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span></code></pre></div><p>We&rsquo;ve added in logic to detect whether the <code>teamsUpload</code> path variable is for the &lsquo;New&rsquo; app, and if it is, to download the background file but save it with the require <code>_thumb</code> in the filename.</p>
+
+
 <h2 class="relative group">Deploying the Script 
     <div id="deploying-the-script" class="anchor"></div>
     
@@ -1511,6 +1535,8 @@
 </tbody>
 </table>
 <p>Assign this to a test group of macOS devices that has one of the Microsoft Teams apps installed, otherwise you&rsquo;ll be waiting a long time to see the results.</p>
+
+
 <h3 class="relative group">Shell Script Results 
     <div id="shell-script-results" class="anchor"></div>
     
@@ -1538,6 +1564,8 @@
 
 </p>
 <p>We can now check our test devices, one running the &lsquo;Classic&rsquo; app, and one the &lsquo;New&rsquo; app to see what has actually happened.</p>
+
+
 <h3 class="relative group">&lsquo;Classic&rsquo; Teams Results 
     <div id="classic-teams-results" class="anchor"></div>
     
@@ -1594,6 +1622,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">&lsquo;New&rsquo; Teams Results 
     <div id="new-teams-results" class="anchor"></div>
     
@@ -1679,6 +1709,8 @@
       class="dark:text-neutral-300"
     >If the Teams app is already open when the script runs to download the new backgrounds, they won&rsquo;t be available until the app is closed and re-opened.</span>
 </div>
+
+
 
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>

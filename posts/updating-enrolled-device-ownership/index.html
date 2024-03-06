@@ -1227,7 +1227,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1239,6 +1241,8 @@
 </h2>
 <p>What happens if you&rsquo;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&rsquo;re in a situation where devices that should be marked as corporate are marked as personal or unknown?</p>
 <p>This is more of a common situation than you think, with the need to get remote devices managed in a timely fashion, many organisations used User Driven enrolment methods, such as via the Company Portal, to enrol devices into Microsoft Intune, and without Corporate Device Identifiers, or for the case of Windows no support for them, these devices get enrolled as personal devices.</p>
+
+
 <h2 class="relative group">Corporate Device Identifiers 
     <div id="corporate-device-identifiers" class="anchor"></div>
     
@@ -1268,6 +1272,8 @@
 </p>
 <p>We need to find a way to update devices we know are corporate owned and change the ownership type, sadly there isn&rsquo;t a native way of doing this using <a href="https://docs.microsoft.com/en-us/mem/intune/remote-actions/bulk-device-actions"   target="_blank">
     Bulk Device Actions</a> in Microsoft Intune, so Graph API and PowerShell it is.</p>
+
+
 <h2 class="relative group">Device Ownership Change 
     <div id="device-ownership-change" class="anchor"></div>
     
@@ -1285,6 +1291,8 @@
 <li>Groups of devices that we know are corporate</li>
 </ul>
 <p>Now we have options, we&rsquo;d better write something to make this change for these devices.</p>
+
+
 <h3 class="relative group">Device Lists 
     <div id="device-lists" class="anchor"></div>
     
@@ -1309,7 +1317,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceOSType</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="s2">&#34;Windows&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceOwnership</span><span class="w"> </span><span class="o">-</span><span class="n">ne</span><span class="w"> </span><span class="s2">&#34;Company&#34;</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceOSType</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="s2">&#34;Windows&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceOwnership</span><span class="w"> </span><span class="o">-</span><span class="n">ne</span><span class="w"> </span><span class="s2">&#34;Company&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceManufacturer</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="s2">&#34;Dell Inc.&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceModel</span><span class="w"> </span><span class="o">-</span><span class="n">startsWith</span><span class="w"> </span><span class="s2">&#34;XPS&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">displayName</span><span class="w"> </span><span class="o">-</span><span class="n">startsWith</span><span class="w"> </span><span class="s2">&#34;ENB-&#34;</span><span class="p">)</span><span class="w">
-</span></span></span></code></pre></div><h3 class="relative group">Managed Devices 
+</span></span></span></code></pre></div>
+
+<h3 class="relative group">Managed Devices 
     <div id="managed-devices" class="anchor"></div>
     
     <span
@@ -1325,6 +1335,8 @@
     posts</a>, I won&rsquo;t put the functions here, but we&rsquo;re using the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
     Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</p>
 <p>Once connected, we can now look at not only getting devices, but updating the device object, time for a function or two.</p>
+
+
 <h3 class="relative group">Getting Managed Devices 
     <div id="getting-managed-devices" class="anchor"></div>
     
@@ -1379,7 +1391,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Set Managed Device Ownership 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Set Managed Device Ownership 
     <div id="set-managed-device-ownership" class="anchor"></div>
     
     <span
@@ -1431,7 +1445,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Importing the Devices 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Importing the Devices 
     <div id="importing-the-devices" class="anchor"></div>
     
     <span
@@ -1443,6 +1459,8 @@
 </h3>
 <p>We have a way to get a Managed Device and change the ownership, let&rsquo;s put together a way to import devices via the two previously mentioned methods, so that we can fix whatever mistakes we got ourselves into.</p>
 <p>So we&rsquo;ve got either a list of devices or a group of devices we want to convert, we now need to get the Microsoft Intune device ID for each of these devices, we&rsquo;ll need to do this in two separate ways, one for serial number in the CSV file and one for the Azure AD device ID attribute for the members of the group.</p>
+
+
 <h3 class="relative group">Serial Number 
     <div id="serial-number" class="anchor"></div>
     
@@ -1466,6 +1484,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>We now have the Managed Device detail, and importantly the Managed Device ID we need to change the ownership.</p>
+
+
 <h3 class="relative group">Azure AD Device ID 
     <div id="azure-ad-device-id" class="anchor"></div>
     
@@ -1507,7 +1527,9 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Unable to find device with name &#34;</span><span class="nv">$Device</span><span class="p">.</span><span class="n">DisplayName</span><span class="s2">&#34;&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Getting the Group 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting the Group 
     <div id="getting-the-group" class="anchor"></div>
     
     <span
@@ -1544,7 +1566,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Getting the Group Membership 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting the Group Membership 
     <div id="getting-the-group-membership" class="anchor"></div>
     
     <span
@@ -1580,7 +1604,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Running the Script 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
     <span
@@ -1628,6 +1654,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Testing the Script 
     <div id="testing-the-script" class="anchor"></div>
     
@@ -1647,6 +1675,8 @@
 <li>If the change to ownership fails</li>
 <li>If any of the calls to Graph API fail</li>
 </ul>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

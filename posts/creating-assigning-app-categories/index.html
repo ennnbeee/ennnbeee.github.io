@@ -1285,7 +1285,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1298,6 +1300,8 @@
 <p>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all <em>good</em> fun.</p>
 <p>What about assigning <a href="https://docs.microsoft.com/en-us/mem/intune/apps/apps-add#create-and-edit-categories-for-apps"   target="_blank">
     App Categories</a>, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</p>
+
+
 <h2 class="relative group">App Categories 
     <div id="app-categories" class="anchor"></div>
     
@@ -1340,6 +1344,8 @@
 
 </p>
 <p>So we should do something about this.</p>
+
+
 <h3 class="relative group">Creating App Categories 
     <div id="creating-app-categories" class="anchor"></div>
     
@@ -1353,6 +1359,8 @@
 <p>You could just create new app categories using Microsoft Intune, but I&rsquo;m not sure that&rsquo;s as exciting as you think it is, so we&rsquo;ll do this the sensible way and script it. To do this, we will need a way to get the existing App Categories (so we don&rsquo;t create duplicates) and of course a way to create new ones.</p>
 <p>As always, it&rsquo;s time for some authentication to <a href="https://docs.microsoft.com/en-us/graph/use-the-api"   target="_blank">
     Graph API</a> and using the trusted Authentication function we&rsquo;ve used time and time before.</p>
+
+
 <h3 class="relative group">Getting App Categories 
     <div id="getting-app-categories" class="anchor"></div>
     
@@ -1386,7 +1394,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Adding App Categories 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Adding App Categories 
     <div id="adding-app-categories" class="anchor"></div>
     
     <span
@@ -1437,7 +1447,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Updating Mobile Apps 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Updating Mobile Apps 
     <div id="updating-mobile-apps" class="anchor"></div>
     
     <span
@@ -1448,6 +1460,8 @@
     
 </h2>
 <p>So we have a way to create new App Categories in Microsoft Intune, so we&rsquo;re a third of the way there, we now need a way to get Mobile Apps, get the App Categories assigned to the Mobile Apps, and then add new App Categories. This all seemed more straightforward when I first started this.</p>
+
+
 <h3 class="relative group">Getting Mobile Apps 
     <div id="getting-mobile-apps" class="anchor"></div>
     
@@ -1478,7 +1492,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Getting Mobile App assigned App Categories 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting Mobile App assigned App Categories 
     <div id="getting-mobile-app-assigned-app-categories" class="anchor"></div>
     
     <span
@@ -1517,7 +1533,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">App Categories for Mobile Apps 
+</span></span></code></pre></div>
+
+<h3 class="relative group">App Categories for Mobile Apps 
     <div id="app-categories-for-mobile-apps" class="anchor"></div>
     
     <span
@@ -1528,6 +1546,8 @@
     
 </h3>
 <p>Not to hammer the point home, but you could go through each Mobile App and assign the new categories, and if you truly hate yourself, feel free to do this manually. However, we should continue on this scripting path and finish the job we started.</p>
+
+
 <h3 class="relative group">Assigning App Categories 
     <div id="assigning-app-categories" class="anchor"></div>
     
@@ -1579,7 +1599,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Removing Assigned App Categories 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Removing Assigned App Categories 
     <div id="removing-assigned-app-categories" class="anchor"></div>
     
     <span
@@ -1623,7 +1645,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Repeatable Actions 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Repeatable Actions 
     <div id="repeatable-actions" class="anchor"></div>
     
     <span
@@ -1640,6 +1664,8 @@
 <li>Assign App Categories: plain assignment of categories to Mobile Apps</li>
 <li>Removal of Assign App Categories: Ronseal</li>
 </ul>
+
+
 <h3 class="relative group">Options Everywhere 
     <div id="options-everywhere" class="anchor"></div>
     
@@ -1688,7 +1714,9 @@
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;4&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nv">$Setting</span> <span class="p">=</span> <span class="s1">&#39;Remove&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Handling the Options 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Handling the Options 
     <div id="handling-the-options" class="anchor"></div>
     
     <span
@@ -1705,6 +1733,8 @@
 <li>Remove</li>
 </ul>
 <p>The below goes into more detail on how each option is handled by the script.</p>
+
+
 <h3 class="relative group">Upload 
     <div id="upload" class="anchor"></div>
     
@@ -1753,7 +1783,9 @@ Data Management
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Assign 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Assign 
     <div id="assign" class="anchor"></div>
     
     <span
@@ -1798,7 +1830,9 @@ Data Management
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Remove 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Remove 
     <div id="remove" class="anchor"></div>
     
     <span
@@ -1839,7 +1873,9 @@ Data Management
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Running the Script 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
     <span
@@ -1851,6 +1887,8 @@ Data Management
 </h2>
 <p>As we&rsquo;ve gone through all of this just to assign some App Categories, I guess now would be the time to provide a <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AppCategories/Set-AppCategories.ps1"   target="_blank">
     link to the script</a>, and show you what it does for each of the options.</p>
+
+
 <h3 class="relative group">Creating New App Categories 
     <div id="creating-new-app-categories" class="anchor"></div>
     
@@ -1897,6 +1935,8 @@ Data Management
 </p>
 </li>
 </ul>
+
+
 <h3 class="relative group">Assigning the App Categories 
     <div id="assigning-the-app-categories" class="anchor"></div>
     
@@ -1994,6 +2034,8 @@ Data Management
 </p>
 </li>
 </ul>
+
+
 <h3 class="relative group">Removing the Assigned App Categories 
     <div id="removing-the-assigned-app-categories" class="anchor"></div>
     
@@ -2074,6 +2116,8 @@ Data Management
 </p>
 </li>
 </ul>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

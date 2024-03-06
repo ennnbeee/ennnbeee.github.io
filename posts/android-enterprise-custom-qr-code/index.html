@@ -1191,7 +1191,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1203,6 +1205,8 @@
 </h2>
 <p>We have already looked at allowing <a href="https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/"  >
     Android Enterprise enrolment using Mobile Data</a> in a previous post, now it&rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.</p>
+
+
 <h2 class="relative group">Configuration 
     <div id="configuration" class="anchor"></div>
     
@@ -1214,6 +1218,8 @@
     
 </h2>
 <p>This time, it&rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&hellip;anything to make life easier for users.</p>
+
+
 <h3 class="relative group">Extracting the QR Code Data 
     <div id="extracting-the-qr-code-data" class="anchor"></div>
     
@@ -1234,7 +1240,9 @@
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;com.google.android.apps.work.clouddpc.EXTRA_ENROLLMENT_TOKEN&#34;</span><span class="p">:</span><span class="s2">&#34;SELECTED ENROLMENT TOKEN&#34;</span>
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">WiFi Settings 
+</span></span></code></pre></div>
+
+<h3 class="relative group">WiFi Settings 
     <div id="wifi-settings" class="anchor"></div>
     
     <span
@@ -1287,6 +1295,8 @@
     >Now, please be aware that these settings are all available in plain text by anyone scanning the QR code, so I would recommend using a guest wireless network if you are going to allow you end users to use a corporate network to go through the enrolment process.</span>
 </div>
 
+
+
 <h3 class="relative group">Updating the JSON Data 
     <div id="updating-the-json-data" class="anchor"></div>
     
@@ -1302,7 +1312,9 @@
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;android.app.extra.PROVISIONING_WIFI_PASSWORD&#34;</span><span class="err">:</span><span class="s2">&#34;supersecurepassword&#34;</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE&#34;</span><span class="err">:</span><span class="s2">&#34;WPA&#34;</span><span class="err">,</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;android.app.extra.PROVISIONING_WIFI_HIDDEN&#34;</span><span class="err">:</span> <span class="kc">false</span>
-</span></span></code></pre></div><h3 class="relative group">Full JSON Data 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Full JSON Data 
     <div id="full-json-data" class="anchor"></div>
     
     <span
@@ -1325,7 +1337,9 @@
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&#34;android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE&#34;</span><span class="p">:</span><span class="s2">&#34;WPA&#34;</span><span class="p">,</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&#34;android.app.extra.PROVISIONING_WIFI_HIDDEN&#34;</span><span class="p">:</span> <span class="kc">false</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Creating a new QR Code 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Creating a new QR Code 
     <div id="creating-a-new-qr-code" class="anchor"></div>
     
     <span
@@ -1352,6 +1366,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

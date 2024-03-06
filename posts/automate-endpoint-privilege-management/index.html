@@ -1323,7 +1323,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1339,6 +1341,8 @@
     Reporting Scope</a> options, all elevations across your managed Windows 10 and later devices. Now what?</p>
 <p>Well it&rsquo;s policy creation time, but that seems like a labour intensive (well many clicks) task, and as much as the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-reports"   target="_blank">
     reports</a> give you all the required information you need to review unmanaged elevations and create new policies and elevation rules, there has to be a better way to take the data in the report and create these policies and subsequent rules for you.</p>
+
+
 <h2 class="relative group">EPM Reporting 
     <div id="epm-reporting" class="anchor"></div>
     
@@ -1365,6 +1369,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Getting Report Data 
     <div id="getting-report-data" class="anchor"></div>
     
@@ -1432,6 +1438,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Exporting Report Data 
     <div id="exporting-report-data" class="anchor"></div>
     
@@ -1501,6 +1509,8 @@
 &#34;4&#34;,&#34;PaladinVPN&#34;,&#34;PaladinVPN&#34;,&#34;Ledger Media Ltd&#34;,&#34;PaladinVPN.exe&#34;,&#34;PaladinVPN.exe&#34;,&#34;2.1.3.102&#34;,&#34;C:\\Program Files (x86)\\PaladinVPN&#34;,&#34;B6EF395DE2F28162DBAFCA79BAABEBB211245A68425CE096402030417FEA1160&#34;,&#34;AzureAD\AlexWilber&#34;,&#34;DESKTOP-DL6CCRJ&#34;,&#34;Automatic/UserAuthentication/UserJustification&#34;,&#34;GroupName&#34;
 &#34;12&#34;,&#34;Microsoft® Windows® Operating System&#34;,&#34;Windows Command Processor&#34;,&#34;Microsoft Corporation&#34;,&#34;cmd.exe&#34;,&#34;cmd&#34;,&#34;10.0.19041.746&#34;,&#34;C:\\Windows\\system32&#34;,&#34;B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450&#34;,&#34;AzureAD\AlexWilber AzureAD\ChristieCline&#34;,&#34;DESKTOP-DL6CCRJ DESKTOP-7KFLL12&#34;,&#34;Automatic/UserAuthentication/UserJustification&#34;,&#34;GroupName&#34;
 </code></pre><p>Now we have something to review, with two additional fields of <code>ElevationType</code> and <code>Group</code> that we will use for creation of new EPM policies and rules later on, forward planning here.</p>
+
+
 <h2 class="relative group">EPM Policies 
     <div id="epm-policies" class="anchor"></div>
     
@@ -1513,6 +1523,8 @@
 </h2>
 <p>I have no shame when I say that I started from <a href="https://andrewstaylor.com/2023/03/27/adding-endpoint-privilege-management-rules-via-powershell/"   target="_blank">
     Andrew Taylor&rsquo;s</a> script to create EPM rules using PowerShell, allowing the creation of new EPM Policies and associated rules in Microsoft Intune based on a local files on the machine the script is being executed from. For me what this was missing was the ability to create multiple rules per EPM policy, and the to not rely on the file being local to the machine running the script to capture the required rule data.</p>
+
+
 <h3 class="relative group">Importing Rule Data 
     <div id="importing-rule-data" class="anchor"></div>
     
@@ -1530,6 +1542,8 @@
 <li><strong>UserJustification</strong>: A user confirmed elevation always requires the user to click on a confirmation prompt to run the file requiring the user to enter a business justification.</li>
 </ul>
 <p>The <code>group</code> field is there to not only reference which Azure Active Directory or synchronised Active Directory group the rule will apply to, but will allow for grouping of rules into a single policy, as this just makes sense as we&rsquo;ll be applying the policy to the same group.</p>
+
+
 <h3 class="relative group">Grouping EPM Rules 
     <div id="grouping-epm-rules" class="anchor"></div>
     
@@ -1625,6 +1639,8 @@
 </span></span><span class="line hl"><span class="cl">            <span class="nv">$FileDescription</span> <span class="p">=</span> <span class="nv">$Rule</span><span class="p">.</span><span class="py">Description</span>
 </span></span><span class="line hl"><span class="cl">            <span class="nv">$RuleDescription</span> <span class="p">=</span> <span class="vm">$</span><span class="p">(</span><span class="nv">$Rule</span><span class="p">.</span><span class="py">Publisher</span> <span class="p">+</span> <span class="s1">&#39; &#39;</span> <span class="p">+</span> <span class="nv">$Rule</span><span class="p">.</span><span class="n">Description</span><span class="p">)</span> <span class="o">-replace</span> <span class="s1">&#39;[^\x30-\x39\x41-\x5A\x61-\x7A]+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span>
 </span></span></code></pre></div><p>Now onto the fun that is EPM policy and rule creation.</p>
+
+
 <h2 class="relative group">Creating Settings Catalog Policies 
     <div id="creating-settings-catalog-policies" class="anchor"></div>
     
@@ -1640,6 +1656,8 @@
 <p>Using <a href="https://github.com/andrew-s-taylor/public/blob/main/Powershell%20Scripts/Intune/add-epmfilerule.ps1"   target="_blank">
     add-epmfilerule.ps1</a> and exports of EPM policies using <a href="https://github.com/microsoftgraph/powershell-intune-samples/blob/master/SettingsCatalog/SettingsCatalog_Export.ps1"   target="_blank">
     Intune PowerShell Samples</a> as a basis for the JSON structure, we can build the policy with multuple rules in stages with separate sections for the policy and rules.</p>
+
+
 <h3 class="relative group">Policy Start JSON 
     <div id="policy-start-json" class="anchor"></div>
     
@@ -1666,7 +1684,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">                    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">                    &#34;groupSettingCollectionValue&#34;: [
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h3 class="relative group">Policy End JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Policy End JSON 
     <div id="policy-end-json" class="anchor"></div>
     
     <span
@@ -1689,6 +1709,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">    }
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
 </span></span></code></pre></div><p>That&rsquo;s the simple part done, now to get our head around the rules.</p>
+
+
 <h2 class="relative group">Creating the Initial Rule 
     <div id="creating-the-initial-rule" class="anchor"></div>
     
@@ -1700,6 +1722,8 @@
     
 </h2>
 <p>The first rule in an EPM policy has differing JSON formatting than any subsequent rules, requiring <code>settingValueTemplateId</code> values. We&rsquo;ll use logic in the PowerShell script to identify whether the each rule is the first in the list by querying the array of rules to check if the rule being processed is the first.</p>
+
+
 <h3 class="relative group">Initial Rule Start JSON 
     <div id="initial-rule-start-json" class="anchor"></div>
     
@@ -1797,7 +1821,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">                }
 </span></span></span><span class="line"><span class="cl"><span class="sh">            },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h3 class="relative group">Initial Rule Elevation JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Initial Rule Elevation JSON 
     <div id="initial-rule-elevation-json" class="anchor"></div>
     
     <span
@@ -1808,6 +1834,8 @@
     
 </h3>
 <p>Based on the updated <code>$ElevationType</code> variable in the CSV file, we can define which of the below three elevation type JSON formats are passed into the policy JSON.</p>
+
+
 <h4 class="relative group">Initial Rule Elevation Automatic 
     <div id="initial-rule-elevation-automatic" class="anchor"></div>
     
@@ -1835,7 +1863,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">        }
 </span></span></span><span class="line"><span class="cl"><span class="sh">    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h4 class="relative group">Initial Rule Elevation User Authentication 
+</span></span></code></pre></div>
+
+<h4 class="relative group">Initial Rule Elevation User Authentication 
     <div id="initial-rule-elevation-user-authentication" class="anchor"></div>
     
     <span
@@ -1874,7 +1904,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">        }
 </span></span></span><span class="line"><span class="cl"><span class="sh">    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h4 class="relative group">Initial Rule Elevation User Business Justification 
+</span></span></code></pre></div>
+
+<h4 class="relative group">Initial Rule Elevation User Business Justification 
     <div id="initial-rule-elevation-user-business-justification" class="anchor"></div>
     
     <span
@@ -1913,7 +1945,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">        }
 </span></span></span><span class="line"><span class="cl"><span class="sh">    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h3 class="relative group">Initial Rule End JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Initial Rule End JSON 
     <div id="initial-rule-end-json" class="anchor"></div>
     
     <span
@@ -1993,7 +2027,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">    }
 </span></span></span><span class="line"><span class="cl"><span class="sh">]
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h2 class="relative group">Creating Subsequent Rules 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Creating Subsequent Rules 
     <div id="creating-subsequent-rules" class="anchor"></div>
     
     <span
@@ -2004,6 +2040,8 @@
     
 </h2>
 <p>This is where I was on the strugglebus understanding what format the JSON needed to be in when a policy has multiple rules. Eventually I worked out that any additional rule added to the policy has different JSON formatting, with no need for the <code>settingValueTemplateId</code> values, so here we go.</p>
+
+
 <h3 class="relative group">Rule Start JSON 
     <div id="rule-start-json" class="anchor"></div>
     
@@ -2070,7 +2108,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">            }
 </span></span></span><span class="line"><span class="cl"><span class="sh">        },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h3 class="relative group">Rule Elevation JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Rule Elevation JSON 
     <div id="rule-elevation-json" class="anchor"></div>
     
     <span
@@ -2081,6 +2121,8 @@
     
 </h3>
 <p>Based on the <code>$ElevationType</code> variable, we can define which of the below three elevation type JSON formats are passed into the policy JSON, but this time with different JSON structure.</p>
+
+
 <h4 class="relative group">Rule Elevation Automatic 
     <div id="rule-elevation-automatic" class="anchor"></div>
     
@@ -2103,7 +2145,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">        }
 </span></span></span><span class="line"><span class="cl"><span class="sh">    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h4 class="relative group">Rule Elevation User Authentication 
+</span></span></code></pre></div>
+
+<h4 class="relative group">Rule Elevation User Authentication 
     <div id="rule-elevation-user-authentication" class="anchor"></div>
     
     <span
@@ -2138,7 +2182,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">        }
 </span></span></span><span class="line"><span class="cl"><span class="sh">    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h4 class="relative group">Rule Elevation User Business Justification 
+</span></span></code></pre></div>
+
+<h4 class="relative group">Rule Elevation User Business Justification 
     <div id="rule-elevation-user-business-justification" class="anchor"></div>
     
     <span
@@ -2173,7 +2219,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">        }
 </span></span></span><span class="line"><span class="cl"><span class="sh">    },
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h3 class="relative group">Rule End JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Rule End JSON 
     <div id="rule-end-json" class="anchor"></div>
     
     <span
@@ -2227,7 +2275,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">    }
 </span></span></span><span class="line"><span class="cl"><span class="sh">]
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span></code></pre></div><h3 class="relative group">Rule Ending JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Rule Ending JSON 
     <div id="rule-ending-json" class="anchor"></div>
     
     <span
@@ -2249,7 +2299,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#39;@</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Submitting EPM Policies 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Submitting EPM Policies 
     <div id="submitting-epm-policies" class="anchor"></div>
     
     <span
@@ -2260,6 +2312,8 @@
     
 </h2>
 <p>At this point we should have the all the JSON content we need, now is time to combine them all to form the master JSON which can be submitted to Graph API, but we need to firstly combine all the JSON variables, and secondly have a way to pass it to the API.</p>
+
+
 <h3 class="relative group">Final Policy JSON 
     <div id="final-policy-json" class="anchor"></div>
     
@@ -2275,7 +2329,9 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$JSONRules</span> <span class="p">+=</span> <span class="nv">$JSONRule</span>
 </span></span></code></pre></div><p>Adding these combined rules to the <code>$JSONPolicyStart</code> and <code>$JSONPolicyEnd</code> variables will give us the required JSON file we can submit to Graph API.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$JSONOutput</span> <span class="p">=</span> <span class="nv">$JSONPolicyStart</span> <span class="p">+</span> <span class="nv">$JSONRules</span> <span class="p">+</span> <span class="nv">$JSONPolicyEnd</span>
-</span></span></code></pre></div><h3 class="relative group">Pushing to Graph API 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Pushing to Graph API 
     <div id="pushing-to-graph-api" class="anchor"></div>
     
     <span
@@ -2316,6 +2372,8 @@
 </span></span></code></pre></div><p>We can now pass through the <code>$JSONOutput</code> variable to the above function.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$EPMPolicy</span> <span class="p">=</span> <span class="nb">New-DeviceSettingsCatalog</span> <span class="n">-JSON</span> <span class="nv">$JSONOutput</span>
 </span></span></code></pre></div><p>With this we now have a method to push new policies, and if required, with multiple rules to Microsoft Intune.</p>
+
+
 <h3 class="relative group">Assigning EPM Policies 
     <div id="assigning-epm-policies" class="anchor"></div>
     
@@ -2389,6 +2447,8 @@
 </span></span></code></pre></div><p>We can finally assign the policy passing through the required information from the <code>$EPMPolicy</code> variable that contains the details of the newly created EPM policy.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Add-DeviceSettingsCatalogAssignment</span> <span class="n">-id</span> <span class="nv">$EPMPolicy</span><span class="p">.</span><span class="py">id</span> <span class="n">-TargetGroupId</span> <span class="nv">$Group</span><span class="p">.</span><span class="py">id</span> <span class="n">-AssignmentType</span> <span class="n">Include</span>
 </span></span></code></pre></div><p>If you&rsquo;re still with me, and you probably are as I haven&rsquo;t posted the full script yet, congratulations, we&rsquo;re almost there.</p>
+
+
 <h2 class="relative group">EPM Policy Deployment 
     <div id="epm-policy-deployment" class="anchor"></div>
     
@@ -2401,6 +2461,8 @@
 </h2>
 <p>We&rsquo;re here, finally, with a complete <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/EPMAutomation/Invoke-EPNRules.ps1"   target="_blank">
     PowerShell Script</a> ready to be used and abused. Let&rsquo;s look at the options we have when running the script.</p>
+
+
 <h3 class="relative group">Report Mode 
     <div id="report-mode" class="anchor"></div>
     
@@ -2418,7 +2480,9 @@
 &#34;6&#34;,&#34;Microsoft® Windows® Operating System&#34;,&#34;Windows PowerShell&#34;,&#34;Microsoft Corporation&#34;,&#34;powershell.exe&#34;,&#34;C:\\Windows\\System32\\WindowsPowerShell\\v1.0&#34;,&#34;B4E7BC24BF3F5C3DA2EB6E9EC5EC10F90099DEFA91B820F2F3FC70DD9E4785C4&#34;,&#34;AzureAD\AlexWilber AzureAD\ChristieCline&#34;,&#34;DESKTOP-DL6CCRJ DESKTOP-7KFLL12&#34;,&#34;UserJustification&#34;,&#34;sg-IT&#34;
 &#34;4&#34;,&#34;PaladinVPN&#34;,&#34;PaladinVPN&#34;,&#34;Ledger Media Ltd&#34;,&#34;PaladinVPN.exe&#34;,&#34;C:\\Program Files (x86)\\PaladinVPN&#34;,&#34;B6EF395DE2F28162DBAFCA79BAABEBB211245A68425CE096402030417FEA1160&#34;,&#34;AzureAD\AlexWilber&#34;,&#34;DESKTOP-DL6CCRJ&#34;,&#34;Automatic&#34;,&#34;sg-Operations&#34;
 &#34;12&#34;,&#34;Microsoft® Windows® Operating System&#34;,&#34;Windows Command Processor&#34;,&#34;Microsoft Corporation&#34;,&#34;cmd.exe&#34;,&#34;C:\\Windows\\system32&#34;,&#34;B99D61D874728EDC0918CA0EB10EAB93D381E7367E377406E65963366C874450&#34;,&#34;AzureAD\AlexWilber AzureAD\ChristieCline&#34;,&#34;DESKTOP-DL6CCRJ DESKTOP-7KFLL12&#34;,&#34;UserAuthentication&#34;,&#34;sg-IT&#34;
-</code></pre><h3 class="relative group">Create Mode 
+</code></pre>
+
+<h3 class="relative group">Create Mode 
     <div id="create-mode" class="anchor"></div>
     
     <span
@@ -2430,7 +2494,7 @@
 </h3>
 <p>The CSV file can then be used for the creation of rules using the below command (you will be prompted for the path to the CSV file).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">./</span><span class="nb">Invoke-EPNRules</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-User</span> <span class="n">username</span><span class="nv">@contoso</span><span class="p">.</span><span class="py">com</span> <span class="n">-Deployment</span> <span class="n">Import</span>
-</span></span></code></pre></div><p>Which will result in the EPM policies being created:</p>
+</span></span></code></pre></div><p>Which will result in the EPM policies being created.</p>
 <p>
 
 
@@ -2445,7 +2509,7 @@
   
 
 </p>
-<p>Drilling into the EPM policy we can see the rules that were created:</p>
+<p>Drilling into the EPM policy we can see the rules that were created.</p>
 <p>
 
 
@@ -2460,7 +2524,7 @@
   
 
 </p>
-<p>Digging a little further we can see the settings for the rules:</p>
+<p>Digging a little further we can see the settings for the rules.</p>
 <ul>
 <li>
 <p>PowerShell User Approved with Business Justification
@@ -2497,6 +2561,8 @@
 </p>
 </li>
 </ul>
+
+
 <h3 class="relative group">Create and Assign Mode 
     <div id="create-and-assign-mode" class="anchor"></div>
     
@@ -2524,6 +2590,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

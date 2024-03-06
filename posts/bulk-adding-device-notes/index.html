@@ -110,7 +110,7 @@
     "keywords": ["intune","administration","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "817"
+    "wordCount": "815"
   }]
   </script>
 
@@ -1191,7 +1191,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1205,6 +1207,8 @@
 <p>So luckily I stumbled upon a post by <a href="https://wetterssource.com/get-device-notes-from-graph"   target="_blank">
     Paul Wetter</a> about getting and setting notes on devices using <a href="https://docs.microsoft.com/en-us/graph/use-the-api"   target="_blank">
     Graph API</a>, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily <del>stolen</del> borrowed, updated and tweaked to allow for updating notes en masse.</p>
+
+
 <h2 class="relative group">Configuration 
     <div id="configuration" class="anchor"></div>
     
@@ -1215,7 +1219,9 @@
     </span>        
     
 </h2>
-<p>I&rsquo;ve broken down each section of the script for a bit of a walk through, the important thing with all of this is making sure you have the Microsoft Graph Intune PowerShell module installed - <code>Install-Module -Name Microsoft.Graph.Intune</code> and you&rsquo;ve connected to MSGraph - <code>Connect-MSGraph</code>.</p>
+<p>I&rsquo;ve broken down each section of the script for a bit of a walk through, the important thing with all of this is making sure you have the Microsoft Graph Intune PowerShell module installed <code>Install-Module -Name Microsoft.Graph.Intune</code> and you&rsquo;ve connected to MSGraph <code>Connect-MSGraph</code>.</p>
+
+
 <h3 class="relative group">Getting Device Notes 
     <div id="getting-device-notes" class="anchor"></div>
     
@@ -1253,7 +1259,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Setting Device Notes 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Setting Device Notes 
     <div id="setting-device-notes" class="anchor"></div>
     
     <span
@@ -1301,7 +1309,9 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Bulk Setting Device Notes 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Bulk Setting Device Notes 
     <div id="bulk-setting-device-notes" class="anchor"></div>
     
     <span
@@ -1363,7 +1373,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">Break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Running the Script 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
     <span
@@ -1382,6 +1394,8 @@ ENB-13F278,Here are the New notes about the device.
 </span></span></code></pre></div><p>I&rsquo;d test this with a single device in the CSV file first before you do this in bulk, you know, just in case.</p>
 <p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/NotesUpdate/Set-MEMDeviceNotes.ps1"   target="_blank">
     here</a></p>
+
+
 <h3 class="relative group">The Results 
     <div id="the-results" class="anchor"></div>
     
@@ -1422,6 +1436,8 @@ ENB-13F278,Here are the New notes about the device.
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

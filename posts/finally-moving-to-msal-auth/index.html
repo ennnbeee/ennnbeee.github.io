@@ -1211,7 +1211,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1224,6 +1226,8 @@
 <p>With the impending retirement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363"   target="_blank">
     Azure AD Graph API and ADAL authentication methods</a>, and by impending, I mean the <strong>end of 2022</strong>, we should probably look at how we move away from the existing authentication methods I&rsquo;ve been using in all of my scripts and into the new realms of MSAL (Microsoft Authentication Library).</p>
 <p>Hold tight, this will be quick.</p>
+
+
 <h2 class="relative group">Background 
     <div id="background" class="anchor"></div>
     
@@ -1236,6 +1240,8 @@
 </h2>
 <p>The driver for this move away from the now deemed legacy ADAL (Azure Active Directory Authentication Library) authentication method, is Microsoft&rsquo;s aim to move everyone and everything to PowerShell 7 core and allow for full cross-platform compatibility for PowerShell.</p>
 <p>The issue with PowerShell 7 however, is that it doesn&rsquo;t natively support the &lsquo;old&rsquo; ADAL authentication libraries only with the use of <code>-UseWindowsPowerShell</code> compatibility flag, hence the need to move to an alternative authentication method.</p>
+
+
 <h3 class="relative group">MSAL PowerShell Module 
     <div id="msal-powershell-module" class="anchor"></div>
     
@@ -1316,6 +1322,8 @@
 </li>
 </ul>
 <p>Once the Window is closed, we now have an authentication token in the shell to use to our heart&rsquo;s content.</p>
+
+
 <h2 class="relative group">The New World 
     <div id="the-new-world" class="anchor"></div>
     
@@ -1329,6 +1337,8 @@
 <p>With a new way to acquire our Graph API token, we should look at updating the tried and tested <a href="https://github.com/microsoftgraph/powershell-intune-samples/blob/master/AdminConsent/GA_AdminConsent_Set.ps1"   target="_blank">
     Authentication Methods</a> kindly provided by Microsoft in the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
     powershell-intune-samples</a> repo that we have been relying on to authenticate to Graph API.</p>
+
+
 <h3 class="relative group">An Updated Function 
     <div id="an-updated-function" class="anchor"></div>
     
@@ -1433,7 +1443,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Updating Authentication Method 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Updating Authentication Method 
     <div id="updating-authentication-method" class="anchor"></div>
     
     <span
@@ -1500,6 +1512,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

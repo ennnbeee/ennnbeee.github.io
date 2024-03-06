@@ -1255,7 +1255,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1267,6 +1269,8 @@
 </h2>
 <p>Fresh off the back of a trawl of a Modern Endpoint Management LinkedIn group, someone wanted the ability to assign existing Settings Catalog profiles in Microsoft Intune to additional Groups&hellip;this sounded like a quick win if you fancy manually doing it, but no one wants that, and as I had experience of dealing with the logic when <a href="https://memv.ennbee.uk/posts/assigning-intune-applications/"  >
     assigning apps</a>, I thought I&rsquo;d give it a go.</p>
+
+
 <h2 class="relative group">Assignment Overview 
     <div id="assignment-overview" class="anchor"></div>
     
@@ -1281,6 +1285,8 @@
     Settings Catalog profiles</a> for Windows, macOS, and iOS/iPadOS devices isn&rsquo;t anything new, though Settings Catalogs were a bit of a revelation when they first appeared in Microsoft Intune allowing you to build profiles from scratch with a searchable interface, and with the ability to assign them to groups and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
     Device Filters</a>, I jumped at the chance to use them in place of custom profiles where applicable.</p>
 <p>What about the assignment though, what does that look like?</p>
+
+
 <h3 class="relative group">Assignment Restrictions 
     <div id="assignment-restrictions" class="anchor"></div>
     
@@ -1292,6 +1298,8 @@
     
 </h3>
 <p>Settings Catalog assignment isn&rsquo;t too dissimilar from assigning any other profile type, though as you&rsquo;ll discover through subsequent posts, each has it&rsquo;s own nuance when it comes to how you assign the profiles. So let&rsquo;s list what we can do when it comes to assignment, and what we can&rsquo;t do, as this will shape how we build out a PowerShell function to allow us to assign profiles in bulk.</p>
+
+
 <h4 class="relative group">Assignment Wins 
     <div id="assignment-wins" class="anchor"></div>
     
@@ -1341,6 +1349,8 @@
 </div>
 
 <p>So this is pretty useful and should, especially with Device Filters, be all you need for assignment. What about the things we can&rsquo;t do?</p>
+
+
 <h4 class="relative group">Assignment No-nos 
     <div id="assignment-no-nos" class="anchor"></div>
     
@@ -1365,6 +1375,8 @@
 <li><strong>Excluded Groups</strong>: Assigning to a Group that already has an assignment</li>
 </ul>
 <p>There are many restrictions when it comes to adding additional assignments, the above are the important ones, as we don&rsquo;t want to be creating ourselves issues with assignments later on. Though this is going to give me a headache writing PowerShell to deal with this logic.</p>
+
+
 <h3 class="relative group">Getting Settings Catalog Information 
     <div id="getting-settings-catalog-information" class="anchor"></div>
     
@@ -1376,6 +1388,8 @@
     
 </h3>
 <p>We&rsquo;ve now got a good grip on the methods for assignment, but to start this all off, we need a way to get both the the Settings Catalog profile itself, a method to capture all existing assignments, and importantly, how to add assignments to the profile.</p>
+
+
 <h4 class="relative group">Getting Settings Catalogs 
     <div id="getting-settings-catalogs" class="anchor"></div>
     
@@ -1443,6 +1457,8 @@
 </span></span><span class="line"><span class="cl">templateReference    : @{templateId=; templateFamily=none; templateDisplayName=; templateDisplayVersion=}
 </span></span></code></pre></div><p>With a way to get a Settings Catalog profile, we now need a way to pull back any and all assignments for a profile using the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicyassignment-list?view=graph-rest-beta"   target="_blank">
     <code>deviceManagementConfigurationPolicyAssignments</code></a> endpoint in Graph and the above <code>Id</code> of the profile.</p>
+
+
 <h4 class="relative group">Getting Settings Catalog Assignments 
     <div id="getting-settings-catalog-assignments" class="anchor"></div>
     
@@ -1512,6 +1528,8 @@
 </span></span><span class="line hl"><span class="cl">target   : @{@odata.type=#microsoft.graph.exclusionGroupAssignmentTarget; deviceAndAppManagementAssignmentFilterId=; deviceAndAppManagementAssignmentFilterType=none;
 </span></span><span class="line hl"><span class="cl">           groupId=f9c1e630-771d-4c12-b366-8a3e4db0509a}
 </span></span></code></pre></div><p>So we kinda have the bits we need to get existing assignments, what about adding a new assignment?</p>
+
+
 <h2 class="relative group">Assigning Settings Catalogs 
     <div id="assigning-settings-catalogs" class="anchor"></div>
     
@@ -1524,6 +1542,8 @@
 </h2>
 <p>First thing to note about assignments in Microsoft Intune, is there is no <code>PATCH</code> option with Graph API for the assignment endpoints, what this means is there is no native way to update the assignments of a Settings Catalog profile, the default behaviour is to replace any and all existing assignments. After trying to deal with the restrictions around assignments, I can understand why there is no <code>PATCH</code> option, as it&rsquo;s a nightmare dealing with the logic.</p>
 <p>We however, are not an API, so we can apply our squishy human brains and work something out to give us the ability to add new assignments, without ripping out the existing ones surely?</p>
+
+
 <h3 class="relative group">Building New Assignments 
     <div id="building-new-assignments" class="anchor"></div>
     
@@ -1665,6 +1685,8 @@
 </span></span><span class="line"><span class="cl">  <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>That was the easy part, and we can take the above methods to create new assignments. So now onto the head scratcher.</p>
+
+
 <h3 class="relative group">Capturing Existing Assignments 
     <div id="capturing-existing-assignments" class="anchor"></div>
     
@@ -1726,6 +1748,8 @@
 </span></span><span class="line"><span class="cl">  <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>We&rsquo;re onto something here, time to look at the logic around adding new assignments to existing ones, mmmm logic my favourite coffee fuelled exercise.</p>
+
+
 <h3 class="relative group">Handling Existing Assignments 
     <div id="handling-existing-assignments" class="anchor"></div>
     
@@ -1739,6 +1763,8 @@
 <p>Now that we can capture existing assignment, we need to deal with the logic when trying to add new assignments to the Settings Catalog profile. This will not be fun.</p>
 <p>Let&rsquo;s go through each of the <a href="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/#assignment-no-nos"  >
     assignment non-nos</a> we&rsquo;ve already covered in this post.</p>
+
+
 <h4 class="relative group">Include Assignments 
     <div id="include-assignments" class="anchor"></div>
     
@@ -1797,6 +1823,8 @@
 <li><strong>Assigning to Groups of Devices or Users if All Users already has an assignment</strong></li>
 </ul>
 <p>This one is captured in the above logic, which is lucky as I was running out of steam by this point.</p>
+
+
 <h4 class="relative group">Exclude Assignments 
     <div id="exclude-assignments" class="anchor"></div>
     
@@ -1827,6 +1855,8 @@
 <li><strong>Assigning to a Group that already has an assignment</strong></li>
 </ul>
 <p>The logic for this is exactly the same as the Include assignment type, as whether there is an include or exclude assignment for the same group, the result is the same.</p>
+
+
 <h3 class="relative group">The Assignment Function 
     <div id="the-assignment-function" class="anchor"></div>
     
@@ -1996,6 +2026,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>That&rsquo;s all there is to it, which is hilarious as I&rsquo;m pretty sure I aged significantly when coming up with this function. Let&rsquo;s see how we can use this to create new assignments.</p>
+
+
 <h4 class="relative group">Using the Assignment Function 
     <div id="using-the-assignment-function" class="anchor"></div>
     
@@ -2030,6 +2062,8 @@
 </span></span><span class="line"><span class="cl"><span class="c"># Replacing all assignment and adding an Include All Users assignment</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Add-DeviceSettingsCatalogAssignment</span> <span class="n">-Id</span> <span class="nv">$Policy</span><span class="p">.</span><span class="py">id</span> <span class="n">-AssignmentAction</span> <span class="n">Replace</span> <span class="n">-AssignmentType</span> <span class="n">Include</span> <span class="n">-All</span> <span class="n">Users</span>
 </span></span></code></pre></div><p>If all went to plan, we should now be able to successfully create Settings Catalog profile assignments as little and often as we&rsquo;d like, with the ability to now get all of your Settings Catalog profiles, and for each of them create and add new assignments.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

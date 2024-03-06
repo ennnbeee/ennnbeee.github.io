@@ -1261,7 +1261,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1273,6 +1275,8 @@
 </h2>
 <p>Let&rsquo;s talk about Windows 10 and above <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#operating-system-version"   target="_blank">
     Operating System Compliance</a> in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.</p>
+
+
 <h2 class="relative group">Compliance 
     <div id="compliance" class="anchor"></div>
     
@@ -1284,6 +1288,8 @@
     
 </h2>
 <p>If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies. However, are you using Compliance Policies in the correct way, or even a way that makes sense?</p>
+
+
 <h3 class="relative group">Compliance Granularity 
     <div id="compliance-granularity" class="anchor"></div>
     
@@ -1297,6 +1303,8 @@
 <p>I&rsquo;ll talk about granularity of compliance settings, and the main reason to split out these Compliance settings into separate policies, is the actions for non-compliance; you see, you only get one set of these per policy.</p>
 <p>So where you would want to mark a device as non-compliant immediately if there is no Antivirus installed, would you want it to be the same for the supported operating system builds? (Clue here, the answer is no).</p>
 <p>This is a very real-world configuration, if you&rsquo;re controlling the deferral and deadline settings of Software Updates via Windows Update for Business, it wouldn&rsquo;t be fair and honourable for you to mark a device as non-compliant, and potentially block access to Office 365 authenticated services, when the computer itself hasn&rsquo;t even received the update to be installed.</p>
+
+
 <h3 class="relative group">Operating System Compliance 
     <div id="operating-system-compliance" class="anchor"></div>
     
@@ -1355,6 +1363,8 @@
 </div>
 
 <p>Sounds great, <strong>if and only if</strong> all of your Windows 10 devices are all running the same Feature Update.</p>
+
+
 <h3 class="relative group">The Problem 
     <div id="the-problem" class="anchor"></div>
     
@@ -1375,6 +1385,8 @@
 <p>So to cover all of the supported operating systems your minimum operating system compliance setting is going to be <strong>10.0.19042.1766</strong> (June 2022). Great.</p>
 <p>This however means that any of the newer builds, patched or unpatched, will also be marked as compliant, as you know <strong>10.0.19044.1111</strong> is a bigger number than <strong>10.0.19042.1766</strong>. Quick Maths.</p>
 <p>This is a problem, as do you really want to mark unpatched operating systems as compliant. Again, answer here is no.</p>
+
+
 <h3 class="relative group">The Solution 
     <div id="the-solution" class="anchor"></div>
     
@@ -1401,6 +1413,8 @@
 
 </p>
 <p>So there we have it, a fast turnaround for a real-world problem. Now about updating this monthly&hellip;</p>
+
+
 <h2 class="relative group">Updating Compliance 
     <div id="updating-compliance" class="anchor"></div>
     
@@ -1412,6 +1426,8 @@
     
 </h2>
 <p>When you update a Compliance Policy, it will trigger the devices the policy is assigned to, to re-evaluate the conditions and follow the actions for non-compliance if necessary. So you <strong>should</strong> be updating the Operating System Compliance Policy every month, which, although it isn&rsquo;t a painful task, it is a repeatable one.</p>
+
+
 <h3 class="relative group">Needless Automation to the Rescue 
     <div id="needless-automation-to-the-rescue" class="anchor"></div>
     
@@ -1425,6 +1441,8 @@
 <p>So what does any good Consultant do in this situation? They write some PowerShell to do the work for them, even if writing the PowerShell script probably took longer than just updating the Compliance Policy.</p>
 <p>I&rsquo;ve already demonstrated my coffee fuelled scripting in <a href="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/"  >
     previous posts</a> and this one isn&rsquo;t going to be much different.</p>
+
+
 <h3 class="relative group">Functions are your Friends 
     <div id="functions-are-your-friends" class="anchor"></div>
     
@@ -1439,6 +1457,8 @@
     Intune PowerShell Samples</a> GitHub repo, and some thrown together based on the samples.</p>
 <p>We&rsquo;ll be authenticating to Graph, grabbing the Windows Compliance Policies that have the Valid Operating System Build setting, getting the latest OS Build version from the <a href="https://support.microsoft.com/en-us/rss-feed-picker"   target="_blank">
     Microsoft Atom Feeds</a> and then updating the Compliance Policy. <em>This sounded easier in my head if I&rsquo;m honest.</em></p>
+
+
 <h3 class="relative group">Authentication 
     <div id="authentication" class="anchor"></div>
     
@@ -1521,7 +1541,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Testing JSON 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Testing JSON 
     <div id="testing-json" class="anchor"></div>
     
     <span
@@ -1550,7 +1572,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Getting Compliance Policies 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting Compliance Policies 
     <div id="getting-compliance-policies" class="anchor"></div>
     
     <span
@@ -1581,7 +1605,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Updating Compliance Policies 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Updating Compliance Policies 
     <div id="updating-compliance-policies" class="anchor"></div>
     
     <span
@@ -1632,7 +1658,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Getting Latest Windows Version 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting Latest Windows Version 
     <div id="getting-latest-windows-version" class="anchor"></div>
     
     <span
@@ -1691,7 +1719,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Getting, Setting and Updating 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Getting, Setting and Updating 
     <div id="getting-setting-and-updating" class="anchor"></div>
     
     <span
@@ -1703,6 +1733,8 @@
 </h2>
 <p>Finally we get to utilising the functions, putting it all together and updating the Compliance Policy with the latest minimum OS build version based on the latest release of each Windows 10 and later build.</p>
 <p>Let&rsquo;s break down each section before I launch the full script at you.</p>
+
+
 <h3 class="relative group">Getting the Correct Policy 
     <div id="getting-the-correct-policy" class="anchor"></div>
     
@@ -1715,7 +1747,9 @@
 </h3>
 <p>We need to make sure we&rsquo;re pulling through only Windows based Compliance Policies, and only those that have legitimate build version information. We&rsquo;re using the <code>@odata.type</code> and the <code>validOperatingSystemBuildRanges</code> data here.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$OSCompliancePolicies</span> <span class="p">=</span> <span class="nb">Get-DeviceCompliancePolicy</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="s1">&#39;@odata.type&#39;</span><span class="p">).</span><span class="py">contains</span><span class="p">(</span><span class="s2">&#34;windows10CompliancePolicy&#34;</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">validOperatingSystemBuildRanges</span><span class="p">)</span> <span class="o">-ne</span> <span class="s2">&#34;&#34;</span> <span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Getting the Build Versions 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting the Build Versions 
     <div id="getting-the-build-versions" class="anchor"></div>
     
     <span
@@ -1740,7 +1774,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">$BuildVersion</span> <span class="p">=</span> <span class="nb">Get-LatestWindowsUpdatesBuild</span> <span class="n">-OS</span> <span class="nv">$WindowsVersion</span> <span class="n">-Build</span> <span class="nv">$OSVersion</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$NewOSBuildVersion</span> <span class="p">=</span> <span class="s1">&#39;10.0.&#39;</span> <span class="p">+</span> <span class="nv">$OSVersion</span> <span class="p">+</span> <span class="s1">&#39;.&#39;</span> <span class="p">+</span> <span class="nv">$BuildVersion</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Building the JSON Payload 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Building the JSON Payload 
     <div id="building-the-json-payload" class="anchor"></div>
     
     <span
@@ -1765,7 +1801,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">$Update</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s1">&#39;validOperatingSystemBuildRanges&#39;</span> <span class="n">-Value</span> <span class="vm">@</span><span class="p">(</span><span class="nv">$OSUpdates</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$JSON</span> <span class="p">=</span> <span class="nv">$Update</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="mf">3</span>
-</span></span></code></pre></div><h3 class="relative group">Fusion, Ha 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Fusion, Ha 
     <div id="fusion-ha" class="anchor"></div>
     
     <span
@@ -1820,7 +1858,9 @@
 </span></span><span class="line"><span class="cl">    <span class="c"># Updating the compliance policy</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Update-DeviceCompliancePolicy</span> <span class="n">-Id</span> <span class="nv">$OSCompliancePolicy</span><span class="p">.</span><span class="py">id</span> <span class="n">-JSON</span> <span class="nv">$JSON</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">The Action Shot 
+</span></span></code></pre></div>
+
+<h2 class="relative group">The Action Shot 
     <div id="the-action-shot" class="anchor"></div>
     
     <span
@@ -1878,6 +1918,8 @@
 
 
 It did, and a cheeky description based on when the policy was last updated.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

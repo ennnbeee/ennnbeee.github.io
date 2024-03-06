@@ -1207,7 +1207,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1218,6 +1220,8 @@
     
 </h2>
 <p>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.</p>
+
+
 <h2 class="relative group">Configuration 
     <div id="configuration" class="anchor"></div>
     
@@ -1230,6 +1234,8 @@
 </h2>
 <p>There are a number of posts out in the wild on how to fully change the Windows languages on a device by device basis, but in this instance we needed to keep the core language as <code>en-GB</code> but allow end users to select their preferred input language within Windows, and ensure that this language list can be modified in the event of new languages being required.</p>
 <p>Let&rsquo;s crack on shall we&hellip;</p>
+
+
 <h3 class="relative group">Windows User Language List 
     <div id="windows-user-language-list" class="anchor"></div>
     
@@ -1279,7 +1285,9 @@
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl"> <span class="nb">Write-Error</span> <span class="s2">&#34;Unable to set the language list </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Task Scheduling 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Task Scheduling 
     <div id="task-scheduling" class="anchor"></div>
     
     <span
@@ -1294,6 +1302,8 @@
 <p>Luckily, I was using a script to map network drives, generated from <a href="https://intunedrivemapping.azurewebsites.net/"   target="_blank">
     here</a> to do something similar, time to not reinvent the wheel and just make use of someone else&rsquo;s hard work.</p>
 <p>Let&rsquo;s break down the sections of the script.</p>
+
+
 <h3 class="relative group">Running as SYSTEM 
     <div id="running-as-system" class="anchor"></div>
     
@@ -1312,7 +1322,9 @@
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">[</span><span class="no">bool</span><span class="p">](</span><span class="vm">$</span><span class="p">(</span><span class="n">whoami</span> <span class="n">-user</span><span class="p">)</span> <span class="o">-match</span> <span class="s2">&#34;S-1-5-18&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Creating the Task 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Creating the Task 
     <div id="creating-the-task" class="anchor"></div>
     
     <span
@@ -1390,6 +1402,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Now we&rsquo;ve got the bones of the script, we can put it all together and deploy it using Microsoft Intune. The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/AutopilotLanguages/Set-WindowsLanguages.ps1"   target="_blank">
     here</a></p>
+
+
 <h3 class="relative group">Deployment 
     <div id="deployment" class="anchor"></div>
     
@@ -1431,6 +1445,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

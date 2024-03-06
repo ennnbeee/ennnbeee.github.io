@@ -1255,7 +1255,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1270,6 +1272,8 @@
     Windows health attestation report</a> that around 80% of the Windows devices had it turned off.</p>
 <p>(Don&rsquo;t worry, I checked that the devices had <a href="https://www.dell.com/support/kbdoc/en-uk/000133480/uefi-and-secure-boot-faqs"   target="_blank">
     GPT partitions</a> before I just launched a PowerShell script at them.)</p>
+
+
 <h2 class="relative group">Dell PowerShell Provider 
     <div id="dell-powershell-provider" class="anchor"></div>
     
@@ -1291,6 +1295,8 @@
     configjon.com</a></li>
 </ul>
 <p>These posts detail ways to use the Dell PowerShell Provider to set the BIOS configurations and an Admin BIOS Password on Dell devices, so I&rsquo;m only going to focus on how I&rsquo;ve taken this, run with it, and made it a little easier to handle in Microsoft Intune.</p>
+
+
 <h3 class="relative group">Setting up the Module 
     <div id="setting-up-the-module" class="anchor"></div>
     
@@ -1327,6 +1333,8 @@
 <li>vcruntime140.dll</li>
 <li>vcruntime140_1.dll</li>
 </ul>
+
+
 <h3 class="relative group">Installing the Module 
     <div id="installing-the-module" class="anchor"></div>
     
@@ -1357,7 +1365,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Error importing module: </span><span class="nv">$_</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">exit</span> <span class="mf">1</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Configuring the BIOS 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Configuring the BIOS 
     <div id="configuring-the-bios" class="anchor"></div>
     
     <span
@@ -1382,6 +1392,8 @@
 </span></span><span class="line"><span class="cl"><span class="n">PossibleValues</span> <span class="err">:</span> <span class="p">{</span><span class="n">Disabled</span><span class="p">,</span> <span class="n">Enabled</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">PSChildName</span>    <span class="err">:</span> <span class="n">SecureBoot</span>
 </span></span></code></pre></div><p>So now we know what Setting and their support Values are&hellip;</p>
+
+
 <h3 class="relative group">BIOS Settings 
     <div id="bios-settings" class="anchor"></div>
     
@@ -1410,7 +1422,9 @@
 </span></span><span class="line"><span class="cl"><span class="p">-------</span>    <span class="p">-----</span>
 </span></span><span class="line"><span class="cl"><span class="n">BootList</span>   <span class="n">Uefi</span>
 </span></span><span class="line"><span class="cl"><span class="n">SecureBoot</span> <span class="n">Enabled</span>
-</span></span></code></pre></div><h3 class="relative group">Making the Changes 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Making the Changes 
     <div id="making-the-changes" class="anchor"></div>
     
     <span
@@ -1458,7 +1472,9 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">App Deployment 
+</span></span></code></pre></div>
+
+<h2 class="relative group">App Deployment 
     <div id="app-deployment" class="anchor"></div>
     
     <span
@@ -1468,6 +1484,8 @@
     </span>        
     
 </h2>
+
+
 <h3 class="relative group">Detection Methods 
     <div id="detection-methods" class="anchor"></div>
     
@@ -1483,7 +1501,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$DetectionRegPath</span> <span class="p">=</span> <span class="s2">&#34;HKLM:\SOFTWARE\IntuneHelper\DellBIOSProvider&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s2">&#34;</span><span class="nv">$DetectionRegPath</span><span class="s2">&#34;</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$SettingAttribute</span><span class="s2">&#34;</span> <span class="n">-Value</span> <span class="s2">&#34;</span><span class="nv">$NewItemValue</span><span class="s2">&#34;</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-</span></span></code></pre></div><h3 class="relative group">App Packaging 
+</span></span></code></pre></div>
+
+<h3 class="relative group">App Packaging 
     <div id="app-packaging" class="anchor"></div>
     
     <span
@@ -1520,6 +1540,8 @@
 
 </p>
 <p>Now that you&rsquo;ve got the Application, time to upload it to Microsoft Intune and configure some settings.</p>
+
+
 <h3 class="relative group">App Installation 
     <div id="app-installation" class="anchor"></div>
     
@@ -1550,6 +1572,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">App Requirements 
     <div id="app-requirements" class="anchor"></div>
     
@@ -1575,6 +1599,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">App Detection Methods 
     <div id="app-detection-methods" class="anchor"></div>
     
@@ -1638,6 +1664,8 @@
 
 </p>
 <p>Complete the wizard as no other settings are required and deploy this App to a <strong>test</strong> device group.</p>
+
+
 <h3 class="relative group">App Monitoring 
     <div id="app-monitoring" class="anchor"></div>
     
@@ -1649,6 +1677,8 @@
     
 </h3>
 <p>We were kind enough to add some basic logging using the Transcript function of PowerShell into the script, so on your test device, go have a look at the log located in <code>C:\Windows\Temp</code> called <code>Set-DellBIOSSettings.log</code> and check to see if it&rsquo;s run correctly</p>
+
+
 <h3 class="relative group">Log File 
     <div id="log-file" class="anchor"></div>
     
@@ -1674,6 +1704,8 @@
 
 
 It did.</p>
+
+
 <h3 class="relative group">Registry Items 
     <div id="registry-items" class="anchor"></div>
     
@@ -1700,6 +1732,8 @@ It did.</p>
 
 
 Yup.</p>
+
+
 <h3 class="relative group">PowerShell 
     <div id="powershell" class="anchor"></div>
     
@@ -1725,6 +1759,8 @@ Yup.</p>
 </span></span><span class="line"><span class="cl"><span class="n">PossibleValues</span> <span class="err">:</span> <span class="p">{</span><span class="n">Disabled</span><span class="p">,</span> <span class="n">Enabled</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">PSChildName</span>    <span class="err">:</span> <span class="n">SecureBoot</span>
 </span></span></code></pre></div><p>They did.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

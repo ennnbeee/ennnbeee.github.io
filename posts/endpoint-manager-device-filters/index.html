@@ -1205,7 +1205,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1217,6 +1219,8 @@
 </h2>
 <p>Now if you&rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</p>
 <p>What if I told you, that there&rsquo;s something on par with these holy grail groups, and maybe, just <em>maybe</em>, even better.</p>
+
+
 <h2 class="relative group">My Beloved Dynamic Groups 
     <div id="my-beloved-dynamic-groups" class="anchor"></div>
     
@@ -1231,6 +1235,8 @@
     Device Filters</a>, let us talk about <a href="https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-create-rule"   target="_blank">
     Dynamic Groups</a> a little&hellip;</p>
 <p>Firstly, I would highly recommend the use of these groups, especially for grouping devices, whether this be based on enrolment type, ownership, operating system type or version&hellip;and if you&rsquo;ve got something or someone managing your user attributes, that you use them for user groups.</p>
+
+
 <h3 class="relative group">The Limitations 
     <div id="the-limitations" class="anchor"></div>
     
@@ -1244,6 +1250,8 @@
 <p>This sadly, is how quickly these groups update; Microsoft probably realised that people were using these groups in relation to device management, and also realised that the enumeration of the groups was using precious Compute infrastructure, for free, smh.</p>
 <p>So Microsoft reduced how often these groups fully updated to once every 24 hours.</p>
 <p>Now this is no good when we want to target settings and restrictions, or even just application deployment to these dynamically populated groups, we end up with delaying installations, configuration settings or even connectivity. Not a fan.</p>
+
+
 <h2 class="relative group">Bring on the Filters 
     <div id="bring-on-the-filters" class="anchor"></div>
     
@@ -1289,6 +1297,8 @@
 <p>You see the filter results based on the evaluation. For example, the app or policies applies, or it doesn&rsquo;t apply.</p>
 </li>
 </ol>
+
+
 <h3 class="relative group">Inconsistent Assignments 
     <div id="inconsistent-assignments" class="anchor"></div>
     
@@ -1333,6 +1343,8 @@ Not all areas of Microsoft Intune <a href="https://docs.microsoft.com/en-us/mem/
 
 </p>
 <p><em>Groups looking good here.</em></p>
+
+
 <h3 class="relative group">Fewer Properties 
     <div id="fewer-properties" class="anchor"></div>
     
@@ -1377,6 +1389,8 @@ Not all areas of Microsoft Intune <a href="https://docs.microsoft.com/en-us/mem/
 
 </p>
 <p><em>Win for the Groups.</em></p>
+
+
 <h3 class="relative group">Fewer Operators 
     <div id="fewer-operators" class="anchor"></div>
     
@@ -1420,6 +1434,8 @@ Not all areas of Microsoft Intune <a href="https://docs.microsoft.com/en-us/mem/
 
 </p>
 <p><em>Another win there, <strong>3-0</strong> to the Groups.</em></p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

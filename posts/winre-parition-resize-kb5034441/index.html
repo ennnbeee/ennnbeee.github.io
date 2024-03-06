@@ -1215,7 +1215,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1234,6 +1236,8 @@
     just that</a>, so all credit goes their way.</p>
 <p>So why I am writing this? Well, let&rsquo;s find a way to use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations"   target="_blank">
     Microsoft Intune Remediations</a>, to detect and fix devices that are falling short of the partition size requirement.</p>
+
+
 <h2 class="relative group">Detection Methods 
     <div id="detection-methods" class="anchor"></div>
     
@@ -1245,6 +1249,8 @@
     
 </h2>
 <p>To get ourselves in a good position, we should look at a way to detect that the existing Windows Recovery Environment partition is of a suitable size, from this we can either leave it well alone, or hack at it to increase it&rsquo;s size, once, and only once.</p>
+
+
 <h3 class="relative group">First We Detect 
     <div id="first-we-detect" class="anchor"></div>
     
@@ -1316,6 +1322,8 @@
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>If the result of the comparison is that the <del>size of the partition is smaller than the 750MB configured in <code>$partitionSize</code></del> free space of the partition is smaller than the 250MB configured in <code>$freePartitionSpace</code>, then we&rsquo;ll report the status with <code>Write-Output</code> and <code>Exit 1</code>, otherwise, all is OK so we <code>Exit 0</code> still reporting something.</p>
+
+
 <h3 class="relative group">Then We Report 
     <div id="then-we-report" class="anchor"></div>
     
@@ -1389,6 +1397,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Remediation Methods 
     <div id="remediation-methods" class="anchor"></div>
     
@@ -1401,6 +1411,8 @@
 </h2>
 <p>As we have a good understanding following the implementation of the report only style Remediation, we can now investigate how best to actually fix the issue. For this, we can take the existing script by <a href="https://www.reddit.com/user/InternetStranger4You/"   target="_blank">
     u/InternetStranger4You</a> and modifying it to support the required exit codes for Microsoft Intune.</p>
+
+
 <h3 class="relative group">Script Breakdown 
     <div id="script-breakdown" class="anchor"></div>
     
@@ -1412,7 +1424,7 @@
     
 </h3>
 <p>The script itself is taking the manual steps detailed by Microsoft in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf"   target="_blank">
-    KB5028997</a>, and wrapping them nicely in PowerShell, but I&rsquo;ll walk through the settings so we&rsquo;re all on the same page.</p>
+    KB5028997</a>, and wrapping them nicely in PowerShell, but I&rsquo;ll walk through the settings so we&rsquo;re all on the same page:</p>
 <ul>
 <li>Ensures that the script can read the contents of the <code>reagentc.exe</code> command by capture the output of the process using <code>New-Object System.Diagnostics.ProcessStartInfo</code> as the output data is used throughout the script.</li>
 <li>Checks if there is anything wrong with WinRE with <code>if (($stdout.IndexOf('harddisk') -ne -1) -and ($stdout.IndexOf('partition') -ne -1))</code>, and if so exits.</li>
@@ -1430,6 +1442,8 @@
 <li>Finally enabling the recovery agent with <code>Start-Process 'reagentc.exe' -ArgumentList '/enable' -Wait -NoNewWindow</code> to allow for the failing update to be installed.</li>
 </ul>
 <p>All of these settings are exactly as per the Microsoft provided document, but you know, done for you.</p>
+
+
 <h3 class="relative group">Now We Attack 
     <div id="now-we-attack" class="anchor"></div>
     
@@ -1504,6 +1518,8 @@
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>With the script now in a more useful format, on to how we deploy this to a select group of test devices.</p>
+
+
 <h2 class="relative group">Deploying the Remediation 
     <div id="deploying-the-remediation" class="anchor"></div>
     
@@ -1563,6 +1579,8 @@
 
 </p>
 <p>All is left to do now, is find some more test devices to add to the assignment group, and monitor their progress.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

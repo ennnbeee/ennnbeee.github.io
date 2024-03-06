@@ -1199,7 +1199,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1210,6 +1212,8 @@
     
 </h2>
 <p>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&rsquo;re in luck.</p>
+
+
 <h2 class="relative group">Problem Time 
     <div id="problem-time" class="anchor"></div>
     
@@ -1222,6 +1226,8 @@
 </h2>
 <p>With the migration of clients between Configuration Manager environments, or between domains that Configuration Manager manages devices on, you&rsquo;ll inevitably be in the situation where you need to reinstall the client on these devices to ensure that communication still occurs between the client and the Management Point.</p>
 <p>The problem here, is that the underlying computer object, and associated machine account has changed, and from a Configuration Manager perspective will be treated, as it should, as a newly discovered client. You can remedy this by forcing the un-installation and an installation of the client from within the console, but this really isn&rsquo;t practical for continued migration of clients. So we need a solution, and quickly.</p>
+
+
 <h2 class="relative group">PowerShell to the Rescue 
     <div id="powershell-to-the-rescue" class="anchor"></div>
     
@@ -1235,6 +1241,8 @@
 <p>As always it&rsquo;s PowerShell that will save us, a couple of useful in-built Configuration Manager commands, and a stolen/borrowed <a href="https://janikvonrotz.ch/2017/10/26/powershell-logging-in-cmtrace-format/"   target="_blank">
     Configuration Manager Logging Function</a>.</p>
 <p>This one will be breezy.</p>
+
+
 <h3 class="relative group">Computers without a Client 
     <div id="computers-without-a-client" class="anchor"></div>
     
@@ -1258,7 +1266,9 @@
 </span></span><span class="line"><span class="cl"><span class="c"># Get SiteCode</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$SiteCode</span> <span class="p">=</span> <span class="nb">Get-PSDrive</span> <span class="n">-PSProvider</span> <span class="n">CMSITE</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Set-Location</span> <span class="nv">$SiteCode</span><span class="s2">&#34;:&#34;</span>
-</span></span></code></pre></div><h3 class="relative group">Logging Functions 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Logging Functions 
     <div id="logging-functions" class="anchor"></div>
     
     <span
@@ -1330,6 +1340,8 @@
 
 </p>
 <p>Who would have thought I would bother putting in logging, it&rsquo;s like I wrote this for an actual customer or something.</p>
+
+
 <h3 class="relative group">Client Installation 
     <div id="client-installation" class="anchor"></div>
     
@@ -1346,6 +1358,8 @@
 <p>Putting this together, we&rsquo;ve now got the installation part of the script done, leaning on the existing <code>$SiteCode</code> variable to pass into this part of the script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Install-CMClient</span> <span class="n">-DeviceId</span> <span class="nv">$UnmanagedDevice</span><span class="p">.</span><span class="py">ResourceID</span> <span class="n">-AlwaysInstallClient</span> <span class="vm">$true</span> <span class="n">-ForceReinstall</span> <span class="vm">$true</span> <span class="n">-SiteCode</span> <span class="nv">$SiteCode</span><span class="p">.</span><span class="py">Name</span>
 </span></span></code></pre></div><p>As mentioned previously, if you were using a device collection to capture your devices without the Configuration Manager client, you could use the <code>-CollectionId</code> parameter instead of <code>-DeviceId</code> in the above script snippet.</p>
+
+
 <h2 class="relative group">Installation Time 
     <div id="installation-time" class="anchor"></div>
     
@@ -1462,6 +1476,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>If you need to keep this running on an on-going basis as part of a phased migration, I&rsquo;d recommend hooking this into a Scheduled Task running from the Primary Site server, or if you&rsquo;re feeling fancy, a <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/use-status-system#manage-status-filter-rules"   target="_blank">
     Status Filter Rule</a> to have the script triggered on an event captured by a one of the million Configuration Manager logs files for its components.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

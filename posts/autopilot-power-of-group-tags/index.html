@@ -1201,7 +1201,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1214,6 +1216,8 @@
 <p>So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot <a href="https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot"   target="_blank">
     dynamic group queries</a> used for targetting these devices, right? Good.</p>
 <p>So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices? You probably do&hellip;what&rsquo;s that you say, you&rsquo;re using static groups to manage these? Let me show you the way forward.</p>
+
+
 <h2 class="relative group">Configuration 
     <div id="configuration" class="anchor"></div>
     
@@ -1240,6 +1244,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Group Tags 
     <div id="group-tags" class="anchor"></div>
     
@@ -1252,6 +1258,8 @@
 </h3>
 <p>A hidden gem with Autopilot service, is the <strong>Group Tag</strong> attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported.</p>
 <p>This attribute is attached the computer object that exists in Azure AD, sadly not labelled as &ldquo;Group Tag&rdquo;, but as &ldquo;OrderID&rdquo; (this will be important later). As this attribute exists, we can utilise it with Dynamic Device groups&hellip;do you see where this is going?</p>
+
+
 <h3 class="relative group">Naming Conventions 
     <div id="naming-conventions" class="anchor"></div>
     
@@ -1264,6 +1272,8 @@
 </h3>
 <p>Now he have this little beaut of a trick, we can start to look at how we use the Group Tag attribute to our advantage, and address some of the potential use cases for grouping Autopilot devices, whether this be based on deployment type, application assignment or just for overall better management of devices.</p>
 <p>I&rsquo;m a big fan of having things named in a readable way, it just makes life a bit more straight forward in Microsoft Intune, and Group Tags are no different.</p>
+
+
 <h3 class="relative group">Syntax 
     <div id="syntax" class="anchor"></div>
     
@@ -1338,6 +1348,8 @@
 </tr>
 </tbody>
 </table>
+
+
 <h3 class="relative group">Dynamic Groups 
     <div id="dynamic-groups" class="anchor"></div>
     
@@ -1349,6 +1361,8 @@
     
 </h3>
 <p>Now that we have sorted out the syntax and conventions, it&rsquo;s now time to create some dynamic groups in Azure AD. We&rsquo;re not only going to create specific groups that <strong>equal</strong> the Group Tag, but groups that <strong>match</strong> the Group Tag. This allows assignment of Deployment Profiles, Configuration Profiles and Applications to all device types in a dynamic way, alleviating the need to manually manage groups.</p>
+
+
 <h3 class="relative group">Example Groups 
     <div id="example-groups" class="anchor"></div>
     
@@ -1369,6 +1383,8 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="py">devicePhysicalIds</span> <span class="n">-any</span> <span class="p">(</span><span class="n">_</span> <span class="o">-match</span> <span class="s2">&#34;^\[OrderID\]:AJ-LT.*ADM-PAY.*&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>You get the picture&hellip;the possibilities for both the syntax and the dynamic groups using <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference"   target="_blank">
     Regex</a> are pretty much endless, and should be tailored to how you manage devices in Microsoft Intune.</p>
+
+
 <h3 class="relative group">Application 
     <div id="application" class="anchor"></div>
     
@@ -1382,6 +1398,8 @@
 <p>With the creation of these groups, you can now assign, well, pretty much anything in Microsoft Intune, to them.</p>
 <p>Lets say you want all Laptops to have a BitLocker Endpoint Protection profile, but not Desktops&hellip;you can do this. What about assigning an application to all HR devices that are Hybrid Joined, yup, you can do that too.</p>
 <p>If you&rsquo;re really all up in there with Microsoft Intune, you&rsquo;re probably using Role Based Access Control (RBAC), these groups also allow for segregated management of devices based on location, department, join type etc. for specific User Roles or permission such as Remote Wipe or Application Deployment&hellip;I know, exciting.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

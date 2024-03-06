@@ -1219,7 +1219,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1233,6 +1235,8 @@
     Device Collections</a> used for Software Update deployments in Microsoft Intune.</p>
 <p>With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.</p>
 <p>But what about Microsoft Intune, how do we phase these updates in a similar way to Configuration Manager?</p>
+
+
 <h2 class="relative group">Windows Update for Business Rings 
     <div id="windows-update-for-business-rings" class="anchor"></div>
     
@@ -1243,7 +1247,7 @@
     </span>        
     
 </h2>
-<p>The first thing we need to understand is how many WUfB (Windows Update for Business) rings we should create, usually based on the size of your Windows device estate, for now we&rsquo;ll stick with four update rings.</p>
+<p>The first thing we need to understand is how many WUfB (Windows Update for Business) rings we should create, usually based on the size of your Windows device estate, for now we&rsquo;ll stick with four update rings:</p>
 <ul>
 <li><strong>Testing Ring</strong>: This should be devices that are dedicated for testing, not IT machines. Roughly 5% of your device estate.</li>
 <li><strong>Pilot Ring</strong>: This should be a stratified sample of either users or devices, not friends and family (HR and Finance). Roughly 15% of your device estate.</li>
@@ -1251,6 +1255,8 @@
 <li><strong>Final Production Ring</strong>: This should cover all remaining devices, so 50% of the device estate.</li>
 </ul>
 <p>These rings can be created in Microsoft Intune with differing deferral periods, installation deadlines, and if you like, grace periods.</p>
+
+
 <h3 class="relative group">Installation Settings 
     <div id="installation-settings" class="anchor"></div>
     
@@ -1337,6 +1343,8 @@
 </div>
 
 <p>So with the Update Rings configured, we now need to look at how these are assigned to Users and Devices.</p>
+
+
 <h3 class="relative group">Users versus Devices Assignment 
     <div id="users-versus-devices-assignment" class="anchor"></div>
     
@@ -1351,6 +1359,8 @@
 <p>So we should stick with assigning these rings to a single identity, but which one?</p>
 <p>I mean, the answer is Devices, but I&rsquo;ll explain why.</p>
 <p>If you&rsquo;re using Users, which seems like the easier approach as finding and managing pilot users is pretty straight forward, it means that the Update Ring will follow them regardless of which device they login to. This is not the functionality we want, updates are delivered to devices, not users, so let&rsquo;s see how we can group devices together in a sensible way.</p>
+
+
 <h2 class="relative group">Update Ring Groups 
     <div id="update-ring-groups" class="anchor"></div>
     
@@ -1369,6 +1379,8 @@
 <li>Windows Updates Initial Production</li>
 </ul>
 <p>With both the Testing and Pilot ring being specifically designated devices, we can use Assigned Groups and add Windows devices to each of those groups, what are we doing with the &lsquo;Windows Updates Initial Production&rsquo; group though?</p>
+
+
 <h3 class="relative group">Dynamic Groups 
     <div id="dynamic-groups" class="anchor"></div>
     
@@ -1384,6 +1396,8 @@
     previously</a> Dynamic Groups are more powerful, and for this use case will perfectly fit our need to split our Windows device estate in half-ish.</p>
 <p>Device Name is how we&rsquo;re going to split our device estate, whether these are you old-school naming conventions on-premises based on asset tag, serial number or otherwise, Autopilot <del>Azure AD Join</del> MEID Join (<em>really?</em>) devices with a prefix and a serial, or god forbid Autopilot Hybrid Joined devices with a prefix and random numbers.</p>
 <p>Either way, we should be able use Dynamic Device Groups to capture half of the device estate.</p>
+
+
 <h3 class="relative group">Start of Device Name Matching 
     <div id="start-of-device-name-matching" class="anchor"></div>
     
@@ -1418,6 +1432,8 @@
 <li><code>d*[ACEGIKMOQSUWY]</code>: One alternative uppercase letter from the supplied range</li>
 </ul>
 <p>This should cover our requirements, we just need to create the Dynamic Group query.</p>
+
+
 <h3 class="relative group">End of Device Name Matching 
     <div id="end-of-device-name-matching" class="anchor"></div>
     
@@ -1446,6 +1462,8 @@
 <li><code>[13579]$</code>: The sixth digit is odd</li>
 </ul>
 <p>This should work for the sample asset tag named devices.</p>
+
+
 <h3 class="relative group">Dynamic Group Query 
     <div id="dynamic-group-query" class="anchor"></div>
     
@@ -1477,6 +1495,8 @@
 </span></span><span class="line hl"><span class="cl">ITS-CRJ7C39
 </span></span><span class="line"><span class="cl">CON-f6f64b04a9e7
 </span></span></code></pre></div><p>Expanding this over an entire device estate should give us roughly half of all Windows 10 and later corporate owned devices.</p>
+
+
 <h2 class="relative group">Update Ring Assignment 
     <div id="update-ring-assignment" class="anchor"></div>
     
@@ -1532,6 +1552,8 @@
 </tbody>
 </table>
 <p>Once you&rsquo;ve assigned the Update Rings and confirmed that devices are receiving the correct one, you&rsquo;re good to go. Simple really.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

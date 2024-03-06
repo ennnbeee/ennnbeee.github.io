@@ -1247,7 +1247,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1263,6 +1265,8 @@
     Settings Catalog</a> based policies all over the shop in Microsoft Intune, and the advent of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/reusable-settings-groups"   target="_blank">
     Reusable Settings</a> for Defender Firewall Rules, these &ldquo;legacy&rdquo; Endpoint Security Defender Firewall Rule profiles don&rsquo;t support the new world, so how do we fix that?</p>
 <p>It&rsquo;s obviously PowerShell and Graph, you should know this by now.</p>
+
+
 <h2 class="relative group">Getting Firewall Rule Profiles 
     <div id="getting-firewall-rule-profiles" class="anchor"></div>
     
@@ -1277,6 +1281,8 @@
     Rule Migration Tool</a> to support Settings Catalog policies just yet, so instead of focusing on capturing new rules, let&rsquo;s look at how we get the rules from existing Endpoint Security profiles. I&rsquo;ve worked long enough on bodging together my own PowerShell functions that I can pull back existing profiles and the data, so let&rsquo;s do that first to see what we&rsquo;re working with, as we&rsquo;ll need to translate these existing rules into the new format.</p>
 <p>Once we&rsquo;ve authenticated to Graph in the <a href="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/"  >
     usual manner</a>, and using the functions below to get the Endpoint Security profiles, Endpoint Security Templates and Endpoint Security Categories and finally each setting within the profile we can put all the existing rules into a variable that we can work with.</p>
+
+
 <h3 class="relative group">Endpoint Security Profile 
     <div id="endpoint-security-profile" class="anchor"></div>
     
@@ -1329,7 +1335,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Endpoint Security Templates 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Endpoint Security Templates 
     <div id="endpoint-security-templates" class="anchor"></div>
     
     <span
@@ -1381,7 +1389,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Endpoint Security Template Categories 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Endpoint Security Template Categories 
     <div id="endpoint-security-template-categories" class="anchor"></div>
     
     <span
@@ -1424,7 +1434,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Capturing Firewall Rules 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Capturing Firewall Rules 
     <div id="capturing-firewall-rules" class="anchor"></div>
     
     <span
@@ -1501,6 +1513,8 @@
 </span></span><span class="line"><span class="cl"><span class="err">useAnyRemoteAddressRange</span>  <span class="err">:</span> <span class="err">False</span>
 </span></span><span class="line"><span class="cl"><span class="err">actualRemoteAddressRanges</span> <span class="err">:</span> <span class="p">{</span><span class="err">172.31.224.0/255.255.240.0</span><span class="p">}</span>
 </span></span></code></pre></div><p>We now have the data we need to start building firewall rules in the new Setting Catalog format. Surely it get&rsquo;s easier, (hint: it doesn&rsquo;t).</p>
+
+
 <h2 class="relative group">Creating Firewall Rules 
     <div id="creating-firewall-rules" class="anchor"></div>
     
@@ -1513,6 +1527,8 @@
 </h2>
 <p>We now have the information from the existing legacy profiles allowing us to create rules in the Settings Catalog policy format, so we should process each of the rules we&rsquo;ve captured and pass the data into reusable variables in preparation for building the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicy-create?view=graph-rest-beta"   target="_blank">
     JSON structure</a>.</p>
+
+
 <h3 class="relative group">Firewall Rule Grouping 
     <div id="firewall-rule-grouping" class="anchor"></div>
     
@@ -1536,6 +1552,8 @@
 </span></span><span class="line"><span class="cl">  100 3    {@{displayName=Microsoft Sync Center; description=Microsoft Sync Center; trafficDirection=in; action=allowed; profileTypes=System.Object[];
 </span></span><span class="line"><span class="cl">   63 4    {@{displayName=Microsoft Office Outlook; description=; trafficDirection=in; action=allowed; profileTypes=System.Object[]; packageFamilyName=;
 </span></span></code></pre></div><p>These groups can now be used to create separate Settings Catalog policies.</p>
+
+
 <h3 class="relative group">Duplicate Rule Names 
     <div id="duplicate-rule-names" class="anchor"></div>
     
@@ -1575,7 +1593,9 @@
 </span></span><span class="line"><span class="cl">    2 Microsoft To Do           {Microsoft To Do, Microsoft To Do}
 </span></span><span class="line"><span class="cl">    4 VMware Remote MKS         {VMware Remote MKS, VMware Remote MKS, VMware Remote MKS, VMware Remote MKS}
 </span></span><span class="line"><span class="cl">   23 Windows Feature Experien… {Windows Feature Experience Pack, Windows Feature Experience Pack, Windows Feature Experience Pack, Windows Feature Experience Pack…}
-</span></span></code></pre></div><h3 class="relative group">Rule Processing 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Rule Processing 
     <div id="rule-processing" class="anchor"></div>
     
     <span
@@ -1620,6 +1640,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>We now have the information from the existing rules to create new ones. Now to the fun part of JSON formatting.</p>
+
+
 <h2 class="relative group">Creating Settings Catalog Policies 
     <div id="creating-settings-catalog-policies" class="anchor"></div>
     
@@ -1632,6 +1654,8 @@
 </h2>
 <p>Luckily we have <a href="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/"  >
     experience</a> creating Settings Catalog policies, and have a good grasp of the JSON formatting required not just for the policy itself, but also for the settings contained within, with the first setting having differing JSON formatting structure and data compared with all subsequent settings. So I had at least an idea on how to build the JSON data to throw it at Microsoft Intune.</p>
+
+
 <h3 class="relative group">Building the Policy 
     <div id="building-the-policy" class="anchor"></div>
     
@@ -1688,6 +1712,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>This was the easy part of the process, we now need to focus on the rules themselves.</p>
+
+
 <h3 class="relative group">Building the Rules 
     <div id="building-the-rules" class="anchor"></div>
     
@@ -1715,6 +1741,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">    &#34;children&#34;: [
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#39;@</span>
 </span></span></code></pre></div><p>But that&rsquo;s it for niceties, each of the options for every rule has different formatting, let&rsquo;s look at comparing just the JSON data for the name of the rule.</p>
+
+
 <h3 class="relative group">JSON Differences 
     <div id="json-differences" class="anchor"></div>
     
@@ -1799,7 +1827,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="sh">
 </span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Completing the Policy 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Completing the Policy 
     <div id="completing-the-policy" class="anchor"></div>
     
     <span
@@ -1863,6 +1893,8 @@
 </span></span><span class="line"><span class="cl">templateReference    : @{templateId=19c8aa67-f286-4861-9aa0-f23541d31680_1; templateFamily=endpointSecurityFirewall; templateDisplayName=Microsoft Defender Firewall Rules;
 </span></span><span class="line"><span class="cl">                       templateDisplayVersion=Version 1}
 </span></span></code></pre></div><p>This looks pretty good if I do say so myself.</p>
+
+
 <h3 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
@@ -1969,6 +2001,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Successfully created new Settings Catalog Policy COPE_FW_RulesMigrated-4
 </span></span></code></pre></div><p>I&rsquo;d call that a win in my books.</p>
+
+
 <h3 class="relative group">Comparing Profiles to Policies 
     <div id="comparing-profiles-to-policies" class="anchor"></div>
     
@@ -2056,6 +2090,8 @@
 
 </p>
 <p>I think we&rsquo;re done.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

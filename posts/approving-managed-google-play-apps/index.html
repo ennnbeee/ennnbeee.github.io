@@ -1215,7 +1215,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1229,6 +1231,8 @@
     Managed Google Play Apps</a> in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&rsquo;re looking to migrate away from.</p>
 <p>Anyone fancy doing this one by one with lots of mouse clicks and early onset repetitive strain injury? Didn&rsquo;t think so.</p>
 <p>This will be a quick one, and annoyingly does require a bit of effort to get the app details&hellip;more on that later though. Onto the fun part.</p>
+
+
 <h2 class="relative group">Managed Google Play Apps 
     <div id="managed-google-play-apps" class="anchor"></div>
     
@@ -1242,6 +1246,8 @@
 <p>As always we&rsquo;re leaning on Graph again, as with everything in Microsoft Intune, and knowing we&rsquo;ve setup our Managed Google Play account already, we can leverage this to add some Android Enterprise Apps into our tenant.</p>
 <p>Android Enterprise apps can&rsquo;t be added to Microsoft Intune in the same way as iOS Store Apps or even Play Store Apps, so we can&rsquo;t use <a href="https://learn.microsoft.com/en-us/graph/api/intune-apps-managediosstoreapp-create?view=graph-rest-1.0"   target="_blank">
     POST /deviceAppManagement/mobileApps</a> for creating these in the tenant. All the work is done at the Google side, so luckily we have a way to call this via the Graph API.</p>
+
+
 <h2 class="relative group">Approving and Syncing Applications 
     <div id="approving-and-syncing-applications" class="anchor"></div>
     
@@ -1383,6 +1389,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span></code></pre></div><p>We could have also prefixed the Package Id with the required <em>&lsquo;app:&rsquo;</em> but that&rsquo;s one for later me.</p>
+
+
 <h2 class="relative group">The Functions 
     <div id="the-functions" class="anchor"></div>
     
@@ -1394,6 +1402,8 @@
     
 </h2>
 <p>Now we have our list of Package Ids for the Mobile Apps in a nice format, we need to build a couple of functions (obviously) to approve the Mobile Apps and then synchronise the Apps to the Microsoft Intune tenant.</p>
+
+
 <h3 class="relative group">Approving Managed Google Apps 
     <div id="approving-managed-google-apps" class="anchor"></div>
     
@@ -1440,7 +1450,9 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Synchronising Managed Google Apps 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Synchronising Managed Google Apps 
     <div id="synchronising-managed-google-apps" class="anchor"></div>
     
     <span
@@ -1481,7 +1493,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Running the Script 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
     <span
@@ -1531,6 +1545,8 @@
 
 </p>
 <p>With the Mobile Apps now in the tenant, you can go ahead and assign them to your hearts content&hellip;or maybe script something to do this for you?</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

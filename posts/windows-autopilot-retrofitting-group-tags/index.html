@@ -1245,7 +1245,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1260,6 +1262,8 @@
 <p>As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-using-group-tags-to-import-devices-into-intune-with/ba-p/815336"   target="_blank">
     Group Tag</a> after a successful Proof-of-Concept implementation of a suitable convention and syntax. Thanks past me.</p>
 <p>So what does any good consultant do? <del>Run away?</del> <del>Come up with a janky script that you&rsquo;ll only ever run once, that contains nested &lsquo;foreach&rsquo; loops?</del> Write a perfectly reusable and digestible PowerShell script using Graph API to update existing Autopilot devices&hellip;</p>
+
+
 <h2 class="relative group">The Approach 
     <div id="the-approach" class="anchor"></div>
     
@@ -1271,6 +1275,8 @@
     
 </h2>
 <p>Now I needed an easy way to tag specific devices with Group Tags, and then anything that didn&rsquo;t have a specific Group Tag to get a default one&hellip;so we&rsquo;re working with two distinct use cases here.</p>
+
+
 <h2 class="relative group">Ready, Aim 
     <div id="ready-aim" class="anchor"></div>
     
@@ -1301,6 +1307,8 @@
 <pre tabindex="0"><code class="language-csv" data-lang="csv">SerialNumber,GroupTag
 VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </code></pre><p>Now that you&rsquo;ve got <strong>all</strong> the Autopilot devices, go ahead and laboriously update the CSV file with Group Tags and remove any devices that you want tagging with the default one.</p>
+
+
 <h2 class="relative group">Repeat Offenders 
     <div id="repeat-offenders" class="anchor"></div>
     
@@ -1312,6 +1320,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     
 </h2>
 <p>We need a way to not only set the Group Tag, but fetch the ID of the Autopilot device, and as we&rsquo;re doing this potentially 100&rsquo;s of times, and I did say this was a repeatable and reusable script, we should create a PowerShell function or two.</p>
+
+
 <h3 class="relative group">Handshake Time 
     <div id="handshake-time" class="anchor"></div>
     
@@ -1324,6 +1334,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </h3>
 <p>Lets steal the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
     Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</p>
+
+
 <h3 class="relative group">Authentication Function 
     <div id="authentication-function" class="anchor"></div>
     
@@ -1422,7 +1434,9 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Authentication Token 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Authentication Token 
     <div id="authentication-token" class="anchor"></div>
     
     <span
@@ -1491,6 +1505,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     >If you haven&rsquo;t authenticated to Graph in your tenant previously, you&rsquo;ll probably be asked to grant Admin Consent, you want to do this, consent is important.</span>
 </div>
 
+
+
 <h3 class="relative group">Autopilot Functions 
     <div id="autopilot-functions" class="anchor"></div>
     
@@ -1508,6 +1524,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 <li>Get all Autopilot devices without a Group Tag set</li>
 <li>Get the Autopilot device Id for the entries in the CSV file we created</li>
 </ol>
+
+
 <h3 class="relative group">Getting Autopilot Devices 
     <div id="getting-autopilot-devices" class="anchor"></div>
     
@@ -1537,7 +1555,9 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Update Autopilot Device Attributes 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Update Autopilot Device Attributes 
     <div id="update-autopilot-device-attributes" class="anchor"></div>
     
     <span
@@ -1586,7 +1606,9 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Scary Stuff Lies Ahead 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Scary Stuff Lies Ahead 
     <div id="scary-stuff-lies-ahead" class="anchor"></div>
     
     <span
@@ -1597,6 +1619,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     
 </h2>
 <p>So we now have the functions in order to connect, get and set all the things we need. Here comes the fun part, PowerShell logic driven by four cups of coffee.</p>
+
+
 <h3 class="relative group">Script Parameters 
     <div id="script-parameters" class="anchor"></div>
     
@@ -1612,6 +1636,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 <li><strong>Method</strong>: Set to be either &lsquo;CSV&rsquo; or &lsquo;Online&rsquo;, used for loading that beautiful CSV created earlier, or to just grab all the Autopilot devices in the tenant with a blank Group Tag</li>
 <li><strong>DefaultGroupTag</strong>: The &lsquo;Catch All&rsquo; Group Tag for those devices that don&rsquo;t have one set already</li>
 </ul>
+
+
 <h3 class="relative group">The Logic? 
     <div id="the-logic" class="anchor"></div>
     
@@ -1672,7 +1698,9 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </span></span><span class="line"><span class="cl">        <span class="nb">write-host</span> <span class="s2">&#34;Group tag: &#39;</span><span class="nv">$GroupTag</span><span class="s2">&#39; not set for device with serial &#39;</span><span class="p">$(</span><span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="n">Serialnumber</span><span class="p">)</span><span class="s2">&#39;&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Fire 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Fire 
     <div id="fire" class="anchor"></div>
     
     <span
@@ -1714,6 +1742,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
       class="dark:text-neutral-300"
     >P.S. There is no <code>-whatif</code> command, so I&rsquo;d start with the CSV of a couple of test devices.</span>
 </div>
+
+
 
 <h3 class="relative group">Sniper Time 
     <div id="sniper-time" class="anchor"></div>
@@ -1775,6 +1805,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 
 </p>
 <p>Which amazingly, the Group Tag matches the data in the CSV file we created earlier. Too early to call this a win outright, but we&rsquo;re on the way.</p>
+
+
 <h3 class="relative group">Shotgun Approach 
     <div id="shotgun-approach" class="anchor"></div>
     
@@ -1819,6 +1851,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 
 </p>
 <p>This Group Tag matches the <code>DefaultGroupTag</code> parameter we set when running the script. I&rsquo;d call this one a win.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

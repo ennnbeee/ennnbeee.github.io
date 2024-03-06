@@ -1223,7 +1223,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1246,6 +1248,8 @@
     many</a>, <a href="https://amirsayes.co.uk/2021/11/23/automate-installing-sccm-client-for-azure-ad-autopilot-devices-via-intune-and-powershell/"   target="_blank">
     many</a>, <a href="https://www.imab.dk/deploy-the-sccm-client-using-microsoft-intune-and-the-cloud-management-gateway-no-pki-certificates/"   target="_blank">
     many</a> times, almost to death in fact, so I&rsquo;m not going to show you how to package the client files, what I am going to show you is a couple of tricks to make the installation easier, and not break Autopilot.</p>
+
+
 <h2 class="relative group">App Requirement Rules 
     <div id="app-requirement-rules" class="anchor"></div>
     
@@ -1328,6 +1332,8 @@
 
 </p>
 <p>This will now stop the installation from even starting during Autopilot phase, and only start the installation once the requirement has been met.</p>
+
+
 <h2 class="relative group">App Detection Methods 
     <div id="app-detection-methods" class="anchor"></div>
     
@@ -1388,6 +1394,8 @@
 
 </p>
 <p>Allowing for a quick and easy detection of the required setup files on the device.</p>
+
+
 <h2 class="relative group">Intune Only Mode 
     <div id="intune-only-mode" class="anchor"></div>
     
@@ -1470,6 +1478,8 @@
 <li>2 – Configuration Manager</li>
 </ul>
 <p>Right, so if we really wanted to stick with Intune as the management authority here, we can leverage the above information and force the device to stick with Intune for it&rsquo;s management needs, and in the case of App deployment, the device will still receive Apps from both Intune and Configuration Manger if the key value is set to Intune.</p>
+
+
 <h3 class="relative group">Proactive Remediation 
     <div id="proactive-remediation" class="anchor"></div>
     
@@ -1482,6 +1492,8 @@
 </h3>
 <p>As I&rsquo;ve mentioned <a href="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/#proactive-remediation"  >
     previously</a> if you&rsquo;re licensed to use Proactive Remediation Scripts, you should be using them, and in anger. We can throw together a script that looks for the registry key <code>HKLM:\SOFTWARE\Microsoft\DeviceManageabilityCSP\Provider\MS DM Server\ConfigInfo</code>, create it if it doesn&rsquo;t exist, and set it to <code>1</code> telling the device to only deal with Intune.</p>
+
+
 <h4 class="relative group">Detection Script 
     <div id="detection-script" class="anchor"></div>
     
@@ -1517,7 +1529,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h4 class="relative group">Remediation Script 
+</span></span></code></pre></div>
+
+<h4 class="relative group">Remediation Script 
     <div id="remediation-script" class="anchor"></div>
     
     <span
@@ -1547,7 +1561,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Creating a Custom Script 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Creating a Custom Script 
     <div id="creating-a-custom-script" class="anchor"></div>
     
     <span
@@ -1575,6 +1591,8 @@
 
 </p>
 <p>Make sure you&rsquo;re using 64-bit PowerShell for this script, as we don&rsquo;t want anything screwy going on with the registry settings.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

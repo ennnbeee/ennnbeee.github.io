@@ -1231,7 +1231,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1243,6 +1245,8 @@
 </h2>
 <p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft"   target="_blank">
     New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>
+
+
 <h2 class="relative group">Allowing App Updates 
     <div id="allowing-app-updates" class="anchor"></div>
     
@@ -1288,6 +1292,8 @@
 
 </p>
 <p>Assign this profile to your devices, all of them obviously, no testing needed here.</p>
+
+
 <h2 class="relative group">Forcing App Updates 
     <div id="forcing-app-updates" class="anchor"></div>
     
@@ -1335,6 +1341,8 @@
 </p>
 <p>Brilliant, apps are now trying their hardest to update. Now we&rsquo;ve got a method to update the apps, no one is going to run this manually on a regular basis, and we love a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations"   target="_blank">
     Microsoft Intune Remediation</a>.</p>
+
+
 <h2 class="relative group">Remediation Settings 
     <div id="remediation-settings" class="anchor"></div>
     
@@ -1368,6 +1376,8 @@
 <p>This is a required node.</p>
 </blockquote>
 <p>OK, so it isn&rsquo;t that clear, but we&rsquo;ve got a way to detect whether the last update of apps was successful, and with the Settings Catalog policy created earlier we should be keeping apps up to date from then on.</p>
+
+
 <h3 class="relative group">Detection Script 
     <div id="detection-script" class="anchor"></div>
     
@@ -1401,6 +1411,8 @@
   
 
 <p>On to the remediation portion.</p>
+
+
 <h3 class="relative group">Remediation Script 
     <div id="remediation-script" class="anchor"></div>
     
@@ -1428,6 +1440,8 @@
   
 
 <p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
+
+
 <h2 class="relative group">Deploying the Remediation 
     <div id="deploying-the-remediation" class="anchor"></div>
     
@@ -1472,6 +1486,8 @@
 
 </p>
 <p>If all goes well, your devices will start actually updating the &lsquo;Built In&rsquo; apps you haven&rsquo;t ripped out with a PowerShell script, and Microsoft Intune UWP store apps you&rsquo;ve deployed, though your users may start complaining about the apps looking like they&rsquo;re loading in the Start Menu 😂.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

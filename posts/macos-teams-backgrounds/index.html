@@ -1249,7 +1249,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1262,6 +1264,8 @@
 <p>What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy <a href="https://www.microsoft.com/en-us/microsoft-teams/virtual-meeting-backgrounds"   target="_blank">
     Microsoft Teams Backgrounds</a> to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using <a href="https://techcommunity.microsoft.com/t5/microsoft-mechanics-blog/microsoft-teams-premium-experiences-and-how-to-set-it-up/ba-p/3697553"   target="_blank">
     Microsoft Teams Premium Experience</a>.</p>
+
+
 <h2 class="relative group">Teams Meeting Backgrounds 
     <div id="teams-meeting-backgrounds" class="anchor"></div>
     
@@ -1273,6 +1277,8 @@
     
 </h2>
 <p>So after a quick search, to add new backgrounds for Teams we need to dump files in <code>~/Library/Application Support/Microsoft/Teams/Backgrounds</code>, this directory will exist under the logged in User context, so we&rsquo;re going to need a way to both create an &lsquo;Uploads&rsquo; directory and dump the background files in there.</p>
+
+
 <h3 class="relative group">Checking for the Teams App 
     <div id="checking-for-the-teams-app" class="anchor"></div>
     
@@ -1307,6 +1313,8 @@
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span></code></pre></div><p>This will sit and wait for Teams to be detected, so make sure you&rsquo;ve either already deployed Teams to your devices and/or have a &lsquo;Required&rsquo; install intent for either Microsoft Teams or Microsoft Office, in Intune.</p>
+
+
 <h3 class="relative group">Getting the Logged in User 
     <div id="getting-the-logged-in-user" class="anchor"></div>
     
@@ -1320,7 +1328,9 @@
 <p>Like the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock"   target="_blank">
     Dock Customisation</a> script, we can run the script from Intune as the signed-in user, and  as we&rsquo;re dealing with data in the User context, this makes the most sense. We can capture the signed-in user using the built-in <code>$HOME</code> variable, and creating a new <code>teamsUpload</code> variable to use later.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">teamsUpload</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Library/Application Support/Microsoft/Teams/Backgrounds/Uploads&#34;</span>
-</span></span></code></pre></div><h3 class="relative group">Checking the Background Directory 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Checking the Background Directory 
     <div id="checking-the-background-directory" class="anchor"></div>
     
     <span
@@ -1370,6 +1380,8 @@
     >You may have noticed by now that I&rsquo;m not explaining in much depth how the Shell commands work, well that&rsquo;s because I&rsquo;m still on a steep learning curve myself. Bear with me here, it ain&rsquo;t PowerShell is it.</span>
 </div>
 
+
+
 <h2 class="relative group">Deploying Files with Shell Scripts 
     <div id="deploying-files-with-shell-scripts" class="anchor"></div>
     
@@ -1382,6 +1394,8 @@
 </h2>
 <p>I already know there&rsquo;s a working method to deploy a <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Wallpaper"   target="_blank">
     Desktop Background</a> to a macOS device enrolled in Microsoft Intune. So we&rsquo;ll do what any right minded Consultant would do, and <del>steal</del> modify the script to our needs.</p>
+
+
 <h3 class="relative group">Script Variables 
     <div id="script-variables" class="anchor"></div>
     
@@ -1427,6 +1441,8 @@
     >This lack of a <code>$</code> when configuring new variables is unsettling me if I&rsquo;m honest, but we move.</span>
 </div>
 
+
+
 <h3 class="relative group">Downloading with Curl 
     <div id="downloading-with-curl" class="anchor"></div>
     
@@ -1441,6 +1457,8 @@
     <code>curl</code></a> to download the background files to the directory location <code>-L</code>, passing in the URL and a filename as part of the output <code>-o</code> option. We&rsquo;ve added the `-s&rsquo; so as to not clog the log file with the raw download data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">curl -s -L -o <span class="nv">$teamsUpload</span>/<span class="nv">$backgroundfile</span> <span class="nv">$backgroundurl</span>
 </span></span></code></pre></div><p>We now need to loop through each of the items in the <code>backgroundurls</code> array, and we also need to give each a filename for <code>backgroundfile</code> that isn&rsquo;t duplicated, otherwise we&rsquo;ll end up downloading and overwriting the same file for each URL in the array.</p>
+
+
 <h3 class="relative group">Incremental Filenames 
     <div id="incremental-filenames" class="anchor"></div>
     
@@ -1460,6 +1478,8 @@
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span></code></pre></div><p>This will make sure that each downloaded background file gets a new filename, this won&rsquo;t cater for multiple initiations of the script, but remember, I&rsquo;m still new at this.</p>
+
+
 <h2 class="relative group">Teams Background Script 
     <div id="teams-background-script" class="anchor"></div>
     
@@ -1539,6 +1559,8 @@
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span></code></pre></div><p>Time to add this into Intune and reap the rewards.</p>
+
+
 <h3 class="relative group">Intune Shell Scripts 
     <div id="intune-shell-scripts" class="anchor"></div>
     
@@ -1601,6 +1623,8 @@
 
 </p>
 <p>Now we&rsquo;ve added the Shell Script, this can be deployed to the &lsquo;All Users&rsquo;, &lsquo;All Devices&rsquo; groups (Don&rsquo;t do this as we don&rsquo;t have Device Filters to use) or Groups of your choosing.</p>
+
+
 <h2 class="relative group">Checking Microsoft Teams 
     <div id="checking-microsoft-teams" class="anchor"></div>
     
@@ -1612,6 +1636,8 @@
     
 </h2>
 <p>With the Script deployed from Intune and assigned to a group of devices, we can check on the devices themselves to make sure that the script has run successfully using the log file, checking that the new backgrounds have downloaded to the correct directory, and that these backgrounds appear in Microsoft Teams.</p>
+
+
 <h3 class="relative group">Script Logging 
     <div id="script-logging" class="anchor"></div>
     
@@ -1638,6 +1664,8 @@
 
 </p>
 <p>Everything looks solid we should check the download directory.</p>
+
+
 <h3 class="relative group">Background Directory 
     <div id="background-directory" class="anchor"></div>
     
@@ -1663,6 +1691,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Teams Background Effects 
     <div id="teams-background-effects" class="anchor"></div>
     
@@ -1719,6 +1749,8 @@
       class="dark:text-neutral-300"
     >If Microsoft Teams was open when the backgrounds were deployed, it will need a restart to pick up the new backgrounds. I did think about force quitting the app, but didn&rsquo;t think users would appreciate that.</span>
 </div>
+
+
 
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>

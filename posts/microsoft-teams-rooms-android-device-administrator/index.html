@@ -110,7 +110,7 @@
     "keywords": ["intune","android","teams","enrolment"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1352"
+    "wordCount": "1354"
   }]
   </script>
 
@@ -1217,7 +1217,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1233,6 +1235,8 @@
 <p>This seems easy enough, create a new <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/enrollment-restrictions-set#device-platform"   target="_blank">
     Enrolment Restriction</a> and assign it to a group containing the Microsoft Teams Rooms resource accounts. Done. Post over.</p>
 <p>What if you want to ensure that all these accounts, and any future accounts used for MTR get this allowance for enrolment?</p>
+
+
 <h2 class="relative group">Device Enrolment 
     <div id="device-enrolment" class="anchor"></div>
     
@@ -1244,6 +1248,8 @@
     
 </h2>
 <p>First off is creating an Enrolment Restriction profile that allows for Android Device Administrator enrolment, secondly is how we let Intune know that the devices are corporate owned, as they will be picked up as personal devices due to the enrolment method, and finally a way to capture all the MTR resource accounts together.</p>
+
+
 <h3 class="relative group">Enrolment Restrictions 
     <div id="enrolment-restrictions" class="anchor"></div>
     
@@ -1285,6 +1291,8 @@
 
 </p>
 <p>Perfect.</p>
+
+
 <h3 class="relative group">Corporate Device Identifiers 
     <div id="corporate-device-identifiers" class="anchor"></div>
     
@@ -1315,6 +1323,8 @@
 <p>So if the devices are running <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number"   target="_blank">
     Android 10 and above</a>, we&rsquo;re straight out of luck and need to amend our restriction profile to allow personally owned device enrolment.</p>
 <p>However, if the device has below Android 10, we can add either the device IMEI number (don&rsquo;t use this) or Serial number (do use this) in Intune to identify the device as corporate.</p>
+
+
 <h2 class="relative group">Utilising Dynamic Groups 
     <div id="utilising-dynamic-groups" class="anchor"></div>
     
@@ -1327,6 +1337,8 @@
 </h2>
 <p>With the Device Platform Enrolment restriction in place, we could do with a group to assign this restriction to, if we&rsquo;re strict with our naming conventions of these resource accounts being used for the MTR, such as prefixing all account with &lsquo;MTR-&rsquo;, we could go with something simple and use <code>(user.userPrincipalName -startsWith &quot;MTR-&quot;)</code> as part of our rule syntax.</p>
 <p>Sadly though, I don&rsquo;t like nor trust human input when it comes to device management and Intune, so we need to find a different way that at least reduces the human error part, if not removes it entirely and ensure that all new MTR accounts are added to the restriction.</p>
+
+
 <h3 class="relative group">Assigned Licenses 
     <div id="assigned-licenses" class="anchor"></div>
     
@@ -1383,6 +1395,8 @@
 </tbody>
 </table>
 <p>So with this we can attempt to construct a Dynamic User group based on these services that are assigned and enabled for the MTR accounts.</p>
+
+
 <h3 class="relative group">Some Dirty Logic 
     <div id="some-dirty-logic" class="anchor"></div>
     
@@ -1396,35 +1410,47 @@
 <p>So as it turns out, the above services are part of a hundred other license options, so we need a way to drill down and find only the MTR accounts with these licenses or services assigned.</p>
 <p>I thought long and hard (about 5 minutes tbh) and came up with the below; basically making sure the above assigned licenses exist, but the user account doesn&rsquo;t have any Exchange Online or SharePoint Online license assigned and enabled, hopefully filtering out any other users or user types from the group.</p>
 <p>We&rsquo;re actually using the Service Name captured from the <code>Get-AzureADUser -User 'MTR-Room1@ennbee.uk' | Select -ExpandProperty AssignedPlans</code> PowerShell command here, to cover off all plan types under the service, as there are so many Exchange Online plan types and I want to make this as clean as possible without having to list all the Exchange Online or SharePoint Online service plan Ids.</p>
-<p>So here&rsquo;s the logic we&rsquo;re using to find only the MTR accounts using a Dynamic Group:</p>
-<ul>
-<li>User <strong>is assigned</strong> a Microsoft 365 Phone System license and is enabled:</li>
-</ul>
-<p><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></p>
-<ul>
-<li>User <strong>is assigned any</strong> Intune license and is enabled:</li>
-</ul>
-<p><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;SCO&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></p>
-<ul>
-<li>User <strong>is assigned any</strong> Teams license and is enabled:</li>
-</ul>
-<p><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;TeamspaceAPI&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></p>
-<ul>
-<li>User <strong>is assigned any</strong> Skype for Business license and is enabled:</li>
-</ul>
-<p><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;MicrosoftCommunicationsOnline&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></p>
-<ul>
-<li>User <strong>is assigned</strong> a WhiteBoard Plan 3 license and is enabled:</li>
-</ul>
-<p><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4a51bca5-1eff-43f5-878c-177680f191af&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></p>
-<ul>
-<li>User <strong>is not assigned any</strong> Exchange Online license that is enabled or deleted:</li>
-</ul>
-<p><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;exchange&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></p>
-<ul>
-<li>User <strong>is not assigned any</strong> SharePoint Online license that is enabled or deleted:</li>
-</ul>
-<p><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;SharePoint&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></p>
+<p>So here&rsquo;s the logic we&rsquo;re using to find only the MTR accounts using a Dynamic Group.</p>
+<table>
+<thead>
+<tr>
+<th>Logic</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User <strong>is assigned</strong> a Microsoft 365 Phone System license and is enabled</td>
+<td><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+</tr>
+<tr>
+<td>User <strong>is assigned any</strong> Intune license and is enabled</td>
+<td><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;SCO&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+</tr>
+<tr>
+<td>User <strong>is assigned any</strong> Teams license and is enabled</td>
+<td><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;TeamspaceAPI&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+</tr>
+<tr>
+<td>User <strong>is assigned any</strong> Skype for Business license and is enabled</td>
+<td><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;MicrosoftCommunicationsOnline&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+</tr>
+<tr>
+<td>User <strong>is assigned</strong> a WhiteBoard Plan 3 license and is enabled</td>
+<td><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4a51bca5-1eff-43f5-878c-177680f191af&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+</tr>
+<tr>
+<td>User <strong>is not assigned any</strong> Exchange Online license that is enabled or deleted</td>
+<td><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;exchange&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
+</tr>
+<tr>
+<td>User <strong>is not assigned any</strong> SharePoint Online license that is enabled or deleted</td>
+<td><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;SharePoint&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
+</tr>
+</tbody>
+</table>
+
+
 <h2 class="relative group">Allowing Microsoft Team Room Enrolment 
     <div id="allowing-microsoft-team-room-enrolment" class="anchor"></div>
     
@@ -1437,8 +1463,10 @@
 </h2>
 <p>After all this effort, we can finally create the a group in Azure AD using some of the above and combine it to create the needed Rule Syntax.</p>
 <p>In the below example, the accounts didn&rsquo;t have a Microsoft 365 Phone System license so the <code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code> part of the rule was removed:</p>
-<pre tabindex="0"><code>(user.assignedPlans -any (assignedPlan.service -eq &#34;SCO&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -any (assignedPlan.service -eq &#34;TeamspaceAPI&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -any (assignedPlan.service -eq &#34;MicrosoftCommunicationsOnline&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -any (assignedPlan.servicePlanId -eq &#34;4a51bca5-1eff-43f5-878c-177680f191af&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -all (assignedPlan.service -ne &#34;exchange&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34; -or assignedPlan.capabilityStatus -eq &#34;Deleted&#34;)) and (user.assignedPlans -all (assignedPlan.service -ne &#34;SharePoint&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34; -or assignedPlan.capabilityStatus -eq &#34;Deleted&#34;))
-</code></pre><h3 class="relative group">The Dynamic Group 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">(user.assignedPlans -any (assignedPlan.service -eq &#34;SCO&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -any (assignedPlan.service -eq &#34;TeamspaceAPI&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -any (assignedPlan.service -eq &#34;MicrosoftCommunicationsOnline&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -any (assignedPlan.servicePlanId -eq &#34;4a51bca5-1eff-43f5-878c-177680f191af&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34;)) and (user.assignedPlans -all (assignedPlan.service -ne &#34;exchange&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34; -or assignedPlan.capabilityStatus -eq &#34;Deleted&#34;)) and (user.assignedPlans -all (assignedPlan.service -ne &#34;SharePoint&#34; -and assignedPlan.capabilityStatus -eq &#34;Enabled&#34; -or assignedPlan.capabilityStatus -eq &#34;Deleted&#34;))
+</span></span></code></pre></div>
+
+<h3 class="relative group">The Dynamic Group 
     <div id="the-dynamic-group" class="anchor"></div>
     
     <span
@@ -1479,6 +1507,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Updating the Enrolment Restriction 
     <div id="updating-the-enrolment-restriction" class="anchor"></div>
     
@@ -1504,6 +1534,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

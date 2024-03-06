@@ -1261,7 +1261,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1275,6 +1277,8 @@
     Operating System Compliance Policies</a> up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</p>
 <p>What I am going to do is extend this automated Compliance Policy update functionality to Apple Updates as well, it&rsquo;s like I&rsquo;ve been working with a customer that only has iOS/iPadOS devices in Intune or something.</p>
 <p>I guess when I end up working with a customer with only Android devices, that I&rsquo;ll finally be able to put all the pieces together and have one script to update them all.</p>
+
+
 <h2 class="relative group">Operating System Build Versions 
     <div id="operating-system-build-versions" class="anchor"></div>
     
@@ -1294,6 +1298,8 @@
 <li>Maximum OS build version</li>
 </ul>
 <p>With Apple having different build versions per Operating System, whether this is iOS/iPadOS or macOS, we&rsquo;re unable to have one Compliance Policy that covers all the supported OS versions, and need to have specific policies per supported Operating System.</p>
+
+
 <h3 class="relative group">Device Filters 
     <div id="device-filters" class="anchor"></div>
     
@@ -1344,6 +1350,8 @@
 </tbody>
 </table>
 <p>Using these we can now create a Compliance Policy for each Operating System version, assigning it to the <code>All Devices</code> or <code>All Users</code> groups and include the corresponding Device Filter.</p>
+
+
 <h3 class="relative group">Compliance Policies 
     <div id="compliance-policies" class="anchor"></div>
     
@@ -1394,6 +1402,8 @@
 </tbody>
 </table>
 <p>With both the Compliance Policies and the Device Filters in place, now we can move onto how we update the Build Versions.</p>
+
+
 <h2 class="relative group">Updates and RSS Feeds 
     <div id="updates-and-rss-feeds" class="anchor"></div>
     
@@ -1432,6 +1442,8 @@
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/item&gt;</span>
 </span></span></code></pre></div><p>So all the information we need is contained within the <code>title</code> of each <code>item</code> in the feed, in particular we&rsquo;ll be needing the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-ios#operating-system-version"   target="_blank">
     Build Version</a> in order to use this to update our Compliance Policy.</p>
+
+
 <h3 class="relative group">Getting the Build Version 
     <div id="getting-the-build-version" class="anchor"></div>
     
@@ -1457,6 +1469,8 @@
 </span></span></code></pre></div><p>Running this all together, passing through <code>iOS</code> and <code>16</code> for the variables, we get an output of:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">iOS 16.3 (20D47)
 </span></span></code></pre></div><p>This looks promising.</p>
+
+
 <h3 class="relative group">Creating the Function 
     <div id="creating-the-function" class="anchor"></div>
     
@@ -1515,7 +1529,9 @@
 </span></span></code></pre></div><p>This can now be called within PowerShell using the below as examples:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-AppleUpdates</span> <span class="n">-OS</span> <span class="n">iOS</span> <span class="n">-Version</span> <span class="mf">16</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Get-AppleUpdates</span> <span class="n">-OS</span> <span class="n">macOS</span> <span class="n">-Version</span> <span class="mf">13</span>
-</span></span></code></pre></div><h2 class="relative group">Updating Compliance 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Updating Compliance 
     <div id="updating-compliance" class="anchor"></div>
     
     <span
@@ -1531,6 +1547,8 @@
     valid JSON</a> as well as the usual suspect for <a href="https://memv.ennbee.uk/posts/operating-system-compliance-updates/#authentication"  >
     authentication</a>, so thank you to previous me for this.</p>
 <p>Armed with our new function for getting the latest Apple Build versions, we now need to build out the script to do our job for us.</p>
+
+
 <h3 class="relative group">Getting the Policies 
     <div id="getting-the-policies" class="anchor"></div>
     
@@ -1554,7 +1572,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$Version</span> <span class="p">=</span> <span class="nv">$OSCompliancePolicy</span><span class="p">.</span><span class="py">osMinimumVersion</span><span class="p">.</span><span class="py">SubString</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Handling Build Versions 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Handling Build Versions 
     <div id="handling-build-versions" class="anchor"></div>
     
     <span
@@ -1567,7 +1587,9 @@
 <p>Now the output of the function gives us all the information we could ask for, but we actually only need a small part of it, the bit in brackets: iOS 16.3 <strong>(20D47)</strong></p>
 <p>So we can strip out the data between the brackets, using the magic of Regex and add this to a new variable we&rsquo;ll use later to update the Compliance Policy in question:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Build</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-AppleUpdates</span> <span class="n">-OS</span> <span class="nv">$OS</span> <span class="n">-Version</span> <span class="nv">$Version</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="s1">&#39;(?&lt;=\()[^]]+(?=\))&#39;</span> <span class="n">-AllMatches</span><span class="p">).</span><span class="py">Matches</span><span class="p">.</span><span class="py">Value</span>
-</span></span></code></pre></div><h3 class="relative group">Building the JSON Data 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Building the JSON Data 
     <div id="building-the-json-data" class="anchor"></div>
     
     <span
@@ -1594,6 +1616,8 @@
 </span></span></code></pre></div><p>We can now submit this JSON data to Graph, passing through the required Compliance Policy id, allowing us to update the required policy:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Update-DeviceCompliancePolicy</span> <span class="n">-Id</span> <span class="nv">$OSCompliancePolicy</span><span class="p">.</span><span class="py">id</span> <span class="n">-JSON</span> <span class="nv">$JSON</span>
 </span></span></code></pre></div><p>All going well, we now have an updated policy with the correct and most recent build version for the Operating System.</p>
+
+
 <h2 class="relative group">The Solution 
     <div id="the-solution" class="anchor"></div>
     
@@ -1640,7 +1664,9 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Script in Action 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Script in Action 
     <div id="script-in-action" class="anchor"></div>
     
     <span
@@ -1731,7 +1757,7 @@
 </li>
 </ul>
 <p>Checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss"   target="_blank">
-    Apple Developer Release Feed</a> that we haven&rsquo;t made a mistake:</p>
+    Apple Developer Release Feed</a> that we haven&rsquo;t made a mistake.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&lt;title&gt;</span>iOS 15.7.3 (19H307)<span class="nt">&lt;/title&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>https://developer.apple.com/news/releases/?id=01232023b<span class="nt">&lt;/link&gt;</span>
@@ -1759,7 +1785,7 @@
 </li>
 </ul>
 <p>Again checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss"   target="_blank">
-    Apple Developer Release Feed</a> that we still haven&rsquo;t made a mistake:</p>
+    Apple Developer Release Feed</a> that we still haven&rsquo;t made a mistake.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&lt;title&gt;</span>macOS 13.2 (22D49)<span class="nt">&lt;/title&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>https://developer.apple.com/news/releases/?id=01232023d<span class="nt">&lt;/link&gt;</span>
@@ -1787,6 +1813,8 @@
 </li>
 </ul>
 <p>Overall this looks pretty good to me.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

@@ -1231,7 +1231,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1244,6 +1246,8 @@
 <p>So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</p>
 <p>Microsoft have come to the rescue with their <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings"   target="_blank">
     Custom Compliance Settings</a>, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</p>
+
+
 <h2 class="relative group">Custom Compliance Policies 
     <div id="custom-compliance-policies" class="anchor"></div>
     
@@ -1264,6 +1268,8 @@
     Device Advice</a></li>
 </ul>
 <p>We&rsquo;re going to focus on how to use it to achieve our goal, detecting additional information about third-party Antivirus solutions.</p>
+
+
 <h3 class="relative group">PowerShell and WMI 
     <div id="powershell-and-wmi" class="anchor"></div>
     
@@ -1311,6 +1317,8 @@
 </span></span><span class="line"><span class="cl">productState             : 393472
 </span></span><span class="line"><span class="cl">timestamp                : Thu, 16 Dec 2021 10:49:39 GMT
 </span></span></code></pre></div><p>So we will need a way to filter only to the expected active Antivirus software installed.</p>
+
+
 <h3 class="relative group">Antivirus Product State 
     <div id="antivirus-product-state" class="anchor"></div>
     
@@ -1406,6 +1414,8 @@
 </tbody>
 </table>
 <p>So we now have a way to identify and confirm that both Real Time protection is enabled, and Definitions are in place for the Antivirus product of choosing.</p>
+
+
 <h3 class="relative group">Detection Script Creation 
     <div id="detection-script-creation" class="anchor"></div>
     
@@ -1457,7 +1467,9 @@
 </span></span></code></pre></div><p>Running this script on a machine with the Antivirus product installed would be a good idea to test that the scripts works, and is outputting the correct information in the required format for Intune to translate.</p>
 <p>The output from the script should look a little bit like the below:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;Sophos Anti-Virus&#34;</span><span class="p">:</span><span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">:</span><span class="s2">&#34;On&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">:</span><span class="s2">&#34;Up to Date&#34;</span><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">JSON Checks 
+</span></span></code></pre></div>
+
+<h3 class="relative group">JSON Checks 
     <div id="json-checks" class="anchor"></div>
     
     <span
@@ -1523,7 +1535,9 @@
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">   <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Deploying Custom Compliance 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Deploying Custom Compliance 
     <div id="deploying-custom-compliance" class="anchor"></div>
     
     <span
@@ -1566,6 +1580,8 @@
 
 </p>
 <p>Once we&rsquo;ve got this in place, we can now assign the Compliance Policy.</p>
+
+
 <h3 class="relative group">Checking Compliance State 
     <div id="checking-compliance-state" class="anchor"></div>
     
@@ -1632,6 +1648,8 @@
 </ul>
 <p>With this Compliance Policy now in place, we not only get a view of the device estate, but can integrate Compliance into <a href="https://docs.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune"   target="_blank">
     Conditional Access Policies</a>, so it&rsquo;s not a bad situation to be in at all.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

@@ -1215,7 +1215,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1232,6 +1234,8 @@
     Hubert Maslowski</a> in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including <a href="https://www.ncsc.gov.uk/files/Cyber-Essentials-Requirements-for-Infrastructure-v3-1-January-2023.pdf"   target="_blank">
     Cyber Essentials</a> requirements.</p>
 <p>Now with the additional macOS settings, and new macOS versions, I thought we should look at how we can now secure these enrolled devices aligned to these known good practice settings.</p>
+
+
 <h2 class="relative group">NCSC Guidelines 
     <div id="ncsc-guidelines" class="anchor"></div>
     
@@ -1245,6 +1249,8 @@
 <p>Handily, NCSC provide a <a href="https://github.com/ukncsc/Device-Security-Guidance-Configuration-Packs/blob/main/Apple/macOS/NCSC_macOS_configurations.md"   target="_blank">
     list of their recommendations</a> for macOS device security, and unlike our previous attempt at hardening, we don&rsquo;t need to rely on mobileconfig custom settings to deliver these hardening requirements.</p>
 <p>The settings from the platform guidance we&rsquo;ll cover in this post are as detailed in the sections below. We&rsquo;re not going to cover all the restrictions, the implications, and the expected behaviour, as the company I work for charges customers for this and I already provide too much &lsquo;value add&rsquo; as part of consultancy as it is.</p>
+
+
 <h3 class="relative group">Device Password Settings 
     <div id="device-password-settings" class="anchor"></div>
     
@@ -1365,6 +1371,8 @@
     >As there isn&rsquo;t a five second option for when a password is required, with the minimum being one minute, we&rsquo;ve set this to be immediately.</span>
 </div>
 
+
+
 <h3 class="relative group">Login Restrictions 
     <div id="login-restrictions" class="anchor"></div>
     
@@ -1450,6 +1458,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Software Updates 
     <div id="software-updates" class="anchor"></div>
     
@@ -1515,6 +1525,8 @@
     >The Microsoft documentation talks about these settings in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/software-updates-macos#configure-additional-macos-software-update-settings-using-the-settings-catalog"   target="_blank">
     Additional settings section</a>, there appears to be a caveat to that whole document that these update settings will only apply to Supervised macOS devices.</span>
 </div>
+
+
 
 <h3 class="relative group">Restrict Items in System Preferences 
     <div id="restrict-items-in-system-preferences" class="anchor"></div>
@@ -1594,6 +1606,8 @@
 
 </p>
 <p>This will then disable these panes on the device for the end user, stopping them adding iCloud accounts, configuring sharing settings include remote control, along with other NCSC deemed risky areas on the macOS device.</p>
+
+
 <h3 class="relative group">Time Server Configuration 
     <div id="time-server-configuration" class="anchor"></div>
     
@@ -1626,6 +1640,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

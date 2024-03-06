@@ -1225,7 +1225,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1241,6 +1243,8 @@
 <p>So what next? Use the <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/location-condition"   target="_blank">
     trusted location exemption</a> in your policy for the virtual environment? What happens if the public facing address range is the same as your workstation environments or that you&rsquo;d rather not blow a massive hole in security by allowing an entire IP address range free access to Microsoft 365 authenticated services? That&rsquo;s not very <a href="https://www.microsoft.com/en-gb/security/business/zero-trust#:~:text=What%20is%20Zero%20Trust%3F,originates%20from%20an%20open%20network."   target="_blank">
     Zero Trust</a> of you is it.</p>
+
+
 <h2 class="relative group">Filtering Devices 
     <div id="filtering-devices" class="anchor"></div>
     
@@ -1255,6 +1259,8 @@
     filter devices</a> based on the device object registered with Entra ID, there are some useful native <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
     device attributes</a> that can be used as long as your devices have registered in Entra ID (think Hybrid Entra Joined for this VDI environment).</p>
 <p>What happens when you can&rsquo;t find a suitable attribute to use that excludes your virtual environment, but still includes your end user computer workstations? The answer here are the attributes <code>extensionAttribute1-15</code>, which are attributes attached only to the Entra ID device object, and not synchronised, and require specific permissions to set using Graph. These seem like a good way to go.</p>
+
+
 <h3 class="relative group">Getting Attributes 
     <div id="getting-attributes" class="anchor"></div>
     
@@ -1297,6 +1303,8 @@
 
 </p>
 <p>Yup still no attributes.</p>
+
+
 <h3 class="relative group">Adding Attributes 
     <div id="adding-attributes" class="anchor"></div>
     
@@ -1333,6 +1341,8 @@
 
 </p>
 <p>We&rsquo;re onto something here.</p>
+
+
 <h3 class="relative group">Updating or Removing Attributes 
     <div id="updating-or-removing-attributes" class="anchor"></div>
     
@@ -1366,6 +1376,8 @@
 
 </p>
 <p>I&rsquo;ve given the attribute a sensible value of <code>CAP-00-Out</code> as we can utilise the range of operators available in the Conditional Access Policy device filter for the attributes.</p>
+
+
 <h3 class="relative group">Filter for Devices 
     <div id="filter-for-devices" class="anchor"></div>
     
@@ -1413,6 +1425,8 @@
 </p>
 <p>So there is value in coming up with <a href="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/"  >
     good naming conventions</a> across all areas of Entra ID and Microsoft Intune, who knew?</p>
+
+
 <h3 class="relative group">Filtering in Action 
     <div id="filtering-in-action" class="anchor"></div>
     
@@ -1440,6 +1454,8 @@
 
 </p>
 <p>Which for our situation is exactly the outcome we&rsquo;re after. Now time to make this less of a manual process.</p>
+
+
 <h2 class="relative group">PowerShell and Graph 
     <div id="powershell-and-graph" class="anchor"></div>
     
@@ -1453,6 +1469,8 @@
 <p>I&rsquo;ll assume you&rsquo;re familiar with authenticating to Graph, and this time instead of the trusty <a href="https://github.com/AzureAD/MSAL.PS"   target="_blank">
     MSAL.PS</a> module I&rsquo;m using Microsoft the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0"   target="_blank">
     native commands</a>, ikr, shocking. Now that we&rsquo;re connected to Graph with the required scope options using <code>Connect-MgGraph -Scopes 'Device.ReadWrite.All'</code>, we need to be able to pull back all the devices we want to assign an attribute to.</p>
+
+
 <h3 class="relative group">Getting Devices 
     <div id="getting-devices" class="anchor"></div>
     
@@ -1518,6 +1536,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Extension Attribute JSON 
     <div id="extension-attribute-json" class="anchor"></div>
     
@@ -1555,6 +1575,8 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Giving us the required data and attribute value to update the device object, now we just need a function to do this.</p>
+
+
 <h3 class="relative group">Updating Attributes Function 
     <div id="updating-attributes-function" class="anchor"></div>
     
@@ -1601,7 +1623,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$device</span> <span class="k">in</span> <span class="nv">$devices</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Add-DeviceAttribute</span> <span class="n">-deviceID</span> <span class="nv">$device</span><span class="p">.</span><span class="py">id</span> <span class="n">-JSON</span> <span class="nv">$JSON</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Bulk Updating Device Attributes 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Bulk Updating Device Attributes 
     <div id="bulk-updating-device-attributes" class="anchor"></div>
     
     <span
@@ -1613,6 +1637,8 @@
 </h2>
 <p>Now we have all the component parts, we can build the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/DeviceExtensionAttributes/Invoke-DeviceExtensionAttributes.ps1"   target="_blank">
     full script</a> giving us an option with <code>Mode</code> and options <code>Update</code> and <code>Remove</code> to choose whether we want to update attributes, or remove them.</p>
+
+
 <h3 class="relative group">Removing Attributes 
     <div id="removing-attributes" class="anchor"></div>
     
@@ -1687,6 +1713,8 @@
 
 </p>
 <p>Now that we&rsquo;ve got a blank canvas, let&rsquo;s update some device objects with a new extension attribute value.</p>
+
+
 <h3 class="relative group">Updating Attributes 
     <div id="updating-attributes" class="anchor"></div>
     
@@ -1790,6 +1818,8 @@
 
 </p>
 <p>Take my word for it that the other five devices have updated too 😅.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

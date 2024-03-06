@@ -1233,7 +1233,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1250,6 +1252,8 @@
     Apple&rsquo;s Automated Device Enrolment.</a> Life is good.</p>
 <p>Until you realise that in your excitement you&rsquo;ve created loads of Enrolment Profiles (up to 1000 in fact, <em>help</em>), and you now have the daunting task of assigning your thousands (up to 200,000, <em>fml</em>) iOS/iPadOS devices to these profiles.</p>
 <p>No one likes clicking <em>that</em> much.</p>
+
+
 <h2 class="relative group">Developer Tool Sneaking 
     <div id="developer-tool-sneaking" class="anchor"></div>
     
@@ -1291,6 +1295,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Apple Enrolment Token 
     <div id="apple-enrolment-token" class="anchor"></div>
     
@@ -1337,7 +1343,9 @@
 </span></span><span class="line"><span class="cl">syncedDeviceCount                   : 4
 </span></span><span class="line"><span class="cl">dataSharingConsentGranted           : True
 </span></span><span class="line"><span class="cl">roleScopeTagIds                     : {0}
-</span></span></code></pre></div><h3 class="relative group">Enrolment Profiles 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Enrolment Profiles 
     <div id="enrolment-profiles" class="anchor"></div>
     
     <span
@@ -1434,7 +1442,9 @@
 </span></span><span class="line"><span class="cl">carrierActivationUrl                                :
 </span></span><span class="line"><span class="cl">userlessSharedAadModeEnabled                        : False
 </span></span><span class="line"><span class="cl">managementCertificates                              : {}
-</span></span></code></pre></div><h3 class="relative group">Assigning Devices 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Assigning Devices 
     <div id="assigning-devices" class="anchor"></div>
     
     <span
@@ -1487,7 +1497,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Hash Hash Array 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Hash Hash Array 
     <div id="hash-hash-array" class="anchor"></div>
     
     <span
@@ -1507,6 +1519,8 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 <p>If we don&rsquo;t do this, then we <strong>are</strong> going to be calling graph for each device serial number in the list, and I&rsquo;d rather not piss off Microsoft. Time for a <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-hashtable?view=powershell-7.3"   target="_blank">
     hashtable</a>, and maybe an <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.3"   target="_blank">
     array</a>.</p>
+
+
 <h3 class="relative group">Up, Up and Array 
     <div id="up-up-and-array" class="anchor"></div>
     
@@ -1536,7 +1550,9 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 </span></span></code></pre></div><p>Giving us an output similar to the below:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Enrolment_iOS_Clinical_Shared_User
 </span></span><span class="line"><span class="cl">Enrolment_iOS_Corp_User_Standard
-</span></span></code></pre></div><h3 class="relative group">Hash Bang Wallop 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Hash Bang Wallop 
     <div id="hash-bang-wallop" class="anchor"></div>
     
     <span
@@ -1565,7 +1581,9 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 </span></span><span class="line"><span class="cl">----                           -----
 </span></span><span class="line"><span class="cl">Enrolment_iOS_Corp_User_Stand… {DX3FDFZ6PLFG, H4QJQ01PPLFG}
 </span></span><span class="line"><span class="cl">Enrolment_iOS_Clinical_Shared… {F9GV90XKGHPD, G6VVLDJPJCLK}
-</span></span></code></pre></div><h2 class="relative group">Assigning Device Enrolment Profiles 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Assigning Device Enrolment Profiles 
     <div id="assigning-device-enrolment-profiles" class="anchor"></div>
     
     <span
@@ -1634,6 +1652,8 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 
 </p>
 <p>Everything looks good, you&rsquo;ll now just need to add all your serials numbers and the associated Enrolment Profile name to the CSV file and you can starting assigning the devices in anger.</p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

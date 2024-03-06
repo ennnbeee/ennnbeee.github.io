@@ -1205,7 +1205,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1218,6 +1220,8 @@
 <p>You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.</p>
 <p>You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by <a href="https://oofhours.com/2020/05/19/renaming-autopilot-deployed-hybrid-azure-ad-join-devices/"   target="_blank">
     Michael Niehaus</a> can help.</p>
+
+
 <h2 class="relative group">Configuration 
     <div id="configuration" class="anchor"></div>
     
@@ -1229,6 +1233,8 @@
     
 </h2>
 <p>The below sections detail the steps carried out to modify the script to work without the need for an Azure web application, and can be deployed locally to rename devices.</p>
+
+
 <h3 class="relative group">Adding the Variables 
     <div id="adding-the-variables" class="anchor"></div>
     
@@ -1251,7 +1257,9 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$domain</span> <span class="p">=</span> <span class="s2">&#34;onprem.local&#34;</span> <span class="c">#local domain</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$ComputerPrefix</span> <span class="p">=</span> <span class="s2">&#34;PRE-&#34;</span> <span class="c">#Prefix</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$waittime</span> <span class="p">=</span> <span class="s2">&#34;60&#34;</span> <span class="c">#sets the restart wait time in minutes</span>
-</span></span></code></pre></div><h3 class="relative group">Getting the Device Name 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting the Device Name 
     <div id="getting-the-device-name" class="anchor"></div>
     
     <span
@@ -1271,7 +1279,9 @@
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$newName</span><span class="p">.</span><span class="py">Length</span> <span class="o">-ge</span> <span class="mf">15</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$newName</span> <span class="p">=</span> <span class="nv">$newName</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">15</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">The Waiting Game 
+</span></span></code></pre></div>
+
+<h3 class="relative group">The Waiting Game 
     <div id="the-waiting-game" class="anchor"></div>
     
     <span
@@ -1285,7 +1295,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$waitinseconds</span> <span class="p">=</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="nv">$waittime</span><span class="p">).</span><span class="py">Seconds</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;Initiating a restart in </span><span class="nv">$waitime</span><span class="s2"> minutes&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&amp;</span> <span class="n">shutdown</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">g</span> <span class="p">/</span><span class="n">t</span> <span class="nv">$waitinseconds</span> <span class="p">/</span><span class="n">f</span> <span class="p">/</span><span class="n">c</span> <span class="s2">&#34;Restarting the computer in </span><span class="nv">$wait</span><span class="s2"> minutes due to a computer name change. Please save your work.&#34;</span>
-</span></span></code></pre></div><h3 class="relative group">The Whole Thing 
+</span></span></code></pre></div>
+
+<h3 class="relative group">The Whole Thing 
     <div id="the-whole-thing" class="anchor"></div>
     
     <span
@@ -1297,6 +1309,8 @@
 </h3>
 <p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/HDJDeviceRename/Invoke-ComputerRename-HDJ.ps1"   target="_blank">
     here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
+
+
 <h2 class="relative group">Deployment 
     <div id="deployment" class="anchor"></div>
     

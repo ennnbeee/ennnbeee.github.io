@@ -110,7 +110,7 @@
     "keywords": ["configmgr","windows","collections","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "930"
+    "wordCount": "932"
   }]
   </script>
 
@@ -1113,7 +1113,12 @@
     <li><a href="#connecting-via-powershell">Connecting via PowerShell</a>
       <ul>
         <li><a href="#getting-the-collections">Getting the Collections</a></li>
-        <li><a href="#building-the-query">Building the Query</a></li>
+        <li><a href="#building-the-query">Building the Query</a>
+          <ul>
+            <li><a href="#ccm-client-computer-name">CCM Client Computer Name</a></li>
+            <li><a href="#ad-client-computer-name">AD Client Computer Name</a></li>
+          </ul>
+        </li>
         <li><a href="#updating-the-rules">Updating the Rules</a></li>
       </ul>
     </li>
@@ -1143,7 +1148,12 @@
     <li><a href="#connecting-via-powershell">Connecting via PowerShell</a>
       <ul>
         <li><a href="#getting-the-collections">Getting the Collections</a></li>
-        <li><a href="#building-the-query">Building the Query</a></li>
+        <li><a href="#building-the-query">Building the Query</a>
+          <ul>
+            <li><a href="#ccm-client-computer-name">CCM Client Computer Name</a></li>
+            <li><a href="#ad-client-computer-name">AD Client Computer Name</a></li>
+          </ul>
+        </li>
         <li><a href="#updating-the-rules">Updating the Rules</a></li>
       </ul>
     </li>
@@ -1211,7 +1221,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1225,6 +1237,8 @@
     Direct Membership Rules</a> in your Microsoft Configuration Manager environment, but should you really for critical production collections?</p>
 <p>No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.</p>
 <p>So what do we do? <code>&lt;spoiler&gt;</code> Aggressive PowerShell scripts obviously. <code>&lt;/spoiler&gt;</code></p>
+
+
 <h2 class="relative group">The Approach 
     <div id="the-approach" class="anchor"></div>
     
@@ -1244,6 +1258,8 @@
 <li>Logging?</li>
 </ul>
 <p>So let&rsquo;s get at it&hellip;</p>
+
+
 <h2 class="relative group">Connecting via PowerShell 
     <div id="connecting-via-powershell" class="anchor"></div>
     
@@ -1258,7 +1274,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Import-module</span> <span class="p">(</span><span class="nv">$Env:SMS_ADMIN_UI_PATH</span><span class="p">.</span><span class="py">Substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="nv">$Env:SMS_ADMIN_UI_PATH</span><span class="p">.</span><span class="py">Length</span> <span class="p">-</span> <span class="mf">5</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;\ConfigurationManager.psd1&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$SiteCode</span> <span class="p">=</span> <span class="nb">Get-PSDrive</span> <span class="n">-PSProvider</span> <span class="n">CMSITE</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Set-location</span> <span class="nv">$SiteCode</span><span class="s2">&#34;:&#34;</span>
-</span></span></code></pre></div><h3 class="relative group">Getting the Collections 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Getting the Collections 
     <div id="getting-the-collections" class="anchor"></div>
     
     <span
@@ -1288,6 +1306,8 @@
     Get-CMDeviceCollectionDirectMembershipRule</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$DirectMembers</span> <span class="p">=</span> <span class="nb">Get-CMDeviceCollectionDirectMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span>
 </span></span></code></pre></div><p>Cool, easy part done.</p>
+
+
 <h3 class="relative group">Building the Query 
     <div id="building-the-query" class="anchor"></div>
     
@@ -1298,14 +1318,32 @@
     </span>        
     
 </h3>
-<p>An easy replacement for the Direct Membership Rule is to use a List of Values Query based on System Name, so we&rsquo;re going to use that, we&rsquo;re going to use this as our basis for the new query once we&rsquo;ve captured the Direct Members in a suitable format:</p>
-<ul>
-<li><strong>CCM Client Computer Name</strong></li>
-</ul>
+<p>An easy replacement for the Direct Membership Rule is to use a List of Values Query based on System Name, so we&rsquo;re going to use that, we&rsquo;re going to use this as our basis for the new query once we&rsquo;ve captured the Direct Members in a suitable format.</p>
+
+
+<h4 class="relative group">CCM Client Computer Name 
+    <div id="ccm-client-computer-name" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ccm-client-computer-name" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">ResourceID</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">ResourceType</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">SMSUniqueIdentifier</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">ResourceDomainORWorkgroup</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">Client</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">SMS_G_System_SYSTEM</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">SMS_G_System_SYSTEM</span><span class="p">.</span><span class="n">ResourceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">ResourceId</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">SMS_G_System_SYSTEM</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;COMPUTER1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;COMPUTER2&#34;</span><span class="p">)</span><span class="w">
-</span></span></span></code></pre></div><ul>
-<li><strong>AD Client Computer Name</strong></li>
-</ul>
+</span></span></span></code></pre></div>
+
+<h4 class="relative group">AD Client Computer Name 
+    <div id="ad-client-computer-name" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ad-client-computer-name" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">ResourceId</span><span class="p">,</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">ResourceType</span><span class="p">,</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">SMSUniqueIdentifier</span><span class="p">,</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">ResourceDomainORWorkgroup</span><span class="p">,</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">Client</span><span class="w"> </span><span class="k">from</span><span class="w">  </span><span class="n">SMS_R_System</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;COMPUTER1&#34;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;COMPUTER2&#34;</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></div><p>We also need to get the names of the Direct Members, throw them into an Array as part of the <code>foreach</code> loop, then squish the Array to a String and combine the template query and the members:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$RuleName</span> <span class="p">=</span> <span class="s2">&#34;Direct Membership Replacement Query&#34;</span>
@@ -1321,6 +1359,8 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">$QueryExpression</span> <span class="p">=</span> <span class="nv">$QueryPart</span> <span class="p">+</span> <span class="nv">$Members</span> <span class="p">+</span> <span class="s2">&#34;)&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>This gives us the complete query string which we can use later on to create the Query Membership Rule.</p>
+
+
 <h3 class="relative group">Updating the Rules 
     <div id="updating-the-rules" class="anchor"></div>
     
@@ -1344,7 +1384,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 class="relative group">Running the Script 
+</span></span></code></pre></div>
+
+<h2 class="relative group">Running the Script 
     <div id="running-the-script" class="anchor"></div>
     
     <span
@@ -1373,7 +1415,9 @@
 </p>
 <p>Run the script from an Elevated PowerShell prompt on your Primary Site Server:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Set-CollectionDirectToQueryMembership</span><span class="p">.</span><span class="py">ps1</span>
-</span></span></code></pre></div><h3 class="relative group">Oh the Choices 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Oh the Choices 
     <div id="oh-the-choices" class="anchor"></div>
     
     <span
@@ -1428,6 +1472,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">Converting the Rules 
     <div id="converting-the-rules" class="anchor"></div>
     
@@ -1453,6 +1499,8 @@
   
 
 </p>
+
+
 <h3 class="relative group">The Results Speak for Themselves 
     <div id="the-results-speak-for-themselves" class="anchor"></div>
     
@@ -1493,6 +1541,8 @@
   
 
 </p>
+
+
 <h2 class="relative group">Summary 
     <div id="summary" class="anchor"></div>
     

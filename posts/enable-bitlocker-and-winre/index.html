@@ -1211,7 +1211,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <h2 class="relative group">Introduction 
+          
+
+<h2 class="relative group">Introduction 
     <div id="introduction" class="anchor"></div>
     
     <span
@@ -1222,8 +1224,10 @@
     
 </h2>
 <p>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;</p>
-<p>What you&rsquo;ll see in either the Bitlocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:</p>
+<p>What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:</p>
 <p><code>The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't configured</code></p>
+
+
 <h2 class="relative group">Configuration 
     <div id="configuration" class="anchor"></div>
     
@@ -1236,6 +1240,8 @@
 </h2>
 <p>So how do we go about enabling WinRE if it exists, setup BitLocker encryption, <strong>and</strong> grab the BitLocker recovery key and ping it to Azure AD?</p>
 <p>Here&rsquo;s how&hellip;</p>
+
+
 <h3 class="relative group">Updating the Script 
     <div id="updating-the-script" class="anchor"></div>
     
@@ -1273,7 +1279,9 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$HotToTrot</span> <span class="o">-eq</span> <span class="s1">&#39;True&#39;</span><span class="p">)</span>
-</span></span></code></pre></div><h3 class="relative group">Fixing the Script 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Fixing the Script 
     <div id="fixing-the-script" class="anchor"></div>
     
     <span
@@ -1333,7 +1341,9 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Verbose</span> <span class="n">-Message</span> <span class="s2">&#34; -- Key save web request sent to AAD - Self-Service Recovery should work&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 class="relative group">Putting it All Together 
+</span></span></code></pre></div>
+
+<h3 class="relative group">Putting it All Together 
     <div id="putting-it-all-together" class="anchor"></div>
     
     <span
@@ -1345,6 +1355,8 @@
 </h3>
 <p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitlockerWinRE/Enable-WinRE_Bitlocker.ps1"   target="_blank">
     here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
+
+
 <h2 class="relative group">Script Deployment 
     <div id="script-deployment" class="anchor"></div>
     
