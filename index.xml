@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 19 Feb 2024 20:07:23 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 21:12:54 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
+      <link>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</link>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
+      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/feature-fwrug.png" />
+    </item>
+    
     <item>
       <title>A Flexible Approach to Microsoft Update Deployments</title>
       <link>https://memv.ennbee.uk/posts/flexible-update-deployments/</link>

@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 19 Feb 2024 20:07:23 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 21:12:54 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Groups</title>
-      <link>https://memv.ennbee.uk/tags/groups/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
+      <title>Graph API</title>
+      <link>https://memv.ennbee.uk/tags/graph/</link>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/groups/</guid>
+      <guid>https://memv.ennbee.uk/tags/graph/</guid>
       <description></description>
       
     </item>
@@ -21,7 +21,7 @@
     <item>
       <title>Intune</title>
       <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/intune/</guid>
       <description></description>
@@ -29,11 +29,41 @@
     </item>
     
     <item>
+      <title>PowerShell</title>
+      <link>https://memv.ennbee.uk/tags/powershell/</link>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Security</title>
       <link>https://memv.ennbee.uk/tags/security/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Settings Catalog</title>
+      <link>https://memv.ennbee.uk/tags/settingscatalog/</link>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/settingscatalog/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Groups</title>
+      <link>https://memv.ennbee.uk/tags/groups/</link>
+      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/groups/</guid>
       <description></description>
       
     </item>
@@ -109,16 +139,6 @@
     </item>
     
     <item>
-      <title>PowerShell</title>
-      <link>https://memv.ennbee.uk/tags/powershell/</link>
-      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Remediation</title>
       <link>https://memv.ennbee.uk/tags/remediation/</link>
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
@@ -144,26 +164,6 @@
       <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/cap/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Graph API</title>
-      <link>https://memv.ennbee.uk/tags/graph/</link>
-      <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/graph/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Settings Catalog</title>
-      <link>https://memv.ennbee.uk/tags/settingscatalog/</link>
-      <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/settingscatalog/</guid>
       <description></description>
       
     </item>
