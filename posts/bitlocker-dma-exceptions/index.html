@@ -11,7 +11,7 @@
   <title>Remediating BitLocker DMA Exception Errors with Microsoft Intune &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
   <meta name="title" content="Remediating BitLocker DMA Exception Errors with Microsoft Intune &middot; MEM v ENNBEE: Battles with Modern Device Management" />
   
-  <meta name="description" content="So you&#39;ve enabled silent BitLocker encryption in Microsoft Intune, but some of your devices are failing to encrypt, complaining about DMA devices. How can we fix that without creating a security hole." />
+  <meta name="description" content="So you&#39;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?" />
   <meta name="keywords" content="intune, bitlocker, powershell, windows, security, " />
   
   <meta name="robots" content="all" />
@@ -74,7 +74,7 @@
   
   
   <meta property="og:title" content="Remediating BitLocker DMA Exception Errors with Microsoft Intune" />
-<meta property="og:description" content="Using Microsoft Intune remediations to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption." />
+<meta property="og:description" content="Using Microsoft Intune platform powershell scripts to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/" /><meta property="og:image" content="https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/feature-bldma.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-03-16T20:39:11+00:00" />
@@ -83,7 +83,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/feature-bldma.jpg" /><meta name="twitter:title" content="Remediating BitLocker DMA Exception Errors with Microsoft Intune"/>
-<meta name="twitter:description" content="Using Microsoft Intune remediations to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption."/>
+<meta name="twitter:description" content="Using Microsoft Intune platform powershell scripts to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption."/>
 
   
   <script type="application/ld+json">
@@ -93,8 +93,8 @@
     "articleSection": "Blog",
     "name": "Remediating BitLocker DMA Exception Errors with Microsoft Intune",
     "headline": "Remediating BitLocker DMA Exception Errors with Microsoft Intune",
-    "description": "Using Microsoft Intune remediations to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption.",
-    "abstract": "So you\u0026rsquo;ve enabled silent BitLocker encryption in Microsoft Intune, but some of your devices are failing to encrypt, complaining about DMA devices. How can we fix that without creating a security hole.",
+    "description": "Using Microsoft Intune platform powershell scripts to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption.",
+    "abstract": "So you\u0026rsquo;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/bitlocker-dma-exceptions\/",
     "author" : {
@@ -110,7 +110,7 @@
     "keywords": ["intune","bitlocker","powershell","windows","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1241"
+    "wordCount": "1286"
   }]
   </script>
 
@@ -1223,10 +1223,10 @@
     </span>        
     
 </h2>
-<p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices"   target="_blank">
-    Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as you&rsquo;re only using TPM as a pre-boot authentication method.</p>
-<p>But what happens when you have devices that don&rsquo;t want to silently encrypt and start complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
-    Un-allowed DMA capable bus/device(s)</a>, with the Microsoft recommendation to add registry items to allow for these exceptions, this isn&rsquo;t going to work across an entire fleet of devices.</p>
+<p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices"   target="_blank">
+    Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.</p>
+<p>What happens when you have devices that don&rsquo;t want to silently encrypt with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
+    Un-allowed DMA capable bus/device(s)</a> in the event log. With the Microsoft recommendation solution to add registry items to allow for these exceptions on the failing devices, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
 
 
 <h2 class="relative group">Direct Memory Access Exceptions 
@@ -1274,7 +1274,7 @@
   
 
 </p>
-<p>Instead of having to manually create the recommended Registry items, after changing permissions on the Key to allow for these exceptions detailed in the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
+<p>Instead of having to manually create the recommended registry settings, only after changing permissions on the Key to allow for these exceptions detailed in the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
     Microsoft Support Article</a>, we should find a way to do this automatically.</p>
 
 
@@ -1289,7 +1289,7 @@
     
 </h2>
 <p>You might be wondering why we&rsquo;re going for a &ldquo;dumb&rdquo; PowerShell script instead of the fancy <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations"   target="_blank">
-    remediation</a> approach that I am fond of? Well the simple answer is that Platform scripts will run during Windows Autopilot, so we can ensure that devices with the DMA issue are resolved during the deployment process instead of after it, allowing for BitLocker encryption to complete in flight.</p>
+    remediation</a> approach that I am fond of? Well the simple answer is that Platform scripts, running under the required <code>SYSTEM</code> context, will run during Windows Autopilot, so we can ensure that devices with the DMA issue are resolved during the deployment process instead of after it, allowing for BitLocker encryption to complete in flight. You know for security and that.</p>
 <p>So there.</p>
 
 
@@ -1303,7 +1303,7 @@
     </span>        
     
 </h3>
-<p>We need a way to easily add the required registry entries, taking into consideration that a single model of device could have multiple exceptions. For this, we can just build a new <code>pscustomobject</code> as part of an array variable <code>$dmaDevices</code>, and as the actual name of the registry value doesn&rsquo;t matter, our main focus is the value.</p>
+<p>We need a way to easily add the required registry entries to allow for the exceptions, taking into consideration that a single model, or manufacture, of device could have multiple exceptions. For this, we can just build a new <code>pscustomobject</code> as part of an array variable <code>$dmaDevices</code>, and as the actual name of the registry value doesn&rsquo;t matter, our main focus is the value.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) LPC Controller - 519D&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_519D&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) PCI Express Root Port #10 - 51B1&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_51B1&#39;</span><span class="p">}</span>
@@ -1341,7 +1341,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) Xeon(R) E3 - 1200/1500 v5/6th Gen Intel(R) Core(TM) PCIe Controller (x16) - 1901&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_1901&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) PCI Express Root Port #15 - A336&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_A336&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>The <code>if</code> and subsequent <code>elseif</code> statements allow us to ensure that only the DMA exceptions per model are going to be applied, with the statement allowing for a lookup of multiple models using the <code>-in</code> operator.</p>
+</span></span></code></pre></div><p>The <code>if</code> and subsequent <code>elseif</code> statements allow us to ensure that only the DMA exceptions per model, or groups of models, are going to be applied, with the statement allowing for a lookup of multiple models using the <code>-in</code> operator.</p>
 <p>So if you have multiple models with the same <code>PCI\VEN_8086&amp;DEV_A30D</code> exception for example, these can be grouped together. Nice eh?</p>
 
 
@@ -1499,7 +1499,7 @@
 </tr>
 </tbody>
 </table>
-<p>Now your devices will happily encrypt with BitLocker silently.</p>
+<p>Now your devices should happily encrypt with BitLocker silently, without hitting one of these DMA exceptions.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1512,9 +1512,9 @@
     </span>        
     
 </h2>
-<p>Once you&rsquo;ve captured the DMA exceptions you need to make to allow for BitLocker to encrypt, along with the model of device that is effected, you can update the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1"   target="_blank">
-    PowerShell script</a>, taking care with the model names that come back for Lenovo devices obviously, this can then be deployed using Microsoft Intune to a dynamic group of Autopilot devices.</p>
-<p>As we&rsquo;ve gone to the effort of being specific with our exceptions, in the event that a device model is not in the list, then nothing will happen, but if a model <em>is</em> in the list of effected devices, the registry will get tinkered with, and BitLocker will stop being a little whinge about not being able to start encryption due to some kind of security issue.</p>
+<p>Once you&rsquo;ve captured the DMA exceptions of devices failing to silently encrypt with BitLocker, along with the model of device that is effected, you can update the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1"   target="_blank">
+    PowerShell script</a>, taking care with the model names, this can then be deployed using Microsoft Intune to a dynamic group of Autopilot devices.</p>
+<p>As we&rsquo;ve gone to the effort of being specific with our exceptions, in the event that a device model is not in the list, then nothing will happen, but if a model <em>is</em> in the list of effected devices, the registry will get updated, and BitLocker will stop being a little whinge about not being able to start encryption due to some kind of security issue.</p>
 
         </div>
                 
