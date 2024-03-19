@@ -110,7 +110,7 @@
     "keywords": ["intune","apple","ios","macos","enrolment","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1676"
+    "wordCount": "1699"
   }]
   </script>
 
@@ -1272,7 +1272,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-f12_hu4a3fb9e582fc90cd5b2923c9f5abf0f7_41388_filter_12172313528014511144.webp#left" alt="Developer Tools" />
-      
+      <figcaption>Screenshot of Edge Developer Tools</figcaption>
     </figure>
   
 
@@ -1288,7 +1288,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign_huf7f2e7f779431c7bd9dec19125e6efa0_66560_filter_13720280145641047984.webp#left" alt="Developer Tools Again" />
-      
+      <figcaption>Screenshot of Edge Developer Tools</figcaption>
     </figure>
   
 
@@ -1619,8 +1619,8 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 </span></span><span class="line"><span class="cl">    <span class="nv">$EnrolmentProfile</span> <span class="p">=</span> <span class="nb">Get-ADEEnrolmentProfile</span> <span class="n">-Id</span> <span class="nv">$Token</span><span class="p">.</span><span class="py">id</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">displayName</span> <span class="o">-eq</span> <span class="nv">$Assignment</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Add-ADEEnrolmentProfileAssignment</span> <span class="n">-Id</span> <span class="nv">$Token</span><span class="p">.</span><span class="py">id</span> <span class="n">-ProfileID</span> <span class="nv">$EnrolmentProfile</span><span class="p">.</span><span class="py">id</span> <span class="n">-DeviceSerial</span> <span class="nv">$Assignment</span><span class="p">.</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>After carefully stepping through the script, we can now see the results of our efforts, and although this was only targetted to four devices, the approach will scale:
-
+</span></span></code></pre></div><p>After carefully stepping through the script, we can now see the results of our efforts, and although this was only targetted to four devices, the approach will scale:</p>
+<p>
 
 
 
@@ -1629,7 +1629,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-results_hu8927e2004fbd1cb6fe83f9d92d201d09_13452_filter_9455785658783134494.webp#left" alt="ADE Assignment" />
-      
+      <figcaption>Screenshot of Automated Deployment Profile script results</figcaption>
     </figure>
   
 
@@ -1644,7 +1644,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-device_hu6ed32c2c89482ef17ce38a59e69e7ea8_12580_filter_15736907123145384427.webp#left" alt="ADE Device" />
-      
+      <figcaption>Screenshot of Automated Deployment Profile assignment</figcaption>
     </figure>
   
 
