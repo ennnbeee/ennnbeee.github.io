@@ -110,7 +110,7 @@
     "keywords": ["intune","bitlocker","powershell","windows","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1301"
+    "wordCount": "1305"
   }]
   </script>
 
@@ -1229,7 +1229,7 @@
 </h2>
 <p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices"   target="_blank">
     Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.</p>
-<p>What happens when you have devices that don&rsquo;t want to silently encrypt with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
+<p>What happens when you have devices that don&rsquo;t want to silently or automatically encrypt with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
     Un-allowed DMA capable bus/device(s)</a> in the event log. With the Microsoft recommendation solution to add registry items to allow for these exceptions on the failing devices, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
 
 
@@ -1503,7 +1503,7 @@
 </tr>
 </tbody>
 </table>
-<p>Now your devices should happily encrypt with BitLocker silently, without hitting one of these DMA exceptions.</p>
+<p>Now your devices should happily encrypt with BitLocker automatically, without hitting one of these DMA exceptions.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1516,7 +1516,7 @@
     </span>        
     
 </h2>
-<p>Once you&rsquo;ve captured the DMA exceptions of devices failing to silently encrypt with BitLocker, along with the model of device that is effected, you can update the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1"   target="_blank">
+<p>Once you&rsquo;ve captured the DMA exceptions of devices failing to silently and automatically encrypt with BitLocker, along with the model of device that is effected, you can update the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1"   target="_blank">
     PowerShell script</a>, taking care with the model names, this can then be deployed using Microsoft Intune to a dynamic group of Autopilot devices.</p>
 <p>As we&rsquo;ve gone to the effort of being specific with our exceptions, in the event that a device model is not in the list, then nothing will happen, but if a model <em>is</em> in the list of effected devices, the registry will get updated, and BitLocker will stop being a little whinge about not being able to start encryption due to some kind of security issue.</p>
 
