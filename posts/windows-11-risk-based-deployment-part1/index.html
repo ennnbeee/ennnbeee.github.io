@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
-  <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE: Battles with Modern Device Management" />
+  <title>Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
+  <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="With Windows 10 support coming to an end sooner than you&#39;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system." />
   <meta name="keywords" content="intune, windows, updates, groups, powershell, graph, " />
@@ -112,7 +112,7 @@
     "keywords": ["intune","windows","updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2771"
+    "wordCount": "2777"
   }]
   </script>
 
@@ -280,10 +280,10 @@
     
     <div>
         <a href="/" class="flex">
-            <span class="sr-only">MEM v ENNBEE: Battles with Modern Device Management</span>
+            <span class="sr-only">MEM v ENNBEE - Battles with Modern Device Management</span>
 
             <img src="/img/logo_dk.png" width="1150" height="450"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="MEM v ENNBEE: Battles with Modern Device Management" />
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="MEM v ENNBEE - Battles with Modern Device Management" />
 
         </a>
     </div>
@@ -292,7 +292,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">MEM v ENNBEE: Battles with Modern Device Management</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">MEM v ENNBEE - Battles with Modern Device Management</a>
             
 
         </nav>
@@ -872,6 +872,11 @@
   
   <time datetime="2024-03-25 23:32:16 &#43;0000 UTC">25 March 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
     
+        
+        
+            
+            
+        
     <span id="views_posts/Windows-11-Risk-Based-Deployment-Part1/index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
@@ -1237,11 +1242,11 @@
         
         
 <details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
+    
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
         Risk Based Windows 11 Feature Update Deployment - This article is part of a series.
     </summary>
-    
     
     
     
@@ -1251,6 +1256,7 @@
     </div>
     
     
+
 
 </details>
 
@@ -1270,11 +1276,11 @@
     
 </h2>
 <p>At the time of writing we are only a <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
-    few hundred days</a> away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&rsquo;s shiny and new, but also you know, it&rsquo;s going to still get security updates.</p>
-<p>Many organisations are happily running Windows 10, and have probably dabbled with Windows 11, mainly IT staff who wanted to be on the latest and greatest. This however isn&rsquo;t going to get your devices to Windows 11 any time soon, and instead of distributing a Feature Update blindly, we should probably make use of the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
+    few hundred days</a> away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&rsquo;s shiny and new, but also it&rsquo;s going to actually get security updates.</p>
+<p>Many organisations are happily running Windows 10 and have been for some time, and have probably dabbled with Windows 11, mainly IT staff who wanted to be on the latest and greatest. This however isn&rsquo;t going to get your devices to Windows 11 any time soon, and instead of distributing a Feature Update blindly, we should probably make use of the information in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
     Feature Update Readiness Reports</a> in Microsoft Intune.</p>
-<p>This report is useful from a visibility perspective, we can see the risk of updating a device to a specific Feature Update, drill into effected devices, and get a greater understanding of the overall Windows 11 readiness for a device estate. That&rsquo;s it though, what if we can extend the reports use?</p>
-<p>Part one in this series looks at how we can create and capture the report data with PowerShell and Graph API, so at some point we can use it to make informed, but automated decisions for Windows 11 Feature Update deployment.</p>
+<p>This report is useful from a visibility perspective, we can see the risk of updating a device to a specific Feature Update, drill into effected devices, and get a greater understanding of the overall Windows 11 readiness for a device estate. That&rsquo;s it though. What if we can extend the reports use?</p>
+<p>Part one in this series looks at how we can create and capture the Feature Update Readiness Report data with PowerShell and Graph API, so at some point we can use it to make informed, but automated decisions for Windows 11 Feature Update deployment.</p>
 
 
 <h2 class="relative group">Feature Update Readiness Report 
@@ -1310,7 +1316,7 @@
   
 
 </p>
-<p>These readiness states are all going to be pretty handy, as we hopefully can capture those devices that are at a level of risk, or unknown risk of an update to Windows 11, and allow a targetted and safe deployment of the Feature Update.</p>
+<p>These readiness states are all going to be pretty handy, as we hopefully can capture those devices that are at a level of risk, or unknown risk of an update to Windows 11, and allow a targeted and safe deployment of the Feature Update.</p>
 
 
 <h3 class="relative group">Report Pre-requisites 
@@ -1326,7 +1332,8 @@
 <p>This one is a bit of a kicker, and I&rsquo;d recommend looking at the <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#prerequisites"   target="_blank">
     pre-requisites</a> as soon as possible, in fact, go look at them now and come back when you&rsquo;ve implemented them&hellip;</p>
 <p>Right, now they&rsquo;re in place, let&rsquo;s talk about why I told you to just go ahead and turn some things on, well in order for us to use the report, we need to ensure that devices are able to send data, Microsoft is able to process the data, and the fact you have to wait <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency"   target="_blank">
-    52 hours</a> for the data to be processed, so based on this anything we do using the data needs to be able to run multiple times, as not all devices in the estate are going to send their data at the same time.</p>
+    52 hours</a> for the data to be processed.</p>
+<p>So based on this, anything we do using the data needs to be able to run multiple times, as not all devices in the estate are going to send their data at the same time.</p>
 
 
 <h2 class="relative group">Graph and Feature Update Readiness Reports 
@@ -1339,8 +1346,8 @@
     </span>        
     
 </h2>
-<p>So let&rsquo;s see how we can get the report data using the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0"   target="_blank">
-    Microsoft Graph PowerShell SDK</a>, as always I&rsquo;ve investigated the calls to Graph using Developer Tools in my browser of choice (Microsoft Edge, obviously), and based on this, and the fact that reports are individual to the account running them, we need a way to start a report, and then get the report.</p>
+<p>Let&rsquo;s see how we can get the report data using the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0"   target="_blank">
+    Microsoft Graph PowerShell SDK</a>, as always I&rsquo;ve investigated the calls to Graph using Developer Tools in my browser of choice (Microsoft Edge, obviously), and from my findings and the fact that reports are individual to the account running them, we need a way to start a report, and then get the report.</p>
 
 
 <h3 class="relative group">Creating Feature Update Readiness Reports 
@@ -1353,7 +1360,8 @@
     </span>        
     
 </h3>
-<p>We&rsquo;ll start with the call to create a new readiness report, we need to <code>POST</code> to <code>deviceManagement/reports/cachedReportConfigurations</code> with some JSON content in the below format, specifying the version of Feature Update we want to report on, for us, we want Windows 11 23H2, so the value we&rsquo;re after is <code>NI23H2</code>.</p>
+<p>We&rsquo;ll start with the call to create a new readiness report, we need to <code>POST</code> to <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta"   target="_blank">
+    <code>deviceManagement/reports/cachedReportConfigurations</code></a> with some JSON content in the below format, specifying the version of Feature Update we want to report on, for us, we want Windows 11 23H2, so the value we&rsquo;re after is <code>NI23H2</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;MEMUpgradeReadinessDevice_00000000-0000-0000-0000-000000000001&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;filter&#34;</span><span class="p">:</span> <span class="s2">&#34;(TargetOS eq &#39;NI23H2&#39;) and (DeviceScopesTag eq &#39;00000&#39;)&#34;</span><span class="p">,</span>
@@ -1371,7 +1379,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">],</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="s2">&#34;TargetOS=&gt;filterPicker=V2luZG93cyUyMDExJTIwLSUyMHZlcnNpb24lMjAyMkgy,DeviceScopesTag=&gt;filterPicker=RGVmYXVsdA==&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>This will then start the generation of a report in the background, which isn&rsquo;t instant, so we&rsquo;ll need a way to not only capture the report data, but also a way to wait until it&rsquo;s available, so at least we&rsquo;ve got a way to kick off a report, so we should create a function to do this, you know, so it&rsquo;s easily repeatable.</p>
+</span></span></code></pre></div><p>This will then start the generation of a report in the background, which isn&rsquo;t instant, so we&rsquo;ll need a way to not only capture the report data, but also a way to wait until it&rsquo;s available. At least we&rsquo;ve got a way to kick off a report, so we should create a function to do this, you know, so it&rsquo;s easily repeatable.</p>
 
   
 
@@ -1431,7 +1439,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>We can now start a new report using <code>New-ReportFeatureUpdateReadiness -JSON $JSONContent</code> passing through our <code>JSON</code> content for the creation of a report, now we need to detect whether the report is ready, and then when it is ready, to download the data in the report.</p>
+</span></span></code></pre></div><p>We can now start a new report using <code>New-ReportFeatureUpdateReadiness -JSON $JSONContent</code> passing through our JSON content for the creation of a report, now we need to detect whether the report is ready, and then when it is ready, to download the data in the report.</p>
 
 
 <h3 class="relative group">Getting Feature Update Readiness Report Status 
@@ -1444,7 +1452,7 @@
     </span>        
     
 </h3>
-<p>More digging with developer mode in Edge reveals surprisingly both a <code>GET</code> request to <code>deviceManagement/reports/cachedReportConfigurations('$Id')</code> where <code>$Id</code> is the <code>Id</code> of a generated report, this will be useful as the output of this call gives us a status of the report.</p>
+<p>More digging with developer mode in Edge reveals surprisingly both a <code>GET</code> request to <code>deviceManagement/reports/cachedReportConfigurations('$Id')</code> (where <code>$Id</code> is the <code>Id</code> of a generated report), this will be useful as the output of this call gives us a status of the report.</p>
 <p>
 
 
@@ -1466,7 +1474,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$Id</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">)</span>
@@ -1490,7 +1498,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>With the function above and a little bit of common sense and a <code>while</code> loop, we can sit and happily wait until the report status equals <code>completed</code> after creating a new report with the required <code>JSON</code> data.</p>
+</span></span></code></pre></div><p>With the function above and a little bit of common sense and a <code>while</code> loop, we can sit and happily wait until the report status equals <code>completed</code> after creating a new report.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$featureUpdateCreateJSON</span> <span class="p">=</span> <span class="sh">@&#34;
 </span></span></span><span class="line"><span class="cl"><span class="sh">{
 </span></span></span><span class="line"><span class="cl"><span class="sh">    &#34;id&#34;: &#34;MEMUpgradeReadinessDevice_00000000-0000-0000-0000-000000000001&#34;,
@@ -1529,8 +1537,8 @@
     </span>        
     
 </h3>
-<p>More digging with Edge Developer Mode when browsing around the Feature Update Readiness Reporting in the Microsoft Intune Portal, and a crawl through the <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta"   target="_blank">
-    Graph API documentation</a>, reveals another call to Graph, but this time it&rsquo;s another <code>POST</code>, but to <code>deviceManagement/reports/cachedReportConfigurations</code>, this time with slightly different JSON content, interesting.</p>
+<p>More fun with Edge Developer Mode when browsing around the Feature Update Readiness Reporting in the Microsoft Intune Portal, and a crawl through the <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta"   target="_blank">
+    Graph API documentation</a>, reveals another call to Graph, but this time it&rsquo;s another <code>POST</code>, but to <code>deviceManagement/reports/cachedReportConfigurations</code>, this time with slightly different JSON content. Interesting.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;Id&#34;</span><span class="p">:</span> <span class="s2">&#34;MEMUpgradeReadinessDevice_00000000-0000-0000-0000-000000000001&#34;</span><span class="p">,</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&#34;Skip&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1553,7 +1561,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">],</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;filter&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>I tell you what is going to be interesting, the fact that this call works between device 0 in the <code>Skip</code> and device 50 in the <code>Top</code> parameters, so it isn&rsquo;t pulling back all data for all devices. Well that&rsquo;s fun, who doesn&rsquo;t love pagination?</p>
+</span></span></code></pre></div><p>I tell you what is going to be fun, the fact that this call works between device <code>0</code> in the <code>Skip</code> and device <code>50</code> in the <code>Top</code> parameters, so it isn&rsquo;t pulling back all data for all devices. Well that&rsquo;s great news, who doesn&rsquo;t love pagination?</p>
 <p>
 
 
@@ -1568,7 +1576,7 @@
   
 
 </p>
-<p>When I initially looked at this call to Graph, the report data was passed back nicely inline, not any more though, it downloads a file, but at least the file is just a plain text file, and contains all the data for the first 50 devices.</p>
+<p>When I first looked at this call to Graph, the report data was passed back nicely inline, not any more though, it downloads a file, but at least the file is just a plain text file and contains all the data for the first 50 devices.</p>
 <p>As we have a new use case, we can update the <code>Get-ReportFeatureUpdateReadiness</code> function to handle both the initial call to get the status of a report, but also the data in the report, using logic to determine both the Graph endpoint as well as the request, and bit of a hacky way to deal with the downloaded file.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-ReportFeatureUpdateReadiness</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -1732,7 +1740,8 @@
     </span>        
     
 </h2>
-<p>We should take the data gathered from the Readiness Report in the <code>$featureUpdateReportDetails</code> variable, which looks ugly as sin, and create a new report <code>PSCustomObject</code> array variable <code>$reportArray</code>, but with some sense around the data that exists. Looping through each object in the initial array, we can create the new array using the below.</p>
+<p>We should take the data gathered from the Readiness Report in the <code>$featureUpdateReportDetails</code> variable, which looks ugly as sin, and create a new report using a <code>PSCustomObject</code> array variable <code>$reportArray</code>, but with some sense around the data that exists.</p>
+<p>Looping through each object in the initial array, we can create the new array using the below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$reportArray</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$device</span> <span class="k">in</span> <span class="nv">$featureUpdateReportDetails</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$reportArray</span> <span class="p">+=</span> <span class="p">[</span><span class="no">PSCustomObject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span>
@@ -1963,11 +1972,11 @@
                 
         
 <details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
+    
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
         Risk Based Windows 11 Feature Update Deployment - This article is part of a series.
     </summary>
-    
     
     
     
@@ -1978,8 +1987,8 @@
     
     
 
-</details>
 
+</details>
 
         
   
@@ -2202,6 +2211,11 @@
   
   <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
     
+        
+        
+            
+            
+        
     <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
@@ -2387,6 +2401,11 @@
   
   <time datetime="2022-06-30 11:20:36 &#43;0100 &#43;0100">30 June 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
     
+        
+        
+            
+            
+        
     <span id="views_posts/Operating-System-Compliance-Updates/index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
@@ -2556,6 +2575,11 @@
   
   <time datetime="2024-03-09 21:12:54 &#43;0000 UTC">9 March 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
     
+        
+        
+            
+            
+        
     <span id="views_posts/Resusable-Firewall-Settings-Microsoft-Online/index.md" 
     
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
@@ -2665,15 +2689,18 @@
   
       </div>
      
-    
-     <script>
+      
+      
+        
+        
+      
+      <script>
         var oid = "views_posts\/Windows-11-Risk-Based-Deployment-Part1\/index.md"
         var oid_likes = "likes_posts\/Windows-11-Risk-Based-Deployment-Part1\/index.md"
       </script>
       
       
-      
-      <script type="text/javascript" src="/js/page.min.5b1bad196a6075a1e11bae1dc95f24f67b610948a00525e347566c5a62338ea78f1c7224ab9a53873dcdb2a1a7d7d391b8a8ef45561297f68806c01315b0c4f6.js" integrity="sha512-WxutGWpgdaHhG64dyV8k9nthCUigBSXjR1ZsWmIzjqePHHIkq5pThz3NsqGn19ORuKjvRVYSl/aIBsATFbDE9g=="></script>
+      <script type="text/javascript" src="/js/page.min.b06a29d42a4ed16787978e2eee1e8c797b7698db2bc14ccee78f5c80ac566fc996190a73ad80a5e987558474b20b96fa38f7d85b405f165ff72b7b163c5ad11b.js" integrity="sha512-sGop1CpO0WeHl44u7h6MeXt2mNsrwUzO549cgKxWb8mWGQpzrYCl6YdVhHSyC5b6OPfYW0BfFl/3K3sWPFrRGw=="></script>
   
     </section>
   <footer class="pt-8 max-w-prose print:hidden">
