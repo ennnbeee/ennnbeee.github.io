@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sat, 16 Mar 2024 20:39:11 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/intune/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Mar 2024 23:32:16 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/intune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
+      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in this part we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/feature-riskupdate.jpg" />
+    </item>
+    
     <item>
       <title>Remediating BitLocker DMA Exception Errors with Microsoft Intune</title>
       <link>https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/</link>

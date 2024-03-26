@@ -7,13 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sat, 16 Mar 2024 20:39:11 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Mar 2024 23:32:16 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BitLocker</title>
-      <link>https://memv.ennbee.uk/tags/bitlocker/</link>
-      <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
+      <title>Graph API</title>
+      <link>https://memv.ennbee.uk/tags/graph/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/bitlocker/</guid>
+      <guid>https://memv.ennbee.uk/tags/graph/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Groups</title>
+      <link>https://memv.ennbee.uk/tags/groups/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/groups/</guid>
       <description></description>
       
     </item>
@@ -21,7 +31,7 @@
     <item>
       <title>Intune</title>
       <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/intune/</guid>
       <description></description>
@@ -31,9 +41,39 @@
     <item>
       <title>PowerShell</title>
       <link>https://memv.ennbee.uk/tags/powershell/</link>
-      <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/powershell/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Updates</title>
+      <link>https://memv.ennbee.uk/tags/updates/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/updates/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows 10 and later</title>
+      <link>https://memv.ennbee.uk/tags/windows/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/windows/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>BitLocker</title>
+      <link>https://memv.ennbee.uk/tags/bitlocker/</link>
+      <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/bitlocker/</guid>
       <description></description>
       
     </item>
@@ -49,51 +89,11 @@
     </item>
     
     <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/tags/windows/</link>
-      <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Graph API</title>
-      <link>https://memv.ennbee.uk/tags/graph/</link>
-      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/graph/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Settings Catalog</title>
       <link>https://memv.ennbee.uk/tags/settingscatalog/</link>
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/settingscatalog/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Groups</title>
-      <link>https://memv.ennbee.uk/tags/groups/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/groups/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Updates</title>
-      <link>https://memv.ennbee.uk/tags/updates/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/updates/</guid>
       <description></description>
       
     </item>

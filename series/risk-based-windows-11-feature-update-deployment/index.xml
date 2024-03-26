@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Risk Based Windows 11 Feature Update Deployment on MEM v ENNBEE: Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/series/risk-based-windows-11-feature-update-deployment/</link>
+    <description>Recent content in Risk Based Windows 11 Feature Update Deployment on MEM v ENNBEE: Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Mon, 25 Mar 2024 23:32:16 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/series/risk-based-windows-11-feature-update-deployment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
+      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in this part we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/feature-riskupdate.jpg" />
+    </item>
+    
+  </channel>
+</rss>
