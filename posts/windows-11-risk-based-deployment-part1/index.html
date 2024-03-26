@@ -11,7 +11,7 @@
   <title>Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE: Battles with Modern Device Management</title>
   <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE: Battles with Modern Device Management" />
   
-  <meta name="description" content="With Windows 10 support coming to an end sooner than you&#39;d expect, in this part we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system." />
+  <meta name="description" content="With Windows 10 support coming to an end sooner than you&#39;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system." />
   <meta name="keywords" content="intune, windows, updates, groups, powershell, graph, " />
   
   <meta name="robots" content="all" />
@@ -96,7 +96,7 @@
     "name": "Risk Based Windows 11 Feature Update Deployment - Reporting",
     "headline": "Risk Based Windows 11 Feature Update Deployment - Reporting",
     "description": "Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.",
-    "abstract": "With Windows 10 support coming to an end sooner than you\u0026rsquo;d expect, in this part we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.",
+    "abstract": "With Windows 10 support coming to an end sooner than you\u0026rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part1\/",
     "author" : {
@@ -112,7 +112,7 @@
     "keywords": ["intune","windows","updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2775"
+    "wordCount": "2771"
   }]
   </script>
 
@@ -1860,13 +1860,6 @@
 <p>Sadly the built-in functionality within the Graph PowerShell module is going to limit us to 999 devices, so we&rsquo;re leaning on an existing <a href="https://memv.ennbee.uk/posts/device-attributes-cap/#getting-devices"  >
     function</a> to get more devices than the set device limit.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-EntraIDDevice</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">param</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;beta&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Resource</span> <span class="p">=</span> <span class="s1">&#39;devices&#39;</span>

@@ -14,7 +14,7 @@
       <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
-      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in this part we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
+      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/feature-riskupdate.jpg" />
     </item>
     
