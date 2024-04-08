@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sun, 28 Apr 2024 09:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 May 2024 09:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Update Deployment Rings for Managed macOS Devices</title>
+      <link>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</link>
+      <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
+      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/feature-macup.jpeg" />
+    </item>
+    
     <item>
       <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
       <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link>
