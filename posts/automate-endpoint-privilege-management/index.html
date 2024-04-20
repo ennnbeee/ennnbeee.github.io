@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5f8ff463d82ea3b7ac396de809e259993d2a0dbe23fd0bac07ff6f3abc1187b088ce9e6ac9c2e8bca45e26844269f99d92036b2576708c6638408105806a4bbc.css"
-    integrity="sha512-X4/0Y9guo7esOW3oCeJZmT0qDb4j/QusB/9vOrwRh7CIzp5qycLovKReJoRCafmdkgNrJXZwjGY4QIEFgGpLvA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9f5072ce914b6982221ed5c0252e0104fe362b54c23652b7e880d4c22a261d654f1738073fadaf2360f62d0f1fad9921d28c63f50b8e48e410fefe9c5be337aa.css"
+    integrity="sha512-n1ByzpFLaYIiHtXAJS4BBP42K1TCNlK36IDUwiomHWVPFzgHP62vI2D2LQ8frZkh0oxj9QuOSOQQ/v6cW&#43;M3qg==" />
   
   
   <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
@@ -111,7 +111,7 @@
     "keywords": ["intune","security","windows","settingscatalog","epm","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3655"
+    "wordCount": "3575"
   }]
   </script>
 
@@ -1023,7 +1023,7 @@
           
         
         <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-          src="/img/smolpig_hu1c20fcf8a0f85d226a9c82be83118e49_1654738_192x192_fill_box_center_3.png" />
+          src="/img/ennbee_hu99d519a7f6a8c26797bef1a11e6d7187_254551_192x192_fill_box_center_3.png" />
       
   
   <div class="place-self-center">
@@ -1401,7 +1401,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-report_hu0389a9dc7f505e4283b1236886bb7510_80298_filter_3896122289566673117.webp#left" alt="Elevation Report" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-report_hu0389a9dc7f505e4283b1236886bb7510_80298_filter_2386342547270718654.webp#left" alt="Elevation Report" />
       <figcaption>Screenshot of Microsoft Intune Elevation Report</figcaption>
     </figure>
   
@@ -1453,12 +1453,7 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1472,7 +1467,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-get_hua53b07ded52a72085460e7c619eeb254_18586_filter_16597426938472836058.webp#left" alt="Elevation Report" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-get_hua53b07ded52a72085460e7c619eeb254_18586_filter_7434008108780030074.webp#left" alt="Elevation Report" />
       <figcaption>Screenshot PowerShell script elevation report output</figcaption>
     </figure>
   
@@ -1617,12 +1612,7 @@
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -2401,12 +2391,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -2476,12 +2461,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Successfully assigned policy </span><span class="nv">$Name</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -2544,7 +2524,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-pols_hu823aa96819759cd35a49afb2080dbee7_16450_filter_9639564923037938142.webp#left" alt="Elevation Policies" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-pols_hu823aa96819759cd35a49afb2080dbee7_16450_filter_4136237028072858791.webp#left" alt="Elevation Policies" />
       <figcaption>Screenshot of Microsoft Intune Elevation Policy</figcaption>
     </figure>
   
@@ -2559,7 +2539,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-rules_hu73271e8496dc4e241261601aed02f51f_58928_filter_2157878690133615706.webp#left" alt="Elevation Rules" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-rules_hu73271e8496dc4e241261601aed02f51f_58928_filter_3702079415849728211.webp#left" alt="Elevation Rules" />
       <figcaption>Screenshot of Microsoft Intune Elevation Rules</figcaption>
     </figure>
   
@@ -2577,7 +2557,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-rulepwsh_huad4de89639fff849b478024f49c23221_37296_filter_7321429044471013701.webp#left" alt="Elevation PowerShell Rule" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-rulepwsh_huad4de89639fff849b478024f49c23221_37296_filter_13547853238432877130.webp#left" alt="Elevation PowerShell Rule" />
       <figcaption>Screenshot of Microsoft Intune Elevation Rules Detail for Business Justification</figcaption>
     </figure>
   
@@ -2594,7 +2574,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-rulecmd_hu430e258364613958880f8616d0b599f6_35716_filter_7321429044471013701.webp#left" alt="Elevation CMD Rule" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-rulecmd_hu430e258364613958880f8616d0b599f6_35716_filter_13547853238432877130.webp#left" alt="Elevation CMD Rule" />
       <figcaption>Screenshot of Microsoft Intune Elevation Rules Detail for Authentication</figcaption>
     </figure>
   
@@ -2623,7 +2603,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-ruleass_huf2211f046746fb2333dfc9cb2bd0ed01_17080_filter_16192101391265343977.webp#left" alt="Elevation Rule Assignment" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/img/epm-ruleass_huf2211f046746fb2333dfc9cb2bd0ed01_17080_filter_2373902834147302262.webp#left" alt="Elevation Rule Assignment" />
       <figcaption>Screenshot of Microsoft Intune Elevation Rules assignment</figcaption>
     </figure>
   

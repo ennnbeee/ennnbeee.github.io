@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5f8ff463d82ea3b7ac396de809e259993d2a0dbe23fd0bac07ff6f3abc1187b088ce9e6ac9c2e8bca45e26844269f99d92036b2576708c6638408105806a4bbc.css"
-    integrity="sha512-X4/0Y9guo7esOW3oCeJZmT0qDb4j/QusB/9vOrwRh7CIzp5qycLovKReJoRCafmdkgNrJXZwjGY4QIEFgGpLvA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9f5072ce914b6982221ed5c0252e0104fe362b54c23652b7e880d4c22a261d654f1738073fadaf2360f62d0f1fad9921d28c63f50b8e48e410fefe9c5be337aa.css"
+    integrity="sha512-n1ByzpFLaYIiHtXAJS4BBP42K1TCNlK36IDUwiomHWVPFzgHP62vI2D2LQ8frZkh0oxj9QuOSOQQ/v6cW&#43;M3qg==" />
   
   
   <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
@@ -111,7 +111,7 @@
     "keywords": ["intune","apple","ios","macos","enrolment","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1699"
+    "wordCount": "1639"
   }]
   </script>
 
@@ -1023,7 +1023,7 @@
           
         
         <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-          src="/img/smolpig_hu1c20fcf8a0f85d226a9c82be83118e49_1654738_192x192_fill_box_center_3.png" />
+          src="/img/ennbee_hu99d519a7f6a8c26797bef1a11e6d7187_254551_192x192_fill_box_center_3.png" />
       
   
   <div class="place-self-center">
@@ -1281,7 +1281,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-f12_hu4a3fb9e582fc90cd5b2923c9f5abf0f7_41388_filter_12172313528014511144.webp#left" alt="Developer Tools" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-f12_hu4a3fb9e582fc90cd5b2923c9f5abf0f7_41388_filter_9943322705565193928.webp#left" alt="Developer Tools" />
       <figcaption>Screenshot of Edge Developer Tools</figcaption>
     </figure>
   
@@ -1297,7 +1297,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign_huf7f2e7f779431c7bd9dec19125e6efa0_66560_filter_13720280145641047984.webp#left" alt="Developer Tools Again" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign_huf7f2e7f779431c7bd9dec19125e6efa0_66560_filter_12304675802509587714.webp#left" alt="Developer Tools Again" />
       <figcaption>Screenshot of Edge Developer Tools</figcaption>
     </figure>
   
@@ -1328,12 +1328,7 @@
 </span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1380,12 +1375,7 @@
 </span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1495,12 +1485,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -1638,7 +1623,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-results_hu8927e2004fbd1cb6fe83f9d92d201d09_13452_filter_9455785658783134494.webp#left" alt="ADE Assignment" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-results_hu8927e2004fbd1cb6fe83f9d92d201d09_13452_filter_8200654510801503150.webp#left" alt="ADE Assignment" />
       <figcaption>Screenshot of Automated Deployment Profile script results</figcaption>
     </figure>
   
@@ -1653,7 +1638,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-device_hu6ed32c2c89482ef17ce38a59e69e7ea8_12580_filter_15736907123145384427.webp#left" alt="ADE Device" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/img/apple-ade-device_hu6ed32c2c89482ef17ce38a59e69e7ea8_12580_filter_30367060528304475.webp#left" alt="ADE Device" />
       <figcaption>Screenshot of Automated Deployment Profile assignment</figcaption>
     </figure>
   

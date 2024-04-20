@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5f8ff463d82ea3b7ac396de809e259993d2a0dbe23fd0bac07ff6f3abc1187b088ce9e6ac9c2e8bca45e26844269f99d92036b2576708c6638408105806a4bbc.css"
-    integrity="sha512-X4/0Y9guo7esOW3oCeJZmT0qDb4j/QusB/9vOrwRh7CIzp5qycLovKReJoRCafmdkgNrJXZwjGY4QIEFgGpLvA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9f5072ce914b6982221ed5c0252e0104fe362b54c23652b7e880d4c22a261d654f1738073fadaf2360f62d0f1fad9921d28c63f50b8e48e410fefe9c5be337aa.css"
+    integrity="sha512-n1ByzpFLaYIiHtXAJS4BBP42K1TCNlK36IDUwiomHWVPFzgHP62vI2D2LQ8frZkh0oxj9QuOSOQQ/v6cW&#43;M3qg==" />
   
   
   <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","compliance","security","antivirus","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1416"
+    "wordCount": "1454"
   }]
   </script>
 
@@ -1023,7 +1023,7 @@
           
         
         <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-          src="/img/smolpig_hu1c20fcf8a0f85d226a9c82be83118e49_1654738_192x192_fill_box_center_3.png" />
+          src="/img/ennbee_hu99d519a7f6a8c26797bef1a11e6d7187_254551_192x192_fill_box_center_3.png" />
       
   
   <div class="place-self-center">
@@ -1492,11 +1492,40 @@
 <p>Below is the updated JSON content we can use for the check, I&rsquo;ve kept this quite light touch if I&rsquo;m honest, and not specific to the Antivirus product, again so this can be re-used without changing a million things.</p>
 <p>You will need to change the <code>Operand</code> for the first Rule to match the Antivirus product name you have installed, and if you want to, feel free to update the following fields to your taste:</p>
 <ul>
-<li>MoreInfoUrl</li>
-<li>Title</li>
-<li>Description</li>
+<li><code>MoreInfoUrl</code></li>
+<li><code>Title</code></li>
+<li><code>Description</code></li>
 </ul>
-<p>But leave the rest alone, otherwise you&rsquo;ll break stuff.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >Updated to include improved presentation to the end user of the issues as displayed in the Company Portal.</span>
+</div>
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">   <span class="nt">&#34;Rules&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">      <span class="p">{</span>
@@ -1504,12 +1533,12 @@
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://www.google.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://support.home.sophos.com/hc/en-us/categories/115001242663-Installing-Sophos-Home&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">               <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Incorrect Antivirus solution detected. Value discovered was {ActualValue}.&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Install correct Antivirus solution.&#34;</span>
+</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus was not detected.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;You must have Sophos Antivirus installed on your device to protect it from malware.&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">         <span class="p">]</span>
 </span></span><span class="line"><span class="cl">      <span class="p">},</span>
@@ -1518,12 +1547,12 @@
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;On&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://www.google.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://support.home.sophos.com/hc/en-us/articles/115005596186-Configuring-Real-Time-Protection&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">               <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Real time protection is not enabled&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Real time protection must be enabled.&#34;</span>
+</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Antivirus real time protection is not enabled&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Real time protection must be enabled in Sophos to protect your device, please enable this setting.&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">         <span class="p">]</span>
 </span></span><span class="line"><span class="cl">      <span class="p">},</span>
@@ -1532,12 +1561,12 @@
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;Up to Date&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://www.google.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://kb.mit.edu/confluence/pages/viewpage.action?pageId=152584581#:~:text=By%20default%2C%20Sophos%20Anti%2DVirus,as%20detailed%20%E2%80%93%20is%20not%20necessary.&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">         <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">               <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Antivirus definitions are not up to date.&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Please update the Antivirus definitions&#34;</span>
+</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Antivirus definitions are not up to date.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Please update the Sophos Antivirus definitions to ensure you device is protected from malware.&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">         <span class="p">]</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
@@ -1566,7 +1595,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-script_huc6faccdcbd211027876d8103c00dd33d_70184_filter_5563556324726744268.webp#left" alt="Compliance Script" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-script_huc6faccdcbd211027876d8103c00dd33d_70184_filter_11875061677695022568.webp#left" alt="Compliance Script" />
       
     </figure>
   
@@ -1581,7 +1610,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu01a6f89e4b352219e1bfb783600a9658_62864_filter_17399162488349928536.webp#left" alt="Custom Compliance" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu01a6f89e4b352219e1bfb783600a9658_62864_filter_9852425425435992977.webp#left" alt="Custom Compliance" />
       
     </figure>
   
@@ -1612,7 +1641,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliant_hua29f1fec27222c501d7331ed027d86ba_10556_filter_17542819253364720945.webp#left" alt="Good Compliance" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliant_hua29f1fec27222c501d7331ed027d86ba_10556_filter_18204391623834851947.webp#left" alt="Good Compliance" />
       
     </figure>
   
@@ -1629,7 +1658,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_huc27f111eeebfa06c3463813099433967_11842_filter_17542819253364720945.webp#left" alt="Poor Compliance" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_huc27f111eeebfa06c3463813099433967_11842_filter_18204391623834851947.webp#left" alt="Poor Compliance" />
       
     </figure>
   
@@ -1646,7 +1675,7 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_huaa581d5642ee8639cb7a6e1c47b94c72_10726_filter_17542819253364720945.webp#left" alt="Bad Compliance" />
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_huaa581d5642ee8639cb7a6e1c47b94c72_10726_filter_18204391623834851947.webp#left" alt="Bad Compliance" />
       
     </figure>
   
