@@ -9,6 +9,16 @@
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Sun, 19 May 2024 09:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</link>
+      <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
+      <description>Having captured the Feature Update Readiness data for Windows 11 23H2, we can now use this risk based data to tag devices with their associated risk, grouping them together to allow for Feature Update profile assignment.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg" />
+    </item>
+    
+    <item>
       <title>Software Update Deployment Rings for Managed macOS Devices</title>
       <link>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</link>
       <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>

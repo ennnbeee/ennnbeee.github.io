@@ -111,7 +111,7 @@
     "keywords": ["intune","android","ios","apple","apps","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2931"
+    "wordCount": "2903"
   }]
   </script>
 
@@ -1562,10 +1562,7 @@
 <p>Ah yes, Groups, I&rsquo;d almost forgotten about these, but Dynamic Groups still have a place in Intune, and we need the <code>{GroupId}</code> to make this work, so we should find a way to grab these as well. As with the Device Filters, this is a call to Graph, but using the <a href="https://learn.microsoft.com/en-us/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http"   target="_blank">
     <code>GET groups</code></a> resource to capture the group <code>id</code> we need.</p>
 <p>It was supposed to be so easy, however as we need to limit the number of Groups being pulled back, we need a way to search for a Group name. Here comes the <a href="https://learn.microsoft.com/en-us/graph/search-query-parameter?tabs=http"   target="_blank">
-    Search Query Parameter</a>, and importantly the need for <code>ConsistencyLevel</code> in the headers of the <code>Invoke-RestMethod</code>.</p>
-<p>We already have our header containing the <code>$authToken</code>, so we need to add in a new row, we can do this using the below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$authToken</span><span class="p">[</span><span class="s2">&#34;ConsistencyLevel&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&#34;eventual&#34;</span>
-</span></span></code></pre></div><p>Giving us a new <code>$authToken</code> with output:</p>
+    Search Query Parameter</a>, and importantly the need for <code>ConsistencyLevel</code> in the headers in the connection <code>Invoke-MgGraphRequest -Headers @{ConsistencyLevel = 'eventual' }</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Name                           Value
 </span></span><span class="line"><span class="cl">----                           -----
 </span></span><span class="line"><span class="cl">Content-Type                   application/json

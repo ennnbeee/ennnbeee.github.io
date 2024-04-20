@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","powershell","graph","settingscatalog","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3391"
+    "wordCount": "3389"
   }]
   </script>
 
@@ -1898,7 +1898,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Test-Json</span> <span class="n">-Json</span> <span class="nv">$JSON</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="p">$(</span><span class="nv">$Resource</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>

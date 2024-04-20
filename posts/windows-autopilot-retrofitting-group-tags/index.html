@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","autopilot","enrolment","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1847"
+    "wordCount": "1368"
   }]
   </script>
 
@@ -1138,8 +1138,6 @@
     <li><a href="#repeat-offenders">Repeat Offenders</a>
       <ul>
         <li><a href="#handshake-time">Handshake Time</a></li>
-        <li><a href="#authentication-function">Authentication Function</a></li>
-        <li><a href="#authentication-token">Authentication Token</a></li>
         <li><a href="#autopilot-functions">Autopilot Functions</a></li>
         <li><a href="#getting-autopilot-devices">Getting Autopilot Devices</a></li>
         <li><a href="#update-autopilot-device-attributes">Update Autopilot Device Attributes</a></li>
@@ -1177,8 +1175,6 @@
     <li><a href="#repeat-offenders">Repeat Offenders</a>
       <ul>
         <li><a href="#handshake-time">Handshake Time</a></li>
-        <li><a href="#authentication-function">Authentication Function</a></li>
-        <li><a href="#authentication-token">Authentication Token</a></li>
         <li><a href="#autopilot-functions">Autopilot Functions</a></li>
         <li><a href="#getting-autopilot-devices">Getting Autopilot Devices</a></li>
         <li><a href="#update-autopilot-device-attributes">Update Autopilot Device Attributes</a></li>
@@ -1340,149 +1336,39 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     </span>        
     
 </h3>
-<p>Lets steal the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
-    Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</p>
+<p><del>Lets steal the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
+    Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</del></p>
+
+  
 
 
-<h3 class="relative group">Authentication Function 
-    <div id="authentication-function" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#authentication-function" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p><strong>Update</strong> The move to MSAL based authentication can be found in this <a href="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/#an-updated-function"  >
-    post</a>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-AuthTokenMSAL</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="cm">&lt;#
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">SYNOPSIS</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    This function is used to authenticate with the Graph API REST interface
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">DESCRIPTION</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    The function authenticate with the Graph API Interface with the tenant name
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">EXAMPLE</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Get-AuthTokenMSAL
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Authenticates you with the Graph API interface using MSAL.PS module
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">NOTES</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    NAME: Get-AuthTokenMSAL
-</span></span></span><span class="line"><span class="cl"><span class="cm">    #&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">param</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$User</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$userUpn</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="s1">&#39;System.Net.Mail.MailAddress&#39;</span> <span class="n">-ArgumentList</span> <span class="nv">$User</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$userUpn</span><span class="p">.</span><span class="py">Host</span> <span class="o">-like</span> <span class="s1">&#39;*onmicrosoft.com*&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$tenant</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Please specify your Tenant name i.e. company.com&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$tenant</span> <span class="p">=</span> <span class="nv">$userUpn</span><span class="p">.</span><span class="py">Host</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s1">&#39;Checking for MSAL.PS module...&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$MSALModule</span> <span class="p">=</span> <span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="s1">&#39;MSAL.PS&#39;</span> <span class="n">-ListAvailable</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-eq</span> <span class="nv">$MSALModule</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s1">&#39;MSAL.PS Powershell module not installed...&#39;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Install by running &#39;Install-Module MSAL.PS -Scope CurrentUser&#39; from an elevated PowerShell prompt&#34;</span> <span class="o">-f</span> <span class="n">Yellow</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Script can&#39;t continue...&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="n">exit</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$MSALModule</span><span class="p">.</span><span class="py">count</span> <span class="o">-gt</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$Latest_Version</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$MSALModule</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">version</span> <span class="p">|</span> <span class="nb">Sort-Object</span><span class="p">)[</span><span class="mf">-1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$MSALModule</span> <span class="p">=</span> <span class="nv">$MSALModule</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">version</span> <span class="o">-eq</span> <span class="nv">$Latest_Version</span><span class="p">.</span><span class="py">version</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="c"># Checking if there are multiple versions of the same module found</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$MSALModule</span><span class="p">.</span><span class="py">count</span> <span class="o">-gt</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$MSALModule</span> <span class="p">=</span> <span class="nv">$MSALModule</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Unique</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$ClientId</span> <span class="p">=</span> <span class="s1">&#39;d1ddf0e4-d672-4dae-b554-9d5bdfd93547&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$RedirectUri</span> <span class="p">=</span> <span class="s1">&#39;urn:ietf:wg:oauth:2.0:oob&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$Authority</span> <span class="p">=</span> <span class="s2">&#34;https://login.microsoftonline.com/</span><span class="nv">$Tenant</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Import-Module</span> <span class="nv">$MSALModule</span><span class="p">.</span><span class="py">Name</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$PSVersionTable</span><span class="p">.</span><span class="py">PSVersion</span><span class="p">.</span><span class="py">Major</span> <span class="o">-ne</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$authResult</span> <span class="p">=</span> <span class="nb">Get-MsalToken</span> <span class="n">-ClientId</span> <span class="nv">$ClientId</span> <span class="n">-Interactive</span> <span class="n">-RedirectUri</span> <span class="nv">$RedirectUri</span> <span class="n">-Authority</span> <span class="nv">$Authority</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$authResult</span> <span class="p">=</span> <span class="nb">Get-MsalToken</span> <span class="n">-ClientId</span> <span class="nv">$ClientId</span> <span class="n">-Interactive</span> <span class="n">-RedirectUri</span> <span class="nv">$RedirectUri</span> <span class="n">-Authority</span> <span class="nv">$Authority</span> <span class="n">-DeviceCode</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="c"># If the accesstoken is valid then create the authentication header</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$authResult</span><span class="p">.</span><span class="n">AccessToken</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="c"># Creating header for Authorization token</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$authHeader</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="s1">&#39;Content-Type&#39;</span>  <span class="p">=</span> <span class="s1">&#39;application/json&#39;</span>
-</span></span><span class="line"><span class="cl">                <span class="s1">&#39;Authorization&#39;</span> <span class="p">=</span> <span class="s1">&#39;Bearer &#39;</span> <span class="p">+</span> <span class="nv">$authResult</span><span class="p">.</span><span class="py">AccessToken</span>
-</span></span><span class="line"><span class="cl">                <span class="s1">&#39;ExpiresOn&#39;</span>     <span class="p">=</span> <span class="nv">$authResult</span><span class="p">.</span><span class="py">ExpiresOn</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nv">$authHeader</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s1">&#39;Authorization Access Token is null, please re-run authentication...&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="py">Message</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="py">ItemName</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="k">break</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
 
-<h3 class="relative group">Authentication Token 
-    <div id="authentication-token" class="anchor"></div>
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
     
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#authentication-token" aria-label="Anchor">#</a>
-    </span>        
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
     
-</h3>
-<p><strong>Update</strong> The move to MSAL based authentication can be found in this <a href="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/#updating-authentication-method"  >
-    post</a>.</p>
-<p>As well as the call to connect to Graph.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$global:authToken</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$DateTime</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="py">ToUniversalTime</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$TokenExpires</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$authToken</span><span class="p">.</span><span class="py">ExpiresOn</span><span class="p">.</span><span class="py">datetime</span> <span class="p">-</span> <span class="nv">$DateTime</span><span class="p">).</span><span class="py">Minutes</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$TokenExpires</span> <span class="o">-le</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s1">&#39;Authentication Token expired&#39;</span> <span class="nv">$TokenExpires</span> <span class="s1">&#39;minutes ago&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-eq</span> <span class="nv">$User</span> <span class="o">-or</span> <span class="nv">$User</span> <span class="o">-eq</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$User</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Please specify your user principal name for Azure Authentication&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$global:authToken</span> <span class="p">=</span> <span class="nb">Get-AuthTokenMSAL</span> <span class="n">-User</span> <span class="nv">$User</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s1">&#39;Connected to Graph API&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">Else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s1">&#39;Connected to Graph API&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-eq</span> <span class="nv">$User</span> <span class="o">-or</span> <span class="nv">$User</span> <span class="o">-eq</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$User</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Please specify your user principal name for Azure Authentication&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$global:authToken</span> <span class="p">=</span> <span class="nb">Get-AuthTokenMSAL</span> <span class="n">-User</span> <span class="nv">$User</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s1">&#39;Connected to Graph API&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >Connect to Graph using the latest module and <code>Connect-MgGraph -Scopes 'DeviceManagementManagedDevices.ReadWrite.All'</code>.</span>
+</div>
+
+
   
 
 
@@ -1551,15 +1437,10 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="p">$(</span><span class="nv">$Resource</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">         <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1601,16 +1482,11 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </span></span><span class="line"><span class="cl">        <span class="nv">$Autopilot</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s1">&#39;groupTag&#39;</span> <span class="n">-Value</span> <span class="nv">$GroupTag</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$JSON</span> <span class="p">=</span> <span class="nv">$Autopilot</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="mf">3</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="p">$(</span><span class="nv">$Resource</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s2">&#34;application/json&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s2">&#34;application/json&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">write-host</span> <span class="s2">&#34;Successfully added &#39;</span><span class="nv">$GroupTag</span><span class="s2">&#39; to device&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$exs</span> <span class="p">=</span> <span class="nv">$Error</span><span class="p">.</span><span class="py">ErrorDetails</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ex</span> <span class="p">=</span> <span class="nv">$exs</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Response content:</span><span class="se">`n</span><span class="nv">$ex</span><span class="s2">&#34;</span> <span class="o">-f</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Request to </span><span class="nv">$Uri</span><span class="s2"> failed with HTTP Status </span><span class="p">$(</span><span class="nv">$ex</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>

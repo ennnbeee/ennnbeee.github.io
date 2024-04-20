@@ -1260,7 +1260,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">$properties</span> <span class="p">=</span> <span class="s1">&#39;notes&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/beta/</span><span class="p">$(</span><span class="nv">$Resource</span><span class="p">)</span><span class="s2">?select=</span><span class="nv">$properties</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Try</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-MSGraphRequest</span> <span class="n">-HttpMethod</span> <span class="n">GET</span> <span class="n">-Url</span> <span class="nv">$uri</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">).</span><span class="py">notes</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-MSGraphRequest</span> <span class="n">-Method</span> <span class="n">GET</span> <span class="n">-Url</span> <span class="nv">$uri</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span><span class="p">).</span><span class="py">notes</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Catch</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="py">Message</span>
@@ -1309,7 +1309,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">Try</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">Write-Verbose</span> <span class="s2">&#34;</span><span class="nv">$URI</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">Write-Verbose</span> <span class="s2">&#34;</span><span class="nv">$JSONPayload</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">Invoke-MSGraphRequest</span> <span class="n">-HttpMethod</span> <span class="n">PATCH</span> <span class="n">-Url</span> <span class="nv">$uri</span> <span class="n">-Content</span> <span class="nv">$JSONPayload</span> <span class="n">-Verbose</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Invoke-MSGraphRequest</span> <span class="n">-Method</span> <span class="n">PATCH</span> <span class="n">-Url</span> <span class="nv">$uri</span> <span class="n">-Content</span> <span class="nv">$JSONPayload</span> <span class="n">-Verbose</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="k">Catch</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span><span class="p">.</span><span class="py">Message</span>

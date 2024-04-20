@@ -111,7 +111,7 @@
     "keywords": ["intune","android","google","apps","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1038"
+    "wordCount": "1031"
   }]
   </script>
 
@@ -1268,9 +1268,8 @@
 </h2>
 <p>We&rsquo;re not actually creating anything here, all the Apps and the associated data exists within the Managed Play Store, what we need to do is approve an app. We can use the <a href="https://learn.microsoft.com/en-us/graph/api/intune-androidforwork-androidmanagedstoreaccountenterprisesettings-approveapps?view=graph-rest-beta"   target="_blank">
     POST /deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps</a> action to our advantage.</p>
-<p>We can make a POST call to the below URI with some JSON to approve the applications we need.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps
-</span></span></code></pre></div><p>The JSON format we need to pass through using this call is in the format below.</p>
+<p>We can make a POST call to <code>https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps</code> with some JSON to approve the applications we need.</p>
+<p>The JSON format we need to pass through using this call is in the format below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;packageIds&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Package Ids value&#34;</span>
@@ -1445,7 +1444,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nv">$Packages</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s1">&#39;packageIds&#39;</span> <span class="n">-Value</span> <span class="vm">@</span><span class="p">(</span><span class="nv">$PackageID</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$JSON</span> <span class="p">=</span> <span class="nv">$Packages</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="mf">3</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="p">$(</span><span class="nv">$App_resource</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-Headers</span> <span class="nv">$authToken</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span> <span class="n">-Body</span> <span class="nv">$JSON</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">write-host</span> <span class="s2">&#34;Successfully added </span><span class="nv">$PackageID</span><span class="s2"> from Managed Google Store&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
@@ -1482,7 +1481,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="p">$(</span><span class="nv">$App_resource</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-Headers</span> <span class="nv">$authToken</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span> <span class="n">-Body</span> <span class="nv">$JSON</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Successfully synchronised Google Apps&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>

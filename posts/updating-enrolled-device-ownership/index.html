@@ -111,7 +111,7 @@
     "keywords": ["intune","enrolment","administration","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1738"
+    "wordCount": "1730"
   }]
   </script>
 
@@ -1386,7 +1386,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="nv">$Resource</span><span class="s2">`?</span><span class="se">`$</span><span class="s2">filter=managementAgent eq &#39;mdm&#39; and managementAgent eq &#39;easmdm&#39;&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
@@ -1436,7 +1436,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s1">&#39;ownerType&#39;</span> <span class="n">-Value</span> <span class="nv">$ownerType</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$JSON</span> <span class="p">=</span> <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="mf">3</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="nv">$Resource</span><span class="s2">/</span><span class="nv">$ID</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Patch</span> <span class="n">-Body</span> <span class="nv">$Json</span> <span class="n">-ContentType</span> <span class="s2">&#34;application/json&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Patch</span> <span class="n">-Body</span> <span class="nv">$Json</span> <span class="n">-ContentType</span> <span class="s2">&#34;application/json&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
@@ -1552,7 +1552,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="nv">$Resource</span><span class="s2">`?</span><span class="se">`$</span><span class="s2">filter=displayName eq &#39;</span><span class="nv">$GroupName</span><span class="s2">&#39;&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
@@ -1585,7 +1585,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="nv">$Resource</span><span class="s2">/</span><span class="nv">$id</span><span class="s2">/members&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Headers</span> <span class="nv">$authToken</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Get</span><span class="p">).</span><span class="py">Value</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>

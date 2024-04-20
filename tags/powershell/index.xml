@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 25 Mar 2024 23:32:16 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Apr 2024 23:11:03 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</link>
+      <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
+      <description>Having captured the Feature Update Readiness data for Windows 11 23H2, we can now use this risk based data to tag devices with their associated risk, grouping them together to allow for Feature Update profile assignment.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg" />
+    </item>
+    
     <item>
       <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
       <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link>
