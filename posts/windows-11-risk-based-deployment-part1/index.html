@@ -1870,8 +1870,7 @@
 </h3>
 <p>Some of the avid readers of the blog, may have worked out why this next part is important, for those slower off the mark, hang tight, I&rsquo;ll do my best to talk you through it. If the end goal here is to tag a device with it&rsquo;s Feature Update risk status, making use of the information in the Feature Update Readiness Report, we need an object to tag.</p>
 <p>To get these objects, we&rsquo;re going to have to query Entra ID for all device objects, and get their information, allowing us to compare the <code>AadDeviceId</code> from the report data, to the associated <code>objectId</code> in Entra ID.</p>
-<p>Sadly the built-in functionality within the Graph PowerShell module is going to limit us to 999 devices, so we&rsquo;re leaning on an existing <a href="https://memv.ennbee.uk/posts/device-attributes-cap/#getting-devices"  >
-    function</a> to get more devices than the set device limit.</p>
+<p>Sadly the built-in functionality within the Graph PowerShell module is going to limit us to 999 devices, so we&rsquo;re leaning on an existing <a href="/posts/device-attributes-cap/#getting-devices" rel="noopener" target="_blank">function</a> to get more devices than the set device limit.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-EntraIDDevice</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;beta&#39;</span>

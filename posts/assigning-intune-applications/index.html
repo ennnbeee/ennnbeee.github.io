@@ -1274,8 +1274,7 @@
     
 </h2>
 <p>No one, and I mean no one, really wants to manually and individually <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-deploy"   target="_blank">
-    assign Mobile Apps</a> to Users or Devices in Intune, especially after you&rsquo;ve happily used a script to <a href="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/"  >
-    Approve Managed Google Play Apps</a> in their 100&rsquo;s as part of migrating to Microsoft Intune from other <del>below par</del> Mobile Device Management solutions.</p>
+    assign Mobile Apps</a> to Users or Devices in Intune, especially after you&rsquo;ve happily used a script to <a href="/posts/approving-managed-google-play-apps" rel="noopener" target="_blank">Approve Managed Google Play Apps</a> in their 100&rsquo;s as part of migrating to Microsoft Intune from other <del>below par</del> Mobile Device Management solutions.</p>
 <p>We could try and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets"   target="_blank">
     Policy Sets</a> here, but you know, they&rsquo;re in preview, and more importantly they have <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets#policy-sets-known-issues"   target="_blank">
     issues</a> like not supporting Managed Google Play or Apple VPP apps, so that&rsquo;s a no go.</p>
@@ -1322,11 +1321,9 @@
     </span>        
     
 </h2>
-<p>First off, before we even start looking at how we bring this all together, is to understand how we can assign an App using Graph. So as we&rsquo;ve done before, we could look under the hood and check the Browser <a href="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/#developer-tool-sneaking"  >
-    Developer Tools</a> to see what is actually going on, or we can just check the <a href="https://learn.microsoft.com/en-us/graph/api/intune-shared-mobileapp-assign?view=graph-rest-beta"   target="_blank">
+<p>First off, before we even start looking at how we bring this all together, is to understand how we can assign an App using Graph. So as we&rsquo;ve done before, we could look under the hood and check the Browser <a href="/posts/apple-ade-profile-assignment/#developer-tool-sneaking" rel="noopener" target="_blank">Developer Tools</a>  to see what is actually going on, or we can just check the <a href="https://learn.microsoft.com/en-us/graph/api/intune-shared-mobileapp-assign?view=graph-rest-beta"   target="_blank">
     Graph documentation</a>.</p>
-<p>With this we now know that to use the <code>POST /deviceAppManagement/mobileApps/{mobileAppId}/assign</code> call, we&rsquo;ll need the <code>{mobileAppId}</code>, we&rsquo;re in luck, as we&rsquo;ve already got a function <a href="https://memv.ennbee.uk/posts/creating-assigning-app-categories/#getting-mobile-apps"  >
-    Get-MobileApps</a> to do this for us.</p>
+<p>With this we now know that to use the <code>POST /deviceAppManagement/mobileApps/{mobileAppId}/assign</code> call, we&rsquo;ll need the <code>{mobileAppId}</code>, we&rsquo;re in luck, as we&rsquo;ve already got a function <a href="/posts/creating-assigning-app-categories/#getting-mobile-apps" rel="noopener" target="_blank">Get-MobileApps</a> to do this for us.</p>
 
 
 <h3 class="relative group">Assignment Types 

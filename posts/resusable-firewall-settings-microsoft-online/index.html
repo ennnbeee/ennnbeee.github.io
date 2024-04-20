@@ -1281,8 +1281,7 @@
     </span>        
     
 </h2>
-<p>So here we are, back looking at <del>Defender</del> Windows firewall rules in Microsoft Intune again, and after moving legacy firewall rules to the <a href="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/"  >
-    Settings Catalog</a> versions previously, to make use of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/reusable-settings-groups"   target="_blank">
+<p>So here we are, back looking at <del>Defender</del> Windows firewall rules in Microsoft Intune again, and after moving legacy firewall rules to the <a href="/posts/settings-catalog-firewall-rules" rel="noopener" target="_blank">Settings Catalog</a> versions previously, to make use of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/reusable-settings-groups"   target="_blank">
     Reusable Settings Groups</a>, we&rsquo;re now heavily leaning into these reusable options, to ensure that all Windows 10 and later devices can communicate successfully to the Microsoft Online endpoints.</p>
 <p>Before we look at how to deal with the data available in the Microsoft web service, we should look at how we can create these reusable settings groups in Microsoft Intune using Graph, and make use of the option to <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/announcing-enhanced-control-for-configuring-firewall-rules-with/ba-p/3664744"   target="_blank">
     auto resolve</a> URLs, which should make life a little bit easier for the ever changing internet landscape.</p>
@@ -1298,8 +1297,7 @@
     </span>        
     
 </h3>
-<p>We at least have experience dealing with building the JSON structure required for <a href="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/#creating-settings-catalog-policies"  >
-    Settings Catalog profiles previously</a>, and it wasn&rsquo;t particularly straight forward, so after a hesitant dig with Developer Tools we can see that when you create a new reusable setting in Microsoft Intune, we&rsquo;re sending a <code>POST</code> call to the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta"   target="_blank">
+<p>We at least have experience dealing with building the JSON structure required for <a href="/posts/settings-catalog-firewall-rules/#creating-settings-catalog-policies" rel="noopener" target="_blank">Settings Catalog profiles previously</a>, and it wasn&rsquo;t particularly straight forward, so after a hesitant dig with Developer Tools we can see that when you create a new reusable setting in Microsoft Intune, we&rsquo;re sending a <code>POST</code> call to the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta"   target="_blank">
     <code>deviceManagement/reusablePolicySettings</code></a> endpoint, with JSON similar to the below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;ReusableTest&#34;</span><span class="p">,</span>

@@ -1287,8 +1287,7 @@
     </span>        
     
 </h2>
-<p>Those with a keen pair of eyes,  may have spotted a <a href="https://memv.ennbee.uk/posts/device-attributes-cap/"  >
-    previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
+<p>Those with a keen pair of eyes,  may have spotted a <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
     device attributes</a> for exceptions to Conditional Access Policies, and I may have hinted at the time that these attributes may have other uses. Well guess what, they do.</p>
 <p>We can take the data from the Readiness Report, that we formatted and updated with both a string representation of the risk state, and the Entra ID computer ObjectId of the device, and use this information to tag devices with their risk state for the Windows 11 Feature Update they were assessed against. Clever eh?</p>
 
@@ -1304,8 +1303,7 @@
     
 </h3>
 <p>We&rsquo;ve already got a function to update device attributes on device objects, and I say update, as the call to Graph is using <code>PATCH</code> which means that it will overwrite the existing value for the attribute we want to update.</p>
-<p>This is both good, as it means we don&rsquo;t need to worry about changes to the devices Feature Update risk state, and bad, because we should probably check that our chosen attribute is not already used for something else, like <a href="https://memv.ennbee.uk/posts/device-attributes-cap/"  >
-    Conditional Access Policies exclusions</a>.</p>
+<p>This is both good, as it means we don&rsquo;t need to worry about changes to the devices Feature Update risk state, and bad, because we should probably check that our chosen attribute is not already used for something else, like <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">Conditional Access Policies exclusions</a>.</p>
 <p>So can we find a way to pull back all devices where our device attribute of choice, this time <code>extensionAttribute15</code>, is not empty? Sure why not.</p>
 
   
@@ -1407,8 +1405,7 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Using the above and the data we have <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/#processing-feature-update-report-data"  >
-    previously captured</a> in part one in the <code>$reportArray</code> variable, we can loop through each and every device in the array, and with the values for both the <code>RiskState</code> and <code>ObjectID</code> we can happily update some attributes.</p>
+</span></span></code></pre></div><p>Using the above and the data we have <a href="/posts/windows-11-risk-based-deployment-part1/#processing-feature-update-report-data" rel="noopener" target="_blank">previously captured</a> in part one in the <code>$reportArray</code> variable, we can loop through each and every device in the array, and with the values for both the <code>RiskState</code> and <code>ObjectID</code> we can happily update some attributes.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$object</span> <span class="k">in</span> <span class="nv">$reportArray</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nv">$JSON</span> <span class="p">=</span> <span class="sh">@&#34;
 </span></span></span><span class="line"><span class="cl"><span class="sh">  {
@@ -1543,8 +1540,7 @@
     </span>        
     
 </h2>
-<p>Ah my love affair between <a href="https://memv.ennbee.uk/posts/endpoint-manager-device-filters/"  >
-    Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient"   target="_blank">
+<p>Ah my love affair between <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient"   target="_blank">
     certain</a> operators, there are still times when Dynamic Groups are going to win out over Device Filters.</p>
 <p>As we&rsquo;ve tagged the Entra ID object of the device, we don&rsquo;t have any say in the matter, so we have to use groups this time. So what are we doing with the groups? Well we can create dynamic device groups to capture corporate owned Windows devices based on their risk state.</p>
 

@@ -111,7 +111,7 @@
     "keywords": ["intune","apple","ios","macos","compliance","updates","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2006"
+    "wordCount": "2008"
   }]
   </script>
 
@@ -1281,8 +1281,7 @@
     </span>        
     
 </h2>
-<p>I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your <a href="https://memv.ennbee.uk/posts/operating-system-compliance-updates/"  >
-    Operating System Compliance Policies</a> up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</p>
+<p>I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your <a href="/posts/operating-system-compliance-updates" rel="noopener" target="_blank">Operating System Compliance Policies</a> up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</p>
 <p>What I am going to do is extend this automated Compliance Policy update functionality to Apple Updates as well, it&rsquo;s like I&rsquo;ve been working with a customer that only has iOS/iPadOS devices in Intune or something.</p>
 <p>I guess when I end up working with a customer with only Android devices, that I&rsquo;ll finally be able to put all the pieces together and have one script to update them all.</p>
 
@@ -1318,8 +1317,7 @@
     </span>        
     
 </h3>
-<p>Now we all know where I stand on <a href="https://memv.ennbee.uk/posts/endpoint-manager-device-filters/"  >
-    Device Filters</a> and they come to the rescue once again, as we need separate Compliance Policies and the ability to target these to the correct devices.</p>
+<p>Now we all know where I stand on <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Device Filters</a> and they come to the rescue once again, as we need separate Compliance Policies and the ability to target these to the correct devices.</p>
 <p>We can create filters for each of the current supported (at time of writing) iOS/iPadOS and macOS operating systems:</p>
 <table>
 <thead>
@@ -1544,11 +1542,7 @@
     </span>        
     
 </h2>
-<p>We&rsquo;ve already got functions from our last expedition into this topic for <a href="https://memv.ennbee.uk/posts/operating-system-compliance-updates/#getting-compliance-policies"  >
-    getting</a> and <a href="https://memv.ennbee.uk/posts/operating-system-compliance-updates/#updating-compliance-policies"  >
-    updating</a> Compliance Policies, checking for <a href="https://memv.ennbee.uk/posts/operating-system-compliance-updates/#testing-json"  >
-    valid JSON</a> as well as the usual suspect for <a href="https://memv.ennbee.uk/posts/operating-system-compliance-updates/#authentication"  >
-    authentication</a>, so thank you to previous me for this.</p>
+<p>We&rsquo;ve already got functions from our last expedition into this topic for <a href="/posts/operating-system-compliance-updates/#getting-compliance-policies" rel="noopener" target="_blank">getting</a> and <a href="/posts/operating-system-compliance-updates/#updating-compliance-policies" rel="noopener" target="_blank">updating</a> Compliance Policies, checking for <a href="/posts/operating-system-compliance-updates/#testing-json" rel="noopener" target="_blank">valid JSON</a> as well as the usual suspect for authentication using <code>Connect-MgGraph</code>, so thank you to previous me for this.</p>
 <p>Armed with our new function for getting the latest Apple Build versions, we now need to build out the script to do our job for us.</p>
 
 
@@ -1632,8 +1626,7 @@
     
 </h2>
 <p>We have all the component parts to bring the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/AppleOSCompliance/Set-AppleOSCompliance.ps1"   target="_blank">
-    full script</a> together, of which you can see below without the functions and <a href="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/#updating-authentication-method"  >
-    Graph Authentication</a>.</p>
+    full script</a> together, of which you can see below without the functions and Graph Authentication.</p>
 <p>Key things to note here that we haven&rsquo;t covered individually is the check to see if the build version is already up to date, as there&rsquo;s no point triggering a Compliance Check on devices if nothing has changed.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Date</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s1">&#39;dd-MM-yyyy hh:mm:ss&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$Description</span> <span class="p">=</span> <span class="s2">&#34;Updated Operating System Device Compliance Policy on </span><span class="nv">$Date</span><span class="s2">&#34;</span>
