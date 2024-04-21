@@ -11,7 +11,7 @@
   <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Device Attributes &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Having captured the Feature Update Readiness data for Windows 11 23H2, we can now use this risk based data to tag devices with their associated risk, grouping them together to allow for Feature Update profile assignment." />
+  <meta name="description" content="Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment." />
   <meta name="keywords" content="intune, windows, updates, groups, powershell, graph, " />
   
   <meta name="robots" content="all" />
@@ -96,7 +96,7 @@
     "name": "Risk Based Windows 11 Feature Update Deployment - Device Attributes",
     "headline": "Risk Based Windows 11 Feature Update Deployment - Device Attributes",
     "description": "Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.",
-    "abstract": "Having captured the Feature Update Readiness data for Windows 11 23H2, we can now use this risk based data to tag devices with their associated risk, grouping them together to allow for Feature Update profile assignment.",
+    "abstract": "Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part2\/",
     "author" : {
@@ -112,7 +112,7 @@
     "keywords": ["intune","windows","updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1675"
+    "wordCount": "1748"
   }]
   </script>
 
@@ -1274,6 +1274,20 @@
 </h2>
 <p>I&rsquo;d strongly suggest, if you haven&rsquo;t already, skimming over the first part of this series as this will give you a good understanding of where we started, and hopefully where we&rsquo;re trying to get to with putting the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
     Feature Update Readiness Reports</a> in Microsoft Intune to good use allowing for a risk based deployment approach of Windows 11 23H2.</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-report_hu1f816d92bc4459a4649d2576e0377863_17206_filter_4145953141700882411.webp#left" alt="Feature Update Readiness Report" />
+      <figcaption>Screenshot of Microsoft Feature Update readiness report</figcaption>
+    </figure>
+  
+
+</p>
 <p>With our precious data in hand, we can move onto how we group devices based on the risk, and hopefully make the transition to Windows 11 a relatively painless one.</p>
 
 
@@ -1287,7 +1301,7 @@
     </span>        
     
 </h2>
-<p>Those with a keen pair of eyes,  may have spotted a <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
+<p>Those with a keen pair of eyes, may have spotted a <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
     device attributes</a> for exceptions to Conditional Access Policies, and I may have hinted at the time that these attributes may have other uses. Well guess what, they do.</p>
 <p>We can take the data from the Readiness Report, that we formatted and updated with both a string representation of the risk state, and the Entra ID computer ObjectId of the device, and use this information to tag devices with their risk state for the Windows 11 Feature Update they were assessed against. Clever eh?</p>
 
@@ -1303,7 +1317,7 @@
     
 </h3>
 <p>We&rsquo;ve already got a function to update device attributes on device objects, and I say update, as the call to Graph is using <code>PATCH</code> which means that it will overwrite the existing value for the attribute we want to update.</p>
-<p>This is both good, as it means we don&rsquo;t need to worry about changes to the devices Feature Update risk state, and bad, because we should probably check that our chosen attribute is not already used for something else, like <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">Conditional Access Policies exclusions</a>.</p>
+<p>This is both good, as it means we don&rsquo;t need to worry about changes to the devices Feature Update risk state, and bad, because we should probably check that our chosen attribute is not already used for something else, like for <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">Conditional Access Policies exclusions</a>.</p>
 <p>So can we find a way to pull back all devices where our device attribute of choice, this time <code>extensionAttribute15</code>, is not empty? Sure why not.</p>
 
   
@@ -1340,28 +1354,36 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$windowsDevices</span> <span class="p">=</span> <span class="nb">Get-EntraIDDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">operatingSystem</span> <span class="o">-eq</span> <span class="s1">&#39;Windows&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$windowsDevice</span> <span class="k">in</span> <span class="nv">$windowsDevices</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$attribute</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="py">extensionAttributes</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">).</span><span class="nv">$extensionAttribute</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$attribute</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="n">displayName</span><span class="p">)</span><span class="s2"> already has a value of &#39;</span><span class="nv">$attribute</span><span class="s2">&#39; configured in extension attribute </span><span class="nv">$extensionAttribute</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>This can be run in isolation, to check before assigning the device attributes whether you&rsquo;re going to be overwriting anything.</p>
-<p>For our situation we know what values to actually expect on the device attribute that are valid, so we should expand upon the above to add some depth to the logic by creating an array variable of safe extension attribute values in <code>$safeAttributes</code>, which will allow us to run the assignment of attribute values multiple times, which is going to be important.</p>
+</span></span></code></pre></div><p>This can be run in isolation, to check before assigning the risk based device attributes whether you&rsquo;re going to be overwriting anything important, as the <code>PATCH</code> to update the attribute is pretty destructive.</p>
+<p>For our situation, we know what values to actually expect on the device attribute that are valid (<code>LowRisk-W11-23H2, MediumRisk-W11-23H2, HighRisk-W11-23H2, NotReady-W11-23H2, Unknown-W11-23H2</code>), so we should expand upon the above to add some depth to the logic by creating an array variable of safe extension attribute values in <code>$safeAttributes</code>, which will allow us to run the assignment of attribute values multiple times, which is going to be important.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$extensionAttribute</span> <span class="p">=</span> <span class="s1">&#39;extensionAttribute15&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$windowsDevices</span> <span class="p">=</span> <span class="nb">Get-EntraIDDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">operatingSystem</span> <span class="o">-eq</span> <span class="s1">&#39;Windows&#39;</span> <span class="p">}</span>
-</span></span><span class="line hl"><span class="cl"><span class="nv">$attributeErrors</span> <span class="p">=</span> <span class="mf">0</span>
-</span></span><span class="line hl"><span class="cl"><span class="nv">$safeAttributes</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="s2">&#34;LowRisk-W11-</span><span class="nv">$featureUpdateBuild</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;MediumRisk-W11-</span><span class="nv">$featureUpdateBuild</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;HighRisk-W11-</span><span class="nv">$featureUpdateBuild</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;NotReady-W11-</span><span class="nv">$featureUpdateBuild</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;Unknown-W11-</span><span class="nv">$featureUpdateBuild</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$attributeErrors</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$safeAttributes</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="s2">&#34;LowRisk-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;MediumRisk-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;HighRisk-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;NotReady-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;Unknown-W11-23H2&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$windowsDevice</span> <span class="k">in</span> <span class="nv">$windowsDevices</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">    <span class="nv">$attribute</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="py">extensionAttributes</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">).</span><span class="nv">$extensionAttribute</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$attribute</span> <span class="n">-notin</span> <span class="nv">$safeAttributes</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$attribute</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="py">extensionAttributes</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">).</span><span class="nv">$extensionAttribute</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$attribute</span> <span class="n">-notin</span> <span class="nv">$safeAttributes</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-ne</span> <span class="nv">$attribute</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="n">displayName</span><span class="p">)</span><span class="s2"> already has a value of &#39;</span><span class="nv">$attribute</span><span class="s2">&#39; configured in extension attribute </span><span class="nv">$extensionAttribute</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
 </span></span><span class="line"><span class="cl">            <span class="nv">$attributeErrors</span> <span class="p">=</span> <span class="nv">$attributeErrors</span> <span class="p">+</span> <span class="mf">1</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$attributeErrors</span> <span class="o">-gt</span> <span class="mf">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Please review the devices reporting as having existing data in the selected attribute </span><span class="nv">$extensionAttribute</span><span class="s2">, and run the script using a different attribute selection.&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">    <span class="k">break</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1379,7 +1401,7 @@
     </span>        
     
 </h3>
-<p>We&rsquo;ve dealt with this function already, so no need to go into detail on this one, but it is expecting some <code>JSON</code> content and an <code>Id</code> to be able to assign the attribute values.</p>
+<p>We&rsquo;ve dealt with this function previously, so no need to go into detail on this one, but it is expecting some <code>JSON</code> content and an <code>Id</code> to be able to assign the attribute values.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Add-DeviceAttribute</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
@@ -1405,7 +1427,22 @@
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Using the above and the data we have <a href="/posts/windows-11-risk-based-deployment-part1/#processing-feature-update-report-data" rel="noopener" target="_blank">previously captured</a> in part one in the <code>$reportArray</code> variable, we can loop through each and every device in the array, and with the values for both the <code>RiskState</code> and <code>ObjectID</code> we can happily update some attributes.</p>
+</span></span></code></pre></div><p>Using the above and the data we have <a href="/posts/windows-11-risk-based-deployment-part1/#processing-feature-update-report-data" rel="noopener" target="_blank">previously captured</a> in part one in the <code>$reportArray</code> variable:</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-report-arrayup_hu2f3bab8eb5cf6c128e7f696aa2421c6e_64190_filter_13723018191753572580.webp#left" alt="Feature Update Readiness Report Array Updates" />
+      <figcaption>Screenshot of updated Readiness report data array</figcaption>
+    </figure>
+  
+
+</p>
+<p>We can loop through each and every device in the array, and with the values for both the <code>RiskState</code> and <code>ObjectID</code> we can happily update some attributes.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$object</span> <span class="k">in</span> <span class="nv">$reportArray</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nv">$JSON</span> <span class="p">=</span> <span class="sh">@&#34;
 </span></span></span><span class="line"><span class="cl"><span class="sh">  {
@@ -1542,7 +1579,22 @@
 </h2>
 <p>Ah my love affair between <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient"   target="_blank">
     certain</a> operators, there are still times when Dynamic Groups are going to win out over Device Filters.</p>
-<p>As we&rsquo;ve tagged the Entra ID object of the device, we don&rsquo;t have any say in the matter, so we have to use groups this time. So what are we doing with the groups? Well we can create dynamic device groups to capture corporate owned Windows devices based on their risk state.</p>
+<p>With Feature Update deployments in Microsoft Intune not supporting the use of Device Filters, and as we&rsquo;ve tagged the Entra ID object of the device, and not the Microsoft Intune object, we don&rsquo;t have any say in the matter, so we have to use groups this time.</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-fu-assign_hu301d8c8c3c32150d5b4bbaaa532188c6_82520_filter_10644043270312644646.webp#left" alt="Feature Update Assignment" />
+      <figcaption>Screenshot of Feature Update assignment in Microsoft Intune</figcaption>
+    </figure>
+  
+
+</p>
+<p>So what are we doing with the groups? Well we can create dynamic device groups to capture corporate owned Windows devices based on their risk state.</p>
 
 
 <h3 class="relative group">Creating Dynamic Device Security Groups 
@@ -1725,8 +1777,8 @@
     </span>        
     
 </h2>
-<p>We&rsquo;re on the home stretch, having captured all the data we need to truly assess the readiness status of a deployment of a Windows 11 23H2 feature update, successfully tagged the Windows device object in Entra ID with a suitably named risk state, and gathered all devices of the same risk state using Dynamic Device Security Groups. What else do you want from me, ahh yes, a way to utilise the groups as part of deploying the Feature Update.</p>
-<p>Tune in next <del>week</del> time for the exciting penultimate post in this series. I bet your thrilled about that.</p>
+<p>We&rsquo;re on the home stretch now, having captured all the data we need to truly assess the readiness state of a deployment of a Windows 11 23H2 feature update, successfully tagging the Windows device objects in Entra ID with a suitably named risk state, and gathered all devices of the same risk state using Dynamic Device Security Groups.</p>
+<p>What else do you want from me? Ah yes, a way to utilise the groups we created as part of deploying the Feature Update, you know the whole point of this series. Tune in next <del>week</del> time for the next exciting post in this series. I bet you&rsquo;re thrilled about that.</p>
 
         </div>
                 

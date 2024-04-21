@@ -14,7 +14,7 @@
       <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
-      <description>Having captured the Feature Update Readiness data for Windows 11 23H2, we can now use this risk based data to tag devices with their associated risk, grouping them together to allow for Feature Update profile assignment.</description>
+      <description>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg" />
     </item>
     
