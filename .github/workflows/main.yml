@@ -15,6 +15,6 @@ jobs:
         uses: bojieyang/indexnow-action@v2
         with:
           sitemap-location: "https://memv.ennbee.uk/sitemap.xml"
-          since: 3
-          since-unit: "year"
+          since: 1
+          since-unit: "day"
           key: ${{ secrets.INDEXNOW_KEY }}
