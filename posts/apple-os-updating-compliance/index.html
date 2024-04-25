@@ -11,7 +11,7 @@
   <title>Updating Apple Operating System Compliance Policies &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Updating Apple Operating System Compliance Policies &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Apple devices shouldn&#39;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles." />
+  <meta name="description" content="Automatically updating iPhone and iPad iOS device compliance policies using PowerShell and Graph API." />
   <meta name="keywords" content="intune, apple, ios, macos, compliance, updates, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Updating Apple Operating System Compliance Policies",
     "headline": "Updating Apple Operating System Compliance Policies",
     "description": "Automatically updating iPhone and iPad iOS device compliance policies using PowerShell and Graph API.",
-    "abstract": "Apple devices shouldn\u0026rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.",
+    "abstract": "I\u0026rsquo;m not going to go over old ground in too much detail, as I\u0026rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/apple-os-updating-compliance\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","apple","ios","macos","compliance","updates","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2008"
+    "wordCount": "2006"
   }]
   </script>
 
@@ -1164,7 +1164,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#operating-system-build-versions">Operating System Build Versions</a>
       <ul>
         <li><a href="#device-filters">Device Filters</a></li>
@@ -1203,7 +1202,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#operating-system-build-versions">Operating System Build Versions</a>
       <ul>
         <li><a href="#device-filters">Device Filters</a></li>
@@ -1285,19 +1283,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your <a href="/posts/operating-system-compliance-updates" rel="noopener" target="_blank">Operating System Compliance Policies</a> up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</p>
+          <p>I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your <a href="/posts/operating-system-compliance-updates" rel="noopener" target="_blank">Operating System Compliance Policies</a> up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</p>
 <p>What I am going to do is extend this automated Compliance Policy update functionality to Apple Updates as well, it&rsquo;s like I&rsquo;ve been working with a customer that only has iOS/iPadOS devices in Intune or something.</p>
 <p>I guess when I end up working with a customer with only Android devices, that I&rsquo;ll finally be able to put all the pieces together and have one script to update them all.</p>
 
@@ -2170,7 +2156,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Migrating iOS/iPadOS device to Microsoft Intune shouldn&rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&rsquo;t the exception.
+          Now that you&rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you&rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple&rsquo;s Automated Device Enrolment.
         </div>
         
       </div>
@@ -2360,7 +2346,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2535,6 +2522,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>

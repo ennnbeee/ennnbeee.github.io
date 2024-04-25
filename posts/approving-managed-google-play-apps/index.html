@@ -11,7 +11,7 @@
   <title>The Easy Way to Approve Managed Google Play Apps &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="The Easy Way to Approve Managed Google Play Apps &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="We&#39;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&#39;s see if we can make this easier and less clicky." />
+  <meta name="description" content="Automatically approving and synchronising Google Play mobile applications for Android Enterprise devices in Microsoft Intune using PowerShell and Graph API." />
   <meta name="keywords" content="intune, android, google, apps, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "The Easy Way to Approve Managed Google Play Apps",
     "headline": "The Easy Way to Approve Managed Google Play Apps",
     "description": "Automatically approving and synchronising Google Play mobile applications for Android Enterprise devices in Microsoft Intune using PowerShell and Graph API.",
-    "abstract": "We\u0026rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let\u0026rsquo;s see if we can make this easier and less clicky.",
+    "abstract": "We\u0026rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you\u0026rsquo;re looking to migrate away from.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/approving-managed-google-play-apps\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","android","google","apps","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1031"
+    "wordCount": "1029"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#managed-google-play-apps">Managed Google Play Apps</a></li>
     <li><a href="#approving-and-syncing-applications">Approving and Syncing Applications</a></li>
     <li><a href="#the-functions">The Functions</a>
@@ -1172,7 +1171,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#managed-google-play-apps">Managed Google Play Apps</a></li>
     <li><a href="#approving-and-syncing-applications">Approving and Syncing Applications</a></li>
     <li><a href="#the-functions">The Functions</a>
@@ -1239,19 +1237,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>We&rsquo;ve all had to add <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-add-android-for-work"   target="_blank">
+          <p>We&rsquo;ve all had to add <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-add-android-for-work"   target="_blank">
     Managed Google Play Apps</a> in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&rsquo;re looking to migrate away from.</p>
 <p>Anyone fancy doing this one by one with lots of mouse clicks and early onset repetitive strain injury? Didn&rsquo;t think so.</p>
 <p>This will be a quick one, and annoyingly does require a bit of effort to get the app details&hellip;more on that later though. Onto the fun part.</p>
@@ -1919,7 +1905,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2252,6 +2239,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.
         </div>
         
       </div>

@@ -11,7 +11,7 @@
   <title>A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="It&#39;s been a while since we&#39;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate." />
+  <meta name="description" content="Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID." />
   <meta name="keywords" content="intune, windows, updates, groups, security, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "A Flexible Approach to Microsoft Update Deployments",
     "headline": "A Flexible Approach to Microsoft Update Deployments",
     "description": "Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID.",
-    "abstract": "It\u0026rsquo;s been a while since we\u0026rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.",
+    "abstract": "So this isn\u0026rsquo;t the first time we\u0026rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won\u0026rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/flexible-update-deployments\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","updates","groups","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1849"
+    "wordCount": "1847"
   }]
   </script>
 
@@ -1140,7 +1140,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#deployment-approach">Deployment Approach</a></li>
     <li><a href="#deployment-groups">Deployment Groups</a>
       <ul>
@@ -1174,7 +1173,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#deployment-approach">Deployment Approach</a></li>
     <li><a href="#deployment-groups">Deployment Groups</a>
       <ul>
@@ -1251,19 +1249,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>So this isn&rsquo;t the <a href="/posts/windows-update-phased-deployment" rel="noopener" target="_blank">first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
+          <p>So this isn&rsquo;t the <a href="/posts/windows-update-phased-deployment" rel="noopener" target="_blank">first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
     declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
 <p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview"   target="_blank">
     Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
@@ -2250,7 +2236,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..
+          You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
+With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.
         </div>
         
       </div>
@@ -2432,7 +2419,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.
+          So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love?
         </div>
         
       </div>
@@ -2622,7 +2609,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
         </div>
         
       </div>

@@ -14,7 +14,7 @@
       <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
-      <description>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.</description>
+      <description>I&amp;rsquo;d strongly suggest, if you haven&amp;rsquo;t already, skimming over the first part of this series as this will give you a good understanding of where we started, and hopefully where we&amp;rsquo;re trying to get to with putting the Feature Update Readiness Reports in Microsoft Intune to good use allowing for a risk based deployment approach of Windows 11 23H2.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
-      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
+      <description>I&amp;rsquo;ve been waiting a little while to put this post together, as unlike the monthly release of Windows Updates, macOS updates come few and far between, with the recent release of Sonoma 14.4 on March 7th 2024, giving me an actual update to test any phased update configurations.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/feature-macup.jpeg" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
-      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
+      <description>At the time of writing we are only a few hundred days away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&amp;rsquo;s shiny and new, but also it&amp;rsquo;s going to actually get security updates.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/feature-riskupdate.jpg" />
     </item>
     
@@ -44,7 +44,7 @@
       <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid>
-      <description>It&amp;rsquo;s been a while since we&amp;rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.</description>
+      <description>So this isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&amp;rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" />
     </item>
     
@@ -54,7 +54,8 @@
       <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
-      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..</description>
+      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
+With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/feature-wu.png" />
     </item>
     

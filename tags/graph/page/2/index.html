@@ -11,7 +11,7 @@
   <title>Graph API &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Graph API &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
   
   
   <meta name="robots" content="all" />
@@ -76,7 +76,7 @@
   
   
   <meta property="og:title" content="Graph API" />
-<meta property="og:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+<meta property="og:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://memv.ennbee.uk/tags/graph/" /><meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
 
@@ -84,7 +84,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://memv.ennbee.uk/logo-card.png" /><meta name="twitter:title" content="Graph API"/>
-<meta name="twitter:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager."/>
+<meta name="twitter:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products."/>
 
   
   
@@ -1062,7 +1062,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.
+        I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.
       </div>
       
     </div>
@@ -1253,7 +1253,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Migrating iOS/iPadOS device to Microsoft Intune shouldn&rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&rsquo;t the exception.
+        Now that you&rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you&rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple&rsquo;s Automated Device Enrolment.
       </div>
       
     </div>
@@ -1431,7 +1431,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.
+        With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods I&rsquo;ve been using in all of my scripts and into the new realms of MSAL (Microsoft Authentication Library).
       </div>
       
     </div>
@@ -1638,7 +1638,8 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+        So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
       </div>
       
     </div>
@@ -1821,7 +1822,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        We&rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&rsquo;s see if we can make this easier and less clicky.
+        We&rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&rsquo;re looking to migrate away from.
       </div>
       
     </div>
@@ -2028,7 +2029,8 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+        Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
       </div>
       
     </div>
@@ -2395,6 +2397,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
       </div>
       
     </div>
@@ -2577,7 +2580,8 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+        Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
       </div>
       
     </div>

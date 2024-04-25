@@ -11,7 +11,7 @@
   <title>Bulk Adding Device Notes to Enrolled Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Bulk Adding Device Notes to Enrolled Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&#39;s of devices." />
+  <meta name="description" content="Updating and adding notes to Microsoft Intune managed devices using PowerShell and Graph API." />
   <meta name="keywords" content="intune, administration, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Bulk Adding Device Notes to Enrolled Devices",
     "headline": "Bulk Adding Device Notes to Enrolled Devices",
     "description": "Updating and adding notes to Microsoft Intune managed devices using PowerShell and Graph API.",
-    "abstract": "Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100\u0026rsquo;s of devices.",
+    "abstract": "Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100\u0026rsquo;s of devices.\nSo luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/bulk-adding-device-notes\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","administration","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "828"
+    "wordCount": "826"
   }]
   </script>
 
@@ -1124,7 +1124,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#getting-device-notes">Getting Device Notes</a></li>
@@ -1148,7 +1147,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#getting-device-notes">Getting Device Notes</a></li>
@@ -1215,19 +1213,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&rsquo;s of devices.</p>
+          <p>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&rsquo;s of devices.</p>
 <p>So luckily I stumbled upon a post by <a href="https://wetterssource.com/get-device-notes-from-graph"   target="_blank">
     Paul Wetter</a> about getting and setting notes on devices using <a href="https://docs.microsoft.com/en-us/graph/use-the-api"   target="_blank">
     Graph API</a>, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily <del>stolen</del> borrowed, updated and tweaked to allow for updating notes en masse.</p>
@@ -1790,6 +1776,7 @@ ENB-13F278,Here are the New notes about the device.
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>
@@ -1956,6 +1943,7 @@ ENB-13F278,Here are the New notes about the device.
         
         <div class="py-1 prose dark:prose-invert">
           You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>
@@ -2105,7 +2093,8 @@ ENB-13F278,Here are the New notes about the device.
 
         
         <div class="py-1 prose dark:prose-invert">
-          A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?
+          So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?
         </div>
         
       </div>

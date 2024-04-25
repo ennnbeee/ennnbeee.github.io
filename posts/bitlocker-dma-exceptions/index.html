@@ -11,7 +11,7 @@
   <title>Remediating BitLocker DMA Exception Errors with Microsoft Intune &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Remediating BitLocker DMA Exception Errors with Microsoft Intune &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="So you&#39;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?" />
+  <meta name="description" content="Using Microsoft Intune platform powershell scripts to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption." />
   <meta name="keywords" content="intune, bitlocker, powershell, windows, security, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Remediating BitLocker DMA Exception Errors with Microsoft Intune",
     "headline": "Remediating BitLocker DMA Exception Errors with Microsoft Intune",
     "description": "Using Microsoft Intune platform powershell scripts to allow for DMA exceptions for specific hardware manufacturers to enable silent BitLocker disk encryption.",
-    "abstract": "So you\u0026rsquo;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?",
+    "abstract": "Silently encrypting Windows 10 and later devices in Microsoft Intune isn\u0026rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you\u0026rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/bitlocker-dma-exceptions\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","bitlocker","powershell","windows","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1305"
+    "wordCount": "1303"
   }]
   </script>
 
@@ -1140,7 +1140,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#direct-memory-access-exceptions">Direct Memory Access Exceptions</a></li>
     <li><a href="#platform-scripts">Platform Scripts</a>
       <ul>
@@ -1167,7 +1166,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#direct-memory-access-exceptions">Direct Memory Access Exceptions</a></li>
     <li><a href="#platform-scripts">Platform Scripts</a>
       <ul>
@@ -1237,19 +1235,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices"   target="_blank">
+          <p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices"   target="_blank">
     Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.</p>
 <p>What happens when you have devices that don&rsquo;t want to silently or automatically encrypt with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected"   target="_blank">
     Un-allowed DMA capable bus/device(s)</a> in the event log. With the Microsoft recommendation solution to add registry items to allow for these exceptions on the failing devices, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
@@ -1866,6 +1852,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>
@@ -2031,7 +2018,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          It&rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.
+          If you&rsquo;ve been living under a rock, or you don&rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
         </div>
         
       </div>
@@ -2213,7 +2200,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.
+          So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love?
         </div>
         
       </div>

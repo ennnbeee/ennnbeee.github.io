@@ -11,7 +11,7 @@
   <title>Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Reporting &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="With Windows 10 support coming to an end sooner than you&#39;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system." />
+  <meta name="description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk." />
   <meta name="keywords" content="intune, windows, updates, groups, powershell, graph, " />
   
   <meta name="robots" content="all" />
@@ -96,7 +96,7 @@
     "name": "Risk Based Windows 11 Feature Update Deployment - Reporting",
     "headline": "Risk Based Windows 11 Feature Update Deployment - Reporting",
     "description": "Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.",
-    "abstract": "With Windows 10 support coming to an end sooner than you\u0026rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.",
+    "abstract": "At the time of writing we are only a few hundred days away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it\u0026rsquo;s shiny and new, but also it\u0026rsquo;s going to actually get security updates.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part1\/",
     "author" : {
@@ -112,7 +112,7 @@
     "keywords": ["intune","windows","updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2757"
+    "wordCount": "2755"
   }]
   </script>
 
@@ -1149,7 +1149,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#feature-update-readiness-report">Feature Update Readiness Report</a>
       <ul>
         <li><a href="#report-pre-requisites">Report Pre-requisites</a></li>
@@ -1183,7 +1182,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#feature-update-readiness-report">Feature Update Readiness Report</a>
       <ul>
         <li><a href="#report-pre-requisites">Report Pre-requisites</a></li>
@@ -1288,19 +1286,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>At the time of writing we are only a <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
+          <p>At the time of writing we are only a <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
     few hundred days</a> away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&rsquo;s shiny and new, but also it&rsquo;s going to actually get security updates.</p>
 <p>Many organisations are happily running Windows 10 and have been for some time, and have probably dabbled with Windows 11, mainly IT staff who wanted to be on the latest and greatest. This however isn&rsquo;t going to get your devices to Windows 11 any time soon, and instead of distributing a Feature Update blindly, we should probably make use of the information in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
     Feature Update Readiness Reports</a> in Microsoft Intune.</p>
@@ -2362,7 +2348,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
         </div>
         
       </div>
@@ -2537,6 +2524,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>
@@ -2702,7 +2690,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          It&rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.
+          If you&rsquo;ve been living under a rock, or you don&rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
         </div>
         
       </div>

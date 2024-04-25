@@ -14,7 +14,7 @@
       <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
-      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
+      <description>I&amp;rsquo;ve been waiting a little while to put this post together, as unlike the monthly release of Windows Updates, macOS updates come few and far between, with the recent release of Sonoma 14.4 on March 7th 2024, giving me an actual update to test any phased update configurations.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/feature-macup.jpeg" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</guid>
-      <description>With the availability of the new Microsoft Teams client for macOS, we should build upon an existing script to deploy backgrounds, and update it to support not just the new version but the classic version as well.</description>
+      <description>This isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at deploying backgrounds for Microsoft Teams on macOS, but it&amp;rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&amp;rsquo;t).</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/feature-newteams.png" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
-      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
+      <description>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/feature-macosncsc.png" />
     </item>
     
@@ -44,7 +44,7 @@
       <pubDate>Tue, 14 Mar 2023 20:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-backgrounds/</guid>
-      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.</description>
+      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&amp;rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-backgrounds/feature-teamsmac.png" />
     </item>
     
@@ -54,7 +54,7 @@
       <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
-      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
+      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune, especially after you&amp;rsquo;ve happily used a script to Approve Managed Google Play Apps in their 100&amp;rsquo;s as part of migrating to Microsoft Intune from other below par Mobile Device Management solutions.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/feature-appass.jpg" />
     </item>
     
@@ -64,7 +64,7 @@
       <pubDate>Thu, 02 Feb 2023 20:08:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</guid>
-      <description>Apple devices shouldn&amp;rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.</description>
+      <description>I&amp;rsquo;m not going to go over old ground in too much detail, as I&amp;rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/feature-appleos.png" />
     </item>
     
@@ -74,7 +74,7 @@
       <pubDate>Fri, 20 Jan 2023 19:57:07 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/apple-ade-profile-assignment/</guid>
-      <description>Migrating iOS/iPadOS device to Microsoft Intune shouldn&amp;rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&amp;rsquo;t the exception.</description>
+      <description>Now that you&amp;rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&amp;rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you&amp;rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple&amp;rsquo;s Automated Device Enrolment.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/feature-apple-ade.png" />
     </item>
     
@@ -84,7 +84,8 @@
       <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
+      <description>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&amp;hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
     </item>
     
@@ -94,7 +95,7 @@
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
-      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/ncsc-macos-settings/feature-macosncsc.jpg" />
     </item>
     

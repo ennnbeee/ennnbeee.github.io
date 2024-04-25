@@ -11,7 +11,7 @@
   <title>Dynamic Groups vs Device Filters &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Dynamic Groups vs Device Filters &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Now if you&#39;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management." />
+  <meta name="description" content="Comparing Entra ID Dynamic Groups with Microsoft Intune Device Filters." />
   <meta name="keywords" content="intune, administration, groups, filters, " />
   
   <meta name="robots" content="all" />
@@ -111,7 +111,7 @@
     "keywords": ["intune","administration","groups","filters"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "693"
+    "wordCount": "691"
   }]
   </script>
 
@@ -1132,7 +1132,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#my-beloved-dynamic-groups">My Beloved Dynamic Groups</a>
       <ul>
         <li><a href="#the-limitations">The Limitations</a></li>
@@ -1159,7 +1158,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#my-beloved-dynamic-groups">My Beloved Dynamic Groups</a>
       <ul>
         <li><a href="#the-limitations">The Limitations</a></li>
@@ -1229,19 +1227,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Now if you&rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</p>
+          <p>Now if you&rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</p>
 <p>What if I told you, that there&rsquo;s something on par with these holy grail groups, and maybe, just <em>maybe</em>, even better.</p>
 
 
@@ -1772,6 +1758,7 @@ Not all areas of Microsoft Intune <a href="https://docs.microsoft.com/en-us/mem/
         
         <div class="py-1 prose dark:prose-invert">
           Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&rsquo;s of devices.
+So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph.
         </div>
         
       </div>
@@ -1929,7 +1916,7 @@ Not all areas of Microsoft Intune <a href="https://docs.microsoft.com/en-us/mem/
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
         </div>
         
       </div>
@@ -2071,7 +2058,8 @@ Not all areas of Microsoft Intune <a href="https://docs.microsoft.com/en-us/mem/
 
         
         <div class="py-1 prose dark:prose-invert">
-          Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.
+          We have already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
+Configuration # This time, it&rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&hellip;anything to make life easier for users.
         </div>
         
       </div>

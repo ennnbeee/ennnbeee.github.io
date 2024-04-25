@@ -11,7 +11,7 @@
   <title>The Hidden Power of Windows Autopilot Group Tags &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="The Hidden Power of Windows Autopilot Group Tags &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?" />
+  <meta name="description" content="Utilising Microsoft Intune Windows Autopilot group tags for dynamic device grouping." />
   <meta name="keywords" content="intune, autopilot, windows, enrolment, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "The Hidden Power of Windows Autopilot Group Tags",
     "headline": "The Hidden Power of Windows Autopilot Group Tags",
     "description": "Utilising Microsoft Intune Windows Autopilot group tags for dynamic device grouping.",
-    "abstract": "A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?",
+    "abstract": "So you\u0026rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10\/11 devices to your users, and you\u0026rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.\nSo what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/autopilot-power-of-group-tags\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","autopilot","windows","enrolment"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "936"
+    "wordCount": "934"
   }]
   </script>
 
@@ -1132,7 +1132,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#group-tags">Group Tags</a></li>
@@ -1157,7 +1156,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#group-tags">Group Tags</a></li>
@@ -1225,19 +1223,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot <a href="https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot"   target="_blank">
+          <p>So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot <a href="https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot"   target="_blank">
     dynamic group queries</a> used for targetting these devices, right? Good.</p>
 <p>So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices? You probably do&hellip;what&rsquo;s that you say, you&rsquo;re using static groups to manage these? Let me show you the way forward.</p>
 
@@ -1754,6 +1740,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>
@@ -1895,7 +1882,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&rsquo;t enrol to Intune using mobile data, well there&rsquo;s a fix for that.
+          With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &ldquo;Well what if my users don&rsquo;t have access to a wireless network?&rdquo;, don&rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
         </div>
         
       </div>
@@ -2062,6 +2049,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>

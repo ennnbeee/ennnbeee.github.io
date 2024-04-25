@@ -11,7 +11,7 @@
   <title>Custom Backgrounds for macOS New and Classic Microsoft Teams Apps &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Custom Backgrounds for macOS New and Classic Microsoft Teams Apps &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="With the availability of the new Microsoft Teams client for macOS, we should build upon an existing script to deploy backgrounds, and update it to support not just the new version but the classic version as well." />
+  <meta name="description" content="Deploying Microsoft Teams backgrounds for macOS using Shell scripts in Microsoft Intune for both the classic and new versions of the application." />
   <meta name="keywords" content="intune, macos, apple, teams, apps, shellscript, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Custom Backgrounds for macOS New and Classic Microsoft Teams Apps",
     "headline": "Custom Backgrounds for macOS New and Classic Microsoft Teams Apps",
     "description": "Deploying Microsoft Teams backgrounds for macOS using Shell scripts in Microsoft Intune for both the classic and new versions of the application.",
-    "abstract": "With the availability of the new Microsoft Teams client for macOS, we should build upon an existing script to deploy backgrounds, and update it to support not just the new version but the classic version as well.",
+    "abstract": "This isn\u0026rsquo;t the first time we\u0026rsquo;ve looked at deploying backgrounds for Microsoft Teams on macOS, but it\u0026rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn\u0026rsquo;t).",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/macos-teams-new-backgrounds\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","macos","apple","teams","apps","shellscript"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1707"
+    "wordCount": "1705"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#application-differences">Application Differences</a>
       <ul>
         <li><a href="#uploaded-background-locations">Uploaded Background Locations</a></li>
@@ -1186,7 +1185,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#application-differences">Application Differences</a>
       <ul>
         <li><a href="#uploaded-background-locations">Uploaded Background Locations</a></li>
@@ -1267,19 +1265,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>This isn&rsquo;t the first time we&rsquo;ve looked at deploying <a href="/posts/macos-teams-backgrounds" rel="noopener" target="_blank">backgrounds</a> for Microsoft Teams on macOS, but it&rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&rsquo;t).</p>
+          <p>This isn&rsquo;t the first time we&rsquo;ve looked at deploying <a href="/posts/macos-teams-backgrounds" rel="noopener" target="_blank">backgrounds</a> for Microsoft Teams on macOS, but it&rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&rsquo;t).</p>
 <p>Now that the &lsquo;New&rsquo; Microsoft Teams app is the de facto version available to download from Microsoft replacing the &lsquo;Classic&rsquo; one, we should at least look at how it handles uploaded backgrounds and if required update our existing script to support not only the &lsquo;Classic&rsquo; version, but the &lsquo;New&rsquo; version too.</p>
 
 
@@ -2072,7 +2058,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.
+          What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.
         </div>
         
       </div>
@@ -2262,7 +2248,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2428,7 +2415,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          With the improved support for macOS devices in Microsoft Intune, it&rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.
+          We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.
         </div>
         
       </div>

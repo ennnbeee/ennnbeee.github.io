@@ -14,7 +14,7 @@
       <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</guid>
-      <description>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?</description>
+      <description>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/feature-cfg-ap.png" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.</description>
+      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/feature-cfgmgrclient.png" />
     </item>
     
@@ -34,7 +34,8 @@
       <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/converting-direct-member-collections/</guid>
-      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
+      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?
+No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/converting-direct-member-collections/feature-configmgr-dm.png" />
     </item>
     

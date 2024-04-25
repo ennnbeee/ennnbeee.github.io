@@ -11,7 +11,7 @@
   <title>Keeping Windows Store Apps Updated with Microsoft Intune &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Keeping Windows Store Apps Updated with Microsoft Intune &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost." />
+  <meta name="description" content="Using Microsoft Intune to update Windows Store Apps using PowerShell and remediation scripts." />
   <meta name="keywords" content="intune, windows, updates, remediation, apps, powershell, autopilot, security, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Keeping Windows Store Apps Updated with Microsoft Intune",
     "headline": "Keeping Windows Store Apps Updated with Microsoft Intune",
     "description": "Using Microsoft Intune to update Windows Store Apps using PowerShell and remediation scripts.",
-    "abstract": "Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.",
+    "abstract": "So we\u0026rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn\u0026rsquo;t we give them a bit of love?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/updating-windows-store-apps\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","updates","remediation","apps","powershell","autopilot","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "948"
+    "wordCount": "946"
   }]
   </script>
 
@@ -1164,7 +1164,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#allowing-app-updates">Allowing App Updates</a></li>
     <li><a href="#forcing-app-updates">Forcing App Updates</a></li>
     <li><a href="#remediation-settings">Remediation Settings</a>
@@ -1188,7 +1187,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#allowing-app-updates">Allowing App Updates</a></li>
     <li><a href="#forcing-app-updates">Forcing App Updates</a></li>
     <li><a href="#remediation-settings">Remediation Settings</a>
@@ -1255,19 +1253,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft"   target="_blank">
+          <p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft"   target="_blank">
     New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>
 
 
@@ -1871,7 +1857,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          When Microsoft releases an update that won&rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?
+          If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the Windows Recovery Environment or WinRE, partition when applying Windows Updates like KB5034441, luckily Microsoft released a &lsquo;fix&rsquo; for this in KB5028997 to resize the partition to allow for updates to install.
         </div>
         
       </div>
@@ -2037,7 +2023,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?
+          As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.
         </div>
         
       </div>

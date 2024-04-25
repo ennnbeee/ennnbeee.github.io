@@ -11,7 +11,7 @@
   <title>Assigning Intune Mobile Apps Quickly and Consistently &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Assigning Intune Mobile Apps Quickly and Consistently &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&#39;s, so we should find a solution for this bulk assignment approach." />
+  <meta name="description" content="Automatically assigning Android Enterprise Google Play apps and iOS iPhone and iPad mobile apps in Microsoft Intune using PowerShell and Graph API." />
   <meta name="keywords" content="intune, android, ios, apple, apps, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Assigning Intune Mobile Apps Quickly and Consistently",
     "headline": "Assigning Intune Mobile Apps Quickly and Consistently",
     "description": "Automatically assigning Android Enterprise Google Play apps and iOS iPhone and iPad mobile apps in Microsoft Intune using PowerShell and Graph API.",
-    "abstract": "No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100\u0026rsquo;s, so we should find a solution for this bulk assignment approach.",
+    "abstract": "No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune, especially after you\u0026rsquo;ve happily used a script to Approve Managed Google Play Apps in their 100\u0026rsquo;s as part of migrating to Microsoft Intune from other below par Mobile Device Management solutions.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/assigning-intune-applications\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","android","ios","apple","apps","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2903"
+    "wordCount": "2901"
   }]
   </script>
 
@@ -1156,7 +1156,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#mobile-app-assignment">Mobile App Assignment</a>
       <ul>
         <li><a href="#assignment-types">Assignment Types</a></li>
@@ -1195,7 +1194,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#mobile-app-assignment">Mobile App Assignment</a>
       <ul>
         <li><a href="#assignment-types">Assignment Types</a></li>
@@ -1277,19 +1275,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>No one, and I mean no one, really wants to manually and individually <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-deploy"   target="_blank">
+          <p>No one, and I mean no one, really wants to manually and individually <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-deploy"   target="_blank">
     assign Mobile Apps</a> to Users or Devices in Intune, especially after you&rsquo;ve happily used a script to <a href="/posts/approving-managed-google-play-apps" rel="noopener" target="_blank">Approve Managed Google Play Apps</a> in their 100&rsquo;s as part of migrating to Microsoft Intune from other <del>below par</del> Mobile Device Management solutions.</p>
 <p>We could try and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets"   target="_blank">
     Policy Sets</a> here, but you know, they&rsquo;re in preview, and more importantly they have <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets#policy-sets-known-issues"   target="_blank">
@@ -2331,7 +2317,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2513,7 +2500,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.
+          I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.
         </div>
         
       </div>
@@ -2687,7 +2674,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Migrating iOS/iPadOS device to Microsoft Intune shouldn&rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&rsquo;t the exception.
+          Now that you&rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you&rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple&rsquo;s Automated Device Enrolment.
         </div>
         
       </div>

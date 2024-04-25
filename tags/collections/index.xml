@@ -14,7 +14,8 @@
       <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/converting-direct-member-collections/</guid>
-      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
+      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?
+No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/converting-direct-member-collections/feature-configmgr-dm.png" />
     </item>
     

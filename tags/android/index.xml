@@ -14,7 +14,7 @@
       <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
-      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
+      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune, especially after you&amp;rsquo;ve happily used a script to Approve Managed Google Play Apps in their 100&amp;rsquo;s as part of migrating to Microsoft Intune from other below par Mobile Device Management solutions.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/feature-appass.jpg" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Mon, 14 Nov 2022 20:21:20 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/</guid>
-      <description>What if you want to ensure that all of your Microsoft Teams Rooms System accounts, and any future accounts can enrol using Android Device Administrator in Microsoft Intune?</description>
+      <description>So it turns out that Android based MTR (Microsoft Teams Rooms) want to enrol into Microsoft Intune using what we generally term as a legacy enrolment method in Android Device Administrator, one in fact, that is recommended to be disabled for &amp;lsquo;All Users&amp;rsquo; as it will take priority over Android Enterprise Personal Device Work Profile enrolment for personal device or BYOD (Bring Your Own Device) scenarios.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/feature-mtr.png" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid>
-      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
+      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&amp;rsquo;re looking to migrate away from.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/feature-googleplayapps.png" />
     </item>
     
@@ -44,7 +44,8 @@
       <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
+      <description>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&amp;hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
     </item>
     
@@ -54,7 +55,8 @@
       <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</guid>
-      <description>Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.</description>
+      <description>We have already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&amp;rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
+Configuration # This time, it&amp;rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&amp;hellip;anything to make life easier for users.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/feature-android-custom.png" />
     </item>
     
@@ -64,7 +66,7 @@
       <pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/</guid>
-      <description>What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&amp;rsquo;t enrol to Intune using mobile data, well there&amp;rsquo;s a fix for that.</description>
+      <description>With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &amp;ldquo;Well what if my users don&amp;rsquo;t have access to a wireless network?&amp;rdquo;, don&amp;rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/feature-android-enrol.png" />
     </item>
     

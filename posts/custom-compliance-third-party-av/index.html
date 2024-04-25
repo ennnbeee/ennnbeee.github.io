@@ -11,7 +11,7 @@
   <title>Detailed Compliance for Non-Microsoft Antivirus Solutions &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="So what happens when you&#39;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&#39;re not happy with the basic compliance checks for Third-Party Antivirus products?" />
+  <meta name="description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions." />
   <meta name="keywords" content="intune, windows, compliance, security, antivirus, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -74,7 +74,7 @@
   
   
   <meta property="og:title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions" />
-<meta property="og:description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and antispyware solutions." />
+<meta property="og:description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/" /><meta property="og:image" content="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-04-02T21:25:23+01:00" />
@@ -84,7 +84,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png" /><meta name="twitter:title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions"/>
-<meta name="twitter:description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and antispyware solutions."/>
+<meta name="twitter:description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions."/>
 
   
   <script type="application/ld+json">
@@ -94,8 +94,8 @@
     "articleSection": "Blog",
     "name": "Detailed Compliance for Non-Microsoft Antivirus Solutions",
     "headline": "Detailed Compliance for Non-Microsoft Antivirus Solutions",
-    "description": "Creation of Microsoft Intune device compliance policies for third party antivirus and antispyware solutions.",
-    "abstract": "So what happens when you\u0026rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you\u0026rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?",
+    "description": "Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions.",
+    "abstract": "So what happens when you\u0026rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you\u0026rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?\nMicrosoft have come to the rescue with their Custom Compliance Settings, so let\u0026rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/custom-compliance-third-party-av\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","compliance","security","antivirus","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1454"
+    "wordCount": "1452"
   }]
   </script>
 
@@ -1156,7 +1156,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#custom-compliance-policies">Custom Compliance Policies</a>
       <ul>
         <li><a href="#powershell-and-wmi">PowerShell and WMI</a></li>
@@ -1184,7 +1183,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#custom-compliance-policies">Custom Compliance Policies</a>
       <ul>
         <li><a href="#powershell-and-wmi">PowerShell and WMI</a></li>
@@ -1255,19 +1253,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</p>
+          <p>So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</p>
 <p>Microsoft have come to the rescue with their <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings"   target="_blank">
     Custom Compliance Settings</a>, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</p>
 
@@ -2063,7 +2049,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
         </div>
         
       </div>
@@ -2238,6 +2225,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>
@@ -2419,7 +2407,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.
+          I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.
         </div>
         
       </div>

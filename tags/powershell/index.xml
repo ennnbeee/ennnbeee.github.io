@@ -14,7 +14,7 @@
       <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
-      <description>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.</description>
+      <description>I&amp;rsquo;d strongly suggest, if you haven&amp;rsquo;t already, skimming over the first part of this series as this will give you a good understanding of where we started, and hopefully where we&amp;rsquo;re trying to get to with putting the Feature Update Readiness Reports in Microsoft Intune to good use allowing for a risk based deployment approach of Windows 11 23H2.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
-      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
+      <description>At the time of writing we are only a few hundred days away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&amp;rsquo;s shiny and new, but also it&amp;rsquo;s going to actually get security updates.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/feature-riskupdate.jpg" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/</guid>
-      <description>So you&amp;rsquo;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?</description>
+      <description>Silently encrypting Windows 10 and later devices in Microsoft Intune isn&amp;rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&amp;rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/feature-bldma.jpg" />
     </item>
     
@@ -44,7 +44,7 @@
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
+      <description>If you&amp;rsquo;ve been living under a rock, or you don&amp;rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&amp;rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/feature-fwrug.png" />
     </item>
     
@@ -54,7 +54,7 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
-      <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
+      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&amp;rsquo;t we give them a bit of love?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
     </item>
     
@@ -64,7 +64,7 @@
       <pubDate>Wed, 31 Jan 2024 20:54:12 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</guid>
-      <description>When Microsoft releases an update that won&amp;rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?</description>
+      <description>If you&amp;rsquo;ve been under a rock, or like me, don&amp;rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the Windows Recovery Environment or WinRE, partition when applying Windows Updates like KB5034441, luckily Microsoft released a &amp;lsquo;fix&amp;rsquo; for this in KB5028997 to resize the partition to allow for updates to install.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/feature-WinRE.jpg" />
     </item>
     
@@ -74,7 +74,7 @@
       <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/device-attributes-cap/</guid>
-      <description>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&amp;rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.</description>
+      <description>Imagine you&amp;rsquo;ve spent time getting your Windows devices enrolled into Intune, they&amp;rsquo;re all getting Device Compliance policies, and you&amp;rsquo;ve finally pulled the trigger on your shiny new Conditional Access Policy that require device compliance for all your users across Windows devices, and low and behold, you&amp;rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/device-attributes-cap/feature-dacap.png" />
     </item>
     
@@ -84,7 +84,7 @@
       <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
-      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
+      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/feature-firewall.png" />
     </item>
     
@@ -94,7 +94,7 @@
       <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
-      <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
+      <description>Fresh off the back of a trawl of a Modern Endpoint Management LinkedIn group, someone wanted the ability to assign existing Settings Catalog profiles in Microsoft Intune to additional Groups&amp;hellip;this sounded like a quick win if you fancy manually doing it, but no one wants that, and as I had experience of dealing with the logic when assigning apps, I thought I&amp;rsquo;d give it a go.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/feature-assignsc.png" />
     </item>
     
@@ -104,7 +104,7 @@
       <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
-      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
+      <description>So you&amp;rsquo;re interested in Endpoint Privilege Management in Microsoft Intune, you&amp;rsquo;ve found, begged for, borrowed or stolen the money for shiny new Intune Suite or EPM licenses, and in you&amp;rsquo;re excitement you&amp;rsquo;ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/feature-epm.png" />
     </item>
     
@@ -114,7 +114,8 @@
       <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
-      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>
+      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
+Microsoft have come to the rescue with their Custom Compliance Settings, so let&amp;rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png" />
     </item>
     
@@ -124,7 +125,7 @@
       <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</guid>
-      <description>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?</description>
+      <description>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/feature-cfg-ap.png" />
     </item>
     
@@ -134,7 +135,7 @@
       <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
-      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
+      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune, especially after you&amp;rsquo;ve happily used a script to Approve Managed Google Play Apps in their 100&amp;rsquo;s as part of migrating to Microsoft Intune from other below par Mobile Device Management solutions.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/feature-appass.jpg" />
     </item>
     
@@ -144,7 +145,7 @@
       <pubDate>Thu, 02 Feb 2023 20:08:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</guid>
-      <description>Apple devices shouldn&amp;rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.</description>
+      <description>I&amp;rsquo;m not going to go over old ground in too much detail, as I&amp;rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/feature-appleos.png" />
     </item>
     
@@ -154,7 +155,7 @@
       <pubDate>Fri, 20 Jan 2023 19:57:07 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/apple-ade-profile-assignment/</guid>
-      <description>Migrating iOS/iPadOS device to Microsoft Intune shouldn&amp;rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&amp;rsquo;t the exception.</description>
+      <description>Now that you&amp;rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&amp;rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you&amp;rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple&amp;rsquo;s Automated Device Enrolment.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/feature-apple-ade.png" />
     </item>
     
@@ -174,7 +175,7 @@
       <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.</description>
+      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/feature-cfgmgrclient.png" />
     </item>
     
@@ -184,7 +185,7 @@
       <pubDate>Tue, 01 Nov 2022 19:54:44 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</guid>
-      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.</description>
+      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods I&amp;rsquo;ve been using in all of my scripts and into the new realms of MSAL (Microsoft Authentication Library).</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/feature-msgraph.png" />
     </item>
     
@@ -194,7 +195,8 @@
       <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
-      <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
+      <description>So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&amp;rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&amp;rsquo;re not focussing on other Operating Systems, we&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png" />
     </item>
     
@@ -204,7 +206,7 @@
       <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid>
-      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
+      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&amp;rsquo;re looking to migrate away from.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/feature-googleplayapps.png" />
     </item>
     
@@ -214,7 +216,8 @@
       <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
+      <description>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&amp;hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
     </item>
     
@@ -234,7 +237,8 @@
       <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/converting-direct-member-collections/</guid>
-      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
+      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?
+No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/converting-direct-member-collections/feature-configmgr-dm.png" />
     </item>
     
@@ -244,7 +248,8 @@
       <pubDate>Sun, 10 Jul 2022 20:34:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</guid>
-      <description>What if you&amp;rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</description>
+      <description>What if you&amp;rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&amp;rsquo;re in luck, I&amp;rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/dell-bios-settings-intune/feature-dell-bios.png" />
     </item>
     
@@ -254,7 +259,8 @@
       <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
+      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.
+Compliance # If you&amp;rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&amp;rsquo;ve integrated these with Conditional Access policies.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/feature-os-compliance.png" />
     </item>
     
@@ -264,7 +270,8 @@
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
-      <description>Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&amp;rsquo;t bother doing their part of the deal.</description>
+      <description>Now I don&amp;rsquo;t think I promised that I&amp;rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&amp;rsquo;d left myself the task of updating 1000&amp;rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/feature-autopilot-bulk-tag.png" />
     </item>
     
@@ -274,7 +281,7 @@
       <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-autopilot-languages/</guid>
-      <description>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&amp;rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.</description>
+      <description>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&amp;rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-languages/feature-autopilot-lang.jpg" />
     </item>
     
@@ -284,7 +291,8 @@
       <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
-      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
+      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.
+So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/feature-bulk-notes.png" />
     </item>
     
@@ -294,7 +302,8 @@
       <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
-      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.</description>
+      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.
+You&amp;rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename/feature-computer-name.png" />
     </item>
     
@@ -304,7 +313,8 @@
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;</description>
+      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
+What you&amp;rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/feature-bitlocker.png" />
     </item>
     

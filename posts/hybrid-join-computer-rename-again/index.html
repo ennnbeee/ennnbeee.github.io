@@ -11,7 +11,7 @@
   <title>Proactively Renaming Hybrid Azure AD Joined Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Proactively Renaming Hybrid Azure AD Joined Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&#39;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&#39;t a good enough identification method for Windows devices." />
+  <meta name="description" content="Updating Windows Autopilot hybrid join device names based on serial numbers updating device certificates using Proactive remediation PowerShell scripts." />
   <meta name="keywords" content="intune, windows, autopilot, remediation, hybrid, powershell, " />
   
   <meta name="robots" content="all" />
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","autopilot","remediation","hybrid","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1381"
+    "wordCount": "1379"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#name-problems">Name Problems</a>
       <ul>
         <li><a href="#certificate-template">Certificate Template</a></li>
@@ -1175,7 +1174,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#name-problems">Name Problems</a>
       <ul>
         <li><a href="#certificate-template">Certificate Template</a></li>
@@ -1245,19 +1243,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&rsquo;t a good enough identification method for Windows devices.</p>
+          <p>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&rsquo;t a good enough identification method for Windows devices.</p>
 <p>So now that it&rsquo;s 2023 it was time to look at this problem once again, mainly because my <a href="/posts/hybrid-join-computer-rename" rel="noopener" target="_blank">old solution</a>
 broke device certificates and an Always On VPN connection that relied on them as part of the Autopilot process.</p>
 
@@ -1843,6 +1829,7 @@ broke device certificates and an Always On VPN connection that relied on them as
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>
@@ -2008,7 +1995,8 @@ broke device certificates and an Always On VPN connection that relied on them as
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2166,7 +2154,7 @@ broke device certificates and an Always On VPN connection that relied on them as
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
         </div>
         
       </div>

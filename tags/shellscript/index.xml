@@ -14,7 +14,7 @@
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</guid>
-      <description>With the availability of the new Microsoft Teams client for macOS, we should build upon an existing script to deploy backgrounds, and update it to support not just the new version but the classic version as well.</description>
+      <description>This isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at deploying backgrounds for Microsoft Teams on macOS, but it&amp;rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&amp;rsquo;t).</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/feature-newteams.png" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Tue, 14 Mar 2023 20:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-backgrounds/</guid>
-      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.</description>
+      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&amp;rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-backgrounds/feature-teamsmac.png" />
     </item>
     

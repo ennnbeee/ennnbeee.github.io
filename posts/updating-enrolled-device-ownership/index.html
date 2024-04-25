@@ -11,7 +11,7 @@
   <title>Updating Enrolled Device Ownership Status &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Updating Enrolled Device Ownership Status &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="What happens if you&#39;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&#39;re in a situation where devices that should be marked as corporate are marked as personal or unknown?" />
+  <meta name="description" content="Updating Microsoft Intune device ownership state to company owned using PowerShell and Graph API." />
   <meta name="keywords" content="intune, enrolment, administration, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -111,7 +111,7 @@
     "keywords": ["intune","enrolment","administration","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1730"
+    "wordCount": "1728"
   }]
   </script>
 
@@ -1140,7 +1140,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#corporate-device-identifiers">Corporate Device Identifiers</a></li>
     <li><a href="#device-ownership-change">Device Ownership Change</a>
       <ul>
@@ -1174,7 +1173,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#corporate-device-identifiers">Corporate Device Identifiers</a></li>
     <li><a href="#device-ownership-change">Device Ownership Change</a>
       <ul>
@@ -1251,19 +1249,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>What happens if you&rsquo;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&rsquo;re in a situation where devices that should be marked as corporate are marked as personal or unknown?</p>
+          <p>What happens if you&rsquo;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&rsquo;re in a situation where devices that should be marked as corporate are marked as personal or unknown?</p>
 <p>This is more of a common situation than you think, with the need to get remote devices managed in a timely fashion, many organisations used User Driven enrolment methods, such as via the Company Portal, to enrol devices into Microsoft Intune, and without Corporate Device Identifiers, or for the case of Windows no support for them, these devices get enrolled as personal devices.</p>
 
 
@@ -2015,7 +2001,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2158,6 +2145,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&rsquo;s of devices.
+So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph.
         </div>
         
       </div>
@@ -2332,6 +2320,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>

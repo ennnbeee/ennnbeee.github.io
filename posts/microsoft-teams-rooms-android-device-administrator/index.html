@@ -11,7 +11,7 @@
   <title>Enrolling Microsoft Teams Room Systems in Intune &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Enrolling Microsoft Teams Room Systems in Intune &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="What if you want to ensure that all of your Microsoft Teams Rooms System accounts, and any future accounts can enrol using Android Device Administrator in Microsoft Intune?" />
+  <meta name="description" content="Enrolling Android Teams Meeting Room devices in Microsoft Intune without compromising security." />
   <meta name="keywords" content="intune, android, teams, enrolment, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Enrolling Microsoft Teams Room Systems in Intune",
     "headline": "Enrolling Microsoft Teams Room Systems in Intune",
     "description": "Enrolling Android Teams Meeting Room devices in Microsoft Intune without compromising security.",
-    "abstract": "What if you want to ensure that all of your Microsoft Teams Rooms System accounts, and any future accounts can enrol using Android Device Administrator in Microsoft Intune?",
+    "abstract": "So it turns out that Android based MTR (Microsoft Teams Rooms) want to enrol into Microsoft Intune using what we generally term as a legacy enrolment method in Android Device Administrator, one in fact, that is recommended to be disabled for \u0026lsquo;All Users\u0026rsquo; as it will take priority over Android Enterprise Personal Device Work Profile enrolment for personal device or BYOD (Bring Your Own Device) scenarios.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/microsoft-teams-rooms-android-device-administrator\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","android","teams","enrolment"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1354"
+    "wordCount": "1352"
   }]
   </script>
 
@@ -1132,7 +1132,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#device-enrolment">Device Enrolment</a>
       <ul>
         <li><a href="#enrolment-restrictions">Enrolment Restrictions</a></li>
@@ -1165,7 +1164,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#device-enrolment">Device Enrolment</a>
       <ul>
         <li><a href="#enrolment-restrictions">Enrolment Restrictions</a></li>
@@ -1241,19 +1239,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>So it turns out that Android based MTR (Microsoft Teams Rooms) want to enrol into Microsoft Intune using what we generally term as a legacy enrolment method in <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-enroll-device-administrator"   target="_blank">
+          <p>So it turns out that Android based MTR (Microsoft Teams Rooms) want to enrol into Microsoft Intune using what we generally term as a legacy enrolment method in <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-enroll-device-administrator"   target="_blank">
     Android Device Administrator</a>, one in fact, that is recommended to be disabled for &lsquo;All Users&rsquo; as it will take priority over <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-dedicated-devices-fully-managed-enroll"   target="_blank">
     Android Enterprise Personal Device Work Profile</a> enrolment for personal device or BYOD (Bring Your Own Device) scenarios.</p>
 <p>This seems easy enough, create a new <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/enrollment-restrictions-set#device-platform"   target="_blank">
@@ -1872,7 +1858,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.
+          We have already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
+Configuration # This time, it&rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&hellip;anything to make life easier for users.
         </div>
         
       </div>
@@ -2014,7 +2001,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&rsquo;t enrol to Intune using mobile data, well there&rsquo;s a fix for that.
+          With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &ldquo;Well what if my users don&rsquo;t have access to a wireless network?&rdquo;, don&rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
         </div>
         
       </div>

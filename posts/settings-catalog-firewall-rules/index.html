@@ -11,7 +11,7 @@
   <title>Modernising Microsoft Intune Firewall Rule Policies &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Modernising Microsoft Intune Firewall Rule Policies &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="If you&#39;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&#39;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&#39;s the catch?" />
+  <meta name="description" content="Migrating existing Microsoft Intune Windows firewall rules to settings catalog profiles using PowerShell and Graph API." />
   <meta name="keywords" content="intune, windows, powershell, graph, settingscatalog, security, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Modernising Microsoft Intune Firewall Rule Policies",
     "headline": "Modernising Microsoft Intune Firewall Rule Policies",
     "description": "Migrating existing Microsoft Intune Windows firewall rules to settings catalog profiles using PowerShell and Graph API.",
-    "abstract": "If you\u0026rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you\u0026rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what\u0026rsquo;s the catch?",
+    "abstract": "If you\u0026rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you\u0026rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/settings-catalog-firewall-rules\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","powershell","graph","settingscatalog","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3389"
+    "wordCount": "3387"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#getting-firewall-rule-profiles">Getting Firewall Rule Profiles</a>
       <ul>
         <li><a href="#endpoint-security-profile">Endpoint Security Profile</a></li>
@@ -1188,7 +1187,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#getting-firewall-rule-profiles">Getting Firewall Rule Profiles</a>
       <ul>
         <li><a href="#endpoint-security-profile">Endpoint Security Profile</a></li>
@@ -1271,19 +1269,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-firewall-rule-tool"   target="_blank">
+          <p>If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-firewall-rule-tool"   target="_blank">
     Rule Migration Tool</a>, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune. So what&rsquo;s the catch?</p>
 <p>Well with the move to <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
     Settings Catalog</a> based policies all over the shop in Microsoft Intune, and the advent of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/reusable-settings-groups"   target="_blank">
@@ -2487,7 +2473,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?
+          So you&rsquo;re interested in Endpoint Privilege Management in Microsoft Intune, you&rsquo;ve found, begged for, borrowed or stolen the money for shiny new Intune Suite or EPM licenses, and in you&rsquo;re excitement you&rsquo;ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices.
         </div>
         
       </div>
@@ -2662,6 +2648,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
+Microsoft have come to the rescue with their Custom Compliance Settings, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.
         </div>
         
       </div>
@@ -2851,7 +2838,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
         </div>
         
       </div>

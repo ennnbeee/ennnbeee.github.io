@@ -11,7 +11,7 @@
   <title>Automatically Resizing the WinRE Partition for Windows Update KB5034441 &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Automatically Resizing the WinRE Partition for Windows Update KB5034441 &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="When Microsoft releases an update that won&#39;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?" />
+  <meta name="description" content="Using Microsoft Intune Remediation PowerShell scripts to increase the Windows Recovery partition size for KB5034441." />
   <meta name="keywords" content="intune, windows, updates, powershell, remediation, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Automatically Resizing the WinRE Partition for Windows Update KB5034441",
     "headline": "Automatically Resizing the WinRE Partition for Windows Update KB5034441",
     "description": "Using Microsoft Intune Remediation PowerShell scripts to increase the Windows Recovery partition size for KB5034441.",
-    "abstract": "When Microsoft releases an update that won\u0026rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?",
+    "abstract": "If you\u0026rsquo;ve been under a rock, or like me, don\u0026rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the Windows Recovery Environment or WinRE, partition when applying Windows Updates like KB5034441, luckily Microsoft released a \u0026lsquo;fix\u0026rsquo; for this in KB5028997 to resize the partition to allow for updates to install.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/winre-parition-resize-kb5034441\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","updates","powershell","remediation"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1671"
+    "wordCount": "1669"
   }]
   </script>
 
@@ -1140,7 +1140,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#detection-methods">Detection Methods</a>
       <ul>
         <li><a href="#first-we-detect">First We Detect</a></li>
@@ -1168,7 +1167,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#detection-methods">Detection Methods</a>
       <ul>
         <li><a href="#first-we-detect">First We Detect</a></li>
@@ -1239,19 +1237,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the <a href="https://support.microsoft.com/en-us/windows/create-a-recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246"   target="_blank">
+          <p>If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the <a href="https://support.microsoft.com/en-us/windows/create-a-recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246"   target="_blank">
     Windows Recovery Environment</a> or WinRE, partition when applying Windows Updates like <a href="https://support.microsoft.com/en-au/topic/kb5034441-windows-recovery-environment-update-for-windows-10-version-21h2-and-22h2-january-9-2024-62c04204-aaa5-4fee-a02a-2fdea17075a8"   target="_blank">
     KB5034441</a>, luckily Microsoft released a &lsquo;fix&rsquo; for this in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf"   target="_blank">
     KB5028997</a> to resize the partition to allow for updates to install.</p>
@@ -1980,7 +1966,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?
+          As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.
         </div>
         
       </div>
@@ -2336,7 +2322,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.
+          So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
         </div>
         
       </div>

@@ -14,7 +14,7 @@
       <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
-      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
+      <description>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/feature-macosncsc.png" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
-      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/ncsc-macos-settings/feature-macosncsc.jpg" />
     </item>
     

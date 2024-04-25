@@ -11,7 +11,7 @@
   <title>macOS National Cyber Security Centre Security Settings in Intune &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="macOS National Cyber Security Centre Security Settings in Intune &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="If you&#39;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&#39;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices." />
+  <meta name="description" content="Applying National Cyber Security Centre (NCSC) settings for macOS devices in Microsoft Intune." />
   <meta name="keywords" content="intune, apple, macos, security, ncsc, mobileconfig, configuration, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "macOS National Cyber Security Centre Security Settings in Intune",
     "headline": "macOS National Cyber Security Centre Security Settings in Intune",
     "description": "Applying National Cyber Security Centre (NCSC) settings for macOS devices in Microsoft Intune.",
-    "abstract": "If you\u0026rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you\u0026rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.",
+    "abstract": "If you\u0026rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you\u0026rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/ncsc-macos-settings\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","apple","macos","security","ncsc","mobileconfig","configuration"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1042"
+    "wordCount": "1040"
   }]
   </script>
 
@@ -1156,7 +1156,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#custom-configuration-template">Custom Configuration Template</a>
       <ul>
         <li><a href="#automatic-updates">Automatic Updates</a></li>
@@ -1180,7 +1179,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#custom-configuration-template">Custom Configuration Template</a>
       <ul>
         <li><a href="#automatic-updates">Automatic Updates</a></li>
@@ -1247,19 +1245,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>If you&rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, <em>complicated</em>.</p>
+          <p>If you&rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, <em>complicated</em>.</p>
 <p>NCSC do provide documented <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos"   target="_blank">
     guides</a> for macOS along with a <a href="https://github.com/ukncsc/Device-Security-Guidance-Configuration-Packs/tree/main/Apple/macOS"   target="_blank">
     GitHub repo</a> containing a script and a list of recommended security settings, but what do these look like in Microsoft Intune? And what if you need to make changes? What about if you have exceptions?</p>
@@ -2074,6 +2060,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>
@@ -2215,7 +2202,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&rsquo;t enrol to Intune using mobile data, well there&rsquo;s a fix for that.
+          With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &ldquo;Well what if my users don&rsquo;t have access to a wireless network?&rdquo;, don&rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
         </div>
         
       </div>
@@ -2374,6 +2361,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>

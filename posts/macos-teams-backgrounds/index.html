@@ -11,7 +11,7 @@
   <title>Deploying Teams Backgrounds to macOS Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Deploying Teams Backgrounds to macOS Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="What happens when a stranger on the Internet asks you to look at something they&#39;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices." />
+  <meta name="description" content="Deploying Microsoft Teams backgrounds for macOS using Shell scripts in Microsoft Intune." />
   <meta name="keywords" content="intune, macos, apple, teams, apps, shellscript, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Deploying Teams Backgrounds to macOS Devices",
     "headline": "Deploying Teams Backgrounds to macOS Devices",
     "description": "Deploying Microsoft Teams backgrounds for macOS using Shell scripts in Microsoft Intune.",
-    "abstract": "What happens when a stranger on the Internet asks you to look at something they\u0026rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.",
+    "abstract": "What happens when a stranger on the Internet asks you to look at something they\u0026rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it\u0026rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/macos-teams-backgrounds\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","macos","apple","teams","apps","shellscript"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1430"
+    "wordCount": "1428"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#teams-meeting-backgrounds">Teams Meeting Backgrounds</a>
       <ul>
         <li><a href="#checking-for-the-teams-app">Checking for the Teams App</a></li>
@@ -1189,7 +1188,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#teams-meeting-backgrounds">Teams Meeting Backgrounds</a>
       <ul>
         <li><a href="#checking-for-the-teams-app">Checking for the Teams App</a></li>
@@ -1273,19 +1271,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy <a href="https://www.microsoft.com/en-us/microsoft-teams/virtual-meeting-backgrounds"   target="_blank">
+          <p>What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy <a href="https://www.microsoft.com/en-us/microsoft-teams/virtual-meeting-backgrounds"   target="_blank">
     Microsoft Teams Backgrounds</a> to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using <a href="https://techcommunity.microsoft.com/t5/microsoft-mechanics-blog/microsoft-teams-premium-experiences-and-how-to-set-it-up/ba-p/3697553"   target="_blank">
     Microsoft Teams Premium Experience</a>.</p>
 
@@ -2139,7 +2125,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2313,7 +2300,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&rsquo;s, so we should find a solution for this bulk assignment approach.
+          No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune, especially after you&rsquo;ve happily used a script to Approve Managed Google Play Apps in their 100&rsquo;s as part of migrating to Microsoft Intune from other below par Mobile Device Management solutions.
         </div>
         
       </div>
@@ -2495,7 +2482,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.
+          I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.
         </div>
         
       </div>

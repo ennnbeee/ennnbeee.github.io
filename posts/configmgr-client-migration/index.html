@@ -11,7 +11,7 @@
   <title>Reinstalling the Configuration Manager Client on Migrated Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Reinstalling the Configuration Manager Client on Migrated Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&#39;re in luck." />
+  <meta name="description" content="Installing the Configuration Manager (SCCM) client on migrating Windows 10 and later devices using PowerShell." />
   <meta name="keywords" content="configmgr, windows, apps, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Reinstalling the Configuration Manager Client on Migrated Devices",
     "headline": "Reinstalling the Configuration Manager Client on Migrated Devices",
     "description": "Installing the Configuration Manager (SCCM) client on migrating Windows 10 and later devices using PowerShell.",
-    "abstract": "Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You\u0026rsquo;re in luck.",
+    "abstract": "Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/configmgr-client-migration\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["configmgr","windows","apps","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1229"
+    "wordCount": "1227"
   }]
   </script>
 
@@ -1132,7 +1132,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#problem-time">Problem Time</a></li>
     <li><a href="#powershell-to-the-rescue">PowerShell to the Rescue</a>
       <ul>
@@ -1156,7 +1155,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#problem-time">Problem Time</a></li>
     <li><a href="#powershell-to-the-rescue">PowerShell to the Rescue</a>
       <ul>
@@ -1223,19 +1221,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&rsquo;re in luck.</p>
+          <p>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&rsquo;re in luck.</p>
 
 
 <h2 class="relative group">Problem Time 
@@ -1862,7 +1848,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2013,6 +2000,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?
+No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.
         </div>
         
       </div>
@@ -2187,6 +2175,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.
         </div>
         
       </div>

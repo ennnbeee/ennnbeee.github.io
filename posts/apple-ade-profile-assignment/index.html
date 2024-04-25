@@ -11,7 +11,7 @@
   <title>Device Migration and Automated Device Enrolment Profile Assignment &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Device Migration and Automated Device Enrolment Profile Assignment &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Migrating iOS/iPadOS device to Microsoft Intune shouldn&#39;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&#39;t the exception." />
+  <meta name="description" content="Automatically assigning Microsoft Intune Automated Device Enrolment profiles to iPhones and iPads using PowerShell and Graph API." />
   <meta name="keywords" content="intune, apple, ios, macos, enrolment, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Device Migration and Automated Device Enrolment Profile Assignment",
     "headline": "Device Migration and Automated Device Enrolment Profile Assignment",
     "description": "Automatically assigning Microsoft Intune Automated Device Enrolment profiles to iPhones and iPads using PowerShell and Graph API.",
-    "abstract": "Migrating iOS\/iPadOS device to Microsoft Intune shouldn\u0026rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn\u0026rsquo;t the exception.",
+    "abstract": "Now that you\u0026rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you\u0026rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you\u0026rsquo;ve got all your iOS\/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple\u0026rsquo;s Automated Device Enrolment.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/apple-ade-profile-assignment\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","apple","ios","macos","enrolment","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1631"
+    "wordCount": "1629"
   }]
   </script>
 
@@ -1156,7 +1156,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#developer-tool-sneaking">Developer Tool Sneaking</a>
       <ul>
         <li><a href="#apple-enrolment-token">Apple Enrolment Token</a></li>
@@ -1185,7 +1184,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#developer-tool-sneaking">Developer Tool Sneaking</a>
       <ul>
         <li><a href="#apple-enrolment-token">Apple Enrolment Token</a></li>
@@ -1257,19 +1255,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Now that you&rsquo;ve made the <del>financial</del> sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/apple-mdm-push-certificate-get"   target="_blank">
+          <p>Now that you&rsquo;ve made the <del>financial</del> sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/apple-mdm-push-certificate-get"   target="_blank">
     Apple Push Certificate</a>, sorted your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios#get-an-apple-automated-device-enrollment-token"   target="_blank">
     Enrolment Token</a>, added <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios#assign-devices-to-the-apple-token-mdm-server"   target="_blank">
     Intune as an MDM provider</a>, and now you&rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios"   target="_blank">
@@ -2050,7 +2036,8 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2374,7 +2361,8 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>

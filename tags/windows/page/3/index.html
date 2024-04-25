@@ -11,7 +11,7 @@
   <title>Windows 10 and later &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Windows 10 and later &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
   
   
   <meta name="robots" content="all" />
@@ -76,7 +76,7 @@
   
   
   <meta property="og:title" content="Windows 10 and later" />
-<meta property="og:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+<meta property="og:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://memv.ennbee.uk/tags/windows/" /><meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
 
@@ -84,7 +84,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://memv.ennbee.uk/logo-card.png" /><meta name="twitter:title" content="Windows 10 and later"/>
-<meta name="twitter:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager."/>
+<meta name="twitter:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products."/>
 
   
   
@@ -1055,6 +1055,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
       </div>
       
     </div>
@@ -1237,7 +1238,8 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+        Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
       </div>
       
     </div>
@@ -1412,7 +1414,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.
+        Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
       </div>
       
     </div>
@@ -1579,7 +1581,8 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?
+        So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?
       </div>
       
     </div>
@@ -1755,6 +1758,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
       </div>
       
     </div>
@@ -1938,6 +1942,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
       </div>
       
     </div>

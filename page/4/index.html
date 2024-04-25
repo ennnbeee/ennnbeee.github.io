@@ -12,7 +12,7 @@
   <title>MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+  <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
   
   
   <meta name="robots" content="all" />
@@ -79,7 +79,7 @@
   
   
   <meta property="og:title" content="MEM v ENNBEE - Battles with Modern Device Management" />
-<meta property="og:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager." />
+<meta property="og:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://memv.ennbee.uk/" /><meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
 
@@ -87,7 +87,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://memv.ennbee.uk/logo-card.png" /><meta name="twitter:title" content="MEM v ENNBEE - Battles with Modern Device Management"/>
-<meta name="twitter:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager."/>
+<meta name="twitter:description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products."/>
 
   
   <script type="application/ld+json">
@@ -96,7 +96,7 @@
     "@type": "WebSite",
     "@id": "https:\/\/memv.ennbee.uk\/",
     "name": "MEM v ENNBEE - Battles with Modern Device Management",
-    "description": "Providing solutions, assistance, and insight to problems you probably didn\u0027t know existed with Microsoft modern device management products, aimed toward those, like me, facing the endless fight for, with, and against Microsoft Intune and Microsoft Configuration Manager.",
+    "description": "Providing solutions, assistance, and insight to problems you probably didn\u0027t know existed with Microsoft modern device management products.",
     "inLanguage": "en",
     "url": "https:\/\/memv.ennbee.uk\/",
     
@@ -1109,7 +1109,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.
+          Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -1418,6 +1419,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?
+No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.
         </div>
         
       </div>
@@ -1592,6 +1594,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.
         </div>
         
       </div>
@@ -1766,6 +1769,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>
@@ -1931,7 +1935,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2239,7 +2244,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
         </div>
         
       </div>
@@ -2381,7 +2386,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.
+          We have already looked at allowing Android Enterprise enrolment using Mobile Data in a previous post, now it&rsquo;s time to look at some of the other provisioning values that can be used to create a custom enrolment QR Code.
+Configuration # This time, it&rsquo;s adding in a WiFi profile, to allow the devices to auto-connect as part of the enrolment process&hellip;anything to make life easier for users.
         </div>
         
       </div>

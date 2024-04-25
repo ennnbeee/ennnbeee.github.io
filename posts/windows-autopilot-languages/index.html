@@ -11,7 +11,7 @@
   <title>Configuring Available User Languages on Windows Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Configuring Available User Languages on Windows Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&#39;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions." />
+  <meta name="description" content="Deploying custom Windows languages for Windows Autopilot devices using PowerShell in Microsoft Intune." />
   <meta name="keywords" content="intune, windows, autopilot, accessibility, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Configuring Available User Languages on Windows Devices",
     "headline": "Configuring Available User Languages on Windows Devices",
     "description": "Deploying custom Windows languages for Windows Autopilot devices using PowerShell in Microsoft Intune.",
-    "abstract": "Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn\u0026rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.",
+    "abstract": "Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn\u0026rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-autopilot-languages\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","autopilot","accessibility","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "936"
+    "wordCount": "934"
   }]
   </script>
 
@@ -1140,7 +1140,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#windows-user-language-list">Windows User Language List</a></li>
@@ -1164,7 +1163,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#windows-user-language-list">Windows User Language List</a></li>
@@ -1231,19 +1229,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.</p>
+          <p>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.</p>
 
 
 <h2 class="relative group">Configuration 
@@ -1799,6 +1785,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>
@@ -1948,7 +1935,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?
+          So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?
         </div>
         
       </div>
@@ -2115,6 +2103,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>

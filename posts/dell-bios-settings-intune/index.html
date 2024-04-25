@@ -11,7 +11,7 @@
   <title>Configuring Dell BIOS Settings with Microsoft Intune &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Configuring Dell BIOS Settings with Microsoft Intune &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="What if you&#39;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?" />
+  <meta name="description" content="Configuring Dell BIOS settings using application in Microsoft Intune with PowerShell." />
   <meta name="keywords" content="intune, windows, dell, apps, bios, hardware, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Configuring Dell BIOS Settings with Microsoft Intune",
     "headline": "Configuring Dell BIOS Settings with Microsoft Intune",
     "description": "Configuring Dell BIOS settings using application in Microsoft Intune with PowerShell.",
-    "abstract": "What if you\u0026rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?",
+    "abstract": "What if you\u0026rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?\nWell you\u0026rsquo;re in luck, I\u0026rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/dell-bios-settings-intune\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","dell","apps","bios","hardware","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1647"
+    "wordCount": "1645"
   }]
   </script>
 
@@ -1156,7 +1156,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#dell-powershell-provider">Dell PowerShell Provider</a>
       <ul>
         <li><a href="#setting-up-the-module">Setting up the Module</a></li>
@@ -1196,7 +1195,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#dell-powershell-provider">Dell PowerShell Provider</a>
       <ul>
         <li><a href="#setting-up-the-module">Setting up the Module</a></li>
@@ -1279,19 +1277,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</p>
+          <p>What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</p>
 <p>Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the <a href="https://docs.microsoft.com/en-us/windows-server/security/device-health-attestation"   target="_blank">
     Windows health attestation report</a> that around 80% of the Windows devices had it turned off.</p>
 <p>(Don&rsquo;t worry, I checked that the devices had <a href="https://www.dell.com/support/kbdoc/en-uk/000133480/uefi-and-secure-boot-faqs"   target="_blank">
@@ -2131,6 +2117,7 @@ Yup.</p>
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>
@@ -2296,7 +2283,8 @@ Yup.</p>
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2454,7 +2442,7 @@ Yup.</p>
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
         </div>
         
       </div>

@@ -11,7 +11,7 @@
   <title>Using Entra ID Device Attributes for Conditional Access Exceptions &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Using Entra ID Device Attributes for Conditional Access Exceptions &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="So you like Intune Device Compliance and the integration with Conditional Access, what about if you&#39;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way." />
+  <meta name="description" content="Using Microsoft Entra ID device attributes to allow for exclusions of Conditional Access Policies." />
   <meta name="keywords" content="powershell, graph, security, cap, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Using Entra ID Device Attributes for Conditional Access Exceptions",
     "headline": "Using Entra ID Device Attributes for Conditional Access Exceptions",
     "description": "Using Microsoft Entra ID device attributes to allow for exclusions of Conditional Access Policies.",
-    "abstract": "So you like Intune Device Compliance and the integration with Conditional Access, what about if you\u0026rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.",
+    "abstract": "Imagine you\u0026rsquo;ve spent time getting your Windows devices enrolled into Intune, they\u0026rsquo;re all getting Device Compliance policies, and you\u0026rsquo;ve finally pulled the trigger on your shiny new Conditional Access Policy that require device compliance for all your users across Windows devices, and low and behold, you\u0026rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/device-attributes-cap\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["powershell","graph","security","cap"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1943"
+    "wordCount": "1941"
   }]
   </script>
 
@@ -1132,7 +1132,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#filtering-devices">Filtering Devices</a>
       <ul>
         <li><a href="#getting-attributes">Getting Attributes</a></li>
@@ -1169,7 +1168,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#filtering-devices">Filtering Devices</a>
       <ul>
         <li><a href="#getting-attributes">Getting Attributes</a></li>
@@ -1249,19 +1247,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting <a href="https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started"   target="_blank">
+          <p>Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting <a href="https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started"   target="_blank">
     Device Compliance</a> policies, and you&rsquo;ve finally pulled the trigger on your shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/conditional-access"   target="_blank">
     Conditional Access Policy</a> that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</p>
 <p>So what next? Use the <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/location-condition"   target="_blank">
@@ -2175,7 +2161,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&rsquo;s the catch?
+          If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune.
         </div>
         
       </div>
@@ -2349,7 +2335,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?
+          So you&rsquo;re interested in Endpoint Privilege Management in Microsoft Intune, you&rsquo;ve found, begged for, borrowed or stolen the money for shiny new Intune Suite or EPM licenses, and in you&rsquo;re excitement you&rsquo;ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices.
         </div>
         
       </div>
@@ -2524,6 +2510,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
+Microsoft have come to the rescue with their Custom Compliance Settings, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.
         </div>
         
       </div>

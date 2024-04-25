@@ -11,7 +11,7 @@
   <title>Enabling BitLocker and WinRE on failed Windows Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Enabling BitLocker and WinRE on failed Windows Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&#39;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too..." />
+  <meta name="description" content="Enabling BitLocker and creation of the Windows RE (Recovery Environment) partition using Microsoft Intune and PowerShell." />
   <meta name="keywords" content="intune, windows, bitlocker, security, encryption, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Enabling BitLocker and WinRE on failed Windows Devices",
     "headline": "Enabling BitLocker and WinRE on failed Windows Devices",
     "description": "Enabling BitLocker and creation of the Windows RE (Recovery Environment) partition using Microsoft Intune and PowerShell.",
-    "abstract": "You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don\u0026rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too\u0026hellip;",
+    "abstract": "You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don\u0026rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too\u0026hellip;\nWhat you\u0026rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/enable-bitlocker-and-winre\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","windows","bitlocker","security","encryption","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "630"
+    "wordCount": "628"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#updating-the-script">Updating the Script</a></li>
@@ -1170,7 +1169,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#updating-the-script">Updating the Script</a></li>
@@ -1235,19 +1233,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;</p>
+          <p>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;</p>
 <p>What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:</p>
 <p><code>The OS volume is unprotected | Windows Recovery Environment (WinRE) isn't configured</code></p>
 
@@ -1655,96 +1641,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Introduction # I&rsquo;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions.
-        </div>
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
-  <a href="/privacy/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-      <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/privacy/">Privacy</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-        
-        <div class="py-1 prose dark:prose-invert">
-          Introduction # This site collects usage data using Google Analytics 4 using cookies, giving us insight into the number of people that visit our website.
+          Introduction # I&rsquo;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions. I&rsquo;m currently the Principal Consultant for Device Management at Phoenix Software Ltd who are the Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments.
         </div>
         
       </div>

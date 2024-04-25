@@ -11,7 +11,7 @@
   <title>Revisiting macOS National Cyber Security Centre Security Settings &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Revisiting macOS National Cyber Security Centre Security Settings &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="With the improved support for macOS devices in Microsoft Intune, it&#39;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance." />
+  <meta name="description" content="Reviewing the National Cyber Security Centre (NCSC) settings in Microsoft Intune for macOS devices using Settings Catalog profiles." />
   <meta name="keywords" content="intune, apple, macos, security, ncsc, configuration, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Revisiting macOS National Cyber Security Centre Security Settings",
     "headline": "Revisiting macOS National Cyber Security Centre Security Settings",
     "description": "Reviewing the National Cyber Security Centre (NCSC) settings in Microsoft Intune for macOS devices using Settings Catalog profiles.",
-    "abstract": "With the improved support for macOS devices in Microsoft Intune, it\u0026rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.",
+    "abstract": "We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/macos-ncsc-revisited\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","apple","macos","security","ncsc","configuration"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1111"
+    "wordCount": "1109"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#ncsc-guidelines">NCSC Guidelines</a>
       <ul>
         <li><a href="#device-password-settings">Device Password Settings</a></li>
@@ -1172,7 +1171,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#ncsc-guidelines">NCSC Guidelines</a>
       <ul>
         <li><a href="#device-password-settings">Device Password Settings</a></li>
@@ -1239,19 +1237,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos"   target="_blank">
+          <p>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos"   target="_blank">
     NCSC platform guidance</a> in <a href="/posts/NCSC-macOS-Settings" rel="noopener" target="_blank">macOS National Cyber Security Centre Security Settings in Intune</a>, but this was when macOS device management in Intune was, at best, in beta.</p>
 <p>General hardening has been covered previously by <a href="https://hmaslowski.com/home/f/macos-security-hardening-with-microsoft-intune"   target="_blank">
     Hubert Maslowski</a> in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including <a href="https://www.ncsc.gov.uk/files/Cyber-Essentials-Requirements-for-Infrastructure-v3-1-January-2023.pdf"   target="_blank">
@@ -2010,7 +1996,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          If you&rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.
+          If you&rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.
         </div>
         
       </div>
@@ -2176,7 +2162,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.
+          What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.
         </div>
         
       </div>
@@ -2358,7 +2344,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.
+          I&rsquo;m not going to go over old ground in too much detail, as I&rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.
         </div>
         
       </div>

@@ -11,7 +11,7 @@
   <title>Creating and Assigning App Categories the Smart Way &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Creating and Assigning App Categories the Smart Way &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&#39;s make one laborious task, less laborious, with a hacky PowerShell script." />
+  <meta name="description" content="Using PowerShell and Graph API to create and assign mobile app categories in Microsoft Intune for iOS and Android devices." />
   <meta name="keywords" content="intune, android, apple, windows, ios, macos, apps, graph, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Creating and Assigning App Categories the Smart Way",
     "headline": "Creating and Assigning App Categories the Smart Way",
     "description": "Using PowerShell and Graph API to create and assign mobile app categories in Microsoft Intune for iOS and Android devices.",
-    "abstract": "What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let\u0026rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.",
+    "abstract": "Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager\u0026hellip;all good fun.\nWhat about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/creating-assigning-app-categories\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","android","apple","windows","ios","macos","apps","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2355"
+    "wordCount": "2353"
   }]
   </script>
 
@@ -1172,7 +1172,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#app-categories">App Categories</a>
       <ul>
         <li><a href="#creating-app-categories">Creating App Categories</a></li>
@@ -1219,7 +1218,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#app-categories">App Categories</a>
       <ul>
         <li><a href="#creating-app-categories">Creating App Categories</a></li>
@@ -1309,19 +1307,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all <em>good</em> fun.</p>
+          <p>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all <em>good</em> fun.</p>
 <p>What about assigning <a href="https://docs.microsoft.com/en-us/mem/intune/apps/apps-add#create-and-edit-categories-for-apps"   target="_blank">
     App Categories</a>, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</p>
 
@@ -2487,6 +2473,7 @@ Data Management
         
         <div class="py-1 prose dark:prose-invert">
           What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.
         </div>
         
       </div>
@@ -2661,6 +2648,7 @@ Data Management
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>
@@ -2826,7 +2814,8 @@ Data Management
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>

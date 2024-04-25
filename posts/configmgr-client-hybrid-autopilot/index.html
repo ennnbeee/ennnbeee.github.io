@@ -11,7 +11,7 @@
   <title>Co-Managing Windows Autopilot Hybrid Join Devices &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="Co-Managing Windows Autopilot Hybrid Join Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?" />
+  <meta name="description" content="Reviewing the options for co-managed Windows devices using Configuration Manager (SCCM) and Microsoft Intune." />
   <meta name="keywords" content="intune, configmgr, autopilot, remediation, windows, powershell, " />
   
   <meta name="robots" content="all" />
@@ -95,7 +95,7 @@
     "name": "Co-Managing Windows Autopilot Hybrid Join Devices",
     "headline": "Co-Managing Windows Autopilot Hybrid Join Devices",
     "description": "Reviewing the options for co-managed Windows devices using Configuration Manager (SCCM) and Microsoft Intune.",
-    "abstract": "Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?",
+    "abstract": "As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/configmgr-client-hybrid-autopilot\/",
     "author" : {
@@ -111,7 +111,7 @@
     "keywords": ["intune","configmgr","autopilot","remediation","windows","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1245"
+    "wordCount": "1243"
   }]
   </script>
 
@@ -1148,7 +1148,6 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#app-requirement-rules">App Requirement Rules</a></li>
     <li><a href="#app-detection-methods">App Detection Methods</a></li>
     <li><a href="#intune-only-mode">Intune Only Mode</a>
@@ -1176,7 +1175,6 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#app-requirement-rules">App Requirement Rules</a></li>
     <li><a href="#app-detection-methods">App Detection Methods</a></li>
     <li><a href="#intune-only-mode">Intune Only Mode</a>
@@ -1247,19 +1245,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/overview"   target="_blank">
+          <p>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/overview"   target="_blank">
     Co-Management</a> or just plain old <a href="https://learn.microsoft.com/en-us/mem/configmgr/tenant-attach/device-sync-actions"   target="_blank">
     Tenant Attach</a>, so imagine my joy when Microsoft released <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/autopilot-enrollment"   target="_blank">
     Co-Management Authority</a> in Intune, and I thought the days of packaging the Configuration Manager Client were over.</p>
@@ -2118,7 +2104,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.
+          Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2276,7 +2263,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
         </div>
         
       </div>
