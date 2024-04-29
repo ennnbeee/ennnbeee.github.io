@@ -14,8 +14,7 @@
       <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
-      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
-Microsoft have come to the rescue with their Custom Compliance Settings, so let&amp;rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</description>
+      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png" />
     </item>
     
@@ -35,8 +34,7 @@ Microsoft have come to the rescue with their Custom Compliance Settings, so let&
       <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
-      <description>So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&amp;rsquo;d look at ways to update other update based compliance policies periodically.
-That time is now, and although we&amp;rsquo;re not focussing on other Operating Systems, we&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.</description>
+      <description>So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&amp;rsquo;d look at ways to update other update based compliance policies periodically.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png" />
     </item>
     
@@ -46,8 +44,7 @@ That time is now, and although we&amp;rsquo;re not focussing on other Operating 
       <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.
-Compliance # If you&amp;rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&amp;rsquo;ve integrated these with Conditional Access policies.</description>
+      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/feature-os-compliance.png" />
     </item>
     

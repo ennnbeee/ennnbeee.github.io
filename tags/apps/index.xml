@@ -24,7 +24,7 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
-      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&amp;rsquo;t we give them a bit of love?</description>
+      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Tue, 14 Mar 2023 20:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-backgrounds/</guid>
-      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&amp;rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.</description>
+      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&amp;rsquo;s not a body part this time.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-backgrounds/feature-teamsmac.png" />
     </item>
     
@@ -54,7 +54,7 @@
       <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices?</description>
+      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/feature-cfgmgrclient.png" />
     </item>
     
@@ -74,8 +74,7 @@
       <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&amp;hellip;all good fun.
-What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?</description>
+      <description>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&amp;hellip;all good fun.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
     </item>
     
@@ -85,8 +84,7 @@ What about assigning App Categories, do you want to be manually updating hundred
       <pubDate>Sun, 10 Jul 2022 20:34:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</guid>
-      <description>What if you&amp;rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
-Well you&amp;rsquo;re in luck, I&amp;rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.</description>
+      <description>What if you&amp;rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/dell-bios-settings-intune/feature-dell-bios.png" />
     </item>
     

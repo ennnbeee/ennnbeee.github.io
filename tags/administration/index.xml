@@ -44,8 +44,7 @@
       <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
-      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.
-So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph.</description>
+      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/feature-bulk-notes.png" />
     </item>
     
