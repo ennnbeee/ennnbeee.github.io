@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Fri, 19 Apr 2024 23:11:03 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/authors/ennbee/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 10:18:36 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/authors/ennbee/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Feature Updates</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</link>
+      <pubDate>Sun, 05 May 2024 10:18:36 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</guid>
+      <description>We&amp;rsquo;re almost there, we&amp;rsquo;ve generated and captured the data from a Feature Update Readiness Report and we&amp;rsquo;ve tagged and grouped devices based on their readiness state using Dynamic Security Groups. All of this is useful for when deploying a Window 11 Feature Update, in this instance 23H2, to devices, so let&amp;rsquo;s look at how we actually deploy the Feature Update to these groups of devices.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/feature-riskupdate.jpg" />
+    </item>
+    
     <item>
       <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title>
       <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</link>
