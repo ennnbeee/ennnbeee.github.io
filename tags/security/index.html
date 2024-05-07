@@ -992,7 +992,7 @@
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1048,7 +1048,6 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         So you&rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.
-I&rsquo;ve been waiting a little while to put this post together, as unlike the monthly release of Windows Updates, macOS updates come few and far between, with the recent release of Sonoma 14.
       </div>
       
     </div>
@@ -1176,7 +1175,7 @@ I&rsquo;ve been waiting a little while to put this post together, as unlike the 
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1223,7 +1222,7 @@ I&rsquo;ve been waiting a little while to put this post together, as unlike the 
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Silently encrypting Windows 10 and later devices in Microsoft Intune isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.
+        So you&rsquo;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?
       </div>
       
     </div>
@@ -1351,7 +1350,7 @@ I&rsquo;ve been waiting a little while to put this post together, as unlike the 
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1406,8 +1405,7 @@ I&rsquo;ve been waiting a little while to put this post together, as unlike the 
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        If you&rsquo;ve been living under a rock, or you don&rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
-Sadly I don&rsquo;t live under a rock, and when I get the pleasure working with customers who are blocking all inbound and outbound traffic from Windows devices unless there is a matching firewall rule, getting these devices to talk to Microsoft Intune and other Microsoft services, can be a bit of a pain without the web service as a reference.
+        It&rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.
       </div>
       
     </div>
@@ -1535,7 +1533,7 @@ Sadly I don&rsquo;t live under a rock, and when I get the pleasure working with 
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1582,8 +1580,7 @@ Sadly I don&rsquo;t live under a rock, and when I get the pleasure working with 
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        So this isn&rsquo;t the first time we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.
-But with the introduction of the Windows Autopatch service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.
+        It&rsquo;s been a while since we&rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.
       </div>
       
     </div>
@@ -1711,7 +1708,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1782,7 +1779,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love?
+        Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.
       </div>
       
     </div>
@@ -1949,7 +1946,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting Device Compliance policies, and you&rsquo;ve finally pulled the trigger on your shiny new Conditional Access Policy that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.
+        So you like Intune Device Compliance and the integration with Conditional Access, what about if you&rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.
       </div>
       
     </div>
@@ -2080,7 +2077,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -2135,7 +2132,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune.
+        If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&rsquo;s the catch?
       </div>
       
     </div>
@@ -2263,7 +2260,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -2310,8 +2307,7 @@ But with the introduction of the Windows Autopatch service, and getting hands on
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
-With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.
+        You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..
       </div>
       
     </div>
@@ -2439,7 +2435,7 @@ With Configuration Manager having the backing of Microsoft SQL, and a hardware i
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -2494,8 +2490,7 @@ With Configuration Manager having the backing of Microsoft SQL, and a hardware i
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.
-General hardening has been covered previously by Hubert Maslowski in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including Cyber Essentials requirements.
+        With the improved support for macOS devices in Microsoft Intune, it&rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.
       </div>
       
     </div>

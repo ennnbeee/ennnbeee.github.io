@@ -14,7 +14,7 @@
       <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid>
-      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&amp;rsquo;re looking to migrate away from.</description>
+      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/feature-googleplayapps.png" />
     </item>
     

@@ -1030,7 +1030,7 @@
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1078,7 +1078,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the Windows Recovery Environment or WinRE, partition when applying Windows Updates like KB5034441, luckily Microsoft released a &lsquo;fix&rsquo; for this in KB5028997 to resize the partition to allow for updates to install.
+          When Microsoft releases an update that won&rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?
         </div>
         
       </div>
@@ -1228,7 +1228,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting Device Compliance policies, and you&rsquo;ve finally pulled the trigger on your shiny new Conditional Access Policy that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.
+          So you like Intune Device Compliance and the integration with Conditional Access, what about if you&rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.
         </div>
         
       </div>
@@ -1338,7 +1338,7 @@
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1394,7 +1394,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune.
+          If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&rsquo;s the catch?
         </div>
         
       </div>
@@ -1504,7 +1504,7 @@
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1552,8 +1552,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
-With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.
+          You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..
         </div>
         
       </div>
@@ -1663,7 +1662,7 @@ With Configuration Manager having the backing of Microsoft SQL, and a hardware i
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1719,8 +1718,7 @@ With Configuration Manager having the backing of Microsoft SQL, and a hardware i
 
         
         <div class="py-1 prose dark:prose-invert">
-          We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.
-General hardening has been covered previously by Hubert Maslowski in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including Cyber Essentials requirements.
+          With the improved support for macOS devices in Microsoft Intune, it&rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.
         </div>
         
       </div>
@@ -1830,7 +1828,7 @@ General hardening has been covered previously by Hubert Maslowski in their post 
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -1878,7 +1876,7 @@ General hardening has been covered previously by Hubert Maslowski in their post 
 
         
         <div class="py-1 prose dark:prose-invert">
-          Fresh off the back of a trawl of a Modern Endpoint Management LinkedIn group, someone wanted the ability to assign existing Settings Catalog profiles in Microsoft Intune to additional Groups&hellip;this sounded like a quick win if you fancy manually doing it, but no one wants that, and as I had experience of dealing with the logic when assigning apps, I thought I&rsquo;d give it a go.
+          Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.
         </div>
         
       </div>
@@ -1988,7 +1986,7 @@ General hardening has been covered previously by Hubert Maslowski in their post 
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -2052,7 +2050,7 @@ General hardening has been covered previously by Hubert Maslowski in their post 
 
         
         <div class="py-1 prose dark:prose-invert">
-          So you&rsquo;re interested in Endpoint Privilege Management in Microsoft Intune, you&rsquo;ve found, begged for, borrowed or stolen the money for shiny new Intune Suite or EPM licenses, and in you&rsquo;re excitement you&rsquo;ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices.
+          So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?
         </div>
         
       </div>
@@ -2162,7 +2160,7 @@ General hardening has been covered previously by Hubert Maslowski in their post 
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -2227,7 +2225,6 @@ General hardening has been covered previously by Hubert Maslowski in their post 
         
         <div class="py-1 prose dark:prose-invert">
           So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
-Microsoft have come to the rescue with their Custom Compliance Settings, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.
         </div>
         
       </div>
@@ -2337,7 +2334,7 @@ Microsoft have come to the rescue with their Custom Compliance Settings, so let&
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
+    Microsoft Intune
   </span>
 </span>
   </span>
@@ -2393,7 +2390,7 @@ Microsoft have come to the rescue with their Custom Compliance Settings, so let&
 
         
         <div class="py-1 prose dark:prose-invert">
-          What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.
+          What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.
         </div>
         
       </div>

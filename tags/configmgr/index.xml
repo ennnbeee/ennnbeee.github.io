@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Configuration Manager on MEM v ENNBEE - Battles with Modern Device Management</title>
+    <title>Microsoft Configuration Manager on MEM v ENNBEE - Battles with Modern Device Management</title>
     <link>https://memv.ennbee.uk/tags/configmgr/</link>
-    <description>Recent content in Configuration Manager on MEM v ENNBEE - Battles with Modern Device Management</description>
+    <description>Recent content in Microsoft Configuration Manager on MEM v ENNBEE - Battles with Modern Device Management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
@@ -14,7 +14,7 @@
       <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</guid>
-      <description>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.</description>
+      <description>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/feature-cfg-ap.png" />
     </item>
     
@@ -24,8 +24,7 @@
       <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.
-Problem Time # With the migration of clients between Configuration Manager environments, or between domains that Configuration Manager manages devices on, you&amp;rsquo;ll inevitably be in the situation where you need to reinstall the client on these devices to ensure that communication still occurs between the client and the Management Point.</description>
+      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/feature-cfgmgrclient.png" />
     </item>
     
@@ -35,8 +34,7 @@ Problem Time # With the migration of clients between Configuration Manager envir
       <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/converting-direct-member-collections/</guid>
-      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?
-No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.</description>
+      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/converting-direct-member-collections/feature-configmgr-dm.png" />
     </item>
     

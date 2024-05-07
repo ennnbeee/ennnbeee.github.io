@@ -14,7 +14,7 @@
       <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
-      <description>Fresh off the back of a trawl of a Modern Endpoint Management LinkedIn group, someone wanted the ability to assign existing Settings Catalog profiles in Microsoft Intune to additional Groups&amp;hellip;this sounded like a quick win if you fancy manually doing it, but no one wants that, and as I had experience of dealing with the logic when assigning apps, I thought I&amp;rsquo;d give it a go.</description>
+      <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/feature-assignsc.png" />
     </item>
     

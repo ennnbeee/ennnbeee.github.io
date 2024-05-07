@@ -14,7 +14,7 @@
       <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/device-attributes-cap/</guid>
-      <description>Imagine you&amp;rsquo;ve spent time getting your Windows devices enrolled into Intune, they&amp;rsquo;re all getting Device Compliance policies, and you&amp;rsquo;ve finally pulled the trigger on your shiny new Conditional Access Policy that require device compliance for all your users across Windows devices, and low and behold, you&amp;rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</description>
+      <description>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&amp;rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/device-attributes-cap/feature-dacap.png" />
     </item>
     

@@ -14,7 +14,7 @@
       <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
-      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune, especially after you&amp;rsquo;ve happily used a script to Approve Managed Google Play Apps in their 100&amp;rsquo;s as part of migrating to Microsoft Intune from other below par Mobile Device Management solutions.</description>
+      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/feature-appass.jpg" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Thu, 02 Feb 2023 20:08:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</guid>
-      <description>I&amp;rsquo;m not going to go over old ground in too much detail, as I&amp;rsquo;ve already covered the importance of keeping your Operating System Compliance Policies up to date in line with the release of new updates, as well as a way to update your compliance policies using Graph and PowerShell.</description>
+      <description>Apple devices shouldn&amp;rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/feature-appleos.png" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Fri, 20 Jan 2023 19:57:07 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/apple-ade-profile-assignment/</guid>
-      <description>Now that you&amp;rsquo;ve made the financial sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&amp;rsquo;ve got your Apple Push Certificate, sorted your Enrolment Token, added Intune as an MDM provider, and now you&amp;rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using Apple&amp;rsquo;s Automated Device Enrolment.</description>
+      <description>Migrating iOS/iPadOS device to Microsoft Intune shouldn&amp;rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&amp;rsquo;t the exception.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/feature-apple-ade.png" />
     </item>
     
@@ -44,8 +44,7 @@
       <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&amp;hellip;all good fun.
-What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?</description>
+      <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
     </item>
     

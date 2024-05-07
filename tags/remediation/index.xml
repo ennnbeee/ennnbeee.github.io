@@ -14,7 +14,7 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
-      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&amp;rsquo;t we give them a bit of love?</description>
+      <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Wed, 31 Jan 2024 20:54:12 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</guid>
-      <description>If you&amp;rsquo;ve been under a rock, or like me, don&amp;rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the Windows Recovery Environment or WinRE, partition when applying Windows Updates like KB5034441, luckily Microsoft released a &amp;lsquo;fix&amp;rsquo; for this in KB5028997 to resize the partition to allow for updates to install.</description>
+      <description>When Microsoft releases an update that won&amp;rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/feature-WinRE.jpg" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</guid>
-      <description>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using Co-Management or just plain old Tenant Attach, so imagine my joy when Microsoft released Co-Management Authority in Intune, and I thought the days of packaging the Configuration Manager Client were over.</description>
+      <description>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/feature-cfg-ap.png" />
     </item>
     
@@ -44,8 +44,7 @@
       <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</guid>
-      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.
-So now that it&amp;rsquo;s 2023 it was time to look at this problem once again, mainly because my old solution broke device certificates and an Always On VPN connection that relied on them as part of the Autopilot process.</description>
+      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/feature-computer-rename.png" />
     </item>
     

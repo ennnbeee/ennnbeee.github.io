@@ -14,7 +14,7 @@
       <pubDate>Tue, 01 Nov 2022 19:54:44 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</guid>
-      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods I&amp;rsquo;ve been using in all of my scripts and into the new realms of MSAL (Microsoft Authentication Library).</description>
+      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/feature-msgraph.png" />
     </item>
     
@@ -24,8 +24,7 @@
       <pubDate>Mon, 08 Aug 2022 21:47:24 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-enrolled-device-ownership/</guid>
-      <description>What happens if you&amp;rsquo;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&amp;rsquo;re in a situation where devices that should be marked as corporate are marked as personal or unknown?
-This is more of a common situation than you think, with the need to get remote devices managed in a timely fashion, many organisations used User Driven enrolment methods, such as via the Company Portal, to enrol devices into Microsoft Intune, and without Corporate Device Identifiers, or for the case of Windows no support for them, these devices get enrolled as personal devices.</description>
+      <description>What happens if you&amp;rsquo;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&amp;rsquo;re in a situation where devices that should be marked as corporate are marked as personal or unknown?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-enrolled-device-ownership/feature-ownership-chg.png" />
     </item>
     
@@ -45,8 +44,7 @@ This is more of a common situation than you think, with the need to get remote d
       <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
-      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.
-So luckily I stumbled upon a post by Paul Wetter about getting and setting notes on devices using Graph API, and specifically the Beta channel of Graph.</description>
+      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/feature-bulk-notes.png" />
     </item>
     

@@ -14,8 +14,7 @@
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>If you&amp;rsquo;ve been living under a rock, or you don&amp;rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&amp;rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
-Sadly I don&amp;rsquo;t live under a rock, and when I get the pleasure working with customers who are blocking all inbound and outbound traffic from Windows devices unless there is a matching firewall rule, getting these devices to talk to Microsoft Intune and other Microsoft services, can be a bit of a pain without the web service as a reference.</description>
+      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/feature-fwrug.png" />
     </item>
     
@@ -25,7 +24,7 @@ Sadly I don&amp;rsquo;t live under a rock, and when I get the pleasure working w
       <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
-      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well, beavering away grabbing firewall rules from a source Windows 10 or later device and punting them straight in Microsoft Intune.</description>
+      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/feature-firewall.png" />
     </item>
     
@@ -35,7 +34,7 @@ Sadly I don&amp;rsquo;t live under a rock, and when I get the pleasure working w
       <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
-      <description>Fresh off the back of a trawl of a Modern Endpoint Management LinkedIn group, someone wanted the ability to assign existing Settings Catalog profiles in Microsoft Intune to additional Groups&amp;hellip;this sounded like a quick win if you fancy manually doing it, but no one wants that, and as I had experience of dealing with the logic when assigning apps, I thought I&amp;rsquo;d give it a go.</description>
+      <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/feature-assignsc.png" />
     </item>
     
@@ -45,7 +44,7 @@ Sadly I don&amp;rsquo;t live under a rock, and when I get the pleasure working w
       <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
-      <description>So you&amp;rsquo;re interested in Endpoint Privilege Management in Microsoft Intune, you&amp;rsquo;ve found, begged for, borrowed or stolen the money for shiny new Intune Suite or EPM licenses, and in you&amp;rsquo;re excitement you&amp;rsquo;ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices.</description>
+      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/feature-epm.png" />
     </item>
     
