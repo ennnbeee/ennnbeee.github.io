@@ -14,7 +14,7 @@
       <pubDate>Sun, 05 May 2024 10:18:36 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</guid>
-      <description>We&amp;rsquo;re almost there, we&amp;rsquo;ve generated and captured the data from a Feature Update Readiness Report and we&amp;rsquo;ve tagged and grouped devices based on their readiness state using Dynamic Security Groups. All of this is useful for when deploying a Window 11 Feature Update, in this instance 23H2, to devices, so let&amp;rsquo;s look at how we actually deploy the Feature Update to these groups of devices.</description>
+      <description>We&amp;rsquo;re almost there now; we&amp;rsquo;ve generated and captured the data from a Feature Update Readiness Report and we&amp;rsquo;ve tagged and grouped devices based on their readiness state using Dynamic Security Groups.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/feature-riskupdate.jpg" />
     </item>
     

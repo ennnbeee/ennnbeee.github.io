@@ -105,7 +105,7 @@
     "name": "Risk Based Windows 11 Feature Update Deployment - Feature Updates",
     "headline": "Risk Based Windows 11 Feature Update Deployment - Feature Updates",
     "description": "Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.",
-    "abstract": "We\u0026rsquo;re almost there, we\u0026rsquo;ve generated and captured the data from a Feature Update Readiness Report and we\u0026rsquo;ve tagged and grouped devices based on their readiness state using Dynamic Security Groups. All of this is useful for when deploying a Window 11 Feature Update, in this instance 23H2, to devices, so let\u0026rsquo;s look at how we actually deploy the Feature Update to these groups of devices.",
+    "abstract": "We\u0026rsquo;re almost there now; we\u0026rsquo;ve generated and captured the data from a Feature Update Readiness Report and we\u0026rsquo;ve tagged and grouped devices based on their readiness state using Dynamic Security Groups.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part3\/",
     "author" : {
@@ -121,7 +121,7 @@
     "keywords": ["intune","windows","updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1943"
+    "wordCount": "1951"
   }]
   </script>
 
@@ -1302,7 +1302,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>We&rsquo;re almost there, we&rsquo;ve generated and captured the data from a <a href="/posts/windows-11-risk-based-deployment-part1" rel="noopener" target="_blank">Feature Update Readiness Report</a> and we&rsquo;ve <a href="/posts/windows-11-risk-based-deployment-part2" rel="noopener" target="_blank">tagged and grouped</a> devices based on their readiness state using Dynamic Security Groups. All of this is useful for when deploying a Window 11 Feature Update, in this instance 23H2, to devices, so let&rsquo;s look at how we actually deploy the Feature Update to these groups of devices.</p>
+          <p>We&rsquo;re almost there now; we&rsquo;ve generated and captured the data from a <a href="/posts/windows-11-risk-based-deployment-part1" rel="noopener" target="_blank">Feature Update Readiness Report</a> and we&rsquo;ve <a href="/posts/windows-11-risk-based-deployment-part2" rel="noopener" target="_blank">tagged and grouped</a> devices based on their readiness state using Dynamic Security Groups. All of this is useful when deploying a Windows 11 Feature Update, in this instance 23H2, to devices, so let&rsquo;s look at how we actually deploy the new Feature Update to these groups of devices and get you on your Windows 11 journey.</p>
 
 
 <h2 class="relative group">Using Feature Update Profiles 
@@ -1389,7 +1389,8 @@
 </tr>
 </tbody>
 </table>
-<p>This, once Microsoft has processed your data, will allow for the delivery of Feature Updates. We&rsquo;re almost done, I promise.</p>
+<p>This, once Microsoft has processed your data, will allow for the delivery of Feature Updates.</p>
+<p>We&rsquo;re almost done, I promise.</p>
 
 
 <h3 class="relative group">Service Pre-requisites 
@@ -1402,7 +1403,7 @@
     </span>        
     
 </h3>
-<p>Well, who&rsquo;s been caught out with the issue where standard monthly updates happily deploy, but you&rsquo;ve been scratching your head about why Feature Updates haven&rsquo;t been offered to a device yet?</p>
+<p>Well, who&rsquo;s been caught out with the issue where monthly updates happily deploy, but you&rsquo;ve been scratching your head about why Feature Updates haven&rsquo;t been offered to a device yet?</p>
 <p>Yeah <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/deployment/windows-update-issues-troubleshooting#feature-updates-arent-being-offered-while-other-updates-are"   target="_blank">
     me neither</a>, but we should at least be definite with this requirement that the <code>Microsoft Account Sign-In Assistant (wlidsvc)</code> is not disabled.</p>
 <table>
