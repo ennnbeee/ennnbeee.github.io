@@ -103,7 +103,7 @@
     "name": "Configuring Dell BIOS Settings with Microsoft Intune",
     "headline": "Configuring Dell BIOS Settings with Microsoft Intune",
     "description": "Configuring Dell BIOS settings using application in Microsoft Intune with PowerShell.",
-    "abstract": "What if you\u0026rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?",
+    "abstract": "What if you\u0026rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?\nWell you\u0026rsquo;re in luck, I\u0026rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/dell-bios-settings-intune\/",
     "author" : {
@@ -2125,6 +2125,7 @@ Yup.</p>
         
         <div class="py-1 prose dark:prose-invert">
           Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.
+Compliance # If you&rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&rsquo;ve integrated these with Conditional Access policies.
         </div>
         
       </div>
@@ -2291,6 +2292,7 @@ Yup.</p>
         
         <div class="py-1 prose dark:prose-invert">
           Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2448,7 +2450,7 @@ Yup.</p>
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.
         </div>
         
       </div>

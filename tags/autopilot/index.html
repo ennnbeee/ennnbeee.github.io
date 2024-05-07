@@ -1063,7 +1063,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.
+        So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love?
       </div>
       
     </div>
@@ -1433,6 +1433,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&rsquo;t a good enough identification method for Windows devices.
+So now that it&rsquo;s 2023 it was time to look at this problem once again, mainly because my old solution broke device certificates and an Always On VPN connection that relied on them as part of the Autopilot process.
       </div>
       
     </div>
@@ -1619,6 +1620,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
       </div>
       
     </div>
@@ -1793,7 +1795,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
+        Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.
       </div>
       
     </div>
@@ -1960,7 +1962,8 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right?
+        So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?
       </div>
       
     </div>
@@ -2136,6 +2139,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
       </div>
       
     </div>

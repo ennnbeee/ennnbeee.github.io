@@ -24,7 +24,8 @@
       <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console?</description>
+      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.
+Problem Time # With the migration of clients between Configuration Manager environments, or between domains that Configuration Manager manages devices on, you&amp;rsquo;ll inevitably be in the situation where you need to reinstall the client on these devices to ensure that communication still occurs between the client and the Management Point.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/feature-cfgmgrclient.png" />
     </item>
     

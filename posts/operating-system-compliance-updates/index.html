@@ -103,7 +103,7 @@
     "name": "Windows Operating System Compliance Updates",
     "headline": "Windows Operating System Compliance Updates",
     "description": "Automatically updating Microsoft Windows 10 and 11 Microsoft Intune device compliance policies using PowerShell and Graph API.",
-    "abstract": "Let\u0026rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using \u0026lsquo;Minimum OS Version\u0026rsquo; and \u0026lsquo;Maximum OS Version\u0026rsquo; is dumb and you should definitely check yourself if you\u0026rsquo;re using this in your environment.",
+    "abstract": "Let\u0026rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using \u0026lsquo;Minimum OS Version\u0026rsquo; and \u0026lsquo;Maximum OS Version\u0026rsquo; is dumb and you should definitely check yourself if you\u0026rsquo;re using this in your environment.\nCompliance # If you\u0026rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you\u0026rsquo;ve integrated these with Conditional Access policies.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/operating-system-compliance-updates\/",
     "author" : {
@@ -2220,6 +2220,7 @@ It did, and a cheeky description based on when the policy was last updated.</p>
         
         <div class="py-1 prose dark:prose-invert">
           Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.
         </div>
         
       </div>
@@ -2385,7 +2386,8 @@ It did, and a cheeky description based on when the policy was last updated.</p>
 
         
         <div class="py-1 prose dark:prose-invert">
-          You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured?
+          You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>
@@ -2543,7 +2545,7 @@ It did, and a cheeky description based on when the policy was last updated.</p>
 
         
         <div class="py-1 prose dark:prose-invert">
-          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.
+          Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.
         </div>
         
       </div>

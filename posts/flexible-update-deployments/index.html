@@ -102,7 +102,7 @@
     "name": "A Flexible Approach to Microsoft Update Deployments",
     "headline": "A Flexible Approach to Microsoft Update Deployments",
     "description": "Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID.",
-    "abstract": "So this isn\u0026rsquo;t the first time we\u0026rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won\u0026rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.",
+    "abstract": "So this isn\u0026rsquo;t the first time we\u0026rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won\u0026rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.\nBut with the introduction of the Windows Autopatch service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I\u0026rsquo;d share my findings, this time across not just Windows Updates.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/flexible-update-deployments\/",
     "author" : {
@@ -2244,6 +2244,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
+With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.
         </div>
         
       </div>
@@ -2425,7 +2426,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.
+          So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love?
         </div>
         
       </div>
@@ -2616,6 +2617,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&rsquo;re not focussing on other Operating Systems, we&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.
         </div>
         
       </div>

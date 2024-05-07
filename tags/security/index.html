@@ -1048,6 +1048,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         So you&rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.
+I&rsquo;ve been waiting a little while to put this post together, as unlike the monthly release of Windows Updates, macOS updates come few and far between, with the recent release of Sonoma 14.
       </div>
       
     </div>
@@ -1406,6 +1407,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         If you&rsquo;ve been living under a rock, or you don&rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
+Sadly I don&rsquo;t live under a rock, and when I get the pleasure working with customers who are blocking all inbound and outbound traffic from Windows devices unless there is a matching firewall rule, getting these devices to talk to Microsoft Intune and other Microsoft services, can be a bit of a pain without the web service as a reference.
       </div>
       
     </div>
@@ -1581,6 +1583,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         So this isn&rsquo;t the first time we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.
+But with the introduction of the Windows Autopatch service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.
       </div>
       
     </div>
@@ -1779,7 +1782,7 @@
       </div>
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.
+        So we&rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love?
       </div>
       
     </div>
@@ -2308,6 +2311,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
+With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.
       </div>
       
     </div>
@@ -2491,6 +2495,7 @@
       
       <div class="py-1 max-w-fit prose dark:prose-invert">
         We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.
+General hardening has been covered previously by Hubert Maslowski in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including Cyber Essentials requirements.
       </div>
       
     </div>

@@ -14,7 +14,8 @@
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured?</description>
+      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
+What you&amp;rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/feature-bitlocker.png" />
     </item>
     

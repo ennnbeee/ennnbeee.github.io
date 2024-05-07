@@ -103,7 +103,7 @@
     "name": "macOS National Cyber Security Centre Security Settings in Intune",
     "headline": "macOS National Cyber Security Centre Security Settings in Intune",
     "description": "Applying National Cyber Security Centre (NCSC) settings for macOS devices in Microsoft Intune.",
-    "abstract": "If you\u0026rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you\u0026rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.",
+    "abstract": "If you\u0026rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you\u0026rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.\nNCSC do provide documented guides for macOS along with a GitHub repo containing a script and a list of recommended security settings, but what do these look like in Microsoft Intune?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/ncsc-macos-settings\/",
     "author" : {
@@ -2067,7 +2067,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured?
+          You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>
@@ -2209,7 +2210,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &ldquo;Well what if my users don&rsquo;t have access to a wireless network?
+          With the change to Android 10+ requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, &ldquo;Well what if my users don&rsquo;t have access to a wireless network?&rdquo;, don&rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.
         </div>
         
       </div>
@@ -2368,6 +2369,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>

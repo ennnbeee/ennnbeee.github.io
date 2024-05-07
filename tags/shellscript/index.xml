@@ -14,7 +14,8 @@
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</guid>
-      <description>This isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at deploying backgrounds for Microsoft Teams on macOS, but it&amp;rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&amp;rsquo;t).</description>
+      <description>This isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at deploying backgrounds for Microsoft Teams on macOS, but it&amp;rsquo;s been a while since we answered an internet strangers question, and hopefully my scripting has come on a little way since then (spoiler: it hasn&amp;rsquo;t).
+Now that the &amp;lsquo;New&amp;rsquo; Microsoft Teams app is the de facto version available to download from Microsoft replacing the &amp;lsquo;Classic&amp;rsquo; one, we should at least look at how it handles uploaded backgrounds and if required update our existing script to support not only the &amp;lsquo;Classic&amp;rsquo; version, but the &amp;lsquo;New&amp;rsquo; version too.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/feature-newteams.png" />
     </item>
     
@@ -24,7 +25,7 @@
       <pubDate>Tue, 14 Mar 2023 20:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-teams-backgrounds/</guid>
-      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&amp;rsquo;s not a body part this time.</description>
+      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&amp;rsquo;s not a body part this time. So here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using Microsoft Teams Premium Experience.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-backgrounds/feature-teamsmac.png" />
     </item>
     

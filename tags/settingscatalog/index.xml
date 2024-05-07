@@ -14,7 +14,8 @@
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>If you&amp;rsquo;ve been living under a rock, or you don&amp;rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&amp;rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.</description>
+      <description>If you&amp;rsquo;ve been living under a rock, or you don&amp;rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&amp;rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
+Sadly I don&amp;rsquo;t live under a rock, and when I get the pleasure working with customers who are blocking all inbound and outbound traffic from Windows devices unless there is a matching firewall rule, getting these devices to talk to Microsoft Intune and other Microsoft services, can be a bit of a pain without the web service as a reference.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/feature-fwrug.png" />
     </item>
     

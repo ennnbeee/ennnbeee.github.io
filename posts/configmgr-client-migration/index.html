@@ -101,7 +101,7 @@
     "name": "Reinstalling the Configuration Manager Client on Migrated Devices",
     "headline": "Reinstalling the Configuration Manager Client on Migrated Devices",
     "description": "Installing the Configuration Manager (SCCM) client on migrating Windows 10 and later devices using PowerShell.",
-    "abstract": "Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console?",
+    "abstract": "Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You\u0026rsquo;re in luck.\nProblem Time # With the migration of clients between Configuration Manager environments, or between domains that Configuration Manager manages devices on, you\u0026rsquo;ll inevitably be in the situation where you need to reinstall the client on these devices to ensure that communication still occurs between the client and the Management Point.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/configmgr-client-migration\/",
     "author" : {
@@ -1855,6 +1855,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all good fun.
+What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories?
         </div>
         
       </div>
@@ -2180,6 +2181,7 @@ No is the answer, there I said it. Mainly because they require actual effort and
         
         <div class="py-1 prose dark:prose-invert">
           What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?
+Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the Windows health attestation report that around 80% of the Windows devices had it turned off.
         </div>
         
       </div>

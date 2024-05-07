@@ -100,7 +100,7 @@
     "name": "Enrolling Android Enterprise devices Using Mobile Data",
     "headline": "Enrolling Android Enterprise devices Using Mobile Data",
     "description": "Modifying Microsoft Intune Android Enterprise QR codes allowing enrolment over mobile data networks.",
-    "abstract": "With the change to Android 10\u002b requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, \u0026ldquo;Well what if my users don\u0026rsquo;t have access to a wireless network?",
+    "abstract": "With the change to Android 10\u002b requiring a wireless network to go through the Fully Managed device enrolment, you may be asking, \u0026ldquo;Well what if my users don\u0026rsquo;t have access to a wireless network?\u0026rdquo;, don\u0026rsquo;t fret, with a bit of effort you can regenerate a new QR code that allows the use of Mobile Data.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/android-enterprise-enrolment-mobile-data\/",
     "author" : {
@@ -1604,6 +1604,7 @@
         
         <div class="py-1 prose dark:prose-invert">
           You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.
+You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.
         </div>
         
       </div>
@@ -1769,7 +1770,8 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured?
+          You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&hellip;
+What you&rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:
         </div>
         
       </div>

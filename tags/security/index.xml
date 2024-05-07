@@ -14,7 +14,8 @@
       <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
-      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
+      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.
+I&amp;rsquo;ve been waiting a little while to put this post together, as unlike the monthly release of Windows Updates, macOS updates come few and far between, with the recent release of Sonoma 14.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/feature-macup.jpeg" />
     </item>
     
@@ -34,7 +35,8 @@
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>If you&amp;rsquo;ve been living under a rock, or you don&amp;rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&amp;rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.</description>
+      <description>If you&amp;rsquo;ve been living under a rock, or you don&amp;rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&amp;rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a web service.
+Sadly I don&amp;rsquo;t live under a rock, and when I get the pleasure working with customers who are blocking all inbound and outbound traffic from Windows devices unless there is a matching firewall rule, getting these devices to talk to Microsoft Intune and other Microsoft services, can be a bit of a pain without the web service as a reference.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/feature-fwrug.png" />
     </item>
     
@@ -44,7 +46,8 @@
       <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid>
-      <description>So this isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&amp;rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.</description>
+      <description>So this isn&amp;rsquo;t the first time we&amp;rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&amp;rsquo;t be the last time either, especially with declarative device management looming, for Apple and hopefully Windows devices, covering configuration of software updates.
+But with the introduction of the Windows Autopatch service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&amp;rsquo;d share my findings, this time across not just Windows Updates.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/feature-updates.jpg" />
     </item>
     
@@ -54,7 +57,7 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
-      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.</description>
+      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&amp;rsquo;t we give them a bit of love?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
     </item>
     
@@ -84,7 +87,8 @@
       <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
-      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.</description>
+      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.
+With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/feature-wu.png" />
     </item>
     
@@ -94,7 +98,8 @@
       <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
-      <description>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.</description>
+      <description>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the NCSC platform guidance in macOS National Cyber Security Centre Security Settings in Intune, but this was when macOS device management in Intune was, at best, in beta.
+General hardening has been covered previously by Hubert Maslowski in their post that covers device compliance and configuration settings, but we&amp;rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including Cyber Essentials requirements.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/feature-macosncsc.png" />
     </item>
     
@@ -114,7 +119,8 @@
       <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
-      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>
+      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?
+Microsoft have come to the rescue with their Custom Compliance Settings, so let&amp;rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png" />
     </item>
     
@@ -124,7 +130,8 @@
       <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
-      <description>So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&amp;rsquo;d look at ways to update other update based compliance policies periodically.</description>
+      <description>So one of those rainy days is here, finally, and as I mentioned in a previous post many months ago, I said I&amp;rsquo;d look at ways to update other update based compliance policies periodically.
+That time is now, and although we&amp;rsquo;re not focussing on other Operating Systems, we&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png" />
     </item>
     
@@ -134,7 +141,8 @@
       <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
+      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.
+Compliance # If you&amp;rsquo;re already using Microsoft Intune compliance policies, good for you, and extra points if you&amp;rsquo;ve integrated these with Conditional Access policies.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/feature-os-compliance.png" />
     </item>
     
@@ -144,7 +152,8 @@
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
-      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.</description>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security (CIS), Cyber Security Essentials (CSE), or National Cyber Security Centre (NCSC), you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated.
+NCSC do provide documented guides for macOS along with a GitHub repo containing a script and a list of recommended security settings, but what do these look like in Microsoft Intune?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/ncsc-macos-settings/feature-macosncsc.jpg" />
     </item>
     
@@ -154,7 +163,8 @@
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured?</description>
+      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;
+What you&amp;rsquo;ll see in either the BitLocker-API event log, or within the Encryption Readiness reporting in Microsoft Intune the following, glorious error:</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/feature-bitlocker.png" />
     </item>
     

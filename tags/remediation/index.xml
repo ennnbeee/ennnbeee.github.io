@@ -14,7 +14,7 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
-      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.</description>
+      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&amp;rsquo;t we give them a bit of love?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
     </item>
     
@@ -44,7 +44,8 @@
       <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</guid>
-      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.</description>
+      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.
+So now that it&amp;rsquo;s 2023 it was time to look at this problem once again, mainly because my old solution broke device certificates and an Always On VPN connection that relied on them as part of the Autopilot process.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/feature-computer-rename.png" />
     </item>
     

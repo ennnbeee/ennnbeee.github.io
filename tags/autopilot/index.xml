@@ -14,7 +14,7 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
-      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise.</description>
+      <description>So we&amp;rsquo;re all onboard with the New Microsoft Store, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&amp;rsquo;t we give them a bit of love?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/feature-storeapps.png" />
     </item>
     
@@ -34,7 +34,8 @@
       <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</guid>
-      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.</description>
+      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.
+So now that it&amp;rsquo;s 2023 it was time to look at this problem once again, mainly because my old solution broke device certificates and an Always On VPN connection that relied on them as part of the Autopilot process.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/feature-computer-rename.png" />
     </item>
     
@@ -44,7 +45,8 @@
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
-      <description>Now I don&amp;rsquo;t think I promised that I&amp;rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.</description>
+      <description>Now I don&amp;rsquo;t think I promised that I&amp;rsquo;d cover off bulk tagging Autopilot devices in a previous post, but you know, I was running low on things to write about. So here we are.
+As I like to practice what I preach, I&amp;rsquo;d left myself the task of updating 1000&amp;rsquo;s of Autopilot devices with a new Group Tag after a successful Proof-of-Concept implementation of a suitable convention and syntax.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/feature-autopilot-bulk-tag.png" />
     </item>
     
@@ -54,7 +56,7 @@
       <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-autopilot-languages/</guid>
-      <description>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&amp;rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis.</description>
+      <description>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&amp;rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions, needing a Library Kiosk machine to have a set of languages available to users upon login to the machine.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-languages/feature-autopilot-lang.jpg" />
     </item>
     
@@ -64,7 +66,8 @@
       <pubDate>Thu, 28 Apr 2022 10:03:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</guid>
-      <description>So you&amp;rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&amp;rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right?</description>
+      <description>So you&amp;rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&amp;rsquo;re probably already familiar with the Autopilot dynamic group queries used for targetting these devices, right? Good.
+So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/feature-autopilot-tags.png" />
     </item>
     
@@ -74,7 +77,8 @@
       <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
-      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.</description>
+      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.
+You&amp;rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by Michael Niehaus can help.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename/feature-computer-name.png" />
     </item>
     
