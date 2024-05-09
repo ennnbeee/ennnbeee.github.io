@@ -8,16 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Risk Based Windows 11 Feature Update Deployment - Feature Updates &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Feature Updates &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Configuring Google Chrome for Platform SSO on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
+  <meta name="title" content="Configuring Google Chrome for Platform SSO on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk." />
-  <meta name="keywords" content="intune, windows, updates, groups, powershell, graph, " />
+  <meta name="description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO" />
+  <meta name="keywords" content="intune, apple, macos, configuration, mobileconfig, " />
   
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/" />
+  <link rel="canonical" href="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/" />
   
   
   
@@ -73,28 +73,25 @@
   
   
   
-  <meta property="og:url" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/">
+  <meta property="og:url" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
-  <meta property="og:title" content="Risk Based Windows 11 Feature Update Deployment - Feature Updates">
-  <meta property="og:description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.">
+  <meta property="og:title" content="Configuring Google Chrome for Platform SSO on macOS">
+  <meta property="og:description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-05-05T10:18:36+00:00">
-    <meta property="article:modified_time" content="2024-05-05T10:18:36+00:00">
+    <meta property="article:published_time" content="2024-05-08T22:49:39+01:00">
+    <meta property="article:modified_time" content="2024-05-08T22:49:39+01:00">
     <meta property="article:tag" content="Microsoft Intune">
-    <meta property="article:tag" content="Windows 10 and later">
-    <meta property="article:tag" content="Updates">
-    <meta property="article:tag" content="Groups">
-    <meta property="article:tag" content="PowerShell">
-    <meta property="article:tag" content="Graph API">
-    <meta property="og:image" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/feature-riskupdate.jpg">
-      <meta property="og:see_also" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
-      <meta property="og:see_also" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/">
+    <meta property="article:tag" content="Apple">
+    <meta property="article:tag" content="macOS">
+    <meta property="article:tag" content="Configuration">
+    <meta property="article:tag" content="mobileconfig">
+    <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/feature-macossso.png">
 
   <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/feature-riskupdate.jpg"><meta name="twitter:title" content="Risk Based Windows 11 Feature Update Deployment - Feature Updates">
-<meta name="twitter:description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.">
+<meta name="twitter:image" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/feature-macossso.png"><meta name="twitter:title" content="Configuring Google Chrome for Platform SSO on macOS">
+<meta name="twitter:description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO">
 
   
   <script type="application/ld+json">
@@ -102,26 +99,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "Risk Based Windows 11 Feature Update Deployment - Feature Updates",
-    "headline": "Risk Based Windows 11 Feature Update Deployment - Feature Updates",
-    "description": "Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.",
-    "abstract": "Using the data captured from a Windows 11 Feature Update Readiness report to successfully tag device attributes to device objects, and group them based on risk, we now look at how to deploy Feature Updates to these devices in a controlled manner.",
+    "name": "Configuring Google Chrome for Platform SSO on macOS",
+    "headline": "Configuring Google Chrome for Platform SSO on macOS",
+    "description": "Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO",
+    "abstract": "With all the hype about Platform SSO on macOS devices, now is the time to try out not just the standard functionality, but the integration into web browsers such as Google Chrome. We take a look at how to configure this using Microsoft Intune.",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part3\/",
+    "url" : "https:\/\/memv.ennbee.uk\/posts\/macos-platformsso-google-chrome\/",
     "author" : {
       "@type": "Person",
       "name": " "
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-05-05T10:18:36\u002b00:00",
-    "datePublished": "2024-05-05T10:18:36\u002b00:00",
+    "dateCreated": "2024-05-08T22:49:39\u002b01:00",
+    "datePublished": "2024-05-08T22:49:39\u002b01:00",
     
-    "dateModified": "2024-05-05T10:18:36\u002b00:00",
+    "dateModified": "2024-05-08T22:49:39\u002b01:00",
     
-    "keywords": ["intune","windows","updates","groups","powershell","graph"],
+    "keywords": ["intune","apple","macos","configuration","mobileconfig"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1951"
+    "wordCount": "1696"
   }]
   </script>
 
@@ -825,7 +822,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/windows-11-risk-based-deployment-part3/feature-riskupdate.jpg);">
+    style="background-image:url(/posts/macos-platformsso-google-chrome/feature-macossso.png);">
     
 
 
@@ -851,7 +848,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Risk Based Windows 11 Feature Update Deployment - Feature Updates
+      Configuring Google Chrome for Platform SSO on macOS
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -896,7 +893,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-05 10:18:36 &#43;0000 UTC">5 May 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-05-08 22:49:39 &#43;0100 &#43;0100">8 May 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -909,7 +906,7 @@
       
     
   
-  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part3/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/macOS-PlatformSSO-Google-Chrome/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -971,42 +968,34 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    Apple
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
+    macOS
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configuration/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Groups
+    Configuration
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mobileconfig/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
+    mobileconfig
   </span>
 </span>
   </span>
@@ -1166,22 +1155,18 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#using-feature-update-profiles">Using Feature Update Profiles</a>
+    <li><a href="#browser-support">Browser Support</a></li>
+    <li><a href="#platform-sso-configuration">Platform SSO Configuration</a></li>
+    <li><a href="#google-chrome-deployment">Google Chrome Deployment</a>
       <ul>
-        <li><a href="#licensing-pre-requisites">Licensing Pre-requisites</a></li>
-        <li><a href="#telemetry-pre-requisites">Telemetry Pre-requisites</a></li>
-        <li><a href="#service-pre-requisites">Service Pre-requisites</a></li>
+        <li><a href="#required-app-deployment">Required App Deployment</a></li>
+        <li><a href="#available-app-deployment">Available App Deployment</a></li>
       </ul>
     </li>
-    <li><a href="#targetting-feature-update-profiles">Targetting Feature Update Profiles</a>
+    <li><a href="#google-chrome-configuration">Google Chrome Configuration</a>
       <ul>
-        <li><a href="#feature-update-dynamic-groups">Feature Update Dynamic Groups</a></li>
-        <li><a href="#feature-update-version">Feature Update Version</a></li>
-      </ul>
-    </li>
-    <li><a href="#deployment-feature-update-profiles">Deployment Feature Update Profiles</a>
-      <ul>
-        <li><a href="#deploying-windows-11-feature-updates">Deploying Windows 11 Feature Updates</a></li>
+        <li><a href="#custom-configuration-profiles">Custom Configuration Profiles</a></li>
+        <li><a href="#custom-template">Custom Template</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -1198,22 +1183,18 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#using-feature-update-profiles">Using Feature Update Profiles</a>
+    <li><a href="#browser-support">Browser Support</a></li>
+    <li><a href="#platform-sso-configuration">Platform SSO Configuration</a></li>
+    <li><a href="#google-chrome-deployment">Google Chrome Deployment</a>
       <ul>
-        <li><a href="#licensing-pre-requisites">Licensing Pre-requisites</a></li>
-        <li><a href="#telemetry-pre-requisites">Telemetry Pre-requisites</a></li>
-        <li><a href="#service-pre-requisites">Service Pre-requisites</a></li>
+        <li><a href="#required-app-deployment">Required App Deployment</a></li>
+        <li><a href="#available-app-deployment">Available App Deployment</a></li>
       </ul>
     </li>
-    <li><a href="#targetting-feature-update-profiles">Targetting Feature Update Profiles</a>
+    <li><a href="#google-chrome-configuration">Google Chrome Configuration</a>
       <ul>
-        <li><a href="#feature-update-dynamic-groups">Feature Update Dynamic Groups</a></li>
-        <li><a href="#feature-update-version">Feature Update Version</a></li>
-      </ul>
-    </li>
-    <li><a href="#deployment-feature-update-profiles">Deployment Feature Update Profiles</a>
-      <ul>
-        <li><a href="#deploying-windows-11-feature-updates">Deploying Windows 11 Feature Updates</a></li>
+        <li><a href="#custom-configuration-profiles">Custom Configuration Profiles</a></li>
+        <li><a href="#custom-template">Custom Template</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -1270,169 +1251,224 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         
         
-<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
-    
-    <summary
-        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        Risk Based Windows 11 Feature Update Deployment - This article is part of a series.
-    </summary>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/">
-            Part 1: Risk Based Windows 11 Feature Update Deployment - Reporting
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
-            Part 2: Risk Based Windows 11 Feature Update Deployment - Device Attributes
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 3: This Article
-    </div>
-    
-    
-
-
-</details>
-
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>We&rsquo;re almost there now; we&rsquo;ve generated and captured the data from a <a href="/posts/windows-11-risk-based-deployment-part1" rel="noopener" target="_blank">Feature Update Readiness Report</a> and we&rsquo;ve <a href="/posts/windows-11-risk-based-deployment-part2" rel="noopener" target="_blank">tagged and grouped</a> devices based on their readiness state using Dynamic Security Groups. All of this is useful when deploying a Windows 11 Feature Update, in this instance 23H2, to devices, so let&rsquo;s look at how we actually deploy the new Feature Update to these groups of devices and get you on your Windows 11 journey.</p>
+          <p>So it&rsquo;s finally here, after all the <a href="https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280"   target="_blank">
+    coming soon</a> announcements, and the promise that we can use Entra ID authentication methods on macOS devices, we now have <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos"   target="_blank">
+    Platform SSO</a> at our disposal in Microsoft Intune, well at least in <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/public-preview"   target="_blank">
+    Public Preview</a>.</p>
+<p>I&rsquo;m not going to deep dive into configuring Platform SSO as I&rsquo;ll assume you&rsquo;ve either already had a go yourself, or found <a href="https://www.intuneirl.com/say-bye-felicia-to-passwords-secure-enclave-takes-mac-sso-to-the-next-level/"   target="_blank">
+    someone else</a> who has, as honestly it&rsquo;s now a massive selling point of moving macOS devices into Microsoft Intune away from other MDM solutions.</p>
+<p>Now we can use Entra ID account for SSO on the macOS device itself, what about our good friend the web browser and in particular Google Chrome?</p>
 
 
-<h2 class="relative group">Using Feature Update Profiles 
-    <div id="using-feature-update-profiles" class="anchor"></div>
+<h2 class="relative group">Browser Support 
+    <div id="browser-support" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#using-feature-update-profiles" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#browser-support" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Yes, I am usually against silently paywalled areas of Microsoft Intune, but there isn&rsquo;t really any better way of getting devices upgraded to a Feature Update in a controlled manner, you could use <a href="https://learn.microsoft.com/en-gb/windows/client-management/mdm/policy-csp-Update?WT.mc_id=Portal-Microsoft_Intune_Workflows#targetreleaseversion"   target="_blank">
-    <code>Target Release Version</code></a> but then you&rsquo;re risking all devices updating all at once, or using deferral settings for Feature Updates in Windows Update Rings, but that all relies on the data the Feature Update is released, not ideal really.</p>
-<p>So I&rsquo;m sorry, if you&rsquo;re not already covered by one of the (at time of writing) license pre-requisites to use <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-10-feature-updates"   target="_blank">
-    Feature Update profiles</a> then I suggest finding some cash down the back of the sofa.</p>
-
-
-<h3 class="relative group">Licensing Pre-requisites 
-    <div id="licensing-pre-requisites" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#licensing-pre-requisites" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>So let&rsquo;s make sure you&rsquo;re covered by the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-10-feature-updates#prerequisites"   target="_blank">
-    requirements</a> for Feature Update first, starting with the licenses, make sure your are covered for the &lsquo;Windows Update for Business deployment service&rsquo; with have one of the below licenses:</p>
-<ul>
-<li>Windows 10/11 Enterprise E3 or E5 (included in Microsoft 365 F3, E3, or E5)</li>
-<li>Windows 10/11 Education A3 or A5 (included in Microsoft 365 A3 or A5)</li>
-<li>Windows Virtual Desktop Access E3 or E5</li>
-<li>Microsoft 365 Business Premium</li>
-</ul>
+<p>If like me you&rsquo;ve been patiently waiting for Platform SSO to appear, you&rsquo;ve probably already looked at the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#prerequisites"   target="_blank">
+    pre-requisites</a> for configuration, so let&rsquo;s just assume you&rsquo;ve done these already, or you&rsquo;re a least aware of them, and if you haven&rsquo;t sorted them, crack on and sort yourself out.</p>
+<p>The bit we&rsquo;re interested in is the supported browsers, and <em>shock</em>, both Microsoft Edge and Safari are supported out the box already (ish). Google Chrome however needs a little more convincing, as it does on Windows, to work with Single Sign On configurations.</p>
 <blockquote>
-<p>In addition to a license for Intune, your organization must have one of the following subscriptions that include a license for Windows Update for Business deployment service.</p>
+<p>Platform SSO requires you install and enable the Windows Accounts extension. You can add the app to Intune, and assign it to the devices that use Google Chrome.</p>
 </blockquote>
-<p>That should be pretty easy to sort out, it&rsquo;s only <em>one</em> license isn&rsquo;t it Microsoft? Please don&rsquo;t audit me.</p>
+<p>That last line is interesting though Microsoft, as deploying Google Chrome extensions isn&rsquo;t as easy as <strong>click</strong> <strong>click</strong> <strong>next</strong> <strong>OK</strong>.</p>
+<p>Luckily though, Microsoft have provided links to <a href="https://support.google.com/chrome/a/answer/7550274"   target="_blank">
+    setting up Google Chrome on macOS</a> and how to configure the <a href="https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist"   target="_blank">
+    forced installation of extensions</a> which we&rsquo;ll be utilising to make Google Chrome and Platform SSO play nicely.</p>
 
 
-<h3 class="relative group">Telemetry Pre-requisites 
-    <div id="telemetry-pre-requisites" class="anchor"></div>
+<h2 class="relative group">Platform SSO Configuration 
+    <div id="platform-sso-configuration" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#telemetry-pre-requisites" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#platform-sso-configuration" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>Reading through the other requirements, one of which we <a href="/posts/windows-11-risk-based-deployment-part1/#report-pre-requisites" rel="noopener" target="_blank">already touched upon</a> in part one, and you should have configured as part of using the Feature Update Readiness Report, is telemetry data.</p>
-<p>If you&rsquo;ve gotten to this part of the series and you&rsquo;re still wondering why your reports are empty, it&rsquo;s probably the fact that when Windows 10 was first released all those years ago, you aggressively disabled telemetry reporting for fear of Microsoft using your data.</p>
-<p>Well, here we are now, needed this telemetry data, go and configure a <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
-    Settings Catalog</a> profile with the settings below and assign it to all your devices, do it now.</p>
+</h2>
+<p>Yes, I did say I wasn&rsquo;t going to dig into the Platform SSO configuration, but without actually configuring it we&rsquo;re not going to be able to utilise the authentication method into Google Chrome, so if you cba following the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune"   target="_blank">
+    Microsoft Learn article</a> have a look at the below, and the exported <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/SSOPlatformSettings.json"   target="_blank">
+    JSON</a> which you can <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog?tabs=sc-search-filter%2Csc-reporting#import-and-export-a-profile"   target="_blank">
+    import</a> into your own Microsoft Intune tenant if you&rsquo;re <del>lazy</del> productive with your time.</p>
 <table>
 <thead>
 <tr>
 <th>Category</th>
 <th>Setting</th>
 <th>Value</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>System</td>
-<td>Allow Telemetry</td>
-<td><code>Basic</code></td>
-<td>Sends all required telemetry information to Microsoft.</td>
+<td>Authentication</td>
+<td>Authentication Method (Deprecated)</td>
+<td><code>Password</code></td>
 </tr>
 <tr>
-<td>System</td>
-<td>Configure Telemetry Opt In Change Notification</td>
-<td><code>Disable telemetry change notifications</code></td>
-<td>Stops users panicking about data, what they don&rsquo;t know won&rsquo;t hurt them.</td>
+<td>Authentication</td>
+<td>Screen Locked Behavior</td>
+<td><code>Do Not Handle</code></td>
 </tr>
 <tr>
-<td>System</td>
-<td>Configure Telemetry Opt In Settings Ux</td>
-<td><code>Disable Telemetry opt-in Settings</code></td>
-<td>Stops users from changing telemetry settings</td>
+<td>Authentication</td>
+<td>Registration Token</td>
+<td><code>{{DEVICEREGISTRATION}}</code></td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Team Identifier</td>
+<td><code>UBF8T346G9</code></td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Extension Identifier</td>
+<td><code>com.microsoft.CompanyPortalMac.ssoextension</code></td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Type</td>
+<td><code>Redirect</code></td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>URLs</td>
+<td><code>https://login.microsoftonline.com</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>https://login.microsoft.com</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>https://sts.windows.net</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>https://login-us.microsoftonline.com</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>https://login.microsoftonline.us</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>Account Display Name</td>
+<td><code>MEM v ENNBEE Account</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>Authentication Method</td>
+<td><code>Password</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>Enable Authorization</td>
+<td><code>Enabled</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>Enable Create User At Login</td>
+<td><code>Enabled</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>Login Frequency</td>
+<td><code>64800</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>New User Authorization Mode</td>
+<td><code>Standard</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>Use Shared Device Keys</td>
+<td><code>Enabled</code></td>
+</tr>
+<tr>
+<td>Authentication &gt; Platform SSO</td>
+<td>User Authorization Mode</td>
+<td><code>Standard</code></td>
 </tr>
 </tbody>
 </table>
-<p>This, once Microsoft has processed your data, will allow for the delivery of Feature Updates.</p>
-<p>We&rsquo;re almost done, I promise.</p>
+<p>Assigning this to a group of test devices, yes I do actually test things, you should get the glorious device registration and <a href="aka.ms/IntuneForMac"  >
+    sign-in experience</a> with Entra ID credentials we&rsquo;ve all been after.</p>
+
+  
 
 
-<h3 class="relative group">Service Pre-requisites 
-    <div id="service-pre-requisites" class="anchor"></div>
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >This settings catalog profile is configured to use password authentication and not <code>UseSecureEnclaveKey</code>, but feel free to amend any other settings in the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune"   target="_blank">
+    Microsoft Learn article</a> as you see fit.</span>
+</div>
+
+
+
+<h2 class="relative group">Google Chrome Deployment 
+    <div id="google-chrome-deployment" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#service-pre-requisites" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#google-chrome-deployment" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>With the Platform SSO configuration setup and deployed, we can now focus our attention on how we manage Google Chrome on macOS devices, including delivering the app, as well as configuring it to support the required <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji"   target="_blank">
+    Microsoft Single Sign On extension</a>.</p>
+<p>I shouldn&rsquo;t be teaching you all to suck eggs, but for completions sake, we should probably go through deploying Google Chrome to your Microsoft Intune enrolled macOS devices, and we&rsquo;ve got a couple of ways to do this, depending on whether you want to force install this on your end user devices, or allow the app to be installed by the user.</p>
+
+
+<h3 class="relative group">Required App Deployment 
+    <div id="required-app-deployment" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#required-app-deployment" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>Well, who&rsquo;s been caught out with the issue where monthly updates happily deploy, but you&rsquo;ve been scratching your head about why Feature Updates haven&rsquo;t been offered to a device yet?</p>
-<p>Yeah <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/deployment/windows-update-issues-troubleshooting#feature-updates-arent-being-offered-while-other-updates-are"   target="_blank">
-    me neither</a>, but we should at least be definite with this requirement that the <code>Microsoft Account Sign-In Assistant (wlidsvc)</code> is not disabled.</p>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Setting</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Accounts</td>
-<td>Allow Microsoft Account Sign In Assistant</td>
-<td><code>Manual start</code></td>
-<td>If this is disabled, will block the use of Feature Updates on Windows 10 and later devices.</td>
-</tr>
-</tbody>
-</table>
-<p>This will set the service is set to Manual (Trigger Start), which allows it to run when needed. You may as well lob the above setting into the same Settings Catalog profile as the telemetry data settings, saves creating multiple granular profiles when you&rsquo;re not dealing with specific exclusions, giving us something like the below.</p>
+<p>If you just want to get the latest version of Google Chrome out there to all assigned devices, then the easiest approach is to use a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts"   target="_blank">
+    Shell Script</a> and in particular the one in the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Apps/Google%20Chrome"   target="_blank">
+    shell-intune-samples</a> GitHub repository, which will run on a device, got get the latest Google Chrome version download, and install it.</p>
 <p>
 
 
@@ -1441,41 +1477,60 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq_hu096538423d2c310239f5fff4958e7be9_70978_filter_233471915717657259.webp#left" alt="Feature Update Pre-reqs" />
-      <figcaption>Screenshot of Microsoft Intune settings catalog policy</figcaption>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-script_hub1a6938fb404406a1ef4784dcbadf8ef_124140_filter_9072220701224363629.webp#left" alt="Shell Script for Google Chrome deployment" />
+      <figcaption>Screenshot of a Shell Script for deploying Google Chrome to macOS devices in Microsoft Intune</figcaption>
     </figure>
   
 
 </p>
-<p>Right, on to setting up the Feature Update profiles.</p>
+<p>After your assigned group of test devices check in to Microsoft Intune and the script runs successfully, your devices should download and install Google Chrome.</p>
+
+  
 
 
-<h2 class="relative group">Targetting Feature Update Profiles 
-    <div id="targetting-feature-update-profiles" class="anchor"></div>
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >If you want to see progress or errors with the script, the script log file is located in <code>/Library/Logs/Microsoft/IntuneScripts/GoogleChrome</code> on the targetted macOS device.</span>
+</div>
+
+
+
+<h3 class="relative group">Available App Deployment 
+    <div id="available-app-deployment" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#targetting-feature-update-profiles" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>As we&rsquo;re not using <a href="https://learn.microsoft.com/en-us/windows/deployment/update/waas-manage-updates-wufb#defer-an-update"   target="_blank">
-    deferral settings</a> within Windows Update Rings, and instead opting for the use of Feature Update profiles to deploy new versions of the Windows operating system, we need to set all Feature Update deferrals in our existing Update Rings to be zero, but to stop the flood of devices attempt to update to a newer version of Windows 10 or 11, before we change this setting, let&rsquo;s look at how we keep devices at the required level.</p>
-
-
-<h3 class="relative group">Feature Update Dynamic Groups 
-    <div id="feature-update-dynamic-groups" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#feature-update-dynamic-groups" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#available-app-deployment" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>That&rsquo;s right, more Dynamic Device Security Groups, this time we&rsquo;re going to ring-fence devices based on the operating system they are currently running, and assign a corresponding Feature Update of the same version, yes this sounds a little backward when our end goal is to upgrade devices to Windows 11 23H2, but bear with me there&rsquo;s logic around this.</p>
-<p>Based on the current (at time of writing) Feature Update versions available in Microsoft Intune, we need to create at groups for at least each of the below versions.</p>
+<p>If you want to make the app available to your end users via the Company Portal, and who doesn&rsquo;t love self-service, then go ahead and download the <a href="https://chromeenterprise.google/browser/download/#mac-tab"   target="_blank">
+    pkg installer</a>.</p>
+<p>As we&rsquo;re looking to make the app available our only option in Microsoft Intune is to upload the file using the <code>Line-of-business app</code>, as <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-unmanaged-pkg"   target="_blank">
+    pkg apps</a> although great for pre and post deployment scripts, don&rsquo;t give the option for making apps available in the Company Portal.</p>
 <p>
 
 
@@ -1484,171 +1539,271 @@
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions_hu28d5d92c1183d3d29ec0d3f1941dcace_101030_filter_4687731854865978799.webp#left" alt="Feature Update Versions" />
-      <figcaption>Screenshot of Microsoft Feature Update profile with immediate installation</figcaption>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-pkg_huda168660950b948674f78e520e74851a_126638_filter_13479876448002653769.png#left" alt="Line-of-business app for Google Chrome deployment" />
+      <figcaption>Screenshot of a Line-of-business app for deploying Google Chrome to macOS devices in Microsoft Intune</figcaption>
     </figure>
   
 
 </p>
-<p>So go and create some new groups in Entra ID with the below rules to capture your corporate owned Windows devices at each Feature Update version</p>
-<table>
-<thead>
-<tr>
-<th>Group</th>
-<th>Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Windows 10 21H2</td>
-<td><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.19044&quot;)</code></td>
-</tr>
-<tr>
-<td>Windows 10 22H2</td>
-<td><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.19045&quot;)</code></td>
-</tr>
-<tr>
-<td>Windows 11 21H2</td>
-<td><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22000&quot;)</code></td>
-</tr>
-<tr>
-<td>Windows 11 22H2</td>
-<td><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22621&quot;)</code></td>
-</tr>
-<tr>
-<td>Windows 11 23H2</td>
-<td><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22631&quot;)</code></td>
-</tr>
-</tbody>
-</table>
-<p>Your mileage may vary with this, as it could be you&rsquo;ve got other devices that aren&rsquo;t covered by one of these Feature Update profile versions, if that is the case create dynamic device groups for these other versions too, and we&rsquo;ll work out what to do with them later.</p>
+<p>Deploying this app to a group of users, will allow your end users to select the option to install Google Chrome on their macOS device from the Company Portal:</p>
+<p>
 
 
-<h3 class="relative group">Feature Update Version 
-    <div id="feature-update-version" class="anchor"></div>
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-company_hu87457ef080c445c3caeafa8647277f5b_80019_filter_7502093729837410862.png#left" alt="Google Chrome in the Company Portal" />
+      <figcaption>Screenshot of the Company Portal available apps</figcaption>
+    </figure>
+  
+
+</p>
+<p>Two of many potential methods to install Google Chrome now sorted, onto what we&rsquo;re here for in the single sign on configuration.</p>
+
+
+<h2 class="relative group">Google Chrome Configuration 
+    <div id="google-chrome-configuration" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#feature-update-version" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>With our grouped devices based on version at hand, we can now create Feature Update Profiles for each of these versions, configuring them to be immediately available, and assigned to the dynamic device groups we/ve just created.</p>
-<table>
-<thead>
-<tr>
-<th>Feature Update Version</th>
-<th>Rollout options</th>
-<th>Group</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Windows 10, version 21H2</td>
-<td><code>Make update available as soon as possible</code></td>
-<td>Windows 10 21H2</td>
-</tr>
-<tr>
-<td>Windows 10, version 22H2</td>
-<td><code>Make update available as soon as possible</code></td>
-<td>Windows 10 22H2</td>
-</tr>
-<tr>
-<td>Windows 11, version 21H2</td>
-<td><code>Make update available as soon as possible</code></td>
-<td>Windows 11 21H2</td>
-</tr>
-<tr>
-<td>Windows 11, version 22H2</td>
-<td><code>Make update available as soon as possible</code></td>
-<td>Windows 11 22H2</td>
-</tr>
-<tr>
-<td>Windows 11, version 23H2</td>
-<td><code>Make update available as soon as possible</code></td>
-<td>Windows 11 23H2</td>
-</tr>
-</tbody>
-</table>
-<p>For your devices that are running lower versions of Windows 10, then you&rsquo;ve got a couple of options, either assign the group to one of the above newly created version targeting Feature Update profiles, or, using a Settings Catalog profile with <a href="https://learn.microsoft.com/en-gb/windows/client-management/mdm/policy-csp-Update?WT.mc_id=Portal-Microsoft_Intune_Workflows#targetreleaseversion"   target="_blank">
-    <code>Target Release Version</code></a> configured to the required version to keep your <a href="https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview"   target="_blank">
-    LTSC</a> or otherwise Windows 10 devices exactly where they need to be.</p>
-<p>With these now in place, we can happily remove the Feature Update deferral settings in our Windows Update rings, without the fear that devices are just going to jump to a version we don&rsquo;t want them to be on, yet.</p>
-
-
-<h2 class="relative group">Deployment Feature Update Profiles 
-    <div id="deployment-feature-update-profiles" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deployment-feature-update-profiles" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#google-chrome-configuration" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Now you may be thinking, all of this is well and good, but how are we going to distribute Windows 11 23H2 after gathering compatibility data and grouping devices based on their upgrade risk, well, fear not, as there is documented behaviour when a device is in scope of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-10-feature-updates#update-behavior-when-multiple-policies-target-a-device"   target="_blank">
-    multiple Feature Update profiles</a>, in short, a device will install the most recent Feature Update version, in long&hellip;</p>
+<p>Google being quite a large enterprise, realise that you might want to actually configure Google Chrome on your devices, and give you examples of <a href="https://support.apple.com/en-gb/guide/terminal/apda49a1bb2-577e-4721-8f25-ffc0836f6997/"   target="_blank">
+    property list</a> files for configuring the app on macOS devices as part of their <a href="https://support.google.com/chrome/a/answer/9020077?hl=en&amp;ref_topic=7650028&amp;sjid=4114433957087609356-EU"   target="_blank">
+    Chrome Browser bundle</a>, but we&rsquo;re looking for specific settings today, around the requirement to force install a specific  of extension to support Platform SSO.</p>
+
+
+<h3 class="relative group">Custom Configuration Profiles 
+    <div id="custom-configuration-profiles" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#custom-configuration-profiles" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Using the <a href="https://support.google.com/chrome/a/answer/7517624?hl=en#zippy=%2Cpin-app-or-extension-updates%2Cset-installation-policies-automatically-install-force-install-allow-or-block"   target="_blank">
+    examples</a> provided by Google, we have a basis to create our custom <code>mobileconfig</code> file, which when complete, can be uploaded to Microsoft Intune and deployed to our macOS devices.</p>
+<p>As we&rsquo;re focusing solely on the forced installation of the <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji"   target="_blank">
+    Microsoft Single Sign On extension</a>, we can strip out everything else from the example, and can update the configuration file to install the extension we want.</p>
+<p>We need to update the settings under the key <code>installation_mode</code> setting the string value to <code>force_installed</code>, this in conjunction with the ID of the extension we want to force install <code>ppnbnpeolgkicgegkbkbjmhlideopiji</code> (which we can get from the extension URL itself), allows us to configure a custom profile for Google Chrome to ensure that the extension that unlocks all the Platform SSO goodness is deployed to devices with Google Chrome installed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;key&gt;</span>com.google.Chrome<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;key&gt;</span>Forced<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>mcx_preference_settings<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="nt">&lt;key&gt;</span>ExtensionSettings<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;key&gt;</span>ppnbnpeolgkicgegkbkbjmhlideopiji<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                      <span class="nt">&lt;key&gt;</span>installation_mode<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                      <span class="nt">&lt;string&gt;</span>force_installed<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                      <span class="nt">&lt;key&gt;</span>update_url<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                      <span class="nt">&lt;string&gt;</span>https://clients2.google.com/service/update2/crx<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                  <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Google Chrome Platform SSO Extension Settings<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>com.google.Chrome.extensions.platformsso<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>com.apple.ManagedClient.preferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>0f644bb2-a1e0-4a90-a093-934f32e126de<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>Google Chrome Configuration<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>Google Chrome Configuration<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>com.google.Chrome<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>MEM v ENNBEE<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>a01d7a80-6db0-4392-a8a9-989147fb2aa1<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
+</span></span></code></pre></div><p>The other settings in the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig"   target="_blank">
+    profile</a> ensure that the profile is installed in the system context and cannot be removed by an end user.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >The <code>PayloadUUID</code> keys should be unique to your environment, so go ahead and <a href="https://www.uuidgenerator.net/"   target="_blank">
+    generate</a> new ones for your own profile.</span>
+</div>
+
+
+
+<h3 class="relative group">Custom Template 
+    <div id="custom-template" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#custom-template" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Now armed with our saved <code>mobileconfig</code> profile, we can create a new macOS Configuration Profile, using the <strong>Template</strong> profile type, and selecting <strong>Custom</strong>, giving the profile a name <del>by smashing your hand on the keyboard</del> aligned to your naming convention, we can then complete the remaining sections of the profile uploading the <code>mobileconfig</code> profile we saved previously:</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-custom_hud09cb1fde06a6d5ac84a8e03c92ebe74_105281_filter_14346206549718629907.png#left" alt="Microsoft Intune Custom Profile" />
+      <figcaption>Screenshot of the a Custom Profile in Microsoft Intune for macOS</figcaption>
+    </figure>
+  
+
+</p>
+<p>Give the configuration profile a suitable name, I&rsquo;ve gone with <code>Google Chrome Platform SSO Profile</code>, as really you&rsquo;re only going to see this on the device itself under the Profile section of System Preferences.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >As the custom profile sets the <code>PayloadScope</code> as <code>System</code> our Deployment channel should be set to <code>Device channel</code>.</span>
+</div>
+
+<p>We should probably assign this profile to our test devices, so go ahead and do that, and after a while we should get some greens:</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-customrep_hue5dcd2e4d402c3d84739f2071a9c01ca_68514_filter_2634590221049922627.png#left" alt="Microsoft Intune Custom Profile Report" />
+      <figcaption>Screenshot of the a Custom Profile Report in Microsoft Intune for macOS</figcaption>
+    </figure>
+  
+
+</p>
+<p>Checking on the assigned macOS 14 test device itself under <code>System Preferences &gt; Privacy &amp; Security &gt; Profiles</code> we can see the profile has installed correctly:</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-profile_huab501ca6c621e196c14aa66a1ecb560c_102599_filter_11243156871857749526.png#left" alt="macOS Profile Installation" />
+      <figcaption>Screenshot of the profile installed under System Preferences</figcaption>
+    </figure>
+  
+
+</p>
+<p>One last thing to look at, and that&rsquo;s the extensions in Google Chrome itself:</p>
+<p>
+
+
+
+  
+  
+  
+    <figure>
+      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-chromeext_hu884fc63b2ccb14a93bcfa634b745e91d_87611_filter_15275259811177627081.png#left" alt="Google Chrome Installed Extensions" />
+      <figcaption>Screenshot of Google Chrome installed extensions</figcaption>
+    </figure>
+  
+
+</p>
+<p>It is, and the user is unable to disable or remove it, as why would we want them to?</p>
+<p>So what does SSO look like on Google Chrome? Well it&rsquo;s the same process as with Microsoft Edge and Safari:</p>
 <ul>
-<li>Each Windows feature update policy supports a single update. When a device is targeted by more than one policy, it might be targeted with multiple update versions.</li>
-<li>The Windows Update service can only offer a device one feature update at a time, and always offers the latest update version that targets the device.</li>
-<li>Because Windows 11 updates are considered to be later versions than Windows 10, the service always offers the Windows 11 update to a device targeted by both Windows 10 and Windows 11 updates. This is done because deploying a Windows 11 update to a Windows 10 device is a supported upgrade path.</li>
+<li>A user opens the browser and accesses a Microsoft Entra authenticated service such as <strong>outlook.office.com</strong>.</li>
+<li>The user is prompted to sign-in to the service, completing MFA if required.</li>
+<li>Subsequent login prompts to Microsoft Entra authenticated services like <strong>teams.microsoft.com</strong> are now automatically passed through using SSO.</li>
 </ul>
-<p>So this behaviour is exactly what we need, a way to keep devices on their current version, until they are in scope of a newer version, in this case, Windows 11 23H2.</p>
-
-
-<h3 class="relative group">Deploying Windows 11 Feature Updates 
-    <div id="deploying-windows-11-feature-updates" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deploying-windows-11-feature-updates" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Onto the fun part, the fruition of <del>my</del> our hard work, being able to roll out Windows 11 23H2 safely. Let&rsquo;s go and create a new Feature Update profile for Windows 11 23H2 for our low risk devices, this time instead of an immediate roll out option, we&rsquo;re going to utilise the &lsquo;Make update available gradually&rsquo; option, which uses magic 🪄.</p>
-<p>
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy_hu87f4e82ba1dfabc4f57d03559a1b3795_102344_filter_9388848027416938558.webp#leftt" alt="Feature Update Deployment" />
-      <figcaption>Screenshot of Microsoft Feature Update profile with phased installation</figcaption>
-    </figure>
-  
-
-</p>
-<p>Well it&rsquo;s not necessarily magic, there must be something in the background that allows the splitting of a targeted include assignment group or groups into equal sized smaller manageable <a href="%28https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-rollout-options#make-updates-available-gradually%29"  >
-    virtual groups</a> between the start date and end date, separated by number of days between them.</p>
-<p>A few things to note before we go and assign this profile:</p>
-<ol>
-<li>The start of the first group availability must be at least two days in advance of the current date, which allows the magic to happen to split the devices.</li>
-<li>The final group availability may not occur on the specified date, based on the how many days between groups has been configured, something about maths and whole numbers.</li>
-<li>Installation deadlines and grace periods in Windows Update rings are adhered to, so ensure that you have this configured to something sensible, and lower than the number of days between groups otherwise you&rsquo;ll end up with overlapping deployments.</li>
-</ol>
-<p>We&rsquo;re here, the end, we have a profile for deploying Windows 11 23H2 and we can assign this to our ready to go, low risk tagged, group of Windows 10 devices, that&rsquo;s exciting.</p>
-<p>
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign_huf460c08efd4fd5df40972db64fc9d8cd_43996_filter_11698632591269275319.webp#leftt" alt="Feature Update Assignment" />
-      <figcaption>Screenshot of Microsoft Feature Update profile assignment</figcaption>
-    </figure>
-  
-
-</p>
-<p>With these devices telling you that they&rsquo;re happy to update to Windows 11, you can safely sit back and watch the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-reports#reports-for-windows-10-and-later-feature-updates-policy"   target="_blank">
-    reports</a> update with the status of the Feature Update deployment, giving you time to work through the issues reported by the medium and high risk device issues.</p>
-<p>Or if you&rsquo;re like me, just take a chance deploying the Feature Update to the medium risk devices, I mean who cares if a driver get&rsquo;s removed, you should be <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-driver-updates-overview"   target="_blank">
-    updating</a> them anyway 😂.</p>
+<p>All that to make browser sign-ins a little easier 😅.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1661,53 +1816,16 @@
     </span>        
     
 </h2>
-<p>This should now give you confidence in deploying a Windows 11 Feature Update to the devices that have told you that they&rsquo;re OK to update, based on the Microsoft backed information captured from the Readiness Report, starting your migration to Windows 11 from Windows 10 well before the <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
-    end of support</a>, pat yourself on the back.</p>
-<p>Even if <em>all</em> of your Windows 10 and later devices are reporting their compatibility information, this isn&rsquo;t the end of the story, what if you&rsquo;ve resolved some of the medium or high risk issues? What if those devices that were captured by medium or high risk tags are now reporting as low risk? What if there are new Windows 10 devices enrolled into Microsoft Intune? What if devices that had low disk space now have enough free space?</p>
-<p>These are all valid questions I&rsquo;ve just come up with, and in the last part of this series, I&rsquo;ll be taking you through a PowerShell script that combines what we&rsquo;ve covered into a fool-proof deployment that can be run regularly, ensuring that Windows 10 devices don&rsquo;t get left behind.</p>
+<p>Platform SSO on macOS in Microsoft Intune is a big thing, it&rsquo;s likely the last hurdle or excuse people were using to stay away from using a Microsoft product to manage an Apple device.</p>
+<p>If you&rsquo;re already in bed with Microsoft and associated services, then something as trivial as where your precious Apple devices are managed shouldn&rsquo;t be stopping you from jumping two footed straight into enrolling your macOS devices into Microsoft Intune, especially now that you can use Entra ID authentication across them.</p>
+<p>On top of this, we can now configure the most used browsers on a macOS device to leverage and make use of Platform SSO, to stop users from being bogged down with sign-in prompts that their colleagues on povo-spec Windows laptops don&rsquo;t have to deal with.</p>
+<p>It&rsquo;s a win win in my books.</p>
 
         </div>
         
         
 
         
-<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
-    
-    <summary
-        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        Risk Based Windows 11 Feature Update Deployment - This article is part of a series.
-    </summary>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/">
-            Part 1: Risk Based Windows 11 Feature Update Deployment - Reporting
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
-            Part 2: Risk Based Windows 11 Feature Update Deployment - Device Attributes
-        </a>
-    </div>
-    
-    
-    
-    <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 3: This Article
-    </div>
-    
-    
-
-
-</details>
-
         
   
   <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
@@ -1716,7 +1834,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1735,7 +1853,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;text=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;text=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1753,7 +1871,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1772,7 +1890,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title=""
       aria-label=""
       >
@@ -1791,7 +1909,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title=""
       aria-label=""
       >
@@ -1810,7 +1928,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;description=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;description=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1829,7 +1947,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;quote=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;quote=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1848,7 +1966,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/&amp;subject=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Feature%20Updates"
+      href="mailto:?body=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;subject=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -1874,11 +1992,11 @@
   
   
 
-  <a href="/posts/windows-11-risk-based-deployment-part2/" class="min-w-full">
+  <a href="/posts/ncsc-macos-settings/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/ncsc-macos-settings/feature-macosncsc.jpg);"></div>
         
       
 
@@ -1886,7 +2004,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/windows-11-risk-based-deployment-part2/">Risk Based Windows 11 Feature Update Deployment - Device Attributes</div>
+          href="/posts/ncsc-macos-settings/">macOS National Cyber Security Centre Security Settings in Intune</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1927,7 +2045,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-04-19 23:11:03 &#43;0000 UTC">19 April 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2022-04-21 11:55:11 &#43;0100 &#43;0100">21 April 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1940,7 +2058,7 @@
       
     
   
-  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part2/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/NCSC-macOS-Settings/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1981,348 +2099,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    Apple
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Groups
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
-  <a href="/posts/windows-11-risk-based-deployment-part1/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-11-risk-based-deployment-part1/feature-riskupdate.jpg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/windows-11-risk-based-deployment-part1/">Risk Based Windows 11 Feature Update Deployment - Reporting</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2024-03-25 23:32:16 &#43;0000 UTC">25 March 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part1/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Groups
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
-  <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/defender-antivirus-compliance-updates/">Updating Defender Antivirus Compliance Settings</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/defender/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Defender
+    macOS
   </span>
 </span>
   </span>
@@ -2335,10 +2123,332 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Compliance
+    NCSC
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mobileconfig/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    mobileconfig
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configuration/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Configuration
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/macos-ncsc-revisited/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/macos-ncsc-revisited/feature-macosncsc.png);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/macos-ncsc-revisited/">Revisiting macOS National Cyber Security Centre Security Settings</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2023-07-11 13:22:07 &#43;0100 &#43;0100">11 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/macOS-NCSC-Revisited/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Microsoft Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Apple
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    macOS
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    NCSC
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configuration/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Configuration
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/macos-updates-phased-deployment/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/macos-updates-phased-deployment/feature-macup.jpeg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/macos-updates-phased-deployment/">Software Update Deployment Rings for Managed macOS Devices</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-04-06 20:05:09 &#43;0100 &#43;0100">6 April 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/macOS-Updates-Phased-Deployment/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Microsoft Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apple/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Apple
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/macos/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    macOS
   </span>
 </span>
   </span>
@@ -2351,26 +2461,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/antivirus/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Antivirus
+    Groups
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
+    Security
   </span>
 </span>
   </span>
@@ -2404,8 +2506,8 @@
           
         
       <script>
-        var oid = "views_posts\/Windows-11-Risk-Based-Deployment-Part3\/index.md"
-        var oid_likes = "likes_posts\/Windows-11-Risk-Based-Deployment-Part3\/index.md"
+        var oid = "views_posts\/macOS-PlatformSSO-Google-Chrome\/index.md"
+        var oid_likes = "likes_posts\/macOS-PlatformSSO-Google-Chrome\/index.md"
       </script>
       
       
@@ -2428,40 +2530,18 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/macos-platformsso-google-chrome/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Configuring Google Chrome for Platform SSO on macOS</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2024-05-08 22:49:39 &#43;0100 &#43;0100">8 May 2024</time>
-                  
-                </span>
-              </span>
-            </a>
-          
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/windows-11-risk-based-deployment-part2/">
+            <a class="flex text-right group ml-3" href="/posts/windows-11-risk-based-deployment-part3/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Risk Based Windows 11 Feature Update Deployment - Device Attributes</span
+                  >Risk Based Windows 11 Feature Update Deployment - Feature Updates</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-04-19 23:11:03 &#43;0000 UTC">19 April 2024</time>
+                    <time datetime="2024-05-05 10:18:36 &#43;0000 UTC">5 May 2024</time>
                   
                 </span>
               </span>
