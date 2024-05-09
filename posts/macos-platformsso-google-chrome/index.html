@@ -12,7 +12,7 @@
   <meta name="title" content="Configuring Google Chrome for Platform SSO on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO" />
-  <meta name="keywords" content="intune, apple, macos, configuration, mobileconfig, " />
+  <meta name="keywords" content="intune, apple, macos, configuration, mobileconfig, security, " />
   
   <meta name="robots" content="all" />
   
@@ -87,6 +87,7 @@
     <meta property="article:tag" content="macOS">
     <meta property="article:tag" content="Configuration">
     <meta property="article:tag" content="mobileconfig">
+    <meta property="article:tag" content="Security">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/feature-macossso.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,10 +116,10 @@
     
     "dateModified": "2024-05-08T22:49:39\u002b01:00",
     
-    "keywords": ["intune","apple","macos","configuration","mobileconfig"],
+    "keywords": ["intune","apple","macos","configuration","mobileconfig","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1696"
+    "wordCount": "1754"
   }]
   </script>
 
@@ -1000,6 +1001,14 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Security
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -1260,7 +1269,7 @@
     Public Preview</a>.</p>
 <p>I&rsquo;m not going to deep dive into configuring Platform SSO as I&rsquo;ll assume you&rsquo;ve either already had a go yourself, or found <a href="https://www.intuneirl.com/say-bye-felicia-to-passwords-secure-enclave-takes-mac-sso-to-the-next-level/"   target="_blank">
     someone else</a> who has, as honestly it&rsquo;s now a massive selling point of moving macOS devices into Microsoft Intune away from other MDM solutions.</p>
-<p>Now we can use Entra ID account for SSO on the macOS device itself, what about our good friend the web browser and in particular Google Chrome?</p>
+<p>Now we can use Entra ID account for SSO on the macOS device itself, what about our good friend the web browser, and in particular Google Chrome?</p>
 
 
 <h2 class="relative group">Browser Support 
@@ -1283,6 +1292,11 @@
 <p>Luckily though, Microsoft have provided links to <a href="https://support.google.com/chrome/a/answer/7550274"   target="_blank">
     setting up Google Chrome on macOS</a> and how to configure the <a href="https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist"   target="_blank">
     forced installation of extensions</a> which we&rsquo;ll be utilising to make Google Chrome and Platform SSO play nicely.</p>
+<p>Configuring this extension will not only improve the users sign-in experience, but allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers"   target="_blank">
+    Conditional Access Policies</a> when using Google Chrome:</p>
+<blockquote>
+<p>macOS devices using the Enterprise SSO plugin require the Microsoft Single Sign On extension to support SSO and device-based Conditional Access in Google Chrome.</p>
+</blockquote>
 
 
 <h2 class="relative group">Platform SSO Configuration 
@@ -1803,7 +1817,8 @@
 <li>The user is prompted to sign-in to the service, completing MFA if required.</li>
 <li>Subsequent login prompts to Microsoft Entra authenticated services like <strong>teams.microsoft.com</strong> are now automatically passed through using SSO.</li>
 </ul>
-<p>All that to make browser sign-ins a little easier 😅.</p>
+<p>All that to make browser sign-ins a little easier and to allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers"   target="_blank">
+    Conditional Access Policies</a> 😅.</p>
 
 
 <h2 class="relative group">Summary 
