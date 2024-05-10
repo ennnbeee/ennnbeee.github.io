@@ -8,10 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Configuring Google Chrome for Platform SSO on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Configuring Google Chrome for Platform SSO on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Configuring Google Chrome on macOS for Platform Single Sign-On &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
+  <meta name="title" content="Configuring Google Chrome on macOS for Platform Single Sign-On &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO and Conditional Access Policies." />
+  <meta name="description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform Single Sign-on (Platform SSO) and Conditional Access Policies." />
   <meta name="keywords" content="intune, apple, macos, configuration, mobileconfig, security, cap, " />
   
   <meta name="robots" content="all" />
@@ -75,8 +75,8 @@
   
   <meta property="og:url" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
-  <meta property="og:title" content="Configuring Google Chrome for Platform SSO on macOS">
-  <meta property="og:description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO and Conditional Access Policies.">
+  <meta property="og:title" content="Configuring Google Chrome on macOS for Platform Single Sign-On">
+  <meta property="og:description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform Single Sign-on (Platform SSO) and Conditional Access Policies.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -91,8 +91,8 @@
     <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/feature-macossso.png">
 
   <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/feature-macossso.png"><meta name="twitter:title" content="Configuring Google Chrome for Platform SSO on macOS">
-<meta name="twitter:description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO and Conditional Access Policies.">
+<meta name="twitter:image" content="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/feature-macossso.png"><meta name="twitter:title" content="Configuring Google Chrome on macOS for Platform Single Sign-On">
+<meta name="twitter:description" content="Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform Single Sign-on (Platform SSO) and Conditional Access Policies.">
 
   
   <script type="application/ld+json">
@@ -100,9 +100,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "Configuring Google Chrome for Platform SSO on macOS",
-    "headline": "Configuring Google Chrome for Platform SSO on macOS",
-    "description": "Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform SSO and Conditional Access Policies.",
+    "name": "Configuring Google Chrome on macOS for Platform Single Sign-On",
+    "headline": "Configuring Google Chrome on macOS for Platform Single Sign-On",
+    "description": "Configuring Google Chrome settings in Microsoft Intune using Custom Profiles and mobileconfig to support Platform Single Sign-on (Platform SSO) and Conditional Access Policies.",
     "abstract": "With all the hype about Platform SSO on macOS devices, now is the time to try out not just the standard functionality, but the integration into web browsers such as Google Chrome. We take a look at how to configure this using Microsoft Intune.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/macos-platformsso-google-chrome\/",
@@ -119,7 +119,7 @@
     "keywords": ["intune","apple","macos","configuration","mobileconfig","security","cap"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1793"
+    "wordCount": "1896"
   }]
   </script>
 
@@ -849,7 +849,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Configuring Google Chrome for Platform SSO on macOS
+      Configuring Google Chrome on macOS for Platform Single Sign-On
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1324,106 +1324,106 @@
 <table>
 <thead>
 <tr>
-<th>Category</th>
-<th>Setting</th>
-<th>Value</th>
+<th style="text-align:left">Category</th>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Authentication</td>
-<td>Authentication Method (Deprecated)</td>
-<td><code>UserSecureEnclaveKey</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">Authentication Method (Deprecated)</td>
+<td style="text-align:left"><code>UserSecureEnclaveKey</code></td>
 </tr>
 <tr>
-<td>Authentication</td>
-<td>Screen Locked Behavior</td>
-<td><code>Do Not Handle</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">Screen Locked Behavior</td>
+<td style="text-align:left"><code>Do Not Handle</code></td>
 </tr>
 <tr>
-<td>Authentication</td>
-<td>Registration Token</td>
-<td><code>{{DEVICEREGISTRATION}}</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">Registration Token</td>
+<td style="text-align:left"><code>{{DEVICEREGISTRATION}}</code></td>
 </tr>
 <tr>
-<td>Authentication</td>
-<td>Team Identifier</td>
-<td><code>UBF8T346G9</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">Team Identifier</td>
+<td style="text-align:left"><code>UBF8T346G9</code></td>
 </tr>
 <tr>
-<td>Authentication</td>
-<td>Extension Identifier</td>
-<td><code>com.microsoft.CompanyPortalMac.ssoextension</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">Extension Identifier</td>
+<td style="text-align:left"><code>com.microsoft.CompanyPortalMac.ssoextension</code></td>
 </tr>
 <tr>
-<td>Authentication</td>
-<td>Type</td>
-<td><code>Redirect</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">Type</td>
+<td style="text-align:left"><code>Redirect</code></td>
 </tr>
 <tr>
-<td>Authentication</td>
-<td>URLs</td>
-<td><code>https://login.microsoftonline.com</code></td>
+<td style="text-align:left">Authentication</td>
+<td style="text-align:left">URLs</td>
+<td style="text-align:left"><code>https://login.microsoftonline.com</code></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td><code>https://login.microsoft.com</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>https://login.microsoft.com</code></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td><code>https://sts.windows.net</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>https://sts.windows.net</code></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td><code>https://login-us.microsoftonline.com</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>https://login-us.microsoftonline.com</code></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td><code>https://login.microsoftonline.us</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>https://login.microsoftonline.us</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>Account Display Name</td>
-<td><code>MEM v ENNBEE Account</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">Account Display Name</td>
+<td style="text-align:left"><code>MEM v ENNBEE Account</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>Authentication Method</td>
-<td><code>UserSecureEnclaveKey</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">Authentication Method</td>
+<td style="text-align:left"><code>UserSecureEnclaveKey</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>Enable Authorization</td>
-<td><code>Enabled</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">Enable Authorization</td>
+<td style="text-align:left"><code>Enabled</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>Enable Create User At Login</td>
-<td><code>Enabled</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">Enable Create User At Login</td>
+<td style="text-align:left"><code>Enabled</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>Login Frequency</td>
-<td><code>64800</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">Login Frequency</td>
+<td style="text-align:left"><code>64800</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>New User Authorization Mode</td>
-<td><code>Standard</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">New User Authorization Mode</td>
+<td style="text-align:left"><code>Standard</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>Use Shared Device Keys</td>
-<td><code>Enabled</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">Use Shared Device Keys</td>
+<td style="text-align:left"><code>Enabled</code></td>
 </tr>
 <tr>
-<td>Authentication &gt; Platform SSO</td>
-<td>User Authorization Mode</td>
-<td><code>Standard</code></td>
+<td style="text-align:left">Authentication &gt; Platform SSO</td>
+<td style="text-align:left">User Authorization Mode</td>
+<td style="text-align:left"><code>Standard</code></td>
 </tr>
 </tbody>
 </table>
@@ -1494,6 +1494,37 @@
 <p>If you just want to get the latest version of Google Chrome out there to all assigned devices, then the easiest approach is to use a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts"   target="_blank">
     Shell Script</a> and in particular the one in the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Apps/Google%20Chrome"   target="_blank">
     shell-intune-samples</a> GitHub repository, which will run on a device, got get the latest Google Chrome version download, and install it.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Upload Script</td>
+<td style="text-align:left"><a href="https://github.com/microsoft/shell-intune-samples/blob/master/macOS/Apps/Google%20Chrome/installGoogleChrome.zsh"   target="_blank">
+    <code>installGoogleChrome.zsh</code></a></td>
+</tr>
+<tr>
+<td style="text-align:left">Run script as signed-in user</td>
+<td style="text-align:left"><code>No</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Hide script notifications on devices</td>
+<td style="text-align:left"><code>Not configured</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Script frequency</td>
+<td style="text-align:left"><code>Not configured</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Max number of times to retry if script fails</td>
+<td style="text-align:left"><code>3 times</code></td>
+</tr>
+</tbody>
+</table>
 <p>
 
 
@@ -1556,6 +1587,53 @@
     pkg installer</a>.</p>
 <p>As we&rsquo;re looking to make the app available our only option in Microsoft Intune is to upload the file using the <code>Line-of-business app</code>, as <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-unmanaged-pkg"   target="_blank">
     pkg apps</a> although great for pre and post deployment scripts, don&rsquo;t give the option for making apps available in the Company Portal.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Select file</td>
+<td style="text-align:left"><a href="https://chromeenterprise.google/browser/download/#mac-tab"   target="_blank">
+    <code>GoogleChrome.pkg</code></a></td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left"><code>Google Chrome</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Description</td>
+<td style="text-align:left"><code>Chrome is the official web browser from Google, built to be fast, secure and customisable. Download now and make it yours</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Publisher</td>
+<td style="text-align:left"><code>Google</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Minimum operating system</td>
+<td style="text-align:left"><code>Catalina 10.15</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Ignore app version</td>
+<td style="text-align:left"><code>Yes</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Install as managed</td>
+<td style="text-align:left"><code>No</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Included apps</td>
+<td style="text-align:left"><code>com.google.Chrome 124.0.6367.119</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Publisher</td>
+<td style="text-align:left"><code>Google</code></td>
+</tr>
+</tbody>
+</table>
 <p>
 
 
@@ -1730,6 +1808,29 @@
     
 </h3>
 <p>Now armed with our saved <code>mobileconfig</code> profile, we can create a new macOS Configuration Profile, using the <strong>Template</strong> profile type, and selecting <strong>Custom</strong>, giving the profile a name <del>by smashing your hand on the keyboard</del> aligned to your naming convention, we can then complete the remaining sections of the profile uploading the <code>mobileconfig</code> profile we saved previously:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Custom configuration profile name</td>
+<td style="text-align:left"><code>Google Chrome Platform SSO Profile</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Deployment channel</td>
+<td style="text-align:left"><code>Device channel</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Configuration profile file</td>
+<td style="text-align:left"><a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig"   target="_blank">
+    <code>GoogleChromepSSO.mobileconfig</code></a></td>
+</tr>
+</tbody>
+</table>
 <p>
 
 
@@ -1892,7 +1993,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;title=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1911,7 +2012,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;text=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;text=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1929,7 +2030,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1948,7 +2049,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title=""
       aria-label=""
       >
@@ -1967,7 +2068,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;resubmit=true&amp;title=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title=""
       aria-label=""
       >
@@ -1986,7 +2087,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;description=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;description=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -2005,7 +2106,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;quote=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;quote=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -2024,7 +2125,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;subject=Configuring%20Google%20Chrome%20for%20Platform%20SSO%20on%20macOS"
+      href="mailto:?body=https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/&amp;subject=Configuring%20Google%20Chrome%20on%20macOS%20for%20Platform%20Single%20Sign-On"
       title="Send via email"
       aria-label="Send via email"
       >

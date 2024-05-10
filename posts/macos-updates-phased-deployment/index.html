@@ -119,7 +119,7 @@
     "keywords": ["intune","apple","macos","updates","groups","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1710"
+    "wordCount": "1732"
   }]
   </script>
 
@@ -1333,36 +1333,31 @@
 <table>
 <thead>
 <tr>
-<th>Group</th>
-<th>Type</th>
-<th>Membership</th>
-<th></th>
+<th style="text-align:left">Group</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Membership</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Pilot</td>
-<td>Assigned</td>
-<td>TBC</td>
-<td></td>
+<td style="text-align:left">Pilot</td>
+<td style="text-align:left">Assigned</td>
+<td style="text-align:left"><code>TBC</code></td>
 </tr>
 <tr>
-<td>Pre-Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
-<td></td>
+<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left">Dynamic Device</td>
+<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
 </tr>
 <tr>
-<td>Initial Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
-<td></td>
+<td style="text-align:left">Initial Production</td>
+<td style="text-align:left">Dynamic Device</td>
+<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
 </tr>
 <tr>
-<td>Final Production</td>
-<td>Dynamic Device</td>
-<td><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
-<td></td>
+<td style="text-align:left">Final Production</td>
+<td style="text-align:left">Dynamic Device</td>
+<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
 </tr>
 </tbody>
 </table>
@@ -1386,44 +1381,66 @@
 <table>
 <thead>
 <tr>
-<th>Area</th>
-<th>Setting</th>
-<th>Value</th>
+<th style="text-align:left">Category</th>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Software Update</td>
-<td>Config Data Install</td>
-<td><code>True</code></td>
+<td style="text-align:left">Software Update</td>
+<td style="text-align:left">Config Data Install</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 <tr>
-<td>Software Update</td>
-<td>Automatic Check Enabled</td>
-<td><code>True</code></td>
+<td style="text-align:left">Software Update</td>
+<td style="text-align:left">Automatic Check Enabled</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 <tr>
-<td>Software Update</td>
-<td>Allow Pre Release Installation</td>
-<td><code>False</code></td>
+<td style="text-align:left">Software Update</td>
+<td style="text-align:left">Allow Pre Release Installation</td>
+<td style="text-align:left"><code>False</code></td>
 </tr>
 <tr>
-<td>Software Update</td>
-<td>Critical Update Install</td>
-<td><code>True</code></td>
+<td style="text-align:left">Software Update</td>
+<td style="text-align:left">Critical Update Install</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 <tr>
-<td>Software Update</td>
-<td>Restrict Software Update Require Admin To Install</td>
-<td><code>False</code></td>
+<td style="text-align:left">Software Update</td>
+<td style="text-align:left">Restrict Software Update Require Admin To Install</td>
+<td style="text-align:left"><code>False</code></td>
 </tr>
 <tr>
-<td>Software Update</td>
-<td>Automatic Download</td>
-<td><code>True</code></td>
+<td style="text-align:left">Software Update</td>
+<td style="text-align:left">Automatic Download</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 </tbody>
 </table>
+<p>
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      
+      <img
+        class="my-0 rounded-md"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-update_hu2ebce60e6029dee53436781b65d27882_52656_filter_15455240925115679396.png"
+        alt="maOS Software Update Configuration"
+      />
+      
+      <figcaption>Screenshot of Microsoft Intune Settings Catalog for macOS Software Update settings</figcaption>
+    </figure>
+  
+
+</p>
 <p>You&rsquo;ll notice that for <code>Critical Update Install</code> and <code>Config Data Install</code> we&rsquo;re allowing these to just happen, you should, as they&rsquo;re important. What we want to control is when devices get OS updates, not leaving gaping security flaws in devices.</p>
 
 
@@ -1441,56 +1458,56 @@
 <table>
 <thead>
 <tr>
-<th>Update Ring</th>
-<th>Automatically Install App Updates</th>
-<th>Automatically Install Mac OS Updates</th>
-<th>Force Delayed App Software Updates</th>
-<th>Force Delayed Software Updates</th>
-<th>Enforced Software Update Delay</th>
-<th>Enforced Software Update Non OS Deferred Install Delay</th>
-<th>Enforced Software Update Minor OS Deferred Install Delay</th>
+<th style="text-align:left">Update Ring</th>
+<th style="text-align:left">Automatically Install App Updates</th>
+<th style="text-align:left">Automatically Install Mac OS Updates</th>
+<th style="text-align:left">Force Delayed App Software Updates</th>
+<th style="text-align:left">Force Delayed Software Updates</th>
+<th style="text-align:left">Enforced Software Update Delay</th>
+<th style="text-align:left">Enforced Software Update Non OS Deferred Install Delay</th>
+<th style="text-align:left">Enforced Software Update Minor OS Deferred Install Delay</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Pilot</td>
-<td><code>True</code></td>
-<td><code>True</code></td>
-<td><code>False</code></td>
-<td><code>False</code></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td style="text-align:left">Pilot</td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left"><code>-</code></td>
 </tr>
 <tr>
-<td>Pre-Production</td>
-<td><code>False</code></td>
-<td><code>False</code></td>
-<td><code>True</code></td>
-<td><code>True</code></td>
-<td><code>5</code></td>
-<td><code>5</code></td>
-<td><code>5</code></td>
+<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>5</code></td>
+<td style="text-align:left"><code>5</code></td>
+<td style="text-align:left"><code>5</code></td>
 </tr>
 <tr>
-<td>Initial Production</td>
-<td><code>False</code></td>
-<td><code>False</code></td>
-<td><code>True</code></td>
-<td><code>True</code></td>
-<td><code>9</code></td>
-<td><code>9</code></td>
-<td><code>9</code></td>
+<td style="text-align:left">Initial Production</td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>9</code></td>
+<td style="text-align:left"><code>9</code></td>
+<td style="text-align:left"><code>9</code></td>
 </tr>
 <tr>
-<td>Final Production</td>
-<td><code>False</code></td>
-<td><code>False</code></td>
-<td><code>True</code></td>
-<td><code>True</code></td>
-<td><code>12</code></td>
-<td><code>12</code></td>
-<td><code>12</code></td>
+<td style="text-align:left">Final Production</td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>12</code></td>
+<td style="text-align:left"><code>12</code></td>
+<td style="text-align:left"><code>12</code></td>
 </tr>
 </tbody>
 </table>
@@ -1603,94 +1620,67 @@
 <table>
 <thead>
 <tr>
-<th>Area</th>
-<th>Setting</th>
-<th>Value</th>
+<th style="text-align:left">Category</th>
+<th style="text-align:left">Setting</th>
+<th style="text-align:left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Microsoft AutoUpdate (MAU)</td>
-<td>Disable Office Insider membership</td>
-<td><code>True</code></td>
+<td style="text-align:left">Microsoft AutoUpdate (MAU)</td>
+<td style="text-align:left">Disable Office Insider membership</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 <tr>
-<td>Microsoft AutoUpdate (MAU)</td>
-<td>Number of minutes for the final countdown timer</td>
-<td><code>60</code></td>
+<td style="text-align:left">Microsoft AutoUpdate (MAU)</td>
+<td style="text-align:left">Enable AutoUpdate</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 <tr>
-<td>Microsoft AutoUpdate (MAU)</td>
-<td>Register app on launch</td>
-<td><code>True</code></td>
+<td style="text-align:left">Microsoft AutoUpdate (MAU)</td>
+<td style="text-align:left">Number of minutes for the final countdown timer</td>
+<td style="text-align:left"><code>60</code></td>
 </tr>
 <tr>
-<td>Microsoft AutoUpdate (MAU)</td>
-<td>Update channel</td>
-<td><code>Current Channel</code></td>
+<td style="text-align:left">Microsoft AutoUpdate (MAU)</td>
+<td style="text-align:left">Register app on launch</td>
+<td style="text-align:left"><code>True</code></td>
 </tr>
 <tr>
-<td>Microsoft AutoUpdate (MAU)</td>
-<td>Update check frequency (mins)</td>
-<td><code>240</code></td>
+<td style="text-align:left">Microsoft AutoUpdate (MAU)</td>
+<td style="text-align:left">Update channel</td>
+<td style="text-align:left"><code>Current Channel</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Microsoft AutoUpdate (MAU)</td>
+<td style="text-align:left">Update check frequency (mins)</td>
+<td style="text-align:left"><code>240</code></td>
 </tr>
 </tbody>
 </table>
+<p>
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      
+      <img
+        class="my-0 rounded-md"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mau_hub02ac1ecf50fd8e7034ef6abe612dfdb_44539_filter_12272933618800180265.png"
+        alt="maOS Microsoft AutoUpdate Configuration"
+      />
+      
+      <figcaption>Screenshot of Microsoft Intune Settings Catalog for macOS Microsoft AutoUpdate settings</figcaption>
+    </figure>
+  
+
+</p>
 <p>Feel free to amened the <code>Number of minutes for the final countdown timer</code> and <code>Update check frequency (mins)</code> if you like your user base more than I do.</p>
-
-
-<h3 class="relative group">Phased Microsoft Updates 
-    <div id="phased-microsoft-updates" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#phased-microsoft-updates" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>To phase the delivery of Microsoft Application updates across the four deployment groups, you will need to create four separate Settings Catalog profiles with the below settings, with restrictions configured to stop users checking for updates and relying on the deferral and deadline settings where applicable.</p>
-<table>
-<thead>
-<tr>
-<th>Update Ring</th>
-<th>Enable AutoUpdate</th>
-<th>Enable check for updates</th>
-<th>Deferred updates</th>
-<th>Days before forced updates</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Pilot</td>
-<td><code>True</code></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Pre-Production</td>
-<td><code>True</code></td>
-<td><code>False</code></td>
-<td><code>Defer 3 days</code></td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td>Initial Production</td>
-<td><code>True</code></td>
-<td><code>False</code></td>
-<td><code>Defer 7 days</code></td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td>Final Production</td>
-<td><code>True</code></td>
-<td><code>False</code></td>
-<td><code>Defer 7 days</code></td>
-<td><code>5</code></td>
-</tr>
-</tbody>
-</table>
 
   
 
@@ -1722,6 +1712,55 @@
     Somesh Pathak (MVP)</a></span>
 </div>
 
+
+
+<h3 class="relative group">Phased Microsoft Updates 
+    <div id="phased-microsoft-updates" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#phased-microsoft-updates" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To phase the delivery of Microsoft Application updates across the four deployment groups, you will need to create four separate Settings Catalog profiles with the below settings, with restrictions configured to stop users checking for updates and relying on the deferral and deadline settings where applicable.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Update Ring</th>
+<th style="text-align:left">Enable check for updates</th>
+<th style="text-align:left">Deferred updates</th>
+<th style="text-align:left">Days before forced updates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Pilot</td>
+<td style="text-align:left"><code>True</code></td>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left"><code>-</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>Defer 3 days</code></td>
+<td style="text-align:left"><code>2</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Initial Production</td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>Defer 7 days</code></td>
+<td style="text-align:left"><code>2</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Final Production</td>
+<td style="text-align:left"><code>False</code></td>
+<td style="text-align:left"><code>Defer 7 days</code></td>
+<td style="text-align:left"><code>5</code></td>
+</tr>
+</tbody>
+</table>
 <p>You can now see why I stuck with four deployment groups, as we love working within the National Cyber Security Centre guidelines to ensure that updates are installed in that wonderful 14-day window, and the Microsoft AutoUpdate configuration only allows set values for <code>Deferred updates</code>.</p>
 
   

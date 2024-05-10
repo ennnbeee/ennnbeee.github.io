@@ -1380,41 +1380,41 @@
 <table>
 <thead>
 <tr>
-<th>Friendly Name</th>
-<th>Service Name</th>
-<th>Service Plan Id</th>
+<th style="text-align:left">Friendly Name</th>
+<th style="text-align:left">Service Name</th>
+<th style="text-align:left">Service Plan Id</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Azure Active Directory Premium P1</td>
-<td><code>AAD_PREMIUM</code></td>
-<td><code>41781fb2-bc02-4b7c-bd55-b576c07bb09d</code></td>
+<td style="text-align:left">Azure Active Directory Premium P1</td>
+<td style="text-align:left"><code>AAD_PREMIUM</code></td>
+<td style="text-align:left"><code>41781fb2-bc02-4b7c-bd55-b576c07bb09d</code></td>
 </tr>
 <tr>
-<td>Microsoft 365 Phone System</td>
-<td><code>MCOEV</code></td>
-<td><code>4828c8ec-dc2e-4779-b502-87ac9ce28ab7</code></td>
+<td style="text-align:left">Microsoft 365 Phone System</td>
+<td style="text-align:left"><code>MCOEV</code></td>
+<td style="text-align:left"><code>4828c8ec-dc2e-4779-b502-87ac9ce28ab7</code></td>
 </tr>
 <tr>
-<td>Microsoft Intune</td>
-<td><code>INTUNE_A</code></td>
-<td><code>c1ec4a95-1f05-45b3-a911-aa3fa01094f5</code></td>
+<td style="text-align:left">Microsoft Intune</td>
+<td style="text-align:left"><code>INTUNE_A</code></td>
+<td style="text-align:left"><code>c1ec4a95-1f05-45b3-a911-aa3fa01094f5</code></td>
 </tr>
 <tr>
-<td>Microsoft Teams</td>
-<td><code>TEAMS1</code></td>
-<td><code>57ff2da0-773e-42df-b2af-ffb7a2317929</code></td>
+<td style="text-align:left">Microsoft Teams</td>
+<td style="text-align:left"><code>TEAMS1</code></td>
+<td style="text-align:left"><code>57ff2da0-773e-42df-b2af-ffb7a2317929</code></td>
 </tr>
 <tr>
-<td>Skype for Business Online (Plan 2)</td>
-<td><code>MCOSTANDARD</code></td>
-<td><code>0feaeb32-d00e-4d66-bd5a-43b5b83db82c</code></td>
+<td style="text-align:left">Skype for Business Online (Plan 2)</td>
+<td style="text-align:left"><code>MCOSTANDARD</code></td>
+<td style="text-align:left"><code>0feaeb32-d00e-4d66-bd5a-43b5b83db82c</code></td>
 </tr>
 <tr>
-<td>Whiteboard (Plan 3)</td>
-<td><code>WHITEBOARD_PLAN3</code></td>
-<td><code>4a51bca5-1eff-43f5-878c-177680f191af</code></td>
+<td style="text-align:left">Whiteboard (Plan 3)</td>
+<td style="text-align:left"><code>WHITEBOARD_PLAN3</code></td>
+<td style="text-align:left"><code>4a51bca5-1eff-43f5-878c-177680f191af</code></td>
 </tr>
 </tbody>
 </table>
@@ -1438,38 +1438,38 @@
 <table>
 <thead>
 <tr>
-<th>Logic</th>
-<th>Rule</th>
+<th style="text-align:left">Logic</th>
+<th style="text-align:left">Rule</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>User <strong>is assigned</strong> a Microsoft 365 Phone System license and is enabled</td>
-<td><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+<td style="text-align:left">User <strong>is assigned</strong> a Microsoft 365 Phone System license and is enabled</td>
+<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
 </tr>
 <tr>
-<td>User <strong>is assigned any</strong> Intune license and is enabled</td>
-<td><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;SCO&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+<td style="text-align:left">User <strong>is assigned any</strong> Intune license and is enabled</td>
+<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;SCO&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
 </tr>
 <tr>
-<td>User <strong>is assigned any</strong> Teams license and is enabled</td>
-<td><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;TeamspaceAPI&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+<td style="text-align:left">User <strong>is assigned any</strong> Teams license and is enabled</td>
+<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;TeamspaceAPI&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
 </tr>
 <tr>
-<td>User <strong>is assigned any</strong> Skype for Business license and is enabled</td>
-<td><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;MicrosoftCommunicationsOnline&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+<td style="text-align:left">User <strong>is assigned any</strong> Skype for Business license and is enabled</td>
+<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;MicrosoftCommunicationsOnline&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
 </tr>
 <tr>
-<td>User <strong>is assigned</strong> a WhiteBoard Plan 3 license and is enabled</td>
-<td><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4a51bca5-1eff-43f5-878c-177680f191af&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+<td style="text-align:left">User <strong>is assigned</strong> a WhiteBoard Plan 3 license and is enabled</td>
+<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4a51bca5-1eff-43f5-878c-177680f191af&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
 </tr>
 <tr>
-<td>User <strong>is not assigned any</strong> Exchange Online license that is enabled or deleted</td>
-<td><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;exchange&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
+<td style="text-align:left">User <strong>is not assigned any</strong> Exchange Online license that is enabled or deleted</td>
+<td style="text-align:left"><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;exchange&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
 </tr>
 <tr>
-<td>User <strong>is not assigned any</strong> SharePoint Online license that is enabled or deleted</td>
-<td><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;SharePoint&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
+<td style="text-align:left">User <strong>is not assigned any</strong> SharePoint Online license that is enabled or deleted</td>
+<td style="text-align:left"><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;SharePoint&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
 </tr>
 </tbody>
 </table>
