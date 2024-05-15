@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://memv.ennbee.uk/posts/</loc>
+    <loc>https://memv.ennbee.uk/</loc>
     <lastmod>2024-07-14T18:53:56+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://memv.ennbee.uk/</loc>
+    <loc>https://memv.ennbee.uk/posts/</loc>
     <lastmod>2024-07-14T18:53:56+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

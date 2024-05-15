@@ -97,7 +97,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Enrolling Microsoft Teams Room Systems in Intune",
     "headline": "Enrolling Microsoft Teams Room Systems in Intune",
     "description": "Enrolling Android Teams Meeting Room devices in Microsoft Intune without compromising security.",
@@ -1223,8 +1223,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1235,8 +1235,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

@@ -99,7 +99,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Automating Endpoint Privilege Management Policies with PowerShell",
     "headline": "Automating Endpoint Privilege Management Policies with PowerShell",
     "description": "Creation of Microsoft Intune Suite license Endpoint Privilege Management rules based on audit of Windows devices using PowerShell and Graph API.",
@@ -1331,8 +1331,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1343,8 +1343,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

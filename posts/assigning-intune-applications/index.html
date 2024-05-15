@@ -99,7 +99,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Assigning Intune Mobile Apps Quickly and Consistently",
     "headline": "Assigning Intune Mobile Apps Quickly and Consistently",
     "description": "Automatically assigning Android Enterprise Google Play apps and iOS iPhone and iPad mobile apps in Microsoft Intune using PowerShell and Graph API.",
@@ -1261,8 +1261,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1273,8 +1273,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

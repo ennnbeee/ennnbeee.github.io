@@ -99,7 +99,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Creating and Assigning App Categories the Smart Way",
     "headline": "Creating and Assigning App Categories the Smart Way",
     "description": "Using PowerShell and Graph API to create and assign mobile app categories in Microsoft Intune for iOS and Android devices.",
@@ -1293,8 +1293,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1305,8 +1305,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

@@ -96,7 +96,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Bulk Adding Device Notes to Enrolled Devices",
     "headline": "Bulk Adding Device Notes to Enrolled Devices",
     "description": "Updating and adding notes to Microsoft Intune managed devices using PowerShell and Graph API.",
@@ -1196,8 +1196,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1208,8 +1208,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

@@ -99,7 +99,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Modernising Microsoft Intune Firewall Rule Policies",
     "headline": "Modernising Microsoft Intune Firewall Rule Policies",
     "description": "Migrating existing Microsoft Intune Windows firewall rules to settings catalog profiles using PowerShell and Graph API.",
@@ -1255,8 +1255,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1267,8 +1267,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

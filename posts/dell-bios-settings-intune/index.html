@@ -99,7 +99,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Configuring Dell BIOS Settings with Microsoft Intune",
     "headline": "Configuring Dell BIOS Settings with Microsoft Intune",
     "description": "Configuring Dell BIOS settings using application in Microsoft Intune with PowerShell.",
@@ -1263,8 +1263,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1275,8 +1275,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

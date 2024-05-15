@@ -96,7 +96,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Customising the Android Enterprise Enrolment QR Code",
     "headline": "Customising the Android Enterprise Enrolment QR Code",
     "description": "Modifying Microsoft Intune Android Enterprise QR codes allowing corporate wireless networks during enrolment.",
@@ -1196,8 +1196,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1208,8 +1208,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });

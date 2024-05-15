@@ -99,7 +99,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Blog",
+    "articleSection": "Posts",
     "name": "Creating Reusable Groups of Firewall Settings for Microsoft Online Services",
     "headline": "Creating Reusable Groups of Firewall Settings for Microsoft Online Services",
     "description": "Creating Microsoft Intune reusable firewall settings groups using PowerShell and Graph with the Microsoft Online web service for network endpoints.",
@@ -1253,8 +1253,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-           
-            $(e).removeClass('active').siblings('ul').hide();
+          
+            $(e).removeClass('active');
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1265,8 +1265,6 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
-         
-          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });
