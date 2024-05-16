@@ -1236,7 +1236,7 @@
         h.each(function (i, e) {
           e = $(e);
           if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = e.attr('id');
+            id = decodeURIComponent(e.attr('id'));
           }
         });
         var active = $toc.find('a.active');      
@@ -1261,6 +1261,7 @@
     }
   })();
 </script>
+
    </div>
       </div>
       

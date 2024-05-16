@@ -1244,7 +1244,7 @@
         h.each(function (i, e) {
           e = $(e);
           if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = e.attr('id');
+            id = decodeURIComponent(e.attr('id'));
           }
         });
         var active = $toc.find('a.active');      
@@ -1269,6 +1269,7 @@
     }
   })();
 </script>
+
    </div>
       </div>
       
@@ -1383,11 +1384,11 @@
 <p>As the uploaded backgrounds will reside within the context of the user signed in to the macOS device, we need to ensure that the script, when running from Microsoft Intune is also running under the user context.</p>
 <p>This means that the log file stored in path set by the <code>logAndMetaDir</code> variable, must be accessible to the user, hence the choice and use of the built-in variable <code>$HOME</code>.</p>
 <p>You should update the <code>backGroundUrls</code> array variable with the URLs for the backgrounds you want to use in Microsoft Teams, otherwise everything will look like I branded it.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">backGroundUrls</span><span class="o">=(</span><span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/ennnbeee.github.io/main/assets/img/wp.png&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/ennnbeee.github.io/main/assets/img/wp-lt.png&#34;</span><span class="o">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">backGroundUrls</span><span class="o">=(</span><span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/ennnbeee.github.io/main/bgr.png&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/ennnbeee.github.io/main/img/feature-bg.png&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">scriptName</span><span class="o">=</span><span class="s2">&#34;SetNewTeamsBackgrounds&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">logAndMetaDir</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Library/Logs/Microsoft/Intune/Scripts/</span><span class="nv">$scriptName</span><span class="s2">&#34;</span> <span class="c1"># Running under the user context</span>
+</span></span><span class="line"><span class="cl"><span class="nv">logAndMetaDir</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Library/Logs/Microsoft/IntuneScripts/</span><span class="nv">$scriptName</span><span class="s2">&#34;</span> <span class="c1"># Running under the user context</span>
 </span></span><span class="line"><span class="cl"><span class="nv">log</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$logAndMetaDir</span><span class="s2">/</span><span class="nv">$scriptName</span><span class="s2">.log&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -d <span class="nv">$logAndMetaDir</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
@@ -1570,7 +1571,7 @@
     
 </h3>
 <p>Once a device has checked in to Microsoft Intune, and a user is signed in to the device, the script should run, storing the log file in the location defined in the variable.</p>
-<p>So for this device it&rsquo;s <code>Users/ennbee/Library/Logs/Microsoft/Intune/Scripts/SetNewTeamsBackgrounds</code></p>
+<p>So for this device it&rsquo;s <code>Users/ennbee/Library/Logs/Microsoft/IntuneScripts/SetNewTeamsBackgrounds</code></p>
 <p>
 
 
@@ -1656,7 +1657,7 @@
     </span>        
     
 </h3>
-<p>It&rsquo;s a similar story with the &lsquo;New&rsquo; apps, with the log showing successful download of the backgrounds to <code>Users/ennbee//Library/Containers/com.microsoft.teams2/Data/Library/Application Support/Microsoft/MSTeams/Backgrounds/Uploads</code>.</p>
+<p>It&rsquo;s a similar story with the &lsquo;New&rsquo; apps, with the log showing successful download of the backgrounds to <code>Users/ennbee/Library/Containers/com.microsoft.teams2/Data/Library/Application Support/Microsoft/MSTeams/Backgrounds/Uploads</code>.</p>
 <p>
 
 
