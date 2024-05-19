@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Device Attributes &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Risk Based Windows 11 Feature Update Deployment - Automation &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
+  <meta name="title" content="Risk Based Windows 11 Feature Update Deployment - Automation &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk." />
   <meta name="keywords" content="intune, windows, updates, groups, powershell, graph, " />
@@ -17,7 +17,7 @@
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/" />
+  <link rel="canonical" href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/" />
   
   
   
@@ -73,28 +73,28 @@
   
   
   
-  <meta property="og:url" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
+  <meta property="og:url" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
-  <meta property="og:title" content="Risk Based Windows 11 Feature Update Deployment - Device Attributes">
+  <meta property="og:title" content="Risk Based Windows 11 Feature Update Deployment - Automation">
   <meta property="og:description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-04-19T23:11:03+00:00">
-    <meta property="article:modified_time" content="2024-04-19T23:11:03+00:00">
+    <meta property="article:published_time" content="2024-05-18T18:12:49+00:00">
+    <meta property="article:modified_time" content="2024-05-18T18:12:49+00:00">
     <meta property="article:tag" content="Microsoft Intune">
     <meta property="article:tag" content="Windows 10 and later">
     <meta property="article:tag" content="Updates">
     <meta property="article:tag" content="Groups">
     <meta property="article:tag" content="PowerShell">
     <meta property="article:tag" content="Graph API">
-    <meta property="og:image" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg">
-      <meta property="og:see_also" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/">
+    <meta property="og:image" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/feature-riskupdate.jpg">
       <meta property="og:see_also" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/">
+      <meta property="og:see_also" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
       <meta property="og:see_also" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/">
 
   <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg"><meta name="twitter:title" content="Risk Based Windows 11 Feature Update Deployment - Device Attributes">
+<meta name="twitter:image" content="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/feature-riskupdate.jpg"><meta name="twitter:title" content="Risk Based Windows 11 Feature Update Deployment - Automation">
 <meta name="twitter:description" content="Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.">
 
   
@@ -103,26 +103,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Risk Based Windows 11 Feature Update Deployment - Device Attributes",
-    "headline": "Risk Based Windows 11 Feature Update Deployment - Device Attributes",
+    "name": "Risk Based Windows 11 Feature Update Deployment - Automation",
+    "headline": "Risk Based Windows 11 Feature Update Deployment - Automation",
     "description": "Deploying Windows 11 23H2 feature updates using Microsoft Intune using Dynamic Device Groups in Entra ID and Feature Update Readiness reports to tag devices based on risk.",
-    "abstract": "Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.",
+    "abstract": "The final part in this series looks at how to bring everything together under a single, repeatable script, allowing for the capture of readiness state, the tagging of devices to support the distribution of Windows 11 23H2.",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part2\/",
+    "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-11-risk-based-deployment-part4\/",
     "author" : {
       "@type": "Person",
       "name": " "
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-04-19T23:11:03\u002b00:00",
-    "datePublished": "2024-04-19T23:11:03\u002b00:00",
+    "dateCreated": "2024-05-18T18:12:49\u002b00:00",
+    "datePublished": "2024-05-18T18:12:49\u002b00:00",
     
-    "dateModified": "2024-04-19T23:11:03\u002b00:00",
+    "dateModified": "2024-05-18T18:12:49\u002b00:00",
     
     "keywords": ["intune","windows","updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1746"
+    "wordCount": "1479"
   }]
   </script>
 
@@ -826,7 +826,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg);">
+    style="background-image:url(/posts/windows-11-risk-based-deployment-part4/feature-riskupdate.jpg);">
     
 
 
@@ -852,7 +852,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Risk Based Windows 11 Feature Update Deployment - Device Attributes
+      Risk Based Windows 11 Feature Update Deployment - Automation
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -897,7 +897,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-04-19 23:11:03 &#43;0000 UTC">19 April 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-05-18 18:12:49 &#43;0000 UTC">18 May 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -910,7 +910,7 @@
       
     
   
-  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part2/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part4/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1167,17 +1167,12 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#device-attributes">Device Attributes</a>
+    <li><a href="#script-overview">Script Overview</a></li>
+    <li><a href="#running-the-script">Running the Script</a>
       <ul>
-        <li><a href="#getting-existing-device-attribute-values">Getting Existing Device Attribute Values</a></li>
-        <li><a href="#updating-device-attributes">Updating Device Attributes</a></li>
-        <li><a href="#maintaining-device-attributes">Maintaining Device Attributes</a></li>
-      </ul>
-    </li>
-    <li><a href="#dynamic-security-groups">Dynamic Security Groups</a>
-      <ul>
-        <li><a href="#creating-dynamic-device-security-groups">Creating Dynamic Device Security Groups</a></li>
-        <li><a href="#group-membership-check">Group Membership Check</a></li>
+        <li><a href="#deployment-preparation">Deployment Preparation</a></li>
+        <li><a href="#getting-device-information">Getting Device Information</a></li>
+        <li><a href="#risk-tagging-devices">Risk Tagging Devices</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -1194,17 +1189,12 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#device-attributes">Device Attributes</a>
+    <li><a href="#script-overview">Script Overview</a></li>
+    <li><a href="#running-the-script">Running the Script</a>
       <ul>
-        <li><a href="#getting-existing-device-attribute-values">Getting Existing Device Attribute Values</a></li>
-        <li><a href="#updating-device-attributes">Updating Device Attributes</a></li>
-        <li><a href="#maintaining-device-attributes">Maintaining Device Attributes</a></li>
-      </ul>
-    </li>
-    <li><a href="#dynamic-security-groups">Dynamic Security Groups</a>
-      <ul>
-        <li><a href="#creating-dynamic-device-security-groups">Creating Dynamic Device Security Groups</a></li>
-        <li><a href="#group-membership-check">Group Membership Check</a></li>
+        <li><a href="#deployment-preparation">Deployment Preparation</a></li>
+        <li><a href="#getting-device-information">Getting Device Information</a></li>
+        <li><a href="#risk-tagging-devices">Risk Tagging Devices</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -1280,7 +1270,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 2: This Article
+        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
+            Part 2: Risk Based Windows 11 Feature Update Deployment - Device Attributes
+        </a>
     </div>
     
     
@@ -1296,9 +1288,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/">
-            Part 4: Risk Based Windows 11 Feature Update Deployment - Automation
-        </a>
+        Part 4: This Article
     </div>
     
     
@@ -1309,53 +1299,38 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>I&rsquo;d strongly suggest, if you haven&rsquo;t already, skimming over the first part of this series as this will give you a good understanding of where we started, and hopefully where we&rsquo;re trying to get to with putting the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
-    Feature Update Readiness Reports</a> in Microsoft Intune to good use allowing for a risk based deployment approach of Windows 11 23H2.</p>
-<p>
+          <p>Finally we&rsquo;re at the end of the series, where be bring all the components together from the previous three posts into one <del>sub par</del> suitable looking PowerShell script, allowing us to not only kick off the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports"   target="_blank">
+    Feature Update Readiness</a> report, but capture the risk state for each device, tag each device using <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http"   target="_blank">
+    Extension Attributes</a>, and then automatically group these devices with <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"   target="_blank">
+    Dynamic Security Groups</a> in order to deploy our Windows 11 23H2 Feature Update to low risk devices whilst we give our selves breathing space to fix the others.</p>
+<p>Let&rsquo;s get down, let&rsquo;s get down to business.</p>
 
 
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-report_hu1f816d92bc4459a4649d2576e0377863_17206_filter_4145953141700882411.webp#left" alt="Feature Update Readiness Report" />
-      <figcaption>Screenshot of Microsoft Feature Update readiness report</figcaption>
-    </figure>
-  
-
-</p>
-<p>With our precious data in hand, we can move onto how we group devices based on the risk, and hopefully make the transition to Windows 11 a relatively painless one.</p>
-
-
-<h2 class="relative group">Device Attributes 
-    <div id="device-attributes" class="anchor"></div>
+<h2 class="relative group">Script Overview 
+    <div id="script-overview" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#device-attributes" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#script-overview" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Those with a keen pair of eyes, may have spotted a <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
-    device attributes</a> for exceptions to Conditional Access Policies, and I may have hinted at the time that these attributes may have other uses. Well guess what, they do.</p>
-<p>We can take the data from the Readiness Report, that we formatted and updated with both a string representation of the risk state, and the Entra ID computer ObjectId of the device, and use this information to tag devices with their risk state for the Windows 11 Feature Update they were assessed against. Clever eh?</p>
-
-
-<h3 class="relative group">Getting Existing Device Attribute Values 
-    <div id="getting-existing-device-attribute-values" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#getting-existing-device-attribute-values" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>We&rsquo;ve already got a function to update device attributes on device objects, and I say update, as the call to Graph is using <code>PATCH</code> which means that it will overwrite the existing value for the attribute we want to update.</p>
-<p>This is both good, as it means we don&rsquo;t need to worry about changes to the devices Feature Update risk state, and bad, because we should probably check that our chosen attribute is not already used for something else, like for <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">Conditional Access Policies exclusions</a>.</p>
-<p>So can we find a way to pull back all devices where our device attribute of choice, this time <code>extensionAttribute15</code>, is not empty? Sure why not.</p>
+<p>Before I let you loose with the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"   target="_blank">
+    script</a>, and suggest that you go off and run this against your environment, let me talk you through what it actually does:</p>
+<ul>
+<li><strong>Connects to Microsoft Graph</strong> - taking the <code>tenantId</code> and <code>scopes</code> from the script parameters, connects using <code>Connect-MgGraph</code> using the &lsquo;Microsoft.Graph&rsquo; <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph-powershell-1.0"   target="_blank">
+    PowerShell module</a>.</li>
+<li><strong>Tells you what the script will do</strong> - gives you an overview of what the script will actually do, I know, how kind of me.</li>
+<li><strong>Gives you the rules for the Dynamic Security Groups</strong> - this is based on the <code>extensionAttribute</code> and <code>featureUpdateBuild</code> parameters selected when initially running the script, I could have automated this, but everyone has their own naming conventions so I cba.</li>
+<li><strong>Gives you the option to stop the script</strong> - yeah, even I have panic moments when running these types of scripts, so it at least gives you the option to Alt+F4 out of it.</li>
+<li><strong>Checks that the extensionAttribute selected isn&rsquo;t already populated with something else</strong> - this one is key, I don&rsquo;t want you blaming me when the script goes and overwrites an <code>extensionAttribute</code> you&rsquo;re using for something else. If it finds <em>any</em> device with data in the selected extensionAttribute other than something the script has set, it&rsquo;ll bin out the script.</li>
+<li><strong>Gets all Windows devices from Entra ID</strong> - will enumerate all your Windows devices in Entra ID, as we need their <code>objectID</code> to allow us to add extension attributes to.</li>
+<li><strong>Kicks off and waits for a Windows Feature Update Readiness report</strong> - using the <code>featureUpdateBuild</code> parameter, will start a report, wait for it to complete, then capture all the risk data.</li>
+<li><strong>Prompts if you want to assign extension attributes</strong> - this is your final call for running away, nothing so far has been modified or updated, so use this as your option to escape if you need to.</li>
+<li><strong>Assigns the risk based extension attributes</strong> - this is the bulk of the work, and with a little patience, depending on how many devices you actually have, will go and tag devices with their Feature Update risk rating on the <code>extensionAttribute</code> you chose.</li>
+</ul>
+<p>That&rsquo;s all there is to it.</p>
 
   
 
@@ -1384,267 +1359,65 @@
   <span
     
       class="dark:text-neutral-300"
-    >Connect to Graph using the latest module and <code>Connect-MgGraph -Scopes 'Device.ReadWrite.All'</code>.</span>
+    >Importantly this script can be run many many times, as we want to ensure that your devices are getting tagged with the correct risk, or if their risk has changed that it get&rsquo;s updated, or if they haven&rsquo;t reported back to Microsoft Intune with their readiness state, or if Microsoft have taken <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency"   target="_blank">
+    52 hours</a> to process the data and it&rsquo;s only just appeared.</span>
 </div>
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$extensionAttribute</span> <span class="p">=</span> <span class="s1">&#39;extensionAttribute15&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$windowsDevices</span> <span class="p">=</span> <span class="nb">Get-EntraIDDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">operatingSystem</span> <span class="o">-eq</span> <span class="s1">&#39;Windows&#39;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$windowsDevice</span> <span class="k">in</span> <span class="nv">$windowsDevices</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$attribute</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="py">extensionAttributes</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">).</span><span class="nv">$extensionAttribute</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$attribute</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="n">displayName</span><span class="p">)</span><span class="s2"> already has a value of &#39;</span><span class="nv">$attribute</span><span class="s2">&#39; configured in extension attribute </span><span class="nv">$extensionAttribute</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>This can be run in isolation, to check before assigning the risk based device attributes whether you&rsquo;re going to be overwriting anything important, as the <code>PATCH</code> to update the attribute is pretty destructive.</p>
-<p>For our situation, we know what values to actually expect on the device attribute that are valid (<code>LowRisk-W11-23H2, MediumRisk-W11-23H2, HighRisk-W11-23H2, NotReady-W11-23H2, Unknown-W11-23H2</code>), so we should expand upon the above to add some depth to the logic by creating an array variable of safe extension attribute values in <code>$safeAttributes</code>, which will allow us to run the assignment of attribute values multiple times, which is going to be important.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$extensionAttribute</span> <span class="p">=</span> <span class="s1">&#39;extensionAttribute15&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$windowsDevices</span> <span class="p">=</span> <span class="nb">Get-EntraIDDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">operatingSystem</span> <span class="o">-eq</span> <span class="s1">&#39;Windows&#39;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$attributeErrors</span> <span class="p">=</span> <span class="mf">0</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$safeAttributes</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="s2">&#34;LowRisk-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;MediumRisk-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;HighRisk-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;NotReady-W11-23H2&#34;</span><span class="p">,</span><span class="s2">&#34;Unknown-W11-23H2&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$windowsDevice</span> <span class="k">in</span> <span class="nv">$windowsDevices</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$attribute</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="py">extensionAttributes</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">).</span><span class="nv">$extensionAttribute</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$attribute</span> <span class="n">-notin</span> <span class="nv">$safeAttributes</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-ne</span> <span class="nv">$attribute</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$windowsDevice</span><span class="p">.</span><span class="n">displayName</span><span class="p">)</span><span class="s2"> already has a value of &#39;</span><span class="nv">$attribute</span><span class="s2">&#39; configured in extension attribute </span><span class="nv">$extensionAttribute</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$attributeErrors</span> <span class="p">=</span> <span class="nv">$attributeErrors</span> <span class="p">+</span> <span class="mf">1</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$attributeErrors</span> <span class="o">-gt</span> <span class="mf">0</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Please review the devices reporting as having existing data in the selected attribute </span><span class="nv">$extensionAttribute</span><span class="s2">, and run the script using a different attribute selection.&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
-</span></span><span class="line"><span class="cl">    <span class="k">break</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>The above will now check to see if our selected extension attribute <code>extensionAttribute15</code> contains a value not in the safe list, or not null, and increment an error variable <code>$attributeErrors</code>, then throw a wobbly if the value of that variable is greater than zero.</p>
-<p>Pre-flight checks over for now, onto assigning a value to our attribute.</p>
 
 
-<h3 class="relative group">Updating Device Attributes 
-    <div id="updating-device-attributes" class="anchor"></div>
+<h2 class="relative group">Running the Script 
+    <div id="running-the-script" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#updating-device-attributes" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>We&rsquo;ve dealt with this function previously, so no need to go into detail on this one, but it is expecting some <code>JSON</code> content and an <code>Id</code> to be able to assign the attribute values.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Add-DeviceAttribute</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">param</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$JSON</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$Id</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;Beta&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$Resource</span> <span class="p">=</span> <span class="s2">&#34;devices/</span><span class="nv">$Id</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/</span><span class="nv">$graphApiVersion</span><span class="s2">/</span><span class="p">$(</span><span class="nv">$Resource</span><span class="p">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Invoke-MgGraphRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="n">-Method</span> <span class="n">Patch</span> <span class="n">-Body</span> <span class="nv">$JSON</span> <span class="n">-ContentType</span> <span class="s1">&#39;application/json&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="py">ErrorDetails</span><span class="p">.</span><span class="py">Message</span>
-</span></span><span class="line"><span class="cl">        <span class="k">break</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Using the above and the data we have <a href="/posts/windows-11-risk-based-deployment-part1/#processing-feature-update-report-data" rel="noopener" target="_blank">previously captured</a> in part one in the <code>$reportArray</code> variable:</p>
-<p>
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-report-arrayup_hu2f3bab8eb5cf6c128e7f696aa2421c6e_64190_filter_13723018191753572580.webp#left" alt="Feature Update Readiness Report Array Updates" />
-      <figcaption>Screenshot of updated Readiness report data array</figcaption>
-    </figure>
-  
-
-</p>
-<p>We can loop through each and every device in the array, and with the values for both the <code>RiskState</code> and <code>ObjectID</code> we can happily update some attributes.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$object</span> <span class="k">in</span> <span class="nv">$reportArray</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">$JSON</span> <span class="p">=</span> <span class="sh">@&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sh">  {
-</span></span></span><span class="line"><span class="cl"><span class="sh">      &#34;extensionAttributes&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="sh">          &#34;</span><span class="nv">$extensionAttribute</span><span class="sh">&#34;: &#34;</span><span class="p">$(</span><span class="nv">$object</span><span class="p">.</span><span class="n">RiskState</span><span class="p">)</span><span class="sh">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sh">      }
-</span></span></span><span class="line"><span class="cl"><span class="sh">  }
-</span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">Add-DeviceAttribute</span> <span class="n">-Id</span> <span class="nv">$object</span><span class="p">.</span><span class="py">ObjectID</span> <span class="n">-JSON</span> <span class="nv">$JSON</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="mf">3</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Now while totally suitable, and will work it&rsquo;s way through the devices updating them based on the initial run, we need to be able to update the same extension attribute in subsequent runs, and with the call to Graph using <code>PATCH</code> we&rsquo;re covered, but there is no <code>RiskState</code> for devices already upgraded to the Windows 11 Feature Update version, so devices following an upgrade and new readiness report, will still be tagged with their old risk rating.</p>
-
-
-<h3 class="relative group">Maintaining Device Attributes 
-    <div id="maintaining-device-attributes" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#maintaining-device-attributes" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>I&rsquo;m not usually this tidy with my scripts, but we should clean up after ourselves, and as the Feature Update Readiness Report relies on a number of moving parts, no less devices themselves sending data, and the <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency"   target="_blank">
-    52 hours</a> of waiting for data to process, the aim here is to regularly run the whole script to ensure accurate assessment and tagging of devices.</p>
-<p>So let&rsquo;s add a little something something, and using the values from <code>ReadinessStatus</code> we can assess whether a device is already upgraded to our Windows 11 Feature Update version or not based on the <code>ReadinessStatus</code> equalling <code>4</code> and send the correct <code>JSON</code> data to Graph to ensure consistent assignment of the value of the extension attribute.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$object</span> <span class="k">in</span> <span class="nv">$reportArray</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$object</span><span class="p">.</span><span class="py">ReadinessStatus</span> <span class="o">-ne</span> <span class="s1">&#39;4&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$JSON</span> <span class="p">=</span> <span class="sh">@&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sh">        {
-</span></span></span><span class="line"><span class="cl"><span class="sh">            &#34;extensionAttributes&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="sh">                &#34;</span><span class="nv">$extensionAttribute</span><span class="sh">&#34;: &#34;</span><span class="p">$(</span><span class="nv">$object</span><span class="p">.</span><span class="n">RiskState</span><span class="p">)</span><span class="sh">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sh">            }
-</span></span></span><span class="line"><span class="cl"><span class="sh">        }
-</span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$JSON</span> <span class="p">=</span> <span class="sh">@&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sh">        {
-</span></span></span><span class="line"><span class="cl"><span class="sh">            &#34;extensionAttributes&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="sh">                &#34;</span><span class="nv">$extensionAttribute</span><span class="sh">&#34;: &#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sh">            }
-</span></span></span><span class="line"><span class="cl"><span class="sh">        }
-</span></span></span><span class="line"><span class="cl"><span class="sh">&#34;@</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">Add-DeviceAttribute</span> <span class="n">-Id</span> <span class="nv">$object</span><span class="p">.</span><span class="py">ObjectID</span> <span class="n">-JSON</span> <span class="nv">$JSON</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="mf">3</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>There we go, we can tag our devices using extension attributes with their risk state, not just once, but many many times, and keep on top of devices that have been updated to Windows 11 already.</p>
-<p>A quick straw poll of devices in Entra ID, we can see that the tag has applied successfully.</p>
-<ul>
-<li>
-<p>Low Risk Device
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low_hub9edd9fa13cd4d44def723cb38be54d3_16122_filter_9337536411845279582.webp#left" alt="Low Risk Device" />
-      <figcaption>Screenshot of Low Risk Device in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-<li>
-<p>Medium Risk Device
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med_hu531eaa475192ba18b314e21d33e38325_16136_filter_12423659805531950457.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Medium Risk Device in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-<li>
-<p>Not Ready Device
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready_hu064646d79f382216018248fc2a97c046_15376_filter_13167804753739802444.webp#left" alt="High Risk Device" />
-      <figcaption>Screenshot of Not Ready Device in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-<li>
-<p>Unknown Risk Device
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown_hu383664cbcb52238d93f9675bcd5356ee_16264_filter_17645809871165671220.webp#left" alt="Unknown Risk Device" />
-      <figcaption>Screenshot of Unknown Risk Device in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-</ul>
-<p>We should do something sensible with these tags on the devices now.</p>
-
-
-<h2 class="relative group">Dynamic Security Groups 
-    <div id="dynamic-security-groups" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#dynamic-security-groups" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#running-the-script" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Ah my love affair between <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient"   target="_blank">
-    certain</a> operators, there are still times when Dynamic Groups are going to win out over Device Filters.</p>
-<p>With Feature Update deployments in Microsoft Intune not supporting the use of Device Filters, and as we&rsquo;ve tagged the Entra ID object of the device, and not the Microsoft Intune object, we don&rsquo;t have any say in the matter, so we have to use groups this time.</p>
+<p>So now you have an overview of what the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11Accelerator.ps1"   target="_blank">
+    script</a> 😇 actually does, let&rsquo;s see how we start it and what the output looks like.</p>
+<p>If we want to start our journey to Windows 11 23H2, and by now you should really be looking at starting this migration, as it&rsquo;s not <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
+    that long</a> until the support for Windows 10 ends, we can run the PowerShell script using the below, passing in your <a href="https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant"   target="_blank">
+    Entra ID Tenant ID</a> to <code>tenantId</code>, the selected <code>featureUpdateBuild</code>, in this case 23H2, and your <code>extensionAttribute</code> of choice:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-Windows11Accelerator</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;36019fe7-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-featureUpdateBuild</span> <span class="s1">&#39;23H2&#39;</span> <span class="n">-extensionAttribute</span> <span class="s1">&#39;15&#39;</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">Deployment Preparation 
+    <div id="deployment-preparation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#deployment-preparation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Following the authentication to Microsoft Graph PowerShell with <code>Connect-MgGraph</code>, with the scopes configured in the script as
+<code>Group.ReadWrite.All, Device.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All</code>, we&rsquo;re presented with the first stage in the process:</p>
 <p>
 
 
 
   
   
+    
+  
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-fu-assign_hu301d8c8c3c32150d5b4bbaaa532188c6_82520_filter_10644043270312644646.webp#left" alt="Feature Update Assignment" />
-      <figcaption>Screenshot of Feature Update assignment in Microsoft Intune</figcaption>
+      
+      <img
+        class="my-0 rounded-md"
+        src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start_hud1e23f84e73ef023265032731f89ce06_106278_filter_10779421172965233515.webp"
+        alt="Start of the Get Ready for Windows 11 script"
+      />
+      
+      <figcaption>Screenshot of the start of the Get Ready for Windows 11 PowerShell script</figcaption>
     </figure>
   
 
 </p>
-<p>So what are we doing with the groups? Well we can create dynamic device groups to capture corporate owned Windows devices based on their risk state.</p>
-
-
-<h3 class="relative group">Creating Dynamic Device Security Groups 
-    <div id="creating-dynamic-device-security-groups" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#creating-dynamic-device-security-groups" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>So off you go, create some groups with the below rules, and if you&rsquo;ve been following along, you&rsquo;ll realise that we now have ring-fenced devices based on just how ready they are to update to Windows 11. Cool eh? (rhetorical, it is <em>obviously</em> cool.)</p>
+<p>Providing us with the information I promised it would, including the generated Dynamic Security Group rules allowing your to create them in Entra ID to support the Windows 11 23H2 Feature Update deployment:</p>
 <table>
 <thead>
 <tr>
@@ -1675,133 +1448,153 @@
 </tr>
 </tbody>
 </table>
-<p>Give the groups a little while to populate, hopefully not <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-troubleshooting#:~:text=If%20everything%20looks%20good%2C%20please%20allow%20some%20time%20for%20the%20group%20to%20populate.%20Depending%20on%20the%20size%20of%20your%20Microsoft%20Entra%20organization%2C%20the%20group%20may%20take%20up%20to%2024%20hours%20for%20populating%20for%20the%20first%20time%20or%20after%20a%20rule%20change."   target="_blank">
-    24 hours</a>, but all being well and good, the members should flood in.</p>
 
 
-<h3 class="relative group">Group Membership Check 
-    <div id="group-membership-check" class="anchor"></div>
+<h3 class="relative group">Getting Device Information 
+    <div id="getting-device-information" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#group-membership-check" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#getting-device-information" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>Ok ok, let&rsquo;s not just take my word for it, after all we&rsquo;re not <del>best friends</del> colleagues just yet, in fact I bet some of you don&rsquo;t even follow me on <a href="https://www.linkedin.com/in/ennnbeee/"   target="_blank">
-    LinkedIn</a> 😅, anyway let&rsquo;s look at the output of the report we initially created.</p>
+<p>Blindly continuing the script, as so far the script has actually done nothing, it will happily go and get all your Windows devices from Entra ID, and check if there is any existing data we don&rsquo;t want, in the selected <code>extensionAttribute15</code>, for us this time, we&rsquo;re all clear, so it continues and starts the Feature Update Readiness report for Windows 11 23H2, and  processes all the associated data:</p>
 <p>
 
 
 
   
   
+    
+  
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-report_hu1f816d92bc4459a4649d2576e0377863_17206_filter_4145953141700882411.webp#left" alt="Feature Update Readiness Report" />
-      <figcaption>Screenshot of Microsoft Feature Update readiness report</figcaption>
+      
+      <img
+        class="my-0 rounded-md"
+        src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle_hu7b0d8b6e7c449d8c3a6e8dcf7ce989ad_52288_filter_10779421172965233515.webp"
+        alt="Confirmation section of the Get Windows 11 Ready Script"
+      />
+      
+      <figcaption>Screenshot of the confirmation section of the Get Ready for Windows 11 PowerShell script</figcaption>
     </figure>
   
 
 </p>
-<p>Let&rsquo;s look at the break down of devices in each risk category:</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >If there was data in <code>extensionAttribute15</code> for any device in Entra ID, then the script would break at this point telling you to go do your homework on <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http"   target="_blank">
+    extensionAttributes</a>.</span>
+</div>
+
+<p>Now that we have details of all the devices, from both Entra ID and the Feature Update Readiness report, we&rsquo;re ready to start tagging devices.</p>
+<p>This is your <strong>last chance</strong> to bail out.</p>
+
+
+<h3 class="relative group">Risk Tagging Devices 
+    <div id="risk-tagging-devices" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#risk-tagging-devices" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Now that you&rsquo;ve <del>not bottled it</del> continued with the script, congratulations you&rsquo;re on your way to delivering Windows 11 23H2 to your device estate, with the script happily churning away through the data and devices, assigning each and every one in scope of the Feature Update Readiness report.</p>
+<p>Each device will now be tagged on your selected extensionAttribute with their associated update risk status from:</p>
 <ul>
-<li>Low Risk - 278 devices</li>
-<li>Medium Risk - 68 devices</li>
-<li>High Risk - 0 devices (lucky)</li>
-<li>Not Ready - 14 devices</li>
-<li>Unknown - 48 devices</li>
+<li><strong>Low risk</strong> - There are no known compatibility risks associated with the device.</li>
+<li><strong>Medium risk</strong> - There are only minor, or non-blocking, compatibility risks associated with this device, such as applications that are automatically removed during upgrade.</li>
+<li><strong>High risk</strong> - There are multiple or blocking compatibility risks associated with this device, such as applications that block an upgrade.</li>
+<li><strong>Not ready</strong> - The device isn&rsquo;t capable of upgrading to the target OS version.</li>
+<li><strong>Unknown</strong> - A readiness status couldn&rsquo;t be determined. Ensure that the device is properly configured to send Windows diagnostic data.</li>
 </ul>
-<p>Now have a look at the obviously un-doctored screenshots of each of our Dynamic Device Security Groups.</p>
-<ul>
-<li>
-<p>Low Risk Devices Dynamic Group
-
+<p>In the format of <code>[RiskState]-W11-[FeatureUpdate]</code> i.e., <code>LowRisk-W11-23H2</code>, <code>NotReady-W11-23H2</code>.</p>
+<p>
 
 
 
   
+  
+    
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low_hud5388e79d27f55f5c91c000f0ce75498_22432_filter_9735071814322547640.webp#left" alt="Low Risk Device" />
-      <figcaption>Screenshot of Low Risk Devices Dynamic Group in Entra ID</figcaption>
+      
+      <img
+        class="my-0 rounded-md"
+        src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign_hub563d5f0c0fe52d58399ed8fa298fa08_90786_filter_2586771831122602155.webp"
+        alt="Assignment section of the Get Windows 11 Ready Script"
+      />
+      
+      <figcaption>Screenshot of the assignment section of the Get Ready for Windows 11 PowerShell script</figcaption>
     </figure>
   
 
 </p>
-</li>
-<li>
-<p>Medium Risk Devices Dynamic Group
-
-
-
+<p>I thought I&rsquo;d colour code the output of this section, though it serves no purpose other than to look nice.</p>
+<p>What it does show though, are devices being assigned to their respective risk rating where appropriate, and when a device has been updated to Windows 11 23H2, it will clear the <code>extensionAttribute</code>. If you&rsquo;ve created the Dynamic Security Groups based on the rules provided by the script, they should now start slowly populating with devices.</p>
+<p>Leaping back to <a href="/posts/windows-11-risk-based-deployment-part3" rel="noopener" target="_blank">part three</a> in the series, you&rsquo;re now in a position to create your Feature Update profiles, allowing you to safely deploy the Windows 11 23H2 Feature Update to your devices categorised as low risk, whilst you assign someone else in your team to investigate the issues with the medium and high risk devices 😂.</p>
 
   
+
+
+
+<div
   
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med_hu79225c55013ff5a43ff53c74b809862b_22800_filter_9735071814322547640.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Medium Risk Devices Dynamic Group in Entra ID</figcaption>
-    </figure>
-  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
 
-</p>
-</li>
-<li>
-<p>High Risk Devices Dynamic Group
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
 
+    
 
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
 
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high_hu05db4e408df4666afc931e77f6e72154_22460_filter_9735071814322547640.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of High Risk Devices Dynamic Group in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-<li>
-<p>Not Ready Devices Dynamic Group
+  </span>
 
 
+  </span>
 
+  <span
+    
+      class="dark:text-neutral-300"
+    >Remember, this script is designed to run multiple times, so after your first run, you should probably set a reminder to run it again and again until either your number of &lsquo;unknown&rsquo; devices is zero, or close enough that you&rsquo;re comfortable to move forward with the deployment of the Feature Update.</span>
+</div>
 
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready_hu1d206e75e4de2652521cde280a6caf4b_22328_filter_9735071814322547640.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Not Ready Devices Dynamic Group in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-<li>
-<p>Unknown Risk Devices Dynamic Group
-
-
-
-
-  
-  
-  
-    <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown_hubbd29ca4a499b9990f38d817429cb738_22726_filter_9735071814322547640.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Unknown Risk Devices Dynamic Group in Entra ID</figcaption>
-    </figure>
-  
-
-</p>
-</li>
-</ul>
-<p>And there you have it, matchy matchy values for each of the risk types. You&rsquo;ll notice there isn&rsquo;t a group for the three devices already upgraded to Windows 11 23H2, as we don&rsquo;t care about these ones for the purpose of a Feature Update to the same version that&rsquo;s already installed.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1814,8 +1607,9 @@
     </span>        
     
 </h2>
-<p>We&rsquo;re on the home stretch now, having captured all the data we need to truly assess the readiness state of a deployment of a Windows 11 23H2 feature update, successfully tagging the Windows device objects in Entra ID with a suitably named risk state, and gathered all devices of the same risk state using Dynamic Device Security Groups.</p>
-<p>What else do you want from me? Ah yes, a way to utilise the groups we created as part of deploying the Feature Update, you know the whole point of this series. Tune in next <del>week</del> time for the next exciting post in this series. I bet you&rsquo;re thrilled about that.</p>
+<p>Yes I know the script could have done more, it could have created the Dynamic Security Groups and the Feature Update profiles, and assigned them whilst it was there, but two things here, firstly no-one should just blindly run a script that punts a brand new operating system out to devices, and secondly, I wouldn&rsquo;t have been able to create a series of blog posts explaining each step of the way if I&rsquo;d done all the work for you in PowerShell.</p>
+<p>The script, and the content of this series gives you a better understanding on how to leverage the existing information in Microsoft Intune to assist you with deploying Windows 11 23H2, well in time for the end of support date of Windows 10. It also allows you to start the deployment of the Feature Update to known low risk devices, giving you more time to investigate those with applications or drivers that are going to get removed during the update, or will block the Feature Update entirely.</p>
+<p>All in all, this is a great place to start with deploying Windows 11 23H2, but it isn&rsquo;t the end of your process. It is however the end of this series.</p>
 
         </div>
         
@@ -1842,7 +1636,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 2: This Article
+        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/">
+            Part 2: Risk Based Windows 11 Feature Update Deployment - Device Attributes
+        </a>
     </div>
     
     
@@ -1858,9 +1654,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/">
-            Part 4: Risk Based Windows 11 Feature Update Deployment - Automation
-        </a>
+        Part 4: This Article
     </div>
     
     
@@ -1876,7 +1670,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1895,7 +1689,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;text=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;text=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1913,7 +1707,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1932,7 +1726,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title=""
       aria-label=""
       >
@@ -1951,7 +1745,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;resubmit=true&amp;title=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title=""
       aria-label=""
       >
@@ -1970,7 +1764,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;description=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;description=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1989,7 +1783,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;quote=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;quote=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -2008,7 +1802,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/&amp;subject=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Device%20Attributes"
+      href="mailto:?body=https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/&amp;subject=Risk%20Based%20Windows%2011%20Feature%20Update%20Deployment%20-%20Automation"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -2031,6 +1825,336 @@
 
 <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+  
+  
+
+  <a href="/posts/windows-11-risk-based-deployment-part3/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-11-risk-based-deployment-part3/feature-riskupdate.jpg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/windows-11-risk-based-deployment-part3/">Risk Based Windows 11 Feature Update Deployment - Feature Updates</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-05-05 10:18:36 &#43;0000 UTC">5 May 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part3/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Microsoft Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Updates
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Groups
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/windows-11-risk-based-deployment-part2/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-11-risk-based-deployment-part2/feature-riskupdate.jpg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/windows-11-risk-based-deployment-part2/">Risk Based Windows 11 Feature Update Deployment - Device Attributes</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-04-19 23:11:03 &#43;0000 UTC">19 April 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/Windows-11-Risk-Based-Deployment-Part2/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Microsoft Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Updates
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Groups
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
   
   
 
@@ -2197,368 +2321,6 @@
     </div>
   </a>
   
-  
-
-  <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/defender-antivirus-compliance-updates/">Updating Defender Antivirus Compliance Settings</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/defender/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Defender
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Compliance
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/antivirus/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Antivirus
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
-  <a href="/posts/operating-system-compliance-updates/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/operating-system-compliance-updates/feature-os-compliance.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/operating-system-compliance-updates/">Windows Operating System Compliance Updates</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2022-06-30 11:20:36 &#43;0100 &#43;0100">30 June 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/Operating-System-Compliance-Updates/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Compliance
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
 </section>
 
   
@@ -2572,8 +2334,8 @@
           
         
       <script>
-        var oid = "views_posts\/Windows-11-Risk-Based-Deployment-Part2\/index.md"
-        var oid_likes = "likes_posts\/Windows-11-Risk-Based-Deployment-Part2\/index.md"
+        var oid = "views_posts\/Windows-11-Risk-Based-Deployment-Part4\/index.md"
+        var oid_likes = "likes_posts\/Windows-11-Risk-Based-Deployment-Part4\/index.md"
       </script>
       
       
@@ -2596,40 +2358,18 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/windows-11-risk-based-deployment-part3/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Risk Based Windows 11 Feature Update Deployment - Feature Updates</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2024-05-05 10:18:36 &#43;0000 UTC">5 May 2024</time>
-                  
-                </span>
-              </span>
-            </a>
-          
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/macos-updates-phased-deployment/">
+            <a class="flex text-right group ml-3" href="/posts/macos-platformsso-google-chrome/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Software Update Deployment Rings for Managed macOS Devices</span
+                  >Configuring Google Chrome on macOS for Platform Single Sign-On</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-04-06 20:05:09 &#43;0100 &#43;0100">6 April 2024</time>
+                    <time datetime="2024-05-08 22:49:39 &#43;0100 &#43;0100">8 May 2024</time>
                   
                 </span>
               </span>
