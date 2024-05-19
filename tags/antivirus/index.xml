@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sun, 02 Apr 2023 21:25:23 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/antivirus/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jun 2023 21:25:23 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/antivirus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detailed Compliance for Non-Microsoft Antivirus Solutions</title>
       <link>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</link>
-      <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
+      <pubDate>Sun, 11 Jun 2023 21:25:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
       <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>

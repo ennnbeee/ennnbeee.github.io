@@ -219,19 +219,9 @@
     </item>
     
     <item>
-      <title>Endpoint Privilege Management</title>
-      <link>https://memv.ennbee.uk/tags/epm/</link>
-      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/epm/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Antivirus</title>
       <link>https://memv.ennbee.uk/tags/antivirus/</link>
-      <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
+      <pubDate>Sun, 11 Jun 2023 21:25:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/antivirus/</guid>
       <description></description>
@@ -241,9 +231,19 @@
     <item>
       <title>Compliance</title>
       <link>https://memv.ennbee.uk/tags/compliance/</link>
-      <pubDate>Sun, 02 Apr 2023 21:25:23 +0100</pubDate>
+      <pubDate>Sun, 11 Jun 2023 21:25:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/compliance/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Endpoint Privilege Management</title>
+      <link>https://memv.ennbee.uk/tags/epm/</link>
+      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/epm/</guid>
       <description></description>
       
     </item>
