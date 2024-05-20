@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.00e1a7c0689d284ac6adeb4968b35488221aba419248d2dfd6e8a63541800b5ca2f206983d6a6413fd2551b579bc4dc8743cf9f6565c2e29db43e8d3bcb07d25.css"
-    integrity="sha512-AOGnwGidKErGretJaLNUiCIaukGSSNLf1uimNUGAC1yi8gaYPWpkE/0lUbV5vE3IdDz59lZcLinbQ&#43;jTvLB9JQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.e96f280d4516243b6396533a543e638a9fe9ca2d9696eab7f82a0a513850fe74b81c4b9b9e2f56a3d16f6ae2104dc9bdf477101a1685748a4df8ddd6cf7e579d.css"
+    integrity="sha512-6W8oDUUWJDtjllM6VD5jip/pyi2Wluq3&#43;CoKUThQ/nS4HEubni9Wo9FvauIQTcm99HcQGhaFdIpN&#43;N3Wz35XnQ==" />
   
   
   <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
@@ -1253,8 +1253,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-          
-            $(e).removeClass('active');
+           
+            $(e).removeClass('active').siblings('ul').hide();
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1265,6 +1265,8 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
+         
+          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });
@@ -2601,11 +2603,11 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
   
   
 
-  <a href="/posts/custom-compliance-third-party-av/" class="min-w-full">
+  <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/custom-compliance-third-party-av/feature-av.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/defender-antivirus-compliance-updates/feature-defender-compliance.png);"></div>
         
       
 
@@ -2613,7 +2615,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/custom-compliance-third-party-av/">Detailed Compliance for Non-Microsoft Antivirus Solutions</div>
+          href="/posts/defender-antivirus-compliance-updates/">Updating Defender Antivirus Compliance Settings</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2654,7 +2656,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-11 21:25:23 &#43;0100 &#43;0100">11 June 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2667,7 +2669,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
     
   
-  <span id="views_posts/Custom-Compliance-Third-Party-AV/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2716,10 +2718,10 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/defender/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Compliance
+    Microsoft Defender
   </span>
 </span>
   </span>
@@ -2728,6 +2730,22 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Compliance
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Updates
   </span>
 </span>
   </span>

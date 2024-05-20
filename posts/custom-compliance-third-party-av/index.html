@@ -12,7 +12,7 @@
   <meta name="title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions." />
-  <meta name="keywords" content="intune, windows, compliance, security, antivirus, graph, powershell, " />
+  <meta name="keywords" content="intune, windows, compliance, security, antivirus, powershell, " />
   
   <meta name="robots" content="all" />
   
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.00e1a7c0689d284ac6adeb4968b35488221aba419248d2dfd6e8a63541800b5ca2f206983d6a6413fd2551b579bc4dc8743cf9f6565c2e29db43e8d3bcb07d25.css"
-    integrity="sha512-AOGnwGidKErGretJaLNUiCIaukGSSNLf1uimNUGAC1yi8gaYPWpkE/0lUbV5vE3IdDz59lZcLinbQ&#43;jTvLB9JQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.e96f280d4516243b6396533a543e638a9fe9ca2d9696eab7f82a0a513850fe74b81c4b9b9e2f56a3d16f6ae2104dc9bdf477101a1685748a4df8ddd6cf7e579d.css"
+    integrity="sha512-6W8oDUUWJDtjllM6VD5jip/pyi2Wluq3&#43;CoKUThQ/nS4HEubni9Wo9FvauIQTcm99HcQGhaFdIpN&#43;N3Wz35XnQ==" />
   
   
   <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
@@ -87,7 +87,7 @@
     <meta property="article:tag" content="Compliance">
     <meta property="article:tag" content="Security">
     <meta property="article:tag" content="Antivirus">
-    <meta property="article:tag" content="Graph API">
+    <meta property="article:tag" content="PowerShell">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/feature-av.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -116,7 +116,7 @@
     
     "dateModified": "2023-06-11T21:25:23\u002b01:00",
     
-    "keywords": ["intune","windows","compliance","security","antivirus","graph","powershell"],
+    "keywords": ["intune","windows","compliance","security","antivirus","powershell"],
     
     "mainEntityOfPage": "true",
     "wordCount": "1452"
@@ -1001,14 +1001,6 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
@@ -1239,8 +1231,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-          
-            $(e).removeClass('active');
+           
+            $(e).removeClass('active').siblings('ul').hide();
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1251,6 +1243,8 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
+         
+          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });
@@ -1455,16 +1449,16 @@
     Microsoft</a> to allow the Custom Compliance script to work as expected.</p>
 <p>We&rsquo;ve used the <code>$AVClient</code> variable, which will allow re-use of the script depending on which product is installed across your device estate.</p>
 <p>We also have to be able to capture and present back when the script doesn&rsquo;t detect the specified <code>$AVClient</code> variable, otherwise we&rsquo;ll get some grim looking compliance errors on those devices.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$AVClient</span> <span class="p">=</span> <span class="s1">&#39;Sophos Anti-Virus&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$AVProduct</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s1">&#39;root\SecurityCenter2&#39;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">displayName</span> <span class="o">-eq</span> <span class="nv">$AVClient</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="mf">1</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$AVSummary</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSObject</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$avClient</span> <span class="p">=</span> <span class="s1">&#39;Sophos Anti-Virus&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$avProduct</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s1">&#39;root\SecurityCenter2&#39;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">displayName</span> <span class="o">-eq</span> <span class="nv">$avClient</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$avSummary</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSObject</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">If</span> <span class="p">(</span><span class="nv">$AVProduct</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$hexProductState</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToString</span><span class="p">(</span><span class="nv">$AVProduct</span><span class="p">.</span><span class="n">productState</span><span class="p">,</span> <span class="mf">16</span><span class="p">).</span><span class="py">PadLeft</span><span class="p">(</span><span class="mf">6</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">If</span> <span class="p">(</span><span class="nv">$avProduct</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$hexProductState</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToString</span><span class="p">(</span><span class="nv">$avProduct</span><span class="p">.</span><span class="n">productState</span><span class="p">,</span> <span class="mf">16</span><span class="p">).</span><span class="py">PadLeft</span><span class="p">(</span><span class="mf">6</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$hexRealTimeProtection</span> <span class="p">=</span> <span class="nv">$hexProductState</span><span class="p">.</span><span class="py">Substring</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$hexDefinitionStatus</span> <span class="p">=</span> <span class="nv">$hexProductState</span><span class="p">.</span><span class="py">Substring</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="mf">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$RealTimeProtectionStatus</span> <span class="p">=</span> <span class="k">switch</span> <span class="p">(</span><span class="nv">$hexRealTimeProtection</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$realTimeProtectionStatus</span> <span class="p">=</span> <span class="k">switch</span> <span class="p">(</span><span class="nv">$hexRealTimeProtection</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="s1">&#39;00&#39;</span> <span class="p">{</span> <span class="s1">&#39;Off&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="s1">&#39;01&#39;</span> <span class="p">{</span> <span class="s1">&#39;Expired&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="s1">&#39;10&#39;</span> <span class="p">{</span> <span class="s1">&#39;On&#39;</span> <span class="p">}</span>
@@ -1472,23 +1466,23 @@
 </span></span><span class="line"><span class="cl">        <span class="k">default</span> <span class="p">{</span> <span class="s1">&#39;Unknown&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$DefinitionStatus</span> <span class="p">=</span> <span class="k">switch</span> <span class="p">(</span><span class="nv">$hexDefinitionStatus</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$definitionStatus</span> <span class="p">=</span> <span class="k">switch</span> <span class="p">(</span><span class="nv">$hexDefinitionStatus</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="s1">&#39;00&#39;</span> <span class="p">{</span> <span class="s1">&#39;Up to Date&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="s1">&#39;10&#39;</span> <span class="p">{</span> <span class="s1">&#39;Out of Date&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="k">default</span> <span class="p">{</span> <span class="s1">&#39;Unknown&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$AVClient</span><span class="s2">&#34;</span> <span class="n">-Value</span> <span class="nv">$AVProduct</span><span class="p">.</span><span class="py">displayName</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$AVClient</span><span class="s2"> real time protection enabled&#34;</span> <span class="n">-Value</span> <span class="nv">$RealTimeProtectionStatus</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$AVClient</span><span class="s2"> definitions up-to-date&#34;</span> <span class="n">-Value</span> <span class="nv">$DefinitionStatus</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$avClient</span><span class="s2">&#34;</span> <span class="n">-Value</span> <span class="nv">$avProduct</span><span class="p">.</span><span class="py">displayName</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$avClient</span><span class="s2"> real time protection enabled&#34;</span> <span class="n">-Value</span> <span class="nv">$realTimeProtectionStatus</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$avClient</span><span class="s2"> definitions up-to-date&#34;</span> <span class="n">-Value</span> <span class="nv">$definitionStatus</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$AVClient</span><span class="s2">&#34;</span> <span class="n">-Value</span> <span class="s1">&#39;Error: No Antivirus product found&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$AVClient</span><span class="s2"> real time protection enabled&#34;</span> <span class="n">-Value</span> <span class="s1">&#39;Error: No Antivirus product found&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$AVClient</span><span class="s2"> definitions up-to-date&#34;</span> <span class="n">-Value</span> <span class="s1">&#39;Error: No Antivirus product found&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$avClient</span><span class="s2">&#34;</span> <span class="n">-Value</span> <span class="s1">&#39;Error: No Antivirus product found&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$avClient</span><span class="s2"> real time protection enabled&#34;</span> <span class="n">-Value</span> <span class="s1">&#39;Error: No Antivirus product found&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="s2">&#34;</span><span class="nv">$avClient</span><span class="s2"> definitions up-to-date&#34;</span> <span class="n">-Value</span> <span class="s1">&#39;Error: No Antivirus product found&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nv">$AVSummary</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Compress</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Compress</span>
 </span></span></code></pre></div><p>Running this script on a machine with the Antivirus product installed would be a good idea to test that the scripts works, and is outputting the correct information in the required format for Intune to translate.</p>
 <p>The output from the script should look a little bit like the below:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;Sophos Anti-Virus&#34;</span><span class="p">:</span><span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">:</span><span class="s2">&#34;On&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">:</span><span class="s2">&#34;Up to Date&#34;</span><span class="p">}</span>

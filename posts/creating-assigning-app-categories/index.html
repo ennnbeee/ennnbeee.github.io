@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.00e1a7c0689d284ac6adeb4968b35488221aba419248d2dfd6e8a63541800b5ca2f206983d6a6413fd2551b579bc4dc8743cf9f6565c2e29db43e8d3bcb07d25.css"
-    integrity="sha512-AOGnwGidKErGretJaLNUiCIaukGSSNLf1uimNUGAC1yi8gaYPWpkE/0lUbV5vE3IdDz59lZcLinbQ&#43;jTvLB9JQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.e96f280d4516243b6396533a543e638a9fe9ca2d9696eab7f82a0a513850fe74b81c4b9b9e2f56a3d16f6ae2104dc9bdf477101a1685748a4df8ddd6cf7e579d.css"
+    integrity="sha512-6W8oDUUWJDtjllM6VD5jip/pyi2Wluq3&#43;CoKUThQ/nS4HEubni9Wo9FvauIQTcm99HcQGhaFdIpN&#43;N3Wz35XnQ==" />
   
   
   <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
@@ -1293,8 +1293,8 @@
         if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
         active.each(function (i, e) {
-          
-            $(e).removeClass('active');
+           
+            $(e).removeClass('active').siblings('ul').hide();
           
         });
         $toc.find('a[href="#' + id + '"]').addClass('active')
@@ -1305,6 +1305,8 @@
 
       $window.on('scroll', onScroll);
       $(document).ready(function () {
+         
+          $toc.find('a').parent('li').find('ul').hide();
         
         onScroll();
       });
