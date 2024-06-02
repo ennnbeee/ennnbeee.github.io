@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sat, 18 May 2024 18:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/authors/ennbee/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jun 2024 18:20:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/authors/ennbee/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Autopilot Virtualisation on macOS using UTM</title>
+      <link>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</link>
+      <pubDate>Sun, 02 Jun 2024 18:20:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</guid>
+      <description>With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but still need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to build a Windows 11 Autopilot device on your macOS device using UTM for testing.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macosutm.jpg" />
+    </item>
+    
     <item>
       <title>Risk Based Windows 11 Feature Update Deployment - Automation</title>
       <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</link>
@@ -420,12 +430,12 @@
     
     <item>
       <title>macOS National Cyber Security Centre Security Settings in Intune</title>
-      <link>https://memv.ennbee.uk/posts/ncsc-macos-settings/</link>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
       <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/ncsc-macos-settings/feature-macosncsc.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/feature-macosncsc.jpg" />
     </item>
     
     <item>

@@ -7,7 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sat, 18 May 2024 18:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jun 2024 18:20:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS</title>
+      <link>https://memv.ennbee.uk/tags/macos/</link>
+      <pubDate>Sun, 02 Jun 2024 18:20:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/macos/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Microsoft Intune</title>
+      <link>https://memv.ennbee.uk/tags/intune/</link>
+      <pubDate>Sun, 02 Jun 2024 18:20:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/intune/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows 10 and later</title>
+      <link>https://memv.ennbee.uk/tags/windows/</link>
+      <pubDate>Sun, 02 Jun 2024 18:20:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/windows/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows Autopilot</title>
+      <link>https://memv.ennbee.uk/tags/autopilot/</link>
+      <pubDate>Sun, 02 Jun 2024 18:20:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Graph API</title>
       <link>https://memv.ennbee.uk/tags/graph/</link>
@@ -29,16 +69,6 @@
     </item>
     
     <item>
-      <title>Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/intune/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>PowerShell</title>
       <link>https://memv.ennbee.uk/tags/powershell/</link>
       <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
@@ -54,16 +84,6 @@
       <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/updates/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/tags/windows/</link>
-      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows/</guid>
       <description></description>
       
     </item>
@@ -94,16 +114,6 @@
       <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/configuration/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>macOS</title>
-      <link>https://memv.ennbee.uk/tags/macos/</link>
-      <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/macos/</guid>
       <description></description>
       
     </item>
@@ -184,16 +194,6 @@
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/remediation/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/tags/autopilot/</link>
-      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
       <description></description>
       
     </item>

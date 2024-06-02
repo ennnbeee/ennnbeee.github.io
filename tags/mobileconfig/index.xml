@@ -20,12 +20,12 @@
     
     <item>
       <title>macOS National Cyber Security Centre Security Settings in Intune</title>
-      <link>https://memv.ennbee.uk/posts/ncsc-macos-settings/</link>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/ncsc-macos-settings/</guid>
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
       <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/ncsc-macos-settings/feature-macosncsc.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/feature-macosncsc.jpg" />
     </item>
     
   </channel>

@@ -4,13 +4,19 @@
 
   <url>
     <loc>https://memv.ennbee.uk/</loc>
-    <lastmod>2024-07-23T13:20:55+01:00</lastmod>
+    <lastmod>2024-07-20T11:48:33+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://memv.ennbee.uk/posts/</loc>
-    <lastmod>2024-07-23T13:20:55+01:00</lastmod>
+    <lastmod>2024-07-20T11:48:33+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</loc>
+    <lastmod>2024-06-02T18:20:55+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -261,7 +267,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://memv.ennbee.uk/posts/ncsc-macos-settings/</loc>
+    <loc>https://memv.ennbee.uk/posts/macos-ncsc-settings/</loc>
     <lastmod>2022-04-21T11:55:11+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

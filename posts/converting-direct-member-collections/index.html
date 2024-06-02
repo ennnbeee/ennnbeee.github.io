@@ -34,10 +34,6 @@
     integrity="sha512-6W8oDUUWJDtjllM6VD5jip/pyi2Wluq3&#43;CoKUThQ/nS4HEubni9Wo9FvauIQTcm99HcQGhaFdIpN&#43;N3Wz35XnQ==" />
   
   
-  <script type="text/javascript" src="/js/ccode.min.581fc643d8119b674a1571ca1e025707b0492e9f16f0fedef844d9247ae0fa71d649b1b6a2704c009ad6cfa7274390a014165c0bf12be3bbd734398ec815cc58.js"
-  integrity="sha512-WB/GQ9gRm2dKFXHKHgJXB7BJLp8W8P7e&#43;ETZJHrg&#43;nHWSbG2onBMAJrWz6cnQ5CgFBZcC/Er47vXNDmOyBXMWA=="></script>
-  
-  
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
     integrity="sha512-lEIxYSgbj9GsaeHv0s271sCrBtfl47xES5eE6MMFCDRRiVXSqc4EeeznBV81C1E9X6zDTLuftK1NAsdzO6ZDwQ=="></script>
   
@@ -117,7 +113,7 @@
     "keywords": ["configmgr","windows","collections","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "930"
+    "wordCount": "1005"
   }]
   </script>
 
@@ -1423,8 +1419,8 @@
 </h2>
 <p>Now we have all the bits we needed in place (<em>cough logging cough</em>), we can launch the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1"   target="_blank">
     script</a> and use the option to select a Collection first as a test before we run it across the entire environment.</p>
-<p>Let&rsquo;s run it on a test collection we know has direct members:
-
+<p>Let&rsquo;s run it on a test collection we know has direct members:</p>
+<p>
 
 
 
@@ -1433,7 +1429,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-direct_hu04b1c4c6782274d81bf7a1353286ae66_34148_filter_4286480056561814882.webp#left" alt="Device Collection" />
-      
+      <figcaption>Screenshot of a Configuration Manager collection with direct members.</figcaption>
     </figure>
   
 
@@ -1452,8 +1448,8 @@
     </span>        
     
 </h3>
-<p>Doing so will prompt you with options, oooo exciting, here we&rsquo;ll select option 1:
-
+<p>Doing so will prompt you with options, oooo exciting, here we&rsquo;ll select <strong>Option 1</strong>:</p>
+<p>
 
 
 
@@ -1462,13 +1458,13 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-prompt_hu6e5b84d665c5e41038974422652ccdc5_10630_filter_10229757930596249680.webp#left" alt="Script Options" />
-      
+      <figcaption>Screenshot of a PowerShell window with script options.</figcaption>
     </figure>
   
 
 </p>
-<p>Doing so will open a grid view of the collections in your Configuration Manager environment, this may take a while to load, and you should wait for them to load before selecting and confirming your Collections:
-
+<p>Doing so will open a grid view of the collections in your Configuration Manager environment, this may take a while to load, and you should wait for them to load before selecting and confirming your Collections:</p>
+<p>
 
 
 
@@ -1477,13 +1473,13 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-grid_hu628111724c406b3bca134533344d379f_39400_filter_12045342687772585733.webp#left" alt="PowerShell Grid" />
-      
+      <figcaption>Screenshot of a PowerShell script grid view of Configuration Manager collections.</figcaption>
     </figure>
   
 
 </p>
-<p>Search for the Collection you want to update and select &lsquo;OK&rsquo;:
-
+<p>Search for the Collection you want to update and select <strong>OK</strong>:</p>
+<p>
 
 
 
@@ -1492,7 +1488,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-select_hueb1642f5016752ddd97743ee6b048801_13551_filter_17101782811910536393.png#left" alt="PowerShell Selection" />
-      
+      <figcaption>Screenshot of a PowerShell script grid view results of a search for a Configuration Manager collection.</figcaption>
     </figure>
   
 
@@ -1509,8 +1505,8 @@
     </span>        
     
 </h3>
-<p>Now the magic happens, including a nice little output table of the results of the conversion:
-
+<p>Now the magic happens, including a nice little output table of the results of the conversion:</p>
+<p>
 
 
 
@@ -1519,7 +1515,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-results_hub49c6a7bf64a832a509861369ebd856a_47678_filter_7081629670049402778.webp#left" alt="Script Output" />
-      
+      <figcaption>Screenshot of a PowerShell window with the results of the script.</figcaption>
     </figure>
   
 
@@ -1536,8 +1532,8 @@
     </span>        
     
 </h3>
-<p>Now the script has completed, we can go and check on the results on the Device Collection itself, look no Direct Members any more:
-
+<p>Now the script has completed, we can go and check on the results on the Device Collection itself, look no Direct Members any more:</p>
+<p>
 
 
 
@@ -1546,13 +1542,13 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-collection_hu7aaca1dd48ce2f2d118bdff2417a6549_37140_filter_14818807286367150720.webp#left" alt="Collection Results" />
-      
+      <figcaption>Screenshot of a Configuration Manager collection with query based members.</figcaption>
     </figure>
   
 
 </p>
-<p>With the new Query in place:
-
+<p>With the new Query in place:</p>
+<p>
 
 
 
@@ -1561,7 +1557,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-query_hu57cbfefca4a7ac95114c8f9d4edb21c9_18604_filter_14801683828131789146.webp#left" alt="Collection Query" />
-      
+      <figcaption>Screenshot of a query rule of a Configuration Manager collection.</figcaption>
     </figure>
   
 
