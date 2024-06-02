@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Windows Autopilot Virtualisation on macOS using UTM &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Windows Autopilot Virtualisation on macOS using UTM &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Using Windows Autopilot Virtual Machines on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
+  <meta name="title" content="Using Windows Autopilot Virtual Machines on macOS &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="Using UTM on macOS to configure and deploy a Windows 11 Autopilot deployed virtual machine." />
   <meta name="keywords" content="intune, macos, windows, autopilot, " />
@@ -71,7 +71,7 @@
   
   <meta property="og:url" content="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
-  <meta property="og:title" content="Windows Autopilot Virtualisation on macOS using UTM">
+  <meta property="og:title" content="Using Windows Autopilot Virtual Machines on macOS">
   <meta property="og:description" content="Using UTM on macOS to configure and deploy a Windows 11 Autopilot deployed virtual machine.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
@@ -82,10 +82,10 @@
     <meta property="article:tag" content="macOS">
     <meta property="article:tag" content="Windows 10 and later">
     <meta property="article:tag" content="Windows Autopilot">
-    <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macosutm.jpg">
+    <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macap.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macosutm.jpg"><meta name="twitter:title" content="Windows Autopilot Virtualisation on macOS using UTM">
+<meta name="twitter:image" content="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macap.jpg"><meta name="twitter:title" content="Using Windows Autopilot Virtual Machines on macOS">
 <meta name="twitter:description" content="Using UTM on macOS to configure and deploy a Windows 11 Autopilot deployed virtual machine.">
 
   
@@ -94,10 +94,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Windows Autopilot Virtualisation on macOS using UTM",
-    "headline": "Windows Autopilot Virtualisation on macOS using UTM",
+    "name": "Using Windows Autopilot Virtual Machines on macOS",
+    "headline": "Using Windows Autopilot Virtual Machines on macOS",
     "description": "Using UTM on macOS to configure and deploy a Windows 11 Autopilot deployed virtual machine.",
-    "abstract": "With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but still need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to build a Windows 11 Autopilot device on your macOS device using UTM for testing.",
+    "abstract": "With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to deploy a Windows Autopilot Virtual machine on your macOS device using UTM for testing.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/macos-windows-autopilot-utm\/",
     "author" : {
@@ -113,7 +113,7 @@
     "keywords": ["intune","macos","windows","autopilot"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1337"
+    "wordCount": "1418"
   }]
   </script>
 
@@ -817,7 +817,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/macos-windows-autopilot-utm/feature-macosutm.jpg);">
+    style="background-image:url(/posts/macos-windows-autopilot-utm/feature-macap.jpg);">
     
 
 
@@ -843,7 +843,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Windows Autopilot Virtualisation on macOS using UTM
+      Using Windows Autopilot Virtual Machines on macOS
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1144,7 +1144,7 @@
   <ul>
     <li><a href="#windows-virtualisation">Windows Virtualisation</a>
       <ul>
-        <li><a href="#windows-installation-media">Windows Installation Media</a></li>
+        <li><a href="#windows-installer-images">Windows Installer Images</a></li>
         <li><a href="#virtual-machine-setup">Virtual Machine Setup</a></li>
         <li><a href="#windows-11-installation">Windows 11 Installation</a></li>
       </ul>
@@ -1172,7 +1172,7 @@
   <ul>
     <li><a href="#windows-virtualisation">Windows Virtualisation</a>
       <ul>
-        <li><a href="#windows-installation-media">Windows Installation Media</a></li>
+        <li><a href="#windows-installer-images">Windows Installer Images</a></li>
         <li><a href="#virtual-machine-setup">Virtual Machine Setup</a></li>
         <li><a href="#windows-11-installation">Windows 11 Installation</a></li>
       </ul>
@@ -1242,10 +1242,13 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>I know, <em>I know</em>, this isn&rsquo;t like me, I don&rsquo;t usually write &ldquo;how-to&rdquo; guides about things that aren&rsquo;t Microsoft Intune or PowerShell, but I hit an issue when trying to setup a Windows 11 ARM based virtual machine for <a href="https://learn.microsoft.com/en-us/autopilot/windows-autopilot"   target="_blank">
-    Windows Autopilot</a> on my own Apple Silicon (humble brag) macOS device, after the recent announcement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/windows-deployment-with-the-next-generation-of-windows-autopilot/ba-p/4148169"   target="_blank">
-    next generation of Windows Autopilot</a> and thought, <del>here&rsquo;s an on trend blog post</del>, that I should share the solution I found.</p>
-<p>As always though, before you go and jump to the solution at the, I&rsquo;m going to make you read the post, for funsies and completeness sake.</p>
+          <p>I don&rsquo;t usually write &ldquo;how-to&rdquo; guides, let alone write topics that aren&rsquo;t deeply embedded with Microsoft Intune or PowerShell, but I recently hit an issue when trying to setup a <a href="https://learn.microsoft.com/en-us/autopilot/windows-autopilot"   target="_blank">
+    Windows Autopilot</a> ARM based virtual machine using <a href="https://mac.getutm.app/"   target="_blank">
+    UTM</a> on my Apple Silicon (humble brag) based macOS device.</p>
+<p>With the recent announcement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/windows-deployment-with-the-next-generation-of-windows-autopilot/ba-p/4148169"   target="_blank">
+    next generation of Windows Autopilot</a>, I imagine there are now more and more people that are using macOS devices but wanting to test Windows Autopilot in a Virtual Machine, and thought, <del>here&rsquo;s an on trend blog post</del>, that I should share the solution to the issue I encountered.</p>
+<p>As always though, before you go and jump to the <a href="#adding-a-serial-number"  >
+    solution</a>, you should probably read the entire post to get a full picture of the scenario.</p>
 
 
 <h2 class="relative group">Windows Virtualisation 
@@ -1259,29 +1262,29 @@
     
 </h2>
 <p>As I spent all my pocket money on a MacBook Air M1, I&rsquo;ve got none left to pay for virtualisation apps, so I use <a href="https://mac.getutm.app/"   target="_blank">
-    UTM</a>; I mean, it&rsquo;s also a lot better to use than others out there, and supports virtualising many operating systems, including Windows ARM.</p>
+    UTM</a>; I mean, it&rsquo;s also a lot better to use than others out there, and supports virtualising many operating systems natively without emulation, including Windows 11 ARM versions.</p>
 <p>So if you&rsquo;re not using UTM, go and download it from the <a href="https://mac.getutm.app/"   target="_blank">
     website</a>, or install it using <a href="https://brew.sh/"   target="_blank">
     Homebrew</a> if you&rsquo;re that way inclined:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install utm
-</span></span></code></pre></div><p>Before we go and setup a new Windows 11 Virtual Machine, we need to get the installation media.</p>
+</span></span></code></pre></div><p>Before we go and setup a new Virtual Machine, we need to get the Windows 11 installation media.</p>
 
 
-<h3 class="relative group">Windows Installation Media 
-    <div id="windows-installation-media" class="anchor"></div>
+<h3 class="relative group">Windows Installer Images 
+    <div id="windows-installer-images" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#windows-installation-media" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#windows-installer-images" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>To make life a lot easier when downloading the supported <strong>iso</strong> files for Windows 11 ARM, I&rsquo;d suggest installing <a href="https://apps.apple.com/us/app/crystalfetch-iso-downloader/id6454431289?mt=12"   target="_blank">
-    CrystalFetch</a>, either from the App Store, or again with Homebrew:</p>
+<p>To make life a lot easier when downloading the supported <strong>iso</strong> files for Windows 11 ARM, I&rsquo;d suggest installing <a href="https://github.com/TuringSoftware/CrystalFetch"   target="_blank">
+    CrystalFetch</a>, this gives a user interface to downloading the installation image, without having to build them yourself. You can download CrystalFetch either from the <a href="https://apps.apple.com/us/app/crystalfetch-iso-downloader/id6454431289?mt=12"   target="_blank">
+    App Store</a>, or again install it with Homebrew:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install crystalfetch
-</span></span></code></pre></div><p>This allows you to download the ARM iso of Windows 11, without having to manually compile it, or get access to the Windows Insider program.</p>
-<p>Once you&rsquo;ve installed CrystalFetch, launch <strong>CrystalFetch</strong> and kick off the download of the version of Windows you want:</p>
+</span></span></code></pre></div><p>Once you&rsquo;ve installed CrystalFetch, launch it and kick off the download of the version of Windows 11 you want:</p>
 <p>
 
 
@@ -1332,7 +1335,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >I had success with the <strong>en-gb</strong> variant of the Windows 11 ARM iso, the <strong>en-us</strong> just didn&rsquo;t want to download for me.</span>
+    >I had success with the <strong>en-gb</strong> variant of the Windows 11 ARM iso, the <strong>en-us</strong> just didn&rsquo;t want to complete the download and build.</span>
 </div>
 
 <p>Now that we have our installation media downloaded, we can go setup a new Virtual Machine in UTM.</p>
@@ -1399,7 +1402,7 @@
     </span>        
     
 </h3>
-<p>After starting the machine, smush the keyboard when prompted to boot from the iso that we attached during the setup, we should have at least installed Windows 11 once before, but watch the video if you need a refresh.</p>
+<p>After starting the machine, smush the keyboard when prompted to boot from the iso that we attached during the setup, we should have all at least installed Windows 11 once before, but watch the video if you need a refresh.</p>
 <video controls preload="auto" width="100%"  playsinline class="html-video">
     <source src="/posts/macos-windows-autopilot-utm/img/macutm-install.webm" type="video/webm">
     <span></span>
@@ -1434,7 +1437,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >I didn&rsquo;t record audio with the video so just hum some royalty free music to yourself.</span>
+    >Make sure that you do actually have a way to apply a license otherwise big bad Microsoft will be knocking at your door asking you to pony up some cash.</span>
 </div>
 
 
@@ -1449,7 +1452,7 @@
     </span>        
     
 </h2>
-<p>With our newly built Windows 11 machine now available and booted, for the original Autopilot deployment configuration we need to capture the <a href="https://learn.microsoft.com/en-us/autopilot/add-devices"   target="_blank">
+<p>With our newly built Windows 11 ARM Virtual Machine now available and booted, for the original Autopilot deployment configuration we still need to capture the <a href="https://learn.microsoft.com/en-us/autopilot/add-devices"   target="_blank">
     hardware hash</a> from the device and upload this to Microsoft Intune.</p>
 <p>I&rsquo;m a great fan of the work <a href="https://oofhours.com/"   target="_blank">
     Michael Niehaus</a> has done to improve the Windows Autopilot process overall, so we&rsquo;re using a PowerShell script based on his <a href="https://www.powershellgallery.com/packages/Get-WindowsAutopilotInfo"   target="_blank">
@@ -1549,11 +1552,33 @@
     </span>        
     
 </h3>
-<p>Well sadly our Virtual Machine is missing a serial number, it can&rsquo;t pull a rogue one through from the macOS host, and UTM isn&rsquo;t giving it one. So I guess we need to sort this out ourselves.</p>
+<p>Well sadly our Virtual Machine is missing a serial number, it can&rsquo;t pull a rogue one through from the macOS host like it would using Hyper-V on a Windows host, and UTM isn&rsquo;t giving it one. So I guess we need to sort this out ourselves.</p>
 <p>As UTM is built upon <a href="https://www.qemu.org/"   target="_blank">
-    QEMU</a> we have the ability to pass through parameters to the Virtual Machine, one of which gives us the option to configure a serial number. Wonderful.</p>
-<p>Go ahead and gracefully shutdown your Windows Virtual Machine, and right click and edit it in UTM.</p>
-<p>Navigate to <strong>QEMU &gt; Arguments</strong>:</p>
+    QEMU</a> we have the ability to pass through QEMU parameters to the Virtual Machine, one of which gives us the option to configure a serial number. Wonderful.</p>
+<p>Go ahead and gracefully shutdown your Windows Virtual Machine, and <strong>right click</strong> and select <strong>edit</strong> in UTM:</p>
+<p>
+
+
+
+  
+  
+    
+  
+  
+    <figure>
+      
+      <img
+        class="my-0 rounded-md"
+        src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-edit_hu373bc013f63070215d023caf6626277e_171272_filter_18268984472629051380.png"
+        alt="UTM Virtual Machine edit"
+      />
+      
+      <figcaption>Screenshot the UTM Virtual Machine edit menu.</figcaption>
+    </figure>
+  
+
+</p>
+<p>Then navigate to <strong>QEMU &gt; Arguments</strong>:</p>
 <p>
 
 
@@ -1578,7 +1603,7 @@
 </p>
 <p>Selecting <strong>New</strong> we can add in the following line:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">-smbios
-</span></span></code></pre></div><p>Followed by selecting <strong>New</strong> again, to add in the below where <code>XXXXXXXX</code> is the value of a serial number</p>
+</span></span></code></pre></div><p>Followed by selecting <strong>New</strong> again, to add in the below where <code>XXXXXXXX</code> is the value of a serial number:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">type=1,serial=XXXXXXXX
 </span></span></code></pre></div>
   
@@ -1693,6 +1718,37 @@
     <source src="/posts/macos-windows-autopilot-utm/img/macutm-syncing.webm" type="video/webm">
     <span></span>
 </video>
+
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >I didn&rsquo;t record audio with the video so just hum some royalty free music to yourself.</span>
+</div>
 
 <p>We can see now that as the device has a serial number, the PowerShell script can successfully capture the hardware hash and upload this to Microsoft Intune:</p>
 <p>
@@ -1823,7 +1879,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;title=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;title=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1842,7 +1898,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;text=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;text=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1860,7 +1916,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;resubmit=true&amp;title=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;resubmit=true&amp;title=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1879,7 +1935,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;resubmit=true&amp;title=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;resubmit=true&amp;title=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title=""
       aria-label=""
       >
@@ -1898,7 +1954,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;resubmit=true&amp;title=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;resubmit=true&amp;title=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title=""
       aria-label=""
       >
@@ -1917,7 +1973,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;description=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;description=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1936,7 +1992,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;quote=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;quote=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1955,7 +2011,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;subject=Windows%20Autopilot%20Virtualisation%20on%20macOS%20using%20UTM"
+      href="mailto:?body=https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/&amp;subject=Using%20Windows%20Autopilot%20Virtual%20Machines%20on%20macOS"
       title="Send via email"
       aria-label="Send via email"
       >
