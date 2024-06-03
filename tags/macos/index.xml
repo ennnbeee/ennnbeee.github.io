@@ -9,13 +9,13 @@
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Sun, 02 Jun 2024 18:20:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Using Windows Autopilot Virtual Machines on macOS</title>
+      <title>Creating Windows Autopilot Virtual Machines on macOS</title>
       <link>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</link>
       <pubDate>Sun, 02 Jun 2024 18:20:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</guid>
       <description>With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to deploy a Windows Autopilot Virtual machine on your macOS device using UTM for testing.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macap.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/feature-macosutm.jpg" />
     </item>
     
     <item>

@@ -112,7 +112,7 @@
     "keywords": ["intune","android","enrolment"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "408"
+    "wordCount": "411"
   }]
   </script>
 
@@ -1284,14 +1284,10 @@
 <p>We&rsquo;re now going to add in four new lines of data into the existing JSON content from the <a href="https://developer.android.com/reference/android/app/admin/DevicePolicyManager"   target="_blank">
     Android Developer Reference Guide</a>:</p>
 <ul>
-<li>This is the SSID of the wireless network you want to connect to.
-<code>&quot;android.app.extra.PROVISIONING_WIFI_SSID&quot;:&quot;WIFI_SSID&quot;</code></li>
-<li>This is the password of the wireless network.
-<code>&quot;android.app.extra.PROVISIONING_WIFI_PASSWORD&quot;:&quot;WIFI_PASSWORD&quot;</code></li>
-<li>This is the security type of the network, select either <code>none</code>, <code>WPA</code>, <code>WEP</code> or <code>EAP</code>
-<code>&quot;android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE&quot;:&quot;NONE/WPA/WEP/EAP&quot;</code></li>
-<li>And finally whether the network is hidden to broadcast, using either <code>true</code> or <code>false</code>
-<code>&quot;android.app.extra.PROVISIONING_WIFI_HIDDEN&quot;:true/false</code></li>
+<li>This is the SSID of the wireless network you want to connect to - <code>&quot;android.app.extra.PROVISIONING_WIFI_SSID&quot;:&quot;WIFI_SSID&quot;</code></li>
+<li>This is the password of the wireless network - <code>&quot;android.app.extra.PROVISIONING_WIFI_PASSWORD&quot;:&quot;WIFI_PASSWORD&quot;</code></li>
+<li>This is the security type of the network, select either <code>none</code>, <code>WPA</code>, <code>WEP</code> or <code>EAP</code> - <code>&quot;android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE&quot;:&quot;NONE/WPA/WEP/EAP&quot;</code></li>
+<li>And finally whether the network is hidden to broadcast, using either <code>true</code> or <code>false</code> - <code>&quot;android.app.extra.PROVISIONING_WIFI_HIDDEN&quot;:true/false</code></li>
 </ul>
 
   
@@ -1321,7 +1317,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >Now, please be aware that these settings are all available in plain text by anyone scanning the QR code, so I would recommend using a guest wireless network if you are going to allow you end users to use a corporate network to go through the enrolment process.</span>
+    >Please be aware that these settings are all available in plain text by anyone scanning the QR code, so I would recommend using a guest wireless network if you are going to allow you end users to use a corporate network to go through the enrolment process.</span>
 </div>
 
 

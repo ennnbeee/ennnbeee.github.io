@@ -115,7 +115,7 @@
     "keywords": ["intune","windows","compliance","updates","security","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1874"
+    "wordCount": "1934"
   }]
   </script>
 
@@ -1348,8 +1348,8 @@
     </span>        
     
 </h3>
-<p>So now we know we should be using separate policies per compliance setting, so let&rsquo;s look at Operating System Versions:
-
+<p>So now we know we should be using separate policies per compliance setting, so let&rsquo;s look at Operating System Versions:</p>
+<p>
 
 
 
@@ -1358,7 +1358,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/operating-system-compliance-updates/img/os-compliance-min-max_hue8dab027660e850744ed380675b18cfd_6928_filter_14420763298666099235.webp#left" alt="OS Compliance" />
-      
+      <figcaption>Screenshot of minimum and maximum operating system compliance policy settings in Microsoft Intune.</figcaption>
     </figure>
   
 
@@ -1430,8 +1430,8 @@
     </span>        
     
 </h3>
-<p>This is where the &lsquo;Valid operating system builds&rsquo; section in the Compliance Policy comes into play, allowing you to split out each build in your End-user computing estate and each to have their own range of minimum and maximum:
-
+<p>This is where the &lsquo;Valid operating system builds&rsquo; section in the Compliance Policy comes into play, allowing you to split out each build in your End-user computing estate and each to have their own range of minimum and maximum:</p>
+<p>
 
 
 
@@ -1440,7 +1440,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/operating-system-compliance-updates/img/os-compliance-os-builds_hu37f9d7faf08c61013548ee504d0f9104_58864_filter_5286115051083971143.webp#left" alt="OS Builds" />
-      
+      <figcaption>Screenshot of valid operating system builds in a compliance policy settings in Microsoft Intune.</figcaption>
     </figure>
   
 
@@ -1849,8 +1849,8 @@
 </h2>
 <p>Time to finally run this script and add some level of automation to this laborious task of updating Compliance Policy&hellip;</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-WindowsOSCompliance</span><span class="p">.</span><span class="py">ps1</span>
-</span></span></code></pre></div><p>Running the script will prompt you to provide a username and connect to Graph, please do this and login:
-
+</span></span></code></pre></div><p>Running the script will prompt you to provide a username and connect to Graph, please do this and login:</p>
+<p>
 
 
 
@@ -1859,13 +1859,13 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/operating-system-compliance-updates/img/os-compliance-login_hu5b279fadf2b33405b64ed1e99b8d86d5_28072_filter_15206391372798089312.webp#left" alt="PowerShell Script" />
-      
+      <figcaption>Screenshot of authentication to Entra ID.</figcaption>
     </figure>
   
 
 </p>
-<p>Then it does everything for you, and tells you about it:
-
+<p>Then it does everything for you, and tells you about it:</p>
+<p>
 
 
 
@@ -1874,13 +1874,13 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/operating-system-compliance-updates/img/os-compliance-script_hu2418478e469123802383dfc66882658e_13466_filter_3932738326777100050.webp#left" alt="Updating OS Compliance" />
-      
+      <figcaption>Screenshot of the PowerShell script updating the compliance operating system builds.</figcaption>
     </figure>
   
 
 </p>
-<p>Best we check the Compliance Policy to make sure it&rsquo;s done what I asked it to:
-
+<p>Best we check the Compliance Policy to make sure it&rsquo;s done what I asked it to:</p>
+<p>
 
 
 
@@ -1889,12 +1889,12 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/operating-system-compliance-updates/img/os-compliance-updated_hudf22873a57a173acad4eea604e7cbcfe_53054_filter_10280171796099523922.webp#left" alt="Compliance Updated" />
-      
+      <figcaption>Screenshot of the updated valid operating system builds in a compliance policy settings in Microsoft Intune.</figcaption>
     </figure>
   
 
-
-It did, and a cheeky description based on when the policy was last updated.</p>
+</p>
+<p>It did, and a cheeky description based on when the policy was last updated.</p>
 
 
 <h2 class="relative group">Summary 

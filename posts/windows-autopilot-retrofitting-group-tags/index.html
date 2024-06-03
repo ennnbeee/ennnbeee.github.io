@@ -115,7 +115,7 @@
     "keywords": ["intune","windows","autopilot","enrolment","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1366"
+    "wordCount": "1429"
   }]
   </script>
 
@@ -1325,7 +1325,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu19053798857ed3ee5717149ddca15ca6_54164_filter_16996855055250346059.webp#left" alt="Autopilot Devices" />
-      
+      <figcaption>Screenshot of the export of Windows Autopilot devices to csv from Microsoft Intune.</figcaption>
     </figure>
   
 
@@ -1665,8 +1665,8 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </h3>
 <p>Running the script with the CSV option:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-AutopilotGroupTag</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Method</span> <span class="n">CSV</span>
-</span></span></code></pre></div><p>We first have to Authenticate, so enter in your username and the find the Azure AD login window:
-
+</span></span></code></pre></div><p>We first have to Authenticate, so enter in your username and the find the Azure AD login window:</p>
+<p>
 
 
 
@@ -1675,7 +1675,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-login_hu5b279fadf2b33405b64ed1e99b8d86d5_28072_filter_15206391372798089312.webp#left" alt="Authentication" />
-      
+      <figcaption>Screenshot of authentication to Entra ID.</figcaption>
     </figure>
   
 
@@ -1692,13 +1692,13 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv_hub9581cd31787ec1fda2c076cd7923620_24866_filter_5502011042212172170.webp#left" alt="Script Output" />
-      
+      <figcaption>Screenshot of the PowerShell script output after assigning Group Tags.</figcaption>
     </figure>
   
 
 </p>
-<p>And if we check in Intune:
-
+<p>And if we check in Intune:</p>
+<p>
 
 
 
@@ -1707,7 +1707,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged_hue469e6e059c6926fa18b761bdc9ca945_45074_filter_4741717028220574976.webp#left" alt="Group Tag" />
-      
+      <figcaption>Screenshot of the updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
     </figure>
   
 
@@ -1738,13 +1738,13 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online_hu7f098712e07cafa5adb5d98b90d2fb16_16880_filter_14767449462162232891.webp#left" alt="Script Output" />
-      
+      <figcaption>Screenshot of the PowerShell script output after assigning Group Tags.</figcaption>
     </figure>
   
 
 </p>
-<p>And if we check in Intune:
-
+<p>And if we check in Intune:</p>
+<p>
 
 
 
@@ -1753,7 +1753,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged_hu205b753c59c4a14146b81f79d86ef2c3_44676_filter_17826738681996006128.webp#left" alt="Group Tag" />
-      
+      <figcaption>Screenshot of the updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
     </figure>
   
 

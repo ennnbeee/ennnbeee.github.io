@@ -114,7 +114,7 @@
     "keywords": ["intune","administration","authentication","graph","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1016"
+    "wordCount": "1056"
   }]
   </script>
 
@@ -1292,7 +1292,8 @@
 </span></span></code></pre></div><p>So we can now use the well used Microsoft Intune PowerShell App Id, and our tenant information to authenticate using the MSAL.PS module using ths new <code>-DeviceCode</code> option for authentication, generating a code that we can use on any device to authenticate on behalf of our initial request:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-MsalToken</span> <span class="n">-ClientId</span> <span class="s1">&#39;d1ddf0e4-d672-4dae-b554-9d5bdfd93547&#39;</span> <span class="n">-TenantId</span> <span class="s1">&#39;ennbee.uk&#39;</span> <span class="n">-DeviceCode</span>
 </span></span></code></pre></div><ul>
-<li>Opening up the presented URL <code>https://microsoft.com/devicelogin</code> prompts us to enter in the code we received:
+<li>
+<p>Opening up the presented URL <code>https://microsoft.com/devicelogin</code> prompts us to enter in the code we received:
 
 
 
@@ -1302,12 +1303,14 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/img/msgraph-prompt_hua8a2fb356384b0f8298e937cb6a34c11_20694_filter_4105564840905696452.webp#left" alt="Device Code" />
-      
+      <figcaption>Screenshot of the Device Code Entra authentication prompt.</figcaption>
     </figure>
   
 
+</p>
 </li>
-<li>From here we can sign in with the required User Account:
+<li>
+<p>From here we can sign in with the required User Account:
 
 
 
@@ -1317,12 +1320,14 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/img/msgraph-account_hufa8754338c81bc7760f5ab60361f6235_22736_filter_5775671780373220232.webp#left" alt="User Account" />
-      
+      <figcaption>Screenshot of the sign-in prompt for Entra authentication.</figcaption>
     </figure>
   
 
+</p>
 </li>
-<li>Confirm the Application we are signing into:
+<li>
+<p>Confirm the Application we are signing into:
 
 
 
@@ -1332,12 +1337,14 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/img/msgraph-signin_huf3839a3edcebc44398d0858711e37724_23268_filter_12027936915448796403.webp#left" alt="Sign in" />
-      
+      <figcaption>Screenshot of the enterprise app sign-in confirmation.</figcaption>
     </figure>
   
 
+</p>
 </li>
-<li>Finally receiving confirmation of the sign in and a prompt to close the window:
+<li>
+<p>Finally receiving confirmation of the sign in and a prompt to close the window:
 
 
 
@@ -1347,10 +1354,11 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/img/msgraph-confirm_hud83a9b46f8c7eff1254c91f3148afd66_20798_filter_16375767289254042223.webp#left" alt="PowerShell Device Code" />
-      
+      <figcaption>Screenshot of the authentication confirmation.</figcaption>
     </figure>
   
 
+</p>
 </li>
 </ul>
 <p>Once the Window is closed, we now have an authentication token in the shell to use to our heart&rsquo;s content.</p>
@@ -1523,7 +1531,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/img/msgraph-auth_hu224a2b239db6d78284f2ae3615ff139c_10524_filter_2251338916189071959.webp#left" alt="PowerShell" />
-      
+      <figcaption>Screenshot of PowerShell Graph authentication notification.</figcaption>
     </figure>
   
 
@@ -1539,7 +1547,7 @@
   
     <figure>
       <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/img/msgraph-token_hu1de7db3ec5d510623003bdeba7a8a489_5998_filter_3010807578926650837.webp#left" alt="Token" />
-      
+      <figcaption>Screenshot of PowerShell Graph authentication token.</figcaption>
     </figure>
   
 
