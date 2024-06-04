@@ -113,7 +113,7 @@
     "keywords": ["intune","macos","windows","autopilot"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1468"
+    "wordCount": "1471"
   }]
   </script>
 
@@ -1253,7 +1253,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>I don&rsquo;t usually write &ldquo;how-to&rdquo; guides, let alone write topics that aren&rsquo;t deeply embedded with Microsoft Intune or PowerShell, but I recently hit an issue when trying to setup a <a href="https://learn.microsoft.com/en-us/autopilot/windows-autopilot" target="_blank">Windows Autopilot</a> ARM based virtual machine using <a href="https://mac.getutm.app/" target="_blank">UTM</a> on my Apple Silicon (humble brag) based macOS device.</p>
-<p>With the recent announcement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/windows-deployment-with-the-next-generation-of-windows-autopilot/ba-p/4148169" target="_blank">next generation of Windows Autopilot</a> and <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/overview" target="_blank">Windows Autopilot device preparation</a>, I imagine there are now more and more people that are using macOS devices but need to test Windows Autopilot in a Virtual Machine, and thought, <del>here&rsquo;s an easy on trend blog post</del>, that I should share the solution to the issue I encountered.</p>
+<p>With the recent announcement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/windows-deployment-with-the-next-generation-of-windows-autopilot/ba-p/4148169" target="_blank">next generation of Windows Autopilot</a> and <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/overview" target="_blank">Windows Autopilot device preparation</a> now being official, I imagine there are now more and more people that are using macOS devices but need to test Windows Autopilot in a Virtual Machine, and thought, <del>here&rsquo;s an easy on trend blog post</del>, that I should share the solution to the issue I encountered.</p>
 <p>As always though, before you go and jump to how I <a href="#adding-a-serial-number">fixed</a> the problem, you should probably read the entire post to get a full picture of the scenario.</p>
 
 
@@ -1403,7 +1403,7 @@
     
 </h3>
 <p>After starting the machine, smush the keyboard when prompted to boot from the iso that we attached during the setup, we should have all at least installed Windows 11 once before, but watch the video if you need a refresh.</p>
-<video controls preload="auto" width="100%"  playsinline class="html-video">
+<video controls preload="auto" width="100%"  poster="/posts/macos-windows-autopilot-utm/img/macutm-install.png" playsinline class="html-video">
     <source src="/posts/macos-windows-autopilot-utm/img/macutm-install.webm" type="video/webm">
     <span></span>
 </video>
