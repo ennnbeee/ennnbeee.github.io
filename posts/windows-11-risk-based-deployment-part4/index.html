@@ -1307,10 +1307,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Finally we&rsquo;re at the end of the series, where be bring all the components together from the previous three posts into one <del>sub par</del> suitable looking PowerShell script, allowing us to not only kick off the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports"   target="_blank">
-    Feature Update Readiness</a> report, but capture the risk state for each device, tag each device using <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http"   target="_blank">
-    Extension Attributes</a>, and then automatically group these devices with <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"   target="_blank">
-    Dynamic Security Groups</a> in order to deploy our Windows 11 23H2 Feature Update to low risk devices whilst we give our selves breathing space to fix the others.</p>
+          <p>Finally we&rsquo;re at the end of the series, where be bring all the components together from the previous three posts into one <del>sub par</del> suitable looking PowerShell script, allowing us to not only kick off the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports" target="_blank">Feature Update Readiness</a> report, but capture the risk state for each device, tag each device using <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http" target="_blank">Extension Attributes</a>, and then automatically group these devices with <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership" target="_blank">Dynamic Security Groups</a> in order to deploy our Windows 11 23H2 Feature Update to low risk devices whilst we give our selves breathing space to fix the others.</p>
 <p>Let&rsquo;s get down, let&rsquo;s get down to business.</p>
 
 
@@ -1324,11 +1321,9 @@
     </span>        
     
 </h2>
-<p>Before I let you loose with the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"   target="_blank">
-    script</a>, and suggest that you go off and run this against your environment, let me talk you through what it actually does:</p>
+<p>Before I let you loose with the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">script</a>, and suggest that you go off and run this against your environment, let me talk you through what it actually does:</p>
 <ul>
-<li><strong>Connects to Microsoft Graph</strong> - taking the <code>tenantId</code> and <code>scopes</code> from the script parameters, connects using <code>Connect-MgGraph</code> using the &lsquo;Microsoft.Graph&rsquo; <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph-powershell-1.0"   target="_blank">
-    PowerShell module</a>.</li>
+<li><strong>Connects to Microsoft Graph</strong> - taking the <code>tenantId</code> and <code>scopes</code> from the script parameters, connects using <code>Connect-MgGraph</code> using the &lsquo;Microsoft.Graph&rsquo; <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph-powershell-1.0" target="_blank">PowerShell module</a>.</li>
 <li><strong>Tells you what the script will do</strong> - gives you an overview of what the script will actually do, I know, how kind of me.</li>
 <li><strong>Gives you the rules for the Dynamic Security Groups</strong> - this is based on the <code>extensionAttribute</code> and <code>featureUpdateBuild</code> parameters selected when initially running the script, I could have automated this, but everyone has their own naming conventions so I cba.</li>
 <li><strong>Gives you the option to stop the script</strong> - yeah, even I have panic moments when running these types of scripts, so it at least gives you the option to Alt+F4 out of it.</li>
@@ -1367,8 +1362,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >Importantly this script can be run many many times, as we want to ensure that your devices are getting tagged with the correct risk, or if their risk has changed that it get&rsquo;s updated, or if they haven&rsquo;t reported back to Microsoft Intune with their readiness state, or if Microsoft have taken <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency"   target="_blank">
-    52 hours</a> to process the data and it&rsquo;s only just appeared.</span>
+    >Importantly this script can be run many many times, as we want to ensure that your devices are getting tagged with the correct risk, or if their risk has changed that it get&rsquo;s updated, or if they haven&rsquo;t reported back to Microsoft Intune with their readiness state, or if Microsoft have taken <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency" target="_blank">52 hours</a> to process the data and it&rsquo;s only just appeared.</span>
 </div>
 
 
@@ -1383,11 +1377,8 @@
     </span>        
     
 </h2>
-<p>So now you have an overview of what the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11Accelerator.ps1"   target="_blank">
-    script</a> :smiling_face_with_halo: actually does, let&rsquo;s see how we start it and what the output looks like.</p>
-<p>If we want to start our journey to Windows 11 23H2, and by now you should really be looking at starting this migration, as it&rsquo;s not <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
-    that long</a> until the support for Windows 10 ends, we can run the PowerShell script using the below, passing in your <a href="https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant"   target="_blank">
-    Entra ID Tenant ID</a> to <code>tenantId</code>, the selected <code>featureUpdateBuild</code>, in this case 23H2, and your <code>extensionAttribute</code> of choice:</p>
+<p>So now you have an overview of what the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11Accelerator.ps1" target="_blank">script</a> :smiling_face_with_halo: actually does, let&rsquo;s see how we start it and what the output looks like.</p>
+<p>If we want to start our journey to Windows 11 23H2, and by now you should really be looking at starting this migration, as it&rsquo;s not <a href="https://yourcountdown.to/windows-10-extended-support" target="_blank">that long</a> until the support for Windows 10 ends, we can run the PowerShell script using the below, passing in your <a href="https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant" target="_blank">Entra ID Tenant ID</a> to <code>tenantId</code>, the selected <code>featureUpdateBuild</code>, in this case 23H2, and your <code>extensionAttribute</code> of choice:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-Windows11Accelerator</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;36019fe7-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-featureUpdateBuild</span> <span class="s1">&#39;23H2&#39;</span> <span class="n">-extensionAttribute</span> <span class="s1">&#39;15&#39;</span>
 </span></span></code></pre></div>
 
@@ -1519,8 +1510,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >If there was data in <code>extensionAttribute15</code> for any device in Entra ID, then the script would break at this point telling you to go do your homework on <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http"   target="_blank">
-    extensionAttributes</a>.</span>
+    >If there was data in <code>extensionAttribute15</code> for any device in Entra ID, then the script would break at this point telling you to go do your homework on <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http" target="_blank">extensionAttributes</a>.</span>
 </div>
 
 <p>Now that we have details of all the devices, from both Entra ID and the Feature Update Readiness report, we&rsquo;re ready to start tagging devices.</p>
@@ -2382,7 +2372,7 @@
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-06-02 18:20:55 &#43;0100 &#43;0100">2 June 2024</time>
+                    <time datetime="2024-06-03 18:20:55 &#43;0100 &#43;0100">3 June 2024</time>
                   
                 </span>
               </span>

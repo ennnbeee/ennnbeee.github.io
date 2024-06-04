@@ -76,8 +76,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-06-02T18:20:55+01:00">
-    <meta property="article:modified_time" content="2024-06-02T18:20:55+01:00">
+    <meta property="article:published_time" content="2024-06-03T18:20:55+01:00">
+    <meta property="article:modified_time" content="2024-06-03T18:20:55+01:00">
     <meta property="article:tag" content="Microsoft Intune">
     <meta property="article:tag" content="macOS">
     <meta property="article:tag" content="Windows 10 and later">
@@ -105,10 +105,10 @@
       "name": " "
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-06-02T18:20:55\u002b01:00",
-    "datePublished": "2024-06-02T18:20:55\u002b01:00",
+    "dateCreated": "2024-06-03T18:20:55\u002b01:00",
+    "datePublished": "2024-06-03T18:20:55\u002b01:00",
     
-    "dateModified": "2024-06-02T18:20:55\u002b01:00",
+    "dateModified": "2024-06-03T18:20:55\u002b01:00",
     
     "keywords": ["intune","macos","windows","autopilot"],
     
@@ -897,7 +897,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-02 18:20:55 &#43;0100 &#43;0100">2 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-06-03 18:20:55 &#43;0100 &#43;0100">3 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1252,13 +1252,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>I don&rsquo;t usually write &ldquo;how-to&rdquo; guides, let alone write topics that aren&rsquo;t deeply embedded with Microsoft Intune or PowerShell, but I recently hit an issue when trying to setup a <a href="https://learn.microsoft.com/en-us/autopilot/windows-autopilot"   target="_blank">
-    Windows Autopilot</a> ARM based virtual machine using <a href="https://mac.getutm.app/"   target="_blank">
-    UTM</a> on my Apple Silicon (humble brag) based macOS device.</p>
-<p>With the recent announcement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/windows-deployment-with-the-next-generation-of-windows-autopilot/ba-p/4148169"   target="_blank">
-    next generation of Windows Autopilot</a>, I imagine there are now more and more people that are using macOS devices but wanting to test Windows Autopilot in a Virtual Machine, and thought, <del>here&rsquo;s an on trend blog post</del>, that I should share the solution to the issue I encountered.</p>
-<p>As always though, before you go and jump to the <a href="#adding-a-serial-number"  >
-    solution</a>, you should probably read the entire post to get a full picture of the scenario.</p>
+          <p>I don&rsquo;t usually write &ldquo;how-to&rdquo; guides, let alone write topics that aren&rsquo;t deeply embedded with Microsoft Intune or PowerShell, but I recently hit an issue when trying to setup a <a href="https://learn.microsoft.com/en-us/autopilot/windows-autopilot" target="_blank">Windows Autopilot</a> ARM based virtual machine using <a href="https://mac.getutm.app/" target="_blank">UTM</a> on my Apple Silicon (humble brag) based macOS device.</p>
+<p>With the recent announcement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/windows-deployment-with-the-next-generation-of-windows-autopilot/ba-p/4148169" target="_blank">next generation of Windows Autopilot</a>, I imagine there are now more and more people that are using macOS devices but wanting to test Windows Autopilot in a Virtual Machine, and thought, <del>here&rsquo;s an on trend blog post</del>, that I should share the solution to the issue I encountered.</p>
+<p>As always though, before you go and jump to the <a href="#adding-a-serial-number">solution</a>, you should probably read the entire post to get a full picture of the scenario.</p>
 
 
 <h2 class="relative group">Windows Virtualisation 
@@ -1271,11 +1267,8 @@
     </span>        
     
 </h2>
-<p>As I spent all my pocket money on a MacBook Air M1, I&rsquo;ve got none left to pay for virtualisation apps, so I use <a href="https://mac.getutm.app/"   target="_blank">
-    UTM</a>; I mean, it&rsquo;s also a lot better to use than others out there, and supports virtualising many operating systems natively without emulation, including Windows 11 ARM versions.</p>
-<p>So if you&rsquo;re not using UTM, go and download it from the <a href="https://mac.getutm.app/"   target="_blank">
-    website</a>, or install it using <a href="https://brew.sh/"   target="_blank">
-    Homebrew</a> if you&rsquo;re that way inclined:</p>
+<p>As I spent all my pocket money on a MacBook Air M1, I&rsquo;ve got none left to pay for virtualisation apps, so I use <a href="https://mac.getutm.app/" target="_blank">UTM</a>; I mean, it&rsquo;s also a lot better to use than others out there, and supports virtualising many operating systems natively without emulation, including Windows 11 ARM versions.</p>
+<p>So if you&rsquo;re not using UTM, go and download it from the <a href="https://mac.getutm.app/" target="_blank">website</a>, or install it using <a href="https://brew.sh/" target="_blank">Homebrew</a> if you&rsquo;re that way inclined:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install utm
 </span></span></code></pre></div><p>Before we go and setup a new Virtual Machine, we need to get the Windows 11 installation media.</p>
 
@@ -1290,9 +1283,7 @@
     </span>        
     
 </h3>
-<p>To make life a lot easier when downloading the supported <strong>iso</strong> files for Windows 11 ARM, I&rsquo;d suggest installing <a href="https://github.com/TuringSoftware/CrystalFetch"   target="_blank">
-    CrystalFetch</a>, this gives a user interface to downloading the installation image, without having to build them yourself. You can download CrystalFetch either from the <a href="https://apps.apple.com/us/app/crystalfetch-iso-downloader/id6454431289?mt=12"   target="_blank">
-    App Store</a>, or again install it with Homebrew:</p>
+<p>To make life a lot easier when downloading the supported <strong>iso</strong> files for Windows 11 ARM, I&rsquo;d suggest installing <a href="https://github.com/TuringSoftware/CrystalFetch" target="_blank">CrystalFetch</a>, this gives a user interface to downloading the installation image, without having to build them yourself. You can download CrystalFetch either from the <a href="https://apps.apple.com/us/app/crystalfetch-iso-downloader/id6454431289?mt=12" target="_blank">App Store</a>, or again install it with Homebrew:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install crystalfetch
 </span></span></code></pre></div><p>Once you&rsquo;ve installed CrystalFetch, launch it and kick off the download of the version of Windows 11 you want:</p>
 <p>
@@ -1396,8 +1387,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >Check me out recording videos instead of screen-shotting everything a thousand times&hellip;for those interested I use <a href="https://getkap.co/"   target="_blank">
-    Kap</a>.</span>
+    >Check me out recording videos instead of screen-shotting everything a thousand times&hellip;for those interested I use <a href="https://getkap.co/" target="_blank">Kap</a>.</span>
 </div>
 
 
@@ -1462,11 +1452,8 @@
     </span>        
     
 </h2>
-<p>With our newly built Windows 11 ARM Virtual Machine now available and booted, for the original Autopilot deployment configuration we still need to capture the <a href="https://learn.microsoft.com/en-us/autopilot/add-devices"   target="_blank">
-    hardware hash</a> from the device and upload this to Microsoft Intune.</p>
-<p>I&rsquo;m a great fan of the work <a href="https://oofhours.com/"   target="_blank">
-    Michael Niehaus</a> has done to improve the Windows Autopilot process overall, so we&rsquo;re using a PowerShell script based on his <a href="https://www.powershellgallery.com/packages/Get-WindowsAutopilotInfo"   target="_blank">
-    initial version</a> to get the hardware hash.</p>
+<p>With our newly built Windows 11 ARM Virtual Machine now available and booted, for the original Autopilot deployment configuration we still need to capture the <a href="https://learn.microsoft.com/en-us/autopilot/add-devices" target="_blank">hardware hash</a> from the device and upload this to Microsoft Intune.</p>
+<p>I&rsquo;m a great fan of the work <a href="https://oofhours.com/" target="_blank">Michael Niehaus</a> has done to improve the Windows Autopilot process overall, so we&rsquo;re using a PowerShell script based on his <a href="https://www.powershellgallery.com/packages/Get-WindowsAutopilotInfo" target="_blank">initial version</a> to get the hardware hash.</p>
 
 
 <h3 class="relative group">Hardware Hash ID 
@@ -1514,8 +1501,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >If you want a break down of the script, check out this <a href="https://oofhours.com/2023/12/27/use-the-new-community-modules-for-autopilot/"   target="_blank">
-    post</a>.</span>
+    >If you want a break down of the script, check out this <a href="https://oofhours.com/2023/12/27/use-the-new-community-modules-for-autopilot/" target="_blank">post</a>.</span>
 </div>
 
 <p>You can see the overall process in the video below:</p>
@@ -1524,8 +1510,7 @@
     <span></span>
 </video>
 
-<p>Now after we&rsquo;ve authenticated to Microsoft Entra, there appears to be an issue&hellip;PowerShell <a href="https://www.youtube.com/watch?v=T1GYsCMCLpo"   target="_blank">
-    you&rsquo;ve got red on you</a>.</p>
+<p>Now after we&rsquo;ve authenticated to Microsoft Entra, there appears to be an issue&hellip;PowerShell <a href="https://www.youtube.com/watch?v=T1GYsCMCLpo" target="_blank">you&rsquo;ve got red on you</a>.</p>
 <p>
 
 
@@ -1563,8 +1548,7 @@
     
 </h3>
 <p>Well sadly our Virtual Machine is missing a serial number, it can&rsquo;t pull a rogue one through from the macOS host like it would using Hyper-V on a Windows host, and UTM isn&rsquo;t giving it one. So I guess we need to sort this out ourselves.</p>
-<p>As UTM is built upon <a href="https://www.qemu.org/"   target="_blank">
-    QEMU</a> we have the ability to pass through QEMU parameters to the Virtual Machine, one of which gives us the option to configure a serial number. Wonderful.</p>
+<p>As UTM is built upon <a href="https://www.qemu.org/" target="_blank">QEMU</a> we have the ability to pass through QEMU parameters to the Virtual Machine, one of which gives us the option to configure a serial number. Wonderful.</p>
 <p>Go ahead and gracefully shutdown your Windows Virtual Machine, and <strong>right click</strong> and select <strong>edit</strong> in UTM:</p>
 <p>
 
@@ -1643,8 +1627,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >I use <a href="https://www.randomcodegenerator.com/en/generate-serial-numbers"   target="_blank">
-    this site</a> to generate a random one.</span>
+    >I use <a href="https://www.randomcodegenerator.com/en/generate-serial-numbers" target="_blank">this site</a> to generate a random one.</span>
 </div>
 
 <p>So for example:</p>
@@ -1719,8 +1702,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >There are other <a href="https://oofhours.com/2023/12/27/use-the-new-community-modules-for-autopilot/"   target="_blank">
-    parameters</a> you can use with this script, but we&rsquo;ll keep it simple for now.</span>
+    >There are other <a href="https://oofhours.com/2023/12/27/use-the-new-community-modules-for-autopilot/" target="_blank">parameters</a> you can use with this script, but we&rsquo;ll keep it simple for now.</span>
 </div>
 
 <p>If you&rsquo;ve done all this in good time, your original authentication token will still be valid, if not you will be prompted to authenticate to Entra again, either way the script should happily run and capture the hardware hash:</p>

@@ -1278,11 +1278,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Now that you&rsquo;ve made the <del>financial</del> sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/apple-mdm-push-certificate-get"   target="_blank">
-    Apple Push Certificate</a>, sorted your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios#get-an-apple-automated-device-enrollment-token"   target="_blank">
-    Enrolment Token</a>, added <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios#assign-devices-to-the-apple-token-mdm-server"   target="_blank">
-    Intune as an MDM provider</a>, and now you&rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios"   target="_blank">
-    Apple&rsquo;s Automated Device Enrolment.</a> Life is good.</p>
+          <p>Now that you&rsquo;ve made the <del>financial</del> sensible decision to migrate to Microsoft Intune for your Apple device management needs, you&rsquo;ve got your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/apple-mdm-push-certificate-get" target="_blank">Apple Push Certificate</a>, sorted your <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios#get-an-apple-automated-device-enrollment-token" target="_blank">Enrolment Token</a>, added <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios#assign-devices-to-the-apple-token-mdm-server" target="_blank">Intune as an MDM provider</a>, and now you&rsquo;ve got all your iOS/iPadOS devices happily sitting synchronised in Intune waiting to be deployed using <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-program-enroll-ios" target="_blank">Apple&rsquo;s Automated Device Enrolment.</a> Life is good.</p>
 <p>Until you realise that in your excitement you&rsquo;ve created loads of Enrolment Profiles (up to 1000 in fact, <em>help</em>), and you now have the daunting task of assigning your thousands (up to 200,000, <em>fml</em>) iOS/iPadOS devices to these profiles.</p>
 <p>No one likes clicking <em>that</em> much.</p>
 
@@ -1340,8 +1336,7 @@
     </span>        
     
 </h3>
-<p>To get all the Enrolment Profiles and Devices associated with the Apple Enrolment Program Token, we&rsquo;ve got to call the Token itself using the <a href="https://learn.microsoft.com/en-us/graph/api/intune-enrollment-deponboardingsetting-list?view=graph-rest-beta"   target="_blank">
-    GET /deviceManagement/depOnboardingSettings</a> resource.</p>
+<p>To get all the Enrolment Profiles and Devices associated with the Apple Enrolment Program Token, we&rsquo;ve got to call the Token itself using the <a href="https://learn.microsoft.com/en-us/graph/api/intune-enrollment-deponboardingsetting-list?view=graph-rest-beta" target="_blank">GET /deviceManagement/depOnboardingSettings</a> resource.</p>
 
   
 
@@ -1412,8 +1407,7 @@
     </span>        
     
 </h3>
-<p>With the Token, and more importantly the <code>id</code> of the Token in hand, we can now call <a href="https://learn.microsoft.com/en-us/graph/api/intune-enrollment-depenrollmentprofile-list?view=graph-rest-beta"   target="_blank">
-    GET /deviceManagement/depOnboardingSettings/{depOnboardingSettingId}/enrollmentProfiles</a> to pull back all the enrolment profiles associated with that Token ID.</p>
+<p>With the Token, and more importantly the <code>id</code> of the Token in hand, we can now call <a href="https://learn.microsoft.com/en-us/graph/api/intune-enrollment-depenrollmentprofile-list?view=graph-rest-beta" target="_blank">GET /deviceManagement/depOnboardingSettings/{depOnboardingSettingId}/enrollmentProfiles</a> to pull back all the enrolment profiles associated with that Token ID.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-ADEEnrolmentProfile</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">Param</span><span class="p">(</span>
@@ -1506,8 +1500,7 @@
     </span>        
     
 </h3>
-<p>I had to continue sneaking into the Graph API calls, as I couldn&rsquo;t find any reference in the <a href="https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentprofile?view=graph-rest-beta"   target="_blank">
-    Graph documentation</a>, to the resource used for assigning devices to a profile.</p>
+<p>I had to continue sneaking into the Graph API calls, as I couldn&rsquo;t find any reference in the <a href="https://learn.microsoft.com/en-us/graph/api/resources/intune-enrollment-depenrollmentprofile?view=graph-rest-beta" target="_blank">Graph documentation</a>, to the resource used for assigning devices to a profile.</p>
 <p>I managed to find the following call to support the assignment <code>deviceManagement/depOnboardingSettings/$Id/enrollmentProfiles('$ProfileID')/updateDeviceProfileAssignment</code>, this his references the Enrolment Profile Id, which we can now get using the above function, but it also needs a JSON formatted object containing the serial numbers of the devices:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;deviceIds&#34;</span><span class="p">:</span> <span class="s2">&#34;SERIAL1, SERIAL2, SERIAL3&#34;</span>
@@ -1561,9 +1554,7 @@ H4QJQ01PPLFG,Enrolment_iOS_Corp_User_Standard
 F9GV90XKGHPD,Enrolment_iOS_Clinical_Shared_User
 G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 </code></pre><p>The tricky part, was how we actually have to use this data, creating a unique list of the Enrolment Profiles, and then based on the association of the device serial number to the profile, add each serial number to each profile.</p>
-<p>If we don&rsquo;t do this, then we <strong>are</strong> going to be calling graph for each device serial number in the list, and I&rsquo;d rather not piss off Microsoft. Time for a <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-hashtable?view=powershell-7.3"   target="_blank">
-    hashtable</a>, and maybe an <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.3"   target="_blank">
-    array</a>.</p>
+<p>If we don&rsquo;t do this, then we <strong>are</strong> going to be calling graph for each device serial number in the list, and I&rsquo;d rather not piss off Microsoft. Time for a <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-hashtable?view=powershell-7.3" target="_blank">hashtable</a>, and maybe an <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.3" target="_blank">array</a>.</p>
 
 
 <h3 class="relative group">Up, Up and Array 
@@ -1639,8 +1630,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
     
 </h2>
 <p>With that horrible mess we created, we can combine it all into a sub-par script, to actually assign these devices to the Enrolment Profiles.</p>
-<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Enrolment/ADEProfileAssignment/Invoke-ADEProfileAssignment.ps1"   target="_blank">
-    full script</a> as always is in my GitHub repo, and gives you some nice messages along the way as it runs off plays with your Intune environment, it also catches errors, which I&rsquo;ve been told is important.</p>
+<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Enrolment/ADEProfileAssignment/Invoke-ADEProfileAssignment.ps1" target="_blank">full script</a> as always is in my GitHub repo, and gives you some nice messages along the way as it runs off plays with your Intune environment, it also catches errors, which I&rsquo;ve been told is important.</p>
 <p>The bits you care about now, and the final pay off to our work, can be found below, remember to include the functions and authentication otherwise everything will look a little red in the PowerShell console:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$CSVPath</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s1">&#39;Please provide the path to the CSV file containing a list of Serial Numbers and ADE Profile Names e.g. C:\temp\ADEDevices.csv&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$Devices</span> <span class="p">=</span> <span class="nb">Import-Csv</span> <span class="n">-Path</span> <span class="nv">$CSVPath</span>

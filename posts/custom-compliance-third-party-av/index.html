@@ -1269,8 +1269,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</p>
-<p>Microsoft have come to the rescue with their <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings"   target="_blank">
-    Custom Compliance Settings</a>, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</p>
+<p>Microsoft have come to the rescue with their <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings" target="_blank">Custom Compliance Settings</a>, so let&rsquo;s utilise this detect and check policy, and leverage it to detect and report on Non-Microsoft Antivirus products, their real time protection status, as well as whether the definitions are up to date.</p>
 
 
 <h2 class="relative group">Custom Compliance Policies 
@@ -1285,12 +1284,9 @@
 </h2>
 <p>As Custom Compliance isn&rsquo;t that new a feature of Microsoft Intune, I&rsquo;m not going to deep dive into the process, a number of other people have done that already:</p>
 <ul>
-<li><a href="https://www.petervanderwoude.nl/post/working-with-custom-compliance-settings/"   target="_blank">
-    Peter van der Woude</a></li>
-<li><a href="https://call4cloud.nl/2021/11/the-last-days-of-custom-compliance/"   target="_blank">
-    Call4Cloud</a></li>
-<li><a href="https://deviceadvice.io/2021/12/01/deploy-a-custom-compliance-policy-in-mem/"   target="_blank">
-    Device Advice</a></li>
+<li><a href="https://www.petervanderwoude.nl/post/working-with-custom-compliance-settings/" target="_blank">Peter van der Woude</a></li>
+<li><a href="https://call4cloud.nl/2021/11/the-last-days-of-custom-compliance/" target="_blank">Call4Cloud</a></li>
+<li><a href="https://deviceadvice.io/2021/12/01/deploy-a-custom-compliance-policy-in-mem/" target="_blank">Device Advice</a></li>
 </ul>
 <p>We&rsquo;re going to focus on how to use it to achieve our goal, detecting additional information about third-party Antivirus solutions.</p>
 
@@ -1356,8 +1352,7 @@
 </h3>
 <p>With the information available about the Antivirus products, we need to be able to identify whether Real Time Protection is running, as well as whether the Definitions are up to date. I&rsquo;d say luckily, but I&rsquo;d be lying, we have the <code>productState</code> information to work with.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line hl"><span class="cl">productState             : 393472
-</span></span></code></pre></div><p>This hex value does translate into something we can use to identify the definition and protection status checks, and thanks to <a href="https://github.com/appgate/sdp-win-security-center/blob/master/avinspect.ps1"   target="_blank">
-    Marc Schneider</a> we can actually understand this number and how to use it as part of a Custom Compliance policy.</p>
+</span></span></code></pre></div><p>This hex value does translate into something we can use to identify the definition and protection status checks, and thanks to <a href="https://github.com/appgate/sdp-win-security-center/blob/master/avinspect.ps1" target="_blank">Marc Schneider</a> we can actually understand this number and how to use it as part of a Custom Compliance policy.</p>
 <p>The six-digit value for &lsquo;productState&rsquo; can be broken down into three pairs of two-digits, with each actually meaning something once converted to a hex string:</p>
 <ul>
 <li>1st Pair: Product Type</li>
@@ -1392,8 +1387,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >The 2nd and 3rd pair may report differently depending on your Antivirus product, as detailed in <a href="https://social.msdn.microsoft.com/Forums/en-US/6501b87e-dda4-4838-93c3-244daa355d7c/wmisecuritycenter2-productstate?forum=vblanguage"   target="_blank">
-    this post</a>, so you will have to check this on a device with up-to-date definitions as well as real time protection enabled to be sure.</span>
+    >The 2nd and 3rd pair may report differently depending on your Antivirus product, as detailed in <a href="https://social.msdn.microsoft.com/Forums/en-US/6501b87e-dda4-4838-93c3-244daa355d7c/wmisecuritycenter2-productstate?forum=vblanguage" target="_blank">this post</a>, so you will have to check this on a device with up-to-date definitions as well as real time protection enabled to be sure.</span>
 </div>
 
 <p>The values for each of these pairs for Sophos Antivirus can be seen below:</p>
@@ -1451,8 +1445,7 @@
     </span>        
     
 </h3>
-<p>With a couple of variables, some hex conversion, switches, and a little bit of logic, we can get the information we need and throw it into the JSON format required by <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-custom-script"   target="_blank">
-    Microsoft</a> to allow the Custom Compliance script to work as expected.</p>
+<p>With a couple of variables, some hex conversion, switches, and a little bit of logic, we can get the information we need and throw it into the JSON format required by <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-custom-script" target="_blank">Microsoft</a> to allow the Custom Compliance script to work as expected.</p>
 <p>We&rsquo;ve used the <code>$AVClient</code> variable, which will allow re-use of the script depending on which product is installed across your device estate.</p>
 <p>We also have to be able to capture and present back when the script doesn&rsquo;t detect the specified <code>$AVClient</code> variable, otherwise we&rsquo;ll get some grim looking compliance errors on those devices.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$avClient</span> <span class="p">=</span> <span class="s1">&#39;Sophos Anti-Virus&#39;</span>
@@ -1504,8 +1497,7 @@
     </span>        
     
 </h3>
-<p>As we&rsquo;ve seen in the JSON check requirements from <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-custom-json"   target="_blank">
-    Microsoft</a>, we now need to build out a JSON file using the template as a starter, making sure that our JSON output from the script can be translated into something the Custom Compliance Policy can use.</p>
+<p>As we&rsquo;ve seen in the JSON check requirements from <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-custom-json" target="_blank">Microsoft</a>, we now need to build out a JSON file using the template as a starter, making sure that our JSON output from the script can be translated into something the Custom Compliance Policy can use.</p>
 <p>Below is the updated JSON content we can use for the check, I&rsquo;ve kept this quite light touch if I&rsquo;m honest, and not specific to the Antivirus product, again so this can be re-used without changing a million things.</p>
 <p>You will need to change the <code>Operand</code> for the first Rule to match the Antivirus product name you have installed, and if you want to, feel free to update the following fields to your taste:</p>
 <ul>
@@ -1602,8 +1594,7 @@
     
 </h2>
 <p>We&rsquo;ve now got both a PowerShell script and JSON file, so the last steps are to throw these into Microsoft Intune.</p>
-<p>First off we need to add the PowerShell script in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesComplianceMenu/~/customComplianceScripts"   target="_blank">
-    Compliance Scripts</a> section.</p>
+<p>First off we need to add the PowerShell script in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesComplianceMenu/~/customComplianceScripts" target="_blank">Compliance Scripts</a> section.</p>
 <p>
 
 
@@ -1700,8 +1691,7 @@
 </p>
 </li>
 </ul>
-<p>With this Compliance Policy now in place, we not only get a view of the device estate, but can integrate Compliance into <a href="https://docs.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune"   target="_blank">
-    Conditional Access Policies</a>, so it&rsquo;s not a bad situation to be in at all.</p>
+<p>With this Compliance Policy now in place, we not only get a view of the device estate, but can integrate Compliance into <a href="https://docs.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune" target="_blank">Conditional Access Policies</a>, so it&rsquo;s not a bad situation to be in at all.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1714,8 +1704,7 @@
     </span>        
     
 </h2>
-<p>Custom Compliance does seem like a bit of an effort, and it currently has minimal operators for the JSON check, an inability to add more than one PowerShell script to a single policy, an eight hour wait for the Compliance state to update after remediation, and a <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings#troubleshooting"   target="_blank">
-    few other limitations</a>, but for those organisations that aren&rsquo;t fully in bed with Microsoft when it comes down to endpoint protection products, it does offer a way to extend compliance to these solutions.</p>
+<p>Custom Compliance does seem like a bit of an effort, and it currently has minimal operators for the JSON check, an inability to add more than one PowerShell script to a single policy, an eight hour wait for the Compliance state to update after remediation, and a <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings#troubleshooting" target="_blank">few other limitations</a>, but for those organisations that aren&rsquo;t fully in bed with Microsoft when it comes down to endpoint protection products, it does offer a way to extend compliance to these solutions.</p>
 
         </div>
         

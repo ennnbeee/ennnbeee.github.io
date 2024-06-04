@@ -1285,9 +1285,7 @@
     </span>        
     
 </h2>
-<p><a href="https://docs.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add"   target="_blank">
-    Corporate Device Identifiers</a> are useful for tagging devices as corporate for devices that have not yet enrolled into Microsoft Intune, but what about those that have, and what about the poor devices that just don&rsquo;t have a place in the <a href="https://docs.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number"   target="_blank">
-    supported corporate device identifier</a> world:</p>
+<p><a href="https://docs.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add" target="_blank">Corporate Device Identifiers</a> are useful for tagging devices as corporate for devices that have not yet enrolled into Microsoft Intune, but what about those that have, and what about the poor devices that just don&rsquo;t have a place in the <a href="https://docs.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number" target="_blank">supported corporate device identifier</a> world:</p>
 <p>
 
 
@@ -1302,8 +1300,7 @@
   
 
 </p>
-<p>We need to find a way to update devices we know are corporate owned and change the ownership type, sadly there isn&rsquo;t a native way of doing this using <a href="https://docs.microsoft.com/en-us/mem/intune/remote-actions/bulk-device-actions"   target="_blank">
-    Bulk Device Actions</a> in Microsoft Intune, so Graph API and PowerShell it is.</p>
+<p>We need to find a way to update devices we know are corporate owned and change the ownership type, sadly there isn&rsquo;t a native way of doing this using <a href="https://docs.microsoft.com/en-us/mem/intune/remote-actions/bulk-device-actions" target="_blank">Bulk Device Actions</a> in Microsoft Intune, so Graph API and PowerShell it is.</p>
 
 
 <h2 class="relative group">Device Ownership Change 
@@ -1338,10 +1335,8 @@
 <p>First off is putting together the list of devices you know are corporate, now I&rsquo;m hoping you have an Asset Register that contains all the serial numbers of your owned devices, so you could use this to create a CSV file, make sure the serial numbers are under the heading &lsquo;SerialNumber&rsquo; as we&rsquo;ll need this later.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">DeviceName,SerialNumber
 </span></span><span class="line"><span class="cl">ENB-564d71,VMware-564d710031a992c6-ca795244c03a8322
-</span></span></code></pre></div><p>If you don&rsquo;t have these serials to hand, you could probably export all data from the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/mDMDevicesPreview"   target="_blank">
-    Microsoft Intune All Devices blade</a>, and then filter the data to show devices with unknown or personal ownership and review them. Good luck.</p>
-<p>For the group, let&rsquo;s make use of <a href="https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership"   target="_blank">
-    Azure AD Dynamic Groups</a>,and find a suitable way to use the query to capture the corporate devices. This could be display name, or device make and model, or device ownership not equals corporate, or a combination of all three, really you can be creative here to fit your environment.</p>
+</span></span></code></pre></div><p>If you don&rsquo;t have these serials to hand, you could probably export all data from the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/mDMDevicesPreview" target="_blank">Microsoft Intune All Devices blade</a>, and then filter the data to show devices with unknown or personal ownership and review them. Good luck.</p>
+<p>For the group, let&rsquo;s make use of <a href="https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership" target="_blank">Azure AD Dynamic Groups</a>,and find a suitable way to use the query to capture the corporate devices. This could be display name, or device make and model, or device ownership not equals corporate, or a combination of all three, really you can be creative here to fit your environment.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">displayName</span><span class="w"> </span><span class="o">-</span><span class="n">startsWith</span><span class="w"> </span><span class="s2">&#34;ENB-&#34;</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceManufacturer</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="s2">&#34;Dell Inc.&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">deviceModel</span><span class="w"> </span><span class="o">-</span><span class="n">startsWith</span><span class="w"> </span><span class="s2">&#34;XPS&#34;</span><span class="p">)</span><span class="w">
@@ -1362,8 +1357,7 @@
     
 </h3>
 <p>With our list of devices, either CSV or Azure AD Group, we will need to use this data to get the Managed Device object in Microsoft Intune.</p>
-<p>To do this we will need to authenticate to Graph, and as you&rsquo;ve seen this one a lot on this blog already in <a href="/posts/windows-autopilot-retrofitting-group-tags/#handshake-time" rel="noopener" target="_blank">previous</a> <a href="/posts/operating-system-compliance-updates/#authentication" rel="noopener" target="_blank">posts</a>, I won&rsquo;t put the functions here, but we&rsquo;re using the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
-    Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</p>
+<p>To do this we will need to authenticate to Graph, and as you&rsquo;ve seen this one a lot on this blog already in <a href="/posts/windows-autopilot-retrofitting-group-tags/#handshake-time" rel="noopener" target="_blank">previous</a> <a href="/posts/operating-system-compliance-updates/#authentication" rel="noopener" target="_blank">posts</a>, I won&rsquo;t put the functions here, but we&rsquo;re using the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples" target="_blank">Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</p>
 <p>Once connected, we can now look at not only getting devices, but updating the device object, time for a function or two.</p>
 
 
@@ -1428,8 +1422,7 @@
     </span>        
     
 </h3>
-<p>Using the &lsquo;patch&rsquo; functionality in the Graph API, we can change an existing Managed Device object in Microsoft Intune, in this case, I was lazy and just wrote the function for device ownership, but the &lsquo;patch&rsquo; option would allow you to change <a href="https://docs.microsoft.com/en-us/graph/api/intune-devices-manageddevice-update?view=graph-rest-1.0"   target="_blank">
-    many settings</a>.</p>
+<p>Using the &lsquo;patch&rsquo; functionality in the Graph API, we can change an existing Managed Device object in Microsoft Intune, in this case, I was lazy and just wrote the function for device ownership, but the &lsquo;patch&rsquo; option would allow you to change <a href="https://docs.microsoft.com/en-us/graph/api/intune-devices-manageddevice-update?view=graph-rest-1.0" target="_blank">many settings</a>.</p>
 <p>This function only needs a couple of parameters, <code>id</code> and <code>ownertype</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Set-ManagedDeviceOwnership</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -1522,8 +1515,7 @@
 <li>Get the members of the group and their Azure AD Device ID</li>
 <li>Get the Managed Device details</li>
 </ul>
-<p>I could have used the <a href="https://docs.microsoft.com/en-us/powershell/module/azuread/?view=azureadps-2.0"   target="_blank">
-    AzureAD PowerShell module</a> for this, but I didn&rsquo;t want to authenticate twice, once to Graph and then again to Azure Active Directory&hellip;so I created a couple of functions and the script section below to get the required Managed Device ID.</p>
+<p>I could have used the <a href="https://docs.microsoft.com/en-us/powershell/module/azuread/?view=azureadps-2.0" target="_blank">AzureAD PowerShell module</a> for this, but I didn&rsquo;t want to authenticate twice, once to Graph and then again to Azure Active Directory&hellip;so I created a couple of functions and the script section below to get the required Managed Device ID.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Group</span> <span class="p">=</span> <span class="nb">Read-host</span> <span class="s2">&#34;Please provide the name of the group containing members you want to convert&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$id</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-DeviceGroup</span> <span class="n">-GroupName</span> <span class="s2">&#34;</span><span class="nv">$Group</span><span class="s2">&#34;</span><span class="p">).</span><span class="py">id</span>
@@ -1559,9 +1551,7 @@
     </span>        
     
 </h3>
-<p>Using the <a href="https://docs.microsoft.com/en-us/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http"   target="_blank">
-    GET /groups</a> resource in Graph and some <a href="https://docs.microsoft.com/en-us/graph/aad-advanced-queries?tabs=http"   target="_blank">
-    filtering</a>, we can get the ID of the group provided from the script.</p>
+<p>Using the <a href="https://docs.microsoft.com/en-us/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http" target="_blank">GET /groups</a> resource in Graph and some <a href="https://docs.microsoft.com/en-us/graph/aad-advanced-queries?tabs=http" target="_blank">filtering</a>, we can get the ID of the group provided from the script.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DeviceGroup</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">param</span>
@@ -1593,8 +1583,7 @@
     </span>        
     
 </h3>
-<p>Still using the <a href="https://docs.microsoft.com/en-us/graph/api/group-list-members?view=graph-rest-1.0&amp;tabs=http"   target="_blank">
-    GET /groups/{id}/members</a> resource in Graph, but this time using the option to list the members of the group.</p>
+<p>Still using the <a href="https://docs.microsoft.com/en-us/graph/api/group-list-members?view=graph-rest-1.0&amp;tabs=http" target="_blank">GET /groups/{id}/members</a> resource in Graph, but this time using the option to list the members of the group.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DeviceGroupMembers</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">param</span>
@@ -1627,8 +1616,7 @@
     
 </h2>
 <p>Putting this all together gives us a way to get the required unique identifier of the Managed Device and change the ownership to corporate, all using a handful of functions.</p>
-<p>Running the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/SetOwnership/Set-DeviceOwnership.ps1"   target="_blank">
-    script</a>, after authentication, will give you a prompt for options, as we all like a choice:</p>
+<p>Running the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/SetOwnership/Set-DeviceOwnership.ps1" target="_blank">script</a>, after authentication, will give you a prompt for options, as we all like a choice:</p>
 <ul>
 <li>Use a CSV file; where you&rsquo;ll be prompted to provide a path to the CSV file containing device serial numbers</li>
 <li>An Azure AD group; where you&rsquo;ll be prompted to provide a name of an Azure AD group that contains the devices you know are corporate</li>

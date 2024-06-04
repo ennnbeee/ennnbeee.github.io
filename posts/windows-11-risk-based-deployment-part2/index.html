@@ -1317,8 +1317,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>I&rsquo;d strongly suggest, if you haven&rsquo;t already, skimming over the first part of this series as this will give you a good understanding of where we started, and hopefully where we&rsquo;re trying to get to with putting the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
-    Feature Update Readiness Reports</a> in Microsoft Intune to good use allowing for a risk based deployment approach of Windows 11 23H2.</p>
+          <p>I&rsquo;d strongly suggest, if you haven&rsquo;t already, skimming over the first part of this series as this will give you a good understanding of where we started, and hopefully where we&rsquo;re trying to get to with putting the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report" target="_blank">Feature Update Readiness Reports</a> in Microsoft Intune to good use allowing for a risk based deployment approach of Windows 11 23H2.</p>
 <p>
 
 
@@ -1346,8 +1345,7 @@
     </span>        
     
 </h2>
-<p>Those with a keen pair of eyes, may have spotted a <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
-    device attributes</a> for exceptions to Conditional Access Policies, and I may have hinted at the time that these attributes may have other uses. Well guess what, they do.</p>
+<p>Those with a keen pair of eyes, may have spotted a <a href="/posts/device-attributes-cap" rel="noopener" target="_blank">previous post</a> allowing the tagging of a device using <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters" target="_blank">device attributes</a> for exceptions to Conditional Access Policies, and I may have hinted at the time that these attributes may have other uses. Well guess what, they do.</p>
 <p>We can take the data from the Readiness Report, that we formatted and updated with both a string representation of the risk state, and the Entra ID computer ObjectId of the device, and use this information to tag devices with their risk state for the Windows 11 Feature Update they were assessed against. Clever eh?</p>
 
 
@@ -1512,8 +1510,7 @@
     </span>        
     
 </h3>
-<p>I&rsquo;m not usually this tidy with my scripts, but we should clean up after ourselves, and as the Feature Update Readiness Report relies on a number of moving parts, no less devices themselves sending data, and the <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency"   target="_blank">
-    52 hours</a> of waiting for data to process, the aim here is to regularly run the whole script to ensure accurate assessment and tagging of devices.</p>
+<p>I&rsquo;m not usually this tidy with my scripts, but we should clean up after ourselves, and as the Feature Update Readiness Report relies on a number of moving parts, no less devices themselves sending data, and the <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency" target="_blank">52 hours</a> of waiting for data to process, the aim here is to regularly run the whole script to ensure accurate assessment and tagging of devices.</p>
 <p>So let&rsquo;s add a little something something, and using the values from <code>ReadinessStatus</code> we can assess whether a device is already upgraded to our Windows 11 Feature Update version or not based on the <code>ReadinessStatus</code> equalling <code>4</code> and send the correct <code>JSON</code> data to Graph to ensure consistent assignment of the value of the extension attribute.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$object</span> <span class="k">in</span> <span class="nv">$reportArray</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$object</span><span class="p">.</span><span class="py">ReadinessStatus</span> <span class="o">-ne</span> <span class="s1">&#39;4&#39;</span><span class="p">)</span> <span class="p">{</span>
@@ -1622,8 +1619,7 @@
     </span>        
     
 </h2>
-<p>Ah my love affair between <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient"   target="_blank">
-    certain</a> operators, there are still times when Dynamic Groups are going to win out over Device Filters.</p>
+<p>Ah my love affair between <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient" target="_blank">certain</a> operators, there are still times when Dynamic Groups are going to win out over Device Filters.</p>
 <p>With Feature Update deployments in Microsoft Intune not supporting the use of Device Filters, and as we&rsquo;ve tagged the Entra ID object of the device, and not the Microsoft Intune object, we don&rsquo;t have any say in the matter, so we have to use groups this time.</p>
 <p>
 
@@ -1683,8 +1679,7 @@
 </tr>
 </tbody>
 </table>
-<p>Give the groups a little while to populate, hopefully not <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-troubleshooting#:~:text=If%20everything%20looks%20good%2C%20please%20allow%20some%20time%20for%20the%20group%20to%20populate.%20Depending%20on%20the%20size%20of%20your%20Microsoft%20Entra%20organization%2C%20the%20group%20may%20take%20up%20to%2024%20hours%20for%20populating%20for%20the%20first%20time%20or%20after%20a%20rule%20change."   target="_blank">
-    24 hours</a>, but all being well and good, the members should flood in.</p>
+<p>Give the groups a little while to populate, hopefully not <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-troubleshooting#:~:text=If%20everything%20looks%20good%2C%20please%20allow%20some%20time%20for%20the%20group%20to%20populate.%20Depending%20on%20the%20size%20of%20your%20Microsoft%20Entra%20organization%2C%20the%20group%20may%20take%20up%20to%2024%20hours%20for%20populating%20for%20the%20first%20time%20or%20after%20a%20rule%20change." target="_blank">24 hours</a>, but all being well and good, the members should flood in.</p>
 
 
 <h3 class="relative group">Group Membership Check 
@@ -1697,8 +1692,7 @@
     </span>        
     
 </h3>
-<p>Ok ok, let&rsquo;s not just take my word for it, after all we&rsquo;re not <del>best friends</del> colleagues just yet, in fact I bet some of you don&rsquo;t even follow me on <a href="https://www.linkedin.com/in/ennnbeee/"   target="_blank">
-    LinkedIn</a> :grinning_face_with_sweat:, anyway let&rsquo;s look at the output of the report we initially created.</p>
+<p>Ok ok, let&rsquo;s not just take my word for it, after all we&rsquo;re not <del>best friends</del> colleagues just yet, in fact I bet some of you don&rsquo;t even follow me on <a href="https://www.linkedin.com/in/ennnbeee/" target="_blank">LinkedIn</a> :grinning_face_with_sweat:, anyway let&rsquo;s look at the output of the report we initially created.</p>
 <p>
 
 

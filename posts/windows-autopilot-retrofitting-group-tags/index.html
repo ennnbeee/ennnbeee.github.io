@@ -1287,8 +1287,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>Now I don&rsquo;t think I promised that I&rsquo;d cover off bulk tagging Autopilot devices in a <a href="/posts/autopilot-power-of-group-tags" rel="noopener" target="_blank">previous post</a>, but you know, I was running low on things to write about. So here we are.</p>
-<p>As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-using-group-tags-to-import-devices-into-intune-with/ba-p/815336"   target="_blank">
-    Group Tag</a> after a successful Proof-of-Concept implementation of a suitable convention and syntax. Thanks past me.</p>
+<p>As I like to practice what I preach, I&rsquo;d left myself the task of updating 1000&rsquo;s of Autopilot devices with a new <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-using-group-tags-to-import-devices-into-intune-with/ba-p/815336" target="_blank">Group Tag</a> after a successful Proof-of-Concept implementation of a suitable convention and syntax. Thanks past me.</p>
 <p>So what does any good consultant do? <del>Run away?</del> <del>Come up with a janky script that you&rsquo;ll only ever run once, that contains nested &lsquo;foreach&rsquo; loops?</del> Write a perfectly reusable and digestible PowerShell script using Graph API to update existing Autopilot devices&hellip;</p>
 
 
@@ -1360,8 +1359,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     </span>        
     
 </h3>
-<p><del>Lets steal the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
-    Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</del></p>
+<p><del>Lets steal the PowerShell Authentication Function from the <a href="https://github.com/microsoftgraph/powershell-intune-samples" target="_blank">Intune PowerShell Samples</a> GitHub repo to allow us to connect to Graph.</del></p>
 
   
 
@@ -1435,8 +1433,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     </span>        
     
 </h3>
-<p>Now we can have a nice authenticated chat to Graph, we need to talk to the Autopilot section, <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-enrollment-windowsautopilotdeviceidentity?view=graph-rest-beta"   target="_blank">
-    deviceManagement/windowsAutopilotDeviceIdentities</a> in fact.</p>
+<p>Now we can have a nice authenticated chat to Graph, we need to talk to the Autopilot section, <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-enrollment-windowsautopilotdeviceidentity?view=graph-rest-beta" target="_blank">deviceManagement/windowsAutopilotDeviceIdentities</a> in fact.</p>
 <p>So let&rsquo;s get all Autopilot devices, as we&rsquo;ll need this to:</p>
 <ol>
 <li>Get all Autopilot devices without a Group Tag set</li>
@@ -1618,8 +1615,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     </span>        
     
 </h2>
-<p>So bring it all together into a <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Enrolment/GroupTagAssignment/Set-AutopilotGroupTag.ps1"   target="_blank">
-    mega-script</a> we now have a way to update the Autopilot Group Tags. So let&rsquo;s give it a go.</p>
+<p>So bring it all together into a <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Enrolment/GroupTagAssignment/Set-AutopilotGroupTag.ps1" target="_blank">mega-script</a> we now have a way to update the Autopilot Group Tags. So let&rsquo;s give it a go.</p>
 
   
 

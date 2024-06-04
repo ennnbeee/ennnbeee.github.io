@@ -1342,9 +1342,7 @@
     </span>        
     
 </h2>
-<p>Assigning <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
-    Settings Catalog profiles</a> for Windows, macOS, and iOS/iPadOS devices isn&rsquo;t anything new, though Settings Catalogs were a bit of a revelation when they first appeared in Microsoft Intune allowing you to build profiles from scratch with a searchable interface, and with the ability to assign them to groups and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
-    Device Filters</a>, I jumped at the chance to use them in place of custom profiles where applicable.</p>
+<p>Assigning <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog profiles</a> for Windows, macOS, and iOS/iPadOS devices isn&rsquo;t anything new, though Settings Catalogs were a bit of a revelation when they first appeared in Microsoft Intune allowing you to build profiles from scratch with a searchable interface, and with the ability to assign them to groups and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a>, I jumped at the chance to use them in place of custom profiles where applicable.</p>
 <p>What about the assignment though, what does that look like?</p>
 
 
@@ -1461,8 +1459,7 @@
     </span>        
     
 </h4>
-<p>I already had the PowerShell function below at my disposal, so after connecting to Graph API using <code>Connect-MgGraph</code> and the Graph PowerShell SDK module, we can use the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicy-get?view=graph-rest-beta"   target="_blank">
-    <code>deviceManagementConfigurationPolicy</code></a> endpoint in the below function to pull back either all Settings Catalogs, or specific ones using either the Id or Name.</p>
+<p>I already had the PowerShell function below at my disposal, so after connecting to Graph API using <code>Connect-MgGraph</code> and the Graph PowerShell SDK module, we can use the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicy-get?view=graph-rest-beta" target="_blank"><code>deviceManagementConfigurationPolicy</code></a> endpoint in the below function to pull back either all Settings Catalogs, or specific ones using either the Id or Name.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DeviceSettingsCatalog</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
@@ -1515,8 +1512,7 @@
 </span></span><span class="line"><span class="cl">technologies         : mdm
 </span></span><span class="line hl"><span class="cl">id                   : 0565e69e-7bba-455a-bfaa-4ca6680a02b5
 </span></span><span class="line"><span class="cl">templateReference    : @{templateId=; templateFamily=none; templateDisplayName=; templateDisplayVersion=}
-</span></span></code></pre></div><p>With a way to get a Settings Catalog profile, we now need a way to pull back any and all assignments for a profile using the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicyassignment-list?view=graph-rest-beta"   target="_blank">
-    <code>deviceManagementConfigurationPolicyAssignments</code></a> endpoint in Graph and the above <code>Id</code> of the profile.</p>
+</span></span></code></pre></div><p>With a way to get a Settings Catalog profile, we now need a way to pull back any and all assignments for a profile using the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicyassignment-list?view=graph-rest-beta" target="_blank"><code>deviceManagementConfigurationPolicyAssignments</code></a> endpoint in Graph and the above <code>Id</code> of the profile.</p>
 
 
 <h4 class="relative group">Getting Settings Catalog Assignments 
@@ -1615,8 +1611,7 @@
     
 </h3>
 <p>So where do we start exactly? With the many different ways to assign a profile, or the twelfty different restrictions when adding new assignments to existing ones? Let&rsquo;s go with the relatively simple creation of new assignments first, as this seems a little more straightforward.</p>
-<p>Luckily for us, Microsoft provide <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicy-assign?view=graph-rest-beta"   target="_blank">
-    documentation</a> for the JSON format of the payload required to create a new assignment, and as we have our own function to get existing assignments, we can quite easily build out the required data in PowerShell based on each of the methods for assignment.</p>
+<p>Luckily for us, Microsoft provide <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicy-assign?view=graph-rest-beta" target="_blank">documentation</a> for the JSON format of the payload required to create a new assignment, and as we have our own function to get existing assignments, we can quite easily build out the required data in PowerShell based on each of the methods for assignment.</p>
 <p>The table below details the data used for each assignment method, so this is useful reference for us when building our own assignment function.</p>
 <table>
 <thead>
@@ -2101,8 +2096,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Policy</span> <span class="p">=</span> <span class="nb">Get-DeviceSettingsCatalog</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Name</span> <span class="o">-eq</span> <span class="s1">&#39;Corporate_Configuration_Policy_Conflict&#39;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$Group</span> <span class="p">=</span> <span class="nb">Get-MDMGroup</span> <span class="n">-GroupName</span> <span class="s1">&#39;SG_MDM_Devices_Corporate_POC&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$Filter</span> <span class="p">=</span> <span class="nb">Get-DeviceFilter</span> <span class="n">-Name</span> <span class="s1">&#39;Corporate_Windows_All&#39;</span>
-</span></span></code></pre></div><p>Right, onto the fun parts. I&rsquo;ve provided examples of each of the possible assignment methods below and in an example script which as always can be found on <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/SettingsCatalogAssignment/Invoke-MgSettingsCatalogAssignment.ps1"   target="_blank">
-    GitHub</a></p>
+</span></span></code></pre></div><p>Right, onto the fun parts. I&rsquo;ve provided examples of each of the possible assignment methods below and in an example script which as always can be found on <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/SettingsCatalogAssignment/Invoke-MgSettingsCatalogAssignment.ps1" target="_blank">GitHub</a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c"># Adding an include Group assignment</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Add-DeviceSettingsCatalogAssignment</span> <span class="n">-Id</span> <span class="nv">$Policy</span><span class="p">.</span><span class="py">id</span> <span class="n">-AssignmentAction</span> <span class="n">Add</span> <span class="n">-AssignmentType</span> <span class="n">Include</span> <span class="n">-GroupId</span> <span class="nv">$group</span><span class="p">.</span><span class="py">id</span>
 </span></span><span class="line"><span class="cl">

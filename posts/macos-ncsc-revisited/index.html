@@ -1260,11 +1260,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos"   target="_blank">
-    NCSC platform guidance</a> in <a href="/posts/NCSC-macOS-Settings" rel="noopener" target="_blank">macOS National Cyber Security Centre Security Settings in Intune</a>, but this was when macOS device management in Intune was, at best, in beta.</p>
-<p>General hardening has been covered previously by <a href="https://hmaslowski.com/home/f/macos-security-hardening-with-microsoft-intune"   target="_blank">
-    Hubert Maslowski</a> in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including <a href="https://www.ncsc.gov.uk/files/Cyber-Essentials-Requirements-for-Infrastructure-v3-1-January-2023.pdf"   target="_blank">
-    Cyber Essentials</a> requirements.</p>
+          <p>We looked at some of the ways to secure macOS devices in Microsoft Intune, aligned with the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/macos" target="_blank">NCSC platform guidance</a> in <a href="/posts/NCSC-macOS-Settings" rel="noopener" target="_blank">macOS National Cyber Security Centre Security Settings in Intune</a>, but this was when macOS device management in Intune was, at best, in beta.</p>
+<p>General hardening has been covered previously by <a href="https://hmaslowski.com/home/f/macos-security-hardening-with-microsoft-intune" target="_blank">Hubert Maslowski</a> in their post that covers device compliance and configuration settings, but we&rsquo;re looking at ensuring that the macOS devices meet the National Cyber Security Centre settings, including <a href="https://www.ncsc.gov.uk/files/Cyber-Essentials-Requirements-for-Infrastructure-v3-1-January-2023.pdf" target="_blank">Cyber Essentials</a> requirements.</p>
 <p>Now with the additional macOS settings, and new macOS versions, I thought we should look at how we can now secure these enrolled devices aligned to these known good practice settings.</p>
 
 
@@ -1278,8 +1275,7 @@
     </span>        
     
 </h2>
-<p>Handily, NCSC provide a <a href="https://github.com/ukncsc/Device-Security-Guidance-Configuration-Packs/blob/main/Apple/macOS/NCSC_macOS_configurations.md"   target="_blank">
-    list of their recommendations</a> for macOS device security, and unlike our previous attempt at hardening, we don&rsquo;t need to rely on mobileconfig custom settings to deliver these hardening requirements.</p>
+<p>Handily, NCSC provide a <a href="https://github.com/ukncsc/Device-Security-Guidance-Configuration-Packs/blob/main/Apple/macOS/NCSC_macOS_configurations.md" target="_blank">list of their recommendations</a> for macOS device security, and unlike our previous attempt at hardening, we don&rsquo;t need to rely on mobileconfig custom settings to deliver these hardening requirements.</p>
 <p>The settings from the platform guidance we&rsquo;ll cover in this post are as detailed in the sections below. We&rsquo;re not going to cover all the restrictions, the implications, and the expected behaviour, as the company I work for charges customers for this and I already provide too much &lsquo;value add&rsquo; as part of consultancy as it is.</p>
 
 
@@ -1554,8 +1550,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >The Microsoft documentation talks about these settings in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/software-updates-macos#configure-additional-macos-software-update-settings-using-the-settings-catalog"   target="_blank">
-    Additional settings section</a>, there appears to be a caveat to that whole document that these update settings will only apply to Supervised macOS devices.</span>
+    >The Microsoft documentation talks about these settings in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/software-updates-macos#configure-additional-macos-software-update-settings-using-the-settings-catalog" target="_blank">Additional settings section</a>, there appears to be a caveat to that whole document that these update settings will only apply to Supervised macOS devices.</span>
 </div>
 
 
@@ -1582,8 +1577,7 @@
 <li>Disable FibreChannel (if not in use).</li>
 </ul>
 </blockquote>
-<p>We can now use a Settings Catalog profile to hide these system preference panes, using the <a href="https://developer.apple.com/documentation/devicemanagement/systempreferences"   target="_blank">
-    Apple Developer Reference</a> as a reference for each of these system preferences, allowing us to restrict the following areas:</p>
+<p>We can now use a Settings Catalog profile to hide these system preference panes, using the <a href="https://developer.apple.com/documentation/devicemanagement/systempreferences" target="_blank">Apple Developer Reference</a> as a reference for each of these system preferences, allowing us to restrict the following areas:</p>
 <table>
 <thead>
 <tr>
@@ -1656,8 +1650,7 @@
 <li>Specify time server by device location</li>
 </ul>
 </blockquote>
-<p>Ensure that you are selecting location specific time servers, in this instance we&rsquo;re in the UK so using the UK servers from the <a href="https://www.pool.ntp.org/zone/uk"   target="_blank">
-    NTP Pool Project</a>, you may want to configure your own servers, but remember these devices may not always be on your local corporate network.</p>
+<p>Ensure that you are selecting location specific time servers, in this instance we&rsquo;re in the UK so using the UK servers from the <a href="https://www.pool.ntp.org/zone/uk" target="_blank">NTP Pool Project</a>, you may want to configure your own servers, but remember these devices may not always be on your local corporate network.</p>
 <p>
 
 
@@ -1685,8 +1678,7 @@
     
 </h2>
 <p>Even if you&rsquo;re not aligning to NCSC or Cyber Essentials guidance for your macOS devices, this post will be useful as a good practice security configuration, as well as the fact that Microsoft is investing into the management of operating systems that aren&rsquo;t Windows in Microsoft Intune.</p>
-<p>There have been many developments with macOS device management with new changes coming for these devices already listed in the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/in-development"   target="_blank">
-    In Development</a> page, hopefully one day we&rsquo;ll get <del>Azure Active Directory</del> Microsoft Entra ID joined macOS devices&hellip;we can but hope.</p>
+<p>There have been many developments with macOS device management with new changes coming for these devices already listed in the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/in-development" target="_blank">In Development</a> page, hopefully one day we&rsquo;ll get <del>Azure Active Directory</del> Microsoft Entra ID joined macOS devices&hellip;we can but hope.</p>
 
         </div>
         

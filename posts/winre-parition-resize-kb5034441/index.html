@@ -1268,15 +1268,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the <a href="https://support.microsoft.com/en-us/windows/create-a-recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246"   target="_blank">
-    Windows Recovery Environment</a> or WinRE, partition when applying Windows Updates like <a href="https://support.microsoft.com/en-au/topic/kb5034441-windows-recovery-environment-update-for-windows-10-version-21h2-and-22h2-january-9-2024-62c04204-aaa5-4fee-a02a-2fdea17075a8"   target="_blank">
-    KB5034441</a>, luckily Microsoft released a &lsquo;fix&rsquo; for this in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf"   target="_blank">
-    KB5028997</a> to resize the partition to allow for updates to install.</p>
-<p>Now if this were me, I&rsquo;d be looking for a way to push out this fix to the impacted devices, and thanks to <a href="https://www.reddit.com/user/InternetStranger4You/"   target="_blank">
-    u/InternetStranger4You</a>, they created a PowerShell script to do <a href="https://www.reddit.com/r/sysadmin/comments/19dyiuz/script_to_fix_kb5028997/"   target="_blank">
-    just that</a>, so all credit goes their way.</p>
-<p>So why I am writing this? Well, let&rsquo;s find a way to use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations"   target="_blank">
-    Microsoft Intune Remediations</a>, to detect and fix devices that are falling short of the partition size requirement.</p>
+          <p>If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the <a href="https://support.microsoft.com/en-us/windows/create-a-recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246" target="_blank">Windows Recovery Environment</a> or WinRE, partition when applying Windows Updates like <a href="https://support.microsoft.com/en-au/topic/kb5034441-windows-recovery-environment-update-for-windows-10-version-21h2-and-22h2-january-9-2024-62c04204-aaa5-4fee-a02a-2fdea17075a8" target="_blank">KB5034441</a>, luckily Microsoft released a &lsquo;fix&rsquo; for this in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf" target="_blank">KB5028997</a> to resize the partition to allow for updates to install.</p>
+<p>Now if this were me, I&rsquo;d be looking for a way to push out this fix to the impacted devices, and thanks to <a href="https://www.reddit.com/user/InternetStranger4You/" target="_blank">u/InternetStranger4You</a>, they created a PowerShell script to do <a href="https://www.reddit.com/r/sysadmin/comments/19dyiuz/script_to_fix_kb5028997/" target="_blank">just that</a>, so all credit goes their way.</p>
+<p>So why I am writing this? Well, let&rsquo;s find a way to use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">Microsoft Intune Remediations</a>, to detect and fix devices that are falling short of the partition size requirement.</p>
 
 
 <h2 class="relative group">Detection Methods 
@@ -1375,9 +1369,7 @@
     </span>        
     
 </h3>
-<p>So, we should see how many devices are effected by a small partition size, so for fun, we can push out <strong>just</strong> the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1"   target="_blank">
-    detection script</a> using a Remediation, but with a non-functioning <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_ReportRemediation.ps1"   target="_blank">
-    remediation script</a>. This will at least give you some idea of the devices that would be impacted by the true remediation script.</p>
+<p>So, we should see how many devices are effected by a small partition size, so for fun, we can push out <strong>just</strong> the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" target="_blank">detection script</a> using a Remediation, but with a non-functioning <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_ReportRemediation.ps1" target="_blank">remediation script</a>. This will at least give you some idea of the devices that would be impacted by the true remediation script.</p>
 <p>
 
 
@@ -1407,8 +1399,7 @@
   
 
 </p>
-<p>After waiting a little while, or if you&rsquo;re impatient use the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations#run-a-remediation-script-on-demand-preview"   target="_blank">
-    on-demand feature</a>, we can then review the results; we can see several devices that are now complaining that their WinRE partition is too small.</p>
+<p>After waiting a little while, or if you&rsquo;re impatient use the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations#run-a-remediation-script-on-demand-preview" target="_blank">on-demand feature</a>, we can then review the results; we can see several devices that are now complaining that their WinRE partition is too small.</p>
 <p>
 
 
@@ -1450,8 +1441,7 @@
     </span>        
     
 </h2>
-<p>As we have a good understanding following the implementation of the report only style Remediation, we can now investigate how best to actually fix the issue. For this, we can take the existing script by <a href="https://www.reddit.com/user/InternetStranger4You/"   target="_blank">
-    u/InternetStranger4You</a> and modifying it to support the required exit codes for Microsoft Intune.</p>
+<p>As we have a good understanding following the implementation of the report only style Remediation, we can now investigate how best to actually fix the issue. For this, we can take the existing script by <a href="https://www.reddit.com/user/InternetStranger4You/" target="_blank">u/InternetStranger4You</a> and modifying it to support the required exit codes for Microsoft Intune.</p>
 
 
 <h3 class="relative group">Script Breakdown 
@@ -1464,8 +1454,7 @@
     </span>        
     
 </h3>
-<p>The script itself is taking the manual steps detailed by Microsoft in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf"   target="_blank">
-    KB5028997</a>, and wrapping them nicely in PowerShell, but I&rsquo;ll walk through the settings so we&rsquo;re all on the same page:</p>
+<p>The script itself is taking the manual steps detailed by Microsoft in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf" target="_blank">KB5028997</a>, and wrapping them nicely in PowerShell, but I&rsquo;ll walk through the settings so we&rsquo;re all on the same page:</p>
 <ul>
 <li>Ensures that the script can read the contents of the <code>reagentc.exe</code> command by capture the output of the process using <code>New-Object System.Diagnostics.ProcessStartInfo</code> as the output data is used throughout the script.</li>
 <li>Checks if there is anything wrong with WinRE with <code>if (($stdout.IndexOf('harddisk') -ne -1) -and ($stdout.IndexOf('partition') -ne -1))</code>, and if so exits.</li>
@@ -1571,9 +1560,7 @@
     </span>        
     
 </h2>
-<p>I would strongly advised testing this in small numbers before you go deploying the the <code>All Devices</code> group, and use a new Remediation with the same <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1"   target="_blank">
-    detection script</a> method as before, but this time with the fully functioning <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Remediation.ps1"   target="_blank">
-    remediation script</a>, so we can actually fix this issue that Microsoft has caused.</p>
+<p>I would strongly advised testing this in small numbers before you go deploying the the <code>All Devices</code> group, and use a new Remediation with the same <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" target="_blank">detection script</a> method as before, but this time with the fully functioning <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Remediation.ps1" target="_blank">remediation script</a>, so we can actually fix this issue that Microsoft has caused.</p>
 <p>The Remediation should look something like the below, again with a schedule for once as we don&rsquo;t need this running more than once.</p>
 <p>
 
@@ -1632,11 +1619,9 @@
     </span>        
     
 </h2>
-<p>In short, this should allow you to get over the hurdle caused by the failing update delivery, and also give the devices with the issue a push in the right direction following the update to their recovery partition size, to allow them to realise they can now install the update. I can&rsquo;t take credit for the scripting of the Microsoft published resolution, that goes to <a href="https://www.reddit.com/user/InternetStranger4You/"   target="_blank">
-    u/InternetStranger4You</a>, but with this and moving it to a Remediation in Microsoft Intune, means that it can do the heavy lifting on your behalf.</p>
+<p>In short, this should allow you to get over the hurdle caused by the failing update delivery, and also give the devices with the issue a push in the right direction following the update to their recovery partition size, to allow them to realise they can now install the update. I can&rsquo;t take credit for the scripting of the Microsoft published resolution, that goes to <a href="https://www.reddit.com/user/InternetStranger4You/" target="_blank">u/InternetStranger4You</a>, but with this and moving it to a Remediation in Microsoft Intune, means that it can do the heavy lifting on your behalf.</p>
 <p>Or you can just wait for Microsoft to release a fix, totally up to you.</p>
-<p>Thanks to <a href="https://github.com/piotrxj"   target="_blank">
-    piotrxj</a> in the comments for the updated detection method.</p>
+<p>Thanks to <a href="https://github.com/piotrxj" target="_blank">piotrxj</a> in the comments for the updated detection method.</p>
 
   
   

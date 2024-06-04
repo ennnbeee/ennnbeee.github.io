@@ -1268,12 +1268,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting <a href="https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started"   target="_blank">
-    Device Compliance</a> policies, and you&rsquo;ve finally pulled the trigger on your shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/conditional-access"   target="_blank">
-    Conditional Access Policy</a> that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</p>
-<p>So what next? Use the <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/location-condition"   target="_blank">
-    trusted location exemption</a> in your policy for the virtual environment? What happens if the public facing address range is the same as your workstation environments or that you&rsquo;d rather not blow a massive hole in security by allowing an entire IP address range free access to Microsoft 365 authenticated services? That&rsquo;s not very <a href="https://www.microsoft.com/en-gb/security/business/zero-trust#:~:text=What%20is%20Zero%20Trust%3F,originates%20from%20an%20open%20network."   target="_blank">
-    Zero Trust</a> of you is it.</p>
+          <p>Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting <a href="https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started" target="_blank">Device Compliance</a> policies, and you&rsquo;ve finally pulled the trigger on your shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/conditional-access" target="_blank">Conditional Access Policy</a> that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</p>
+<p>So what next? Use the <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/location-condition" target="_blank">trusted location exemption</a> in your policy for the virtual environment? What happens if the public facing address range is the same as your workstation environments or that you&rsquo;d rather not blow a massive hole in security by allowing an entire IP address range free access to Microsoft 365 authenticated services? That&rsquo;s not very <a href="https://www.microsoft.com/en-gb/security/business/zero-trust#:~:text=What%20is%20Zero%20Trust%3F,originates%20from%20an%20open%20network." target="_blank">Zero Trust</a> of you is it.</p>
 
 
 <h2 class="relative group">Filtering Devices 
@@ -1286,9 +1282,7 @@
     </span>        
     
 </h2>
-<p>Luckily within the the Conditional Access Policy configuration, there is a way to <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices"   target="_blank">
-    filter devices</a> based on the device object registered with Entra ID, there are some useful native <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
-    device attributes</a> that can be used as long as your devices have registered in Entra ID (think Hybrid Entra Joined for this VDI environment).</p>
+<p>Luckily within the the Conditional Access Policy configuration, there is a way to <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices" target="_blank">filter devices</a> based on the device object registered with Entra ID, there are some useful native <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters" target="_blank">device attributes</a> that can be used as long as your devices have registered in Entra ID (think Hybrid Entra Joined for this VDI environment).</p>
 <p>What happens when you can&rsquo;t find a suitable attribute to use that excludes your virtual environment, but still includes your end user computer workstations? The answer here are the attributes <code>extensionAttribute1-15</code>, which are attributes attached only to the Entra ID device object, and not synchronised, and require specific permissions to set using Graph. These seem like a good way to go.</p>
 
 
@@ -1347,16 +1341,14 @@
     
 </h3>
 <p>Now that we can see where these attributes reside on the device object in Entra ID, if we&rsquo;re going to be using them as a filtering option in our Conditional Access Policy, we should probably have a look at how we update them.</p>
-<p>Pretty straight forward, as it&rsquo;s the device object we&rsquo;re updating, we can create, remove, or replace these attributes using a <code>PATCH</code> to the same Graph endpoint <code>https://graph.microsoft.com/beta/devices/492a52d0-ec1a-40ed-8ea5-79f27aa0f8bf/</code> using the JSON format in the <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http#add-or-update-data-in-extension-attributes"   target="_blank">
-    documentation</a> and like the example below.</p>
+<p>Pretty straight forward, as it&rsquo;s the device object we&rsquo;re updating, we can create, remove, or replace these attributes using a <code>PATCH</code> to the same Graph endpoint <code>https://graph.microsoft.com/beta/devices/492a52d0-ec1a-40ed-8ea5-79f27aa0f8bf/</code> using the JSON format in the <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http#add-or-update-data-in-extension-attributes" target="_blank">documentation</a> and like the example below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;extensionAttributes&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;extensionAttribute1&#34;</span><span class="p">:</span> <span class="s2">&#34;I&#39;m an Attribute&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;extensionAttribute2&#34;</span><span class="p">:</span> <span class="s2">&#34;I&#39;m also an Attribute&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Punting the above to the device using <a href="https://developer.microsoft.com/en-us/graph/graph-explorer"   target="_blank">
-    Graph Explorer</a>, we get the expected response of <code>{}</code> which is always pleasant, and querying the device object again with a <code>GET</code>, we can now see the attributes updated.</p>
+</span></span></code></pre></div><p>Punting the above to the device using <a href="https://developer.microsoft.com/en-us/graph/graph-explorer" target="_blank">Graph Explorer</a>, we get the expected response of <code>{}</code> which is always pleasant, and querying the device object again with a <code>GET</code>, we can now see the attributes updated.</p>
 <p>
 
 
@@ -1420,9 +1412,7 @@
     
 </h3>
 <p>So now we have a way to essentially tag devices we want to exclude from a Conditional Access Policy, we should look at how we create a device filter, and also explore the fact we can build a naming convention with these &ldquo;tags&rdquo; and utilise the operators available.</p>
-<p>You have to be careful with <a href="https://learn.microsoft.com/en-gb/entra/identity/conditional-access/concept-condition-filters-for-devices"   target="_blank">
-    filtering</a> within Conditional Access Policies, as there is some level of logic over not only <a href="https://learn.microsoft.com/en-gb/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters"   target="_blank">
-    supported</a> operators, but also the attributes that use the operators, and how they are evaluated.</p>
+<p>You have to be careful with <a href="https://learn.microsoft.com/en-gb/entra/identity/conditional-access/concept-condition-filters-for-devices" target="_blank">filtering</a> within Conditional Access Policies, as there is some level of logic over not only <a href="https://learn.microsoft.com/en-gb/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters" target="_blank">supported</a> operators, but also the attributes that use the operators, and how they are evaluated.</p>
 <p>For our scenario, we&rsquo;re going to use <code>extensionAttributes</code> which as of today, support the following operators <code>Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn</code></p>
 <p>So building a quick query in the policy, we can exclude devices where <code>extensionAttribute1</code> equals <code>CAP-00-Out</code>.</p>
 <p>
@@ -1467,8 +1457,7 @@
     </span>        
     
 </h3>
-<p>Having created a Conditional Access Policy in <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-report-only"   target="_blank">
-    Report-only</a> mode to <code>Require device to be marked as compliant</code> or <code>Require Microsoft Entra hybrid joined device</code> on <code>Windows</code> device platforms, with the filter to exclude devices matching <code>device.extensionAttribute1 -eq &quot;CAP-00-Out&quot;</code>, we can see in the sign in logs for the user in scope of the policy, when accessing Microsoft 365 authenticated resources, that they are not subject to the policy.</p>
+<p>Having created a Conditional Access Policy in <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-report-only" target="_blank">Report-only</a> mode to <code>Require device to be marked as compliant</code> or <code>Require Microsoft Entra hybrid joined device</code> on <code>Windows</code> device platforms, with the filter to exclude devices matching <code>device.extensionAttribute1 -eq &quot;CAP-00-Out&quot;</code>, we can see in the sign in logs for the user in scope of the policy, when accessing Microsoft 365 authenticated resources, that they are not subject to the policy.</p>
 <p>
 
 
@@ -1496,9 +1485,7 @@
     </span>        
     
 </h2>
-<p>I&rsquo;ll assume you&rsquo;re familiar with authenticating to Graph, and this time instead of the trusty <a href="https://github.com/AzureAD/MSAL.PS"   target="_blank">
-    MSAL.PS</a> module I&rsquo;m using Microsoft the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0"   target="_blank">
-    native commands</a>, ikr, shocking. Now that we&rsquo;re connected to Graph with the required scope options using <code>Connect-MgGraph -Scopes 'Device.ReadWrite.All'</code>, we need to be able to pull back all the devices we want to assign an attribute to.</p>
+<p>I&rsquo;ll assume you&rsquo;re familiar with authenticating to Graph, and this time instead of the trusty <a href="https://github.com/AzureAD/MSAL.PS" target="_blank">MSAL.PS</a> module I&rsquo;m using Microsoft the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0" target="_blank">native commands</a>, ikr, shocking. Now that we&rsquo;re connected to Graph with the required scope options using <code>Connect-MgGraph -Scopes 'Device.ReadWrite.All'</code>, we need to be able to pull back all the devices we want to assign an attribute to.</p>
 
 
 <h3 class="relative group">Getting Devices 
@@ -1511,8 +1498,7 @@
     </span>        
     
 </h3>
-<p>Who knew that when working in non-development tenants that you&rsquo;d have to consider pagination, so yeah, I had to throw something together to pull back all Entra ID device objects using the very same Graph endpoint we used earlier to look at a single device <code>https://graph.microsoft.com/beta/devices/</code> and the <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest?view=graph-powershell-1.0"   target="_blank">
-    <code>Invoke-MgGraphRequest</code></a> command.</p>
+<p>Who knew that when working in non-development tenants that you&rsquo;d have to consider pagination, so yeah, I had to throw something together to pull back all Entra ID device objects using the very same Graph endpoint we used earlier to look at a single device <code>https://graph.microsoft.com/beta/devices/</code> and the <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest?view=graph-powershell-1.0" target="_blank"><code>Invoke-MgGraphRequest</code></a> command.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DeviceAAD</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;beta&#39;</span>
@@ -1543,8 +1529,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>For the pagination, we&rsquo;re capturing the results of the web request into an array variable <code>$Results</code>, and looping through the <code>@odata.nextLink</code> data with a subsequent Graph calls, adding each result back into the same array variable until there are no more results. Simple right?</p>
-<p>Running this will allow us to pull back all Entra ID device objects, and with the below we can present them in a table using <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.4"   target="_blank">
-    <code>Out-GridView</code></a>.</p>
+<p>Running this will allow us to pull back all Entra ID device objects, and with the below we can present them in a table using <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.4" target="_blank"><code>Out-GridView</code></a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Devices</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="nb">Get-DeviceAAD</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">displayName</span><span class="p">,</span> <span class="n">operatingSystem</span><span class="p">,</span> <span class="n">manufacturer</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">deviceId</span>  <span class="p">|</span> <span class="nb">Out-GridView</span> <span class="n">-PassThru</span> <span class="n">-Title</span> <span class="s1">&#39;Select Devices to update extension attributes...&#39;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Allowing the selection of the devices that need their extension attributes updating, and importantly the <code>id</code> of the device object used to update the attribute.</p>
 <p>
@@ -1655,8 +1640,7 @@
     </span>        
     
 </h2>
-<p>Now we have all the component parts, we can build the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/DeviceExtensionAttributes/Invoke-DeviceExtensionAttributes.ps1"   target="_blank">
-    full script</a> giving us an option with <code>Mode</code> and options <code>Update</code> and <code>Remove</code> to choose whether we want to update attributes, or remove them.</p>
+<p>Now we have all the component parts, we can build the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/DeviceExtensionAttributes/Invoke-DeviceExtensionAttributes.ps1" target="_blank">full script</a> giving us an option with <code>Mode</code> and options <code>Update</code> and <code>Remove</code> to choose whether we want to update attributes, or remove them.</p>
 
 
 <h3 class="relative group">Removing Attributes 
@@ -1850,8 +1834,7 @@
     </span>        
     
 </h2>
-<p>This may seem like a simple <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/DeviceExtensionAttributes/Invoke-DeviceExtensionAttributes.ps1"   target="_blank">
-    script</a>, and honestly it is, but the application of the script, to allow for tagging of extension attributes by privileged accounts only, on Entra ID device objects, that are not overwritten by directory sync for hybrid joined Windows devices, changes to device operating system version etc. for all device objects,  gives us two major bits of functionality:</p>
+<p>This may seem like a simple <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/DeviceExtensionAttributes/Invoke-DeviceExtensionAttributes.ps1" target="_blank">script</a>, and honestly it is, but the application of the script, to allow for tagging of extension attributes by privileged accounts only, on Entra ID device objects, that are not overwritten by directory sync for hybrid joined Windows devices, changes to device operating system version etc. for all device objects,  gives us two major bits of functionality:</p>
 <ul>
 <li>Conditional Access Policy inclusion or exclusion</li>
 <li>Dynamic Security Groups</li>

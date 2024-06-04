@@ -1321,8 +1321,7 @@
     </span>        
     
 </h2>
-<p>Unlike the Windows <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#operating-system-version"   target="_blank">
-    Valid Operating System Builds</a> option in Compliance Policies, Apple policies don&rsquo;t give you the option of having a set of versions to work with, limited to only the following settings:</p>
+<p>Unlike the Windows <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#operating-system-version" target="_blank">Valid Operating System Builds</a> option in Compliance Policies, Apple policies don&rsquo;t give you the option of having a set of versions to work with, limited to only the following settings:</p>
 <ul>
 <li>Minimum OS version</li>
 <li>Maximum OS version</li>
@@ -1445,8 +1444,7 @@
     </span>        
     
 </h2>
-<p>As with the Windows Updates, Apple make their updates available in an easy to digest <a href="https://developer.apple.com/news/releases/rss/releases.rss"   target="_blank">
-    RSS feed</a> which should make scraping back the information we need pretty straight forward:</p>
+<p>As with the Windows Updates, Apple make their updates available in an easy to digest <a href="https://developer.apple.com/news/releases/rss/releases.rss" target="_blank">RSS feed</a> which should make scraping back the information we need pretty straight forward:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;title&gt;</span>iOS 16.3 (20D47)<span class="nt">&lt;/title&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>https://developer.apple.com/news/releases/?id=01232023f<span class="nt">&lt;/link&gt;</span>
@@ -1471,8 +1469,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;pubDate&gt;</span>Mon, 23 Jan 2023 09:00:00 PST<span class="nt">&lt;/pubDate&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;content:encoded&gt;</span><span class="cp">&lt;![CDATA[&lt;p&gt;&lt;a href=/download class=more&gt;View downloads&lt;/a&gt;&lt;/p&gt;&lt;il&gt;&lt;p&gt;&lt;a href=/go/?id=macos-13.2-rn class=more&gt;View release notes&lt;/a&gt;&lt;/p&gt;&lt;/il&gt;]]&gt;</span><span class="nt">&lt;/content:encoded&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/item&gt;</span>
-</span></span></code></pre></div><p>So all the information we need is contained within the <code>title</code> of each <code>item</code> in the feed, in particular we&rsquo;ll be needing the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-ios#operating-system-version"   target="_blank">
-    Build Version</a> in order to use this to update our Compliance Policy.</p>
+</span></span></code></pre></div><p>So all the information we need is contained within the <code>title</code> of each <code>item</code> in the feed, in particular we&rsquo;ll be needing the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-ios#operating-system-version" target="_blank">Build Version</a> in order to use this to update our Compliance Policy.</p>
 
 
 <h3 class="relative group">Getting the Build Version 
@@ -1650,8 +1647,7 @@
     </span>        
     
 </h2>
-<p>We have all the component parts to bring the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/AppleOSCompliance/Set-AppleOSCompliance.ps1"   target="_blank">
-    full script</a> together, of which you can see below without the functions and Graph Authentication.</p>
+<p>We have all the component parts to bring the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/AppleOSCompliance/Set-AppleOSCompliance.ps1" target="_blank">full script</a> together, of which you can see below without the functions and Graph Authentication.</p>
 <p>Key things to note here that we haven&rsquo;t covered individually is the check to see if the build version is already up to date, as there&rsquo;s no point triggering a Compliance Check on devices if nothing has changed.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Date</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s1">&#39;dd-MM-yyyy hh:mm:ss&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$Description</span> <span class="p">=</span> <span class="s2">&#34;Updated Operating System Device Compliance Policy on </span><span class="nv">$Date</span><span class="s2">&#34;</span>
@@ -1777,8 +1773,7 @@
 
 </li>
 </ul>
-<p>Checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss"   target="_blank">
-    Apple Developer Release Feed</a> that we haven&rsquo;t made a mistake.</p>
+<p>Checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss" target="_blank">Apple Developer Release Feed</a> that we haven&rsquo;t made a mistake.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&lt;title&gt;</span>iOS 15.7.3 (19H307)<span class="nt">&lt;/title&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>https://developer.apple.com/news/releases/?id=01232023b<span class="nt">&lt;/link&gt;</span>
@@ -1804,8 +1799,7 @@
 
 </li>
 </ul>
-<p>Again checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss"   target="_blank">
-    Apple Developer Release Feed</a> that we still haven&rsquo;t made a mistake.</p>
+<p>Again checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss" target="_blank">Apple Developer Release Feed</a> that we still haven&rsquo;t made a mistake.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&lt;title&gt;</span>macOS 13.2 (22D49)<span class="nt">&lt;/title&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;link&gt;</span>https://developer.apple.com/news/releases/?id=01232023d<span class="nt">&lt;/link&gt;</span>

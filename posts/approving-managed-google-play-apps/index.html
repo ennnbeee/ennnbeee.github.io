@@ -1260,8 +1260,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>We&rsquo;ve all had to add <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-add-android-for-work"   target="_blank">
-    Managed Google Play Apps</a> in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&rsquo;re looking to migrate away from.</p>
+          <p>We&rsquo;ve all had to add <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-add-android-for-work" target="_blank">Managed Google Play Apps</a> in bulk to Microsoft Intune for your Android Enterprise enrolled devices, whether this is just the raft of Microsoft Apps now that all your data is in Office 365, or the hundreds you have in a rival MDM (Mobile Device Management) solution that you&rsquo;re looking to migrate away from.</p>
 <p>Anyone fancy doing this one by one with lots of mouse clicks and early onset repetitive strain injury? Didn&rsquo;t think so.</p>
 <p>This will be a quick one, and annoyingly does require a bit of effort to get the app details&hellip;more on that later though. Onto the fun part.</p>
 
@@ -1277,8 +1276,7 @@
     
 </h2>
 <p>As always we&rsquo;re leaning on Graph again, as with everything in Microsoft Intune, and knowing we&rsquo;ve setup our Managed Google Play account already, we can leverage this to add some Android Enterprise Apps into our tenant.</p>
-<p>Android Enterprise apps can&rsquo;t be added to Microsoft Intune in the same way as iOS Store Apps or even Play Store Apps, so we can&rsquo;t use <a href="https://learn.microsoft.com/en-us/graph/api/intune-apps-managediosstoreapp-create?view=graph-rest-1.0"   target="_blank">
-    POST /deviceAppManagement/mobileApps</a> for creating these in the tenant. All the work is done at the Google side, so luckily we have a way to call this via the Graph API.</p>
+<p>Android Enterprise apps can&rsquo;t be added to Microsoft Intune in the same way as iOS Store Apps or even Play Store Apps, so we can&rsquo;t use <a href="https://learn.microsoft.com/en-us/graph/api/intune-apps-managediosstoreapp-create?view=graph-rest-1.0" target="_blank">POST /deviceAppManagement/mobileApps</a> for creating these in the tenant. All the work is done at the Google side, so luckily we have a way to call this via the Graph API.</p>
 
 
 <h2 class="relative group">Approving and Syncing Applications 
@@ -1291,8 +1289,7 @@
     </span>        
     
 </h2>
-<p>We&rsquo;re not actually creating anything here, all the Apps and the associated data exists within the Managed Play Store, what we need to do is approve an app. We can use the <a href="https://learn.microsoft.com/en-us/graph/api/intune-androidforwork-androidmanagedstoreaccountenterprisesettings-approveapps?view=graph-rest-beta"   target="_blank">
-    POST /deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps</a> action to our advantage.</p>
+<p>We&rsquo;re not actually creating anything here, all the Apps and the associated data exists within the Managed Play Store, what we need to do is approve an app. We can use the <a href="https://learn.microsoft.com/en-us/graph/api/intune-androidforwork-androidmanagedstoreaccountenterprisesettings-approveapps?view=graph-rest-beta" target="_blank">POST /deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps</a> action to our advantage.</p>
 <p>We can make a POST call to <code>https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings/approveApps</code> with some JSON to approve the applications we need.</p>
 <p>The JSON format we need to pass through using this call is in the format below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
@@ -1489,8 +1486,7 @@
     </span>        
     
 </h3>
-<p>Now that we have a way to Approve the apps, we need a way to sync them&hellip;bring on the <a href="https://learn.microsoft.com/en-us/graph/api/intune-androidforwork-androidmanagedstoreaccountenterprisesettings-syncapps?view=graph-rest-beta"   target="_blank">
-    POST /deviceManagement/androidManagedStoreAccountEnterpriseSettings/syncApps</a> the below function, and a POST call to the below URI</p>
+<p>Now that we have a way to Approve the apps, we need a way to sync them&hellip;bring on the <a href="https://learn.microsoft.com/en-us/graph/api/intune-androidforwork-androidmanagedstoreaccountenterprisesettings-syncapps?view=graph-rest-beta" target="_blank">POST /deviceManagement/androidManagedStoreAccountEnterpriseSettings/syncApps</a> the below function, and a POST call to the below URI</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings/syncApps
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Invoke-SyncGoogleApplication</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -1532,9 +1528,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nb">Add-GoogleApplication</span> <span class="n">-PackageID</span> <span class="nv">$AndroidAppId</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Invoke-SyncGoogleApplication</span>
-</span></span></code></pre></div><p>The full <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AddGoogleApps/Invoke-AddGoogleApps.ps1"   target="_blank">
-    Script</a> can be found in my <a href="https://github.com/ennnbeee/mve-scripts/"   target="_blank">
-    GitHub Repo</a> and as always, please test this before adding hundreds of apps to the variable, you&rsquo;ll thank me later.</p>
+</span></span></code></pre></div><p>The full <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AddGoogleApps/Invoke-AddGoogleApps.ps1" target="_blank">Script</a> can be found in my <a href="https://github.com/ennnbeee/mve-scripts/" target="_blank">GitHub Repo</a> and as always, please test this before adding hundreds of apps to the variable, you&rsquo;ll thank me later.</p>
 <p>Running the script gives us the following output:</p>
 <p>
 
@@ -1550,8 +1544,7 @@
   
 
 </p>
-<p>After a little while, we&rsquo;ll see the Mobile Apps in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsAndroidMenu/~/androidApps"   target="_blank">
-    Microsoft Intune Android Apps Portal</a>:</p>
+<p>After a little while, we&rsquo;ll see the Mobile Apps in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsAndroidMenu/~/androidApps" target="_blank">Microsoft Intune Android Apps Portal</a>:</p>
 <p>
 
 

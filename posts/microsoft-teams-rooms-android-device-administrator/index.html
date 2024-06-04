@@ -1260,11 +1260,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So it turns out that Android based MTR (Microsoft Teams Rooms) want to enrol into Microsoft Intune using what we generally term as a legacy enrolment method in <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-enroll-device-administrator"   target="_blank">
-    Android Device Administrator</a>, one in fact, that is recommended to be disabled for &lsquo;All Users&rsquo; as it will take priority over <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-dedicated-devices-fully-managed-enroll"   target="_blank">
-    Android Enterprise Personal Device Work Profile</a> enrolment for personal device or BYOD (Bring Your Own Device) scenarios.</p>
-<p>This seems easy enough, create a new <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/enrollment-restrictions-set#device-platform"   target="_blank">
-    Enrolment Restriction</a> and assign it to a group containing the Microsoft Teams Rooms resource accounts. Done. Post over.</p>
+          <p>So it turns out that Android based MTR (Microsoft Teams Rooms) want to enrol into Microsoft Intune using what we generally term as a legacy enrolment method in <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-enroll-device-administrator" target="_blank">Android Device Administrator</a>, one in fact, that is recommended to be disabled for &lsquo;All Users&rsquo; as it will take priority over <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/android-dedicated-devices-fully-managed-enroll" target="_blank">Android Enterprise Personal Device Work Profile</a> enrolment for personal device or BYOD (Bring Your Own Device) scenarios.</p>
+<p>This seems easy enough, create a new <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/enrollment-restrictions-set#device-platform" target="_blank">Enrolment Restriction</a> and assign it to a group containing the Microsoft Teams Rooms resource accounts. Done. Post over.</p>
 <p>What if you want to ensure that all these accounts, and any future accounts used for MTR get this allowance for enrolment?</p>
 
 
@@ -1349,10 +1346,8 @@
   
 
 </p>
-<p><a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add"   target="_blank">
-    Corporate Device Identifiers</a> to the rescue, kind of, basically this allows us to upload a unique identifier of a device so that when a device goes through an enrolment process, Intune knows it&rsquo;s a corporate owned device.</p>
-<p>So if the devices are running <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number"   target="_blank">
-    Android 10 and above</a>, we&rsquo;re straight out of luck and need to amend our restriction profile to allow personally owned device enrolment.</p>
+<p><a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add" target="_blank">Corporate Device Identifiers</a> to the rescue, kind of, basically this allows us to upload a unique identifier of a device so that when a device goes through an enrolment process, Intune knows it&rsquo;s a corporate owned device.</p>
+<p>So if the devices are running <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number" target="_blank">Android 10 and above</a>, we&rsquo;re straight out of luck and need to amend our restriction profile to allow personally owned device enrolment.</p>
 <p>However, if the device has below Android 10, we can add either the device IMEI number (don&rsquo;t use this) or Serial number (do use this) in Intune to identify the device as corporate.</p>
 
 
@@ -1380,9 +1375,7 @@
     </span>        
     
 </h3>
-<p>This is where we use some of the more advanced features of Dynamic User groups, in the <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership#multi-value-properties"   target="_blank">
-    multi-value properties</a> and in particular the use of licenses assigned to users. For this, we need to understand which licenses the MTR resource accounts have assigned, and find the correlating <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference"   target="_blank">
-    Service Plan Id</a> for each service contained within the licenses.</p>
+<p>This is where we use some of the more advanced features of Dynamic User groups, in the <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership#multi-value-properties" target="_blank">multi-value properties</a> and in particular the use of licenses assigned to users. For this, we need to understand which licenses the MTR resource accounts have assigned, and find the correlating <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference" target="_blank">Service Plan Id</a> for each service contained within the licenses.</p>
 <p>The below table details the common services for both the &lsquo;Microsoft Teams Rooms Pro&rsquo; and &lsquo;Microsoft Teams Rooms Pro without Audio Conferencing&rsquo; licenses that allows for enrolment into Intune, the Services, and the Service Plan Ids:</p>
 <table>
 <thead>

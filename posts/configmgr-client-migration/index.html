@@ -1269,8 +1269,7 @@
     </span>        
     
 </h2>
-<p>As always it&rsquo;s PowerShell that will save us, a couple of useful in-built Configuration Manager commands, and a stolen/borrowed <a href="https://janikvonrotz.ch/2017/10/26/powershell-logging-in-cmtrace-format/"   target="_blank">
-    Configuration Manager Logging Function</a>.</p>
+<p>As always it&rsquo;s PowerShell that will save us, a couple of useful in-built Configuration Manager commands, and a stolen/borrowed <a href="https://janikvonrotz.ch/2017/10/26/powershell-logging-in-cmtrace-format/" target="_blank">Configuration Manager Logging Function</a>.</p>
 <p>This one will be breezy.</p>
 
 
@@ -1286,8 +1285,7 @@
 </h3>
 <p>We could do this in a couple of ways, create a collection in Configuration Manager of all machines without the Client installed and use this collection to push the installation:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">ResourceID</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">ResourceType</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">SMSUniqueIdentifier</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">ResourceDomainORWorkgroup</span><span class="p">,</span><span class="n">SMS_R_SYSTEM</span><span class="p">.</span><span class="n">Client</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">SMS_R_System</span><span class="p">.</span><span class="n">Client</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="w">
-</span></span></span></code></pre></div><p>Or capture all non-default devices without the client using <a href="https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmdevice?view=sccm-ps"   target="_blank">
-    <code>Get-CMdevice</code></a>  and target them directly:</p>
+</span></span></span></code></pre></div><p>Or capture all non-default devices without the client using <a href="https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmdevice?view=sccm-ps" target="_blank"><code>Get-CMdevice</code></a>  and target them directly:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-CMdevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">IsClient</span> <span class="o">-eq</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">SMSID</span> <span class="o">-notlike</span> <span class="s1">&#39;*Unknown Computer*&#39;</span> <span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">SMSID</span> <span class="o">-notlike</span> <span class="s1">&#39;*Provisioning Device*&#39;</span><span class="p">)</span> <span class="p">}</span>
 </span></span></code></pre></div><p>We&rsquo;re going with the latter as I&rsquo;d like to know which machines are being targeted.</p>
 <p>To use the <code>Get-CMdevice</code> command, we need to import and connect to the Configuration Manager instance using the below when on the Primary Site Server:</p>
@@ -1309,8 +1307,7 @@
     </span>        
     
 </h3>
-<p>No we&rsquo;re connected we can use the command to capture all the devices we want to target, but we could do with a way to log wtf is going on as part of the re-installation, and in a format that <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/support/cmtrace"   target="_blank">
-    CMTrace</a> will be happy to read.</p>
+<p>No we&rsquo;re connected we can use the command to capture all the devices we want to target, but we could do with a way to log wtf is going on as part of the re-installation, and in a format that <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/support/cmtrace" target="_blank">CMTrace</a> will be happy to read.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Write-log</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">CmdletBinding</span><span class="p">()]</span>
@@ -1348,8 +1345,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c"># Write the line to the log file</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="nv">$Path</span> <span class="n">-Value</span> <span class="nv">$Content</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>If you&rsquo;d like more detail head over to <a href="https://janikvonrotz.ch/2017/10/26/powershell-logging-in-cmtrace-format/"   target="_blank">
-    janikvonrotz.ch</a> who wrote this function.</p>
+</span></span></code></pre></div><p>If you&rsquo;d like more detail head over to <a href="https://janikvonrotz.ch/2017/10/26/powershell-logging-in-cmtrace-format/" target="_blank">janikvonrotz.ch</a> who wrote this function.</p>
 <p>With the function in place, we just need to define the <code>$LogFilePath</code> variable and we&rsquo;re good to capture whatever horrible errors we&rsquo;re to encounter as part of the script.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$LogFilePath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$PSScriptRoot</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="nb">yyyy-MM</span><span class="n">-dd-HHmm</span><span class="p">)</span><span class="s2"> </span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="py">MyCommand</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">.log&#34;</span>
 </span></span></code></pre></div><p>And a way to punt the information or errors or warnings to the log file when we encounter then, something like:</p>
@@ -1383,8 +1379,7 @@
     </span>        
     
 </h3>
-<p>With the bare-bone stuff in place, we will be using the <a href="https://learn.microsoft.com/en-us/powershell/module/configurationmanager/install-cmclient?view=sccm-ps"   target="_blank">
-    <code>Install-CMClient</code></a> command to force the removal of the old client (<code>-ForceReinstall</code>) and force the installation of the new client (<code>-AlwaysInstallClient</code>), aggressive, I like it.</p>
+<p>With the bare-bone stuff in place, we will be using the <a href="https://learn.microsoft.com/en-us/powershell/module/configurationmanager/install-cmclient?view=sccm-ps" target="_blank"><code>Install-CMClient</code></a> command to force the removal of the old client (<code>-ForceReinstall</code>) and force the installation of the new client (<code>-AlwaysInstallClient</code>), aggressive, I like it.</p>
 <p>I&rsquo;ve chosen to use the <code>-DeviceId</code> as the device identifier, over <code>-DeviceName</code> or <code>-Name</code> as because we&rsquo;re in a situation where there could be duplicate machine names in the case of a client domain migration, so we need something unique.</p>
 <p>Putting this together, we&rsquo;ve now got the installation part of the script done, leaning on the existing <code>$SiteCode</code> variable to pass into this part of the script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Install-CMClient</span> <span class="n">-DeviceId</span> <span class="nv">$UnmanagedDevice</span><span class="p">.</span><span class="py">ResourceID</span> <span class="n">-AlwaysInstallClient</span> <span class="vm">$true</span> <span class="n">-ForceReinstall</span> <span class="vm">$true</span> <span class="n">-SiteCode</span> <span class="nv">$SiteCode</span><span class="p">.</span><span class="py">Name</span>
@@ -1408,8 +1403,7 @@
 <li>Write to the log file when something good or bad happens</li>
 </ul>
 <p>This way, we can let Configuration Manager do all our heavy lifting, without manual intervention, or trying to run something from the client side to re-install the Configuration Manager Client.</p>
-<p>The full script in all it&rsquo;s glory can as always be found in <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Apps/ForceCCMClientInstall/Install-CCMClientAlways.ps1"   target="_blank">
-    GitHub</a></p>
+<p>The full script in all it&rsquo;s glory can as always be found in <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Apps/ForceCCMClientInstall/Install-CCMClientAlways.ps1" target="_blank">GitHub</a></p>
 
   
 
@@ -1505,8 +1499,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>If you need to keep this running on an on-going basis as part of a phased migration, I&rsquo;d recommend hooking this into a Scheduled Task running from the Primary Site server, or if you&rsquo;re feeling fancy, a <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/use-status-system#manage-status-filter-rules"   target="_blank">
-    Status Filter Rule</a> to have the script triggered on an event captured by a one of the million Configuration Manager logs files for its components.</p>
+</span></span></code></pre></div><p>If you need to keep this running on an on-going basis as part of a phased migration, I&rsquo;d recommend hooking this into a Scheduled Task running from the Primary Site server, or if you&rsquo;re feeling fancy, a <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/use-status-system#manage-status-filter-rules" target="_blank">Status Filter Rule</a> to have the script triggered on an event captured by a one of the million Configuration Manager logs files for its components.</p>
 
 
 <h2 class="relative group">Summary 

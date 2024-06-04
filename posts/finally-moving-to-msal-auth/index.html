@@ -1255,8 +1255,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>With the impending retirement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363"   target="_blank">
-    Azure AD Graph API and ADAL authentication methods</a>, and by impending, I mean the <strong>end of 2022</strong>, we should probably look at how we move away from the existing authentication methods I&rsquo;ve been using in all of my scripts and into the new realms of MSAL (Microsoft Authentication Library).</p>
+          <p>With the impending retirement of the <a href="https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363" target="_blank">Azure AD Graph API and ADAL authentication methods</a>, and by impending, I mean the <strong>end of 2022</strong>, we should probably look at how we move away from the existing authentication methods I&rsquo;ve been using in all of my scripts and into the new realms of MSAL (Microsoft Authentication Library).</p>
 <p>Hold tight, this will be quick.</p>
 
 
@@ -1284,9 +1283,7 @@
     </span>        
     
 </h3>
-<p>Save reinventing the wheel, we can use the <a href="https://www.powershellgallery.com/packages/MSAL.PS"   target="_blank">
-    MSAL.PS</a> module written by <a href="https://github.com/jasoth"   target="_blank">
-    Jason Thompson</a> to achieve authentication to Graph API without the reliance on PowerShell 5 and the AzureAD or ADAL PowerShell modules.</p>
+<p>Save reinventing the wheel, we can use the <a href="https://www.powershellgallery.com/packages/MSAL.PS" target="_blank">MSAL.PS</a> module written by <a href="https://github.com/jasoth" target="_blank">Jason Thompson</a> to achieve authentication to Graph API without the reliance on PowerShell 5 and the AzureAD or ADAL PowerShell modules.</p>
 <p>This module has been designed to utilise PowerShell core and subsequently be operating system agnostic, with a new device code authentication workflow for devices that have constraints around input.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">MSAL</span><span class="p">.</span><span class="nb">PS </span><span class="n">-Scope</span> <span class="n">CurrentUser</span>
 </span></span></code></pre></div><p>So we can now use the well used Microsoft Intune PowerShell App Id, and our tenant information to authenticate using the MSAL.PS module using ths new <code>-DeviceCode</code> option for authentication, generating a code that we can use on any device to authenticate on behalf of our initial request:</p>
@@ -1374,9 +1371,7 @@
     </span>        
     
 </h2>
-<p>With a new way to acquire our Graph API token, we should look at updating the tried and tested <a href="https://github.com/microsoftgraph/powershell-intune-samples/blob/master/AdminConsent/GA_AdminConsent_Set.ps1"   target="_blank">
-    Authentication Methods</a> kindly provided by Microsoft in the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
-    powershell-intune-samples</a> repo that we have been relying on to authenticate to Graph API.</p>
+<p>With a new way to acquire our Graph API token, we should look at updating the tried and tested <a href="https://github.com/microsoftgraph/powershell-intune-samples/blob/master/AdminConsent/GA_AdminConsent_Set.ps1" target="_blank">Authentication Methods</a> kindly provided by Microsoft in the <a href="https://github.com/microsoftgraph/powershell-intune-samples" target="_blank">powershell-intune-samples</a> repo that we have been relying on to authenticate to Graph API.</p>
 
 
 <h3 class="relative group">An Updated Function 
@@ -1536,8 +1531,7 @@
   
 
 </p>
-<p>And once you&rsquo;ve run through the Device Code authentication method show earlier, it will give you the token you need in the <code>$authToken</code> variable to use across all the existing scripts in the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
-    powershell-intune-samples</a></p>
+<p>And once you&rsquo;ve run through the Device Code authentication method show earlier, it will give you the token you need in the <code>$authToken</code> variable to use across all the existing scripts in the <a href="https://github.com/microsoftgraph/powershell-intune-samples" target="_blank">powershell-intune-samples</a></p>
 <p>
 
 
@@ -1567,10 +1561,8 @@
 <p>With the MSAL based authentication in place, and updating scripts to use the new function and associated code, we can lean back and relax a little when Microsoft depreciates and ends the use of ADAL based authentication methods.</p>
 <p>If you&rsquo;d like a more detailed understanding of MSAL and how to move away from ADAL, I&rsquo;d recommend having a glance over the following:</p>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview"   target="_blank">
-    Overview of the Microsoft Authentication Library (MSAL)</a></li>
-<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-migration"   target="_blank">
-    Migrate applications to the Microsoft Authentication Library (MSAL)</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-overview" target="_blank">Overview of the Microsoft Authentication Library (MSAL)</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-migration" target="_blank">Migrate applications to the Microsoft Authentication Library (MSAL)</a></li>
 </ul>
 <p>I won&rsquo;t be, I&rsquo;ll be tirelessly updating all my scripts to use the new authentication method. This is what happens when Microsoft extends their deadlines and gives you more time to use old technologies.</p>
 

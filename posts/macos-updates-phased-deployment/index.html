@@ -1293,8 +1293,7 @@
     </span>        
     
 </h2>
-<p>I wish this was as straight forward as Windows Update Rings, but it isn&rsquo;t, and with the recent changes to macOS device management in Microsoft Intune, we now have <a href="https://learn.microsoft.com/en-us/mem/solutions/end-to-end-guides/macos-endpoints-get-started#software-updates"   target="_blank">
-    three different ways</a> to control updates on these devices.</p>
+<p>I wish this was as straight forward as Windows Update Rings, but it isn&rsquo;t, and with the recent changes to macOS device management in Microsoft Intune, we now have <a href="https://learn.microsoft.com/en-us/mem/solutions/end-to-end-guides/macos-endpoints-get-started#software-updates" target="_blank">three different ways</a> to control updates on these devices.</p>
 <p>I&rsquo;m not sure we needed all three, but there is a clear documented hierarchy for the settings, along with which versions of macOS support each. In summary though, the precedence of update configuration profiles looks like this:</p>
 <ol>
 <li>Managed software updates - <code>Settings catalog &gt; Declarative Device Management &gt; Software Update</code></li>
@@ -1335,8 +1334,7 @@
     </span>        
     
 </h3>
-<p>As we like to please Microsoft, we&rsquo;re going to use what are referred to as <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-improving-the-efficiency-of-dynamic-group-processing/ba-p/4049394"   target="_blank">
-    efficient groups</a>, stopping the use operators like <code>match</code>, in the hope that they reinstate Microsoft Developer Intune subscriptions for free.</p>
+<p>As we like to please Microsoft, we&rsquo;re going to use what are referred to as <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-improving-the-efficiency-of-dynamic-group-processing/ba-p/4049394" target="_blank">efficient groups</a>, stopping the use operators like <code>match</code>, in the hope that they reinstate Microsoft Developer Intune subscriptions for free.</p>
 <table>
 <thead>
 <tr>
@@ -1382,8 +1380,7 @@
     </span>        
     
 </h2>
-<p>Before we start looking at the option to <a href="https://learn.microsoft.com/en-us/mem/intune/protect/software-updates-macos#delay-visibility-of-updates"   target="_blank">
-    delay or defer</a> software updates, we need to create a baseline configuration that sets devices update preference settings, to allow for this phased approach of update delivery.</p>
+<p>Before we start looking at the option to <a href="https://learn.microsoft.com/en-us/mem/intune/protect/software-updates-macos#delay-visibility-of-updates" target="_blank">delay or defer</a> software updates, we need to create a baseline configuration that sets devices update preference settings, to allow for this phased approach of update delivery.</p>
 <p>So with a quick Settings Catalog profile created with the below settings, and assigned to your devices, we can ensure that the devices will get the updates they need, but when we tell them:</p>
 <table>
 <thead>
@@ -1715,8 +1712,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >Updated the <code>Enable AutoUpdate</code> settings based on feedback from <a href="https://www.linkedin.com/in/somesh-pathak-mvp-mct/"   target="_blank">
-    Somesh Pathak (MVP)</a></span>
+    >Updated the <code>Enable AutoUpdate</code> settings based on feedback from <a href="https://www.linkedin.com/in/somesh-pathak-mvp-mct/" target="_blank">Somesh Pathak (MVP)</a></span>
 </div>
 
 
@@ -1873,9 +1869,7 @@
     
 </h2>
 <p>With each deployment group now configured to get update deferrals and installation deadlines for Software, Operating System, and Microsoft Applications aligned to the same day, we have the ability to unify the deployment approach of updates to Microsoft Intune managed macOS devices.</p>
-<p>This may not give us all the functionality we want just yet, still relying on users to carry out installations, but until there is another flexible approach to enforced software updates that doesn&rsquo;t rely on check-in or day of the week, or <a href="https://www.intuneirl.com/cool-clicks-swift-kicks-the-mac-admins-guide-to-seamless-reboots/"   target="_blank">
-    scripts and property lists</a>, or community tools like <a href="https://github.com/macadmins/nudge"   target="_blank">
-    nudge</a>, this will have to do.</p>
+<p>This may not give us all the functionality we want just yet, still relying on users to carry out installations, but until there is another flexible approach to enforced software updates that doesn&rsquo;t rely on check-in or day of the week, or <a href="https://www.intuneirl.com/cool-clicks-swift-kicks-the-mac-admins-guide-to-seamless-reboots/" target="_blank">scripts and property lists</a>, or community tools like <a href="https://github.com/macadmins/nudge" target="_blank">nudge</a>, this will have to do.</p>
 <p>We are at least, one step closer to getting some level of feature parity between device management for Windows devices and macOS devices in Microsoft Intune, and with more on the horizon, it&rsquo;s a good time to be a hybrid macOS and Windows device consultant.</p>
 <p>
 

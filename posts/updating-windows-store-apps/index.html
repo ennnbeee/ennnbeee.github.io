@@ -1276,8 +1276,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft"   target="_blank">
-    New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>
+          <p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft" target="_blank">New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>
 
 
 <h2 class="relative group">Allowing App Updates 
@@ -1290,10 +1289,8 @@
     </span>        
     
 </h2>
-<p>Regardless of how you are blocking or allowing the Microsoft Store, remembering that the store needs to be <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft#prerequisites"   target="_blank">
-    available</a> to allow for apps from Microsoft Intune to be deployed, we should at least configure devices to allow for updates.</p>
-<p>A simple <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
-    Settings Catalog</a> profile will do the job here, with the below settings configured.</p>
+<p>Regardless of how you are blocking or allowing the Microsoft Store, remembering that the store needs to be <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft#prerequisites" target="_blank">available</a> to allow for apps from Microsoft Intune to be deployed, we should at least configure devices to allow for updates.</p>
+<p>A simple <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog</a> profile will do the job here, with the below settings configured.</p>
 <table>
 <thead>
 <tr>
@@ -1340,8 +1337,7 @@
 <p>There&rsquo;s a lot of chatter about how to force store apps to update, but essentially we can kick off an update using the below <code>Get-CimInstance</code> query.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">UpdateScanMethod</span>
 </span></span></code></pre></div><p>Now as we&rsquo;re calling areas that require elevation, standard users are bang out of luck from running this, and even running this elevated as Administrator does absolutely nothing for the apps themselves, something about install context.</p>
-<p>So what are our options? Well for testing it&rsquo;s <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec"   target="_blank">
-    PsExec</a>.</p>
+<p>So what are our options? Well for testing it&rsquo;s <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank">PsExec</a>.</p>
 <p>Running the above from PowerShell running as system using <code>PsExec.exe -s -i powershell.exe</code>, we can kick off the app update query.</p>
 <p>
 
@@ -1372,8 +1368,7 @@
   
 
 </p>
-<p>Brilliant, apps are now trying their hardest to update. Now we&rsquo;ve got a method to update the apps, no one is going to run this manually on a regular basis, and we love a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations"   target="_blank">
-    Microsoft Intune Remediation</a>.</p>
+<p>Brilliant, apps are now trying their hardest to update. Now we&rsquo;ve got a method to update the apps, no one is going to run this manually on a regular basis, and we love a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">Microsoft Intune Remediation</a>.</p>
 
 
 <h2 class="relative group">Remediation Settings 
@@ -1402,8 +1397,7 @@
   
 
 </p>
-<p>Guess what, we do, that <code>LastScanError</code> is looking mighty interesting, and it being Microsoft I bet that an exit code of zero means success, but we should have a look at the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp#deviceappmanagementlastscanerror"   target="_blank">
-    reference document</a> just in case.</p>
+<p>Guess what, we do, that <code>LastScanError</code> is looking mighty interesting, and it being Microsoft I bet that an exit code of zero means success, but we should have a look at the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp#deviceappmanagementlastscanerror" target="_blank">reference document</a> just in case.</p>
 <blockquote>
 <p>Reports the last error code returned by the update scan.</p>
 <p>This is a required node.</p>
@@ -1500,8 +1494,7 @@
   
 
 </p>
-<p>I&rsquo;ve assigned this to <code>All Devices</code> with my beloved <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
-    Device Filters</a> on a daily schedule, but if you&rsquo;re more cautious than I am, assign this to a smaller proof-of-concept group.</p>
+<p>I&rsquo;ve assigned this to <code>All Devices</code> with my beloved <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a> on a daily schedule, but if you&rsquo;re more cautious than I am, assign this to a smaller proof-of-concept group.</p>
 <p>After a while, you should start seeing the results of the Remediation, and hopefully positive ones to boot.</p>
 <p>
 
@@ -1560,8 +1553,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >The detection and remediation scripts are available, as always in my <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/UpdateStoreApps"   target="_blank">
-    Github Repo</a>.</span>
+    >The detection and remediation scripts are available, as always in my <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/UpdateStoreApps" target="_blank">Github Repo</a>.</span>
 </div>
 
 

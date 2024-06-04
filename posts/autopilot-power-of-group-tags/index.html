@@ -1244,8 +1244,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot <a href="https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot"   target="_blank">
-    dynamic group queries</a> used for targetting these devices, right? Good.</p>
+          <p>So you&rsquo;re using Windows Autopilot in some shape or form to deploy Windows 10/11 devices to your users, and you&rsquo;re probably already familiar with the Autopilot <a href="https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot" target="_blank">dynamic group queries</a> used for targetting these devices, right? Good.</p>
 <p>So what if you have multiple deployment profiles, or different device use cases with the same profile, or different user personas, or test and pilot deployments, or a range of applications, configurations or scripts that you want to separate out to the devices or users of the devices? You probably do&hellip;what&rsquo;s that you say, you&rsquo;re using static groups to manage these? Let me show you the way forward.</p>
 
 
@@ -1412,8 +1411,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="py">devicePhysicalIds</span> <span class="n">-any</span> <span class="p">(</span><span class="n">_</span> <span class="o">-match</span> <span class="s2">&#34;^\[OrderID\]:.*LT.*FR$&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>And this this one with all Azure AD joined Laptops with Admin users in Payroll in all countries:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="py">devicePhysicalIds</span> <span class="n">-any</span> <span class="p">(</span><span class="n">_</span> <span class="o">-match</span> <span class="s2">&#34;^\[OrderID\]:AJ-LT.*ADM-PAY.*&#34;</span><span class="p">))</span>
-</span></span></code></pre></div><p>You get the picture&hellip;the possibilities for both the syntax and the dynamic groups using <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference"   target="_blank">
-    Regex</a> are pretty much endless, and should be tailored to how you manage devices in Microsoft Intune.</p>
+</span></span></code></pre></div><p>You get the picture&hellip;the possibilities for both the syntax and the dynamic groups using <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference" target="_blank">Regex</a> are pretty much endless, and should be tailored to how you manage devices in Microsoft Intune.</p>
 
 
 <h3 class="relative group">Application 

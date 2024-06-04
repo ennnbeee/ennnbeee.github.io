@@ -1329,10 +1329,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>At the time of writing we are only a <a href="https://yourcountdown.to/windows-10-extended-support"   target="_blank">
-    few hundred days</a> away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&rsquo;s shiny and new, but also it&rsquo;s going to actually get security updates.</p>
-<p>Many organisations are happily running Windows 10 and have been for some time, and have probably dabbled with Windows 11, mainly IT staff who wanted to be on the latest and greatest. This however isn&rsquo;t going to get your devices to Windows 11 any time soon, and instead of distributing a Feature Update blindly, we should probably make use of the information in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
-    Feature Update Readiness Reports</a> in Microsoft Intune.</p>
+          <p>At the time of writing we are only a <a href="https://yourcountdown.to/windows-10-extended-support" target="_blank">few hundred days</a> away from the end of support of Windows 10 22H2, and really we should all be recommending the move to Windows 11, not just because it&rsquo;s shiny and new, but also it&rsquo;s going to actually get security updates.</p>
+<p>Many organisations are happily running Windows 10 and have been for some time, and have probably dabbled with Windows 11, mainly IT staff who wanted to be on the latest and greatest. This however isn&rsquo;t going to get your devices to Windows 11 any time soon, and instead of distributing a Feature Update blindly, we should probably make use of the information in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report" target="_blank">Feature Update Readiness Reports</a> in Microsoft Intune.</p>
 <p>This report is useful from a visibility perspective, we can see the risk of updating a device to a specific Feature Update, drill into effected devices, and get a greater understanding of the overall Windows 11 readiness for a device estate. That&rsquo;s it though. What if we can extend the reports use?</p>
 <p>Part one in this series looks at how we can create and capture the Feature Update Readiness Report data with PowerShell and Graph API, so at some point we can use it to make informed, but automated decisions for Windows 11 Feature Update deployment.</p>
 
@@ -1383,10 +1381,8 @@
     </span>        
     
 </h3>
-<p>This one is a bit of a kicker, and I&rsquo;d recommend looking at the <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#prerequisites"   target="_blank">
-    pre-requisites</a> as soon as possible, in fact, go look at them now and come back when you&rsquo;ve implemented them&hellip;</p>
-<p>Right, now they&rsquo;re in place, let&rsquo;s talk about why I told you to just go ahead and turn some things on, well in order for us to use the report, we need to ensure that devices are able to send data, Microsoft is able to process the data, and the fact you have to wait <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency"   target="_blank">
-    52 hours</a> for the data to be processed.</p>
+<p>This one is a bit of a kicker, and I&rsquo;d recommend looking at the <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#prerequisites" target="_blank">pre-requisites</a> as soon as possible, in fact, go look at them now and come back when you&rsquo;ve implemented them&hellip;</p>
+<p>Right, now they&rsquo;re in place, let&rsquo;s talk about why I told you to just go ahead and turn some things on, well in order for us to use the report, we need to ensure that devices are able to send data, Microsoft is able to process the data, and the fact you have to wait <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/windows-update-compatibility-reports#about-reporting-data-latency" target="_blank">52 hours</a> for the data to be processed.</p>
 <p>So based on this, anything we do using the data needs to be able to run multiple times, as not all devices in the estate are going to send their data at the same time.</p>
 
 
@@ -1400,8 +1396,7 @@
     </span>        
     
 </h2>
-<p>Let&rsquo;s see how we can get the report data using the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0"   target="_blank">
-    Microsoft Graph PowerShell SDK</a>, as always I&rsquo;ve investigated the calls to Graph using Developer Tools in my browser of choice (Microsoft Edge, obviously), and from my findings and the fact that reports are individual to the account running them, we need a way to start a report, and then get the report.</p>
+<p>Let&rsquo;s see how we can get the report data using the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0" target="_blank">Microsoft Graph PowerShell SDK</a>, as always I&rsquo;ve investigated the calls to Graph using Developer Tools in my browser of choice (Microsoft Edge, obviously), and from my findings and the fact that reports are individual to the account running them, we need a way to start a report, and then get the report.</p>
 
 
 <h3 class="relative group">Creating Feature Update Readiness Reports 
@@ -1414,8 +1409,7 @@
     </span>        
     
 </h3>
-<p>We&rsquo;ll start with the call to create a new readiness report, we need to <code>POST</code> to <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta"   target="_blank">
-    <code>deviceManagement/reports/cachedReportConfigurations</code></a> with some JSON content in the below format, specifying the version of Feature Update we want to report on, for us, we want Windows 11 23H2, so the value we&rsquo;re after is <code>NI23H2</code>.</p>
+<p>We&rsquo;ll start with the call to create a new readiness report, we need to <code>POST</code> to <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta" target="_blank"><code>deviceManagement/reports/cachedReportConfigurations</code></a> with some JSON content in the below format, specifying the version of Feature Update we want to report on, for us, we want Windows 11 23H2, so the value we&rsquo;re after is <code>NI23H2</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;MEMUpgradeReadinessDevice_00000000-0000-0000-0000-000000000001&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;filter&#34;</span><span class="p">:</span> <span class="s2">&#34;(TargetOS eq &#39;NI23H2&#39;) and (DeviceScopesTag eq &#39;00000&#39;)&#34;</span><span class="p">,</span>
@@ -1586,8 +1580,7 @@
     </span>        
     
 </h3>
-<p>More fun with Edge Developer Mode when browsing around the Feature Update Readiness Reporting in the Microsoft Intune Portal, and a crawl through the <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta"   target="_blank">
-    Graph API documentation</a>, reveals another call to Graph, but this time it&rsquo;s another <code>POST</code>, but to <code>deviceManagement/reports/cachedReportConfigurations</code>, this time with slightly different JSON content. Interesting.</p>
+<p>More fun with Edge Developer Mode when browsing around the Feature Update Readiness Reporting in the Microsoft Intune Portal, and a crawl through the <a href="https://learn.microsoft.com/en-us/graph/api/intune-reporting-devicemanagementcachedreportconfiguration-get?view=graph-rest-beta" target="_blank">Graph API documentation</a>, reveals another call to Graph, but this time it&rsquo;s another <code>POST</code>, but to <code>deviceManagement/reports/cachedReportConfigurations</code>, this time with slightly different JSON content. Interesting.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;Id&#34;</span><span class="p">:</span> <span class="s2">&#34;MEMUpgradeReadinessDevice_00000000-0000-0000-0000-000000000001&#34;</span><span class="p">,</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&#34;Skip&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1836,8 +1829,7 @@
     </span>        
     
 </h3>
-<p>Firstly is a translation of the risk state number to something useful, looking at the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#windows-feature-update-device-readiness-report"   target="_blank">
-    documentation</a> we can establish that the values captured translate to the below.</p>
+<p>Firstly is a translation of the risk state number to something useful, looking at the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#windows-feature-update-device-readiness-report" target="_blank">documentation</a> we can establish that the values captured translate to the below.</p>
 <table>
 <thead>
 <tr>
@@ -2010,11 +2002,8 @@
     </span>        
     
 </h2>
-<p>I&rsquo;ve learnt from watching both <a href="https://en.wikipedia.org/wiki/Neighbours"   target="_blank">
-    Neighbours</a> and <a href="https://en.wikipedia.org/wiki/Doctors_%282000_TV_series%29"   target="_blank">
-    Doctors</a> as a student, that each episode should end on a cliffhanger and the viewer wanting more, so that&rsquo;s what&rsquo;s happened here, I hope.</p>
-<p>At least for now, we&rsquo;ve got a clear way to start, wait, capture, and process data from a <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report"   target="_blank">
-    Feature Update Readiness Reports</a> in Microsoft Intune, and add some additional data to the report that will hopefully allow us to deploy our favourite flavour of Windows 11 using a phased, controlled, and risk based approach.</p>
+<p>I&rsquo;ve learnt from watching both <a href="https://en.wikipedia.org/wiki/Neighbours" target="_blank">Neighbours</a> and <a href="https://en.wikipedia.org/wiki/Doctors_%282000_TV_series%29" target="_blank">Doctors</a> as a student, that each episode should end on a cliffhanger and the viewer wanting more, so that&rsquo;s what&rsquo;s happened here, I hope.</p>
+<p>At least for now, we&rsquo;ve got a clear way to start, wait, capture, and process data from a <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report" target="_blank">Feature Update Readiness Reports</a> in Microsoft Intune, and add some additional data to the report that will hopefully allow us to deploy our favourite flavour of Windows 11 using a phased, controlled, and risk based approach.</p>
 
         </div>
         

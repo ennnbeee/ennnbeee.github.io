@@ -1301,10 +1301,8 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</p>
-<p>Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the <a href="https://docs.microsoft.com/en-us/windows-server/security/device-health-attestation"   target="_blank">
-    Windows health attestation report</a> that around 80% of the Windows devices had it turned off.</p>
-<p>(Don&rsquo;t worry, I checked that the devices had <a href="https://www.dell.com/support/kbdoc/en-uk/000133480/uefi-and-secure-boot-faqs"   target="_blank">
-    GPT partitions</a> before I just launched a PowerShell script at them.)</p>
+<p>Well you&rsquo;re in luck, I&rsquo;ve thrown together something that can help you out based on a need to ensure that Secure Boot is configured for Dell laptops when it was discovered via the <a href="https://docs.microsoft.com/en-us/windows-server/security/device-health-attestation" target="_blank">Windows health attestation report</a> that around 80% of the Windows devices had it turned off.</p>
+<p>(Don&rsquo;t worry, I checked that the devices had <a href="https://www.dell.com/support/kbdoc/en-uk/000133480/uefi-and-secure-boot-faqs" target="_blank">GPT partitions</a> before I just launched a PowerShell script at them.)</p>
 
 
 <h2 class="relative group">Dell PowerShell Provider 
@@ -1317,15 +1315,11 @@
     </span>        
     
 </h2>
-<p>There are several posts kicking around the internet about using Microsoft Intune to not only change or set Dell BIOS passwords, but also using CSV files to configure BIOS settings using the <a href="https://www.dell.com/support/kbdoc/en-uk/000177240/dell-command-powershell-provider"   target="_blank">
-    Dell Command | PowerShell Provider</a>, the below are the ones I&rsquo;ve found and borrowed from:</p>
+<p>There are several posts kicking around the internet about using Microsoft Intune to not only change or set Dell BIOS passwords, but also using CSV files to configure BIOS settings using the <a href="https://www.dell.com/support/kbdoc/en-uk/000177240/dell-command-powershell-provider" target="_blank">Dell Command | PowerShell Provider</a>, the below are the ones I&rsquo;ve found and borrowed from:</p>
 <ul>
-<li><a href="https://www.systanddeploy.com/2019/10/set-dell-bios-settings-through-intune.html"   target="_blank">
-    systanddeploy.com</a></li>
-<li><a href="https://ccmexec.com/2019/09/configuring-dell-bios-settings-using-intune-win32app-and-powershell/"   target="_blank">
-    ccmexec.com</a></li>
-<li><a href="https://www.configjon.com/working-with-the-dell-command-powershell-provider/"   target="_blank">
-    configjon.com</a></li>
+<li><a href="https://www.systanddeploy.com/2019/10/set-dell-bios-settings-through-intune.html" target="_blank">systanddeploy.com</a></li>
+<li><a href="https://ccmexec.com/2019/09/configuring-dell-bios-settings-using-intune-win32app-and-powershell/" target="_blank">ccmexec.com</a></li>
+<li><a href="https://www.configjon.com/working-with-the-dell-command-powershell-provider/" target="_blank">configjon.com</a></li>
 </ul>
 <p>These posts detail ways to use the Dell PowerShell Provider to set the BIOS configurations and an Admin BIOS Password on Dell devices, so I&rsquo;m only going to focus on how I&rsquo;ve taken this, run with it, and made it a little easier to handle in Microsoft Intune.</p>
 
@@ -1546,11 +1540,8 @@
     </span>        
     
 </h3>
-<p>Now that we have the whole script, which you can <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/DellBIOS/Set-DellBIOSSettings.ps1"   target="_blank">
-    download</a> along with the PowerShell Module and dll files (if you cba to do it yourself), we need to wrap this content up using the <a href="https://docs.microsoft.com/en-us/mem/intune/apps/apps-win32-prepare"   target="_blank">
-    Microsoft Win32 Content Prep Tool</a>.</p>
-<p>Download the <a href="https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool"   target="_blank">
-    tool</a> and dump it somewhere useful on your machine, launch a Command Prompt and in four simple steps you&rsquo;ll have a Win32App ready for Microsoft Intune:</p>
+<p>Now that we have the whole script, which you can <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/DellBIOS/Set-DellBIOSSettings.ps1" target="_blank">download</a> along with the PowerShell Module and dll files (if you cba to do it yourself), we need to wrap this content up using the <a href="https://docs.microsoft.com/en-us/mem/intune/apps/apps-win32-prepare" target="_blank">Microsoft Win32 Content Prep Tool</a>.</p>
+<p>Download the <a href="https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool" target="_blank">tool</a> and dump it somewhere useful on your machine, launch a Command Prompt and in four simple steps you&rsquo;ll have a Win32App ready for Microsoft Intune:</p>
 <p>From the path of where the tool exists, run the tool specifying the:</p>
 <ul>
 <li>Source Folder</li>
@@ -1585,8 +1576,7 @@
     </span>        
     
 </h3>
-<p>Navigate to the <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/AppsWindowsMenu/windowsApps"   target="_blank">
-    Windows Apps</a> section of Microsoft Intune and time to create a new app, making sure you select &lsquo;Windows app (Win32)&rsquo; as the App type.</p>
+<p>Navigate to the <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/AppsWindowsMenu/windowsApps" target="_blank">Windows Apps</a> section of Microsoft Intune and time to create a new app, making sure you select &lsquo;Windows app (Win32)&rsquo; as the App type.</p>
 <p>After uploading the <code>.intunewin</code> file make sure to use <code>sysnative</code> in the path of the install command, we also need to pass through the variables for the <code>Settings</code> and <code>Values</code> as well as <code>Password</code> for the BIOS Admin password:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="n">C:</span><span class="p">\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Sysnative</span><span class="p">\</span><span class="n">WindowsPowerShell</span><span class="p">\</span><span class="n">v1</span><span class="p">.</span><span class="mf">0</span><span class="p">\</span><span class="n">powershell</span><span class="p">.</span><span class="py">exe</span> <span class="n">-noprofile</span> <span class="n">-executionpolicy</span> <span class="n">Bypass</span> <span class="o">-file</span> <span class="p">.\</span><span class="nb">Set-DellBIOSSettings</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Password</span> <span class="n">S3CurePW0RD</span> <span class="n">-Settings</span> <span class="n">BootList</span><span class="p">,</span><span class="n">SecureBoot</span> <span class="n">-Values</span> <span class="n">Uefi</span><span class="p">,</span><span class="n">Enabled</span>
 </span></span></code></pre></div><p>Now I know what you&rsquo;re saying, &ldquo;Eurrggh password is in plain text, bad, not secure, naughty&rdquo;, well you&rsquo;re not wrong, but then you really should be using Role-Based Access Control to protect your Microsoft Intune environment, and allowing only privileged users to access it, so maybe it&rsquo;s you that&rsquo;s got the issue this time.</p>
@@ -1805,8 +1795,7 @@
     
 </h2>
 <p>With some confidence, you can now push out this App with your preferred settings to a wider device group, and the benefit is that the App itself is reusable; you just need to specify which settings are to be configured in the Installation command line, and how to detect them in the Detection Method.</p>
-<p>There may be cleaner ways of doing this, probably using <a href="https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations"   target="_blank">
-    Proactive remediations</a>, but then again, that requires Windows 10/11 Enterprise licensing, and we all haven&rsquo;t got enterprise level money.</p>
+<p>There may be cleaner ways of doing this, probably using <a href="https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations" target="_blank">Proactive remediations</a>, but then again, that requires Windows 10/11 Enterprise licensing, and we all haven&rsquo;t got enterprise level money.</p>
 
         </div>
         

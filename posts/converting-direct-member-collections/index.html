@@ -1264,8 +1264,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>You may be using <a href="https://docs.microsoft.com/en-us/mem/configmgr/core/clients/manage/collections/create-collections#direct-rule"   target="_blank">
-    Direct Membership Rules</a> in your Microsoft Configuration Manager environment, but should you really for critical production collections?</p>
+          <p>You may be using <a href="https://docs.microsoft.com/en-us/mem/configmgr/core/clients/manage/collections/create-collections#direct-rule" target="_blank">Direct Membership Rules</a> in your Microsoft Configuration Manager environment, but should you really for critical production collections?</p>
 <p>No is the answer, there I said it. Mainly because they require actual effort and overhead to maintain, and secondly because there have been times where these memberships just plain disappear, for many different reasons, but primarily if the ConfigMgr Client is reinstalled on the device.</p>
 <p>So what do we do? <code>&lt;spoiler&gt;</code> Aggressive PowerShell scripts obviously. <code>&lt;/spoiler&gt;</code></p>
 
@@ -1318,8 +1317,7 @@
     
 </h3>
 <p>I thought I&rsquo;d be kind and give a couple of options to the Collection gathering, attack all of the Device Collections or, which is probably more sensible, bring up a list of collections to work with.</p>
-<p>We&rsquo;re doing this through a selection option at the start of the script and using <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/get-cmdevicecollection?view=sccm-ps"   target="_blank">
-    Get-CMDeviceCollection</a>:</p>
+<p>We&rsquo;re doing this through a selection option at the start of the script and using <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/get-cmdevicecollection?view=sccm-ps" target="_blank">Get-CMDeviceCollection</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Getting Device Collections with Direct Membership Rules...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Collections</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="nb">Get-CMDeviceCollection</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">CollectionRules</span> <span class="o">-like</span> <span class="s1">&#39;*SMS_CollectionRuleDirect*&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">CollectionID</span><span class="p">,</span> <span class="n">CollectionRules</span> <span class="p">|</span> <span class="nb">Out-GridView</span> <span class="n">-PassThru</span> <span class="n">-Title</span> <span class="s1">&#39;Wait for all Collections to load, then select the Device Collections you want to convert. Use The ENTER Key or Mouse \ OK Button.&#39;</span><span class="p">)</span>
@@ -1333,8 +1331,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Collection</span><span class="p">.</span><span class="py">CollectionRules</span> <span class="o">-like</span> <span class="s2">&#34;*SMS_CollectionRuleDirect*&#34;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Now we know this collection has Direct Members, let&rsquo;s get them using <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/get-cmdevicecollectiondirectmembershiprule?view=sccm-ps"   target="_blank">
-    Get-CMDeviceCollectionDirectMembershipRule</a>:</p>
+</span></span></code></pre></div><p>Now we know this collection has Direct Members, let&rsquo;s get them using <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/get-cmdevicecollectiondirectmembershiprule?view=sccm-ps" target="_blank">Get-CMDeviceCollectionDirectMembershipRule</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$DirectMembers</span> <span class="p">=</span> <span class="nb">Get-CMDeviceCollectionDirectMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span>
 </span></span></code></pre></div><p>Cool, easy part done.</p>
 
@@ -1402,11 +1399,9 @@
     </span>        
     
 </h3>
-<p>Using <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/add-cmdevicecollectionquerymembershiprule?view=sccm-ps"   target="_blank">
-    Add-CMDeviceCollectionQueryMembershipRule</a> we can create the new rule in the Collection using the variables we created earlier:</p>
+<p>Using <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/add-cmdevicecollectionquerymembershiprule?view=sccm-ps" target="_blank">Add-CMDeviceCollectionQueryMembershipRule</a> we can create the new rule in the Collection using the variables we created earlier:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Add-CMDeviceCollectionQueryMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span> <span class="n">-QueryExpression</span> <span class="nv">$QueryExpression</span> <span class="n">-RuleName</span> <span class="nv">$RuleName</span>
-</span></span></code></pre></div><p>And after successfully creating the rule we can use <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/remove-cmdevicecollectiondirectmembershiprule?view=sccm-ps"   target="_blank">
-    Remove-CMDeviceCollectionDirectMembershipRule</a> to loop through the existing Direct Members and remove them:</p>
+</span></span></code></pre></div><p>And after successfully creating the rule we can use <a href="https://docs.microsoft.com/en-us/powershell/module/configurationmanager/remove-cmdevicecollectiondirectmembershiprule?view=sccm-ps" target="_blank">Remove-CMDeviceCollectionDirectMembershipRule</a> to loop through the existing Direct Members and remove them:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$DirectMember</span> <span class="k">in</span> <span class="nv">$DirectMembers</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Remove-CMDeviceCollectionDirectMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span> <span class="n">-ResourceID</span> <span class="nv">$DirectMember</span><span class="p">.</span><span class="py">ResourceID</span> <span class="n">-Force</span>
@@ -1427,8 +1422,7 @@
     </span>        
     
 </h2>
-<p>Now we have all the bits we needed in place (<em>cough logging cough</em>), we can launch the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1"   target="_blank">
-    script</a> and use the option to select a Collection first as a test before we run it across the entire environment.</p>
+<p>Now we have all the bits we needed in place (<em>cough logging cough</em>), we can launch the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1" target="_blank">script</a> and use the option to select a Collection first as a test before we run it across the entire environment.</p>
 <p>Let&rsquo;s run it on a test collection we know has direct members:</p>
 <p>
 

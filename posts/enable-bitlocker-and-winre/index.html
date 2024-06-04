@@ -1285,8 +1285,7 @@
     </span>        
     
 </h3>
-<p>This <a href="https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users"   target="_blank">
-    Microsoft script</a> has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the <code>$HotToTrot</code> variable is used to denote whether to continue or not.</p>
+<p>This <a href="https://docs.microsoft.com/en-us/archive/blogs/showmewindows/how-to-enable-bitlocker-and-escrow-the-keys-to-azure-ad-when-using-autopilot-for-standard-users" target="_blank">Microsoft script</a> has been adapted to check for the WinRE configuration before it continues and attempts to enable BitLocker, the <code>$HotToTrot</code> variable is used to denote whether to continue or not.</p>
 <p>The below is the added section to check and enable, or attempt to enable, WinRE:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$HotToTrot</span> <span class="p">=</span><span class="s2">&#34;false&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c">#Checks Windows Recovery Environment and enables if disabled</span>
@@ -1386,8 +1385,7 @@
     </span>        
     
 </h3>
-<p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitlockerWinRE/Enable-WinRE_Bitlocker.ps1"   target="_blank">
-    here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
+<p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitlockerWinRE/Enable-WinRE_Bitlocker.ps1" target="_blank">here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
 
 
 <h2 class="relative group">Script Deployment 
@@ -1400,8 +1398,7 @@
     </span>        
     
 </h2>
-<p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell"   target="_blank">
-    Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices.</p>
+<p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell" target="_blank">Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices.</p>
 <p>
 
 

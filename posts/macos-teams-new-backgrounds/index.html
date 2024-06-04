@@ -1320,9 +1320,7 @@
 <li>Classic App - <code>$HOME/Library/Application Support/Microsoft/Teams/Backgrounds/Uploads</code></li>
 <li>New App - <code>$HOME/Library/Containers/com.microsoft.teams2/Data/Library/Application Support/Microsoft/MSTeams/Backgrounds/Uploads</code></li>
 </ul>
-<p>So this is similar to the change in uploaded background location for the Windows version that <a href="https://mvp.microsoft.com/en-us/PublicProfile/5005162"   target="_blank">
-    Florian Salzmann</a> found in their <a href="https://scloud.work/new-teams-virtual-background-with-intune/"   target="_blank">
-    post</a> about updating backgrounds for the new Windows Teams client.</p>
+<p>So this is similar to the change in uploaded background location for the Windows version that <a href="https://mvp.microsoft.com/en-us/PublicProfile/5005162" target="_blank">Florian Salzmann</a> found in their <a href="https://scloud.work/new-teams-virtual-background-with-intune/" target="_blank">post</a> about updating backgrounds for the new Windows Teams client.</p>
 
 
 <h3 class="relative group">Application Name 
@@ -1353,8 +1351,7 @@
     </span>        
     
 </h3>
-<p>Yes, obviously. When testing the upload of a background in the &lsquo;New&rsquo; app, I noticed that the background files are renamed to a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier"   target="_blank">
-    UUID</a> and created a thumbnail file of the same background, so something similar to the below.</p>
+<p>Yes, obviously. When testing the upload of a background in the &lsquo;New&rsquo; app, I noticed that the background files are renamed to a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a> and created a thumbnail file of the same background, so something similar to the below.</p>
 <p><code>898ffbba-4997-4911-b2ab-b5d8ef4998d2.png</code> and <code>898ffbba-4997-4911-b2ab-b5d8ef4998d2_thumb.png</code></p>
 <p>OK, so we&rsquo;ll need a way to generate a UUID whilst we&rsquo;re at it. The &lsquo;Classic&rsquo; app doesn&rsquo;t care what the files are called, which might be useful.</p>
 
@@ -1418,9 +1415,7 @@
     </span>        
     
 </h3>
-<p>Having spent a lot of time browsing the <a href="https://github.com/microsoft/shell-intune-samples"   target="_blank">
-    shell-intune-samples</a> GitHub repo, and testing a number of these scripts, the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock"   target="_blank">
-    Dock</a> script caught my eye, as it was updated to detect which version of Teams is installed when attempting to add it to a Dock configuration.</p>
+<p>Having spent a lot of time browsing the <a href="https://github.com/microsoft/shell-intune-samples" target="_blank">shell-intune-samples</a> GitHub repo, and testing a number of these scripts, the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock" target="_blank">Dock</a> script caught my eye, as it was updated to detect which version of Teams is installed when attempting to add it to a Dock configuration.</p>
 <p>So I&rsquo;ve taken the existing function, and updated it for our purpose, to not only set the <code>teamsApp</code> variable of the app, but also the <code>teamsUpload</code> variable for the path to the uploaded background folders.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="k">function</span> checkAndSetInstalledMSTeamsPath <span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> -a <span class="s2">&#34;/Applications/Microsoft Teams.app&#34;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
@@ -1531,9 +1526,7 @@
     </span>        
     
 </h2>
-<p>With the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadNewTeamsBackgrounds.sh"   target="_blank">
-    script</a> to hand, we can now use <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts"   target="_blank">
-    Microsoft Intune Shell Scripts</a> to deploy the script to our device estate with the below settings, having uploaded the downloaded file.</p>
+<p>With the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadNewTeamsBackgrounds.sh" target="_blank">script</a> to hand, we can now use <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts" target="_blank">Microsoft Intune Shell Scripts</a> to deploy the script to our device estate with the below settings, having uploaded the downloaded file.</p>
 <table>
 <thead>
 <tr>
@@ -1753,8 +1746,7 @@
     </span>        
     
 </h2>
-<p>It&rsquo;s been a while since I&rsquo;ve had to put together a new Shell script for macOS, but with Microsoft investing more functionality for macOS devices in Microsoft Intune, and with recent updates to the <a href="https://github.com/microsoft/shell-intune-samples"   target="_blank">
-    shell-intune-samples</a> GitHub repo, now is a great time to look at how to better manage your macOS device estate using the new tooling and capabilities.</p>
+<p>It&rsquo;s been a while since I&rsquo;ve had to put together a new Shell script for macOS, but with Microsoft investing more functionality for macOS devices in Microsoft Intune, and with recent updates to the <a href="https://github.com/microsoft/shell-intune-samples" target="_blank">shell-intune-samples</a> GitHub repo, now is a great time to look at how to better manage your macOS device estate using the new tooling and capabilities.</p>
 <p>Being a personal macOS user, but a professional Windows 11 user, it&rsquo;s a pretty exciting time that Microsoft Intune is providing more and more support for macOS devices at an enterprise level.</p>
 <p>However until there is native ability to deploy backgrounds (for free) to your macOS Teams clients, you&rsquo;ll have to rely on people like me spending their <del>spare</del> time writing hacky looking Shell scripts :grinning_face_with_sweat:.</p>
 

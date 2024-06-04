@@ -1278,12 +1278,8 @@
     </span>        
     
 </h3>
-<p>You may be familiar with the &lsquo;old&rsquo; way of automating the setting user languages in <a href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/deployment/automate-regional-language-settings"   target="_blank">
-    Windows 7</a>, calling <code>control.exe intl.cpl,,/f:&quot;c:\Unattend.xml&quot;</code> and assigning an <a href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/deployment/automate-regional-language-settings#sample-xml-answer-file"   target="_blank">
-    xml file</a> with the required user languages, luckily with Windows 10 comes the <a href="https://docs.microsoft.com/en-us/powershell/module/international/new-winuserlanguagelist"   target="_blank">
-    Set-WinUserLanguageList</a> PowerShell command.</p>
-<p>Microsoft does a great job of detailing how this command is used, so below is the way I&rsquo;ve created a new list, and appended the required languages using the <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows?view=windows-11"   target="_blank">
-    region tag</a>.</p>
+<p>You may be familiar with the &lsquo;old&rsquo; way of automating the setting user languages in <a href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/deployment/automate-regional-language-settings" target="_blank">Windows 7</a>, calling <code>control.exe intl.cpl,,/f:&quot;c:\Unattend.xml&quot;</code> and assigning an <a href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/deployment/automate-regional-language-settings#sample-xml-answer-file" target="_blank">xml file</a> with the required user languages, luckily with Windows 10 comes the <a href="https://docs.microsoft.com/en-us/powershell/module/international/new-winuserlanguagelist" target="_blank">Set-WinUserLanguageList</a> PowerShell command.</p>
+<p>Microsoft does a great job of detailing how this command is used, so below is the way I&rsquo;ve created a new list, and appended the required languages using the <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows?view=windows-11" target="_blank">region tag</a>.</p>
 <p>This allows for new languages to be added to the script readily.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c"># Sets the Windows Languages</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$LanguageList</span> <span class="p">=</span> <span class="nb">New-WinUserLanguageList</span> <span class="n">-Language</span> <span class="s1">&#39;en-GB&#39;</span>
@@ -1331,8 +1327,7 @@
 </h3>
 <p>This script allows the creation and installation of a User Language List, containing the required languages needed for each user who accesses the shared device. This seemed all a bit too perfect for this requirement; updatable list of languages, uses native PowerShell commands, can be deployed via Microsoft Intune. That was until I realised this only works correctly under a user context, and I also need it to run each time a user logs on to the machine.</p>
 <p>So now we need a way to create a Scheduled Task and have it run the PowerShell script, without the end user seeing it run.</p>
-<p>Luckily, I was using a script to map network drives, generated from <a href="https://intunedrivemapping.azurewebsites.net/"   target="_blank">
-    here</a> to do something similar, time to not reinvent the wheel and just make use of someone else&rsquo;s hard work.</p>
+<p>Luckily, I was using a script to map network drives, generated from <a href="https://intunedrivemapping.azurewebsites.net/" target="_blank">here</a> to do something similar, time to not reinvent the wheel and just make use of someone else&rsquo;s hard work.</p>
 <p>Let&rsquo;s break down the sections of the script.</p>
 
 
@@ -1432,8 +1427,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="nb">Stop-Transcript</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Now we&rsquo;ve got the bones of the script, we can put it all together and deploy it using Microsoft Intune. The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/AutopilotLanguages/Set-WindowsLanguages.ps1"   target="_blank">
-    here</a></p>
+</span></span></code></pre></div><p>Now we&rsquo;ve got the bones of the script, we can put it all together and deploy it using Microsoft Intune. The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/AutopilotLanguages/Set-WindowsLanguages.ps1" target="_blank">here</a></p>
 
 
 <h3 class="relative group">Deployment 
@@ -1446,8 +1440,7 @@
     </span>        
     
 </h3>
-<p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell"   target="_blank">
-    Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices.</p>
+<p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell" target="_blank">Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices.</p>
 <p>
 
 

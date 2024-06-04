@@ -1306,8 +1306,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Let&rsquo;s talk about Windows 10 and above <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#operating-system-version"   target="_blank">
-    Operating System Compliance</a> in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.</p>
+          <p>Let&rsquo;s talk about Windows 10 and above <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#operating-system-version" target="_blank">Operating System Compliance</a> in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.</p>
 
 
 <h2 class="relative group">Compliance 
@@ -1485,10 +1484,8 @@
     </span>        
     
 </h3>
-<p>We&rsquo;ll need a few functions for this, some grabbed from the <a href="https://github.com/microsoftgraph/powershell-intune-samples"   target="_blank">
-    Intune PowerShell Samples</a> GitHub repo, and some thrown together based on the samples.</p>
-<p>We&rsquo;ll be authenticating to Graph, grabbing the Windows Compliance Policies that have the Valid Operating System Build setting, getting the latest OS Build version from the <a href="https://support.microsoft.com/en-us/rss-feed-picker"   target="_blank">
-    Microsoft Atom Feeds</a> and then updating the Compliance Policy. <em>This sounded easier in my head if I&rsquo;m honest.</em></p>
+<p>We&rsquo;ll need a few functions for this, some grabbed from the <a href="https://github.com/microsoftgraph/powershell-intune-samples" target="_blank">Intune PowerShell Samples</a> GitHub repo, and some thrown together based on the samples.</p>
+<p>We&rsquo;ll be authenticating to Graph, grabbing the Windows Compliance Policies that have the Valid Operating System Build setting, getting the latest OS Build version from the <a href="https://support.microsoft.com/en-us/rss-feed-picker" target="_blank">Microsoft Atom Feeds</a> and then updating the Compliance Policy. <em>This sounded easier in my head if I&rsquo;m honest.</em></p>
 
 
 <h3 class="relative group">Authentication 
@@ -1501,8 +1498,7 @@
     </span>        
     
 </h3>
-<p><del>The move to MSAL based authentication can be found in this <a href="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/#an-updated-function"  >
-    post</a>.</del></p>
+<p><del>The move to MSAL based authentication can be found in this <a href="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/#an-updated-function">post</a>.</del></p>
 
   
 
@@ -1576,8 +1572,7 @@
     </span>        
     
 </h3>
-<p>As we&rsquo;re going to be updating Compliance Policies, we should probably have a method to actually retrieve them using <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-devicecompliancepolicy-list?view=graph-rest-1.0"   target="_blank">
-    GET /deviceManagement/deviceCompliancePolicies</a>.</p>
+<p>As we&rsquo;re going to be updating Compliance Policies, we should probably have a method to actually retrieve them using <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-devicecompliancepolicy-list?view=graph-rest-1.0" target="_blank">GET /deviceManagement/deviceCompliancePolicies</a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DeviceCompliancePolicy</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s2">&#34;Beta&#34;</span>
@@ -1604,8 +1599,7 @@
     </span>        
     
 </h3>
-<p>This one I had to actually sort out myself, this function allows you to push updates to existing Compliance Policies. Details on this method can be found in the Graph API documentation <a href="https://docs.microsoft.com/en-us/graph/api/intune-deviceconfig-windows10compliancepolicy-update?view=graph-rest-beta"   target="_blank">
-    PATCH /deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicyId}</a> documentation.</p>
+<p>This one I had to actually sort out myself, this function allows you to push updates to existing Compliance Policies. Details on this method can be found in the Graph API documentation <a href="https://docs.microsoft.com/en-us/graph/api/intune-deviceconfig-windows10compliancepolicy-update?view=graph-rest-beta" target="_blank">PATCH /deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicyId}</a> documentation.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Update-DeviceCompliancePolicy</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
@@ -1790,8 +1784,7 @@
     </span>        
     
 </h3>
-<p>Seeing the whole bunch of bits together looks a little bit like this, and the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/WindowsOSCompliance/Set-WindowsOSCompliance.ps1"   target="_blank">
-    full script</a> can be found in my GitHub repo.</p>
+<p>Seeing the whole bunch of bits together looks a little bit like this, and the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/WindowsOSCompliance/Set-WindowsOSCompliance.ps1" target="_blank">full script</a> can be found in my GitHub repo.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$Date</span> <span class="p">=</span> <span class="nb">Get-Date</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$Description</span> <span class="p">=</span> <span class="s2">&#34;Updated Operating System Device Compliance Policy on </span><span class="nv">$Date</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">

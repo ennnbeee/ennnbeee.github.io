@@ -1234,9 +1234,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&rsquo;s of devices.</p>
-<p>So luckily I stumbled upon a post by <a href="https://wetterssource.com/get-device-notes-from-graph"   target="_blank">
-    Paul Wetter</a> about getting and setting notes on devices using <a href="https://docs.microsoft.com/en-us/graph/use-the-api"   target="_blank">
-    Graph API</a>, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily <del>stolen</del> borrowed, updated and tweaked to allow for updating notes en masse.</p>
+<p>So luckily I stumbled upon a post by <a href="https://wetterssource.com/get-device-notes-from-graph" target="_blank">Paul Wetter</a> about getting and setting notes on devices using <a href="https://docs.microsoft.com/en-us/graph/use-the-api" target="_blank">Graph API</a>, and specifically the Beta channel of Graph. Luckily, Paul did the ground work and created a couple of functions, which I have happily <del>stolen</del> borrowed, updated and tweaked to allow for updating notes en masse.</p>
 
 
 <h2 class="relative group">Configuration 
@@ -1422,8 +1420,7 @@ ENB-13F278,Here are the New notes about the device.
 </code></pre><p>To run the script, firstly install Microsoft Graph Intune PowerShell module and connect to Graph, then run the three functions, finally run the below updating the DeviceList path to your created CSV file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Set-MEMDeviceNotes</span> <span class="n">-DeviceList</span> <span class="n">C:</span><span class="p">\</span><span class="n">temp</span><span class="p">\</span><span class="n">UpdatedDeviceNotes</span><span class="p">.</span><span class="py">csv</span>
 </span></span></code></pre></div><p>I&rsquo;d test this with a single device in the CSV file first before you do this in bulk, you know, just in case.</p>
-<p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/NotesUpdate/Set-MEMDeviceNotes.ps1"   target="_blank">
-    here</a></p>
+<p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Devices/NotesUpdate/Set-MEMDeviceNotes.ps1" target="_blank">here</a></p>
 
 
 <h3 class="relative group">The Results 

@@ -1268,19 +1268,10 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/overview"   target="_blank">
-    Co-Management</a> or just plain old <a href="https://learn.microsoft.com/en-us/mem/configmgr/tenant-attach/device-sync-actions"   target="_blank">
-    Tenant Attach</a>, so imagine my joy when Microsoft released <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/autopilot-enrollment"   target="_blank">
-    Co-Management Authority</a> in Intune, and I thought the days of packaging the Configuration Manager Client were over.</p>
-<p>Now imagine my face when I read the <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/autopilot-enrollment#requirements"   target="_blank">
-    requirements</a> and the fact it doesn&rsquo;t support Autopilot Hybrid Join scenarios.</p>
+          <p>As both Microsoft Intune and Configuration Manager are a match made in heaven, there are many reasons to still utilise both, either using <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/overview" target="_blank">Co-Management</a> or just plain old <a href="https://learn.microsoft.com/en-us/mem/configmgr/tenant-attach/device-sync-actions" target="_blank">Tenant Attach</a>, so imagine my joy when Microsoft released <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/autopilot-enrollment" target="_blank">Co-Management Authority</a> in Intune, and I thought the days of packaging the Configuration Manager Client were over.</p>
+<p>Now imagine my face when I read the <a href="https://learn.microsoft.com/en-us/mem/configmgr/comanage/autopilot-enrollment#requirements" target="_blank">requirements</a> and the fact it doesn&rsquo;t support Autopilot Hybrid Join scenarios.</p>
 <p>I get it, installing the client during Autopilot will pretty much break the deployment, but there should be a way to install the client and not have it bend over and <em>only</em>  accept Configuration Manager deployed workloads.</p>
-<p>Packaging the Configuration Manager Client has been <a href="https://www.anoopcnair.com/sccm-internet-client-management/"   target="_blank">
-    covered</a>, <a href="https://www.anoopcnair.com/how-to-install-sccm-client-using-intune-for-autopilot-provisioned-devices/"   target="_blank">
-    many</a>, <a href="https://eskonr.com/2019/07/how-to-install-sccm-client-from-microsoft-intune-for-co-managed-and-cmg-notes-from-the-field/"   target="_blank">
-    many</a>, <a href="https://amirsayes.co.uk/2021/11/23/automate-installing-sccm-client-for-azure-ad-autopilot-devices-via-intune-and-powershell/"   target="_blank">
-    many</a>, <a href="https://www.imab.dk/deploy-the-sccm-client-using-microsoft-intune-and-the-cloud-management-gateway-no-pki-certificates/"   target="_blank">
-    many</a> times, almost to death in fact, so I&rsquo;m not going to show you how to package the client files, what I am going to show you is a couple of tricks to make the installation easier, and not break Autopilot.</p>
+<p>Packaging the Configuration Manager Client has been <a href="https://www.anoopcnair.com/sccm-internet-client-management/" target="_blank">covered</a>, <a href="https://www.anoopcnair.com/how-to-install-sccm-client-using-intune-for-autopilot-provisioned-devices/" target="_blank">many</a>, <a href="https://eskonr.com/2019/07/how-to-install-sccm-client-from-microsoft-intune-for-co-managed-and-cmg-notes-from-the-field/" target="_blank">many</a>, <a href="https://amirsayes.co.uk/2021/11/23/automate-installing-sccm-client-for-azure-ad-autopilot-devices-via-intune-and-powershell/" target="_blank">many</a>, <a href="https://www.imab.dk/deploy-the-sccm-client-using-microsoft-intune-and-the-cloud-management-gateway-no-pki-certificates/" target="_blank">many</a> times, almost to death in fact, so I&rsquo;m not going to show you how to package the client files, what I am going to show you is a couple of tricks to make the installation easier, and not break Autopilot.</p>
 
 
 <h2 class="relative group">App Requirement Rules 
@@ -1293,8 +1284,7 @@
     </span>        
     
 </h2>
-<p>To stop the application from running during the Autopilot process, we can add in a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-add#step-3-requirements"   target="_blank">
-    Requirement Rule</a> to ensure that we&rsquo;re not in the Out of Box Experience (OOBE). We&rsquo;ve got a couple of options here, whether it&rsquo;s detecting if the <code>CloudExperienceHostBroker</code> Service is running, or if the User account context is running under <code>defaultUser0</code>.</p>
+<p>To stop the application from running during the Autopilot process, we can add in a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-add#step-3-requirements" target="_blank">Requirement Rule</a> to ensure that we&rsquo;re not in the Out of Box Experience (OOBE). We&rsquo;ve got a couple of options here, whether it&rsquo;s detecting if the <code>CloudExperienceHostBroker</code> Service is running, or if the User account context is running under <code>defaultUser0</code>.</p>
 <p>I&rsquo;ve gone with the Service approach, as it saves Intune having to run <code>Get-ComputerInfo -Property CsUserName</code> every time it wants to check if the requirement has been met.</p>
 <p>With this, we can create a Requirement Rule Script using the below to check if the <code>CloudExperienceHostBroker</code> service is running, and if not returning <code>Install</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$ESPProcess</span> <span class="p">=</span> <span class="nb">Get-Process</span> <span class="n">-Name</span> <span class="n">CloudExperienceHostBroker</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
@@ -1439,8 +1429,7 @@
     </span>        
     
 </h2>
-<p>If you&rsquo;re wanting Intune to manage all the workloads on the device, and not rely on Co-Managed Workloads at all, there is a solution for this, and one taken straight from Microsoft and their implementation of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/co-management-settings-windows-autopilot-with-co-management/ba-p/3638500"   target="_blank">
-    Co-Management Authority</a> in Intune.</p>
+<p>If you&rsquo;re wanting Intune to manage all the workloads on the device, and not rely on Co-Managed Workloads at all, there is a solution for this, and one taken straight from Microsoft and their implementation of the <a href="https://techcommunity.microsoft.com/t5/microsoft-intune-blog/co-management-settings-windows-autopilot-with-co-management/ba-p/3638500" target="_blank">Co-Management Authority</a> in Intune.</p>
 
   
 
@@ -1605,9 +1594,7 @@
     </span>        
     
 </h3>
-<p>With the above <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Remediation/Co-ManagementAuthority"   target="_blank">
-    PowerShell scripts</a> saved, we can now create our own <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_Enrollment/UXAnalyticsMenu/~/proactiveRemediations"   target="_blank">
-    Proactive Remediation Script</a> and deploy this to the devices we only want to be managed by Intune, in this case, the Hybrid Joined Autopilot devices:</p>
+<p>With the above <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Remediation/Co-ManagementAuthority" target="_blank">PowerShell scripts</a> saved, we can now create our own <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_Enrollment/UXAnalyticsMenu/~/proactiveRemediations" target="_blank">Proactive Remediation Script</a> and deploy this to the devices we only want to be managed by Intune, in this case, the Hybrid Joined Autopilot devices:</p>
 <p>
 
 

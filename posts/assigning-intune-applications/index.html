@@ -1298,11 +1298,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>No one, and I mean no one, really wants to manually and individually <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-deploy"   target="_blank">
-    assign Mobile Apps</a> to Users or Devices in Intune, especially after you&rsquo;ve happily used a script to <a href="/posts/approving-managed-google-play-apps" rel="noopener" target="_blank">Approve Managed Google Play Apps</a> in their 100&rsquo;s as part of migrating to Microsoft Intune from other <del>below par</del> Mobile Device Management solutions.</p>
-<p>We could try and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets"   target="_blank">
-    Policy Sets</a> here, but you know, they&rsquo;re in preview, and more importantly they have <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets#policy-sets-known-issues"   target="_blank">
-    issues</a> like not supporting Managed Google Play or Apple VPP apps, so that&rsquo;s a no go.</p>
+          <p>No one, and I mean no one, really wants to manually and individually <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-deploy" target="_blank">assign Mobile Apps</a> to Users or Devices in Intune, especially after you&rsquo;ve happily used a script to <a href="/posts/approving-managed-google-play-apps" rel="noopener" target="_blank">Approve Managed Google Play Apps</a> in their 100&rsquo;s as part of migrating to Microsoft Intune from other <del>below par</del> Mobile Device Management solutions.</p>
+<p>We could try and use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets" target="_blank">Policy Sets</a> here, but you know, they&rsquo;re in preview, and more importantly they have <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/policy-sets#policy-sets-known-issues" target="_blank">issues</a> like not supporting Managed Google Play or Apple VPP apps, so that&rsquo;s a no go.</p>
 <p>So here we are again, throwing together functions, logic, and some kind of user interface, to allow us to assign these mobile apps in bulk with minimal headache and increase to any pre-existing repetitive strain injuries.</p>
 
   
@@ -1346,8 +1343,7 @@
     </span>        
     
 </h2>
-<p>First off, before we even start looking at how we bring this all together, is to understand how we can assign an App using Graph. So as we&rsquo;ve done before, we could look under the hood and check the Browser <a href="/posts/apple-ade-profile-assignment/#developer-tool-sneaking" rel="noopener" target="_blank">Developer Tools</a>  to see what is actually going on, or we can just check the <a href="https://learn.microsoft.com/en-us/graph/api/intune-shared-mobileapp-assign?view=graph-rest-beta"   target="_blank">
-    Graph documentation</a>.</p>
+<p>First off, before we even start looking at how we bring this all together, is to understand how we can assign an App using Graph. So as we&rsquo;ve done before, we could look under the hood and check the Browser <a href="/posts/apple-ade-profile-assignment/#developer-tool-sneaking" rel="noopener" target="_blank">Developer Tools</a>  to see what is actually going on, or we can just check the <a href="https://learn.microsoft.com/en-us/graph/api/intune-shared-mobileapp-assign?view=graph-rest-beta" target="_blank">Graph documentation</a>.</p>
 <p>With this we now know that to use the <code>POST /deviceAppManagement/mobileApps/{mobileAppId}/assign</code> call, we&rsquo;ll need the <code>{mobileAppId}</code>, we&rsquo;re in luck, as we&rsquo;ve already got a function <a href="/posts/creating-assigning-app-categories/#getting-mobile-apps" rel="noopener" target="_blank">Get-MobileApps</a> to do this for us.</p>
 
 
@@ -1361,8 +1357,7 @@
     </span>        
     
 </h3>
-<p>Knowing the call to Graph is the easy bit, building the JSON data we&rsquo;re sending to it using the POST request is a different story, but at least we&rsquo;ve got a framework to start us off, thanks <a href="https://learn.microsoft.com/en-us/graph/api/intune-shared-mobileapp-assign?view=graph-rest-beta#request"   target="_blank">
-    Microsoft</a>.</p>
+<p>Knowing the call to Graph is the easy bit, building the JSON data we&rsquo;re sending to it using the POST request is a different story, but at least we&rsquo;ve got a framework to start us off, thanks <a href="https://learn.microsoft.com/en-us/graph/api/intune-shared-mobileapp-assign?view=graph-rest-beta#request" target="_blank">Microsoft</a>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;mobileAppAssignments&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
@@ -1525,8 +1520,7 @@
     </span>        
     
 </h3>
-<p>This one has come straight from an existing script, but we&rsquo;ll need to filter the data gathered, otherwise we&rsquo;re dragging back every Mobile App, including those referenced in <a href="https://learn.microsoft.com/en-us/mem/intune/apps/app-protection-policy"   target="_blank">
-    App Protection Policies</a>, and we don&rsquo;t want to do anything with those today.</p>
+<p>This one has come straight from an existing script, but we&rsquo;ll need to filter the data gathered, otherwise we&rsquo;re dragging back every Mobile App, including those referenced in <a href="https://learn.microsoft.com/en-us/mem/intune/apps/app-protection-policy" target="_blank">App Protection Policies</a>, and we don&rsquo;t want to do anything with those today.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-MobileApps</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;Beta&#39;</span>
@@ -1552,8 +1546,7 @@
     </span>        
     
 </h3>
-<p>To fix our missing <code>{FilterId}</code> issue, we need to be able to capture this data. This is a quick one, as we just need a call to <a href="https://learn.microsoft.com/en-us/graph/api/intune-policyset-deviceandappmanagementassignmentfilter-list?view=graph-rest-beta"   target="_blank">
-    <code>GET deviceManagement/assignmentFilters</code></a> resource, once we&rsquo;ve authenticated to Graph of course.</p>
+<p>To fix our missing <code>{FilterId}</code> issue, we need to be able to capture this data. This is a quick one, as we just need a call to <a href="https://learn.microsoft.com/en-us/graph/api/intune-policyset-deviceandappmanagementassignmentfilter-list?view=graph-rest-beta" target="_blank"><code>GET deviceManagement/assignmentFilters</code></a> resource, once we&rsquo;ve authenticated to Graph of course.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DeviceFilter</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;beta&#39;</span>
@@ -1581,10 +1574,8 @@
     </span>        
     
 </h3>
-<p>Ah yes, Groups, I&rsquo;d almost forgotten about these, but Dynamic Groups still have a place in Intune, and we need the <code>{GroupId}</code> to make this work, so we should find a way to grab these as well. As with the Device Filters, this is a call to Graph, but using the <a href="https://learn.microsoft.com/en-us/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http"   target="_blank">
-    <code>GET groups</code></a> resource to capture the group <code>id</code> we need.</p>
-<p>It was supposed to be so easy, however as we need to limit the number of Groups being pulled back, we need a way to search for a Group name. Here comes the <a href="https://learn.microsoft.com/en-us/graph/search-query-parameter?tabs=http"   target="_blank">
-    Search Query Parameter</a>, and importantly the need for <code>ConsistencyLevel</code> in the headers in the connection <code>Invoke-MgGraphRequest -Headers @{ConsistencyLevel = 'eventual' }</code>.</p>
+<p>Ah yes, Groups, I&rsquo;d almost forgotten about these, but Dynamic Groups still have a place in Intune, and we need the <code>{GroupId}</code> to make this work, so we should find a way to grab these as well. As with the Device Filters, this is a call to Graph, but using the <a href="https://learn.microsoft.com/en-us/graph/api/group-list?view=graph-rest-1.0&amp;tabs=http" target="_blank"><code>GET groups</code></a> resource to capture the group <code>id</code> we need.</p>
+<p>It was supposed to be so easy, however as we need to limit the number of Groups being pulled back, we need a way to search for a Group name. Here comes the <a href="https://learn.microsoft.com/en-us/graph/search-query-parameter?tabs=http" target="_blank">Search Query Parameter</a>, and importantly the need for <code>ConsistencyLevel</code> in the headers in the connection <code>Invoke-MgGraphRequest -Headers @{ConsistencyLevel = 'eventual' }</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Name                           Value
 </span></span><span class="line"><span class="cl">----                           -----
 </span></span><span class="line"><span class="cl">Content-Type                   application/json
@@ -1665,8 +1656,7 @@
     </span>        
     
 </h3>
-<p>Even if we&rsquo;re not accidentally removing existing assignments, we should give ourselves the option to undo any mistakes that we make when assigning Mobile Apps, so a quick tour of Graph gives us the <a href="https://learn.microsoft.com/en-us/graph/api/intune-apps-mobileappassignment-delete?view=graph-rest-1.0"   target="_blank">
-    <code>DELETE mobileAppAssignment</code></a> resource, and with a couple of parameters needed for both the App <code>$Id</code> and the Assignment <code>$AssignmentId</code>, we&rsquo;ve got ourselves a function to get us out of trouble if we need it.</p>
+<p>Even if we&rsquo;re not accidentally removing existing assignments, we should give ourselves the option to undo any mistakes that we make when assigning Mobile Apps, so a quick tour of Graph gives us the <a href="https://learn.microsoft.com/en-us/graph/api/intune-apps-mobileappassignment-delete?view=graph-rest-1.0" target="_blank"><code>DELETE mobileAppAssignment</code></a> resource, and with a couple of parameters needed for both the App <code>$Id</code> and the Assignment <code>$AssignmentId</code>, we&rsquo;ve got ourselves a function to get us out of trouble if we need it.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Remove-ApplicationAssignment</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
@@ -1947,8 +1937,7 @@
     </span>        
     
 </h3>
-<p>I&rsquo;ve included a whole lot of logic and user interface when it comes to this script, and as most of my time has been spent battling with existing assignments, new functions and the headache that is building JSON data from the existing assignment content, I&rsquo;m not going to go into any detail about this part of the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AssignApps/Invoke-MgAssignIntuneApps.ps1"   target="_blank">
-    script</a> but you can as always find it in GitHub if you want to have a gander at what consists as good practice in my mind.</p>
+<p>I&rsquo;ve included a whole lot of logic and user interface when it comes to this script, and as most of my time has been spent battling with existing assignments, new functions and the headache that is building JSON data from the existing assignment content, I&rsquo;m not going to go into any detail about this part of the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AssignApps/Invoke-MgAssignIntuneApps.ps1" target="_blank">script</a> but you can as always find it in GitHub if you want to have a gander at what consists as good practice in my mind.</p>
 
 
 <h3 class="relative group">The Payoff 

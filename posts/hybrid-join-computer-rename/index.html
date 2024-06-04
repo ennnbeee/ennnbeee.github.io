@@ -1250,8 +1250,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.</p>
-<p>You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by <a href="https://oofhours.com/2020/05/19/renaming-autopilot-deployed-hybrid-azure-ad-join-devices/"   target="_blank">
-    Michael Niehaus</a> can help.</p>
+<p>You&rsquo;ve also probably been asked whether you can configure the device name to match an asset tag or another unique bit of information, well this script, adapted from an existing one by <a href="https://oofhours.com/2020/05/19/renaming-autopilot-deployed-hybrid-azure-ad-join-devices/" target="_blank">Michael Niehaus</a> can help.</p>
 
 
 <h2 class="relative group">Configuration 
@@ -1339,8 +1338,7 @@
     </span>        
     
 </h3>
-<p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/HDJDeviceRename/Invoke-ComputerRename-HDJ.ps1"   target="_blank">
-    here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
+<p>The full script can be found <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/HDJDeviceRename/Invoke-ComputerRename-HDJ.ps1" target="_blank">here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
 
 
 <h2 class="relative group">Deployment 
@@ -1353,8 +1351,7 @@
     </span>        
     
 </h2>
-<p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell"   target="_blank">
-    Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices:</p>
+<p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell" target="_blank">Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices:</p>
 <p>
 
 

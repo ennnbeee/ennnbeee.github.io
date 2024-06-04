@@ -1294,9 +1294,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy <a href="https://www.microsoft.com/en-us/microsoft-teams/virtual-meeting-backgrounds"   target="_blank">
-    Microsoft Teams Backgrounds</a> to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using <a href="https://techcommunity.microsoft.com/t5/microsoft-mechanics-blog/microsoft-teams-premium-experiences-and-how-to-set-it-up/ba-p/3697553"   target="_blank">
-    Microsoft Teams Premium Experience</a>.</p>
+          <p>What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Well clearly you jump at the chance and hope that it&rsquo;s not a body part this time. So here we are, looking at how to deploy <a href="https://www.microsoft.com/en-us/microsoft-teams/virtual-meeting-backgrounds" target="_blank">Microsoft Teams Backgrounds</a> to macOS devices using Intune, for organisations without the licensing to allow for corporate branding using <a href="https://techcommunity.microsoft.com/t5/microsoft-mechanics-blog/microsoft-teams-premium-experiences-and-how-to-set-it-up/ba-p/3697553" target="_blank">Microsoft Teams Premium Experience</a>.</p>
 
 
 <h2 class="relative group">Teams Meeting Backgrounds 
@@ -1322,9 +1320,7 @@
     </span>        
     
 </h3>
-<p>Before we start throwing files in a directory, we should probably check to see if Teams is actually installed, luckily having spent many evenings peering over the macOS Shell Scripts hosted in <a href="https://github.com/microsoft/shell-intune-samples"   target="_blank">
-    Intune Shell Scripts</a>, we can use the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock"   target="_blank">
-    Dock Customisation</a> script, as there&rsquo;s a section in there that waits for the detection of apps before allowing the script to continue.</p>
+<p>Before we start throwing files in a directory, we should probably check to see if Teams is actually installed, luckily having spent many evenings peering over the macOS Shell Scripts hosted in <a href="https://github.com/microsoft/shell-intune-samples" target="_blank">Intune Shell Scripts</a>, we can use the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock" target="_blank">Dock Customisation</a> script, as there&rsquo;s a section in there that waits for the detection of apps before allowing the script to continue.</p>
 <p>So we&rsquo;ll pinch that section and update it so it&rsquo;s only checking for the <code>Microsoft Teams.app</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line hl"><span class="cl"><span class="nv">teamsapp</span><span class="o">=</span><span class="s2">&#34;/Applications/Microsoft Teams.app&#34;</span>
 </span></span><span class="line"><span class="cl">
@@ -1358,8 +1354,7 @@
     </span>        
     
 </h3>
-<p>Like the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock"   target="_blank">
-    Dock Customisation</a> script, we can run the script from Intune as the signed-in user, and  as we&rsquo;re dealing with data in the User context, this makes the most sense. We can capture the signed-in user using the built-in <code>$HOME</code> variable, and creating a new <code>teamsUpload</code> variable to use later.</p>
+<p>Like the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock" target="_blank">Dock Customisation</a> script, we can run the script from Intune as the signed-in user, and  as we&rsquo;re dealing with data in the User context, this makes the most sense. We can capture the signed-in user using the built-in <code>$HOME</code> variable, and creating a new <code>teamsUpload</code> variable to use later.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">teamsUpload</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Library/Application Support/Microsoft/Teams/Backgrounds/Uploads&#34;</span>
 </span></span></code></pre></div>
 
@@ -1425,8 +1420,7 @@
     </span>        
     
 </h2>
-<p>I already know there&rsquo;s a working method to deploy a <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Wallpaper"   target="_blank">
-    Desktop Background</a> to a macOS device enrolled in Microsoft Intune. So we&rsquo;ll do what any right minded Consultant would do, and <del>steal</del> modify the script to our needs.</p>
+<p>I already know there&rsquo;s a working method to deploy a <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Wallpaper" target="_blank">Desktop Background</a> to a macOS device enrolled in Microsoft Intune. So we&rsquo;ll do what any right minded Consultant would do, and <del>steal</del> modify the script to our needs.</p>
 
 
 <h3 class="relative group">Script Variables 
@@ -1439,8 +1433,7 @@
     </span>        
     
 </h3>
-<p>The original script used a single variable <code>wallpaperurl</code> to capture the desktop wallpaper URL, which is nice and all, and obviously fits the Desktop Background purpose, but we&rsquo;d like to give our users options of Teams Backgrounds, so we&rsquo;ll use an <a href="https://www.freecodecamp.org/news/bash-array-how-to-declare-an-array-of-strings-in-a-bash-script/"   target="_blank">
-    array</a> to hold our list of URLs to the background files (see I am learning).</p>
+<p>The original script used a single variable <code>wallpaperurl</code> to capture the desktop wallpaper URL, which is nice and all, and obviously fits the Desktop Background purpose, but we&rsquo;d like to give our users options of Teams Backgrounds, so we&rsquo;ll use an <a href="https://www.freecodecamp.org/news/bash-array-how-to-declare-an-array-of-strings-in-a-bash-script/" target="_blank">array</a> to hold our list of URLs to the background files (see I am learning).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://memv.ennbee.uk/bgr.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp-lt.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp.png&#34;</span><span class="o">)</span>
 </span></span></code></pre></div><p>For any additional URLs, you can add a new line to the array.</p>
 
@@ -1486,8 +1479,7 @@
     </span>        
     
 </h3>
-<p>Pretty simple really, even I can use <a href="https://curl.se/docs/manpage.html"   target="_blank">
-    <code>curl</code></a> to download the background files to the directory location <code>-L</code>, passing in the URL and a filename as part of the output <code>-o</code> option. We&rsquo;ve added the `-s&rsquo; so as to not clog the log file with the raw download data.</p>
+<p>Pretty simple really, even I can use <a href="https://curl.se/docs/manpage.html" target="_blank"><code>curl</code></a> to download the background files to the directory location <code>-L</code>, passing in the URL and a filename as part of the output <code>-o</code> option. We&rsquo;ve added the `-s&rsquo; so as to not clog the log file with the raw download data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">curl -s -L -o <span class="nv">$teamsUpload</span>/<span class="nv">$backgroundfile</span> <span class="nv">$backgroundurl</span>
 </span></span></code></pre></div><p>We now need to loop through each of the items in the <code>backgroundurls</code> array, and we also need to give each a filename for <code>backgroundfile</code> that isn&rsquo;t duplicated, otherwise we&rsquo;ll end up downloading and overwriting the same file for each URL in the array.</p>
 
@@ -1502,8 +1494,7 @@
     </span>        
     
 </h3>
-<p>We can quickly create new file names as part of the <code>for</code> loop needed for the items in the array, by <a href="https://linuxize.com/post/bash-increment-decrement-variable/"   target="_blank">
-    incrementing a variable</a>, and appending that variable to the <code>backgroundfile</code> variable.</p>
+<p>We can quickly create new file names as part of the <code>for</code> loop needed for the items in the array, by <a href="https://linuxize.com/post/bash-increment-decrement-variable/" target="_blank">incrementing a variable</a>, and appending that variable to the <code>backgroundfile</code> variable.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> backgroundurl in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">backgroundurls</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
 </span></span><span class="line"><span class="cl">  <span class="o">((</span><span class="nv">i</span><span class="o">=</span>i+1<span class="o">))</span>
@@ -1523,8 +1514,7 @@
     </span>        
     
 </h2>
-<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh"   target="_blank">
-    full script</a> looks pretty much like the below, which is just a squishing together of the bits we&rsquo;ve already covered in this post.</p>
+<p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh" target="_blank">full script</a> looks pretty much like the below, which is just a squishing together of the bits we&rsquo;ve already covered in this post.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#set -x</span>
 </span></span><span class="line"><span class="cl">
@@ -1604,8 +1594,7 @@
     </span>        
     
 </h3>
-<p>As with everything Microsoft, there are some requirements and limitations with using <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts"   target="_blank">
-    Shell Scripts for macOS</a> so have a read before you blindly start trying to push out scripts to your device estate. After you&rsquo;ve read these requirements, create a new Shell Script with the below settings.</p>
+<p>As with everything Microsoft, there are some requirements and limitations with using <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts" target="_blank">Shell Scripts for macOS</a> so have a read before you blindly start trying to push out scripts to your device estate. After you&rsquo;ve read these requirements, create a new Shell Script with the below settings.</p>
 <table>
 <thead>
 <tr>
@@ -1795,11 +1784,8 @@
     </span>        
     
 </h2>
-<p>This was a pretty straight forward method to deploy backgrounds to Microsoft Teams using <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts"   target="_blank">
-    Intune Shell Scripts</a>, and not a bad start to my journey into advanced management of macOS devices (despite actually being a macOS user). I&rsquo;d recommend familiarising yourself with the <a href="https://github.com/microsoft/shell-intune-samples"   target="_blank">
-    Intune Shell Samples</a>, as this is where started when hacking about with Shell scripts for macOS devices.</p>
-<p>Or you could just pay for <a href="https://www.microsoft.com/en-us/microsoft-teams/premium"   target="_blank">
-    Microsoft Teams Premium</a>, but where&rsquo;s the fun in that?</p>
+<p>This was a pretty straight forward method to deploy backgrounds to Microsoft Teams using <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts" target="_blank">Intune Shell Scripts</a>, and not a bad start to my journey into advanced management of macOS devices (despite actually being a macOS user). I&rsquo;d recommend familiarising yourself with the <a href="https://github.com/microsoft/shell-intune-samples" target="_blank">Intune Shell Samples</a>, as this is where started when hacking about with Shell scripts for macOS devices.</p>
+<p>Or you could just pay for <a href="https://www.microsoft.com/en-us/microsoft-teams/premium" target="_blank">Microsoft Teams Premium</a>, but where&rsquo;s the fun in that?</p>
 
         </div>
         

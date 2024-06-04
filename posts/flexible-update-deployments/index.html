@@ -1271,10 +1271,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So this isn&rsquo;t the <a href="/posts/windows-update-phased-deployment" rel="noopener" target="_blank">first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos"   target="_blank">
-    declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
-<p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview"   target="_blank">
-    Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
+          <p>So this isn&rsquo;t the <a href="/posts/windows-update-phased-deployment" rel="noopener" target="_blank">first time</a> we&rsquo;ve looked at improving the management of updates using Microsoft Intune, and probably won&rsquo;t be the last time either, especially with <a href="https://learn.microsoft.com/en-us/mem/intune/protect/managed-software-updates-ios-macos" target="_blank">declarative device management</a> looming, for Apple and hopefully Windows devices, covering configuration of software updates.</p>
+<p>But with the introduction of the <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview" target="_blank">Windows Autopatch</a> service, and getting hands on with it recently, it prompted me to revisit my previous approach to phased update delivery, so I thought I&rsquo;d share my findings, this time across not just Windows Updates.</p>
 
 
 <h2 class="relative group">Deployment Approach 
@@ -1308,8 +1306,7 @@
     </span>        
     
 </h2>
-<p>Despite <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-improving-the-efficiency-of-dynamic-group-processing/ba-p/4049394"   target="_blank">
-    Microsoft</a> recommending to stop using the <code>match</code> operators in favour of <code>startsWith</code> there are times when you might have to ignore them, this could be one of those times when we look at how we split a device estate into the phased breakdowns we&rsquo;re looking to achieve.</p>
+<p>Despite <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-improving-the-efficiency-of-dynamic-group-processing/ba-p/4049394" target="_blank">Microsoft</a> recommending to stop using the <code>match</code> operators in favour of <code>startsWith</code> there are times when you might have to ignore them, this could be one of those times when we look at how we split a device estate into the phased breakdowns we&rsquo;re looking to achieve.</p>
 
   
 
@@ -1543,8 +1540,7 @@
     </span>        
     
 </h2>
-<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings personally instead of just recommending them, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows"   target="_blank">
-    National Cyber Security Centre</a> 14-day window.</p>
+<p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings personally instead of just recommending them, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows" target="_blank">National Cyber Security Centre</a> 14-day window.</p>
 <table>
 <thead>
 <tr>
@@ -1593,8 +1589,7 @@
 </tr>
 </tbody>
 </table>
-<p>You see something else new? Yes, I&rsquo;ve avoided device restarts on weekends following a chat with fellow lover of Microsoft Intune, <a href="https://deploymentshare.com/"   target="_blank">
-    Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office and powered off, or being used to watch Netflix in bed.</p>
+<p>You see something else new? Yes, I&rsquo;ve avoided device restarts on weekends following a chat with fellow lover of Microsoft Intune, <a href="https://deploymentshare.com/" target="_blank">Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office and powered off, or being used to watch Netflix in bed.</p>
 <p>This also allows for our VIP users to pick which day they actually want their device to restart, based on whatever day they&rsquo;re not playing golf :woman_golfing:.</p>
 
 
@@ -1608,8 +1603,7 @@
     </span>        
     
 </h2>
-<p>Oooooh this one is new, and straight up robbed from Windows Autopatch, and although doesn&rsquo;t exist as a dedicated blade in Microsoft Intune, we can use the glorious <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog"   target="_blank">
-    Settings Catalog</a> profiles to configure Office Update Channels, deferral, and deadline settings for Microsoft 365 App updates.</p>
+<p>Oooooh this one is new, and straight up robbed from Windows Autopatch, and although doesn&rsquo;t exist as a dedicated blade in Microsoft Intune, we can use the glorious <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog</a> profiles to configure Office Update Channels, deferral, and deadline settings for Microsoft 365 App updates.</p>
 <p>To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
 <table>
 <thead>
@@ -1678,8 +1672,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >Make sure you assign this to all your devices in scope of updates, using either an existing group, or the built in &lsquo;All Devices&rsquo; group and a suitable <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
-    Device Filter</a>.</span>
+    >Make sure you assign this to all your devices in scope of updates, using either an existing group, or the built in &lsquo;All Devices&rsquo; group and a suitable <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filter</a>.</span>
 </div>
 
 
@@ -1750,8 +1743,7 @@
 </tr>
 </tbody>
 </table>
-<p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps"   target="_blank">
-    update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
+<p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps" target="_blank">update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
 
 
 <h2 class="relative group">Update Ring Assignment 

@@ -1316,8 +1316,7 @@
     
 </h2>
 <p>To reiterate from the previous post, and to hammer the point home, you <strong>should</strong> be updating these types of policies on a regular basis. When you update a Compliance Policy, it will trigger the devices the policy is assigned to, to re-evaluate the conditions and follow the actions for non-compliance if necessary.</p>
-<p>For the Defender settings, the one we&rsquo;re wanting to update is <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#defender"   target="_blank">
-    Microsoft Defender Antimalware minimum version</a>, which if left blank will accept any version of the service, but we should be requiring an up to date version here, you know, for security.</p>
+<p>For the Defender settings, the one we&rsquo;re wanting to update is <a href="https://learn.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-windows#defender" target="_blank">Microsoft Defender Antimalware minimum version</a>, which if left blank will accept any version of the service, but we should be requiring an up to date version here, you know, for security.</p>
 
 
 <h3 class="relative group">Existing Functions 
@@ -1336,8 +1335,7 @@
 <li><a href="/posts/operating-system-compliance-updates/#getting-compliance-policies" rel="noopener" target="_blank">Get-DeviceCompliancePolicy</a></li>
 <li><a href="/posts/operating-system-compliance-updates/#updating-compliance-policies" rel="noopener" target="_blank">Update-DeviceCompliancePolicy</a></li>
 </ul>
-<p>We will also need to create a new one, to retrieve the latest Microsoft Defender Update using the <a href="https://support.microsoft.com/en-us/rss-feed-picker"   target="_blank">
-    Microsoft Feed Picker</a> for Microsoft Defender Updates.</p>
+<p>We will also need to create a new one, to retrieve the latest Microsoft Defender Update using the <a href="https://support.microsoft.com/en-us/rss-feed-picker" target="_blank">Microsoft Feed Picker</a> for Microsoft Defender Updates.</p>
 
 
 <h2 class="relative group">Getting Latest Platform Update Version 
@@ -1350,8 +1348,7 @@
     </span>        
     
 </h2>
-<p>So the <a href="https://support.microsoft.com/en-us/feed/atom/5d4715e7-a9c9-378e-3f83-fd410db4ef0a"   target="_blank">
-    feed</a> we&rsquo;ll be using, doesn&rsquo;t actually contain the platform update version, unlike the Windows Operating System feeds which put the information we needed on a plate, this time we need to work a little.</p>
+<p>So the <a href="https://support.microsoft.com/en-us/feed/atom/5d4715e7-a9c9-378e-3f83-fd410db4ef0a" target="_blank">feed</a> we&rsquo;ll be using, doesn&rsquo;t actually contain the platform update version, unlike the Windows Operating System feeds which put the information we needed on a plate, this time we need to work a little.</p>
 <p>We can at least use our previous attempts at capturing the RSS data, but this time, instead of grabbing the data from the feed itself and working with it, we need to grab the link that exists in the feed, grab the data from that page in order to get the version information we need to update the Compliance Policy.</p>
 <p>We can capture the link we need and associate with the variable <code>$DefenderUpdateUri</code>, and using a bit of magic, we can scrape the data from this link, and capture only the information we need, in this instance it&rsquo;s the &lsquo;New version&rsquo; section of the page:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$uri</span> <span class="p">=</span> <span class="s1">&#39;https://support.microsoft.com/en-us/feed/atom/5d4715e7-a9c9-378e-3f83-fd410db4ef0a&#39;</span>
@@ -1444,8 +1441,7 @@
     </span>        
     
 </h2>
-<p>So with all the functions we need, we can attack the script that will actually update the Compliance Policy. As we&rsquo;ve done something similar previously, I don&rsquo;t need to use my brain too much to hack around with the existing <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/WindowsOSCompliance/Set-WindowsOSCompliance.ps1"   target="_blank">
-    script</a>, but there are some key areas to focus on&hellip;</p>
+<p>So with all the functions we need, we can attack the script that will actually update the Compliance Policy. As we&rsquo;ve done something similar previously, I don&rsquo;t need to use my brain too much to hack around with the existing <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/WindowsOSCompliance/Set-WindowsOSCompliance.ps1" target="_blank">script</a>, but there are some key areas to focus on&hellip;</p>
 
 
 <h3 class="relative group">Getting the Defender Policy 
@@ -1585,8 +1581,7 @@
     </span>        
     
 </h2>
-<p>The whole <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/DefenderCompliance/Set-DefenderCompliance.ps1"   target="_blank">
-    script</a> is pretty shoddy even for the minimal effort it took, but it is functional (as of today), that&rsquo;s the main thing.</p>
+<p>The whole <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Compliance/DefenderCompliance/Set-DefenderCompliance.ps1" target="_blank">script</a> is pretty shoddy even for the minimal effort it took, but it is functional (as of today), that&rsquo;s the main thing.</p>
 <p>The things you do when customers ask you about automating the recommendations you present to them eh?</p>
 
         </div>

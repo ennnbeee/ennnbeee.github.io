@@ -1331,8 +1331,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>Everyone likes managing clients apps in Microsoft Intune, the grind of packing Windows apps, the chore of selecting Managed Google Play apps, the joy of assigning Apple VPP app licenses in Apple Business Manager&hellip;all <em>good</em> fun.</p>
-<p>What about assigning <a href="https://docs.microsoft.com/en-us/mem/intune/apps/apps-add#create-and-edit-categories-for-apps"   target="_blank">
-    App Categories</a>, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</p>
+<p>What about assigning <a href="https://docs.microsoft.com/en-us/mem/intune/apps/apps-add#create-and-edit-categories-for-apps" target="_blank">App Categories</a>, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</p>
 
 
 <h2 class="relative group">App Categories 
@@ -1390,8 +1389,7 @@
     
 </h3>
 <p>You could just create new app categories using Microsoft Intune, but I&rsquo;m not sure that&rsquo;s as exciting as you think it is, so we&rsquo;ll do this the sensible way and script it. To do this, we will need a way to get the existing App Categories (so we don&rsquo;t create duplicates) and of course a way to create new ones.</p>
-<p><del>As always, it&rsquo;s time for some authentication to <a href="https://docs.microsoft.com/en-us/graph/use-the-api"   target="_blank">
-    Graph API</a> and using the trusted Authentication function we&rsquo;ve used time and time before.</del></p>
+<p><del>As always, it&rsquo;s time for some authentication to <a href="https://docs.microsoft.com/en-us/graph/use-the-api" target="_blank">Graph API</a> and using the trusted Authentication function we&rsquo;ve used time and time before.</del></p>
 
   
 
@@ -1434,8 +1432,7 @@
     </span>        
     
 </h3>
-<p>We&rsquo;ll be using the <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-apps-mobileappcategory?view=graph-rest-1.0"   target="_blank">
-    GET /deviceAppManagement/mobileAppCategories</a> part of Graph for most of this, and the <code>List</code> option to get all existing categories using the function below.</p>
+<p>We&rsquo;ll be using the <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-apps-mobileappcategory?view=graph-rest-1.0" target="_blank">GET /deviceAppManagement/mobileAppCategories</a> part of Graph for most of this, and the <code>List</code> option to get all existing categories using the function below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-AppCategory</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
@@ -1464,8 +1461,7 @@
     </span>        
     
 </h3>
-<p>Sticking with <code>mobileAppCategories</code> section of Graph and using the <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-apps-mobileappcategory?view=graph-rest-1.0"   target="_blank">
-    POST /deviceAppManagement/mobileAppCategories</a> to create new App Categories, we can push new App Categories to Microsoft Intune and all we need is the below function and a name of the category.</p>
+<p>Sticking with <code>mobileAppCategories</code> section of Graph and using the <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-apps-mobileappcategory?view=graph-rest-1.0" target="_blank">POST /deviceAppManagement/mobileAppCategories</a> to create new App Categories, we can push new App Categories to Microsoft Intune and all we need is the below function and a name of the category.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Add-AppCategory</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
@@ -1525,8 +1521,7 @@
     </span>        
     
 </h3>
-<p>Oh we do love Graph here don&rsquo;t we&hellip;more use of Graph and in particular <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0"   target="_blank">
-    GET /deviceAppManagement/mobileApps</a>, we&rsquo;ll use this to get existing Mobile Apps, be warned though, this resource type will pull back all apps, whether Client Apps or Mobile Application Managed Apps, so we&rsquo;ll need to use some filtering further down the line.</p>
+<p>Oh we do love Graph here don&rsquo;t we&hellip;more use of Graph and in particular <a href="https://docs.microsoft.com/en-us/graph/api/resources/intune-apps-mobileapp?view=graph-rest-1.0" target="_blank">GET /deviceAppManagement/mobileApps</a>, we&rsquo;ll use this to get existing Mobile Apps, be warned though, this resource type will pull back all apps, whether Client Apps or Mobile Application Managed Apps, so we&rsquo;ll need to use some filtering further down the line.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-MobileApps</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$graphApiVersion</span> <span class="p">=</span> <span class="s1">&#39;Beta&#39;</span>
@@ -1602,8 +1597,7 @@
     
 </h3>
 <p>More functions to play with, this time one to assign App Categories to a Mobile App, nothing special here but we&rsquo;ll need to pass through the <code>$Id</code> of the Mobile App and the <code>$CategoryId</code> of the Category.</p>
-<p>One little weird one here, need to through in a <code>$ref</code> at the end of the uri for the call to Graph, shout out to the <a href="https://www.youtube.com/watch?v=Wnp9qgwcgb8"   target="_blank">
-    Intune Support Team on YouTube</a> for this bit of information.</p>
+<p>One little weird one here, need to through in a <code>$ref</code> at the end of the uri for the call to Graph, shout out to the <a href="https://www.youtube.com/watch?v=Wnp9qgwcgb8" target="_blank">Intune Support Team on YouTube</a> for this bit of information.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Add-MobileAppCategory</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">cmdletbinding</span><span class="p">()]</span>
 </span></span><span class="line"><span class="cl">    <span class="k">param</span>
@@ -1918,8 +1912,7 @@ Data Management
     </span>        
     
 </h2>
-<p>As we&rsquo;ve gone through all of this just to assign some App Categories, I guess now would be the time to provide a <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AppCategories/Set-AppCategories.ps1"   target="_blank">
-    link to the script</a>, and show you what it does for each of the options.</p>
+<p>As we&rsquo;ve gone through all of this just to assign some App Categories, I guess now would be the time to provide a <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/AppCategories/Set-AppCategories.ps1" target="_blank">link to the script</a>, and show you what it does for each of the options.</p>
 
 
 <h3 class="relative group">Creating New App Categories 

@@ -1263,8 +1263,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/clients/manage/collections/create-collections"   target="_blank">
-    Device Collections</a> used for Software Update deployments in Microsoft Intune.</p>
+          <p>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/clients/manage/collections/create-collections" target="_blank">Device Collections</a> used for Software Update deployments in Microsoft Intune.</p>
 <p>With Configuration Manager having the backing of Microsoft SQL, and a hardware inventory that collects every granular detail about Windows devices, splitting out your device estate into logical phases is very easy to achieve.</p>
 <p>But what about Microsoft Intune, how do we phase these updates in a similar way to Configuration Manager?</p>
 
@@ -1402,8 +1401,7 @@
     </span>        
     
 </h2>
-<p>So now we need to find a way group devices in a sensible way, so let&rsquo;s create three (yes three) new <del>Azure AD</del> Microsoft Entra ID <a href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/how-to-manage-groups"   target="_blank">
-    Security Groups</a> for each of the Update Rings.</p>
+<p>So now we need to find a way group devices in a sensible way, so let&rsquo;s create three (yes three) new <del>Azure AD</del> Microsoft Entra ID <a href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/how-to-manage-groups" target="_blank">Security Groups</a> for each of the Update Rings.</p>
 <ul>
 <li>Windows Updates Testing</li>
 <li>Windows Updates Pilot</li>
@@ -1422,8 +1420,7 @@
     </span>        
     
 </h3>
-<p>Now I know I love <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters"   target="_blank">
-    Device Filters</a>, and do not fear, we&rsquo;ll need one of these later, but as covered <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">previously</a> Dynamic Groups are more powerful, and for this use case will perfectly fit our need to split our Windows device estate in half-ish.</p>
+<p>Now I know I love <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a>, and do not fear, we&rsquo;ll need one of these later, but as covered <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">previously</a> Dynamic Groups are more powerful, and for this use case will perfectly fit our need to split our Windows device estate in half-ish.</p>
 <p>Device Name is how we&rsquo;re going to split our device estate, whether these are you old-school naming conventions on-premises based on asset tag, serial number or otherwise, Autopilot <del>Azure AD Join</del> MEID Join (<em>really?</em>) devices with a prefix and a serial, or god forbid Autopilot Hybrid Joined devices with a prefix and random numbers.</p>
 <p>Either way, we should be able use Dynamic Device Groups to capture half of the device estate.</p>
 
@@ -1446,8 +1443,7 @@
 </span></span><span class="line"><span class="cl">ITS-CRJ7C39
 </span></span><span class="line"><span class="cl">CON-f6f64b04a9e7
 </span></span></code></pre></div><p>As we have some kind of naming convention here with a three letter prefix follow by a hyphen and then some random characters, we should be able to capture half of the devices by pulling back only devices that after the hyphen start with odd numbers (1, 3, 5, 7, 9), or alternate letters (a, c, e, etc.).</p>
-<p>Throwing open you&rsquo;re favourite <a href="https://regex101.com/"   target="_blank">
-    RegEx tester</a> we can plonk in the device names and start playing with queries, and if we want to be exact so we only capture devices that match our three character prefix followed by a hyphen and an odd number, we can use an expression like this.</p>
+<p>Throwing open you&rsquo;re favourite <a href="https://regex101.com/" target="_blank">RegEx tester</a> we can plonk in the device names and start playing with queries, and if we want to be exact so we only capture devices that match our three character prefix followed by a hyphen and an odd number, we can use an expression like this.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">^[a-zA-Z]{3}-d*[13579]
 </span></span></code></pre></div><p>For capturing devices that match the three character prefix followed by a hyphen and alternative lowercase characters, we can use the expression below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">^[a-zA-Z]{3}-d*[acegikmoqsuwy]
@@ -1481,8 +1477,7 @@
 </span></span><span class="line"><span class="cl">DTP-001191
 </span></span><span class="line"><span class="cl">DTP-000117
 </span></span><span class="line"><span class="cl">LTP-000008
-</span></span></code></pre></div><p>Once again into <a href="https://regex101.com/"   target="_blank">
-    RegEx testing</a> we can plonk in the device names and start playing with queries, this time we just want to match devices with any three character prefix followed by a hyphen, but end in an odd number.</p>
+</span></span></code></pre></div><p>Once again into <a href="https://regex101.com/" target="_blank">RegEx testing</a> we can plonk in the device names and start playing with queries, this time we just want to match devices with any three character prefix followed by a hyphen, but end in an odd number.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">^[a-zA-Z]{3}-\d{5}[13579]$
 </span></span></code></pre></div><p>An overview of the expression:</p>
 <ul>
@@ -1505,8 +1500,7 @@
     
 </h3>
 <p>As well as the using one of the above name matching expressions, we could do with capturing whether the device is actually a Windows Corporate-Owned device.</p>
-<p>So let&rsquo;s build our <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership"   target="_blank">
-    Dynamic Group Query</a> based on the below requirements.</p>
+<p>So let&rsquo;s build our <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership" target="_blank">Dynamic Group Query</a> based on the below requirements.</p>
 <ul>
 <li><code>(device.deviceOSType -eq &quot;Windows&quot;)</code>: Any Windows Device</li>
 <li><code>(device.deviceOSVersion -startsWith &quot;10&quot;)</code>: Any device with an Operating System that starts with 10</li>

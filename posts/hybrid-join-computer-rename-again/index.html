@@ -1281,8 +1281,7 @@ broke device certificates and an Always On VPN connection that relied on them as
     </span>        
     
 </h2>
-<p>The trouble with the old method, a PowerShell script disguised as a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-app-management"   target="_blank">
-    Win32 App</a>, is that it will happily rename and reboot the device during the Autopilot OOBE process, is that the device will already have a device certificate with it&rsquo;s old jumbled name, and it needs this for both the VPN connection and some level of trust to the domain.</p>
+<p>The trouble with the old method, a PowerShell script disguised as a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-app-management" target="_blank">Win32 App</a>, is that it will happily rename and reboot the device during the Autopilot OOBE process, is that the device will already have a device certificate with it&rsquo;s old jumbled name, and it needs this for both the VPN connection and some level of trust to the domain.</p>
 <p>What I was seeing is that the computer renamed, but it lost it&rsquo;s trust and connection to the domain once the Autopilot process had finished. Not ideal when deploying device remotely.</p>
 
 
@@ -1297,8 +1296,7 @@ broke device certificates and an Always On VPN connection that relied on them as
     
 </h3>
 <p>We can update the certificate deployment template in Intune to take into consideration the new name of the device, especially as we&rsquo;re using an attribute as part of the device rename that Intune knows about, the serial number.</p>
-<p>As the Simple Certificate Enrolment Protocol (SCEP) profile <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/certificates-profile-scep"   target="_blank">
-    supports various device or user attributes</a> we can add these into either Subject Name or Subject Alternative Name of the issued certificate, as well as any prefix we want to add such as <code>L-</code>:</p>
+<p>As the Simple Certificate Enrolment Protocol (SCEP) profile <a href="https://learn.microsoft.com/en-gb/mem/intune/protect/certificates-profile-scep" target="_blank">supports various device or user attributes</a> we can add these into either Subject Name or Subject Alternative Name of the issued certificate, as well as any prefix we want to add such as <code>L-</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">CN=L-{{SerialNumber}}
 </span></span><span class="line"><span class="cl">DNS={{FullyQualifiedDomainName}}
 </span></span><span class="line"><span class="cl">DNS={{DeviceName}}
@@ -1317,9 +1315,7 @@ broke device certificates and an Always On VPN connection that relied on them as
     
 </h2>
 <p>We could do with a way to both check that the device name matches our expected naming convention of <code>L-%SERIAL%</code> for laptops, and <code>D-%SERIAL%</code> for desktops, <strong>and</strong> fixes the issue for us.</p>
-<p>This is where <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations"   target="_blank">
-    Proactive Remediation</a> scripts come to save us, and as I got M365 licenses for Christmas we can make use of them due to this being a <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#licensing"   target="_blank">
-    licensing requirement</a>.</p>
+<p>This is where <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations" target="_blank">Proactive Remediation</a> scripts come to save us, and as I got M365 licenses for Christmas we can make use of them due to this being a <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#licensing" target="_blank">licensing requirement</a>.</p>
 <p>Now that we have new tools at our disposal, and modify permissions for &lsquo;SELF&rsquo; already in place in the destination Organisational Unit allowing the computer object to rename itself, we can hack about with the old script that was doing the computer rename as part of the Autopilot process, and using Proactive Remediation scripts, we can check that the existing device name matches the expected device name.</p>
 
 
@@ -1369,8 +1365,7 @@ broke device certificates and an Always On VPN connection that relied on them as
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>With Proactive Remediation scripts, we need to pass back the results of this check, and any checks, with <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements"   target="_blank">
-    Exit Codes</a> and some kind of descriptive text.</p>
+</span></span></code></pre></div><p>With Proactive Remediation scripts, we need to pass back the results of this check, and any checks, with <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements" target="_blank">Exit Codes</a> and some kind of descriptive text.</p>
 
 
 <h3 class="relative group">Remediation Script 
@@ -1471,10 +1466,8 @@ broke device certificates and an Always On VPN connection that relied on them as
     </span>        
     
 </h3>
-<p>Throwing ourselves into the safe space that is Intune, go and find the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_Enrollment/UXAnalyticsMenu/~/proactiveRemediations"   target="_blank">
-    Proactive Remediation</a> section, I&rsquo;ll give you a hint, it&rsquo;s under Reports &gt; Endpoint Analytics.</p>
-<p>Create a new Script Package, selecting and uploading both the detection and remediation scripts as you go, you can get these from <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Remediation/HDJDeviceRename"   target="_blank">
-    GitHub</a>. Make sure you select &lsquo;Run script in 64-bit PowerShell&rsquo; as I couldn&rsquo;t be bothered scripting a check if PowerShell was running in the 64-bit context.</p>
+<p>Throwing ourselves into the safe space that is Intune, go and find the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_Enrollment/UXAnalyticsMenu/~/proactiveRemediations" target="_blank">Proactive Remediation</a> section, I&rsquo;ll give you a hint, it&rsquo;s under Reports &gt; Endpoint Analytics.</p>
+<p>Create a new Script Package, selecting and uploading both the detection and remediation scripts as you go, you can get these from <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Remediation/HDJDeviceRename" target="_blank">GitHub</a>. Make sure you select &lsquo;Run script in 64-bit PowerShell&rsquo; as I couldn&rsquo;t be bothered scripting a check if PowerShell was running in the 64-bit context.</p>
 <p>
 
 

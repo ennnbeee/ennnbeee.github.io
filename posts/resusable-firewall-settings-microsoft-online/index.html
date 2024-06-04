@@ -1290,8 +1290,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>If you&rsquo;ve been living under a rock, or you don&rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide"   target="_blank">
-    web service</a>.</p>
+          <p>If you&rsquo;ve been living under a rock, or you don&rsquo;t have to deal with firewall and proxy requirements for accessing Microsoft Online services, you probably won&rsquo;t be aware that Microsoft publish their URLs and IP addresses for their services using a <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide" target="_blank">web service</a>.</p>
 <p>Sadly I don&rsquo;t live under a rock, and when I get the pleasure working with customers who are blocking all inbound and outbound traffic from Windows devices unless there is a matching firewall rule, getting these devices to talk to Microsoft Intune and other Microsoft services, can be a bit of a pain without the web service as a reference.</p>
 <p>Now because I&rsquo;m desperate to write PowerShell scripts there is no way I&rsquo;m going to copy paste a million times between an actual queryable web service and Microsoft Intune to create the necessary firewall rules. Let&rsquo;s look at how we can leverage the web service to create some much needed firewall settings.</p>
 
@@ -1306,10 +1305,8 @@
     </span>        
     
 </h2>
-<p>So here we are, back looking at <del>Defender</del> Windows firewall rules in Microsoft Intune again, and after moving legacy firewall rules to the <a href="/posts/settings-catalog-firewall-rules" rel="noopener" target="_blank">Settings Catalog</a> versions previously, to make use of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/reusable-settings-groups"   target="_blank">
-    Reusable Settings Groups</a>, we&rsquo;re now heavily leaning into these reusable options, to ensure that all Windows 10 and later devices can communicate successfully to the Microsoft Online endpoints.</p>
-<p>Before we look at how to deal with the data available in the Microsoft web service, we should look at how we can create these reusable settings groups in Microsoft Intune using Graph, and make use of the option to <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/announcing-enhanced-control-for-configuring-firewall-rules-with/ba-p/3664744"   target="_blank">
-    auto resolve</a> URLs, which should make life a little bit easier for the ever changing internet landscape.</p>
+<p>So here we are, back looking at <del>Defender</del> Windows firewall rules in Microsoft Intune again, and after moving legacy firewall rules to the <a href="/posts/settings-catalog-firewall-rules" rel="noopener" target="_blank">Settings Catalog</a> versions previously, to make use of <a href="https://learn.microsoft.com/en-us/mem/intune/protect/reusable-settings-groups" target="_blank">Reusable Settings Groups</a>, we&rsquo;re now heavily leaning into these reusable options, to ensure that all Windows 10 and later devices can communicate successfully to the Microsoft Online endpoints.</p>
+<p>Before we look at how to deal with the data available in the Microsoft web service, we should look at how we can create these reusable settings groups in Microsoft Intune using Graph, and make use of the option to <a href="https://techcommunity.microsoft.com/t5/intune-customer-success/announcing-enhanced-control-for-configuring-firewall-rules-with/ba-p/3664744" target="_blank">auto resolve</a> URLs, which should make life a little bit easier for the ever changing internet landscape.</p>
 
 
 <h3 class="relative group">JSON Formatting 
@@ -1322,8 +1319,7 @@
     </span>        
     
 </h3>
-<p>We at least have experience dealing with building the JSON structure required for <a href="/posts/settings-catalog-firewall-rules/#creating-settings-catalog-policies" rel="noopener" target="_blank">Settings Catalog profiles previously</a>, and it wasn&rsquo;t particularly straight forward, so after a hesitant dig with Developer Tools we can see that when you create a new reusable setting in Microsoft Intune, we&rsquo;re sending a <code>POST</code> call to the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta"   target="_blank">
-    <code>deviceManagement/reusablePolicySettings</code></a> endpoint, with JSON similar to the below.</p>
+<p>We at least have experience dealing with building the JSON structure required for <a href="/posts/settings-catalog-firewall-rules/#creating-settings-catalog-policies" rel="noopener" target="_blank">Settings Catalog profiles previously</a>, and it wasn&rsquo;t particularly straight forward, so after a hesitant dig with Developer Tools we can see that when you create a new reusable setting in Microsoft Intune, we&rsquo;re sending a <code>POST</code> call to the <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta" target="_blank"><code>deviceManagement/reusablePolicySettings</code></a> endpoint, with JSON similar to the below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;ReusableTest&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;My very first reusable group.&#34;</span><span class="p">,</span>
@@ -1556,8 +1552,7 @@
     >We don&rsquo;t have to worry about PowerShell messing around with the JSON formatting, as Graph is pretty accepting as long as what we&rsquo;re submitting is a valid JSON.</span>
 </div>
 
-<p>This gives us the valid JSON structure in the <code>$JSON</code> variable, which we can test using <a href="%28https://developer.microsoft.com/en-us/graph/graph-explorer%29"  >
-    Graph Explorer</a> to see if it will create our required reusable group setting.</p>
+<p>This gives us the valid JSON structure in the <code>$JSON</code> variable, which we can test using <a href="%28https://developer.microsoft.com/en-us/graph/graph-explorer%29">Graph Explorer</a> to see if it will create our required reusable group setting.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;Test Reusable Group&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34; My very second reusable group&#34;</span><span class="p">,</span>
@@ -1624,8 +1619,7 @@
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;@odata.type&#34;</span><span class="p">:</span> <span class="s2">&#34;#microsoft.graph.deviceManagementReusablePolicySetting&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;73d46494-6e54-4fbc-9707-e69bfef7d538&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Using Graph Explorer with a <code>POST</code> request to <code>https://graph.microsoft.com/beta/deviceManagement/reusablePolicySettings/</code> and the above JSON we get a happy looking <code>201</code> <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta#response-1"   target="_blank">
-    response</a>, and checking in Microsoft Intune, we now have a new reusable group at our disposal.</p>
+</span></span></code></pre></div><p>Using Graph Explorer with a <code>POST</code> request to <code>https://graph.microsoft.com/beta/deviceManagement/reusablePolicySettings/</code> and the above JSON we get a happy looking <code>201</code> <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta#response-1" target="_blank">response</a>, and checking in Microsoft Intune, we now have a new reusable group at our disposal.</p>
 <p>
 
 
@@ -1654,8 +1648,7 @@
     
 </h2>
 <p>As we now have a way to create the reusable group settings, albeit basic, we should look at how we get the network endpoints for Microsoft services from the web service.</p>
-<p>As Microsoft actually gives you <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide#endpoints-web-method-examples"   target="_blank">
-    example commands</a> to query the web service and pull back the URLs and IP addresses for each service area, we can use this data and pass it into our newfound ability to create the required firewall settings.</p>
+<p>As Microsoft actually gives you <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide#endpoints-web-method-examples" target="_blank">example commands</a> to query the web service and pull back the URLs and IP addresses for each service area, we can use this data and pass it into our newfound ability to create the required firewall settings.</p>
 
 
 <h3 class="relative group">Capturing Network Endpoints 
@@ -1668,8 +1661,7 @@
     </span>        
     
 </h3>
-<p>Using the examples as a start, we can query the web service with an <code>Invoke-MgGraphRequest</code>, and because I&rsquo;m nice, we&rsquo;re going to allow the modification of the <code>uri</code> in the request based on user selected values from the options available in the <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide#endpoints-web-method"   target="_blank">
-    documentation</a>, along with a generated UUID for the request.</p>
+<p>Using the examples as a start, we can query the web service with an <code>Invoke-MgGraphRequest</code>, and because I&rsquo;m nice, we&rsquo;re going to allow the modification of the <code>uri</code> in the request based on user selected values from the options available in the <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide#endpoints-web-method" target="_blank">documentation</a>, along with a generated UUID for the request.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">ValidateSet</span><span class="p">(</span><span class="s1">&#39;Worldwide&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;USGovDoD&#39;</span><span class="p">,</span> <span class="s1">&#39;USGovGCCHigh&#39;</span><span class="p">)]</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">String</span><span class="p">]</span><span class="nv">$instance</span> <span class="p">=</span> <span class="s1">&#39;Worldwide&#39;</span><span class="p">,</span>
@@ -1703,8 +1695,7 @@
 </span></span><span class="line"><span class="cl">expressRoute           : False
 </span></span><span class="line"><span class="cl">category               : Default
 </span></span><span class="line"><span class="cl">required               : True
-</span></span></code></pre></div><p>Great, all done, time to move on as all your network endpoints obviously exist in this web service right Microsoft? <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/additional-office365-ip-addresses-and-urls?view=o365-worldwide"   target="_blank">
-    Nope.</a></p>
+</span></span></code></pre></div><p>Great, all done, time to move on as all your network endpoints obviously exist in this web service right Microsoft? <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/additional-office365-ip-addresses-and-urls?view=o365-worldwide" target="_blank">Nope.</a></p>
 <blockquote>
 <p>Some network endpoints were previously published and haven&rsquo;t been included in the Microsoft 365 IP Address and URL Web Service. The web service publishes network endpoints that are required for Microsoft 365 connectivity across an enterprise perimeter network.</p>
 </blockquote>
@@ -1734,8 +1725,7 @@
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;web.microsoftstream.com&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$reusableSettings</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">displayName</span> <span class="p">=</span> <span class="s1">&#39;Microsoft Stream URLs&#39;</span><span class="p">;</span> <span class="n">description</span> <span class="p">=</span> <span class="s1">&#39;Network Endpoints for Microsoft Stream on TCP Ports(s) 80,443&#39;</span><span class="p">;</span> <span class="n">urls</span> <span class="p">=</span> <span class="nv">$urlsStream</span><span class="p">;</span> <span class="n">ips</span> <span class="p">=</span> <span class="vm">$null</span><span class="p">;</span> <span class="n">ipsName</span> <span class="p">=</span> <span class="vm">$null</span> <span class="p">}</span>
-</span></span></code></pre></div><p>I&rsquo;ve got you covered for the other network endpoints mentioned in that <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/additional-office365-ip-addresses-and-urls?view=o365-worldwide"   target="_blank">
-    article</a> that don&rsquo;t exist in the web service, such as the Support and Recovery endpoints, the Windows Store, and anything else I could think of for Microsoft Intune,  Windows Autopilot, and Office 365 Apps.</p>
+</span></span></code></pre></div><p>I&rsquo;ve got you covered for the other network endpoints mentioned in that <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/additional-office365-ip-addresses-and-urls?view=o365-worldwide" target="_blank">article</a> that don&rsquo;t exist in the web service, such as the Support and Recovery endpoints, the Windows Store, and anything else I could think of for Microsoft Intune,  Windows Autopilot, and Office 365 Apps.</p>
 <p>Moving on swiftly.</p>
 
 
@@ -1950,8 +1940,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
     </span>        
     
 </h2>
-<p>I won&rsquo;t go into the ins and outs of the horrendous logic I used to create the correct JSON structure for multiple URLs, but you can dig through the script yourself if you are that way inclined. I will walk you through running the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/ReusableFirewallGroups/Invoke-MgReusableFirewall.ps1"   target="_blank">
-    script</a>, as this is the payoff to all of this.</p>
+<p>I won&rsquo;t go into the ins and outs of the horrendous logic I used to create the correct JSON structure for multiple URLs, but you can dig through the script yourself if you are that way inclined. I will walk you through running the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/ReusableFirewallGroups/Invoke-MgReusableFirewall.ps1" target="_blank">script</a>, as this is the payoff to all of this.</p>
 <p>You can run the script using the below as a reference, which will:</p>
 <ul>
 <li>Authenticate to Graph using the <code>Microsoft.Graph</code> PowerShell module (No more MSAL.PS module for me).</li>
@@ -2095,9 +2084,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
     </span>        
     
 </h2>
-<p>With the reusable firewall settings now in place in Microsoft Intune after being deployed using the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/ReusableFirewallGroups/Invoke-MgReusableFirewall.ps1"   target="_blank">
-    script</a>, you can use these groups in existing or new firewall rules policies that support <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-firewall-policy#add-reusable-settings-groups-to-profiles-for-firewall-rules"   target="_blank">
-    reusable settings</a>, allowing you to either configure a blanket allow all for the service areas, or be more specific and allow only the port requirements for each service area based on data provided by Microsoft in their web service.</p>
+<p>With the reusable firewall settings now in place in Microsoft Intune after being deployed using the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/ReusableFirewallGroups/Invoke-MgReusableFirewall.ps1" target="_blank">script</a>, you can use these groups in existing or new firewall rules policies that support <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-firewall-policy#add-reusable-settings-groups-to-profiles-for-firewall-rules" target="_blank">reusable settings</a>, allowing you to either configure a blanket allow all for the service areas, or be more specific and allow only the port requirements for each service area based on data provided by Microsoft in their web service.</p>
 <p>I would look at how to automatically create these firewall rule policies automatically, but I&rsquo;m still scared of dealing with the logic behind creating them from last time, but at least you&rsquo;re not having to copy and paste URls and IP addresses for Microsoft Online services into Microsoft Intune any more.</p>
 
         </div>

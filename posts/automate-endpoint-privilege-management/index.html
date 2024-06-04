@@ -1368,12 +1368,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So you&rsquo;re interested in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-overview"   target="_blank">
-    Endpoint Privilege Management</a> in Microsoft Intune, you&rsquo;ve found, begged for, borrowed or stolen the money for shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-overview#licensing"   target="_blank">
-    Intune Suite or EPM licenses</a>, and in you&rsquo;re excitement you&rsquo;ve gone and deployed a new policy to audit using the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#about-windows-elevation-settings-policy"   target="_blank">
-    Reporting Scope</a> options, all elevations across your managed Windows 10 and later devices. Now what?</p>
-<p>Well it&rsquo;s policy creation time, but that seems like a labour intensive (well many clicks) task, and as much as the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-reports"   target="_blank">
-    reports</a> give you all the required information you need to review unmanaged elevations and create new policies and elevation rules, there has to be a better way to take the data in the report and create these policies and subsequent rules for you.</p>
+          <p>So you&rsquo;re interested in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-overview" target="_blank">Endpoint Privilege Management</a> in Microsoft Intune, you&rsquo;ve found, begged for, borrowed or stolen the money for shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-overview#licensing" target="_blank">Intune Suite or EPM licenses</a>, and in you&rsquo;re excitement you&rsquo;ve gone and deployed a new policy to audit using the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#about-windows-elevation-settings-policy" target="_blank">Reporting Scope</a> options, all elevations across your managed Windows 10 and later devices. Now what?</p>
+<p>Well it&rsquo;s policy creation time, but that seems like a labour intensive (well many clicks) task, and as much as the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-reports" target="_blank">reports</a> give you all the required information you need to review unmanaged elevations and create new policies and elevation rules, there has to be a better way to take the data in the report and create these policies and subsequent rules for you.</p>
 
   
 
@@ -1416,8 +1412,7 @@
     </span>        
     
 </h2>
-<p>The Endpoint elevation report in Microsoft Intune will give us the data we need to create <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#about-windows-elevation-rules-policy"   target="_blank">
-    hash based</a> rules, so let&rsquo;s find a way to get the report data and export it with some collated information to make reviewing the elevations a little easier, as no one wants to review individual elevations from each user on a case by case basis, unless you&rsquo;re in InfoSec.</p>
+<p>The Endpoint elevation report in Microsoft Intune will give us the data we need to create <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#about-windows-elevation-rules-policy" target="_blank">hash based</a> rules, so let&rsquo;s find a way to get the report data and export it with some collated information to make reviewing the elevations a little easier, as no one wants to review individual elevations from each user on a case by case basis, unless you&rsquo;re in InfoSec.</p>
 <p>
 
 
@@ -1581,8 +1576,7 @@
     </span>        
     
 </h2>
-<p>I have no shame when I say that I started from <a href="https://andrewstaylor.com/2023/03/27/adding-endpoint-privilege-management-rules-via-powershell/"   target="_blank">
-    Andrew Taylor&rsquo;s</a> script to create EPM rules using PowerShell, allowing the creation of new EPM Policies and associated rules in Microsoft Intune based on a local files on the machine the script is being executed from. For me what this was missing was the ability to create multiple rules per EPM policy, and the to not rely on the file being local to the machine running the script to capture the required rule data.</p>
+<p>I have no shame when I say that I started from <a href="https://andrewstaylor.com/2023/03/27/adding-endpoint-privilege-management-rules-via-powershell/" target="_blank">Andrew Taylor&rsquo;s</a> script to create EPM rules using PowerShell, allowing the creation of new EPM Policies and associated rules in Microsoft Intune based on a local files on the machine the script is being executed from. For me what this was missing was the ability to create multiple rules per EPM policy, and the to not rely on the file being local to the machine running the script to capture the required rule data.</p>
 
 
 <h3 class="relative group">Importing Rule Data 
@@ -1669,8 +1663,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >Take note of the change to the <code>$authtoken</code> variable which needs updating to include &lsquo;ConsistencyLevel&rsquo; to support <a href="https://devblogs.microsoft.com/microsoft365dev/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/"   target="_blank">
-    advanced queries</a> using Graph API.</span>
+    >Take note of the change to the <code>$authtoken</code> variable which needs updating to include &lsquo;ConsistencyLevel&rsquo; to support <a href="https://devblogs.microsoft.com/microsoft365dev/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/" target="_blank">advanced queries</a> using Graph API.</span>
 </div>
 
 <p>We can ensure that the group exists prior to deploying the EPM policies to Microsoft Intune, and set the variables for each new rule to be created based on the data in the CSV file.</p>
@@ -1706,11 +1699,8 @@
     </span>        
     
 </h2>
-<p>The EPM Policies sit within the Setting Catalog space in Microsoft Intune, and it&rsquo;s no secret that creating new Settings Catalog policies in Microsoft Intune is no walk in the park as per this post from <a href="https://powers-hell.com/2021/03/08/working-with-intune-settings-catalog-using-powershell-and-graph/"   target="_blank">
-    Powers Hell</a>. Our issue, in addition to Settings Catalogs creation being a pain in the arse, is that we want to create multiple rules in one EPM policy which comes with it&rsquo;s own headache.</p>
-<p>Using <a href="https://github.com/andrew-s-taylor/public/blob/main/Powershell%20Scripts/Intune/add-epmfilerule.ps1"   target="_blank">
-    add-epmfilerule.ps1</a> and exports of EPM policies using <a href="https://github.com/microsoftgraph/powershell-intune-samples/blob/master/SettingsCatalog/SettingsCatalog_Export.ps1"   target="_blank">
-    Intune PowerShell Samples</a> as a basis for the JSON structure, we can build the policy with multuple rules in stages with separate sections for the policy and rules.</p>
+<p>The EPM Policies sit within the Setting Catalog space in Microsoft Intune, and it&rsquo;s no secret that creating new Settings Catalog policies in Microsoft Intune is no walk in the park as per this post from <a href="https://powers-hell.com/2021/03/08/working-with-intune-settings-catalog-using-powershell-and-graph/" target="_blank">Powers Hell</a>. Our issue, in addition to Settings Catalogs creation being a pain in the arse, is that we want to create multiple rules in one EPM policy which comes with it&rsquo;s own headache.</p>
+<p>Using <a href="https://github.com/andrew-s-taylor/public/blob/main/Powershell%20Scripts/Intune/add-epmfilerule.ps1" target="_blank">add-epmfilerule.ps1</a> and exports of EPM policies using <a href="https://github.com/microsoftgraph/powershell-intune-samples/blob/master/SettingsCatalog/SettingsCatalog_Export.ps1" target="_blank">Intune PowerShell Samples</a> as a basis for the JSON structure, we can build the policy with multuple rules in stages with separate sections for the policy and rules.</p>
 
 
 <h3 class="relative group">Policy Start JSON 
@@ -2505,8 +2495,7 @@
     </span>        
     
 </h2>
-<p>We&rsquo;re here, finally, with a complete <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/EPMAutomation/Invoke-MgEPNRules.ps1"   target="_blank">
-    PowerShell Script</a> ready to be used and abused. Let&rsquo;s look at the options we have when running the script.</p>
+<p>We&rsquo;re here, finally, with a complete <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/EPMAutomation/Invoke-MgEPNRules.ps1" target="_blank">PowerShell Script</a> ready to be used and abused. Let&rsquo;s look at the options we have when running the script.</p>
 
 
 <h3 class="relative group">Report Mode 
@@ -2646,8 +2635,7 @@
     </span>        
     
 </h2>
-<p>This script doesn&rsquo;t take into consideration the members of the groups as part of the assignment, and subsequently any <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#policy-conflict-handling-for-endpoint-privilege-management"   target="_blank">
-    conflict</a> or crossover of rules on a per user or device basis, but then I can&rsquo;t script every step of logic as part of an Endpoint Privilege Management implementation, you still have to use your brain somewhere along the way.</p>
+<p>This script doesn&rsquo;t take into consideration the members of the groups as part of the assignment, and subsequently any <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#policy-conflict-handling-for-endpoint-privilege-management" target="_blank">conflict</a> or crossover of rules on a per user or device basis, but then I can&rsquo;t script every step of logic as part of an Endpoint Privilege Management implementation, you still have to use your brain somewhere along the way.</p>
 <p>What it does give you is an ability to readily identify the priority of elevations required by your user base, a way to review the applications actively being elevated, and importantly a way to use this data and information to automatically create Endpoint Privilege Management policies and rules without the risk of human error when creating rules manually.</p>
 
         </div>

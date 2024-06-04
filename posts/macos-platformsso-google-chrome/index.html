@@ -1278,12 +1278,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So it&rsquo;s finally here, after all the <a href="https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280"   target="_blank">
-    coming soon</a> announcements, and the promise that we can use Entra ID authentication methods on macOS devices, we now have <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos"   target="_blank">
-    Platform SSO</a> at our disposal in Microsoft Intune, well at least in <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/public-preview"   target="_blank">
-    Public Preview</a>.</p>
-<p>I&rsquo;m not going to deep dive into configuring Platform SSO as I&rsquo;ll assume you&rsquo;ve either already had a go yourself, or found <a href="https://www.intuneirl.com/implementing-platform-sso-for-macos-a-deep-dive-into-configuration-troubleshooting/"   target="_blank">
-    someone else</a> who has, as honestly it&rsquo;s now a massive selling point of moving macOS devices into Microsoft Intune away from other MDM solutions.</p>
+          <p>So it&rsquo;s finally here, after all the <a href="https://techcommunity.microsoft.com/t5/microsoft-entra-blog/coming-soon-platform-sso-for-macos/ba-p/3902280" target="_blank">coming soon</a> announcements, and the promise that we can use Entra ID authentication methods on macOS devices, we now have <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos" target="_blank">Platform SSO</a> at our disposal in Microsoft Intune, well at least in <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/public-preview" target="_blank">Public Preview</a>.</p>
+<p>I&rsquo;m not going to deep dive into configuring Platform SSO as I&rsquo;ll assume you&rsquo;ve either already had a go yourself, or found <a href="https://www.intuneirl.com/implementing-platform-sso-for-macos-a-deep-dive-into-configuration-troubleshooting/" target="_blank">someone else</a> who has, as honestly it&rsquo;s now a massive selling point of moving macOS devices into Microsoft Intune away from other MDM solutions.</p>
 <p>Now we can use Entra ID account for SSO on the macOS device itself, what about our good friend the web browser, and in particular Google Chrome?</p>
 
 
@@ -1297,18 +1293,14 @@
     </span>        
     
 </h2>
-<p>If like me you&rsquo;ve been patiently waiting for Platform SSO to appear, you&rsquo;ve probably already looked at the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#prerequisites"   target="_blank">
-    pre-requisites</a> for configuration, so let&rsquo;s just assume you&rsquo;ve done these already, or you&rsquo;re a least aware of them, and if you haven&rsquo;t sorted them, crack on and sort yourself out.</p>
+<p>If like me you&rsquo;ve been patiently waiting for Platform SSO to appear, you&rsquo;ve probably already looked at the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#prerequisites" target="_blank">pre-requisites</a> for configuration, so let&rsquo;s just assume you&rsquo;ve done these already, or you&rsquo;re a least aware of them, and if you haven&rsquo;t sorted them, crack on and sort yourself out.</p>
 <p>The bit we&rsquo;re interested in is the supported browsers, and <em>shock</em>, both Microsoft Edge and Safari are supported out the box already (ish). Google Chrome however needs a little more convincing, as it does on Windows, to work with Single Sign On configurations.</p>
 <blockquote>
 <p>Platform SSO requires you install and enable the Windows Accounts extension. You can add the app to Intune, and assign it to the devices that use Google Chrome.</p>
 </blockquote>
 <p>That last line is interesting though Microsoft, as deploying Google Chrome extensions isn&rsquo;t as easy as <strong>click</strong> <strong>click</strong> <strong>next</strong> <strong>OK</strong>.</p>
-<p>Luckily though, Microsoft have provided links to <a href="https://support.google.com/chrome/a/answer/7550274"   target="_blank">
-    setting up Google Chrome on macOS</a> and how to configure the <a href="https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist"   target="_blank">
-    forced installation of extensions</a> which we&rsquo;ll be utilising to make Google Chrome and Platform SSO play nicely.</p>
-<p>Configuring this extension will not only improve the users sign-in experience, but allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers"   target="_blank">
-    Conditional Access Policies</a> when using Google Chrome:</p>
+<p>Luckily though, Microsoft have provided links to <a href="https://support.google.com/chrome/a/answer/7550274" target="_blank">setting up Google Chrome on macOS</a> and how to configure the <a href="https://chromeenterprise.google/policies/?policy=ExtensionInstallForcelist" target="_blank">forced installation of extensions</a> which we&rsquo;ll be utilising to make Google Chrome and Platform SSO play nicely.</p>
+<p>Configuring this extension will not only improve the users sign-in experience, but allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers" target="_blank">Conditional Access Policies</a> when using Google Chrome:</p>
 <blockquote>
 <p>macOS devices using the Enterprise SSO plugin require the Microsoft Single Sign On extension to support SSO and device-based Conditional Access in Google Chrome.</p>
 </blockquote>
@@ -1324,10 +1316,7 @@
     </span>        
     
 </h2>
-<p>Yes, I did say I wasn&rsquo;t going to dig into the Platform SSO configuration, but without actually configuring it we&rsquo;re not going to be able to utilise the authentication method into Google Chrome, so if you cba following the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune"   target="_blank">
-    Microsoft Learn article</a> have a look at the below, and the exported <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/SSOPlatformSettings.json"   target="_blank">
-    JSON</a> which you can <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog?tabs=sc-search-filter%2Csc-reporting#import-and-export-a-profile"   target="_blank">
-    import</a> into your own Microsoft Intune tenant if you&rsquo;re <del>lazy</del> productive with your time.</p>
+<p>Yes, I did say I wasn&rsquo;t going to dig into the Platform SSO configuration, but without actually configuring it we&rsquo;re not going to be able to utilise the authentication method into Google Chrome, so if you cba following the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune" target="_blank">Microsoft Learn article</a> have a look at the below, and the exported <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/SSOPlatformSettings.json" target="_blank">JSON</a> which you can <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog?tabs=sc-search-filter%2Csc-reporting#import-and-export-a-profile" target="_blank">import</a> into your own Microsoft Intune tenant if you&rsquo;re <del>lazy</del> productive with your time.</p>
 <table>
 <thead>
 <tr>
@@ -1434,11 +1423,8 @@
 </tr>
 </tbody>
 </table>
-<p>This settings catalog profile is configured to use <code>UserSecureEnclaveKey</code> for <a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless#platform-credential-for-macos"   target="_blank">
-    Passwordless authentication</a>, but feel free to amend any other settings in the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune"   target="_blank">
-    Microsoft Learn article</a> as you see fit.</p>
-<p>Assigning this to a group of test devices, yes I do actually test things, you should get the glorious device registration and <a href="aka.ms/IntuneForMac"  >
-    sign-in experience</a> with Entra ID credentials we&rsquo;ve all been after.</p>
+<p>This settings catalog profile is configured to use <code>UserSecureEnclaveKey</code> for <a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless#platform-credential-for-macos" target="_blank">Passwordless authentication</a>, but feel free to amend any other settings in the <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune" target="_blank">Microsoft Learn article</a> as you see fit.</p>
+<p>Assigning this to a group of test devices, yes I do actually test things, you should get the glorious device registration and <a href="aka.ms/IntuneForMac">sign-in experience</a> with Entra ID credentials we&rsquo;ve all been after.</p>
 
   
 
@@ -1467,8 +1453,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >If you encounter issues with the Entra Join and registration, have a look at the <a href="https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#insufficient-permissions"   target="_blank">
-    troubleshooting guide</a> for Platform SSO, specifically the Entra Join permissions.</span>
+    >If you encounter issues with the Entra Join and registration, have a look at the <a href="https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#insufficient-permissions" target="_blank">troubleshooting guide</a> for Platform SSO, specifically the Entra Join permissions.</span>
 </div>
 
 
@@ -1483,8 +1468,7 @@
     </span>        
     
 </h2>
-<p>With the Platform SSO configuration setup and deployed, we can now focus our attention on how we manage Google Chrome on macOS devices, including delivering the app, as well as configuring it to support the required <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji"   target="_blank">
-    Microsoft Single Sign On extension</a>.</p>
+<p>With the Platform SSO configuration setup and deployed, we can now focus our attention on how we manage Google Chrome on macOS devices, including delivering the app, as well as configuring it to support the required <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji" target="_blank">Microsoft Single Sign On extension</a>.</p>
 <p>I shouldn&rsquo;t be teaching you all to suck eggs, but for completions sake, we should probably go through deploying Google Chrome to your Microsoft Intune enrolled macOS devices, and we&rsquo;ve got a couple of ways to do this, depending on whether you want to force install this on your end user devices, or allow the app to be installed by the user.</p>
 
 
@@ -1498,9 +1482,7 @@
     </span>        
     
 </h3>
-<p>If you just want to get the latest version of Google Chrome out there to all assigned devices, then the easiest approach is to use a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts"   target="_blank">
-    Shell Script</a> and in particular the one in the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Apps/Google%20Chrome"   target="_blank">
-    shell-intune-samples</a> GitHub repository, which will run on a device, got get the latest Google Chrome version download, and install it.</p>
+<p>If you just want to get the latest version of Google Chrome out there to all assigned devices, then the easiest approach is to use a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts" target="_blank">Shell Script</a> and in particular the one in the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Apps/Google%20Chrome" target="_blank">shell-intune-samples</a> GitHub repository, which will run on a device, got get the latest Google Chrome version download, and install it.</p>
 <table>
 <thead>
 <tr>
@@ -1511,8 +1493,7 @@
 <tbody>
 <tr>
 <td style="text-align:left">Upload Script</td>
-<td style="text-align:left"><a href="https://github.com/microsoft/shell-intune-samples/blob/master/macOS/Apps/Google%20Chrome/installGoogleChrome.zsh"   target="_blank">
-    <code>installGoogleChrome.zsh</code></a></td>
+<td style="text-align:left"><a href="https://github.com/microsoft/shell-intune-samples/blob/master/macOS/Apps/Google%20Chrome/installGoogleChrome.zsh" target="_blank"><code>installGoogleChrome.zsh</code></a></td>
 </tr>
 <tr>
 <td style="text-align:left">Run script as signed-in user</td>
@@ -1590,10 +1571,8 @@
     </span>        
     
 </h3>
-<p>If you want to make the app available to your end users via the Company Portal, and who doesn&rsquo;t love self-service, then go ahead and download the <a href="https://chromeenterprise.google/browser/download/#mac-tab"   target="_blank">
-    pkg installer</a>.</p>
-<p>As we&rsquo;re looking to make the app available our only option in Microsoft Intune is to upload the file using the <code>Line-of-business app</code>, as <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-unmanaged-pkg"   target="_blank">
-    pkg apps</a> although great for pre and post deployment scripts, don&rsquo;t give the option for making apps available in the Company Portal.</p>
+<p>If you want to make the app available to your end users via the Company Portal, and who doesn&rsquo;t love self-service, then go ahead and download the <a href="https://chromeenterprise.google/browser/download/#mac-tab" target="_blank">pkg installer</a>.</p>
+<p>As we&rsquo;re looking to make the app available our only option in Microsoft Intune is to upload the file using the <code>Line-of-business app</code>, as <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-unmanaged-pkg" target="_blank">pkg apps</a> although great for pre and post deployment scripts, don&rsquo;t give the option for making apps available in the Company Portal.</p>
 <table>
 <thead>
 <tr>
@@ -1604,8 +1583,7 @@
 <tbody>
 <tr>
 <td style="text-align:left">Select file</td>
-<td style="text-align:left"><a href="https://chromeenterprise.google/browser/download/#mac-tab"   target="_blank">
-    <code>GoogleChrome.pkg</code></a></td>
+<td style="text-align:left"><a href="https://chromeenterprise.google/browser/download/#mac-tab" target="_blank"><code>GoogleChrome.pkg</code></a></td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
@@ -1683,9 +1661,7 @@
     </span>        
     
 </h2>
-<p>Google being quite a large enterprise, realise that you might want to actually configure Google Chrome on your devices, and give you examples of <a href="https://support.apple.com/en-gb/guide/terminal/apda49a1bb2-577e-4721-8f25-ffc0836f6997/"   target="_blank">
-    property list</a> files for configuring the app on macOS devices as part of their <a href="https://support.google.com/chrome/a/answer/9020077?hl=en&amp;ref_topic=7650028&amp;sjid=4114433957087609356-EU"   target="_blank">
-    Chrome Browser bundle</a>, but we&rsquo;re looking for specific settings today, around the requirement to force install a specific  of extension to support Platform SSO.</p>
+<p>Google being quite a large enterprise, realise that you might want to actually configure Google Chrome on your devices, and give you examples of <a href="https://support.apple.com/en-gb/guide/terminal/apda49a1bb2-577e-4721-8f25-ffc0836f6997/" target="_blank">property list</a> files for configuring the app on macOS devices as part of their <a href="https://support.google.com/chrome/a/answer/9020077?hl=en&amp;ref_topic=7650028&amp;sjid=4114433957087609356-EU" target="_blank">Chrome Browser bundle</a>, but we&rsquo;re looking for specific settings today, around the requirement to force install a specific  of extension to support Platform SSO.</p>
 
 
 <h3 class="relative group">Custom Configuration Profiles 
@@ -1698,10 +1674,8 @@
     </span>        
     
 </h3>
-<p>Using the <a href="https://support.google.com/chrome/a/answer/7517624?hl=en#zippy=%2Cpin-app-or-extension-updates%2Cset-installation-policies-automatically-install-force-install-allow-or-block"   target="_blank">
-    examples</a> provided by Google, we have a basis to create our custom <code>mobileconfig</code> file, which when complete, can be uploaded to Microsoft Intune and deployed to our macOS devices.</p>
-<p>As we&rsquo;re focusing solely on the forced installation of the <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji"   target="_blank">
-    Microsoft Single Sign On extension</a>, we can strip out everything else from the example, and can update the configuration file to install the extension we want.</p>
+<p>Using the <a href="https://support.google.com/chrome/a/answer/7517624?hl=en#zippy=%2Cpin-app-or-extension-updates%2Cset-installation-policies-automatically-install-force-install-allow-or-block" target="_blank">examples</a> provided by Google, we have a basis to create our custom <code>mobileconfig</code> file, which when complete, can be uploaded to Microsoft Intune and deployed to our macOS devices.</p>
+<p>As we&rsquo;re focusing solely on the forced installation of the <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji" target="_blank">Microsoft Single Sign On extension</a>, we can strip out everything else from the example, and can update the configuration file to install the extension we want.</p>
 <p>We need to update the settings under the key <code>installation_mode</code> setting the string value to <code>force_installed</code>, this in conjunction with the ID of the extension we want to force install <code>ppnbnpeolgkicgegkbkbjmhlideopiji</code> (which we can get from the extension URL itself), allows us to configure a custom profile for Google Chrome to ensure that the extension that unlocks all the Platform SSO goodness is deployed to devices with Google Chrome installed.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
@@ -1768,8 +1742,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
-</span></span></code></pre></div><p>The other settings in the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig"   target="_blank">
-    profile</a> ensure that the profile is installed in the system context and cannot be removed by an end user.</p>
+</span></span></code></pre></div><p>The other settings in the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig" target="_blank">profile</a> ensure that the profile is installed in the system context and cannot be removed by an end user.</p>
 
   
 
@@ -1798,8 +1771,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >The <code>PayloadUUID</code> keys should be unique to your environment, so go ahead and <a href="https://www.uuidgenerator.net/"   target="_blank">
-    generate</a> new ones for your own profile.</span>
+    >The <code>PayloadUUID</code> keys should be unique to your environment, so go ahead and <a href="https://www.uuidgenerator.net/" target="_blank">generate</a> new ones for your own profile.</span>
 </div>
 
 
@@ -1833,8 +1805,7 @@
 </tr>
 <tr>
 <td style="text-align:left">Configuration profile file</td>
-<td style="text-align:left"><a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig"   target="_blank">
-    <code>GoogleChromepSSO.mobileconfig</code></a></td>
+<td style="text-align:left"><a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig" target="_blank"><code>GoogleChromepSSO.mobileconfig</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -1936,8 +1907,7 @@
 <li>The user is prompted to sign-in to the service, completing MFA if required.</li>
 <li>Subsequent login prompts to Microsoft Entra authenticated services like <strong>teams.microsoft.com</strong> are now automatically passed through using SSO.</li>
 </ul>
-<p>All that to make browser sign-ins a little easier and to allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers"   target="_blank">
-    Conditional Access Policies</a> :grinning_face_with_sweat:.</p>
+<p>All that to make browser sign-ins a little easier and to allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers" target="_blank">Conditional Access Policies</a> :grinning_face_with_sweat:.</p>
 
   
 
@@ -1966,8 +1936,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >If you encounter issues with Google Chrome SSO, please refer to the <a href="https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#troubleshoot-google-chrome-sso-issues"   target="_blank">
-    Microsoft Learn</a> documentation.</span>
+    >If you encounter issues with Google Chrome SSO, please refer to the <a href="https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#troubleshoot-google-chrome-sso-issues" target="_blank">Microsoft Learn</a> documentation.</span>
 </div>
 
 
