@@ -1400,11 +1400,7 @@
     
 </h3>
 <p>We can use the above, and a little logic to detect whether the result of the <code>LastScanError</code> is a zero or not, and if it&rsquo;s not a zero throw an <code>Exit 1</code> to allow a remediation to run.</p>
-
-
-  
-    
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ps1" data-lang="ps1"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$wmiObj</span> <span class="p">=</span> <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$wmiObj</span><span class="p">.</span><span class="py">LastScanError</span> <span class="o">-ne</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps not updated.&#34;</span>
@@ -1418,10 +1414,8 @@
 </span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Unable to query Store App Update status.&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  
-
-<p>On to the remediation portion.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>On to the remediation portion.</p>
 
 
 <h3 class="relative group">Remediation Script 
@@ -1435,11 +1429,7 @@
     
 </h3>
 <p>We&rsquo;ve already done the ground work with the previous queries to test the update of apps, so this one is very straightforward.</p>
-
-
-  
-    
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ps1" data-lang="ps1"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">UpdateScanMethod</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps updated.&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">0</span>
@@ -1447,10 +1437,8 @@
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps not updated.&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  
-
-<p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
 
 
 <h2 class="relative group">Deploying the Remediation 
