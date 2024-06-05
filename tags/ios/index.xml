@@ -15,7 +15,7 @@
       
       <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
       <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/feature-appass.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/featured.png" />
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       
       <guid>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</guid>
       <description>Apple devices shouldn&amp;rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/feature-appleos.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/featured.png" />
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       
       <guid>https://memv.ennbee.uk/posts/apple-ade-profile-assignment/</guid>
       <description>Migrating iOS/iPadOS device to Microsoft Intune shouldn&amp;rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&amp;rsquo;t the exception.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/feature-apple-ade.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/featured.png" />
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
       <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/featured.png" />
     </item>
     
   </channel>

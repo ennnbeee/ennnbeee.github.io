@@ -15,7 +15,7 @@
       
       <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
       <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/feature-appass.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/featured.png" />
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       
       <guid>https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/</guid>
       <description>What if you want to ensure that all of your Microsoft Teams Rooms System accounts, and any future accounts can enrol using Android Device Administrator in Microsoft Intune?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/feature-mtr.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/featured.png" />
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       
       <guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid>
       <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/feature-googleplayapps.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/featured.png" />
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       
       <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
       <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/feature-appcategories.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/featured.png" />
     </item>
     
     <item>
@@ -55,7 +55,7 @@
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</guid>
       <description>Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/feature-android-custom.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/featured.png" />
     </item>
     
     <item>
@@ -65,7 +65,7 @@
       
       <guid>https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/</guid>
       <description>What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&amp;rsquo;t enrol to Intune using mobile data, well there&amp;rsquo;s a fix for that.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/feature-android-enrol.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/featured.png" />
     </item>
     
   </channel>

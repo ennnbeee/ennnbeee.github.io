@@ -15,7 +15,7 @@
       
       <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
       <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/feature-assignsc.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/featured.png" />
     </item>
     
   </channel>

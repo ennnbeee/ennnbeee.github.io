@@ -15,7 +15,7 @@
       
       <guid>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</guid>
       <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/feature-msgraph.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/featured.png" />
     </item>
     
   </channel>
