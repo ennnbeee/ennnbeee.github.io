@@ -30,8 +30,10 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.62d9e5a4f72e5f18879bb14f9133e9ea237bac445ad34d52e00a607d4f0f21f262f9ca0602d4b2ac00591796aa6431ba47959508cb56df52b2f49e433cc165a3.css"
-    integrity="sha512-YtnlpPcuXxiHm7FPkTPp6iN7rERa001S4ApgfU8PIfJi&#43;coGAtSyrABZF5aqZDG6R5WVCMtW31Ky9J5DPMFlow==" />
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.7eb177829b7a7a737767e9ef750cece36539cc6dfc6efb3a9ab7f66117229e9bf95a94a010ba0a07c0b4baf836681f10f8c050a2b48b23323071211ef0663f3e.css"
+    integrity="sha512-frF3gpt6enN3Z&#43;nvdQzs42U5zG38bvs6mrf2YRcinpv5WpSgELoKB8C0uvg2aB8Q&#43;MBQorSLIzIwcSEe8GY/Pg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -276,8 +278,7 @@
   
   
   <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
-  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px] bg-neutral dark:bg-neutral-800" style="z-index:100">
   <div class="relative max-w-[64rem] ml-auto mr-auto">
     <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
@@ -787,13 +788,6 @@
 
   </div>
 </div>
-<script>
-  window.addEventListener('scroll', function (e) {
-    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    var background_blur = document.getElementById('menu-blur');
-    background_blur.style.opacity = (scroll / 300);
-  });
-</script>
 
   
   <div class="relative flex flex-col grow">
@@ -2594,7 +2588,7 @@
     data-reactions-enabled="0"
     data-emit-metadata="0"
     data-input-position="top"
-    data-theme="https://memv.ennbee.uk/giscus.css"
+    data-theme="https://memv.ennbee.uk/css/giscus.css"
     data-lang="en"
     data-loading=" lazy"
     crossorigin="anonymous"
