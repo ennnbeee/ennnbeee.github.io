@@ -11,7 +11,7 @@
   <title>About &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
   <meta name="title" content="About &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
-  <meta name="description" content="I&#39;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions. I&#39;m currently the Principal Consultant within the Cloud Endpoint Practice at Phoenix Software Ltd who are the Global Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments." />
+  <meta name="description" content="About Nick Benton, Microsoft Intune Microsoft Configuration Manager, Principal Consultant, blogger." />
   
   
   <meta name="robots" content="all" />
@@ -30,10 +30,8 @@
   
   
   
-  
-  
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.7eb177829b7a7a737767e9ef750cece36539cc6dfc6efb3a9ab7f66117229e9bf95a94a010ba0a07c0b4baf836681f10f8c050a2b48b23323071211ef0663f3e.css"
-    integrity="sha512-frF3gpt6enN3Z&#43;nvdQzs42U5zG38bvs6mrf2YRcinpv5WpSgELoKB8C0uvg2aB8Q&#43;MBQorSLIzIwcSEe8GY/Pg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.62d9e5a4f72e5f18879bb14f9133e9ea237bac445ad34d52e00a607d4f0f21f262f9ca0602d4b2ac00591796aa6431ba47959508cb56df52b2f49e433cc165a3.css"
+    integrity="sha512-YtnlpPcuXxiHm7FPkTPp6iN7rERa001S4ApgfU8PIfJi&#43;coGAtSyrABZF5aqZDG6R5WVCMtW31Ky9J5DPMFlow==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -74,7 +72,7 @@
   <meta property="og:url" content="https://memv.ennbee.uk/about/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
   <meta property="og:title" content="About">
-  <meta property="og:description" content="I&#39;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions. I&#39;m currently the Principal Consultant within the Cloud Endpoint Practice at Phoenix Software Ltd who are the Global Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments.">
+  <meta property="og:description" content="About Nick Benton, Microsoft Intune Microsoft Configuration Manager, Principal Consultant, blogger.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png">
@@ -83,7 +81,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://memv.ennbee.uk/logo-card.png">
   <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="I&#39;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions. I&#39;m currently the Principal Consultant within the Cloud Endpoint Practice at Phoenix Software Ltd who are the Global Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments.">
+  <meta name="twitter:description" content="About Nick Benton, Microsoft Intune Microsoft Configuration Manager, Principal Consultant, blogger.">
 
   
   <script type="application/ld+json">
@@ -93,7 +91,7 @@
     "articleSection": "MEM v ENNBEE - Battles with Modern Device Management",
     "name": "About",
     "headline": "About",
-    "description": "I\u0027m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions. I\u0027m currently the Principal Consultant within the Cloud Endpoint Practice at Phoenix Software Ltd who are the Global Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments.",
+    "description": "About Nick Benton, Microsoft Intune Microsoft Configuration Manager, Principal Consultant, blogger.",
     "abstract": "I\u0026rsquo;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions.",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/about\/",
@@ -110,7 +108,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "848"
+    "wordCount": "846"
   }]
   </script>
 
@@ -269,7 +267,8 @@
   
   
   <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 pl-[24px] pr-[24px] bg-neutral dark:bg-neutral-800" style="z-index:100">
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
   <div class="relative max-w-[64rem] ml-auto mr-auto">
     <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
@@ -779,6 +778,13 @@
 
   </div>
 </div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
 
   
   <div class="relative flex flex-col grow">
@@ -940,7 +946,7 @@
     </a>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Principal Cloud Endpoint Consultant and Intune Blogger</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Principal Cloud Endpoint Consultant | Intune Blogger</div>
     
     <div class="text-2xl sm:text-lg">
       <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -1042,7 +1048,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>I&rsquo;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions. I&rsquo;m currently the Principal Cloud Endpoint Consultant at <a href="https://www.phoenixs.co.uk/" target="_blank">Phoenix Software Ltd</a> who are the Microsoft Partner of the Year for Modern Endpoint Management 2023, where my main focus is assisting customers in their road to a modern workplace using Microsoft Intune, with a focus on migration, security and zero touch deployments.</p>
-<p>I hold the certifications for <a href="https://learn.microsoft.com/en-us/users/ennnbeee/credentials" target="_blank">Microsoft 365 Enterprise Administrator and Modern Desktop Administrator</a>, which I should do as I work with the products on a daily basis.</p>
+<p>I use my website as a platform to share content with the community, based on solutions I find to problems encountered in real world scenarios.</p>
 
 
 <h2 class="relative group">Disclaimer 
