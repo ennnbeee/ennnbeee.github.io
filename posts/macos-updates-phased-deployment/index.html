@@ -1413,6 +1413,8 @@
 
 
 
+
+
   
   
     
@@ -1422,14 +1424,14 @@
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-update_hu2ebce60e6029dee53436781b65d27882_52656_filter_15455240925115679396.png"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-update_hu2ebce60e6029dee53436781b65d27882_52656_filter_2141759550915258816.png"
         alt="maOS Software Update Configuration"
       />
       
       <figcaption>Screenshot of Microsoft Intune Settings Catalog for macOS Software Update settings.</figcaption>
     </figure>
   
-
 </p>
 <p>You&rsquo;ll notice that for <code>Critical Update Install</code> and <code>Config Data Install</code> we&rsquo;re allowing these to just happen, you should, as they&rsquo;re important. What we want to control is when devices get OS updates, not leaving gaping security flaws in devices.</p>
 
@@ -1550,6 +1552,8 @@
 
 
 
+
+
   
   
     
@@ -1559,14 +1563,14 @@
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-updatesettings_hu4086939f9845b626200e3e2ab931078f_64570_filter_4021753432927791837.webp"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-updatesettings_hu4086939f9845b626200e3e2ab931078f_64570_filter_16017015542193521956.webp"
         alt="macOS Update Configuration"
       />
       
       <figcaption>Screenshot of the macOS Update Configuration Settings.</figcaption>
     </figure>
   
-
 </p>
 <p>Looks good, and matches what we&rsquo;ve configured in our baseline software update profile.</p>
 <p>Checking on the status of the updates, we&rsquo;ve actually got Sonoma 14.4 available on this device, regardless of the deployment group it&rsquo;s a member of, as 7+12=19 (quick maths) which is less than the date of this post:</p>
@@ -1574,6 +1578,8 @@
 
 
 
+
+
   
   
     
@@ -1583,14 +1589,14 @@
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-update_hubba74ebad54a1ff6669b0377983ca53f_13614_filter_11454530752960174710.webp"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-update_hubba74ebad54a1ff6669b0377983ca53f_13614_filter_2515401426144984151.webp"
         alt="macOS Update Configuration"
       />
       
       <figcaption>Screenshot of the macOS Update Configuration Settings.</figcaption>
     </figure>
   
-
 </p>
 <p>Luckily we&rsquo;ll be ready with our configured deferral settings for the next macOS software update release, and I hope it goes a little better than this release.</p>
 
@@ -1652,6 +1658,8 @@
 
 
 
+
+
   
   
     
@@ -1661,14 +1669,14 @@
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mau_hub02ac1ecf50fd8e7034ef6abe612dfdb_44539_filter_12272933618800180265.png"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mau_hub02ac1ecf50fd8e7034ef6abe612dfdb_44539_filter_13316771641472395391.png"
         alt="maOS Microsoft AutoUpdate Configuration"
       />
       
       <figcaption>Screenshot of Microsoft Intune Settings Catalog for macOS Microsoft AutoUpdate settings.</figcaption>
     </figure>
   
-
 </p>
 <p>Feel free to amened the <code>Number of minutes for the final countdown timer</code> and <code>Update check frequency (mins)</code> if you like your user base more than I do.</p>
 
@@ -1799,6 +1807,8 @@
 
 
 
+
+
   
   
     
@@ -1808,14 +1818,14 @@
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mausettings_hu0ff0572c7fcb9cd10c340a5f5be12b57_20002_filter_11420437682409420871.webp"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mausettings_hu0ff0572c7fcb9cd10c340a5f5be12b57_20002_filter_13600108590167042375.webp"
         alt="Microsoft AutoUpdate settings"
       />
       
       <figcaption>Screenshot of Microsoft AutoUpdate Settings.</figcaption>
     </figure>
   
-
 </p>
 <p>With no ability for the end user to install the updates on their own, and the correct configuration applied to the device we&rsquo;re off to a good start.</p>
 <p>Let&rsquo;s look at the updates themselves:</p>
@@ -1823,6 +1833,8 @@
 
 
 
+
+
   
   
     
@@ -1832,14 +1844,14 @@
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-maudef_hucfdcb0767c49c2c836b24e69c80785bb_69326_filter_6626637043199345662.webp"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-maudef_hucfdcb0767c49c2c836b24e69c80785bb_69326_filter_15372022187269728747.webp"
         alt="Microsoft AutoUpdate Updates"
       />
       
       <figcaption>Screenshot of Microsoft AutoUpdate Updates.</figcaption>
     </figure>
   
-
 </p>
 <p>Perfect, the Microsoft AutoUpdate application has detected that there are actually updates, but will adhere to the deferral and deadline settings, ensuring that the application updates do get installed, but when we want them to, not at the whim of the end user.</p>
 
@@ -1861,15 +1873,16 @@
 
 
 
+
+
   
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mem3_hu9c9135c1ea0ba3235cf2f861ee1db568_134702_filter_910858181844199194.png#center" alt="Modern Endpoint Management April 2024" />
+      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/img/macup-mem3_hu9c9135c1ea0ba3235cf2f861ee1db568_134702_filter_7248186689142084836.png#center" alt="Modern Endpoint Management April 2024" />
       
     </figure>
   
-
 </p>
 
         </div>

@@ -1376,15 +1376,16 @@
 
 
 
+
+
   
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1_huc728b9caaca057d553cf00f0db7d2caf_35962_filter_12421884018917668284.webp#left" alt="Reusable Setting Test" />
+      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1_huc728b9caaca057d553cf00f0db7d2caf_35962_filter_18102911337746160150.webp#left" alt="Reusable Setting Test" />
       <figcaption>Screenshot of Reusable firewall settings in Microsoft Intune.</figcaption>
     </figure>
   
-
 </p>
 <p>With a single <code>children</code> section for each auto resolve URL, and one section containing each of the IP addresses, and luckily for us, the structure of the JSON is the same whether it&rsquo;s the first setting in the list or the last, bar a trailing <code>,</code>.</p>
 <p>Let&rsquo;s look at how we can use PowerShell to build out our JSON structure for a reusable settings group.</p>
@@ -1610,15 +1611,16 @@
 
 
 
+
+
   
   
   
     <figure>
-      <img class="my-0 rounded-md" src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2_hu97502829e439bdbaa5e97653ad01c41c_38080_filter_12421884018917668284.webp#left" alt="Reusable Setting Test" />
+      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2_hu97502829e439bdbaa5e97653ad01c41c_38080_filter_18102911337746160150.webp#left" alt="Reusable Setting Test" />
       <figcaption>Screenshot of Reusable firewall settings created using Graph Explorer in Microsoft Intune.</figcaption>
     </figure>
   
-
 </p>
 <p>Though one new reusable group setting, with a single URL and IP address isn&rsquo;t really going to help us when there are quite a lot Microsoft Network Endpoints to deal with. So what now?</p>
 
@@ -1954,6 +1956,8 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 
 
 
+
+
   
   
     
@@ -1963,14 +1967,14 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-service_hu2a625d65a4830495819264d65b5edfab_34163_filter_14402564149670722060.png"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-service_hu2a625d65a4830495819264d65b5edfab_34163_filter_7129928323189147140.png"
         alt="Service Area Grouped Reusable Settings"
       />
       
       <figcaption>Screenshot of script created reusable firewall settings grouped by service area.</figcaption>
     </figure>
   
-
 </p>
 <p>It did, well done Microsoft Intune :clapping_hands:.</p>
 <p>Digging into the <code>Microsoft Endpoint Manager URLS and IPs</code> setting, we can see that the URLs are and IP addresses are now contained within the reusable setting.</p>
@@ -1978,6 +1982,8 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 
 
 
+
+
   
   
     
@@ -1987,14 +1993,14 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings_huc44aab67797b7677dee6b6f8fce3b557_42766_filter_2760991898504167444.webp"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings_huc44aab67797b7677dee6b6f8fce3b557_42766_filter_6622364892979226929.webp"
         alt="Service Area Grouped Reusable Settings"
       />
       
       <figcaption>Screenshot of script created reusable firewall settings grouped by service area for IP Addresses.</figcaption>
     </figure>
   
-
 </p>
 <p>Take my word for it, or use the script, to see the other reusable settings.</p>
 
@@ -2016,6 +2022,8 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 
 
 
+
+
   
   
     
@@ -2025,17 +2033,19 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-port_hu6e45671e509d7763cae405598718174f_46600_filter_3994875056309483151.png"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-port_hu6e45671e509d7763cae405598718174f_46600_filter_2021205193995122994.png"
         alt="Port Grouped Reusable Settings"
       />
       
       <figcaption>Screenshot of script created reusable firewall settings grouped by network port.</figcaption>
     </figure>
   
-
 </p>
 <p>Now looking at the <code>Exchange Online URLs and IPs TCP 143,587,993,995</code> setting, again all required URLs and IP addresses have been added to the group.</p>
 <p>
+
+
 
 
 
@@ -2048,14 +2058,14 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
       <img
         class="my-0 rounded-md"
-        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings_hu5f27a227242f970b50d7577579c085a0_62775_filter_8734656366192418548.png"
+        loading="lazy"
+        src="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings_hu5f27a227242f970b50d7577579c085a0_62775_filter_15302438720444497236.png"
         alt="Port Grouped Reusable Settings"
       />
       
       <figcaption>Screenshot of script created reusable firewall settings IP addresses grouped by network port.</figcaption>
     </figure>
   
-
 </p>
 <p>Brilliant, no more copy/paste for me, or in fact, you.</p>
 
