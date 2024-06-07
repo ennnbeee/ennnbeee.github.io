@@ -1296,17 +1296,10 @@
 <p>
 
 
-
-
-
-  
-  
-  
     <figure>
       <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu19053798857ed3ee5717149ddca15ca6_54164_filter_13310848595707931394.webp#left" alt="Autopilot Devices" />
       <figcaption>Screenshot of the export of Windows Autopilot devices to csv from Microsoft Intune.</figcaption>
     </figure>
-  
 </p>
 <p>Now with the CSV file, we really only need two headings, Serial Number and Group Tag. So open up your favourite editor and bin off every other heading.</p>
 <p>Whilst you&rsquo;re there, be a darling and rename &lsquo;Serial Number&rsquo; to &lsquo;SerialNumber&rsquo; and &lsquo;Group Tag&rsquo; to &lsquo;GroupTag&rsquo;, like so:</p>
@@ -1644,17 +1637,10 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 <p>
 
 
-
-
-
-  
-  
-  
     <figure>
       <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-login_hu5b279fadf2b33405b64ed1e99b8d86d5_28072_filter_14281852759288934352.webp#left" alt="Authentication" />
       <figcaption>Screenshot of authentication to Entra ID.</figcaption>
     </figure>
-  
 </p>
 <p>Now we need to provide the path to the CSV file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Please provide the path to the CSV file containing a list of device serial numbers and new Group Tag  e.g. C:\temp\devices.csv:
@@ -1662,33 +1648,19 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 <p>
 
 
-
-
-
-  
-  
-  
     <figure>
       <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv_hub9581cd31787ec1fda2c076cd7923620_24866_filter_11977383660963603048.webp#left" alt="Script Output" />
       <figcaption>Screenshot of the PowerShell script output after assigning Group Tags.</figcaption>
     </figure>
-  
 </p>
 <p>And if we check in Intune:</p>
 <p>
 
 
-
-
-
-  
-  
-  
     <figure>
       <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged_hue469e6e059c6926fa18b761bdc9ca945_45074_filter_8077725206597617557.webp#left" alt="Group Tag" />
       <figcaption>Screenshot of the updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
     </figure>
-  
 </p>
 <p>Which amazingly, the Group Tag matches the data in the CSV file we created earlier. Too early to call this a win outright, but we&rsquo;re on the way.</p>
 
@@ -1710,33 +1682,19 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 <p>
 
 
-
-
-
-  
-  
-  
     <figure>
       <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online_hu7f098712e07cafa5adb5d98b90d2fb16_16880_filter_10704068868767756735.webp#left" alt="Script Output" />
       <figcaption>Screenshot of the PowerShell script output after assigning Group Tags.</figcaption>
     </figure>
-  
 </p>
 <p>And if we check in Intune:</p>
 <p>
 
 
-
-
-
-  
-  
-  
     <figure>
       <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged_hu205b753c59c4a14146b81f79d86ef2c3_44676_filter_10594788249684827944.webp#left" alt="Group Tag" />
       <figcaption>Screenshot of the updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
     </figure>
-  
 </p>
 <p>This Group Tag matches the <code>DefaultGroupTag</code> parameter we set when running the script. I&rsquo;d call this one a win.</p>
 

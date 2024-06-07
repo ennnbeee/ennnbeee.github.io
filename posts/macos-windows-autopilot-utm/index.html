@@ -116,7 +116,7 @@
     "keywords": ["intune","macos","windows","autopilot","enrolment"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1476"
+    "wordCount": "1482"
   }]
   </script>
 
@@ -1277,26 +1277,15 @@
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-crystal_hub555d647c268420eee7658e95a66b659_110032_filter_6828496902040361714.png"
         alt="CrystalFetch downloading Windows 11 ARM"
       />
-      
       <figcaption>Screenshot of CrystalFetch preparing to download Windows 11 ARM en-gb.</figcaption>
     </figure>
-  
 </p>
 
   
@@ -1504,26 +1493,15 @@
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-noserial_hu8d5c56186ee6d9177d04249fc117d1ca_150016_filter_13956250056623566372.png"
         alt="Capturing Windows Autopilot Hardware Hash"
       />
-      
       <figcaption>Screenshot of failing to get the hardware hash from the device.</figcaption>
     </figure>
-  
 </p>
 <p>We don&rsquo;t need to be a genius here to see that the error given relates to a lack of <code>serialNumber</code> on the virtual machine itself, which is required to build the hardware hash value that we need to add the device to Microsoft Intune as an Autopilot device.</p>
 <p>So what gives?</p>
@@ -1545,51 +1523,29 @@
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-edit_hu373bc013f63070215d023caf6626277e_171272_filter_3826181181399934870.png"
         alt="UTM Virtual Machine edit"
       />
-      
       <figcaption>Screenshot the UTM Virtual Machine edit menu.</figcaption>
     </figure>
-  
 </p>
 <p>Then navigate to <strong>QEMU &gt; Arguments</strong>:</p>
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-qemu_hu010117f79d169f0f9014e38a9b90558a_135918_filter_4530582511372952781.png"
         alt="QEMU Parameters"
       />
-      
       <figcaption>Screenshot the UTM Virtual Machine QEMU parameters.</figcaption>
     </figure>
-  
 </p>
 <p>Selecting <strong>New</strong> we can add in the following line:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">-smbios
@@ -1632,26 +1588,15 @@
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-serial_huf881b811f5a5b50713e0c48acd5766b9_138734_filter_15876600562563084804.png"
         alt="QEMU parameters for serial number"
       />
-      
       <figcaption>Screenshot of serial number parameters in the QEMU parameter settings in the Virtual Machine.</figcaption>
     </figure>
-  
 </p>
 <p>Select <strong>Save</strong>, which on the screenshot is the button next to <strong>Cancel</strong> but for whatever reason in dark mode you can&rsquo;t see the text.</p>
 
@@ -1744,51 +1689,29 @@
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-sync_huefc5f725430ca8e5184fb3d142145990_146135_filter_17493921520504880877.png"
         alt="Windows Autopilot device upload"
       />
-      
       <figcaption>Screenshot of a completed synchronisation of a new Windows Autopilot device.</figcaption>
     </figure>
-  
 </p>
 <p>We can check the progress of the upload in Microsoft Intune, so navigate to <strong>Devices &gt; Enrollment</strong> and under the <strong>Windows Autopilot</strong> heading select <strong>Devices</strong>, and we should now see our newly uploaded device:</p>
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-autopilot_hu2f9caa9670e58534fe5abc02a792b175_150451_filter_16709878149485302351.png"
         alt="Windows Autopilot Devices"
       />
-      
       <figcaption>Screenshot of a Windows Autopilot Devices in Microsoft Intune.</figcaption>
     </figure>
-  
 </p>
 <p>We could have assigned a <strong>Group Tag</strong> as part of the PowerShell script using:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-WindowsAutopilotInfoCommunity</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Online</span> <span class="n">-GroupTag</span> <span class="n">Entra</span>
@@ -1796,51 +1719,29 @@
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-grouptag_hub205017c394efaba77029751fbd6c86e_135392_filter_14841419233189933045.png"
         alt="Windows Autopilot Group Tag"
       />
-      
       <figcaption>Screenshot of a Windows Autopilot devices with Group Tag and profile assigned in Microsoft Intune.</figcaption>
     </figure>
-  
 </p>
 <p>We can now restart our Windows 11 device, and low and behold it&rsquo;s ready to start the Windows Autopilot deployment process:</p>
 <p>
 
 
-
-
-
-  
-  
-    
-  
-  
     <figure>
-      
       <img
         class="my-0 rounded-md"
         loading="lazy"
         src="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/img/macutm-deploy_hu102841dedf507b08d75af5c509cd46f8_239687_filter_849644144579840026.png"
         alt="Windows Autopilot Deployment"
       />
-      
       <figcaption>Screenshot of a Virtual Machine starting the Windows Autopilot Deployment.</figcaption>
     </figure>
-  
 </p>
 <p>Or if you really want to watch the more of the process:</p>
 <video controls preload="auto" width="100%"  playsinline class="html-video">
@@ -1894,6 +1795,17 @@
       class="dark:text-neutral-300"
     >If you want an overview Windows Autopilot device preparation and the corporate device identifier process, I recommend this <a href="https://joostgelijsteen.com/autopilot-device-preparation/" target="_blank">article</a> from <a href="https://www.linkedin.com/in/jgelijsteen/" target="_blank">Joost Gelijsteen</a>.</span>
 </div>
+
+<p>The soundtrack for this post was:</p>
+
+
+
+<iframe src="https://open.spotify.com/embed/album/0TDJRkEr2SrhWTetdkEzED"
+    width="100%"
+    height="380"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"></iframe>
 
 
         </div>
