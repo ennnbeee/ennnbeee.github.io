@@ -198,5 +198,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/featured.png" />
     </item>
     
+    <item>
+      <title>Bulk Adding Device Notes to Enrolled Devices</title>
+      <link>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</link>
+      <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
+      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/featured.png" />
+    </item>
+    
   </channel>
 </rss>

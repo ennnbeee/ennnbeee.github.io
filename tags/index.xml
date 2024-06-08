@@ -19,36 +19,6 @@
     </item>
     
     <item>
-      <title>macOS</title>
-      <link>https://memv.ennbee.uk/tags/macos/</link>
-      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/macos/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/tags/intune/</link>
-      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/intune/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/tags/windows/</link>
-      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Windows Autopilot</title>
       <link>https://memv.ennbee.uk/tags/autopilot/</link>
       <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
@@ -94,16 +64,6 @@
       <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/updates/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Apple</title>
-      <link>https://memv.ennbee.uk/tags/apple/</link>
-      <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/apple/</guid>
       <description></description>
       
     </item>
@@ -189,11 +149,11 @@
     </item>
     
     <item>
-      <title>Shell Script</title>
-      <link>https://memv.ennbee.uk/tags/shellscript/</link>
+      <title>Shell Scripts</title>
+      <link>https://memv.ennbee.uk/tags/shell/</link>
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/shellscript/</guid>
+      <guid>https://memv.ennbee.uk/tags/shell/</guid>
       <description></description>
       
     </item>
@@ -259,37 +219,7 @@
     </item>
     
     <item>
-      <title>Microsoft Configuration Manager</title>
-      <link>https://memv.ennbee.uk/tags/configmgr/</link>
-      <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/configmgr/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://memv.ennbee.uk/tags/android/</link>
-      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/android/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>iOS/iPadOS</title>
-      <link>https://memv.ennbee.uk/tags/ios/</link>
-      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/ios/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Hybrid Azure AD</title>
+      <title>Hybrid Entra Join</title>
       <link>https://memv.ennbee.uk/tags/hybrid/</link>
       <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
       
@@ -404,6 +334,16 @@
       <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/encryption/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Apple</title>
+      <link>https://memv.ennbee.uk/tags/apple/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/apple/</guid>
       <description></description>
       
     </item>
