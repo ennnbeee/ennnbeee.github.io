@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9516e58f820d59ec321a87bc9a2eed782073143ff04b2cdc7c41db7ae8b9be6bccea49d4becc3d72315b01210d8835af853dc1c25859f7b156de09eedd5978c9.css"
-    integrity="sha512-lRblj4INWewyGoe8mi7teCBzFD/wSyzcfEHbeui5vmvM6knUvsw9cjFbASENiDWvhT3BwlhZ97FW3gnu3Vl4yQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.62d9e5a4f72e5f18879bb14f9133e9ea237bac445ad34d52e00a607d4f0f21f262f9ca0602d4b2ac00591796aa6431ba47959508cb56df52b2f49e433cc165a3.css"
+    integrity="sha512-YtnlpPcuXxiHm7FPkTPp6iN7rERa001S4ApgfU8PIfJi&#43;coGAtSyrABZF5aqZDG6R5WVCMtW31Ky9J5DPMFlow==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -118,7 +118,7 @@
     "keywords": ["updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1746"
+    "wordCount": "1627"
   }]
   </script>
 
@@ -162,6 +162,13 @@
 
 
 
+
+    
+    <script defer src="/lib/packery/packery.pkgd.min.js" integrity=""></script>
+
+    
+    
+    <script type="text/javascript" src="/js/shortcodes/gallery.min.9b4cb28f931ed922c26fb9b2510c2debb370f6a63305050c2af81740b2919883715e24efbbdf3a081496718ec751df3a72729d4d0bc71d6071297563a97ce1ee.js" integrity="sha512-m0yyj5Me2SLCb7myUQwt67Nw9qYzBQUMKvgXQLKRmINxXiTvu986CBSWcY7HUd86cnKdTQvHHWBxKXVjqXzh7g=="></script>
 
 
 
@@ -1501,53 +1508,17 @@
 </span></span><span class="line"><span class="cl">  <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="mf">3</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>There we go, we can tag our devices using extension attributes with their risk state, not just once, but many many times, and keep on top of devices that have been updated to Windows 11 already.</p>
-<p>A quick straw poll of devices in Entra ID, we can see that the tag has applied successfully.</p>
-<ul>
-<li>
-<p>Low Risk Device
+<p>A quick straw poll of devices in Entra ID, we can see that the tag has applied successfully:</p>
 
 
+<div id="gallery-92c91a316a1ee092a77120bce65b60f3" class="gallery">
+  
+    <img src="img/w11risk-device-low.webp" alt="Screenshot of Low Risk Device in Entra ID." class="grid-w25" />
+    <img src="img/w11risk-device-med.webp" alt="Screenshot of Low Risk Device in Entra ID." class="grid-w25" />
+    <img src="img/w11risk-device-notready.webp" alt="Screenshot of Not Ready Device in Entra ID." class="grid-w25" />
+    <img src="img/w11risk-device-unknown.webp" alt="Screenshot of Unknown Risk Device in Entra ID." class="grid-w25" />
 
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low_hub9edd9fa13cd4d44def723cb38be54d3_16122_filter_7849477097545270029.webp#left" alt="Low Risk Device" />
-      <figcaption>Screenshot of Low Risk Device in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>Medium Risk Device
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med_hu531eaa475192ba18b314e21d33e38325_16136_filter_6602032002340522396.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Medium Risk Device in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>Not Ready Device
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready_hu064646d79f382216018248fc2a97c046_15376_filter_7081197998362145864.webp#left" alt="High Risk Device" />
-      <figcaption>Screenshot of Not Ready Device in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>Unknown Risk Device
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown_hu383664cbcb52238d93f9675bcd5356ee_16264_filter_6694883275101695618.webp#left" alt="Unknown Risk Device" />
-      <figcaption>Screenshot of Unknown Risk Device in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-</ul>
+</div>
 <p>We should do something sensible with these tags on the devices now.</p>
 
 
@@ -1645,64 +1616,18 @@
 <li>Not Ready - 14 devices</li>
 <li>Unknown - 48 devices</li>
 </ul>
-<p>Now have a look at the obviously un-doctored screenshots of each of our Dynamic Device Security Groups.</p>
-<ul>
-<li>
-<p>Low Risk Devices Dynamic Group
+<p>Now have a look at the obviously un-doctored screenshots of each of our Dynamic Device Security Groups:</p>
 
 
+<div id="gallery-0ae804ccd128a08e0a29c4a7a016fcaa" class="gallery">
+  
+    <img src="img/w11risk-group-low.webp" alt="Screenshot of Low Risk Devices Dynamic Group in Entra ID." class="grid-w20" />
+    <img src="img/w11risk-group-med.webp" alt="Screenshot of Medium Risk Devices Dynamic Group in Entra ID." class="grid-w20" />
+    <img src="img/w11risk-group-high.webp" alt="Screenshot of High Risk Devices Dynamic Group in Entra ID." class="grid-w20" />
+    <img src="img/w11risk-group-notready.webp" alt="Screenshot of Not Ready Devices Dynamic Group in Entra ID." class="grid-w20" />
+    <img src="img/w11risk-group-unknown.webp" alt="Screenshot of Unknown Risk Devices Dynamic Group in Entra ID." class="grid-w20" />
 
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low_hud5388e79d27f55f5c91c000f0ce75498_22432_filter_17920478474513331187.webp#left" alt="Low Risk Device" />
-      <figcaption>Screenshot of Low Risk Devices Dynamic Group in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>Medium Risk Devices Dynamic Group
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med_hu79225c55013ff5a43ff53c74b809862b_22800_filter_17920478474513331187.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Medium Risk Devices Dynamic Group in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>High Risk Devices Dynamic Group
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high_hu05db4e408df4666afc931e77f6e72154_22460_filter_17920478474513331187.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of High Risk Devices Dynamic Group in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>Not Ready Devices Dynamic Group
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready_hu1d206e75e4de2652521cde280a6caf4b_22328_filter_17920478474513331187.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Not Ready Devices Dynamic Group in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-<li>
-<p>Unknown Risk Devices Dynamic Group
-
-
-
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown_hubbd29ca4a499b9990f38d817429cb738_22726_filter_17920478474513331187.webp#left" alt="Medium Risk Device" />
-      <figcaption>Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.</figcaption>
-    </figure>
-</p>
-</li>
-</ul>
+</div>
 <p>And there you have it, matchy matchy values for each of the risk types. You&rsquo;ll notice there isn&rsquo;t a group for the three devices already upgraded to Windows 11 23H2, as we don&rsquo;t care about these ones for the purpose of a Feature Update to the same version that&rsquo;s already installed.</p>
 
 
