@@ -1,1 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android on MEM v ENNBEE - Battles with Modern Device Management</title><link>https://memv.ennbee.uk/categories/android/</link><description>Recent content in Android on MEM v ENNBEE - Battles with Modern Device Management</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright><lastBuildDate>Mon, 13 Feb 2023 20:46:43 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml"/><item><title>Assigning Intune Mobile Apps Quickly and Consistently</title><link>https://memv.ennbee.uk/posts/assigning-intune-applications/</link><pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate><guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid><description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/featured.png"/></item><item><title>Enrolling Microsoft Teams Room Systems in Intune</title><link>https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/</link><pubDate>Mon, 14 Nov 2022 20:21:20 +0000</pubDate><guid>https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/</guid><description>What if you want to ensure that all of your Microsoft Teams Rooms System accounts, and any future accounts can enrol using Android Device Administrator in Microsoft Intune?</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/featured.png"/></item><item><title>The Easy Way to Approve Managed Google Play Apps</title><link>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</link><pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate><guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid><description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/featured.png"/></item><item><title>Customising the Android Enterprise Enrolment QR Code</title><link>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</link><pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate><guid>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</guid><description>Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/featured.png"/></item><item><title>Enrolling Android Enterprise devices Using Mobile Data</title><link>https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/</link><pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate><guid>https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/</guid><description>What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&amp;rsquo;t enrol to Intune using mobile data, well there&amp;rsquo;s a fix for that.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/featured.png"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on MEM v ENNBEE - Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/categories/android/</link>
+    <description>Recent content in Android on MEM v ENNBEE - Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Mon, 13 Feb 2023 20:46:43 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assigning Intune Mobile Apps Quickly and Consistently</title>
+      <link>https://memv.ennbee.uk/posts/assigning-intune-applications/</link>
+      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
+      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/featured.png" />
+    </item>
+    
+    <item>
+      <title>Enrolling Microsoft Teams Room Systems in Intune</title>
+      <link>https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/</link>
+      <pubDate>Mon, 14 Nov 2022 20:21:20 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/</guid>
+      <description>What if you want to ensure that all of your Microsoft Teams Rooms System accounts, and any future accounts can enrol using Android Device Administrator in Microsoft Intune?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/microsoft-teams-rooms-android-device-administrator/featured.png" />
+    </item>
+    
+    <item>
+      <title>The Easy Way to Approve Managed Google Play Apps</title>
+      <link>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</link>
+      <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid>
+      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/featured.png" />
+    </item>
+    
+    <item>
+      <title>Customising the Android Enterprise Enrolment QR Code</title>
+      <link>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</link>
+      <pubDate>Wed, 11 May 2022 10:34:53 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/</guid>
+      <description>Making your users lives easier with Android Fully Managed Corporate Owned enrolment, this time auto adding a corporate wireless network.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-custom-qr-code/featured.png" />
+    </item>
+    
+    <item>
+      <title>Enrolling Android Enterprise devices Using Mobile Data</title>
+      <link>https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/</link>
+      <pubDate>Mon, 21 Mar 2022 18:07:33 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/</guid>
+      <description>What happens when your Android Fully Managed Corporate Owned users get a new Android 11 device and they can&amp;rsquo;t enrol to Intune using mobile data, well there&amp;rsquo;s a fix for that.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-enrolment-mobile-data/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

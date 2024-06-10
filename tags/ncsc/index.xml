@@ -1,1 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NCSC on MEM v ENNBEE - Battles with Modern Device Management</title><link>https://memv.ennbee.uk/tags/ncsc/</link><description>Recent content in NCSC on MEM v ENNBEE - Battles with Modern Device Management</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright><lastBuildDate>Tue, 11 Jul 2023 13:22:07 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/ncsc/index.xml" rel="self" type="application/rss+xml"/><item><title>Revisiting macOS National Cyber Security Centre Security Settings</title><link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link><pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate><guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid><description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/featured.png"/></item><item><title>macOS National Cyber Security Centre Security Settings in Intune</title><link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link><pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate><guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid><description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NCSC on MEM v ENNBEE - Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/ncsc/</link>
+    <description>Recent content in NCSC on MEM v ENNBEE - Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Tue, 11 Jul 2023 13:22:07 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/ncsc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link>
+      <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
+      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/featured.png" />
+    </item>
+    
+    <item>
+      <title>macOS National Cyber Security Centre Security Settings in Intune</title>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

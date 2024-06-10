@@ -1,1 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Groups on MEM v ENNBEE - Battles with Modern Device Management</title><link>https://memv.ennbee.uk/tags/groups/</link><description>Recent content in Groups on MEM v ENNBEE - Battles with Modern Device Management</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright><lastBuildDate>Sat, 18 May 2024 18:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/groups/index.xml" rel="self" type="application/rss+xml"/><item><title>Risk Based Windows 11 Feature Update Deployment - Automation</title><link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</link><pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate><guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</guid><description>The final part in this series looks at how to bring everything together under a single, repeatable script, allowing for the capture of readiness state, the tagging of devices to support the distribution of Windows 11 23H2.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/featured.jpg"/></item><item><title>Risk Based Windows 11 Feature Update Deployment - Feature Updates</title><link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</link><pubDate>Sun, 05 May 2024 10:18:36 +0000</pubDate><guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</guid><description>Using the data captured from a Windows 11 Feature Update Readiness report to successfully tag device attributes to device objects, and group them based on risk, we now look at how to deploy Feature Updates to these devices in a controlled manner.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/featured.jpg"/></item><item><title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title><link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</link><pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate><guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid><description>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/featured.jpg"/></item><item><title>Software Update Deployment Rings for Managed macOS Devices</title><link>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</link><pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate><guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid><description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.jpeg"/></item><item><title>Risk Based Windows 11 Feature Update Deployment - Reporting</title><link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link><pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate><guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid><description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.jpg"/></item><item><title>A Flexible Approach to Microsoft Update Deployments</title><link>https://memv.ennbee.uk/posts/flexible-update-deployments/</link><pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate><guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid><description>It&amp;rsquo;s been a while since we&amp;rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/featured.jpg"/></item><item><title>Intelligent Phased Windows Update for Business Deployments</title><link>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</link><pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate><guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid><description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/featured.png"/></item><item><title>Dynamic Groups vs Device Filters</title><link>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</link><pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate><guid>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</guid><description>Now if you&amp;rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/endpoint-manager-device-filters/featured.png"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Groups on MEM v ENNBEE - Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/groups/</link>
+    <description>Recent content in Groups on MEM v ENNBEE - Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Sat, 18 May 2024 18:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/groups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Automation</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</link>
+      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</guid>
+      <description>The final part in this series looks at how to bring everything together under a single, repeatable script, allowing for the capture of readiness state, the tagging of devices to support the distribution of Windows 11 23H2.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Feature Updates</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</link>
+      <pubDate>Sun, 05 May 2024 10:18:36 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</guid>
+      <description>Using the data captured from a Windows 11 Feature Update Readiness report to successfully tag device attributes to device objects, and group them based on risk, we now look at how to deploy Feature Updates to these devices in a controlled manner.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</link>
+      <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
+      <description>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Software Update Deployment Rings for Managed macOS Devices</title>
+      <link>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</link>
+      <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
+      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.jpeg" />
+    </item>
+    
+    <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link>
+      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
+      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>A Flexible Approach to Microsoft Update Deployments</title>
+      <link>https://memv.ennbee.uk/posts/flexible-update-deployments/</link>
+      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid>
+      <description>It&amp;rsquo;s been a while since we&amp;rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Intelligent Phased Windows Update for Business Deployments</title>
+      <link>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</link>
+      <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
+      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/featured.png" />
+    </item>
+    
+    <item>
+      <title>Dynamic Groups vs Device Filters</title>
+      <link>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</link>
+      <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</guid>
+      <description>Now if you&amp;rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/endpoint-manager-device-filters/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
