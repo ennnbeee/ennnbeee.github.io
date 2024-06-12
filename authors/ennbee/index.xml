@@ -469,6 +469,16 @@
     </item>
     
     <item>
+      <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
+      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</link>
+      <pubDate>Thu, 29 Mar 1984 10:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</guid>
+      <description>Everyone loves a security baseline, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of their benchmark, including a build kit for Microsoft Intune, but what does it break for BitLocker encryption?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/featured.png" />
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://memv.ennbee.uk/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
