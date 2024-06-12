@@ -1277,8 +1277,7 @@
           alt="CrystalFetch downloading Windows 11 ARM"
         />
         <figcaption>Screenshot of CrystalFetch preparing to download Windows 11 ARM en-gb.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 
   
 
@@ -1494,8 +1493,7 @@
           alt="Capturing Windows Autopilot Hardware Hash"
         />
         <figcaption>Screenshot of failing to get the hardware hash from the device.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>We don&rsquo;t need to be a genius here to see that the error given relates to a lack of <code>serialNumber</code> on the virtual machine itself, which is required to build the hardware hash value that we need to add the device to Microsoft Intune as an Autopilot device.</p>
 <p>So what gives?</p>
 
@@ -1525,8 +1523,7 @@
           alt="UTM Virtual Machine edit"
         />
         <figcaption>Screenshot the UTM Virtual Machine edit menu.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Then navigate to <strong>QEMU &gt; Arguments</strong>:</p>
 <p>
 
@@ -1540,8 +1537,7 @@
           alt="QEMU Parameters"
         />
         <figcaption>Screenshot the UTM Virtual Machine QEMU parameters.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Selecting <strong>New</strong> we can add in the following line:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">-smbios
 </span></span></code></pre></div><p>Followed by selecting <strong>New</strong> again, to add in the below where <code>XXXXXXXX</code> is the value of a serial number:</p>
@@ -1592,8 +1588,7 @@
           alt="QEMU parameters for serial number"
         />
         <figcaption>Screenshot of serial number parameters in the QEMU parameter settings in the Virtual Machine.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Select <strong>Save</strong>, which on the screenshot is the button next to <strong>Cancel</strong> but for whatever reason in dark mode you can&rsquo;t see the text.</p>
 
 
@@ -1694,8 +1689,7 @@
           alt="Windows Autopilot device upload"
         />
         <figcaption>Screenshot of a completed synchronisation of a new Windows Autopilot device.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>We can check the progress of the upload in Microsoft Intune, so navigate to <strong>Devices &gt; Enrollment</strong> and under the <strong>Windows Autopilot</strong> heading select <strong>Devices</strong>, and we should now see our newly uploaded device:</p>
 <p>
 
@@ -1709,8 +1703,7 @@
           alt="Windows Autopilot Devices"
         />
         <figcaption>Screenshot of a Windows Autopilot Devices in Microsoft Intune.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>We could have assigned a <strong>Group Tag</strong> as part of the PowerShell script using:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-WindowsAutopilotInfoCommunity</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Online</span> <span class="n">-GroupTag</span> <span class="n">Entra</span>
 </span></span></code></pre></div><p>But I didn&rsquo;t, so assigning that Group Tag now will allow for a Deployment Profile to be assigned:</p>
@@ -1726,8 +1719,7 @@
           alt="Windows Autopilot Group Tag"
         />
         <figcaption>Screenshot of a Windows Autopilot devices with Group Tag and profile assigned in Microsoft Intune.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>We can now restart our Windows 11 device, and low and behold it&rsquo;s ready to start the Windows Autopilot deployment process:</p>
 <p>
 
@@ -1741,8 +1733,7 @@
           alt="Windows Autopilot Deployment"
         />
         <figcaption>Screenshot of a Virtual Machine starting the Windows Autopilot Deployment.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Or if you really want to watch the more of the process:</p>
 <video controls preload="auto" width="100%"  playsinline class="html-video">
     <source src="/posts/macos-windows-autopilot-utm/img/macutm-autopilotdeploy.webm" type="video/webm">

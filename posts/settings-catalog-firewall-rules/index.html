@@ -1488,8 +1488,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/img/fw-legacy_hue24c5689a156e3cbe205530b832bdc71_19524_filter_11206692181215369722.webp#left" alt="Legacy Firewall Rules" />
         <figcaption>Screenshot of legacy Firewall Rule policies in Microsoft Intune.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Adding them into an array so we can loop through each one of them, and extract the needed data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$FirewallPolicies</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="s1">&#39;LegacyRules-0&#39;</span><span class="p">,</span> <span class="s1">&#39;LegacyRules-1&#39;</span><span class="p">,</span><span class="s1">&#39;LegacyRules-2&#39;</span><span class="p">,</span> <span class="s1">&#39;LegacyRules-3&#39;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Using the Endpoint Security functions we can now process each of the profiles and rip out all the rules into a useable format using a new array variable <code>$FWRules</code>.</p>
@@ -2073,8 +2072,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/img/fw-new_hu07a1c6a853d9ab7b4ab8b801e5349aac_48554_filter_11196301578611117032.webp#left" alt="New Firewall Rules" />
         <figcaption>Screenshot of the new Firewall Rule policies in Microsoft Intune.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Let&rsquo;s have a gander at comparing the rules between the profiles, with the old profile looking like the below with the rule detail.</p>
 <p>
 
@@ -2083,8 +2081,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/img/fw-legacydetail_hu02599bcfc8ed12773e88828242f48af4_118426_filter_17369691692468208716.webp#left" alt="Old Firewall Rule Detail" />
         <figcaption>Screenshot of legacy Firewall Rule policy settings in Microsoft Intune.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>And the new policy looking pretty damn good.</p>
 <p>
 
@@ -2093,8 +2090,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/img/fw-newdetail_huef7057fbc520a613a739ad5080f72971_89294_filter_12912737342108425434.webp#left" alt="New Firewall Rule Detail" />
         <figcaption>Screenshot of the new Firewall Rule policy settings in Microsoft Intune.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>I think we&rsquo;re done.</p>
 
 

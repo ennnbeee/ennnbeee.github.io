@@ -1292,8 +1292,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-entra_huc8791fa5a98d6b2ca4a7dbf5f518ab0f_115898_filter_13462319667028914493.webp#left" alt="Entra ID Device" />
         <figcaption>Screenshot of an Entra ID Windows device.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Currently this device has no attributes assigned, shock. We&rsquo;ll need the <code>Object ID</code> in a second, so may as well grab it now.</p>
 <p>What about using Graph? We can pull back these attributes by querying the device itself, using a <code>GET</code> to <code>https://graph.microsoft.com/beta/devices/{objectId}/</code>, so for this device the call is <code>https://graph.microsoft.com/beta/devices/492a52d0-ec1a-40ed-8ea5-79f27aa0f8bf/</code>.</p>
 <p>
@@ -1303,8 +1302,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-graphexp_hu6b7354cd53572277914fe76c15921c80_96290_filter_3797267009426814170.webp#left" alt="Graph Explorer" />
         <figcaption>Screenshot of Graph Explorer showing empty device attributes.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Yup still no attributes.</p>
 
 
@@ -1334,8 +1332,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-graphexpnew_hu43a570c51da3ff08c95f5103535692bb_58202_filter_18104567605599735804.webp#left" alt="Graph Explorer New Attribute" />
         <figcaption>Screenshot of Graph Explorer showing a new device attribute.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>We&rsquo;re onto something here.</p>
 
 
@@ -1364,8 +1361,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-graphexpupd_hu70b548bdd078940802ed7e6d584d7619_68758_filter_3768591070877693889.webp#left" alt="Graph Explorer Updated Attribute" />
         <figcaption>Screenshot of Graph Explorer showing updated device attributes.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>I&rsquo;ve given the attribute a sensible value of <code>CAP-00-Out</code> as we can utilise the range of operators available in the Conditional Access Policy device filter for the attributes.</p>
 
 
@@ -1390,8 +1386,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-capfil01_hu4255d1b981de73ac4ac0875c2e2bd775_91828_filter_17011852538683767041.webp#left" alt="Conditional Access Filter Equals" />
         <figcaption>Screenshot of a Conditional Access Policy filter using the equals operator.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Or if we want to be clever and capture devices where where <code>extensionAttribute1</code> ends in <code>Out</code> regardless of the other content.</p>
 <p>
 
@@ -1400,8 +1395,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-capfil02_hud88b2b823c12f9369f5746a7fde44245_91994_filter_14975355327212742842.webp#left" alt="Conditional Access Filter Ends" />
         <figcaption>Screenshot of a Conditional Access Policy filter using the ends with operator.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>So there is value in coming up with <a href="/posts/autopilot-power-of-group-tags" rel="noopener" target="_blank">good naming conventions</a> across all areas of Entra ID and Microsoft Intune, who knew?</p>
 
 
@@ -1423,8 +1417,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-signin_hube54d0dc9bb460d4764bd8c00494d0cf_31264_filter_6749757245102466582.webp#left" alt="Sign In Logs" />
         <figcaption>Screenshot of a user sign in logs in Entra ID.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Which for our situation is exactly the outcome we&rsquo;re after. Now time to make this less of a manual process.</p>
 
 
@@ -1492,8 +1485,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-devices_hud3056450a5c28212875a82dd99c14a29_261150_filter_14968471855241873917.webp#left" alt="Entra ID Device" />
         <figcaption>Screenshot of the PowerShell script grid view for Entra ID devices.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 
 
 <h3 class="relative group">Extension Attribute JSON 
@@ -1612,8 +1604,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-rmdevices_hu8cae0b6dfa8fbd6765a34b0788594d3b_222668_filter_14968471855241873917.webp#left" alt="Remove Device" />
         <figcaption>Screenshot of the PowerShell script grid view for Entra ID devices.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Selecting the attribute we want to clear.</p>
 <p>
 
@@ -1622,8 +1613,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-rmattr_hu0b90bc4420fe0966862dbaa11e94292b_97426_filter_14968471855241873917.webp#left" alt="Remove Attribute" />
         <figcaption>Screenshot of the PowerShell script grid view for extension attributes to be removed.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Confirming we want to continue.</p>
 <p>
 
@@ -1632,8 +1622,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-rmwarn_hu9a0abb3f947508bb3797b23394fab987_7852_filter_14533100119847110263.webp#left" alt="Remove Warn" />
         <figcaption>Screenshot of the PowerShell script prompting whether to continue with the removal of the extension attribute.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Now we can check the device in Entra ID and confirm that the attribute has now been cleared.</p>
 <p>
 
@@ -1642,8 +1631,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-entra_huc8791fa5a98d6b2ca4a7dbf5f518ab0f_115898_filter_13462319667028914493.webp#left" alt="Remove Entra" />
         <figcaption>Screenshot of the device in Entra ID with the extension attribute removed.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Now that we&rsquo;ve got a blank canvas, let&rsquo;s update some device objects with a new extension attribute value.</p>
 
 
@@ -1667,8 +1655,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-upprompt_hud3033c8c179d7380867bb2038c17260e_2628_filter_10894665691787530759.webp#left" alt="Update Device" />
         <figcaption>Screenshot of the PowerShell script prompting for the attribute value.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Selecting a handful of devices when prompted.</p>
 <p>
 
@@ -1677,8 +1664,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-updevices_hubc783d57235a1ea5c8302f8ebd12cb68_218320_filter_14968471855241873917.webp#left" alt="Update Device" />
         <figcaption>Screenshot of the PowerShell script grid view for Entra ID devices.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Selecting the attribute we want to update.</p>
 <p>
 
@@ -1687,8 +1673,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-rmattr_hu0b90bc4420fe0966862dbaa11e94292b_97426_filter_14968471855241873917.webp#left" alt="Update Attribute" />
         <figcaption>Screenshot of the PowerShell script grid view for extension attributes to be added.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>This warning section now shows how many devices, the attribute extension to be updated and the new value.</p>
 <p>
 
@@ -1697,8 +1682,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-upwarn_hu03e1599c18105de3a65cd48132b72f25_8196_filter_7608191922254896615.webp#left" alt="Update Warn" />
         <figcaption>Screenshot of the PowerShell script prompting whether to continue with the update of the extension attribute.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Confirming we want to continue, the devices have now been updated with the <code>CAP-00-Out</code> in <code>extensionAttribute1</code>.</p>
 <p>
 
@@ -1707,8 +1691,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-upresult_hu56fd66333e8f66fb4503f209b6a13764_4812_filter_16813722625350403309.webp#left" alt="Update Warn" />
         <figcaption>Screenshot of the device in Entra ID with the extension attribute confirmed.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Checking a device in Entra ID gives us exactly the result we want.</p>
 <p>
 
@@ -1717,8 +1700,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/device-attributes-cap/img/dacap-upentra_huf8f2697639961a29e01c81783959a977_102822_filter_6496644751699612500.webp#left" alt="Update Entra" />
         <figcaption>Screenshot of the device in Entra ID with the extension attribute updated.</figcaption>
-      </figure>
-</p>
+      </figure></p>
 <p>Take my word for it that the other five devices have updated too 😅.</p>
 
 
