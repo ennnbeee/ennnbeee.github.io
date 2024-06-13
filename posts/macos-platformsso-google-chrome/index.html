@@ -115,7 +115,7 @@
     "keywords": ["configuration","custom","security","cap"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1896"
+    "wordCount": "1915"
   }]
   </script>
 
@@ -1836,10 +1836,10 @@
         <figcaption>Screenshot of Google Chrome installed extensions.</figcaption>
       </figure></p>
 <p>It is, and the user is unable to disable or remove it, as why would we want them to?</p>
-<p>So what does SSO look like on Google Chrome? Well it&rsquo;s the same process as with Microsoft Edge and Safari:</p>
+<p>So what does SSO look like on Google Chrome with Secure Enclave key authentication? Well it&rsquo;s the same process as with Microsoft Edge and Safari:</p>
 <ul>
 <li>A user opens the browser and accesses a Microsoft Entra authenticated service such as <strong>outlook.office.com</strong>.</li>
-<li>The user is prompted to sign-in to the service, completing MFA if required.</li>
+<li>If there is a valid token for the user, the user is not prompted to sign-in to the service, otherwise re-authentication with TouchID is required before access.</li>
 <li>Subsequent login prompts to Microsoft Entra authenticated services like <strong>teams.microsoft.com</strong> are now automatically passed through using SSO.</li>
 </ul>
 <p>All that to make browser sign-ins a little easier and to allow for the use of <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#supported-browsers" target="_blank">Conditional Access Policies</a> 😅.</p>
