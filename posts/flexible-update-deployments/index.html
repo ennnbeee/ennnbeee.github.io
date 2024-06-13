@@ -12,7 +12,7 @@
   <meta name="title" content="A Flexible Approach to Microsoft Update Deployments &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="Deploying Windows Updates using dynamic security groups in a phased and controlled approach using Microsoft Intune and Entra ID." />
-  <meta name="keywords" content="updates, groups, security, " />
+  <meta name="keywords" content="updates, groups, security, ncsc, " />
   
   <meta name="robots" content="all" />
   
@@ -81,6 +81,7 @@
     <meta property="article:tag" content="Updates">
     <meta property="article:tag" content="Groups">
     <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="National Cyber Security Centre (NCSC)">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/flexible-update-deployments/featured.jpg">
 
   
@@ -111,10 +112,10 @@
     
     "dateModified": "2024-02-19T20:07:23\u002b01:00",
     
-    "keywords": ["updates","groups","security"],
+    "keywords": ["updates","groups","security","ncsc"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1847"
+    "wordCount": "1926"
   }]
   </script>
 
@@ -983,6 +984,14 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    National Cyber Security Centre (NCSC)
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -1342,31 +1351,31 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Test</td>
+<td style="text-align:left">Test Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Pilot</td>
+<td style="text-align:left">Pilot Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left">Pre-Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[0-1,a]&quot;)</code></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Initial Production</td>
+<td style="text-align:left">Initial Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Final Production</td>
+<td style="text-align:left">Final Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
 <td></td>
@@ -1429,31 +1438,31 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Test</td>
+<td style="text-align:left">Test Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Pilot</td>
+<td style="text-align:left">Pilot Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left">Pre-Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Initial Production</td>
+<td style="text-align:left">Initial Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">Final Production</td>
+<td style="text-align:left">Final Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
 <td></td>
@@ -1486,19 +1495,19 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">VIP Pre-Production</td>
+<td style="text-align:left">VIP Pre-Production Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">VIP Initial Production</td>
+<td style="text-align:left">VIP Initial Production Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:left">VIP Final Production</td>
+<td style="text-align:left">VIP Final Production Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left">TBC</td>
 <td></td>
@@ -1568,7 +1577,7 @@
 </tbody>
 </table>
 <p>You see something else new? Yes, I&rsquo;ve avoided device restarts on weekends following a chat with fellow lover of Microsoft Intune, <a href="https://deploymentshare.com/" target="_blank">Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office and powered off, or being used to watch Netflix in bed.</p>
-<p>This also allows for our VIP users to pick which day they actually want their device to restart, based on whatever day they&rsquo;re not playing golf :woman_golfing:.</p>
+<p>This also allows for our VIP users to pick which day they actually want their device to restart, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
 
 
 <h2 class="relative group">Office Update Rings 
@@ -1582,46 +1591,54 @@
     
 </h2>
 <p>Oooooh this one is new, and straight up robbed from Windows Autopatch, and although doesn&rsquo;t exist as a dedicated blade in Microsoft Intune, we can use the glorious <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog</a> profiles to configure Office Update Channels, deferral, and deadline settings for Microsoft 365 App updates.</p>
-<p>To start, we need to configure some baseline settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it, the settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
+<p>To start, we need to configure some baseline Office Update settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it.</p>
 <table>
 <thead>
 <tr>
+<th style="text-align:left">Category</th>
 <th style="text-align:left">Setting</th>
 <th style="text-align:left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Location for updates: (Device)</td>
 <td style="text-align:left"><code>http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6</code></td>
 </tr>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Enable Automatic Updates</td>
 <td style="text-align:left"><code>Enabled</code></td>
 </tr>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Hide option to enable or disable updates</td>
 <td style="text-align:left"><code>Enabled</code></td>
 </tr>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Hide Update Notifications</td>
 <td style="text-align:left"><code>Disabled</code></td>
 </tr>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Update Channel</td>
 <td style="text-align:left"><code>Enabled</code></td>
 </tr>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Channel Name (Device)</td>
 <td style="text-align:left"><code>Monthly Enterprise Channel</code></td>
 </tr>
 <tr>
+<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
 <td style="text-align:left">Update Path</td>
 <td style="text-align:left"><code>Enabled</code></td>
 </tr>
 </tbody>
 </table>
-<p>With the update channel configured to Monthly Enterprise, and a bit of a change to the user experience, let&rsquo;s see what else we can borrow.</p>
+<p>With the update channel configured to Monthly Enterprise, and a bit of a change to the user experience, let&rsquo;s see what else we can borrow from <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/operate/windows-autopatch-microsoft-365-apps-enterprise" target="_blank">Windows Autopatch</a>.</p>
 
   
 
@@ -1666,7 +1683,7 @@
     
 </h3>
 <p>With a similar approach to the Windows Update Rings, we can create corresponding Settings Catalog profiles for our five deployment phases, aligning as best we can the end result, which is installed updates, to the restart of the updates delivered as part of the Windows Update ring configuration.</p>
-<p>All settings exist under <code>Microsoft Office 2016 (Machine) &gt; Updates</code>.</p>
+<p>All settings exist under the same category as before, <strong>Microsoft Office 2016 (Machine) &gt; Updates</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -1778,32 +1795,32 @@
 <tbody>
 <tr>
 <td style="text-align:left">Test</td>
-<td style="text-align:left"><code>Test</code></td>
-<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left">Test Group</td>
+<td style="text-align:left">-</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Pilot</td>
-<td style="text-align:left"><code>Pilot</code></td>
-<td style="text-align:left"><code>Test</code></td>
+<td style="text-align:left">Pilot Group</td>
+<td style="text-align:left">Test Group</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Pre-Production</td>
-<td style="text-align:left"><code>Pre-Production</code></td>
-<td style="text-align:left"><code>Test</code>, <code>Pilot</code></td>
+<td style="text-align:left">Pre-Production Group</td>
+<td style="text-align:left">Test Group, Pilot Group</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Initial Production</td>
-<td style="text-align:left"><code>Initial Production</code></td>
-<td style="text-align:left"><code>Test</code>, <code>Pilot</code></td>
+<td style="text-align:left">Initial Production Group</td>
+<td style="text-align:left">Test Group, Pilot Group</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Final Production</td>
-<td style="text-align:left"><code>Final Production</code></td>
-<td style="text-align:left"><code>Test</code>, <code>Pilot</code></td>
+<td style="text-align:left">Final Production Group</td>
+<td style="text-align:left">Test Group, Pilot Group</td>
 <td></td>
 </tr>
 </tbody>
@@ -1866,32 +1883,32 @@
 <tbody>
 <tr>
 <td style="text-align:left">Test</td>
-<td style="text-align:left"><code>Test</code></td>
-<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left">Test Group</td>
+<td style="text-align:left">-</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Pilot</td>
-<td style="text-align:left"><code>Pilot</code></td>
-<td style="text-align:left"><code>Test</code></td>
+<td style="text-align:left">Pilot Group</td>
+<td style="text-align:left">Test Group</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Pre-Production</td>
-<td style="text-align:left"><code>Pre-Production</code>, <code>VIP Pre-Production</code></td>
-<td style="text-align:left"><code>Test</code>, <code>Pilot</code>, <code>VIP Initial Production</code>, <code>VIP Final Production</code></td>
+<td style="text-align:left">Pre-Production Group, <em>VIP Pre-Production</em></td>
+<td style="text-align:left">Test Group, Pilot Group, <em>VIP Initial Production</em>, <em>VIP Final Production</em></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Initial Production</td>
-<td style="text-align:left"><code>Initial-Production</code>, <code>VIP Initial-Production</code></td>
-<td style="text-align:left"><code>Test</code>, <code>Pilot</code>, <code>VIP Pre-Production</code>, <code>VIP Final Production</code></td>
+<td style="text-align:left">Initial-Production Group, <em>VIP Initial-Production</em></td>
+<td style="text-align:left">Test Group, Pilot Group, <em>VIP Pre-Production,</em> <em>VIP Final Production</em></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align:left">Final Production</td>
-<td style="text-align:left"><code>Final Production</code>, <code>VIP Final Production</code></td>
-<td style="text-align:left"><code>Test</code>, <code>Pilot</code>, <code>VIP Pre-Production</code>, <code>VIP Initial Production</code></td>
+<td style="text-align:left">Final Production, <em>VIP Final Production</em></td>
+<td style="text-align:left">Test Group, Pilot Group, <em>VIP Pre-Production</em>, <em>VIP Initial Production</em></td>
 <td></td>
 </tr>
 </tbody>
@@ -2084,165 +2101,6 @@
   
   
 
-  <a href="/posts/windows-update-phased-deployment/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-update-phased-deployment/featured.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/windows-update-phased-deployment/">Intelligent Phased Windows Update for Business Deployments</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2023-07-17 20:07:23 &#43;0100 &#43;0100">17 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/Windows-Update-Phased-Deployment/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Groups
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
   <a href="/posts/updating-windows-store-apps/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -2426,11 +2284,11 @@
   
   
 
-  <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
+  <a href="/posts/windows-update-phased-deployment/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/defender-antivirus-compliance-updates/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-update-phased-deployment/featured.png);"></div>
         
       
 
@@ -2438,7 +2296,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/defender-antivirus-compliance-updates/">Updating Defender Antivirus Compliance Settings</div>
+          href="/posts/windows-update-phased-deployment/">Intelligent Phased Windows Update for Business Deployments</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2479,7 +2337,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2022-10-25 22:04:47 &#43;0100 &#43;0100">25 October 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-07-17 20:07:23 &#43;0100 &#43;0100">17 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2492,7 +2350,7 @@
       
     
   
-  <span id="views_posts/Defender-Antivirus-Compliance-Updates/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Windows-Update-Phased-Deployment/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2543,10 +2401,18 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/defender/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Defender
+    Updates
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/groups/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Groups
   </span>
 </span>
   </span>
@@ -2559,13 +2425,140 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/winre-parition-resize-kb5034441/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/winre-parition-resize-kb5034441/featured.jpg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/winre-parition-resize-kb5034441/">Automatically Resizing the WinRE Partition for Windows Update KB5034441</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-01-31 20:54:12 &#43;0000 UTC">31 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/WinRE-Parition-Resize-KB5034441/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Compliance
+    Microsoft Intune
   </span>
 </span>
   </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
   
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
@@ -2575,26 +2568,26 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/antivirus/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Antivirus
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     PowerShell
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Remediation
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/bitlocker/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    BitLocker
   </span>
 </span>
   </span>
