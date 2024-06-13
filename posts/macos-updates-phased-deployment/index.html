@@ -12,7 +12,7 @@
   <meta name="title" content="Software Update Deployment Rings for Managed macOS Devices &middot; MEM v ENNBEE - Battles with Modern Device Management" />
   
   <meta name="description" content="Using Microsoft Intune and Dynamic Security Groups in Entra ID to managed the deployment of security software updates to enrolled macOS Apple devices." />
-  <meta name="keywords" content="updates, groups, security, " />
+  <meta name="keywords" content="updates, groups, security, ncsc, " />
   
   <meta name="robots" content="all" />
   
@@ -81,6 +81,7 @@
     <meta property="article:tag" content="Updates">
     <meta property="article:tag" content="Groups">
     <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="National Cyber Security Centre (NCSC)">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.jpeg">
 
   
@@ -111,10 +112,10 @@
     
     "dateModified": "2024-04-06T20:05:09\u002b01:00",
     
-    "keywords": ["updates","groups","security"],
+    "keywords": ["updates","groups","security","ncsc"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1732"
+    "wordCount": "1858"
   }]
   </script>
 
@@ -983,6 +984,14 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    National Cyber Security Centre (NCSC)
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -1143,6 +1152,7 @@
     <li><a href="#deployment-approach">Deployment Approach</a>
       <ul>
         <li><a href="#deployment-groups">Deployment Groups</a></li>
+        <li><a href="#deployment-assignments">Deployment Assignments</a></li>
       </ul>
     </li>
     <li><a href="#software-update-configuration">Software Update Configuration</a>
@@ -1175,6 +1185,7 @@
     <li><a href="#deployment-approach">Deployment Approach</a>
       <ul>
         <li><a href="#deployment-groups">Deployment Groups</a></li>
+        <li><a href="#deployment-assignments">Deployment Assignments</a></li>
       </ul>
     </li>
     <li><a href="#software-update-configuration">Software Update Configuration</a>
@@ -1265,11 +1276,11 @@
 <p>I wish this was as straight forward as Windows Update Rings, but it isn&rsquo;t, and with the recent changes to macOS device management in Microsoft Intune, we now have <a href="https://learn.microsoft.com/en-us/mem/solutions/end-to-end-guides/macos-endpoints-get-started#software-updates" target="_blank">three different ways</a> to control updates on these devices.</p>
 <p>I&rsquo;m not sure we needed all three, but there is a clear documented hierarchy for the settings, along with which versions of macOS support each. In summary though, the precedence of update configuration profiles looks like this:</p>
 <ol>
-<li>Managed software updates - <code>Settings catalog &gt; Declarative Device Management &gt; Software Update</code></li>
-<li>Update policies - <code>Devices &gt; Update policies for macOS</code></li>
-<li>Software updates - <code>Settings catalog &gt; System Updates &gt; Software Update</code></li>
+<li>Managed software updates - <strong>Settings catalog &gt; Declarative Device Management &gt; Software Update</strong></li>
+<li>Update policies - <strong>Devices &gt; Update policies for macOS</strong></li>
+<li>Software updates - <strong>Settings catalog &gt; System Updates &gt; Software Update</strong></li>
 </ol>
-<p>I&rsquo;m going to avoid numbers 1 and 2, and although this goes against my love of all things latest and greatest, and leans on the user to install updates, does give us the functionality of phased updates we require, and without reliance on specific versions of the operating system.</p>
+<p>I&rsquo;m going to avoid numbers 1 and 2, and although this goes against my love of all things latest and greatest, and leans on the user to install updates, it does give us the functionality of phased updates we require, and without reliance on specific versions of the operating system.</p>
 
 
 <h2 class="relative group">Deployment Approach 
@@ -1314,22 +1325,22 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Pilot</td>
+<td style="text-align:left">Pilot Group</td>
 <td style="text-align:left">Assigned</td>
 <td style="text-align:left"><code>TBC</code></td>
 </tr>
 <tr>
-<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left">Pre-Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
 </tr>
 <tr>
-<td style="text-align:left">Initial Production</td>
+<td style="text-align:left">Initial Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
 </tr>
 <tr>
-<td style="text-align:left">Final Production</td>
+<td style="text-align:left">Final Production Group</td>
 <td style="text-align:left">Dynamic Device</td>
 <td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;MacMDM&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
 </tr>
@@ -1337,6 +1348,58 @@
 </table>
 <p>These groups will naturally split your macOS device estate across the three pre-production and production dynamic groups, allowing for suitable phasing of the delivery of updates.</p>
 <p>With the Pilot group, you should add devices into this group that you want to get updates the earliest, so actual pilot devices here please, not your own or your work besties.</p>
+
+
+<h3 class="relative group">Deployment Assignments 
+    <div id="deployment-assignments" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#deployment-assignments" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To ensure that we aren&rsquo;t getting conflict with policy assignment, we need to ensure a device is receiving more than one update policy, whether this is a Software Update or otherwise 😉.</p>
+<p>As we&rsquo;ve got the Dynamic Groups ring-fencing devices based on <code>device.deviceId</code>, the only conflict we may encounter is with the assigned group.</p>
+<p>To alleviate that conflict, we need to ensure that all our update ring assignments are excluding this group:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Update Ring</th>
+<th style="text-align:left">Included Groups</th>
+<th style="text-align:left">Excluded Groups</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Pilot</td>
+<td style="text-align:left">Pilot Group</td>
+<td style="text-align:left">-</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Pre-Production</td>
+<td style="text-align:left">Pre-Production Group</td>
+<td style="text-align:left">Pilot Group</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Initial Production</td>
+<td style="text-align:left">Initial Production Group</td>
+<td style="text-align:left">Pilot Group</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Final Production</td>
+<td style="text-align:left">Final Production Group</td>
+<td style="text-align:left">Pilot Group</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This approach can be used across all update assignment settings covered in the rest of this post.</p>
 
 
 <h2 class="relative group">Software Update Configuration 
