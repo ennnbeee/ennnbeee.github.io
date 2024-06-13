@@ -114,7 +114,7 @@
     "keywords": ["teams","apps","shell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1465"
+    "wordCount": "1519"
   }]
   </script>
 
@@ -1484,11 +1484,24 @@
     
 </h2>
 <p>The <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh" target="_blank">full script</a> looks pretty much like the below, which is just a squishing together of the bits we&rsquo;ve already covered in this post.</p>
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#set -x</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">############################################################################################</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Script to download Teams Backgrounds</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
+</span></span><span class="line"><span class="cl"><span class="c1">###########################################</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define variables</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Add new background URLs to the array</span>
-</span></span><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://memv.ennbee.uk/bgr.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp-lt.png&#34;</span> <span class="s2">&#34;https://memv.ennbee.uk/wp.png&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">backgroundurls</span><span class="o">=(</span><span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Scripts/Shell/TeamsBackgrounds/Msft_Nostalgia_Landscape.jpg&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Scripts/Shell/TeamsBackgrounds/SupportUkraine_Heart_TeamsBackground.jpg&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;https://raw.githubusercontent.com/ennnbeee/mem-scripts/main/Intune/Scripts/Shell/TeamsBackgrounds/covermichael.jpg&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">scriptname</span><span class="o">=</span><span class="s2">&#34;SetTeamsBackground&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">teamsapp</span><span class="o">=</span><span class="s2">&#34;/Applications/Microsoft Teams.app&#34;</span>
@@ -1498,28 +1511,36 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">## Check if the log directory has been created</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -d <span class="nv">$logandmetadir</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">## Already created</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;# </span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Log directory already exists - </span><span class="nv">$logandmetadir</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Already created</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;# </span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Log directory already exists - </span><span class="nv">$logandmetadir</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">## Creating Metadirectory</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;# </span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | creating log directory - </span><span class="nv">$logandmetadir</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$logandmetadir</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">## Creating Metadirectory</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;# </span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | creating log directory - </span><span class="nv">$logandmetadir</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  mkdir -p <span class="s2">&#34;</span><span class="nv">$logandmetadir</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># start logging</span>
-</span></span><span class="line"><span class="cl"><span class="nb">exec</span> 1&gt;&gt; <span class="s2">&#34;</span><span class="nv">$log</span><span class="s2">&#34;</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> 1&gt;&gt;<span class="s2">&#34;</span><span class="nv">$log</span><span class="s2">&#34;</span> 2&gt;<span class="p">&amp;</span><span class="m">1</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;##############################################################&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;# </span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Starting download of Teams Backgrounds&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;############################################################&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Checking if Teams is Installed</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">[[</span> <span class="nv">$ready</span> -ne <span class="m">1</span> <span class="o">]]</span><span class="p">;</span><span class="k">do</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">[[</span> <span class="nv">$ready</span> -ne <span class="m">1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">do</span>
 </span></span><span class="line"><span class="cl">  <span class="nv">missingappcount</span><span class="o">=</span><span class="m">0</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[[</span> -a <span class="s2">&#34;</span><span class="nv">$teamsapp</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[[</span> -e <span class="s2">&#34;</span><span class="nv">$teamsapp</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> |  </span><span class="nv">$teamsapp</span><span class="s2"> is installed&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">else</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">let</span> <span class="nv">missingappcount</span><span class="o">=</span><span class="nv">$missingappcount</span>+1
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> |  [</span><span class="nv">$missingappcount</span><span class="s2">] application missing&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$missingappcount</span> -eq <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[[</span> <span class="nv">$missingappcount</span> -eq <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">ready</span><span class="o">=</span><span class="m">1</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> |  Teams App found, lets download the backgrounds&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">else</span>
@@ -1528,19 +1549,22 @@
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
 </span></span><span class="line"><span class="cl"><span class="c1">## Checking if Teams Backgrounds Upload directory exists and create it if it&#39;s missing</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -d <span class="si">${</span><span class="nv">teamsUpload</span><span class="si">}</span> <span class="o">]]</span>
-</span></span><span class="line"><span class="cl"><span class="k">then</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Teams Background Upload dir [</span><span class="nv">$teamsUpload</span><span class="s2">] already exists&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -d <span class="si">${</span><span class="nv">teamsUpload</span><span class="si">}</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Teams Background Upload dir [</span><span class="nv">$teamsUpload</span><span class="s2">] already exists&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Creating [</span><span class="nv">$teamsUpload</span><span class="s2">]&#34;</span>
-</span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$teamsUpload</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Creating [</span><span class="nv">$teamsUpload</span><span class="s2">]&#34;</span>
+</span></span><span class="line"><span class="cl">  mkdir -p <span class="s2">&#34;</span><span class="nv">$teamsUpload</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## Attempt to download the files.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## Attempt to download the files. No point checking if it already exists since we want to overwrite it anyway</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##</span>
 </span></span><span class="line"><span class="cl"><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> backgroundurl in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">backgroundurls</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
-</span></span><span class="line"><span class="cl">  <span class="o">((</span><span class="nv">i</span><span class="o">=</span>i+1<span class="o">))</span>
+</span></span><span class="line"><span class="cl">  <span class="o">((</span><span class="nv">i</span> <span class="o">=</span> i + 1<span class="o">))</span>
 </span></span><span class="line"><span class="cl">  <span class="nv">backgroundfile</span><span class="o">=</span><span class="s2">&#34;TeamsBackground</span><span class="nv">$i</span><span class="s2">.png&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Downloading Background from [</span><span class="nv">$backgroundurl</span><span class="s2">] to [</span><span class="nv">$teamsUpload</span><span class="s2">/</span><span class="nv">$backgroundfile</span><span class="s2">]&#34;</span>
 </span></span><span class="line"><span class="cl">  curl -L -o <span class="s2">&#34;</span><span class="nv">$teamsUpload</span><span class="s2">/</span><span class="nv">$backgroundfile</span><span class="s2">&#34;</span> <span class="nv">$backgroundurl</span>
@@ -1550,7 +1574,10 @@
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="k">$(</span>date<span class="k">)</span><span class="s2"> | Failed to download Teams Background image from [</span><span class="nv">$backgroundurl</span><span class="s2">]&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
-</span></span></code></pre></div><p>Time to add this into Intune and reap the rewards.</p>
+</span></span></code></pre></div>
+
+
+<p>Time to add this into Intune and reap the rewards.</p>
 
 
 <h3 class="relative group">Intune Shell Scripts 

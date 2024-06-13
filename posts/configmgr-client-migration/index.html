@@ -113,7 +113,7 @@
     "keywords": ["apps","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1233"
+    "wordCount": "1213"
   }]
   </script>
 
@@ -1377,35 +1377,8 @@
 <p>This way, we can let Configuration Manager do all our heavy lifting, without manual intervention, or trying to run something from the client side to re-install the Configuration Manager Client.</p>
 <p>The full script in all it&rsquo;s glory can as always be found in <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Apps/ForceCCMClientInstall/Install-CCMClientAlways.ps1" target="_blank">GitHub</a></p>
 
-  
 
 
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >If you&rsquo;re scared about running this script in anger, throw in a <code>-WhatIf</code> parameter at the end of line 57.</span>
-</div>
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c"># Load Configuration Manager PowerShell Module</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Import-Module</span> <span class="p">(</span><span class="nv">$Env:SMS_ADMIN_UI_PATH</span><span class="p">.</span><span class="py">Substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="nv">$Env:SMS_ADMIN_UI_PATH</span><span class="p">.</span><span class="py">Length</span> <span class="p">-</span> <span class="mf">5</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;\ConfigurationManager.psd1&#39;</span><span class="p">)</span>
@@ -1463,7 +1436,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">Foreach</span> <span class="p">(</span><span class="nv">$UnmanagedDevice</span> <span class="k">in</span> <span class="nv">$UnmanagedDevices</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Log</span> <span class="n">-Path</span> <span class="nv">$LogFilePath</span> <span class="n">-Message</span> <span class="s2">&#34;Attempting to install CCM client on computer </span><span class="p">$(</span><span class="nv">$UnmanagedDevice</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&#34;</span> <span class="n">-Component</span> <span class="nv">$MyInvocation</span><span class="p">.</span><span class="py">MyCommand</span><span class="p">.</span><span class="py">Name</span> <span class="n">-Type</span> <span class="n">Info</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nb">Install-CMClient</span> <span class="n">-DeviceId</span> <span class="nv">$UnmanagedDevice</span><span class="p">.</span><span class="py">ResourceID</span> <span class="n">-AlwaysInstallClient</span> <span class="vm">$true</span> <span class="n">-ForceReinstall</span> <span class="vm">$true</span> <span class="n">-SiteCode</span> <span class="nv">$SiteCode</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Install-CMClient</span> <span class="n">-DeviceId</span> <span class="nv">$UnmanagedDevice</span><span class="p">.</span><span class="py">ResourceID</span> <span class="n">-AlwaysInstallClient</span> <span class="vm">$true</span> <span class="n">-ForceReinstall</span> <span class="vm">$true</span> <span class="n">-SiteCode</span> <span class="nv">$SiteCode</span><span class="p">.</span><span class="py">Name</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="p">(</span><span class="nv">$_</span> <span class="p">|</span> <span class="nb">Out-String</span><span class="p">)</span>
@@ -1471,7 +1444,10 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>If you need to keep this running on an on-going basis as part of a phased migration, I&rsquo;d recommend hooking this into a Scheduled Task running from the Primary Site server, or if you&rsquo;re feeling fancy, a <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/use-status-system#manage-status-filter-rules" target="_blank">Status Filter Rule</a> to have the script triggered on an event captured by a one of the million Configuration Manager logs files for its components.</p>
+</span></span></code></pre></div>
+
+
+<p>If you need to keep this running on an on-going basis as part of a phased migration, I&rsquo;d recommend hooking this into a Scheduled Task running from the Primary Site server, or if you&rsquo;re feeling fancy, a <a href="https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/use-status-system#manage-status-filter-rules" target="_blank">Status Filter Rule</a> to have the script triggered on an event captured by a one of the million Configuration Manager logs files for its components.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1658,11 +1634,11 @@
   
   
 
-  <a href="/posts/converting-direct-member-collections/" class="min-w-full">
+  <a href="/posts/configmgr-converting-direct-member-collections/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/converting-direct-member-collections/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/configmgr-converting-direct-member-collections/featured.png);"></div>
         
       
 
@@ -1670,7 +1646,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/converting-direct-member-collections/">Converting Configuration Manager Direct Membership Collections</div>
+          href="/posts/configmgr-converting-direct-member-collections/">Converting Configuration Manager Direct Membership Collections</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1724,7 +1700,7 @@
       
     
   
-  <span id="views_posts/Converting-Direct-Member-Collections/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/ConfigMgr-Converting-Direct-Member-Collections/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">

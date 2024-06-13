@@ -1491,13 +1491,17 @@
     
 </h4>
 <p>As with all Proactive Remediation scripts, we need a method to detect, which is run initially upon assessment, and subsequently after remediation. A standard check, fix, check situation. For the detection method, we&rsquo;re looking for both the Registry Key and the item.</p>
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Registry</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\DeviceManageabilityCSP\Provider\MS DM Server&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Path</span> <span class="p">=</span> <span class="nb">Test-Path</span> <span class="nv">$Registry</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Authority</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="nv">$Registry</span> <span class="n">-Name</span> <span class="n">ConfigInfo</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Path</span> <span class="o">-eq</span> <span class="s1">&#39;False&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Warning</span> <span class="s1">&#39;Co-Management Authority Not Configured&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Path</span> <span class="o">-eq</span> <span class="vm">$False</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Warning</span> <span class="s1">&#39;Co-Management Authority Not Confgured&#39;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
@@ -1517,6 +1521,9 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
 
+
+
+
 <h4 class="relative group">Remediation Script 
     <div id="remediation-script" class="anchor"></div>
     
@@ -1528,12 +1535,16 @@
     
 </h4>
 <p>If either the Key or the Data are not detected, we have a Remediation script that configures either the Key and the Data, or just the Data.</p>
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Registry</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\DeviceManageabilityCSP\Provider\MS DM Server&#39;</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Path</span> <span class="p">=</span> <span class="nb">Test-Path</span> <span class="nv">$Registry</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$Authority</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="nv">$Registry</span> <span class="n">-Name</span> <span class="n">ConfigInfo</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Path</span> <span class="o">-eq</span> <span class="vm">$False</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Path</span> <span class="o">-eq</span> <span class="vm">$false</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$Registry</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$Registry</span> <span class="n">-Name</span> <span class="n">ConfigInfo</span> <span class="n">-Value</span> <span class="mf">1</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Force</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -1548,6 +1559,9 @@
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
+
+
+
 
 <h3 class="relative group">Creating a Custom Script 
     <div id="creating-a-custom-script" class="anchor"></div>
@@ -1922,11 +1936,11 @@
   
   
 
-  <a href="/posts/windows-autopilot-retrofitting-group-tags/" class="min-w-full">
+  <a href="/posts/assigning-intune-applications/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-autopilot-retrofitting-group-tags/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/assigning-intune-applications/featured.png);"></div>
         
       
 
@@ -1934,7 +1948,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/windows-autopilot-retrofitting-group-tags/">Retrofitting Windows Autopilot Group Tags</div>
+          href="/posts/assigning-intune-applications/">Assigning Intune Mobile Apps Quickly and Consistently</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1975,7 +1989,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2022-06-19 15:55:02 &#43;0100 &#43;0100">19 June 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-02-13 20:46:43 &#43;0000 UTC">13 February 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1988,7 +2002,7 @@
       
     
   
-  <span id="views_posts/Windows-Autopilot-Retrofitting-Group-Tags/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Assigning-Intune-Applications/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2023,10 +2037,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/android/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    Android
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ios/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    iOS/iPadOS
   </span>
 </span>
   </span>
@@ -2039,18 +2061,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apps/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows Autopilot
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/enrolment/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Enrolment
+    Apps
   </span>
 </span>
   </span>
@@ -2089,11 +2103,11 @@
   
   
 
-  <a href="/posts/windows-autopilot-languages/" class="min-w-full">
+  <a href="/posts/apple-os-updating-compliance/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/windows-autopilot-languages/featured.jpg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/apple-os-updating-compliance/featured.png);"></div>
         
       
 
@@ -2101,7 +2115,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/windows-autopilot-languages/">Configuring Available User Languages on Windows Devices</div>
+          href="/posts/apple-os-updating-compliance/">Updating Apple Operating System Compliance Policies</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2142,7 +2156,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2022-05-21 14:22:53 &#43;0100 &#43;0100">21 May 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-02-02 20:08:49 &#43;0000 UTC">2 February 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2155,7 +2169,7 @@
       
     
   
-  <span id="views_posts/Windows-Autopilot-Languages/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Apple-OS-Updating-Compliance/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2190,10 +2204,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ios/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
+    iOS/iPadOS
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/macos/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    macOS
   </span>
 </span>
   </span>
@@ -2206,18 +2228,26 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows Autopilot
+    Compliance
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/accessibility/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Accessibility
+    Updates
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
   </span>
 </span>
   </span>

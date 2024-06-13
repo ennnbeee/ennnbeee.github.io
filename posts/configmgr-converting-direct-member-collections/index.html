@@ -17,7 +17,7 @@
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/converting-direct-member-collections/" />
+  <link rel="canonical" href="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/" />
   
   
   
@@ -69,7 +69,7 @@
   
   
   
-  <meta property="og:url" content="https://memv.ennbee.uk/posts/converting-direct-member-collections/">
+  <meta property="og:url" content="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
   <meta property="og:title" content="Converting Configuration Manager Direct Membership Collections">
   <meta property="og:description" content="Converting Configuration Manager (SCCM) direct membership collections to query based collections using PowerShell.">
@@ -80,11 +80,11 @@
     <meta property="article:modified_time" content="2022-07-28T08:22:08+01:00">
     <meta property="article:tag" content="Collections">
     <meta property="article:tag" content="PowerShell">
-    <meta property="og:image" content="https://memv.ennbee.uk/posts/converting-direct-member-collections/featured.png">
+    <meta property="og:image" content="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://memv.ennbee.uk/posts/converting-direct-member-collections/featured.png">
+  <meta name="twitter:image" content="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/featured.png">
   <meta name="twitter:title" content="Converting Configuration Manager Direct Membership Collections">
   <meta name="twitter:description" content="Converting Configuration Manager (SCCM) direct membership collections to query based collections using PowerShell.">
 
@@ -99,7 +99,7 @@
     "description": "Converting Configuration Manager (SCCM) direct membership collections to query based collections using PowerShell.",
     "abstract": "You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/converting-direct-member-collections\/",
+    "url" : "https:\/\/memv.ennbee.uk\/posts\/configmgr-converting-direct-member-collections\/",
     "author" : {
       "@type": "Person",
       "name": " "
@@ -113,7 +113,7 @@
     "keywords": ["collections","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1005"
+    "wordCount": "1574"
   }]
   </script>
 
@@ -802,7 +802,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/converting-direct-member-collections/featured.png);">
+    style="background-image:url(/posts/configmgr-converting-direct-member-collections/featured.png);">
     
 
 
@@ -886,7 +886,7 @@
       
     
   
-  <span id="views_posts/Converting-Direct-Member-Collections/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/ConfigMgr-Converting-Direct-Member-Collections/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1401,13 +1401,144 @@
     
 </h2>
 <p>Now we have all the bits we needed in place (<em>cough logging cough</em>), we can launch the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1" target="_blank">script</a> and use the option to select a Collection first as a test before we run it across the entire environment.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c">#Load Configuration Manager PowerShell Module</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Import-Module</span> <span class="p">(</span><span class="nv">$Env:SMS_ADMIN_UI_PATH</span><span class="p">.</span><span class="py">Substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="nv">$Env:SMS_ADMIN_UI_PATH</span><span class="p">.</span><span class="py">Length</span> <span class="p">-</span> <span class="mf">5</span><span class="p">)</span> <span class="p">+</span> <span class="s1">&#39;\ConfigurationManager.psd1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">#Get SiteCode</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$SiteCode</span> <span class="p">=</span> <span class="nb">Get-PSDrive</span> <span class="n">-PSProvider</span> <span class="n">CMSITE</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Set-Location</span> <span class="nv">$SiteCode</span><span class="s2">&#34;:&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Clear-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$RuleName</span> <span class="p">=</span> <span class="s1">&#39;Direct Membership Replacement Query&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># CCM Client Name</span>
+</span></span><span class="line"><span class="cl"><span class="c">#$QueryPart = &#39;select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceId = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.Name in (&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># AD Name</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$QueryPart</span> <span class="p">=</span> <span class="s1">&#39;select SMS_R_System.ResourceId, SMS_R_System.ResourceType, SMS_R_System.Name, SMS_R_System.SMSUniqueIdentifier, SMS_R_System.ResourceDomainORWorkgroup, SMS_R_System.Client from  SMS_R_System where SMS_R_System.Name in (&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Merged</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Collections</span><span class="p">.</span><span class="py">ArrayList</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39;********************************************************************************&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39;**** Welcome to the Direct Membership Device Collection Converter Tool     ****&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39;**** This Script will convert Direct Memberships to Query Based Membership ****&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39;*******************************************************************************&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39; Please Choose one of the options below: &#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39; (1) Manually select the Device Collections your want to convert... &#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39; (2) Run the Script on all Device Collection in your environment... &#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39; (E) EXIT SCRIPT &#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Choice_Number</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Choice_Number</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Based on which option you want to run, please type 1, 2 or E to exit the test, then click enter &#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span> <span class="p">!(</span><span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;1&#39;</span> <span class="o">-or</span> <span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;2&#39;</span> <span class="o">-or</span> <span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;E&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$Choice_Number</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Invalid Option, Based on which option you want to run, please type 1, 2 or E to exit the test, then click enter &#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;E&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Break</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Getting Device Collections with Direct Membership Rules...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$Collections</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="nb">Get-CMDeviceCollection</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">CollectionRules</span> <span class="o">-like</span> <span class="s1">&#39;*SMS_CollectionRuleDirect*&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">CollectionID</span><span class="p">,</span> <span class="n">CollectionRules</span> <span class="p">|</span> <span class="nb">Out-GridView</span> <span class="n">-PassThru</span> <span class="n">-Title</span> <span class="s1">&#39;Wait for all Collections to load, then select the Device Collections you want to convert. Use The ENTER Key or Mouse \ OK Button.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$Choice_Number</span> <span class="o">-eq</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Getting Device Collections with Direct Membership Rules...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$Collections</span> <span class="p">=</span> <span class="nb">Get-CMDeviceCollection</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">CollectionRules</span> <span class="o">-like</span> <span class="s1">&#39;*SMS_CollectionRuleDirect*&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">CollectionID</span><span class="p">,</span> <span class="n">CollectionRules</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!</span><span class="nv">$Collections</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s1">&#39;No Collections selected, please run the script again...&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Break</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Collection</span> <span class="k">in</span> <span class="nv">$Collections</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Collection</span><span class="p">.</span><span class="py">CollectionRules</span> <span class="o">-like</span> <span class="s1">&#39;*SMS_CollectionRuleDirect*&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$Output</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-Type</span> <span class="n">PSCustomObject</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-type</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">ID</span> <span class="n">-Value</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">CollectionID</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-type</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Collection</span> <span class="n">-Value</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;The Collection </span><span class="p">$(</span><span class="nv">$Collection</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2"> contains Direct Members...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$DirectMembers</span> <span class="p">=</span> <span class="nb">Get-CMDeviceCollectionDirectMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Getting direct members for Collection </span><span class="p">$(</span><span class="nv">$Collection</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$MembersArray</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$DirectMember</span> <span class="k">in</span> <span class="nv">$DirectMembers</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s2">&#34;Direct Member </span><span class="p">$(</span><span class="nv">$DirectMember</span><span class="p">.</span><span class="n">RuleName</span><span class="p">)</span><span class="s2"> found.&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$MembersArray</span> <span class="p">+=</span> <span class="nv">$DirectMember</span><span class="p">.</span><span class="py">RuleName</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$Members</span> <span class="p">=</span> <span class="s1">&#39;&#34;{0}&#34;&#39;</span> <span class="o">-f</span> <span class="p">(</span><span class="nv">$MembersArray</span> <span class="n">-join</span> <span class="s1">&#39;&#34;,&#34;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-type</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Members</span> <span class="n">-Value</span> <span class="nv">$Members</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$QueryExpression</span> <span class="p">=</span> <span class="nv">$QueryPart</span> <span class="p">+</span> <span class="nv">$Members</span> <span class="p">+</span> <span class="s1">&#39;)&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s2">&#34;Adding Query based rule to Collection </span><span class="p">$(</span><span class="nv">$Collection</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2"> to replace direct membership...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Add-CMDeviceCollectionQueryMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span> <span class="n">-QueryExpression</span> <span class="nv">$QueryExpression</span> <span class="n">-RuleName</span> <span class="nv">$RuleName</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s1">&#39;Successfully added the query.&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-type</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Success</span> <span class="n">-Value</span> <span class="n">True</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s1">&#39;Removing Direct Membership Rules&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$DirectMember</span> <span class="k">in</span> <span class="nv">$DirectMembers</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">Remove-CMDeviceCollectionDirectMembershipRule</span> <span class="n">-CollectionName</span> <span class="nv">$Collection</span><span class="p">.</span><span class="py">Name</span> <span class="n">-ResourceID</span> <span class="nv">$DirectMember</span><span class="p">.</span><span class="py">ResourceID</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">Write-Host</span> <span class="s2">&#34;Successfully removed </span><span class="p">$(</span><span class="nv">$Directmember</span><span class="p">.</span><span class="n">RuleName</span><span class="p">)</span><span class="s2">.&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">Write-Host</span> <span class="s2">&#34;Failed to remove </span><span class="p">$(</span><span class="nv">$Directmember</span><span class="p">.</span><span class="n">RuleName</span><span class="p">)</span><span class="s2">.&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s2">&#34;Failed to convert Direct Membership to query for Collection </span><span class="p">$(</span><span class="nv">$Collection</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$Output</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">-type</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Success</span> <span class="n">-Value</span> <span class="n">False</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$Merged</span><span class="p">.</span><span class="py">Add</span><span class="p">(</span><span class="nv">$Output</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39;Results of the Collection Conversion...&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Merged</span>
+</span></span></code></pre></div>
+
+
 <p>Let&rsquo;s run it on a test collection we know has direct members:</p>
 <p>
 
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-direct_hu04b1c4c6782274d81bf7a1353286ae66_34148_filter_3494528931232385322.webp#left" alt="Device Collection" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct_hu04b1c4c6782274d81bf7a1353286ae66_34148_filter_3494528931232385322.webp#left" alt="Device Collection" />
         <figcaption>Screenshot of a Configuration Manager collection with direct members.</figcaption>
       </figure></p>
 <p>Run the script from an Elevated PowerShell prompt on your Primary Site Server:</p>
@@ -1430,7 +1561,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-prompt_hu6e5b84d665c5e41038974422652ccdc5_10630_filter_17452636660038168591.webp#left" alt="Script Options" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt_hu6e5b84d665c5e41038974422652ccdc5_10630_filter_17452636660038168591.webp#left" alt="Script Options" />
         <figcaption>Screenshot of a PowerShell window with script options.</figcaption>
       </figure></p>
 <p>Doing so will open a grid view of the collections in your Configuration Manager environment, this may take a while to load, and you should wait for them to load before selecting and confirming your Collections:</p>
@@ -1439,7 +1570,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-grid_hu628111724c406b3bca134533344d379f_39400_filter_16135089637877496010.webp#left" alt="PowerShell Grid" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid_hu628111724c406b3bca134533344d379f_39400_filter_16135089637877496010.webp#left" alt="PowerShell Grid" />
         <figcaption>Screenshot of a PowerShell script grid view of Configuration Manager collections.</figcaption>
       </figure></p>
 <p>Search for the Collection you want to update and select <strong>OK</strong>:</p>
@@ -1448,7 +1579,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-select_hueb1642f5016752ddd97743ee6b048801_13551_filter_12267939440166637453.png#left" alt="PowerShell Selection" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select_hueb1642f5016752ddd97743ee6b048801_13551_filter_12267939440166637453.png#left" alt="PowerShell Selection" />
         <figcaption>Screenshot of a PowerShell script grid view results of a search for a Configuration Manager collection.</figcaption>
       </figure></p>
 
@@ -1469,7 +1600,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-results_hub49c6a7bf64a832a509861369ebd856a_47678_filter_9931804908785062184.webp#left" alt="Script Output" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results_hub49c6a7bf64a832a509861369ebd856a_47678_filter_9931804908785062184.webp#left" alt="Script Output" />
         <figcaption>Screenshot of a PowerShell window with the results of the script.</figcaption>
       </figure></p>
 
@@ -1490,7 +1621,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-collection_hu7aaca1dd48ce2f2d118bdff2417a6549_37140_filter_14424529678602487103.webp#left" alt="Collection Results" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection_hu7aaca1dd48ce2f2d118bdff2417a6549_37140_filter_14424529678602487103.webp#left" alt="Collection Results" />
         <figcaption>Screenshot of a Configuration Manager collection with query based members.</figcaption>
       </figure></p>
 <p>With the new Query in place:</p>
@@ -1499,7 +1630,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/converting-direct-member-collections/img/configmgr-dm-query_hu57cbfefca4a7ac95114c8f9d4edb21c9_18604_filter_15941520444541975059.webp#left" alt="Collection Query" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query_hu57cbfefca4a7ac95114c8f9d4edb21c9_18604_filter_15941520444541975059.webp#left" alt="Collection Query" />
         <figcaption>Screenshot of a query rule of a Configuration Manager collection.</figcaption>
       </figure></p>
 
@@ -1531,7 +1662,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1550,7 +1681,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;text=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;text=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1568,7 +1699,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;resubmit=true&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;resubmit=true&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1587,7 +1718,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;resubmit=true&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;resubmit=true&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title=""
       aria-label=""
       >
@@ -1606,7 +1737,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;resubmit=true&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;resubmit=true&amp;title=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title=""
       aria-label=""
       >
@@ -1625,7 +1756,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;description=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;description=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1644,7 +1775,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;quote=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;quote=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1663,7 +1794,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/converting-direct-member-collections/&amp;subject=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
+      href="mailto:?body=https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/&amp;subject=Converting%20Configuration%20Manager%20Direct%20Membership%20Collections"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -2217,8 +2348,8 @@
           
         
       <script>
-        var oid = "views_posts\/Converting-Direct-Member-Collections\/index.md"
-        var oid_likes = "likes_posts\/Converting-Direct-Member-Collections\/index.md"
+        var oid = "views_posts\/ConfigMgr-Converting-Direct-Member-Collections\/index.md"
+        var oid_likes = "likes_posts\/ConfigMgr-Converting-Direct-Member-Collections\/index.md"
       </script>
       
       

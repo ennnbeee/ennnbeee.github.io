@@ -1295,72 +1295,79 @@
 </table>
 <p>This one is pretty definite in what it wants.</p>
 <p>Sadly, there isn&rsquo;t an option in Microsoft Intune to enforce this setting, but we can achieve this using a custom profile and generated mobileconfig file.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>3C307E14-8CDD-4EB8-A696-AC967397CE40<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>0250B0DD-84C3-4DA4-91B3-6FA7824F54CD<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>NCSC Automatic Software Update Settings<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>Configures the macOS software update settings to enable all automatic update options.<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dict&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>A1936EA9-62CC-407B-94B0-1AD14BD513BE<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>3C307E14-8CDD-4EB8-A696-AC967397CE40<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>com.apple.SoftwareUpdate<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>com.apple.SoftwareUpdate.A1936EA9-62CC-407B-94B0-1AD14BD513BE<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>0250B0DD-84C3-4DA4-91B3-6FA7824F54CD<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>NCSC Automatic Software Update Settings<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configures the macOS software update settings to enable all automatic update options.<span class="nt">&lt;string/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configures the macOS software update settings to enable all automatic update options.<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>ConfigDataInstall<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>CriticalUpdateInstall<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>AutomaticCheckEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>restrict-software-update-require-admin-to-install<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;false/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>AutomaticDownload<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>AutomaticallyInstallAppUpdates<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>AutomaticallyInstallMacOSUpdates<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>CatalogURL<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>AllowPreReleaseInstallation<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>A1936EA9-62CC-407B-94B0-1AD14BD513BE<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.SoftwareUpdate<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.SoftwareUpdate.A1936EA9-62CC-407B-94B0-1AD14BD513BE<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>NCSC Automatic Software Update Settings<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>Configures the macOS software update settings to enable all automatic update options.<span class="nt">&lt;string/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>ConfigDataInstall<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>CriticalUpdateInstall<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>AutomaticCheckEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>restrict-software-update-require-admin-to-install<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;false/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>AutomaticDownload<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>AutomaticallyInstallAppUpdates<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>AutomaticallyInstallMacOSUpdates<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>CatalogURL<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;key&gt;</span>AllowPreReleaseInstallation<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;/array&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
 </span></span></code></pre></div>
+
+
+
 
 <h3 class="relative group">Fast User Switching and Automatic Logon 
     <div id="fast-user-switching-and-automatic-logon" class="anchor"></div>
@@ -1396,66 +1403,73 @@
 </tbody>
 </table>
 <p>I wish they would stick with either &lsquo;Enable&rsquo; or &lsquo;Disable&rsquo;, the mixture is headache inducing. However, mobileconfig file to the rescue.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">     <span class="nt">&lt;key&gt;</span>com.apple.loginwindow<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">     <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;key&gt;</span>Forced<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>mcx_preference_settings<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>DisableFDEAutoLogin<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/array&gt;</span>
-</span></span><span class="line"><span class="cl">     <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;key&gt;</span>com.apple.loginwindow<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;key&gt;</span>Forced<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="nt">&lt;key&gt;</span>mcx_preference_settings<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nt">&lt;key&gt;</span>DisableFDEAutoLogin<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>NCSC Disable Fast User Switching and Autologon<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>7243A790-723E-4433-ABA4-629C1A99264C<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.ManagedClient.preferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>7243A790-723E-4433-ABA4-629C1A99264C<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>NCSC Disable Fast User Switching and Autologon<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>AF624C73-095F-4C69-89FB-A0A771D1225E<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>AF624C73-095F-4C69-89FB-A0A771D1225E<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>NCSC Disable Fast User Switching and Autologon<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>7243A790-723E-4433-ABA4-629C1A99264C<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>com.apple.ManagedClient.preferences<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>7243A790-723E-4433-ABA4-629C1A99264C<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/array&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;string&gt;&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;string&gt;</span>NCSC Disable Fast User Switching and Autologon<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;string&gt;</span>AF624C73-095F-4C69-89FB-A0A771D1225E<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;string&gt;</span>AF624C73-095F-4C69-89FB-A0A771D1225E<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
 </span></span></code></pre></div>
+
+
+
 
 <h3 class="relative group">Hiding System Preferences 
     <div id="hiding-system-preferences" class="anchor"></div>
@@ -1486,59 +1500,66 @@
 </tbody>
 </table>
 <p>Now you <em>could</em> flat out disable them, but remember, NCSC is a guideline, so we&rsquo;re just going to hide them instead&hellip;</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;string&gt;</span>com.apple.systempreferences<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;string&gt;</span>com.apple.systempreferences.12D5D87D-F18F-4807-84A8-1E77FBF0EA4B<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;string&gt;</span>12D5D87D-F18F-4807-84A8-1E77FBF0EA4B<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;string&gt;</span>com.apple.systempreferences<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;string&gt;</span>NCSC Hide System Preferences;iCloud, Security, Startup Disk and Sharing<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;key&gt;</span>HiddenPreferencePanes<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;string&gt;</span>com.apple.preferences.icloud<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;string&gt;</span>com.apple.preference.security<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;string&gt;</span>com.apple.preference.startupdisk<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&lt;string&gt;</span>com.apple.preferences.sharing<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&lt;/array&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;/array&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>NCSC Hide System Preferences;iCloud, Security, Startup Disk and Sharing<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>NCSC Hide System Preferences<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>com.apple.systempreferences<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>BE218051-ED0B-4555-ADFB-86AA3072BB35<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>User<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.systempreferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.systempreferences.12D5D87D-F18F-4807-84A8-1E77FBF0EA4B<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>12D5D87D-F18F-4807-84A8-1E77FBF0EA4B<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.systempreferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>NCSC Hide System Preferences;iCloud, Security, Startup Disk and Sharing<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>HiddenPreferencePanes<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;string&gt;</span>com.apple.preferences.icloud<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;string&gt;</span>com.apple.preference.security<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;string&gt;</span>com.apple.preference.startupdisk<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;string&gt;</span>com.apple.preferences.sharing<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>NCSC Hide System Preferences;iCloud, Security, Startup Disk and Sharing<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>NCSC Hide System Preferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>com.apple.systempreferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>BE218051-ED0B-4555-ADFB-86AA3072BB35<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>User<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
 </span></span></code></pre></div>
+
+
+
 
 <h3 class="relative group">Time Servers 
     <div id="time-servers" class="anchor"></div>
@@ -1570,70 +1591,77 @@
 </table>
 <p>See what I mean about it being complicated, thanks NCSC.</p>
 <p>Anyway, here&rsquo;s the mobileconfig file setting the time servers to be <code>time.euro.apple.com</code> if you&rsquo;re in Europe obviously.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>com.apple.MCX<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">     <span class="nt">&lt;key&gt;</span>Forced<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">     <span class="nt">&lt;array&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;key&gt;</span>mcx_preference_settings<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;dict&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>timeServer<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>time.euro.apple.com<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">     <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadContent<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;key&gt;</span>com.apple.MCX<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;key&gt;</span>Forced<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="nt">&lt;key&gt;</span>mcx_preference_settings<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nt">&lt;key&gt;</span>timeServer<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nt">&lt;string&gt;</span>time.euro.apple.com<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                                <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>Configures Time Servers<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>NCSC Automatic Time Servers<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>4B63BB1E-0D4D-4DD2-BF93-4AAB46523179<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>com.apple.ManagedClient.preferences<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;string&gt;</span>4B63BB1E-0D4D-4DD2-BF93-4AAB46523179<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configures Time Servers<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>NCSC Automatic Time Servers<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>EE4E0945-5074-4EF1-A375-2B9688644D8F<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>EE4E0945-5074-4EF1-A375-2B9688644D8F<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>Configures Time Servers<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>NCSC Automatic Time Servers<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>4B63BB1E-0D4D-4DD2-BF93-4AAB46523179<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>com.apple.ManagedClient.preferences<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;string&gt;</span>4B63BB1E-0D4D-4DD2-BF93-4AAB46523179<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/array&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadDescription<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>Configures Time Servers<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadDisplayName<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>NCSC Automatic Time Servers<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadEnabled<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadIdentifier<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>EE4E0945-5074-4EF1-A375-2B9688644D8F<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadOrganization<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>ennbee.uk<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadRemovalDisallowed<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;true/&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadScope<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>System<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadType<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>Configuration<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadUUID<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;string&gt;</span>EE4E0945-5074-4EF1-A375-2B9688644D8F<span class="nt">&lt;/string&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;key&gt;</span>PayloadVersion<span class="nt">&lt;/key&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
 </span></span></code></pre></div>
+
+
+
 
 <h3 class="relative group">Creating Custom Configuration Profiles 
     <div id="creating-custom-configuration-profiles" class="anchor"></div>

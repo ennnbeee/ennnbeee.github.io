@@ -250,12 +250,12 @@
     
     <item>
       <title>Converting Configuration Manager Direct Membership Collections</title>
-      <link>https://memv.ennbee.uk/posts/converting-direct-member-collections/</link>
+      <link>https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/</link>
       <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/converting-direct-member-collections/</guid>
+      <guid>https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/</guid>
       <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/converting-direct-member-collections/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/featured.png" />
     </item>
     
     <item>

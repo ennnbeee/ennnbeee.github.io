@@ -115,7 +115,7 @@
     "keywords": ["autopilot","remediation","hybrid","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1407"
+    "wordCount": "1403"
   }]
   </script>
 
@@ -1308,34 +1308,36 @@ broke device certificates and an Always On VPN connection that relied on them as
     
 </h3>
 <p>First off we need a something to check that the device is Domain Joined <em>(Lines 1-6)</em>, what the new Computer name is expected to be based on whether a desktop or laptop <em>(Lines 8-21)</em>, and what the existing Computer name is <em>(Lines 23-26)</em>. As we already have a starter for ten, this wasn&rsquo;t too much of a hassle to throw together quickly.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line hl"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">    <span class="nv">$Details</span> <span class="p">=</span> <span class="nb">Get-ComputerInfo</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$Details</span><span class="p">.</span><span class="n">CsPartOfDomain</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nb">Write-Output</span> <span class="s1">&#39;Not Domain Joined&#39;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
-</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$details</span> <span class="p">=</span> <span class="nb">Get-ComputerInfo</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$details</span><span class="p">.</span><span class="n">CsPartOfDomain</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s1">&#39;Not Domain Joined&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="nv">$Serial</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_bios</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">SerialNumber</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">If</span> <span class="p">(</span><span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">win32_battery</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;L-&#39;</span> <span class="p">+</span> <span class="nv">$Serial</span>
-</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">Else</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;D-&#39;</span> <span class="p">+</span> <span class="nv">$Serial</span>
-</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line hl"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="nv">$newName</span> <span class="p">=</span> <span class="nv">$newName</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c">#Removes spaces</span>
-</span></span><span class="line hl"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="c">#shortens name</span>
-</span></span><span class="line hl"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$newName</span><span class="p">.</span><span class="py">Length</span> <span class="o">-ge</span> <span class="mf">15</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="nv">$newName</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">15</span><span class="p">)</span>
-</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line hl"><span class="cl">    <span class="k">If</span> <span class="p">(</span><span class="nv">$Details</span><span class="p">.</span><span class="py">CsName</span> <span class="o">-ne</span> <span class="nv">$newName</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line hl"><span class="cl">        <span class="nb">Write-Warning</span> <span class="s2">&#34;Existing Computer name </span><span class="p">$(</span><span class="nv">$Details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2"> should be </span><span class="nv">$newName</span><span class="s2">&#34;</span>
-</span></span><span class="line hl"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
-</span></span><span class="line hl"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$serial</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_bios</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">SerialNumber</span>
+</span></span><span class="line"><span class="cl">    <span class="k">If</span> <span class="p">(</span><span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">win32_battery</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;L-&#39;</span> <span class="p">+</span> <span class="nv">$serial</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Computer has correct name: </span><span class="p">$(</span><span class="nv">$Details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;D-&#39;</span> <span class="p">+</span> <span class="nv">$serial</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$newName</span> <span class="p">=</span> <span class="nv">$newName</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$newName</span><span class="p">.</span><span class="py">Length</span> <span class="o">-ge</span> <span class="mf">15</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="nv">$newName</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">If</span> <span class="p">(</span><span class="nv">$details</span><span class="p">.</span><span class="py">CsName</span> <span class="o">-ne</span> <span class="nv">$newName</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Warning</span> <span class="s2">&#34;Existing Computer name </span><span class="p">$(</span><span class="nv">$details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2"> should be </span><span class="nv">$newName</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Computer has correct name: </span><span class="p">$(</span><span class="nv">$details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1343,7 +1345,10 @@ broke device certificates and an Always On VPN connection that relied on them as
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>With Proactive Remediation scripts, we need to pass back the results of this check, and any checks, with <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements" target="_blank">Exit Codes</a> and some kind of descriptive text.</p>
+</span></span></code></pre></div>
+
+
+<p>With Proactive Remediation scripts, we need to pass back the results of this check, and any checks, with <a href="https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements" target="_blank">Exit Codes</a> and some kind of descriptive text.</p>
 
 
 <h3 class="relative group">Remediation Script 
@@ -1393,8 +1398,12 @@ broke device certificates and an Always On VPN connection that relied on them as
         <figcaption>Screenshot of the restart notification in Windows.</figcaption>
       </figure></p>
 <p>All components now in place, we have the full script wrapped in the needed Try/Catch operators, otherwise the good practice PowerShell Police will get you:</p>
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$domain</span> <span class="p">=</span> <span class="s1">&#39;ennbee.local&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$waittime</span> <span class="p">=</span> <span class="s1">&#39;60&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$waitTime</span> <span class="p">=</span> <span class="s1">&#39;60&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
@@ -1403,12 +1412,12 @@ broke device certificates and an Always On VPN connection that relied on them as
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;No connectivity to </span><span class="nv">$domain</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nv">$Serial</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_bios</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">SerialNumber</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$serial</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">Win32_bios</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">SerialNumber</span>
 </span></span><span class="line"><span class="cl">    <span class="k">If</span> <span class="p">(</span><span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">win32_battery</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;L-&#39;</span> <span class="p">+</span> <span class="nv">$Serial</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;L-&#39;</span> <span class="p">+</span> <span class="nv">$serial</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;D-&#39;</span> <span class="p">+</span> <span class="nv">$Serial</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$newName</span> <span class="p">=</span> <span class="s1">&#39;D-&#39;</span> <span class="p">+</span> <span class="nv">$serial</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nv">$newName</span> <span class="p">=</span> <span class="nv">$newName</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -1417,16 +1426,19 @@ broke device certificates and an Always On VPN connection that relied on them as
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nb">Rename-Computer</span> <span class="n">-NewName</span> <span class="nv">$newName</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$waitinseconds</span> <span class="p">=</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="nv">$waittime</span><span class="p">).</span><span class="py">TotalSeconds</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Initiating a restart in </span><span class="nv">$waittime</span><span class="s2"> minutes&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&amp;</span> <span class="n">shutdown</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">g</span> <span class="p">/</span><span class="n">t</span> <span class="nv">$waitinseconds</span> <span class="p">/</span><span class="n">f</span> <span class="p">/</span><span class="n">c</span> <span class="s1">&#39;Restarting the computer in 60 minutes due to a computer name change. Please save your work.&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Computer renamed from </span><span class="p">$(</span><span class="nv">$Details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2"> to </span><span class="nv">$newName</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$waitSeconds</span> <span class="p">=</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="nv">$waitTime</span><span class="p">).</span><span class="py">TotalSeconds</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Initiating a restart in </span><span class="nv">$waitime</span><span class="s2"> minutes&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&amp;</span> <span class="n">shutdown</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">g</span> <span class="p">/</span><span class="n">t</span> <span class="nv">$waitSeconds</span> <span class="p">/</span><span class="n">f</span> <span class="p">/</span><span class="n">c</span> <span class="s2">&#34;Restarting your computer in </span><span class="nv">$waitTime</span><span class="s2"> minutes due to a computer name change. Please save your work.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Computer renamed from </span><span class="p">$(</span><span class="nv">$details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2"> to </span><span class="nv">$newName</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
+
+
+
 
 <h3 class="relative group">Deployment in Intune 
     <div id="deployment-in-intune" class="anchor"></div>

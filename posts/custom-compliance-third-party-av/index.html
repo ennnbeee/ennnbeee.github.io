@@ -1426,6 +1426,10 @@
 <p>With a couple of variables, some hex conversion, switches, and a little bit of logic, we can get the information we need and throw it into the JSON format required by <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-custom-script" target="_blank">Microsoft</a> to allow the Custom Compliance script to work as expected.</p>
 <p>We&rsquo;ve used the <code>$AVClient</code> variable, which will allow re-use of the script depending on which product is installed across your device estate.</p>
 <p>We also have to be able to capture and present back when the script doesn&rsquo;t detect the specified <code>$AVClient</code> variable, otherwise we&rsquo;ll get some grim looking compliance errors on those devices.</p>
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$avClient</span> <span class="p">=</span> <span class="s1">&#39;Sophos Anti-Virus&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$avProduct</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s1">&#39;root\SecurityCenter2&#39;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">displayName</span> <span class="o">-eq</span> <span class="nv">$avClient</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="mf">1</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$avSummary</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSObject</span>
@@ -1460,7 +1464,10 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nv">$avSummary</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Compress</span>
-</span></span></code></pre></div><p>Running this script on a machine with the Antivirus product installed would be a good idea to test that the scripts works, and is outputting the correct information in the required format for Intune to translate.</p>
+</span></span></code></pre></div>
+
+
+<p>Running this script on a machine with the Antivirus product installed would be a good idea to test that the scripts works, and is outputting the correct information in the required format for Intune to translate.</p>
 <p>The output from the script should look a little bit like the below:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;Sophos Anti-Virus&#34;</span><span class="p">:</span><span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">:</span><span class="s2">&#34;On&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">:</span><span class="s2">&#34;Up to Date&#34;</span><span class="p">}</span>
 </span></span></code></pre></div>
@@ -1513,53 +1520,60 @@
     >Updated to include improved presentation to the end user of the issues as displayed in the Company Portal.</span>
 </div>
 
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">   <span class="nt">&#34;Rules&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;SettingName&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://support.home.sophos.com/hc/en-us/categories/115001242663-Installing-Sophos-Home&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus was not detected.&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;You must have Sophos Antivirus installed on your device to protect it from malware.&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">         <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;SettingName&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;On&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://support.home.sophos.com/hc/en-us/articles/115005596186-Configuring-Real-Time-Protection&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Antivirus real time protection is not enabled&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Real time protection must be enabled in Sophos to protect your device, please enable this setting.&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">         <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">},</span>
-</span></span><span class="line"><span class="cl">      <span class="p">{</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;SettingName&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;Up to Date&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://kb.mit.edu/confluence/pages/viewpage.action?pageId=152584581#:~:text=By%20default%2C%20Sophos%20Anti%2DVirus,as%20detailed%20%E2%80%93%20is%20not%20necessary.&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">         <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Antivirus definitions are not up to date.&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">               <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Please update the Sophos Antivirus definitions to ensure you device is protected from malware.&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">         <span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">   <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Rules&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;SettingName&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://support.home.sophos.com/hc/en-us/categories/115001242663-Installing-Sophos-Home&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus was not detected.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;You must have Sophos Antivirus installed on your device to protect it from malware.&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;SettingName&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;On&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://support.home.sophos.com/hc/en-us/articles/115005596186-Configuring-Real-Time-Protection&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Antivirus real time protection is not enabled&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Real time protection must be enabled in Sophos to protect your device, please enable this setting.&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;SettingName&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;Operator&#34;</span><span class="p">:</span> <span class="s2">&#34;IsEquals&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;DataType&#34;</span><span class="p">:</span> <span class="s2">&#34;String&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;Operand&#34;</span><span class="p">:</span> <span class="s2">&#34;Up to Date&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;MoreInfoUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://kb.mit.edu/confluence/pages/viewpage.action?pageId=152584581#:~:text=By%20default%2C%20Sophos%20Anti%2DVirus,as%20detailed%20%E2%80%93%20is%20not%20necessary.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;RemediationStrings&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en_US&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Title&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Antivirus definitions are not up to date.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&#34;Description&#34;</span><span class="p">:</span> <span class="s2">&#34;Please update the Sophos Antivirus definitions to ensure you device is protected from malware.&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
+
+
+
 
 <h2 class="relative group">Deploying Custom Compliance 
     <div id="deploying-custom-compliance" class="anchor"></div>
@@ -1825,6 +1839,181 @@
   
   
 
+  <a href="/posts/automate-endpoint-privilege-management/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/automate-endpoint-privilege-management/featured.png);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/automate-endpoint-privilege-management/">Automating Endpoint Privilege Management Policies with PowerShell</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2023-06-01 18:58:40 &#43;0100 &#43;0100">1 June 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/Automate-Endpoint-Privilege-Management/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Microsoft Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/settingscatalog/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Settings Catalog
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/epm/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Endpoint Privilege Management
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
   <a href="/posts/defender-antivirus-compliance-updates/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -2016,11 +2205,11 @@
   
   
 
-  <a href="/posts/automate-endpoint-privilege-management/" class="min-w-full">
+  <a href="/posts/configmgr-client-hybrid-autopilot/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/automate-endpoint-privilege-management/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/configmgr-client-hybrid-autopilot/featured.png);"></div>
         
       
 
@@ -2028,7 +2217,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/automate-endpoint-privilege-management/">Automating Endpoint Privilege Management Policies with PowerShell</div>
+          href="/posts/configmgr-client-hybrid-autopilot/">Co-Managing Windows Autopilot Hybrid Join Devices</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2069,7 +2258,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-06-01 18:58:40 &#43;0100 &#43;0100">1 June 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-03-01 21:26:30 &#43;0000 UTC">1 March 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2082,7 +2271,7 @@
       
     
   
-  <span id="views_posts/Automate-Endpoint-Privilege-Management/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/ConfigMgr-Client-Hybrid-Autopilot/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2117,177 +2306,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/configmgr/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/settingscatalog/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Settings Catalog
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/epm/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Endpoint Privilege Management
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-  
-  
-
-  <a href="/posts/operating-system-compliance-updates/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/operating-system-compliance-updates/featured.png);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/operating-system-compliance-updates/">Windows Operating System Compliance Updates</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2022-06-30 11:20:36 &#43;0100 &#43;0100">30 June 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/Operating-System-Compliance-Updates/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
+    Microsoft Configuration Manager
   </span>
 </span>
   </span>
@@ -2308,34 +2330,18 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/compliance/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Compliance
+    Windows Autopilot
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
+    Remediation
   </span>
 </span>
   </span>

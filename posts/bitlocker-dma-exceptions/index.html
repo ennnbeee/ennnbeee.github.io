@@ -114,7 +114,7 @@
     "keywords": ["bitlocker","powershell","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1303"
+    "wordCount": "1315"
   }]
   </script>
 
@@ -1351,7 +1351,14 @@
     
 </h2>
 <p>Combining both the device model logic, and the creation of new registry items in the correct location, we have the below, which can act as a template or example for the rest of your devices with these issues.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$regPath</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\DmaSecurity\AllowedBuses&#39;</span>
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c"># Allow for silent BitLocker Encryption</span>
+</span></span><span class="line"><span class="cl"><span class="c"># https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$regPath</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\DmaSecurity\AllowedBuses&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">$devicesLenovo</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="s1">&#39;20UACTO1WW&#39;</span><span class="p">,</span> <span class="s1">&#39;20KG0005AU&#39;</span><span class="p">)</span>
@@ -1380,12 +1387,17 @@
 </span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$dmaDevice</span> <span class="k">in</span> <span class="nv">$dmaDevices</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$regPath</span> <span class="n">-Name</span> <span class="nv">$dmaDevice</span><span class="p">.</span><span class="py">name</span> <span class="n">-Value</span> <span class="nv">$dmaDevice</span><span class="p">.</span><span class="py">value</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Force</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">0</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">ErrorDetails</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">1</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>This can be modified based on your own device estate, grouping devices by manufacturer or model, or just by which exceptions need to be made.</p>
+</span></span></code></pre></div>
+
+
+<p>This can be modified based on your own device estate, grouping devices by manufacturer or model, or just by which exceptions need to be made.</p>
 
   
 

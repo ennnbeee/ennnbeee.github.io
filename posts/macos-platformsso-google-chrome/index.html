@@ -1629,6 +1629,10 @@
 <p>Using the <a href="https://support.google.com/chrome/a/answer/7517624?hl=en#zippy=%2Cpin-app-or-extension-updates%2Cset-installation-policies-automatically-install-force-install-allow-or-block" target="_blank">examples</a> provided by Google, we have a basis to create our custom <code>mobileconfig</code> file, which when complete, can be uploaded to Microsoft Intune and deployed to our macOS devices.</p>
 <p>As we&rsquo;re focusing solely on the forced installation of the <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji" target="_blank">Microsoft Single Sign On extension</a>, we can strip out everything else from the example, and can update the configuration file to install the extension we want.</p>
 <p>We need to update the settings under the key <code>installation_mode</code> setting the string value to <code>force_installed</code>, this in conjunction with the ID of the extension we want to force install <code>ppnbnpeolgkicgegkbkbjmhlideopiji</code> (which we can get from the extension URL itself), allows us to configure a custom profile for Google Chrome to ensure that the extension that unlocks all the Platform SSO goodness is deployed to devices with Google Chrome installed.</p>
+
+
+
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
@@ -1694,7 +1698,10 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;integer&gt;</span>1<span class="nt">&lt;/integer&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;/dict&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
-</span></span></code></pre></div><p>The other settings in the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig" target="_blank">profile</a> ensure that the profile is installed in the system context and cannot be removed by an end user.</p>
+</span></span></code></pre></div>
+
+
+<p>The other settings in the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Configuration/PlatformSSO/GoogleChromepSSO.mobileconfig" target="_blank">profile</a> ensure that the profile is installed in the system context and cannot be removed by an end user.</p>
 
   
 
@@ -1738,7 +1745,7 @@
     </span>        
     
 </h3>
-<p>Now armed with our saved <code>mobileconfig</code> profile, we can create a new macOS Configuration Profile, using the <strong>Template</strong> profile type, and selecting <strong>Custom</strong>, giving the profile a name <del>by smashing your hand on the keyboard</del> aligned to your naming convention, we can then complete the remaining sections of the profile uploading the <code>mobileconfig</code> profile we saved previously:</p>
+<p>Now armed with our saved <strong>mobileconfig</strong> profile, we can create a new macOS Configuration Profile, using the <strong>Template</strong> profile type, and selecting <strong>Custom</strong>, giving the profile a name <del>by smashing your hand on the keyboard</del> aligned to your naming convention, we can then complete the remaining sections of the profile uploading the <strong>mobileconfig</strong> profile we saved previously:</p>
 <table>
 <thead>
 <tr>
@@ -1769,7 +1776,7 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-custom_hud09cb1fde06a6d5ac84a8e03c92ebe74_105281_filter_6546946622194681068.png#left" alt="Microsoft Intune Custom Profile" />
         <figcaption>Screenshot of the a Custom Profile in Microsoft Intune for macOS.</figcaption>
       </figure></p>
-<p>Give the configuration profile a suitable name, I&rsquo;ve gone with <code>Google Chrome Platform SSO Profile</code>, as really you&rsquo;re only going to see this on the device itself under the Profile section of System Preferences.</p>
+<p>Give the configuration profile a suitable name, I&rsquo;ve gone with <strong>Google Chrome Platform SSO Profile</strong>, as really you&rsquo;re only going to see this on the device itself under the Profile section of System Preferences.</p>
 
   
 
@@ -1798,7 +1805,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >As the custom profile sets the <code>PayloadScope</code> as <code>System</code> our Deployment channel should be set to <code>Device channel</code>.</span>
+    >As the custom profile sets the <code>PayloadScope</code> as <code>System</code> our Deployment channel should be set to <strong>Device channel</strong>.</span>
 </div>
 
 <p>We should probably assign this profile to our test devices, so go ahead and do that, and after a while we should get some greens:</p>
@@ -1881,7 +1888,7 @@
 </h2>
 <p>Platform SSO on macOS in Microsoft Intune is a big thing, it&rsquo;s likely the last hurdle or excuse people were using to stay away from using a Microsoft product to manage an Apple device.</p>
 <p>If you&rsquo;re already in bed with Microsoft and associated services, then something as trivial as where your precious Apple devices are managed shouldn&rsquo;t be stopping you from jumping two footed straight into enrolling your macOS devices into Microsoft Intune, especially now that you can use Entra ID authentication across them.</p>
-<p>On top of this, we can now configure the most used browsers on a macOS device to leverage and make use of Platform SSO, to stop users from being bogged down with sign-in prompts that their colleagues on povo-spec Windows laptops don&rsquo;t have to deal with.</p>
+<p>On top of this, we can now configure the most used browsers on a macOS device to leverage and make use of Platform SSO, to stop users from being bogged down with sign-in prompts that their colleagues on low-spec Windows laptops don&rsquo;t have to deal with.</p>
 <p>It&rsquo;s a win win in my books.</p>
 
         </div>
@@ -2052,173 +2059,6 @@
 
 <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-  
-  
-
-  <a href="/posts/macos-ncsc-settings/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/macos-ncsc-settings/featured.jpg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/macos-ncsc-settings/">macOS National Cyber Security Centre Security Settings in Intune</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2022-04-21 11:55:11 &#43;0100 &#43;0100">21 April 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_posts/macOS-NCSC-Settings/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Microsoft Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/macos/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    macOS
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    National Cyber Security Centre (NCSC)
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/custom/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Custom Profiles
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configuration/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Configuration
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
   
   
 
@@ -2526,6 +2366,173 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Conditional Access
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/macos-ncsc-settings/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/macos-ncsc-settings/featured.jpg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/macos-ncsc-settings/">macOS National Cyber Security Centre Security Settings in Intune</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2022-04-21 11:55:11 &#43;0100 &#43;0100">21 April 2022</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_posts/macOS-NCSC-Settings/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Microsoft Intune
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/macos/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    macOS
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ncsc/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    National Cyber Security Centre (NCSC)
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/custom/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Custom Profiles
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/configuration/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Configuration
   </span>
 </span>
   </span>
