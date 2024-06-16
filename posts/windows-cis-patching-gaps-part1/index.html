@@ -115,7 +115,7 @@
     "keywords": ["security","cis","custom","bitlocker"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2273"
+    "wordCount": "2313"
   }]
   </script>
 
@@ -1817,7 +1817,7 @@
         <figcaption>Screenshot of the BitLocker Platform script settings in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Using a Platform script over a remediation script allows this to be run (maybe) during Windows Autopilot, or if you&rsquo;re fancy and using the new <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/overview" target="_blank">Windows Autopilot device preparation</a> method, actually <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/tutorial/user-driven/entra-join-assign-apps-scripts" target="_blank">guarantee</a> that it runs during the deployment.</p>
-<p>So for our test Windows Autopilot device with the inventive serial number <strong>qwertyuiopasdfghjklzxcvbnm</strong>, set using <a href="https://www.altaro.com/hyper-v/free-tool-advanced-settings-editor-hyper-v-virtual-machines/" target="_blank">Advanced Settings Editor for Hyper-V Virtual Machines</a> and by running a hand across a keyboard:</p>
+<p>For our test Windows Autopilot device with the inventive serial number <strong>qwertyuiopasdfghjklzxcvbnm</strong>, set using <a href="https://www.altaro.com/hyper-v/free-tool-advanced-settings-editor-hyper-v-virtual-machines/" target="_blank">Advanced Settings Editor for Hyper-V Virtual Machines</a> and by running a hand across a keyboard&hellip;</p>
 <p>
 
 
@@ -1831,7 +1831,7 @@
         />
         <figcaption>Screenshot of the Windows Autopilot device serial number.</figcaption>
       </figure></p>
-<p>We can see that after restarting during Windows Autopilot, the device  is now asking for a BitLocker PIN, and low and behold it&rsquo;s the serial number shortened to 14-characters and in uppercase:</p>
+<p>We can see that after restarting during Windows Autopilot (forced by another CIS setting, but more on that later), the device is now asking for a BitLocker PIN, and low and behold it&rsquo;s the serial number of the device shortened to 14-characters and in uppercase:</p>
 <video controls preload="auto" width="100%"  playsinline class="html-video">
     <source src="/posts/windows-cis-patching-gaps-part1/img/cis-pinboot.mp4" type="video/mp4">
     <span></span>
@@ -2032,7 +2032,7 @@
 </tbody>
 </table>
 <p>Which was created based on the details in the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-dmaguard#deviceenumerationpolicy" target="_blank">Policy CSP</a> article. This is another device impact setting, adding to the Thunderbolt DMA protection settings, and stopping DMA capable devices that cannot be sandboxed, remapped, or isolated in memory.</p>
-<p>Be cautious though, as this policy setting does require a restart, but doesn&rsquo;t force one. Which is lucky for our Windows Autopilot deployments of any kind.</p>
+<p>Be cautious though, as this policy setting does require a restart, but doesn&rsquo;t force one.</p>
 
   
 
@@ -2076,8 +2076,9 @@
     </span>        
     
 </h2>
-<p>That&rsquo;s all there is to the CIS benchmark for Windows 11 BitLocker security in Microsoft Intune, pretty simple really 😅.</p>
+<p>So that&rsquo;s all there is to the CIS benchmark for Windows 11 BitLocker security in Microsoft Intune, pretty simple really 😅.</p>
 <p>We hope you now have a good grasp on exactly what the benchmark and policy settings are doing regarding BitLocker and the security around it, why the policies are applying these settings, and importantly how to improve and work with the restrictions to make not only the implementation in Microsoft Intune more straight forward, but also the end-user experience.</p>
+<p>This saves you just implementing the benchmark build kit settings in Microsoft Intune, and being all <a href="https://knowyourmeme.com/memes/surprised-pikachu" target="_blank">surprised Pikachu face</a>, when your devices don&rsquo;t just encrypt themselves, or your keyboards connected to docks don&rsquo;t work at the sign-in screen.</p>
 <p>Next up for us in the series are the CIS Level 1 settings, and if you thought the BitLocker settings were painful, you&rsquo;re in for a shock 😆.</p>
 
         </div>
