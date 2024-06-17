@@ -1850,9 +1850,9 @@
 
 <p>The script, in short will carry out the following:</p>
 <ul>
-<li>Removes any existing <strong>TpmPin</strong> key protectors, as there can only be one.</li>
-<li>If a recovery key protector does not exist, it will create one.</li>
-<li>Get the serial number of the device, converting it to uppercase, shorten it to the first 14 character if it&rsquo;s long than that.</li>
+<li>Removes any existing <strong>TpmPin</strong> key protectors, as there can only be one #highlander.</li>
+<li>If a <strong>Recovery Key</strong> key protector doesn&rsquo;t exist, it will create one.</li>
+<li>Get the serial number of the device, converting it to uppercase, and shortening it to the first 14-characters if it&rsquo;s longer than that.</li>
 <li>Creates a new <strong>TpmPin</strong> key protector with the PIN set to the converted serial number.</li>
 <li>Backups the recovery key to Entra.</li>
 </ul>
@@ -1885,7 +1885,7 @@
         />
         <figcaption>Screenshot of the Windows Autopilot device serial number.</figcaption>
       </figure></p>
-<p>We can see that after restarting during Windows Autopilot (forced by another CIS setting, but more on that later), the device is now asking for a BitLocker PIN, and low and behold it&rsquo;s the serial number of the device shortened to 14-characters and in uppercase:</p>
+<p>We can see that after restarting during Windows Autopilot (forced by another CIS setting, but more on that another time), the device is now asking for a BitLocker PIN, and low and behold it&rsquo;s the first 14-characters of the device serial number in uppercase:</p>
 <video controls preload="auto" width="100%"  playsinline class="html-video">
     <source src="/posts/windows-cis-patching-gaps-part1/img/cis-pinboot.mp4" type="video/mp4">
     <span></span>
