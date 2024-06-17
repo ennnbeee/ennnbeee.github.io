@@ -115,7 +115,7 @@
     "keywords": ["security","cis","custom","bitlocker"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2313"
+    "wordCount": "2319"
   }]
   </script>
 
@@ -1360,8 +1360,8 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>With the release of the <a href="https://www.cisecurity.org/" target="_blank">CIS</a> (Center for Internet Security) <a href="https://www.cisecurity.org/benchmark/intune" target="_blank">Windows 11 Benchmark 3.0.1</a>, the corresponding release of the Microsoft Intune build kit, and my mate <a href="https://www.linkedin.com/in/jonathan-fallis" target="_blank">Jonathan Fallis</a> covering the CIS <a href="https://www.everything365.online/2023/09/18/cis-microsoft-intune-for-windows-11-benchmark-in-settings-catalog-json/" target="_blank">community version</a> of the benchmark (and the limitations) on his <a href="https://deploymentshare.com/articles/bp-cis/" target="_blank">website</a>, we thought it best to share our combined experience when working with the newly available CIS build kit, focussing in this initial part of the series on BitLocker security settings.</p>
-<p>Over the course of three posts, well be aiming to find and fix any issues the build kit profiles create for Windows 11 cloud native devices, improve functionality using Microsoft Intune where we can, and add any missing settings that exist between the <a href="https://www.cisecurity.org/benchmark/intune" target="_blank">downloadable benchmark documents</a> and the build kit.</p>
+          <p>With the release of the <a href="https://www.cisecurity.org/" target="_blank">CIS</a> (Center for Internet Security) <a href="https://www.cisecurity.org/benchmark/intune" target="_blank">Windows 11 Benchmark 3.0.1</a>, the corresponding release of the Microsoft Intune build kit, and my colleague <a href="https://www.linkedin.com/in/jonathan-fallis" target="_blank">Jonathan Fallis</a> covering the CIS <a href="https://www.everything365.online/2023/09/18/cis-microsoft-intune-for-windows-11-benchmark-in-settings-catalog-json/" target="_blank">community version</a> of the benchmark (and the limitations) on his <a href="https://deploymentshare.com/articles/bp-cis/" target="_blank">website</a>, we both thought it would be best to share our combined experience when working with the newly available CIS build kit; focussing on BitLocker security settings in the initial part of this series.</p>
+<p>Over the course of three posts, we&rsquo;ll be aiming to find and fix any issues the build kit profiles create for Windows 11 cloud native devices, improve functionality using Microsoft Intune where we can, and add any missing settings that exist between the <a href="https://www.cisecurity.org/benchmark/intune" target="_blank">downloadable benchmark documents</a> and the build kit.</p>
 <p>Let&rsquo;s start with the obvious place.</p>
 
 
@@ -1850,10 +1850,10 @@
 
 <p>The script, in short will carry out the following:</p>
 <ul>
-<li>Removes any existing <code>TpmPin</code> key protectors, as there can only be one.</li>
+<li>Removes any existing <strong>TpmPin</strong> key protectors, as there can only be one.</li>
 <li>If a recovery key protector does not exist, it will create one.</li>
-<li>Grab the serial number of the device, convert it to uppercase, and if longer than 14 characters will shorten it.</li>
-<li>Creates a new <code>TpmPin</code> key protector with the PIN set to the converted serial number.</li>
+<li>Get the serial number of the device, converting it to uppercase, shorten it to the first 14 character if it&rsquo;s long than that.</li>
+<li>Creates a new <strong>TpmPin</strong> key protector with the PIN set to the converted serial number.</li>
 <li>Backups the recovery key to Entra.</li>
 </ul>
 <p>It can then be deployed to your Windows Autopilot devices using a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/intune-management-extension" target="_blank">Platform Script</a> in Microsoft Intune in conjunction with the supplemental policy we created, with the below settings:</p>
