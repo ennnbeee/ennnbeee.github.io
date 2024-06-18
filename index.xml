@@ -479,22 +479,12 @@
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://memv.ennbee.uk/about/</link>
+      <title>Information</title>
+      <link>https://memv.ennbee.uk/information/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/about/</guid>
-      <description>I&amp;rsquo;m Nick Benton, an end-user computing specialist with over a decade of experience in consulting, architecture, design, and implementation of modern device management, and enterprise mobility solutions.</description>
-      
-    </item>
-    
-    <item>
-      <title>Privacy</title>
-      <link>https://memv.ennbee.uk/privacy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/privacy/</guid>
-      <description>Introduction # This site collects usage data using Google Analytics 4 using cookies, giving us insight into the number of people that visit our website.</description>
+      <guid>https://memv.ennbee.uk/information/</guid>
+      <description>Disclaimer # The views expressed anywhere on this site are strictly mine and not the opinions and views of my employer or any vendor mentioned.</description>
       
     </item>
     
