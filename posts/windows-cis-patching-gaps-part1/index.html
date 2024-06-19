@@ -115,7 +115,7 @@
     "keywords": ["security","cis","custom","bitlocker"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2319"
+    "wordCount": "2350"
   }]
   </script>
 
@@ -1223,7 +1223,7 @@
     class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#cis-build-kit">CIS Build Kit</a></li>
+    <li><a href="#cis-build-kits">CIS Build Kits</a></li>
     <li><a href="#cis-bitlocker-settings">CIS BitLocker Settings</a>
       <ul>
         <li><a href="#encryption-settings">Encryption Settings</a></li>
@@ -1247,7 +1247,7 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#cis-build-kit">CIS Build Kit</a></li>
+    <li><a href="#cis-build-kits">CIS Build Kits</a></li>
     <li><a href="#cis-bitlocker-settings">CIS BitLocker Settings</a>
       <ul>
         <li><a href="#encryption-settings">Encryption Settings</a></li>
@@ -1339,17 +1339,47 @@
 <p>Let&rsquo;s start with the obvious place.</p>
 
 
-<h2 class="relative group">CIS Build Kit 
-    <div id="cis-build-kit" class="anchor"></div>
+<h2 class="relative group">CIS Build Kits 
+    <div id="cis-build-kits" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#cis-build-kit" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#cis-build-kits" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>If you have access to the <a href="https://workbench.cisecurity.org/" target="_blank">CIS Workbench</a>, (if you don&rsquo;t you should be able to <a href="https://workbench.cisecurity.org/registration" target="_blank">register</a>), you can download the Windows 11 <a href="https://workbench.cisecurity.org/files/5179" target="_blank">build kit</a> for Microsoft Intune, which when extracted will give you exported Settings Catalog profiles in JSON format, ready to <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog?tabs=sc-search-filter%2Csc-reporting#import-and-export-a-profile" target="_blank">import</a> into Microsoft Intune:</p>
+<p>If you have access to the <a href="https://workbench.cisecurity.org/" target="_blank">CIS Workbench</a> as part of an organisational account, you can download the Windows 11 build kit for Microsoft Intune, which when extracted will give you exported Settings Catalog profiles in JSON format, ready to <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog?tabs=sc-search-filter%2Csc-reporting#import-and-export-a-profile" target="_blank">import</a> into Microsoft Intune:</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >It turns out the we have more access in the CIS Workbench than we realised, you can still <a href="https://workbench.cisecurity.org/registration" target="_blank">register</a> but this will only get you access to the benchmark documents, not the build kits.</span>
+</div>
+
 <p>
 
 
