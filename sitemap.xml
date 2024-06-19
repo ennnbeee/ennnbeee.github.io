@@ -297,6 +297,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</loc>
+    <lastmod>1984-03-29T21:26:37+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://memv.ennbee.uk/information/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
