@@ -115,7 +115,7 @@
     "keywords": ["security","cis","custom","bitlocker"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2350"
+    "wordCount": "2337"
   }]
   </script>
 
@@ -1418,7 +1418,7 @@
           src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/img/cis-import_hu75b609c2651c9d2fe9f6a9a6860d0011_84684_filter_9277426828778041185.png"
           alt="Imported CIS profiles"
         />
-        <figcaption>Screenshot the imported CIS profiles in Microsoft Intune.</figcaption>
+        <figcaption>Imported CIS profiles in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Each of these profiles is aligned with the CIS benchmark whether <strong>Level 1</strong>, <strong>Level 2</strong>, or <strong>BitLocker</strong> settings, and instead of blindly applying these to your device estate, you really should have a look at the following sections on BitLocker profiles, as we build upon our <a href="https://deploymentshare.com/articles/bp-cis/#:~:text=Policy%20%2D%20CIS%20L0%20BitLocker" target="_blank">existing understanding</a> of their impact, and fix some issues along the way.</p>
 
@@ -1445,7 +1445,7 @@
           src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/img/cis-importbl_hu5c44af3f77820906260f0b657cdc0c1d_34216_filter_14644544737534117964.png"
           alt="Imported CIS BitLocker profiles"
         />
-        <figcaption>Screenshot the imported CIS BitLocker profiles in Microsoft Intune.</figcaption>
+        <figcaption>Imported CIS BitLocker profiles in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Usually you just configure the use of TPM as the pre-boot authentication, allow Standard Users to encrypt the device, encryption method and cipher strength, encryption method, and boom there you have it, automatically and silently encrypted protected devices.</p>
 <p>Well not according to CIS, and for good reason.</p>
@@ -1769,7 +1769,7 @@
           src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/img/cis-tpmpin_hubb4b0d3e85896b3197c4d4590fa27acc_17548_filter_16290595333585131903.png"
           alt="BitLocker TpmPin settings"
         />
-        <figcaption>Screenshot of the amended BitLocker benchmark policy in Microsoft Intune.</figcaption>
+        <figcaption>Amended BitLocker benchmark policy in Microsoft Intune.</figcaption>
       </figure></p>
 <p>This will enable silent encryption, protecting the data on the device, but also allowing a PIN to be configured afterwards.</p>
 
@@ -1899,7 +1899,7 @@
           src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/img/cis-bl_hu7270fde33e91781b8e554eeb8661c8e7_36085_filter_191762731131657794.png"
           alt="BitLocker Serial to PIN Script"
         />
-        <figcaption>Screenshot of the BitLocker Platform script settings in Microsoft Intune.</figcaption>
+        <figcaption>BitLocker Platform script settings in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Using a Platform script over a remediation script allows this to be run (maybe) during Windows Autopilot, or if you&rsquo;re fancy and using the new <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/overview" target="_blank">Windows Autopilot device preparation</a> method, actually <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/tutorial/user-driven/entra-join-assign-apps-scripts" target="_blank">guarantee</a> that it runs during the deployment.</p>
 <p>For our test Windows Autopilot device with the inventive serial number <strong>qwertyuiopasdfghjklzxcvbnm</strong>, set using <a href="https://www.altaro.com/hyper-v/free-tool-advanced-settings-editor-hyper-v-virtual-machines/" target="_blank">Advanced Settings Editor for Hyper-V Virtual Machines</a> and by running a hand across a keyboard&hellip;</p>
@@ -1914,7 +1914,7 @@
           src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/img/cis-serial_hu363d01ffbbbbcff4848a584cd45e2f1c_23120_filter_4172617808792208082.png"
           alt="Device Serial Number"
         />
-        <figcaption>Screenshot of the Windows Autopilot device serial number.</figcaption>
+        <figcaption>Windows Autopilot device serial number.</figcaption>
       </figure></p>
 <p>We can see that after restarting during Windows Autopilot (forced by another CIS setting, but more on that another time), the device is now asking for a BitLocker PIN, and low and behold it&rsquo;s the first 14-characters of the device serial number in uppercase:</p>
 <video controls preload="auto" width="100%"  playsinline class="html-video">

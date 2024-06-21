@@ -118,7 +118,7 @@
     "keywords": ["updates","groups","powershell","graph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1951"
+    "wordCount": "1943"
   }]
   </script>
 
@@ -1432,7 +1432,7 @@
 
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq_hu096538423d2c310239f5fff4958e7be9_70978_filter_6889955347665660423.webp#left" alt="Feature Update Pre-reqs" />
-        <figcaption>Screenshot of Microsoft Intune settings catalog policy.</figcaption>
+        <figcaption>Microsoft Intune settings catalog policy.</figcaption>
       </figure></p>
 <p>Right, on to setting up the Feature Update profiles.</p>
 
@@ -1468,7 +1468,7 @@
 
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions_hu28d5d92c1183d3d29ec0d3f1941dcace_101030_filter_10133113150053401363.webp#left" alt="Feature Update Versions" />
-        <figcaption>Screenshot of Microsoft Feature Update profile with immediate installation.</figcaption>
+        <figcaption>Microsoft Feature Update profile with immediate installation.</figcaption>
       </figure></p>
 <p>So go and create some new groups in Entra ID with the below rules to capture your corporate owned Windows devices at each Feature Update version</p>
 <table>
@@ -1591,7 +1591,7 @@
 
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy_hu87f4e82ba1dfabc4f57d03559a1b3795_102344_filter_13836988765519166218.webp#leftt" alt="Feature Update Deployment" />
-        <figcaption>Screenshot of Microsoft Feature Update profile with phased installation.</figcaption>
+        <figcaption>Microsoft Feature Update profile with phased installation.</figcaption>
       </figure></p>
 <p>Well it&rsquo;s not necessarily magic, there must be something in the background that allows the splitting of a targeted include assignment group or groups into equal sized smaller manageable <a href="%28https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-rollout-options#make-updates-available-gradually%29">virtual groups</a> between the start date and end date, separated by number of days between them.</p>
 <p>A few things to note before we go and assign this profile:</p>
@@ -1607,7 +1607,7 @@
 
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign_huf460c08efd4fd5df40972db64fc9d8cd_43996_filter_2710746711798666460.webp#leftt" alt="Feature Update Assignment" />
-        <figcaption>Screenshot of Microsoft Feature Update profile assignment.</figcaption>
+        <figcaption>Microsoft Feature Update profile assignment.</figcaption>
       </figure></p>
 <p>With these devices telling you that they&rsquo;re happy to update to Windows 11, you can safely sit back and watch the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-reports#reports-for-windows-10-and-later-feature-updates-policy" target="_blank">reports</a> update with the status of the Feature Update deployment, giving you time to work through the issues reported by the medium and high risk device issues.</p>
 <p>Or if you&rsquo;re like me, just take a chance deploying the Feature Update to the medium risk devices, I mean who cares if a driver get&rsquo;s removed, you should be <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-driver-updates-overview" target="_blank">updating</a> them anyway 😂.</p>
