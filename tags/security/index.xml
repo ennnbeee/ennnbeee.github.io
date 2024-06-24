@@ -14,7 +14,7 @@
       <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</guid>
-      <description>Everyone loves a security baseline, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of their benchmark, including a build kit for Microsoft Intune, but what does it break for BitLocker encryption?</description>
+      <description>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/featured.png" />
     </item>
     
@@ -25,7 +25,7 @@
       
       <guid>https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/</guid>
       <description>With all the hype about Platform SSO on macOS devices, now is the time to try out not just the standard functionality, but the integration into web browsers such as Google Chrome. We take a look at how to configure this using Microsoft Intune.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/featured.jpg" />
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       
       <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
       <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.png" />
     </item>
     
     <item>
@@ -55,7 +55,7 @@
       
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
       <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
     </item>
     
     <item>
@@ -135,7 +135,7 @@
       
       <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
       <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
     </item>
     
     <item>
@@ -145,7 +145,7 @@
       
       <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
       <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.jpg" />
     </item>
     
     <item>

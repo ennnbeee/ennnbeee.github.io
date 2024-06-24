@@ -15,7 +15,7 @@
       
       <guid>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</guid>
       <description>With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but still need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to deploy a Windows Autopilot Virtual machine on your macOS device for testing.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/featured.png" />
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       
       <guid>https://memv.ennbee.uk/posts/updating-enrolled-device-ownership/</guid>
       <description>What happens if you&amp;rsquo;ve allowed Windows, iOS, Android, and macOS devices to enrol into Microsoft Microsoft Intune in all kinds of ways, and now you&amp;rsquo;re in a situation where devices that should be marked as corporate are marked as personal or unknown?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-enrolled-device-ownership/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-enrolled-device-ownership/featured.jpg" />
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       
       <guid>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</guid>
       <description>A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/featured.jpg" />
     </item>
     
     <item>

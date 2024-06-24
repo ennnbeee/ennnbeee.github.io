@@ -25,7 +25,7 @@
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</guid>
       <description>Using the data captured from a Windows 11 Feature Update Readiness report to successfully tag device attributes to device objects, and group them based on risk, we now look at how to deploy Feature Updates to these devices in a controlled manner.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/featured.png" />
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
       <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.png" />
     </item>
     
   </channel>

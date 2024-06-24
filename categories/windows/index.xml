@@ -14,7 +14,7 @@
       <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</guid>
-      <description>Everyone loves a security baseline, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of their benchmark, including a build kit for Microsoft Intune, but what does it break for BitLocker encryption?</description>
+      <description>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/featured.png" />
     </item>
     
@@ -35,7 +35,7 @@
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/</guid>
       <description>Using the data captured from a Windows 11 Feature Update Readiness report to successfully tag device attributes to device objects, and group them based on risk, we now look at how to deploy Feature Updates to these devices in a controlled manner.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part3/featured.png" />
     </item>
     
     <item>
@@ -55,7 +55,7 @@
       
       <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
       <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.png" />
     </item>
     
     <item>
@@ -75,7 +75,7 @@
       
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
       <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
     </item>
     
     <item>
@@ -145,7 +145,7 @@
       
       <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
       <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
     </item>
     
     <item>
@@ -185,7 +185,7 @@
       
       <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
       <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.jpg" />
     </item>
     
     <item>
@@ -245,7 +245,7 @@
       
       <guid>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</guid>
       <description>A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/featured.jpg" />
     </item>
     
     <item>
