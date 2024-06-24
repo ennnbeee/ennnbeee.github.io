@@ -7,7 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Sat, 15 Jun 2024 21:26:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jun 2024 21:26:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Center for Internet Security (CIS)</title>
+      <link>https://memv.ennbee.uk/tags/cis/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/cis/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Custom Profiles</title>
+      <link>https://memv.ennbee.uk/tags/custom/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/custom/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://memv.ennbee.uk/tags/security/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows Autopilot</title>
+      <link>https://memv.ennbee.uk/tags/autopilot/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows Hello</title>
+      <link>https://memv.ennbee.uk/tags/hello/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/hello/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>BitLocker</title>
       <link>https://memv.ennbee.uk/tags/bitlocker/</link>
@@ -19,51 +69,11 @@
     </item>
     
     <item>
-      <title>Center for Internet Security (CIS)</title>
-      <link>https://memv.ennbee.uk/tags/cis/</link>
-      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/cis/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Custom Profiles</title>
-      <link>https://memv.ennbee.uk/tags/custom/</link>
-      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/custom/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://memv.ennbee.uk/tags/security/</link>
-      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/security/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Enrolment</title>
       <link>https://memv.ennbee.uk/tags/enrolment/</link>
       <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/enrolment/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/tags/autopilot/</link>
-      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
       <description></description>
       
     </item>
@@ -364,16 +374,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/ce/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows Hello</title>
-      <link>https://memv.ennbee.uk/tags/hello/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/hello/</guid>
       <description></description>
       
     </item>
