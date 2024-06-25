@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Custom Backgrounds for macOS New and Classic Microsoft Teams Apps &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Custom Backgrounds for macOS New and Classic Microsoft Teams Apps &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Custom Backgrounds for macOS New and Classic Microsoft Teams Apps</title>
+  <meta name="title" content="Custom Backgrounds for macOS New and Classic Microsoft Teams Apps" />
   
   <meta name="description" content="Deploying Microsoft Teams backgrounds for macOS using Shell scripts in Microsoft Intune for both the classic and new versions of the application." />
-  <meta name="keywords" content="teams, apps, shell, " />
+  <meta name="keywords" content="microsoft teams, apps, shell script, " />
   
   <meta name="robots" content="all" />
   
@@ -80,7 +80,7 @@
     <meta property="article:modified_time" content="2024-02-14T21:39:58+00:00">
     <meta property="article:tag" content="Microsoft Teams">
     <meta property="article:tag" content="Apps">
-    <meta property="article:tag" content="Shell Scripts">
+    <meta property="article:tag" content="Shell Script">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/featured.png">
 
   
@@ -111,7 +111,7 @@
     
     "dateModified": "2024-02-14T21:39:58\u002b00:00",
     
-    "keywords": ["teams","apps","shell"],
+    "keywords": ["microsoft teams","apps","shell script"],
     
     "mainEntityOfPage": "true",
     "wordCount": "1686"
@@ -273,7 +273,8 @@
   
   
   <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 pl-[24px] pr-[24px] bg-neutral dark:bg-neutral-800" style="z-index:100">
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
   <div class="relative max-w-[64rem] ml-auto mr-auto">
     <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
@@ -757,6 +758,13 @@
 
   </div>
 </div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
 
   
   <div class="relative flex flex-col grow">
@@ -933,7 +941,7 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/teams/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/microsoft-teams/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Microsoft Teams
@@ -949,10 +957,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/shell/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/shell-script/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Shell Scripts
+    Shell Script
   </span>
 </span>
   </span>
@@ -1968,7 +1976,7 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/teams/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/microsoft-teams/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Microsoft Teams
@@ -1984,10 +1992,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/shell/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/shell-script/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Shell Scripts
+    Shell Script
   </span>
 </span>
   </span>
@@ -2159,7 +2167,7 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows-autopilot/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Windows Autopilot

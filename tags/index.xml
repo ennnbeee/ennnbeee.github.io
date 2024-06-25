@@ -20,10 +20,10 @@
     
     <item>
       <title>Custom Profiles</title>
-      <link>https://memv.ennbee.uk/tags/custom/</link>
+      <link>https://memv.ennbee.uk/tags/custom-profiles/</link>
       <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/custom/</guid>
+      <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
       <description></description>
       
     </item>
@@ -40,20 +40,20 @@
     
     <item>
       <title>Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/tags/autopilot/</link>
+      <link>https://memv.ennbee.uk/tags/windows-autopilot/</link>
       <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/autopilot/</guid>
+      <guid>https://memv.ennbee.uk/tags/windows-autopilot/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Windows Hello</title>
-      <link>https://memv.ennbee.uk/tags/hello/</link>
+      <link>https://memv.ennbee.uk/tags/windows-hello/</link>
       <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/hello/</guid>
+      <guid>https://memv.ennbee.uk/tags/windows-hello/</guid>
       <description></description>
       
     </item>
@@ -69,11 +69,21 @@
     </item>
     
     <item>
-      <title>Enrolment</title>
-      <link>https://memv.ennbee.uk/tags/enrolment/</link>
+      <title>Device Enrolment</title>
+      <link>https://memv.ennbee.uk/tags/device-enrolment/</link>
       <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/enrolment/</guid>
+      <guid>https://memv.ennbee.uk/tags/device-enrolment/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Dynamic Groups</title>
+      <link>https://memv.ennbee.uk/tags/dynamic-groups/</link>
+      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/dynamic-groups/</guid>
       <description></description>
       
     </item>
@@ -84,16 +94,6 @@
       <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/graph/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Groups</title>
-      <link>https://memv.ennbee.uk/tags/groups/</link>
-      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/groups/</guid>
       <description></description>
       
     </item>
@@ -120,10 +120,10 @@
     
     <item>
       <title>Conditional Access</title>
-      <link>https://memv.ennbee.uk/tags/cap/</link>
+      <link>https://memv.ennbee.uk/tags/conditional-access/</link>
       <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/cap/</guid>
+      <guid>https://memv.ennbee.uk/tags/conditional-access/</guid>
       <description></description>
       
     </item>
@@ -150,10 +150,10 @@
     
     <item>
       <title>Settings Catalog</title>
-      <link>https://memv.ennbee.uk/tags/settingscatalog/</link>
+      <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/settingscatalog/</guid>
+      <guid>https://memv.ennbee.uk/tags/settings-catalog/</guid>
       <description></description>
       
     </item>
@@ -170,20 +170,20 @@
     
     <item>
       <title>Microsoft Teams</title>
-      <link>https://memv.ennbee.uk/tags/teams/</link>
+      <link>https://memv.ennbee.uk/tags/microsoft-teams/</link>
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/teams/</guid>
+      <guid>https://memv.ennbee.uk/tags/microsoft-teams/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>Shell Scripts</title>
-      <link>https://memv.ennbee.uk/tags/shell/</link>
+      <title>Shell Script</title>
+      <link>https://memv.ennbee.uk/tags/shell-script/</link>
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/shell/</guid>
+      <guid>https://memv.ennbee.uk/tags/shell-script/</guid>
       <description></description>
       
     </item>
@@ -230,20 +230,20 @@
     
     <item>
       <title>Endpoint Privilege Management</title>
-      <link>https://memv.ennbee.uk/tags/epm/</link>
+      <link>https://memv.ennbee.uk/tags/endpoint-privilege-management/</link>
       <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/epm/</guid>
+      <guid>https://memv.ennbee.uk/tags/endpoint-privilege-management/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Hybrid Entra Join</title>
-      <link>https://memv.ennbee.uk/tags/hybrid/</link>
+      <link>https://memv.ennbee.uk/tags/hybrid-join/</link>
       <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/hybrid/</guid>
+      <guid>https://memv.ennbee.uk/tags/hybrid-join/</guid>
       <description></description>
       
     </item>
@@ -329,11 +329,11 @@
     </item>
     
     <item>
-      <title>Filters</title>
-      <link>https://memv.ennbee.uk/tags/filters/</link>
+      <title>Device Filters</title>
+      <link>https://memv.ennbee.uk/tags/device-filters/</link>
       <pubDate>Wed, 08 Jun 2022 22:25:47 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/filters/</guid>
+      <guid>https://memv.ennbee.uk/tags/device-filters/</guid>
       <description></description>
       
     </item>
@@ -370,10 +370,10 @@
     
     <item>
       <title>Cyber Essentials</title>
-      <link>https://memv.ennbee.uk/tags/ce/</link>
+      <link>https://memv.ennbee.uk/tags/cyber-essentials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/ce/</guid>
+      <guid>https://memv.ennbee.uk/tags/cyber-essentials/</guid>
       <description></description>
       
     </item>

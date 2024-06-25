@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Settings Catalog on MEM v ENNBEE - Battles with Modern Device Management</title>
+    <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
+    <description>Recent content in Settings Catalog on MEM v ENNBEE - Battles with Modern Device Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Sat, 09 Mar 2024 21:12:54 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/settings-catalog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
+      <link>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</link>
+      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
+      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Modernising Microsoft Intune Firewall Rule Policies</title>
+      <link>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</link>
+      <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
+      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/featured.png" />
+    </item>
+    
+    <item>
+      <title>Managing Assignments in Microsoft Intune: Settings Catalog Profiles</title>
+      <link>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</link>
+      <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
+      <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/featured.png" />
+    </item>
+    
+    <item>
+      <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
+      <link>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</link>
+      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
+      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

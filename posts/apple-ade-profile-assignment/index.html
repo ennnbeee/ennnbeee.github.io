@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Device Migration and Automated Device Enrolment Profile Assignment &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Device Migration and Automated Device Enrolment Profile Assignment &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Device Migration and Automated Device Enrolment Profile Assignment</title>
+  <meta name="title" content="Device Migration and Automated Device Enrolment Profile Assignment" />
   
   <meta name="description" content="Automatically assigning Microsoft Intune Automated Device Enrolment profiles to iPhones and iPads using PowerShell and Graph API." />
-  <meta name="keywords" content="enrolment, graph, powershell, " />
+  <meta name="keywords" content="device enrolment, graph, powershell, " />
   
   <meta name="robots" content="all" />
   
@@ -78,7 +78,7 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-01-20T19:57:07+00:00">
     <meta property="article:modified_time" content="2023-01-20T19:57:07+00:00">
-    <meta property="article:tag" content="Enrolment">
+    <meta property="article:tag" content="Device Enrolment">
     <meta property="article:tag" content="Graph API">
     <meta property="article:tag" content="PowerShell">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/featured.png">
@@ -111,7 +111,7 @@
     
     "dateModified": "2023-01-20T19:57:07\u002b00:00",
     
-    "keywords": ["enrolment","graph","powershell"],
+    "keywords": ["device enrolment","graph","powershell"],
     
     "mainEntityOfPage": "true",
     "wordCount": "1634"
@@ -273,7 +273,8 @@
   
   
   <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 pl-[24px] pr-[24px] bg-neutral dark:bg-neutral-800" style="z-index:100">
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
   <div class="relative max-w-[64rem] ml-auto mr-auto">
     <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
@@ -757,6 +758,13 @@
 
   </div>
 </div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
 
   
   <div class="relative flex flex-col grow">
@@ -941,10 +949,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/enrolment/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/device-enrolment/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Enrolment
+    Device Enrolment
   </span>
 </span>
   </span>
@@ -1938,7 +1946,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows-autopilot/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Windows Autopilot
@@ -1954,7 +1962,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hybrid/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hybrid-join/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Hybrid Entra Join
@@ -2097,10 +2105,10 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/enrolment/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/device-enrolment/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Enrolment
+    Device Enrolment
   </span>
 </span>
   </span>
@@ -2264,7 +2272,7 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/autopilot/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows-autopilot/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Windows Autopilot
@@ -2272,10 +2280,10 @@ G6VVLDJPJCLK,Enrolment_iOS_Clinical_Shared_User
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/enrolment/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/device-enrolment/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Enrolment
+    Device Enrolment
   </span>
 </span>
   </span>

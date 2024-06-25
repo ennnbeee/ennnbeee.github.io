@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Tags &middot; MEM v ENNBEE - Battles with Modern Device Management</title>
-  <meta name="title" content="Tags &middot; MEM v ENNBEE - Battles with Modern Device Management" />
+  <title>Tags</title>
+  <meta name="title" content="Tags" />
   
   <meta name="description" content="Providing solutions, assistance, and insight to problems you probably didn&#39;t know existed with Microsoft modern device management products." />
   
@@ -242,7 +242,8 @@
   
   
   <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 pl-[24px] pr-[24px] bg-neutral dark:bg-neutral-800" style="z-index:100">
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
   <div class="relative max-w-[64rem] ml-auto mr-auto">
     <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
@@ -726,6 +727,13 @@
 
   </div>
 </div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
 
   
   <div class="relative flex flex-col grow">
@@ -999,36 +1007,6 @@
   </div>
 </a>
     
-    <a href="/tags/autopilot/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        9
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Windows Autopilot</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
     <a href="/tags/bios/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -1081,36 +1059,6 @@
       <div
         class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
       >BitLocker</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
-    <a href="/tags/cap/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        2
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Conditional Access</div>
 
     </div>
     <div class="px-6 pt-4 pb-2">
@@ -1209,6 +1157,36 @@
   </div>
 </a>
     
+    <a href="/tags/conditional-access/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        2
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Conditional Access</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
     <a href="/tags/configuration/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -1239,7 +1217,7 @@
   </div>
 </a>
     
-    <a href="/tags/custom/" class="min-w-full">
+    <a href="/tags/custom-profiles/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
@@ -1329,6 +1307,96 @@
   </div>
 </a>
     
+    <a href="/tags/device-enrolment/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        9
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Device Enrolment</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
+    <a href="/tags/device-filters/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        1
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Device Filters</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
+    <a href="/tags/dynamic-groups/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        8
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Dynamic Groups</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
     <a href="/tags/encryption/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -1359,37 +1427,7 @@
   </div>
 </a>
     
-    <a href="/tags/enrolment/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        9
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Enrolment</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
-    <a href="/tags/epm/" class="min-w-full">
+    <a href="/tags/endpoint-privilege-management/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
@@ -1411,36 +1449,6 @@
       <div
         class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
       >Endpoint Privilege Management</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
-    <a href="/tags/filters/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        1
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Filters</div>
 
     </div>
     <div class="px-6 pt-4 pb-2">
@@ -1509,36 +1517,6 @@
   </div>
 </a>
     
-    <a href="/tags/groups/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        8
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Groups</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
     <a href="/tags/hardware/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -1569,37 +1547,7 @@
   </div>
 </a>
     
-    <a href="/tags/hello/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        1
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Windows Hello</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
-    <a href="/tags/hybrid/" class="min-w-full">
+    <a href="/tags/hybrid-join/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
@@ -1621,6 +1569,36 @@
       <div
         class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
       >Hybrid Entra Join</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
+    <a href="/tags/microsoft-teams/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        3
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Microsoft Teams</div>
 
     </div>
     <div class="px-6 pt-4 pb-2">
@@ -1749,7 +1727,7 @@
   </div>
 </a>
     
-    <a href="/tags/settingscatalog/" class="min-w-full">
+    <a href="/tags/settings-catalog/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
@@ -1779,7 +1757,7 @@
   </div>
 </a>
     
-    <a href="/tags/shell/" class="min-w-full">
+    <a href="/tags/shell-script/" class="min-w-full">
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
@@ -1800,37 +1778,7 @@
 
       <div
         class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Shell Scripts</div>
-
-    </div>
-    <div class="px-6 pt-4 pb-2">
-
-    </div>
-  </div>
-</a>
-    
-    <a href="/tags/teams/" class="min-w-full">
-  <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-    
-    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
-    <span class="absolute bottom-0 right-0 m-2">
-      <span class="flex">
-        <span
-          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-        >
-        3
-        </span>
-      </span>
-    </span>
-    
-
-    <div class="px-6 py-4">
-
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-      >Microsoft Teams</div>
+      >Shell Script</div>
 
     </div>
     <div class="px-6 pt-4 pb-2">
@@ -1861,6 +1809,66 @@
       <div
         class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
       >Updates</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
+    <a href="/tags/windows-autopilot/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        9
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Windows Autopilot</div>
+
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+  </div>
+</a>
+    
+    <a href="/tags/windows-hello/" class="min-w-full">
+  <div
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+    
+    <meta property="og:image" content="https://memv.ennbee.uk/logo-card.png" />
+    <span class="absolute bottom-0 right-0 m-2">
+      <span class="flex">
+        <span
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+        >
+        1
+        </span>
+      </span>
+    </span>
+    
+
+    <div class="px-6 py-4">
+
+      <div
+        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+      >Windows Hello</div>
 
     </div>
     <div class="px-6 pt-4 pb-2">
