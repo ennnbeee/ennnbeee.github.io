@@ -12,7 +12,7 @@
   <meta name="title" content="Creating Reusable Groups of Firewall Settings for Microsoft Online Services" />
   
   <meta name="description" content="Creating Microsoft Intune reusable firewall settings groups using PowerShell and Graph with the Microsoft Online web service for network endpoints." />
-  <meta name="keywords" content="security, powershell, graph, settings catalog, " />
+  <meta name="keywords" content="security, powershell, graph, settings catalog, firewall, automation, " />
   
   <meta name="robots" content="all" />
   
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.0d17d97b9858bef70179edb6d783d79debc59e628197a6013b19a37850eb688c86fca3d3bf8f1e5658f448c0f23b8091b91a259692a95f4ced276adb21248012.css"
-    integrity="sha512-DRfZe5hYvvcBee2214PXnevFnmKBl6YBOxmjeFDraIyG/KPTv48eVlj0SMDyO4CRuRollpKpX0ztJ2rbISSAEg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2ab89b25043d877b19d121317c26ca279c12bf157f3676db995b6c20b8732de1d7eb716a07c199ce86645e1dd6784227ba348fda9d2c16ffdc36cb6a94a541ac.css"
+    integrity="sha512-KribJQQ9h3sZ0SExfCbKJ5wSvxV/NnbbmVtsILhzLeHX63FqB8GZzoZkXh3WeEInujSP2p0sFv/cNstqlKVBrA==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -82,6 +82,8 @@
     <meta property="article:tag" content="PowerShell">
     <meta property="article:tag" content="Graph API">
     <meta property="article:tag" content="Settings Catalog">
+    <meta property="article:tag" content="Firewall">
+    <meta property="article:tag" content="Automation">
     <meta property="og:image" content="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg">
 
   
@@ -112,7 +114,7 @@
     
     "dateModified": "2024-03-09T21:12:54\u002b00:00",
     
-    "keywords": ["security","powershell","graph","settings catalog"],
+    "keywords": ["security","powershell","graph","settings catalog","firewall","automation"],
     
     "mainEntityOfPage": "true",
     "wordCount": "3383"
@@ -970,6 +972,22 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Settings Catalog
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/firewall/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Firewall
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/automation/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Automation
   </span>
 </span>
   </span>
@@ -2199,11 +2217,11 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
   
   
 
-  <a href="/posts/updating-windows-store-apps/" class="min-w-full">
+  <a href="/posts/settings-catalog-firewall-rules/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/updating-windows-store-apps/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/settings-catalog-firewall-rules/featured.png);"></div>
         
       
 
@@ -2211,7 +2229,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/updating-windows-store-apps/">Keeping Windows Store Apps Updated with Microsoft Intune</div>
+          href="/posts/settings-catalog-firewall-rules/">Modernising Microsoft Intune Firewall Rule Policies</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2252,7 +2270,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-02-06 21:03:00 &#43;0000 UTC">6 February 2024</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-09-12 21:40:50 &#43;0100 &#43;0100">12 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2265,7 +2283,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
     
   
-  <span id="views_posts/Updating-Windows-Store-Apps/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Settings-Catalog-Firewall-Rules/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2316,30 +2334,6 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Remediation Scripts
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apps/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Apps
-  </span>
-</span>
-  </span>
-  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
@@ -2348,10 +2342,18 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows-autopilot/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows Autopilot
+    Graph API
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/settings-catalog/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Settings Catalog
   </span>
 </span>
   </span>
@@ -2360,6 +2362,22 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/firewall/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Firewall
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/automation/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Automation
   </span>
 </span>
   </span>
@@ -2523,6 +2541,14 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/automation/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Automation
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -2541,11 +2567,11 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
   
   
 
-  <a href="/posts/settings-catalog-firewall-rules/" class="min-w-full">
+  <a href="/posts/automate-endpoint-privilege-management/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/settings-catalog-firewall-rules/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/automate-endpoint-privilege-management/featured.jpg);"></div>
         
       
 
@@ -2553,7 +2579,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/settings-catalog-firewall-rules/">Modernising Microsoft Intune Firewall Rule Policies</div>
+          href="/posts/automate-endpoint-privilege-management/">Automating Endpoint Privilege Management Policies with PowerShell</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2594,7 +2620,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-09-12 21:40:50 &#43;0100 &#43;0100">12 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2023-06-01 18:58:40 &#43;0100 &#43;0100">1 June 2023</time><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2607,7 +2633,7 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
       
     
   
-  <span id="views_posts/Settings-Catalog-Firewall-Rules/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/Automate-Endpoint-Privilege-Management/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2658,18 +2684,10 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Graph API
+    Security
   </span>
 </span>
   </span>
@@ -2682,10 +2700,34 @@ ipsName     : IP Addresses for Microsoft Endpoint Manager
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/endpoint-privilege-management/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
+    Endpoint Privilege Management
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/automation/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Automation
   </span>
 </span>
   </span>

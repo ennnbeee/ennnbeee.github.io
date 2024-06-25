@@ -39,6 +39,16 @@
     </item>
     
     <item>
+      <title>Settings Catalog</title>
+      <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/settings-catalog/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Windows Autopilot</title>
       <link>https://memv.ennbee.uk/tags/windows-autopilot/</link>
       <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
@@ -69,11 +79,31 @@
     </item>
     
     <item>
+      <title>Direct Memory Access</title>
+      <link>https://memv.ennbee.uk/tags/dma/</link>
+      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/dma/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Device Enrolment</title>
       <link>https://memv.ennbee.uk/tags/device-enrolment/</link>
       <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/device-enrolment/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>https://memv.ennbee.uk/tags/automation/</link>
+      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/automation/</guid>
       <description></description>
       
     </item>
@@ -139,6 +169,16 @@
     </item>
     
     <item>
+      <title>Platform SSO</title>
+      <link>https://memv.ennbee.uk/tags/platform-sso/</link>
+      <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/platform-sso/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>National Cyber Security Centre (NCSC)</title>
       <link>https://memv.ennbee.uk/tags/ncsc/</link>
       <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
@@ -149,11 +189,11 @@
     </item>
     
     <item>
-      <title>Settings Catalog</title>
-      <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
+      <title>Firewall</title>
+      <link>https://memv.ennbee.uk/tags/firewall/</link>
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/tags/settings-catalog/</guid>
+      <guid>https://memv.ennbee.uk/tags/firewall/</guid>
       <description></description>
       
     </item>
@@ -239,9 +279,19 @@
     </item>
     
     <item>
+      <title>Co-management</title>
+      <link>https://memv.ennbee.uk/tags/co-management/</link>
+      <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/co-management/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Hybrid Entra Join</title>
       <link>https://memv.ennbee.uk/tags/hybrid-join/</link>
-      <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
+      <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/hybrid-join/</guid>
       <description></description>
@@ -251,9 +301,19 @@
     <item>
       <title>Administration</title>
       <link>https://memv.ennbee.uk/tags/administration/</link>
-      <pubDate>Tue, 01 Nov 2022 19:54:44 +0000</pubDate>
+      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/administration/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Automated Device Enrolment</title>
+      <link>https://memv.ennbee.uk/tags/automated-device-enrolment/</link>
+      <pubDate>Fri, 20 Jan 2023 19:57:07 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/automated-device-enrolment/</guid>
       <description></description>
       
     </item>
