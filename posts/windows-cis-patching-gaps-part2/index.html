@@ -117,7 +117,7 @@
     "keywords": ["security","cis","custom","autopilot","hello"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2145"
+    "wordCount": "2149"
   }]
   </script>
 
@@ -1481,7 +1481,7 @@
 <li>Windows 10, version 21H1 (10.0.19043.1202) and later</li>
 <li><strong>Windows 11, version 21H2 (10.0.22000 and) later</strong></li>
 </ul>
-<p>So assuming you&rsquo;re not running a soon to be <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education" target="_blank">unsupported</a> version of Windows 11 😐, we can either ignore this setting entirely (don&rsquo;t do this), or strip the setting out of the CIS profile, and create new Custom profiles with this specific setting:</p>
+<p>So assuming you&rsquo;re not running a soon to be <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education" target="_blank">unsupported</a> version of Windows 11 😐, we can either ignore this setting entirely (don&rsquo;t do this), or strip the setting out of the CIS profile, and create a new <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/custom-settings-configure" target="_blank">Custom Profile</a> with this specific setting:</p>
 
 <div class="flex mt-2">
 <span
@@ -1568,7 +1568,7 @@
 </tr>
 </tbody>
 </table>
-<p>This means that as the setting is only causing impact to Windows Autopilot deployments, then you should be in the clear when deploying new devices, or resetting existing ones with newer Windows 11 operating systems.</p>
+<p>This means that as the setting is only causing impact to Windows Autopilot deployments, then you should be in the clear when deploying new devices, or resetting existing ones with newer Windows 11 operating system versions.</p>
 
   
 
@@ -1825,7 +1825,7 @@
     </span>        
     
 </h3>
-<p>I&rsquo;d come across this one a while ago, with the setting below stopping users from connecting to a new wireless network at the logon screen. You&rsquo;d think this wouldn&rsquo;t be too much of an issue, even during <a href="https://learn.microsoft.com/en-us/autopilot/user-driven" target="_blank">User-Driven Windows Autopilot</a>, where it does become a problem though, is with <a href="https://learn.microsoft.com/en-us/autopilot/pre-provision" target="_blank">pre-provisioning</a>.</p>
+<p>We&rsquo;d come across this issue one a while ago, with the below setting stopping users from connecting to a new wireless network at the logon screen. You&rsquo;d think this wouldn&rsquo;t be too much of an issue, even during <a href="https://learn.microsoft.com/en-us/autopilot/user-driven" target="_blank">User-Driven Windows Autopilot</a>, but where it does become a problem though, is with <a href="https://learn.microsoft.com/en-us/autopilot/pre-provision" target="_blank">pre-provisioning</a>.</p>
 
 <div class="flex mt-2">
 <span
