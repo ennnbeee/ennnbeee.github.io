@@ -116,7 +116,7 @@
     "keywords": ["windows autopilot","device enrolment","graph","powershell","automation"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1416"
+    "wordCount": "1398"
   }]
   </script>
 
@@ -1318,14 +1318,18 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu19053798857ed3ee5717149ddca15ca6_54164_filter_13310848595707931394.webp#left" alt="Autopilot Devices" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu60cb1bfa97ab16159c614835ca7de438_24090_filter_17633944353570809169.webp#left" alt="Autopilot Devices" />
         <figcaption>Export of Windows Autopilot devices to csv from Microsoft Intune.</figcaption>
       </figure></p>
-<p>Now with the CSV file, we really only need two headings, Serial Number and Group Tag. So open up your favourite editor and bin off every other heading.</p>
-<p>Whilst you&rsquo;re there, be a darling and rename &lsquo;Serial Number&rsquo; to &lsquo;SerialNumber&rsquo; and &lsquo;Group Tag&rsquo; to &lsquo;GroupTag&rsquo;, like so:</p>
-<pre tabindex="0"><code class="language-csv" data-lang="csv">SerialNumber,GroupTag
-VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
-</code></pre><p>Now that you&rsquo;ve got <strong>all</strong> the Autopilot devices, go ahead and laboriously update the CSV file with Group Tags and remove any devices that you want tagging with the default one.</p>
+<p>Now with the CSV file exported, and looking something like the below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Serial number,Manufacturer,Model,Group tag,Profile status,Purchase order,Userless Enrollment Status
+</span></span><span class="line"><span class="cl">&#34;0924-3584-5488-9044-8423-3149-46&#34;,&#34;Microsoft Corporation&#34;,&#34;Virtual Machine&#34;,&#34;Entra&#34;,&#34;Assigned&#34;,&#34;&#34;,&#34;Unknown&#34;
+</span></span><span class="line"><span class="cl">&#34;7440-0683&#34;,&#34;Microsoft Corporation&#34;,&#34;Virtual Machine&#34;,&#34;CIS&#34;,&#34;Assigned&#34;,&#34;&#34;,&#34;Not Allowed&#34;
+</span></span><span class="line"><span class="cl">&#34;AAA-0263-9697-7653-AAAA-AAAA-AA&#34;,&#34;Microsoft Corporation&#34;,&#34;Virtual Machine&#34;,&#34;Entra&#34;,&#34;Assigned&#34;,&#34;&#34;,&#34;Not Allowed&#34;
+</span></span><span class="line"><span class="cl">&#34;DNuesTLjtKit&#34;,&#34;QEMU&#34;,&#34;QEMU Virtual Machine&#34;,&#34;CIS&#34;,&#34;Assigned&#34;,&#34;&#34;,&#34;Not Allowed&#34;
+</span></span><span class="line"><span class="cl">&#34;poiuytrewqlkjhgfdsa&#34;,&#34;Microsoft Corporation&#34;,&#34;Virtual Machine&#34;,&#34;CIS&#34;,&#34;Assigned&#34;,&#34;&#34;,&#34;Not Allowed&#34;
+</span></span><span class="line"><span class="cl">&#34;qwertyuiopasdfghjklzxcvbnm&#34;,&#34;Microsoft Corporation&#34;,&#34;Virtual Machine&#34;,&#34;CIS&#34;,&#34;Assigned&#34;,&#34;&#34;,&#34;Not Allowed&#34;
+</span></span></code></pre></div><p>Go ahead and laboriously update the CSV file with Group Tags and remove any devices that you want tagging with the default one.</p>
 
 
 <h2 class="relative group">Repeat Offenders 
@@ -1380,37 +1384,6 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     
       class="dark:text-neutral-300"
     >Connect to Graph using the latest module and <code>Connect-MgGraph -Scopes 'DeviceManagementManagedDevices.ReadWrite.All'</code>.</span>
-</div>
-
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >If you haven&rsquo;t authenticated to Graph in your tenant previously, you&rsquo;ll probably be asked to grant Admin Consent, you want to do this, consent is important.</span>
 </div>
 
 
@@ -1547,52 +1520,50 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </h3>
 <p>Here we have the guts of the script, designed so that you run it through once with the <code>CSV</code> option, then a second time using the <code>Online</code> option. Don&rsquo;t ask me why I did it this way, four coffees remember.</p>
 <p>I was also kind enough to capture any of the devices in the CSV file missing a Group Tag and prompt to enter one in. Very kind.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c"># Script Start</span>
-</span></span><span class="line"><span class="cl"><span class="c"># Get Devices</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$Method</span> <span class="o">-eq</span> <span class="s1">&#39;CSV&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$CSVPath</span> <span class="p">=</span> <span class="nb">Read-host</span> <span class="s2">&#34;Please provide the path to the CSV file containing a list of device serial numbers and new Group Tag  e.g. C:\temp\devices.csv&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$method</span> <span class="o">-eq</span> <span class="s1">&#39;csv&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$csvPath</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s1">&#39;Please provide the path to the csv file containing a list of device serial numbers and new Group Tag  e.g. C:\temp\devices.csv&#39;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="s2">&#34;</span><span class="nv">$CSVPath</span><span class="s2">&#34;</span><span class="p">))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Import Path for CSV file doesn&#39;t exist&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="s2">&#34;</span><span class="nv">$csvPath</span><span class="s2">&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Import Path for csv file doesn&#39;t exist&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Script can&#39;t continue&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$AutopilotDevices</span> <span class="p">=</span> <span class="nb">Import-Csv</span> <span class="n">-Path</span> <span class="nv">$CSVPath</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$autopilotDevices</span> <span class="p">=</span> <span class="nb">Import-Csv</span> <span class="n">-Path</span> <span class="nv">$csvPath</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">elseif</span> <span class="p">(</span><span class="nv">$Method</span> <span class="o">-eq</span> <span class="s1">&#39;Online&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s2">&#34;Getting all Autopilot devices without a Group Tag&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$AutopilotDevices</span> <span class="p">=</span> <span class="nb">Get-AutopilotDevices</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-eq</span> <span class="nv">$_</span><span class="p">.</span><span class="n">groupTag</span><span class="p">)</span> <span class="o">-or</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">groupTag</span><span class="p">)</span> <span class="o">-eq</span> <span class="s1">&#39;&#39;</span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s1">&#39;Getting all Autopilot devices without a Group Tag&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$autopilotDevices</span> <span class="p">=</span> <span class="nb">Get-AutopilotDevices</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="vm">$null</span> <span class="o">-eq</span> <span class="nv">$_</span><span class="p">.</span><span class="n">groupTag</span><span class="p">)</span> <span class="o">-or</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">groupTag</span><span class="p">)</span> <span class="o">-eq</span> <span class="s1">&#39;&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$groupTag</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&#34;Please enter the default group tag for devices without a tag:&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># Sets Group Tag</span>
-</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$AutopilotDevice</span> <span class="k">in</span> <span class="nv">$AutopilotDevices</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$id</span> <span class="p">=</span> <span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="py">id</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$autopilotDevice</span> <span class="k">in</span> <span class="nv">$autopilotDevices</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$id</span> <span class="p">=</span> <span class="nv">$autopilotDevice</span><span class="p">.</span><span class="py">id</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-host</span> <span class="s2">&#34;No Autopilot Device Id, getting Id from Graph&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$id</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-AutopilotDevices</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">serialNumber</span> <span class="o">-eq</span> <span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="n">serialNumber</span><span class="p">)</span> <span class="p">}).</span><span class="py">id</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;ID:&#39;</span><span class="nv">$Id</span><span class="s2">&#39; found for device with serial &#39;</span><span class="p">$(</span><span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="n">Serialnumber</span><span class="p">)</span><span class="s2">&#39;&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s1">&#39;No Autopilot Device Id, getting Id from Graph&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$id</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-AutopilotDevices</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">serialNumber</span> <span class="o">-eq</span> <span class="nv">$autopilotDevice</span><span class="p">.</span><span class="s1">&#39;serial Number&#39;</span><span class="p">)</span> <span class="p">}).</span><span class="py">id</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;ID:&#39;</span><span class="nv">$Id</span><span class="s2">&#39; found for device with serial &#39;</span><span class="p">$(</span><span class="nv">$autopilotDevice</span><span class="p">.</span><span class="s1">&#39;Serial number&#39;</span><span class="p">)</span><span class="s2">&#39;&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$Method</span> <span class="o">-eq</span> <span class="s1">&#39;CSV&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$GroupTag</span> <span class="p">=</span> <span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="py">groupTag</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(!</span><span class="nv">$GroupTag</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">Write-host</span> <span class="s2">&#34;No Autopilot Device Group Tag found in CSV&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$GroupTag</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s1">&#39;Please enter the group tag for device with serial &#39;</span><span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="n">serialNumber</span><span class="s1">&#39; now:&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$method</span> <span class="o">-eq</span> <span class="s1">&#39;csv&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$groupTag</span> <span class="p">=</span> <span class="nv">$autopilotDevice</span><span class="p">.</span><span class="s1">&#39;group Tag&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(!</span><span class="nv">$groupTag</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Host</span> <span class="s1">&#39;No Autopilot Device Group Tag found in csv&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$groupTag</span> <span class="p">=</span> <span class="nb">Read-Host</span> <span class="s2">&#34;Please enter the group tag for device with serial </span><span class="p">$(</span><span class="nv">$autopilotDevice</span><span class="p">.</span><span class="s1">&#39;serial Number&#39;</span><span class="p">)</span><span class="s2"> now:&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">elseif</span> <span class="p">(</span><span class="nv">$Method</span> <span class="o">-eq</span> <span class="s1">&#39;Online&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$GroupTag</span> <span class="p">=</span> <span class="nv">$DefaultGroupTag</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Set-AutopilotDevice</span> <span class="n">-Id</span> <span class="nv">$id</span> <span class="n">-GroupTag</span> <span class="nv">$GroupTag</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">write-host</span> <span class="s2">&#34;Group tag: &#39;</span><span class="nv">$GroupTag</span><span class="s2">&#39; set for device with serial &#39;</span><span class="p">$(</span><span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="n">Serialnumber</span><span class="p">)</span><span class="s2">&#39;&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Set-AutopilotDevice</span> <span class="n">-id</span> <span class="nv">$id</span> <span class="n">-groupTag</span> <span class="nv">$groupTag</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Group tag: &#39;</span><span class="nv">$groupTag</span><span class="s2">&#39; set for device with serial </span><span class="p">$(</span><span class="nv">$autopilotDevice</span><span class="p">.</span><span class="s1">&#39;Serial number&#39;</span><span class="p">)</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">write-host</span> <span class="s2">&#34;Group tag: &#39;</span><span class="nv">$GroupTag</span><span class="s2">&#39; not set for device with serial &#39;</span><span class="p">$(</span><span class="nv">$AutopilotDevice</span><span class="p">.</span><span class="n">Serialnumber</span><span class="p">)</span><span class="s2">&#39;&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Group tag: &#39;</span><span class="nv">$groupTag</span><span class="s2">&#39; not set for device with serial </span><span class="p">$(</span><span class="nv">$autopilotDevice</span><span class="p">.</span><span class="s1">&#39;Serial number&#39;</span><span class="p">)</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
@@ -1636,7 +1607,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
   <span
     
       class="dark:text-neutral-300"
-    >P.S. There is no <code>-whatif</code> command, so I&rsquo;d start with the CSV of a couple of test devices.</span>
+    >There is no <code>-whatif</code> command, so I&rsquo;d start with the CSV of a couple of test devices.</span>
 </div>
 
 
@@ -1652,15 +1623,20 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
     
 </h3>
 <p>Running the script with the CSV option:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-AutopilotGroupTag</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Method</span> <span class="n">CSV</span>
-</span></span></code></pre></div><p>We first have to Authenticate, so enter in your username and the find the Azure AD login window:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-AutopilotGroupTag</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;bb690aa6-53c6-4d51-affe-ab80c6d710de&#39;</span> <span class="n">-method</span> <span class="n">csv</span>
+</span></span></code></pre></div><p>We first have to Authenticate, we&rsquo;re using Device Authentication so following the instructions in the script:</p>
 <p>
 
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-login_hu5b279fadf2b33405b64ed1e99b8d86d5_28072_filter_14281852759288934352.webp#left" alt="Authentication" />
-        <figcaption>Authentication to Entra ID.</figcaption>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth_hu6a735799ce43f600f10c2e3626a1eb12_4703_filter_5171139154970503758.png"
+          alt="Graph Authentication"
+        />
+        <figcaption>Authentication prompt to Graph.</figcaption>
       </figure></p>
 <p>Now we need to provide the path to the CSV file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Please provide the path to the CSV file containing a list of device serial numbers and new Group Tag  e.g. C:\temp\devices.csv:
@@ -1697,8 +1673,10 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
 </h3>
 <p>We need to now clear up the remaining devices without Group Tags, this one we can&rsquo;t really test, unless you fancy improving the script.</p>
 <p>Similar setup to the CSV run, but this time the arguments look like the below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-AutopilotGroupTag</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Method</span> <span class="n">Online</span> <span class="n">-DefaultGroupTag</span> <span class="s1">&#39;AJ-LT-U-STD-ALL-UK&#39;</span>
-</span></span></code></pre></div><p>We&rsquo;re already authenticated, so we can skip that bit, and we&rsquo;re not using the CSV option so it will get straight to the good stuff:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-AutopilotGroupTag</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;bb690aa6-53c6-4d51-affe-ab80c6d710de&#39;</span> <span class="n">-Method</span> <span class="n">Online</span>
+</span></span></code></pre></div><p>We&rsquo;re already authenticated, so we can skip that bit, and we&rsquo;re not using the CSV option so it will get straight to the good stuff, where you will be prompted to set the default group tag:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Please enter the default group tag for devices without a tag: Entra
+</span></span></code></pre></div><p>Then the script will go and update Autopilot devices missing the group tag:</p>
 <p>
 
 
@@ -1716,7 +1694,7 @@ VMware-56 4d 71 00 31 a9 92 c6-ca 79 52 44 c0 3a 83 22,AJ-LT-U-ADM-IT-UK
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged_hu205b753c59c4a14146b81f79d86ef2c3_44676_filter_10594788249684827944.webp#left" alt="Group Tag" />
         <figcaption>The updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
       </figure></p>
-<p>This Group Tag matches the <code>DefaultGroupTag</code> parameter we set when running the script. I&rsquo;d call this one a win.</p>
+<p>This Group Tag matches the prompted tag we set when running the script. I&rsquo;d call this one a win.</p>
 
 
 <h2 class="relative group">Summary 
