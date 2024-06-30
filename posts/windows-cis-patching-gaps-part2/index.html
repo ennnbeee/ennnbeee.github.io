@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.d6c35110b5d7df8014403fbb81cd21a9d89daf9eb586c936e585e9d04adc204dce554aa737f81e8c902b9dea9e67bd63a977b77dedefb8a39430581ebc519207.js"
-    integrity="sha512-1sNRELXX34AUQD&#43;7gc0hqdidr561hsk25YXp0ErcIE3OVUqnN/gejJArneqeZ71jqXe3fe3vuKOUMFgevFGSBw==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f5c7687e2a3365a5a366307858918deafa574ab869c626f69dcdd5363e26a725991d0efa1aaaff7ba4b7e2472876189d153d2f9b46a39206caf364407e2aaa77.js"
+    integrity="sha512-9cdofiozZaWjZjB4WJGN6vpXSrhpxib2nc3VNj4mpyWZHQ76Gqr/e6S34kcodhidFT0vm0ajkgbK82RAfiqqdw==" data-copy="" data-copied=""></script>
   
   
   <script src="/js/zoom.min.js"></script>
@@ -118,7 +118,7 @@
     "keywords": ["security","cis","custom profiles","windows autopilot","windows hello","settings catalog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2150"
+    "wordCount": "2258"
   }]
   </script>
 
@@ -1491,14 +1491,53 @@
         <figcaption>Windows logon screen with the defaultuser0 logon prompt.</figcaption>
       </figure></p>
 <p>We did already know about the <strong>AutoAdminLogon</strong> setting causing the issue with Windows Autopilot, as it is <a href="https://learn.microsoft.com/en-us/autopilot/policy-conflicts" target="_blank">documented</a>, but who has time to read all of these articles 😂.</p>
-<p>But how do we stop this from breaking Autopilot exactly? Well after having a browse of the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-admx-mss-legacy#pol_mss_autoadminlogon" target="_blank">Policy CSP</a> for this setting, it turns out that this policy is only supported on the following versions of Windows, and for us we only care about Windows 11:</p>
-<ul>
-<li>Windows 10, version 2004 (10.0.19041.1202) and later</li>
-<li>Windows 10, version 2009 (10.0.19042.1202) and later</li>
-<li>Windows 10, version 21H1 (10.0.19043.1202) and later</li>
-<li><strong>Windows 11, version 21H2 (10.0.22000 and) later</strong></li>
-</ul>
-<p>So assuming you&rsquo;re not running a soon to be <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education" target="_blank">unsupported</a> version of Windows 11 😐, we can either ignore this setting entirely (don&rsquo;t do this), or strip the setting out of the CIS profile, and create a new <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/custom-settings-configure" target="_blank">Custom Profile</a> with this specific setting:</p>
+<p>But how do we stop this from breaking Autopilot exactly?</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >As pointed out in the comments, the Policy CSP documentation is a little vague around supported operating system versions, so we&rsquo;ve found an alternative way to meet this requirement without breaking Windows Autopilot deployments.</span>
+</div>
+
+<p>Instead of attempting to using Microsoft Intune native configuration, we can lean on the <a href="https://admx.help/?Category=security-compliance-toolkit&amp;Policy=Microsoft.Policies.MSS::Pol_MSS_AutoAdminLogon" target="_blank">registry setting</a> to configure this CIS level 1 requirement:</p>
+<p>
+
+
+
+      <figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/img/cis-aalreg_hu741e6b37341a1fe04a7d45deac20d666_25603_filter_79293705678988746.png"
+          alt="AutoAdminLogon Registry Setting"
+        />
+        <figcaption>AutoAdminLogon registry setting reference.</figcaption>
+      </figure></p>
+<p>To ensure it doesn&rsquo;t break anything, we can deploy a remediation script to set the registry value, assigning the script to <strong>users</strong>, meaning that it won&rsquo;t apply until after the Autopilot process has completed.</p>
+<p>The detection script will look for the <strong>AutoAdminLogon</strong> string value, and if it does not exist, or it is not set to <strong>0</strong> will report an error:</p>
 
 <div class="flex mt-2">
 <span
@@ -1515,77 +1554,146 @@
 
 </span>
     
-    <span><em>CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1</em></span>
+    <span><em>CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1_Detection.ps1</em></span>
   </span>
 </span>
 </div>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">OMA-URI</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Pol_MSS_AutoAdminLogon</td>
-<td style="text-align:left"><code>./Device/Vendor/MSFT/Policy/Config/ADMX_MSS-legacy/Pol_MSS_AutoAdminLogon</code></td>
-<td style="text-align:left">String</td>
-<td style="text-align:left"><code>&lt;disabled/&gt;</code></td>
-</tr>
-</tbody>
-</table>
 
+
+
+
+
+
+
+  
   
 
-
-
-<div
   
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
     
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
+  
+  
+  
 
+  
+  
+  
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$registry</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$setting</span> <span class="p">=</span> <span class="s1">&#39;AutoAdminLogon&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Checks if the key and if the string value AutoAdminLogon exists</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$value</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="nv">$setting</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Warning</span> <span class="s2">&#34;</span><span class="nv">$setting</span><span class="s2"> not configured.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># if the key and dword exist checks the value.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$value</span> <span class="o">-ne</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Warning</span> <span class="s2">&#34;</span><span class="nv">$setting</span><span class="s2"> enabled.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;</span><span class="nv">$setting</span><span class="s2"> disabled.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+
+<p>With the remediation configured to create the <strong>AutoAdminLogon</strong> if required, and set it to <strong>0</strong>, to disable this option:</p>
+
+<div class="flex mt-2">
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex flex-row items-center">
     
+    <span class="mr-1">
 
   <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 32h214.6v214.6H0V32zm233.4 0H448v214.6H233.4V32zM0 265.4h214.6V480H0V265.4zm233.4 0H448V480H233.4V265.4z"/></svg>
 
   </span>
 
-
-  </span>
-
-  <span
+</span>
     
-      class="dark:text-neutral-300"
-    >We&rsquo;ve used Custom Profiles as we can use Applicability Rules which at the time of writing, are not supported by Settings Catalog profiles.</span>
+    <span><em>CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1_Remediation.ps1</em></span>
+  </span>
+</span>
 </div>
 
-<p>To save you creating <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership" target="_blank">Dynamic Security Groups</a> for each supporting Windows version, you can assign the profile to all corporate owned devices using an existing group, or device filter and built-in group, and use <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/device-profile-create#applicability-rules" target="_blank">Applicability Rules</a> in the Custom Profile, to only apply the profile if the rules are met.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Rule</th>
-<th style="text-align:left">Property</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Assign profile if</td>
-<td style="text-align:left">OS version</td>
-<td style="text-align:left"><code>10.0.22000.0000</code> to <code>10.0.22000.9999</code></td>
-</tr>
-</tbody>
-</table>
-<p>This means that as the setting is only causing impact to Windows Autopilot deployments, then you should be in the clear when deploying new devices, or resetting existing ones with newer Windows 11 operating system versions.</p>
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+  
+
+  
+  
+  
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$registry</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$setting</span> <span class="p">=</span> <span class="s1">&#39;AutoAdminLogon&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$path</span> <span class="p">=</span> <span class="nb">Test-Path</span> <span class="nv">$registry</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># checks if the key exists, if not creates the key and AutoAdminLogon string.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$path</span> <span class="o">-eq</span> <span class="vm">$false</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="nv">$setting</span>  <span class="n">-Value</span> <span class="mf">0</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;</span><span class="nv">$setting</span><span class="s2"> disabled.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c"># checks if the AutoAdminLogon string exists, if not creates it.</span>
+</span></span><span class="line"><span class="cl">        <span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c"># if the AutoAdminLogon dword exists updates it.</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="nv">$setting</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="nv">$setting</span> <span class="n">-Value</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Output</span> <span class="s2">&#34;</span><span class="nv">$setting</span><span class="s2"> disabled.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="nv">$setting</span> <span class="n">-Value</span> <span class="mf">0</span> <span class="n">-PropertyType</span> <span class="n">string</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Output</span> <span class="s2">&#34;</span><span class="nv">$setting</span><span class="s2"> disabled.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Exception</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+
+<p>Deploying this to a group of users in Microsoft Intune, with settings similar to the below, with a suitable evaluation schedule:</p>
+<p>
+
+
+
+      <figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation_huc40db39bc7c1e7acfa82c102ab633b25_75326_filter_15541736057491374318.png"
+          alt="CIS Level 1 AutoAdminLogon Remediation"
+        />
+        <figcaption>CIS Level 1 AutoAdminLogon remediation in Microsoft Intune.</figcaption>
+      </figure></p>
 
   
 
@@ -1614,7 +1722,7 @@
   <span
     
       class="dark:text-neutral-300"
-    >We can&rsquo;t natively export a Custom profile from Microsoft Intune, so we&rsquo;ve used the <a href="https://github.com/Micke-K/IntuneManagement" target="_blank">Intune Management</a> tool to export it, allowing you to import the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Configuration/CIS/Windows/L1" target="_blank">CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1</a> profile instead of having to create it. You can also find the amended <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Configuration/CIS/Windows/L1" target="_blank">CIS (L1) Section 1 - 3.9.1.1 - Windows 11 Intune 3.0.1</a> there whilst you&rsquo;re at it.</span>
+    >The <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Remediation/CIS/L1" target="_blank">CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1</a> detection and remediation scripts are available for your to add into your Microsoft Intune tenant.</span>
 </div>
 
 
