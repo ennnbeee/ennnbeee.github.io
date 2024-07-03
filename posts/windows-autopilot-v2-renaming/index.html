@@ -116,7 +116,7 @@
     "keywords": ["windows autopilot","windows autopilot v2","powershell","remediation","settings catalog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "847"
+    "wordCount": "882"
   }]
   </script>
 
@@ -1196,7 +1196,7 @@
     </span>        
     
 </h2>
-<p>I&rsquo;ll be frank, this method is misaligned to good practice (which is nice way of saying, <em>&ldquo;janky&rdquo;</em>), but until there is a native way to do this in Microsoft Intune, and you still care about naming your devices and not just leaving users to decide their device names on Windows Pro devices at least:</p>
+<p>I&rsquo;ll be frank, this method is misaligned to good practice (which is nice way of saying, <em>&ldquo;janky&rdquo;</em>), but until there is a native way to do this in Microsoft Intune, and you still care about naming your devices and not just leaving users to decide their device names on Windows Pro devices at least&hellip;</p>
 <p>
 
 
@@ -1210,7 +1210,7 @@
         />
         <figcaption>Windows Autopilot Device Name prompt.</figcaption>
       </figure></p>
-<p>This is all you&rsquo;ve got.</p>
+<p>&hellip;this is all you&rsquo;ve got.</p>
 
 
 <h3 class="relative group">Custom Profiles 
@@ -1223,7 +1223,7 @@
     </span>        
     
 </h3>
-<p>Digging around in the Policy CSP, there are a couple of settings that support naming, or renaming devices, both <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp#extmicrosoftdnscomputername" target="_blank">DNSComputerName</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp" target="_blank">ComputerName</a>.</p>
+<p>So her I go digging around in the Policy CSP to try and find something to allow for a device rename, luckily there are a couple of settings that support naming, or renaming devices, both <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp#extmicrosoftdnscomputername" target="_blank">DNSComputerName</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp" target="_blank">ComputerName</a>.</p>
 <p>As we&rsquo;re only dealing with Windows 11 devices due to the requirements for Windows Autopilot Device Preparation, we&rsquo;ll stick with <strong>DNSComputerName</strong> due to the note with <strong>ComputerName</strong>:</p>
 <blockquote>
 <p>For desktop PCs on Windows 10, version 2004 or later, use the Ext/Microsoft/DNSComputerName node in <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp" target="_blank">DevDetail CSP</a>.</p>
@@ -1626,7 +1626,7 @@
 <p>There you have it, another way to rename shiny new APDP devices (<a href="https://knowyourmeme.com/memes/stop-trying-to-make-fetch-happen" target="_blank"><em>stop trying to make &ldquo;APDP&rdquo; happen</em></a>), but honestly, I&rsquo;m almost done caring about devices name at this point.</p>
 <p>The whole Autopilot Deployment Device Preparation process is user centric, what exactly are you using device names for? Applying settings to specific dynamic security groups based on device name?</p>
 <p>I mean this is a bad idea right, firstly APDP (<em>I&rsquo;m still trying, leave me alone.</em>) hands you a group of devices which you can use, secondly, if you&rsquo;re applying settings to devices based on something trivial like the device name, what&rsquo;s stopping an Administrative user changing the device name and circumventing your policies? Literally nothing.</p>
-<p>So instead complaining that there are missing features with APDP (<em>last time I promise</em>), like renaming devices, can we just all move on and find other better ways of grouping devices, you know like with <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a> and User assignments.</p>
+<p>So instead of complaining that there are missing features with APDP (<em>last time I promise</em>), like renaming devices, or lack of other deployment methods, or that it takes longer than normal, or there&rsquo;s more user interaction, can we just all move on and find other better ways of grouping devices, you know like with <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a> and User assignments.</p>
 
         </div>
         
