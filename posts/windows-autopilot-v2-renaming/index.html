@@ -114,7 +114,7 @@
     "keywords": ["windows autopilot","windows autopilot v2","custom profiles"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "897"
+    "wordCount": "903"
   }]
   </script>
 
@@ -1178,7 +1178,7 @@
     </span>        
     
 </h2>
-<p>I&rsquo;ll be frank, this method is misaligned to good practice (which is nice way of saying, <em>&ldquo;janky&rdquo;</em>), but until there is a native way to do this in Microsoft Intune, and you still care about naming your devices and not just leaving users to decide their device names on Windows Pro devices at least&hellip;</p>
+<p>I&rsquo;ll be frank, this method is misaligned to good practice (which is nice way of saying, <em>&ldquo;janky&rdquo;</em>), but until there is a way to do this in Microsoft Intune within the device preparation policy itself, and you still care about naming your devices and not just leaving users to decide their device names on Windows Pro devices at least&hellip;</p>
 <p>
 
 
@@ -1205,7 +1205,8 @@
     </span>        
     
 </h3>
-<p>So here I go again, digging around in the Policy CSP to try and find something to allow for a device rename. Luckily there are a couple of settings that support naming, or renaming devices, both <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp#extmicrosoftdnscomputername" target="_blank">DNSComputerName</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp" target="_blank">ComputerName</a>.</p>
+<p><a href="https://www.youtube.com/watch?v=r0xBROc7rCI" target="_blank">Ah shh, here we go again</a>, digging around in the Policy CSP to try and find something to allow for a device rename.</p>
+<p>Luckily there are a couple of settings that support naming, or renaming devices, both <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp#extmicrosoftdnscomputername" target="_blank">DNSComputerName</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp" target="_blank">ComputerName</a>.</p>
 <p>As we&rsquo;re only dealing with Windows 11 devices due to the <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/requirements?tabs=software" target="_blank">requirements</a> for Windows Autopilot Device Preparation, we&rsquo;ll stick with <strong>DNSComputerName</strong> due to the note with <strong>ComputerName</strong>:</p>
 <blockquote>
 <p>For desktop PCs on Windows 10, version 2004 or later, use the Ext/Microsoft/DNSComputerName node in <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp" target="_blank">DevDetail CSP</a>.</p>
