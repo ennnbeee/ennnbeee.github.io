@@ -114,7 +114,7 @@
     "keywords": ["windows autopilot","windows autopilot v2","custom profiles"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "929"
+    "wordCount": "934"
   }]
   </script>
 
@@ -1188,7 +1188,7 @@
         <div class="article-content max-w-prose mb-20">
           <p>We&rsquo;re no stranger to renaming Windows Autopilot devices having looked at this with Hybrid joined devices not <a href="/posts/hybrid-join-computer-rename/" rel="noopener" target="_blank">once</a>, but <a href="/posts/hybrid-join-computer-rename-again/" rel="noopener" target="_blank">twice</a>, to allow people to be happier with the names of their corporate owned devices, and not the random nature Windows Autopilot Hybrid Join deployments gives them.</p>
 <p>So what gives, why am I looking at this again?</p>
-<p>Yeah, it&rsquo;s <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/overview" target="_blank">Windows Autopilot v2</a>, (honestly I hope that name doesn&rsquo;t stick), and after looking at the <a href="https://smbtothecloud.com/apv2-using-a-device-name-template-forcing-a-reboot-after-the-esp-autopilot-device-preparation/" target="_blank">post</a> <a href="https://www.linkedin.com/in/gannon-n/" target="_blank">Gannon Novak</a> put together around the subject, I thought to myself, I wonder if there are other ways to achieve this?</p>
+<p>Yeah, it&rsquo;s <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/overview" target="_blank">Windows Autopilot v2</a>, (honestly I hope that name doesn&rsquo;t stick), and after looking at the <a href="https://smbtothecloud.com/apv2-using-a-device-name-template-forcing-a-reboot-after-the-esp-autopilot-device-preparation/" target="_blank">post</a> <a href="https://www.linkedin.com/in/gannon-n/" target="_blank">Gannon Novak</a> put together around the subject, I thought to myself, &ldquo;I wonder if there are other ways to achieve this?&rdquo;.</p>
 <p>Guess what? There are.</p>
 
 
@@ -1230,7 +1230,7 @@
     
 </h3>
 <p><a href="https://www.youtube.com/watch?v=r0xBROc7rCI" target="_blank">Ah shh, here we go again</a>, digging around in the Policy CSP to try and find something to allow for a device rename.</p>
-<p>Luckily there are a couple of settings that support naming, or renaming devices, both <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp#extmicrosoftdnscomputername" target="_blank">DNSComputerName</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp" target="_blank">ComputerName</a>.</p>
+<p>There are a couple of settings detailed in the Policy CSP that support device naming, or device renaming, both <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp#extmicrosoftdnscomputername" target="_blank">DNSComputerName</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/accounts-csp" target="_blank">ComputerName</a>.</p>
 <p>As we&rsquo;re only dealing with Windows 11 devices due to the <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/requirements?tabs=software" target="_blank">requirements</a> for Windows Autopilot Device Preparation, we&rsquo;ll stick with <strong>DNSComputerName</strong> due to the note with <strong>ComputerName</strong>:</p>
 <blockquote>
 <p>For desktop PCs on Windows 10, version 2004 or later, use the Ext/Microsoft/DNSComputerName node in <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/devdetail-csp" target="_blank">DevDetail CSP</a>.</p>
