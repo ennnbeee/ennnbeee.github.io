@@ -119,7 +119,7 @@
     "keywords": ["updates","dynamic groups","powershell","graph","automation"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1473"
+    "wordCount": "1503"
   }]
   </script>
 
@@ -1256,7 +1256,7 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>Finally we&rsquo;re at the end of the series, where be bring all the components together from the previous three posts into one <del>sub par</del> suitable looking PowerShell script, allowing us to not only kick off the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports" target="_blank">Feature Update Readiness</a> report, but capture the risk state for each device, tag each device using <a href="https://learn.microsoft.com/en-us/graph/extensibility-overview?tabs=http" target="_blank">Extension Attributes</a>, and then automatically group these devices with <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership" target="_blank">Dynamic Security Groups</a> in order to deploy our Windows 11 23H2 Feature Update to low risk devices whilst we give our selves breathing space to fix the others.</p>
-<p>Let&rsquo;s get down, let&rsquo;s get down to business.</p>
+<p><a href="https://youtu.be/nCg3ufihKyU?si=4qZgpAxujbk5RMWA&amp;t=28" target="_blank">Let&rsquo;s get down, let&rsquo;s get down to business</a>.</p>
 
 
 <h2 class="relative group">Script Overview 
@@ -1327,8 +1327,38 @@
 </h2>
 <p>So now you have an overview of what the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11Accelerator.ps1" target="_blank">script</a> 😇 actually does, let&rsquo;s see how we start it and what the output looks like.</p>
 <p>If we want to start our journey to Windows 11 23H2, and by now you should really be looking at starting this migration, as it&rsquo;s not <a href="https://yourcountdown.to/windows-10-extended-support" target="_blank">that long</a> until the support for Windows 10 ends, we can run the PowerShell script using the below, passing in your <a href="https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant" target="_blank">Entra ID Tenant ID</a> to <code>tenantId</code>, the selected <code>featureUpdateBuild</code>, in this case 23H2, and your <code>extensionAttribute</code> of choice:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-Windows11Accelerator</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;36019fe7-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-featureUpdateBuild</span> <span class="s1">&#39;23H2&#39;</span> <span class="n">-extensionAttribute</span> <span class="s1">&#39;15&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-Windows11Accelerator</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;36019fe7-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-featureUpdateBuild</span> <span class="s1">&#39;23H2&#39;</span> <span class="n">-extensionAttribute</span> <span class="s1">&#39;15&#39;</span> <span class="n">-target</span> <span class="s1">&#39;device&#39;</span> <span class="n">-deploy</span>
 </span></span></code></pre></div>
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >The script has been updated to support different targets, either user or device, along with an option to run this in demo mode without the <code>deploy</code> switch.</span>
+</div>
+
+
 
 <h3 class="relative group">Deployment Preparation 
     <div id="deployment-preparation" class="anchor"></div>
@@ -1466,7 +1496,7 @@
 <li><strong>Not ready</strong> - The device isn&rsquo;t capable of upgrading to the target OS version.</li>
 <li><strong>Unknown</strong> - A readiness status couldn&rsquo;t be determined. Ensure that the device is properly configured to send Windows diagnostic data.</li>
 </ul>
-<p>In the format of <code>[RiskState]-W11-[FeatureUpdate]</code> i.e., <code>LowRisk-W11-23H2</code>, <code>NotReady-W11-23H2</code>.</p>
+<p>In the format of <strong>[RiskState]-W11-[FeatureUpdate]</strong> i.e., <strong>LowRisk-W11-23H2</strong>, <strong>NotReady-W11-23H2</strong>.</p>
 <p>
 
 
