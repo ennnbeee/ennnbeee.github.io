@@ -11,10 +11,10 @@ jobs:
   check-and-submit:
     runs-on: ubuntu-latest
     steps:
-      - name: indexnow-action
+      - name: Setup IndexNow 
+        run: echo ${{ secrets.INDEXNOW_KEY }} > ${{ secrets.INDEXNOW_KEY }}.txt
+      - name: Run IndexNow
         uses: bojieyang/indexnow-action@v2
         with:
           sitemap-location: "https://memv.ennbee.uk/sitemap.xml"
-          since: 1
-          since-unit: "day"
           key: ${{ secrets.INDEXNOW_KEY }}
