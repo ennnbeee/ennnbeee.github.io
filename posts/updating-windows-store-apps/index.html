@@ -78,7 +78,7 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-02-06T21:03:00+00:00">
     <meta property="article:modified_time" content="2024-02-06T21:03:00+00:00">
-    <meta property="article:tag" content="Updates">
+    <meta property="article:tag" content="Software Updates">
     <meta property="article:tag" content="Remediation Scripts">
     <meta property="article:tag" content="Apps">
     <meta property="article:tag" content="PowerShell">
@@ -897,7 +897,7 @@
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
+    Software Updates
   </span>
 </span>
   </span>
@@ -1253,7 +1253,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-setcat_hu2cf2ed62081f3c259c77cedee66a09c4_32890_filter_12395577657286912053.webp#left" alt="Settings Catalog Profile" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-setcat_hu2cf2ed62081f3c259c77cedee66a09c4_32890_filter_11946396386406247534.webp#left" alt="Settings Catalog Profile" />
         <figcaption>Settings Catalog profile for Microsoft Store.</figcaption>
       </figure></p>
 <p>Assign this profile to your devices, all of them obviously, no testing needed here.</p>
@@ -1279,7 +1279,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-psexec_hu9290b9bcf12644ae2e7a60b7dca7e007_95842_filter_8648930360464227748.webp#left" alt="PsExec Run" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-psexec_hu9290b9bcf12644ae2e7a60b7dca7e007_95842_filter_14365109855090896585.webp#left" alt="PsExec Run" />
         <figcaption>PSEXEC running the store app update command.</figcaption>
       </figure></p>
 <p>Nothing much to look at here, but if you&rsquo;ve got the store open, you should now see updates in the Downloads and Updates section, if you&rsquo;re lazy run <code>start ms-windows-store://downloadsandupdates</code> as a standard user to open the correct area of the store.</p>
@@ -1288,7 +1288,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-update_huf3a462eba711c73c318d2be664d259b7_77264_filter_1163333782445392509.webp#left" alt="Store App Updates" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-update_huf3a462eba711c73c318d2be664d259b7_77264_filter_15070628459860478140.webp#left" alt="Store App Updates" />
         <figcaption>The Microsoft Store updating apps.</figcaption>
       </figure></p>
 <p>Brilliant, apps are now trying their hardest to update. Now we&rsquo;ve got a method to update the apps, no one is going to run this manually on a regular basis, and we love a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">Microsoft Intune Remediation</a>.</p>
@@ -1342,7 +1342,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-output_hu0a47ded9c93b67d76fa98e633e807486_45362_filter_3693867680105594789.webp#left" alt="Command Output" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-output_hu0a47ded9c93b67d76fa98e633e807486_45362_filter_1483471227409833693.webp#left" alt="Command Output" />
         <figcaption>The result of the Get-CimInstance query.</figcaption>
       </figure></p>
 <p>Guess what, we do, that <code>LastScanError</code> is looking mighty interesting, and it being Microsoft I bet that an exit code of zero means success, but we should have a look at the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp#deviceappmanagementlastscanerror" target="_blank">reference document</a> just in case.</p>
@@ -1465,7 +1465,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-script_hu8b8bad9b823508e3a054c6c8ad6846a2_96728_filter_56480527396877247.webp#left" alt="Remediation Script" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-script_hu8b8bad9b823508e3a054c6c8ad6846a2_96728_filter_15585196761207199627.webp#left" alt="Remediation Script" />
         <figcaption>Microsoft Intune Remediation Script.</figcaption>
       </figure></p>
 <p>I&rsquo;ve assigned this to <strong>All Devices</strong> with my beloved <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a> on a daily schedule, but if you&rsquo;re more cautious than I am, assign this to a smaller proof-of-concept group.</p>
@@ -1475,7 +1475,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-results_hucd72995fbb976b24f6a38514c5bae5b7_42074_filter_15554510530975444676.webp#left" alt="Remediation Results" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-results_hucd72995fbb976b24f6a38514c5bae5b7_42074_filter_6569082153478454245.webp#left" alt="Remediation Results" />
         <figcaption>Microsoft Intune Remediation Results.</figcaption>
       </figure></p>
 <p>If all goes well, your devices will start actually updating the &lsquo;Built In&rsquo; apps you haven&rsquo;t ripped out with a PowerShell script, and Microsoft Intune UWP store apps you&rsquo;ve deployed, though your users may start complaining about the apps looking like they&rsquo;re loading in the Start Menu 😂.</p>
@@ -1816,7 +1816,7 @@
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Updates
+    Software Updates
   </span>
 </span>
   </span>
