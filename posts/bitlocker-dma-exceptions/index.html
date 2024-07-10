@@ -115,7 +115,7 @@
     "keywords": ["bitlocker","powershell","security","dma"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1311"
+    "wordCount": "1310"
   }]
   </script>
 
@@ -1206,7 +1206,8 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices" target="_blank">Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.</p>
-<p>What happens when you have devices that don&rsquo;t want to silently or automatically encrypt with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank">Un-allowed DMA capable bus/device(s)</a> in the event log. With the Microsoft recommendation solution to add registry items to allow for these exceptions on the failing devices, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
+<p>But what happens when your devices configured for silent encryption, don&rsquo;t even automatically encrypt, with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank">Un-allowed DMA capable bus/device(s)</a> in the event log.</p>
+<p>With the Microsoft recommendation solution to add registry items to allow for these exceptions on the failing devices, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
 
 
 <h2 class="relative group">Direct Memory Access Exceptions 
@@ -1254,7 +1255,7 @@
     </span>        
     
 </h2>
-<p>You might be wondering why we&rsquo;re going for a &ldquo;dumb&rdquo; PowerShell script instead of the fancy <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">remediation</a> approach that I am fond of? Well the simple answer is that Platform scripts, running under the required <code>SYSTEM</code> context, will run during Windows Autopilot, so we can ensure that devices with the DMA issue are resolved during the deployment process instead of after it, allowing for BitLocker encryption to complete in flight. You know for security and that.</p>
+<p>You might be wondering why we&rsquo;re going for a &ldquo;dumb&rdquo; PowerShell script instead of the fancy <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">remediation</a> approach that I am fond of? Well the simple answer is that Platform scripts, running under the required <strong>SYSTEM</strong> context, will run during Windows Autopilot, so we can ensure that devices with the DMA issue are resolved during the deployment process instead of after it, allowing for BitLocker encryption to complete in flight. You know for security and that.</p>
 <p>So there.</p>
 
 
@@ -1268,11 +1269,12 @@
     </span>        
     
 </h3>
-<p>We need a way to easily add the required registry entries to allow for the exceptions, taking into consideration that a single model, or manufacture, of device could have multiple exceptions. For this, we can just build a new <code>pscustomobject</code> as part of an array variable <code>$dmaDevices</code>, and as the actual name of the registry value doesn&rsquo;t matter, our main focus is the value.</p>
+<p>We need a way to easily add the required registry entries to allow for the exceptions, taking into consideration that a single model, or manufacturer, of device could have multiple exceptions.</p>
+<p>For this, we can just build a new <code>pscustomobject</code> as part of an array variable <code>$dmaDevices</code>, and as the actual name of the registry value doesn&rsquo;t matter, our main focus is the value.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) LPC Controller - 519D&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_519D&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) PCI Express Root Port #10 - 51B1&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_51B1&#39;</span><span class="p">}</span>
-</span></span></code></pre></div><p>With the <code>$dmaDevices</code> array variable, we can then loop through each item in the array, and add the required data to the registry key <code>HKLM:\SYSTEM\CurrentControlSet\Control\DmaSecurity\AllowedBuses</code> with a <code>New-ItemProperty</code> command:</p>
+</span></span></code></pre></div><p>With the <code>$dmaDevices</code> array variable, we can then loop through each item in the array, and add the required data to the registry key <strong>HKLM:\SYSTEM\CurrentControlSet\Control\DmaSecurity\AllowedBuses</strong> with a <code>New-ItemProperty</code> command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$regPath</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\DmaSecurity\AllowedBuses&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$dmaDevice</span> <span class="k">in</span> <span class="nv">$dmaDevices</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$regPath</span> <span class="n">-Name</span> <span class="nv">$dmaDevice</span><span class="p">.</span><span class="py">name</span> <span class="n">-Value</span> <span class="nv">$dmaDevice</span><span class="p">.</span><span class="py">value</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Force</span>
@@ -1306,7 +1308,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) Xeon(R) E3 - 1200/1500 v5/6th Gen Intel(R) Core(TM) PCIe Controller (x16) - 1901&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_1901&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$dmaDevices</span> <span class="p">+=</span> <span class="p">[</span><span class="no">pscustomobject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span><span class="n">name</span> <span class="p">=</span> <span class="s1">&#39;Intel(R) PCI Express Root Port #15 - A336&#39;</span><span class="p">;</span> <span class="n">value</span> <span class="p">=</span> <span class="s1">&#39;PCI\VEN_8086&amp;DEV_A336&#39;</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>The <code>if</code> and subsequent <code>elseif</code> statements allow us to ensure that only the DMA exceptions per model, or groups of models, are going to be applied, with the statement allowing for a lookup of multiple models using the <code>-in</code> operator.</p>
+</span></span></code></pre></div><p>The <strong>if</strong> and subsequent <strong>elseif</strong> statements allow us to ensure that only the DMA exceptions per model, or groups of models, are going to be applied, with the statement allowing for a lookup of multiple models using the <code>-in</code> operator.</p>
 <p>So if you have multiple models with the same <code>PCI\VEN_8086&amp;DEV_A30D</code> exception for example, these can be grouped together. Nice eh?</p>
 
 
@@ -1426,7 +1428,7 @@
     </span>        
     
 </h3>
-<p>Now as the registry key has restrictive permissions, you can modify these manually for testing as per the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank">article</a>, or you can use <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank">PsExec</a> to run PowerShell as <code>SYSTEM</code> using <code>PsExec.exe -s -i powershell.exe</code>.</p>
+<p>Now as the registry key has restrictive permissions, you can modify these manually for testing as per the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank">article</a>, or you can use <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank">PsExec</a> to run PowerShell as <strong>SYSTEM</strong> using <strong>PsExec.exe -s -i powershell.exe</strong>.</p>
 <p>Allowing you to test locally on devices before deploying using Microsoft Intune, and with a bit of luck, you should see something like the below:</p>
 <p>
 
@@ -1493,7 +1495,7 @@
     </span>        
     
 </h2>
-<p>Once you&rsquo;ve captured the DMA exceptions of devices failing to silently and automatically encrypt with BitLocker, along with the model of device that is effected, you can update the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1" target="_blank">PowerShell script</a>, taking care with the model names, this can then be deployed using Microsoft Intune to a dynamic group of Autopilot devices.</p>
+<p>Once you&rsquo;ve captured the DMA exceptions of devices failing to automatically encrypt with BitLocker, along with the model of device that is effected, you can update the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1" target="_blank">PowerShell script</a>, taking care with the model names, this can then be deployed using Microsoft Intune to a dynamic group of Windows Autopilot devices.</p>
 <p>As we&rsquo;ve gone to the effort of being specific with our exceptions, in the event that a device model is not in the list, then nothing will happen, but if a model <em>is</em> in the list of effected devices, the registry will get updated, and BitLocker will stop being a little whinge about not being able to start encryption due to some kind of security issue.</p>
 
         </div>
