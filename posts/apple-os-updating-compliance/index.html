@@ -1610,8 +1610,6 @@
     
 </h3>
 <p>We should practice what we preach and test our script in our own Intune environment before letting loose on a production one, so here we go.</p>
-<ul>
-<li>
 <p><strong>iOS 15</strong> Compliance Policy <strong>without an existing</strong> build version
 
 
@@ -1621,8 +1619,6 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/apple-os-updating-compliance/img/appleos-ios15before_hubef7ce75cf9a9870677daa4fff46035e_55766_filter_4145958729118865754.webp#left" alt="iOS 15 Compliance before" />
         <figcaption>Microsoft Intune iOS15 compliance policy.</figcaption>
       </figure></p>
-</li>
-<li>
 <p><strong>macOS Big Sur</strong> Compliance Policy <strong>with a current</strong> build version
 
 
@@ -1632,8 +1628,6 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/apple-os-updating-compliance/img/appleos-macos12before_hu21b84f6cb6d39c6e1d0e127ec94936f3_48968_filter_7178439269039165044.webp#left" alt="macOS 13 Compliance before" />
         <figcaption>Microsoft Intune macOS Big Sur compliance policy.</figcaption>
       </figure></p>
-</li>
-<li>
 <p><strong>macOS Ventura</strong> Compliance Policy <strong>with an existing</strong> build version
 
 
@@ -1643,8 +1637,6 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/apple-os-updating-compliance/img/appleos-macos13before_hu7ec3a842ae4324355f9c6ae828aded85_55776_filter_5986680940550266644.webp#left" alt="macOS 13 Compliance before" />
         <figcaption>Microsoft Intune macOS Ventura compliance policy.</figcaption>
       </figure></p>
-</li>
-</ul>
 <p>Running the script will give us the below output:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Updated macOS Compliance Policy Compliance_macOS_Corporate_OS_13 with latest Build: 22D49
 </span></span><span class="line"><span class="cl">
@@ -1654,8 +1646,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Updated iOS Compliance Policy Compliance_iOS_Corporate_OS_16 with latest Build: 20D47
 </span></span></code></pre></div><p>Resulting in our Compliance Policies getting updated with the latest build versions:</p>
-<ul>
-<li><strong>iOS 15</strong> Compliance Policy updated to <strong>19H307</strong>
+<p><strong>iOS 15</strong> Compliance Policy updated to <strong>19H307</strong>
 
 
 
@@ -1663,8 +1654,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/apple-os-updating-compliance/img/appleos-ios15after_hu0d4a3d89166566295ad7912875db74cf_60694_filter_3372772275049081502.webp#left" alt="iOS 15 Compliance after" />
         <figcaption>Updated Microsoft Intune iOS15 compliance policy.</figcaption>
-      </figure></li>
-</ul>
+      </figure></p>
 <p>Checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss" target="_blank">Apple Developer Release Feed</a> that we haven&rsquo;t made a mistake.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&lt;title&gt;</span>iOS 15.7.3 (19H307)<span class="nt">&lt;/title&gt;</span>
@@ -1674,8 +1664,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;pubDate&gt;</span>Mon, 23 Jan 2023 09:00:00 PST<span class="nt">&lt;/pubDate&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;content:encoded&gt;</span><span class="cp">&lt;![CDATA[&lt;p&gt;&lt;a href=/download class=more&gt;View downloads&lt;/a&gt;&lt;/p&gt;]]&gt;</span><span class="nt">&lt;/content:encoded&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/item&gt;</span>
-</span></span></code></pre></div><ul>
-<li><strong>macOS Ventura</strong> Compliance Policy updated to <strong>22D49</strong>
+</span></span></code></pre></div><p><strong>macOS Ventura</strong> Compliance Policy updated to <strong>22D49</strong>
 
 
 
@@ -1683,8 +1672,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/apple-os-updating-compliance/img/appleos-macos13after_hueeb5e0212b4d1a71187bc48d6efbe4d8_61234_filter_13981207097848444729.webp#left" alt="macOS 13 Compliance after" />
         <figcaption>Updated Microsoft Intune macOS Ventura compliance policy.</figcaption>
-      </figure></li>
-</ul>
+      </figure></p>
 <p>Again checking this against the <a href="https://developer.apple.com/news/releases/rss/releases.rss" target="_blank">Apple Developer Release Feed</a> that we still haven&rsquo;t made a mistake.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-XML" data-lang="XML"><span class="line"><span class="cl"><span class="nt">&lt;item&gt;</span>
 </span></span><span class="line hl"><span class="cl">    <span class="nt">&lt;title&gt;</span>macOS 13.2 (22D49)<span class="nt">&lt;/title&gt;</span>
@@ -1695,8 +1683,7 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;content:encoded&gt;</span><span class="cp">&lt;![CDATA[&lt;p&gt;&lt;a href=/download class=more&gt;View downloads&lt;/a&gt;&lt;/p&gt;&lt;il&gt;&lt;p&gt;&lt;a href=/go/?id=macos-13.2-rn class=more&gt;View release notes&lt;/a&gt;&lt;/p&gt;&lt;/il&gt;]]&gt;</span><span class="nt">&lt;/content:encoded&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/item&gt;</span>
 </span></span></code></pre></div><p>Or resulting in the current build version Compliance Policies not getting updated:</p>
-<ul>
-<li><strong>macOS Big Sur</strong> Compliance Policy <strong>not updated</strong>
+<p><strong>macOS Big Sur</strong> Compliance Policy <strong>not updated</strong>
 
 
 
@@ -1704,8 +1691,7 @@
       <figure>
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/apple-os-updating-compliance/img/appleos-macos12after_hu21b84f6cb6d39c6e1d0e127ec94936f3_48968_filter_7178439269039165044.webp#left" alt="macOS 13 Compliance before" />
         <figcaption>Microsoft Intune macOS Big Sur compliance policy.</figcaption>
-      </figure></li>
-</ul>
+      </figure></p>
 <p>Overall this looks pretty good to me.</p>
 
 

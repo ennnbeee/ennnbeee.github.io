@@ -1543,7 +1543,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-company_hu87457ef080c445c3caeafa8647277f5b_80019_filter_8174538414992029699.png#left" alt="Google Chrome in the Company Portal" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/img/macossso-company_hu6b030d7a4f9bf8dfc84ae342b1b2cad9_70744_filter_16246220051641918513.png#left" alt="Google Chrome in the Company Portal" />
         <figcaption>Company Portal available apps.</figcaption>
       </figure></p>
 <p>Two of many potential methods to install Google Chrome now sorted, onto what we&rsquo;re here for in the single sign on configuration.</p>
@@ -1572,9 +1572,9 @@
     </span>        
     
 </h3>
-<p>Using the <a href="https://support.google.com/chrome/a/answer/7517624?hl=en#zippy=%2Cpin-app-or-extension-updates%2Cset-installation-policies-automatically-install-force-install-allow-or-block" target="_blank">examples</a> provided by Google, we have a basis to create our custom <code>mobileconfig</code> file, which when complete, can be uploaded to Microsoft Intune and deployed to our macOS devices.</p>
+<p>Using the <a href="https://support.google.com/chrome/a/answer/7517624?hl=en#zippy=%2Cpin-app-or-extension-updates%2Cset-installation-policies-automatically-install-force-install-allow-or-block" target="_blank">examples</a> provided by Google, we have a basis to create our custom <strong>mobileconfig</strong> file, which when complete, can be uploaded to Microsoft Intune and deployed to our macOS devices.</p>
 <p>As we&rsquo;re focusing solely on the forced installation of the <a href="https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji" target="_blank">Microsoft Single Sign On extension</a>, we can strip out everything else from the example, and can update the configuration file to install the extension we want.</p>
-<p>We need to update the settings under the key <code>installation_mode</code> setting the string value to <code>force_installed</code>, this in conjunction with the ID of the extension we want to force install <code>ppnbnpeolgkicgegkbkbjmhlideopiji</code> (which we can get from the extension URL itself), allows us to configure a custom profile for Google Chrome to ensure that the extension that unlocks all the Platform SSO goodness is deployed to devices with Google Chrome installed.</p>
+<p>We need to update the settings under the key <strong>installation_mode</strong> setting the string value to <strong>force_installed</strong>, this in conjunction with the ID of the extension we want to force install <strong>ppnbnpeolgkicgegkbkbjmhlideopiji</strong> (which we can get from the extension URL itself), allows us to configure a custom profile for Google Chrome to ensure that the extension that unlocks all the Platform SSO goodness is deployed to devices with Google Chrome installed.</p>
 
 
 

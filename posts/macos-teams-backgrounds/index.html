@@ -1213,7 +1213,7 @@
     </span>        
     
 </h2>
-<p>So after a quick search, to add new backgrounds for Teams we need to dump files in <code>~/Library/Application Support/Microsoft/Teams/Backgrounds</code>, this directory will exist under the logged in User context, so we&rsquo;re going to need a way to both create an &lsquo;Uploads&rsquo; directory and dump the background files in there.</p>
+<p>So after a quick search, to add new backgrounds for Teams we need to dump files in <strong>~/Library/Application Support/Microsoft/Teams/Backgrounds</strong>, this directory will exist under the logged in User context, so we&rsquo;re going to need a way to both create an &lsquo;Uploads&rsquo; directory and dump the background files in there.</p>
 
 
 <h3 class="relative group">Checking for the Teams App 
@@ -1227,7 +1227,7 @@
     
 </h3>
 <p>Before we start throwing files in a directory, we should probably check to see if Teams is actually installed, luckily having spent many evenings peering over the macOS Shell Scripts hosted in <a href="https://github.com/microsoft/shell-intune-samples" target="_blank">Intune Shell Scripts</a>, we can use the <a href="https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock" target="_blank">Dock Customisation</a> script, as there&rsquo;s a section in there that waits for the detection of apps before allowing the script to continue.</p>
-<p>So we&rsquo;ll pinch that section and update it so it&rsquo;s only checking for the <code>Microsoft Teams.app</code></p>
+<p>So we&rsquo;ll pinch that section and update it so it&rsquo;s only checking for the <strong>Microsoft Teams.app</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line hl"><span class="cl"><span class="nv">teamsapp</span><span class="o">=</span><span class="s2">&#34;/Applications/Microsoft Teams.app&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">[[</span> <span class="nv">$ready</span> -ne <span class="m">1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">do</span>
@@ -1385,7 +1385,7 @@
     </span>        
     
 </h3>
-<p>Pretty simple really, even I can use <a href="https://curl.se/docs/manpage.html" target="_blank"><code>curl</code></a> to download the background files to the directory location <code>-L</code>, passing in the URL and a filename as part of the output <code>-o</code> option. We&rsquo;ve added the `-s&rsquo; so as to not clog the log file with the raw download data.</p>
+<p>Pretty simple really, even I can use <a href="https://curl.se/docs/manpage.html" target="_blank">curl</a> to download the background files to the directory location <code>-L</code>, passing in the URL and a filename as part of the output <code>-o</code> option. We&rsquo;ve added the `-s&rsquo; so as to not clog the log file with the raw download data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">curl -s -L -o <span class="nv">$teamsUpload</span>/<span class="nv">$backgroundfile</span> <span class="nv">$backgroundurl</span>
 </span></span></code></pre></div><p>We now need to loop through each of the items in the <code>backgroundurls</code> array, and we also need to give each a filename for <code>backgroundfile</code> that isn&rsquo;t duplicated, otherwise we&rsquo;ll end up downloading and overwriting the same file for each URL in the array.</p>
 
@@ -1612,7 +1612,7 @@
     </span>        
     
 </h3>
-<p>As per the configured variable in the script, we can find the log <code>$HOME/Library/Logs/Microsoft/Intune/Scripts/SetTeamsBackground/SetTeamsBackground.log</code>, opening it we can check on the status of the downloads.</p>
+<p>As per the configured variable in the script, we can find the log <strong>$HOME/Library/Logs/Microsoft/Intune/Scripts/SetTeamsBackground/SetTeamsBackground.log</strong>, opening it we can check on the status of the downloads.</p>
 <p>
 
 
@@ -1661,7 +1661,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/macos-teams-backgrounds/img/teamsmac-bg_hu1f5dc0ab195ce4e427e089284fb86713_175072_filter_14490150560656789029.webp#left" alt="Teams Backgrounds" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/macos-teams-backgrounds/img/teamsmac-bg_hu598bf416db00540a37ae718444c7da2b_22678_filter_15322695473288080247.webp#left" alt="Teams Backgrounds" />
         <figcaption>Teams backgrounds within a Teams meeting.</figcaption>
       </figure></p>
 <p>All good here as well, we can relax and have a coffee.</p>

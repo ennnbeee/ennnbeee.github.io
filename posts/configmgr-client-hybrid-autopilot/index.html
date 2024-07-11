@@ -1216,9 +1216,9 @@
     </span>        
     
 </h2>
-<p>To stop the application from running during the Autopilot process, we can add in a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-add#step-3-requirements" target="_blank">Requirement Rule</a> to ensure that we&rsquo;re not in the Out of Box Experience (OOBE). We&rsquo;ve got a couple of options here, whether it&rsquo;s detecting if the <code>CloudExperienceHostBroker</code> Service is running, or if the User account context is running under <code>defaultUser0</code>.</p>
+<p>To stop the application from running during the Autopilot process, we can add in a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/apps-win32-add#step-3-requirements" target="_blank">Requirement Rule</a> to ensure that we&rsquo;re not in the Out of Box Experience (OOBE). We&rsquo;ve got a couple of options here, whether it&rsquo;s detecting if the <code>CloudExperienceHostBroker</code> Service is running, or if the User account context is running under <strong>defaultUser0</strong>.</p>
 <p>I&rsquo;ve gone with the Service approach, as it saves Intune having to run <code>Get-ComputerInfo -Property CsUserName</code> every time it wants to check if the requirement has been met.</p>
-<p>With this, we can create a Requirement Rule Script using the below to check if the <code>CloudExperienceHostBroker</code> service is running, and if not returning <code>Install</code>:</p>
+<p>With this, we can create a Requirement Rule Script using the below to check if the <strong>CloudExperienceHostBroker</strong> service is running, and if not returning <strong>Install</strong>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$ESPProcess</span> <span class="p">=</span> <span class="nb">Get-Process</span> <span class="n">-Name</span> <span class="n">CloudExperienceHostBroker</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$ESPProcess</span><span class="p">.</span><span class="py">Count</span> <span class="o">-eq</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">Return</span> <span class="s1">&#39;Install&#39;</span>
@@ -1295,7 +1295,7 @@
 </h2>
 <p>Now that we can control when the Client is installed, we need a way to detect that it has installed, and to be honest, we don&rsquo;t actually care if the Client itself has installed correctly, as the Client setup will just sit and try to install itself every ten minutes until it can.</p>
 <p>If we had a detection rule for either the MSI product code, or a File check for the client itself, we&rsquo;d be waiting for an absolute age for Intune to be happy and confirm the installation state. We do not want this.</p>
-<p>What we do want, is a quick and easy way to ensure that the setup files exist on the device, then we can let the <code>ccmsetup.exe</code> do it&rsquo;s magical thing and install the Client and the associated service.</p>
+<p>What we do want, is a quick and easy way to ensure that the setup files exist on the device, then we can let the <strong>ccmsetup.exe</strong> do it&rsquo;s magical thing and install the Client and the associated service.</p>
 <p>So for the detection rule, we&rsquo;ll just look for the presence of the setup file:</p>
 <table>
 <thead>
@@ -1432,7 +1432,7 @@
     </span>        
     
 </h3>
-<p>As I&rsquo;ve mentioned <a href="/posts/hybrid-join-computer-rename-again/#proactive-remediation" rel="noopener" target="_blank">previously</a> if you&rsquo;re licensed to use Proactive Remediation Scripts, you should be using them, and in anger. We can throw together a script that looks for the registry key <code>HKLM:\SOFTWARE\Microsoft\DeviceManageabilityCSP\Provider\MS DM Server\ConfigInfo</code>, create it if it doesn&rsquo;t exist, and set it to <code>1</code> telling the device to only deal with Intune.</p>
+<p>As I&rsquo;ve mentioned <a href="/posts/hybrid-join-computer-rename-again/#proactive-remediation" rel="noopener" target="_blank">previously</a> if you&rsquo;re licensed to use Proactive Remediation Scripts, you should be using them, and in anger. We can throw together a script that looks for the registry key <strong>HKLM:\SOFTWARE\Microsoft\DeviceManageabilityCSP\Provider\MS DM Server\ConfigInfo</strong>, create it if it doesn&rsquo;t exist, and set it to <strong>1</strong> telling the device to only deal with Intune.</p>
 
 
 <h4 class="relative group">Detection Script 
