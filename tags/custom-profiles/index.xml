@@ -48,15 +48,5 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg" />
     </item>
     
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</link>
-      <pubDate>Mon, 06 Aug 1984 10:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</guid>
-      <description>This is the last part in the series around the CIS benchmark for Windows 11, and I&amp;rsquo;d like to say we&amp;rsquo;ve saved the best for last, but we&amp;rsquo;d be lying. Surely the Level 2 settings can&amp;rsquo;t be worse than the Level 1, breaking more things along the way can they?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/featured.png" />
-    </item>
-    
   </channel>
 </rss>
