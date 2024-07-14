@@ -115,7 +115,7 @@
     "keywords": ["bitlocker","powershell","security","dma"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1310"
+    "wordCount": "1324"
   }]
   </script>
 
@@ -1181,9 +1181,9 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Silently encrypting Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices" target="_blank">Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device during either Windows Autopilot or otherwise, as long as your configuration meets the pre-requisites and you&rsquo;re only using a TPM (Trusted Platform Module) as a pre-boot authentication method.</p>
-<p>But what happens when your devices configured for silent encryption, don&rsquo;t even automatically encrypt, with them complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank">Un-allowed DMA capable bus/device(s)</a> in the event log.</p>
-<p>With the Microsoft recommendation solution to add registry items to allow for these exceptions on the failing devices, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
+          <p>Configuring silent encryption for Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices" target="_blank">Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device, setting the encryption algorithm used, and ensuring that the data on the device is protected.</p>
+<p>But what happens when your devices configured for silent encryption, don&rsquo;t even <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#bitlocker-automatic-device-encryption" target="_blank">automatically encrypt</a>, with devices complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank">Un-allowed DMA capable bus/device(s)</a> in the event log, preventing automatic encryption from starting.</p>
+<p>With the Microsoft recommendation to create registry items to allow for these exceptions on the devices failing to automatically encrypt, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
 
 
 <h2 class="relative group">Direct Memory Access Exceptions 
@@ -1231,7 +1231,8 @@
     </span>        
     
 </h2>
-<p>You might be wondering why we&rsquo;re going for a &ldquo;dumb&rdquo; PowerShell script instead of the fancy <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">remediation</a> approach that I am fond of? Well the simple answer is that Platform scripts, running under the required <strong>SYSTEM</strong> context, will run during Windows Autopilot, so we can ensure that devices with the DMA issue are resolved during the deployment process instead of after it, allowing for BitLocker encryption to complete in flight. You know for security and that.</p>
+<p>You might be wondering why we&rsquo;re going for a &ldquo;dumb&rdquo; PowerShell script instead of the &ldquo;fancy&rdquo; <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">remediation</a> approach that I am fond of?</p>
+<p>Well the simple answer is that Platform scripts, running under the required <strong>SYSTEM</strong> context, will run during Windows Autopilot, so we can ensure that devices with the DMA issue are resolved during the deployment process instead of after it, allowing for BitLocker automatic encryption to complete in flight, you know for security and that.</p>
 <p>So there.</p>
 
 
@@ -1269,9 +1270,8 @@
     
 </h3>
 <p>Instead of this blanket set of new registry items assigned to all devices, which from a security stance isn&rsquo;t the best look, we should make sure that make and model specific settings are applying.</p>
-<p>We can achieve this granularity of model specific settings by using a quick <code>(Get-WmiObject -Class:Win32_ComputerSystem).Model</code> to pull back the model of the device, before we start fiddling with it&rsquo;s registry.</p>
+<p>Instead of having the create many many Dynamic Device Groups in Entra for each make and model, we can achieve this granularity of model specific settings by using a quick <code>(Get-WmiObject -Class:Win32_ComputerSystem).Model</code> to pull back the model of the device, before we start fiddling with its registry.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$dmaDevices</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">$deviceModel</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-WmiObject</span> <span class="n">-Class:Win32_ComputerSystem</span><span class="p">).</span><span class="py">Model</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$deviceModel</span> <span class="n">-in</span> <span class="s1">&#39;Latitude 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude 2&#39;</span><span class="p">)</span> <span class="p">{</span>
