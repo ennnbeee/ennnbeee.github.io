@@ -94,7 +94,7 @@
       <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/</guid>
-      <description>So you&amp;rsquo;ve configured BitLocker silent encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue. How can we fix that without creating a gaping security hole?</description>
+      <description>So you&amp;rsquo;ve configured BitLocker encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue as part of Automatic Encryption. How can we fix that without creating a gaping security hole?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/featured.jpg" />
     </item>
     
