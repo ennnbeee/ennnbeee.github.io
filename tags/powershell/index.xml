@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 15 Jul 2024 11:26:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jul 2024 21:26:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
+      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</link>
+      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</guid>
+      <description>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&amp;rsquo;d like to say that we&amp;rsquo;ve saved the best post for last, but we&amp;rsquo;d be lying. Surely the Level 2 settings can&amp;rsquo;t be worse than the Level 1?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/featured.png" />
+    </item>
+    
     <item>
       <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows 11</title>
       <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/</link>
