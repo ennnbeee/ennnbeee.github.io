@@ -116,7 +116,7 @@
     "keywords": ["settings catalog","security","firewall","endpoint security","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1059"
+    "wordCount": "1108"
   }]
   </script>
 
@@ -1634,7 +1634,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/zoomier_hu23e6872264ea90638f40e95dc90dc8c1_91795_filter_3654846983260944251.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/zoomier_hu158b5197fa1e72bb81f1911994d23464_85626_filter_18239241096117156590.png"
           alt="Still real audit log"
         />
         <figcaption>Zoom and enhance.</figcaption>
@@ -1655,7 +1655,7 @@
 </span></span><span class="line"><span class="cl">Old Value:
 </span></span><span class="line"><span class="cl">Property: $Collection.Settings.ValueJson[0]
 </span></span><span class="line"><span class="cl">New Value: [{&#34;displayName&#34;:&#34;Wi-Fi Direct Spooler Use (Out)&#34;,&#34;description&#34;:&#34;Outbound rule to use WSD printers on Wi-Fi Direct networks.&#34;,&#34;trafficDirection&#34;:&#34;out&#34;, &#34;action&#34; :&#34;allowed&#34;,&#34;profileTypes&#34;:[&#34;public&#34;
-</span></span></code></pre></div><p>You can see that Microsoft are actually taking you&rsquo;re legacy Firewall rule policies and converting them on your behalf like the good little soldiers they are.</p>
+</span></span></code></pre></div><p>You can see that Microsoft are actually taking your legacy Firewall rule policies and converting them on your behalf like the good little soldiers they are.</p>
 <p>Go check your own, I bet they&rsquo;ll be the new Settings Catalog ones. I&rsquo;ll wait (hint, I won&rsquo;t).</p>
 
 <figure>
@@ -1668,7 +1668,9 @@
   
   </figure>
 <p>How do I know this is happening?</p>
-<p>Well I spent effing ages working out the required JSON formatting for Firewall Rule policies in Settings Catalog profiles when I created my conversion script all that time ago. #betternotbitter</p>
+<p>Well I spent effing ages working out the required JSON formatting for Firewall Rule policies in Settings Catalog profiles when I created my conversion script all that time ago, and can see the very same JSON format in the audit log.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;displayName&#34;</span><span class="p">:</span><span class="s2">&#34;Wi-Fi Direct Spooler Use (Out)&#34;</span><span class="p">,</span><span class="nt">&#34;description&#34;</span><span class="p">:</span><span class="s2">&#34;Outbound rule to use WSD printers on Wi-Fi Direct networks.&#34;</span><span class="p">,</span><span class="nt">&#34;trafficDirection&#34;</span><span class="p">:</span><span class="s2">&#34;out&#34;</span><span class="p">,</span> <span class="nt">&#34;action&#34;</span> <span class="p">:</span><span class="s2">&#34;allowed&#34;</span><span class="p">,</span><span class="nt">&#34;profileTypes&#34;</span><span class="p">:[</span><span class="s2">&#34;public&#34;</span><span class="err">...</span>
+</span></span></code></pre></div><p>#betternotbitter</p>
 
 
 <h2 class="relative group">Summary 
@@ -1681,8 +1683,8 @@
     </span>        
     
 </h2>
-<p>Honestly, not sure what you want from me here.</p>
-<p>You&rsquo;ve got a new version of the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/EndpointSecurity/FirewallRuleMigration" target="_blank">Migration Tool script</a> a bit of background on how it works, and some weird dive into the world of things that just happen without us knowing in Microsoft Intune land.</p>
+<p>Honestly, not sure what you want from me here; there might have been a communication about this in the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/whats-new" target="_blank">What&rsquo;s new in Intune</a>, maybe a blog post, maybe not.</p>
+<p>Either way you&rsquo;ve got a new version of the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/EndpointSecurity/FirewallRuleMigration" target="_blank">Migration Tool script</a>, a bit of background on how it works, and a dive into the world of things that just happen without us knowing in Microsoft Intune land.</p>
 <p>Off you jog now.</p>
 <p>This post was not sponsored by <a href="https://patchmypc.com/" target="_blank">PatchMyPC</a>.</p>
 
