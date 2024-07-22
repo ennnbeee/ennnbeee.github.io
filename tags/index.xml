@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 23 Jul 2024 21:26:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jul 2024 11:26:37 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Center for Internet Security (CIS)</title>
       <link>https://memv.ennbee.uk/tags/cis/</link>
-      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
+      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/cis/</guid>
       <description></description>
@@ -21,49 +21,9 @@
     <item>
       <title>Custom Profiles</title>
       <link>https://memv.ennbee.uk/tags/custom-profiles/</link>
-      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
+      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>PowerShell</title>
-      <link>https://memv.ennbee.uk/tags/powershell/</link>
-      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Remediation Scripts</title>
-      <link>https://memv.ennbee.uk/tags/remediation/</link>
-      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/remediation/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://memv.ennbee.uk/tags/security/</link>
-      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/security/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Settings Catalog</title>
-      <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
-      <pubDate>Tue, 23 Jul 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/settings-catalog/</guid>
       <description></description>
       
     </item>
@@ -74,6 +34,46 @@
       <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/endpoint-security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://memv.ennbee.uk/tags/powershell/</link>
+      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Remediation Scripts</title>
+      <link>https://memv.ennbee.uk/tags/remediation/</link>
+      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/remediation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://memv.ennbee.uk/tags/security/</link>
+      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Settings Catalog</title>
+      <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
+      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/settings-catalog/</guid>
       <description></description>
       
     </item>
@@ -454,6 +454,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/cyber-essentials/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>OEMConfig</title>
+      <link>https://memv.ennbee.uk/tags/oemconfig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/oemconfig/</guid>
       <description></description>
       
     </item>
