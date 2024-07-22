@@ -17,7 +17,7 @@
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/" />
+  <link rel="canonical" href="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/" />
   
   
   
@@ -69,7 +69,7 @@
   
   
   
-  <meta property="og:url" content="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/">
+  <meta property="og:url" content="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
   <meta property="og:title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rules">
   <meta property="og:description" content="Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool.">
@@ -83,11 +83,11 @@
     <meta property="article:tag" content="Firewall">
     <meta property="article:tag" content="Endpoint Security">
     <meta property="article:tag" content="PowerShell">
-    <meta property="og:image" content="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/featured.png">
+    <meta property="og:image" content="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/featured.png">
+  <meta name="twitter:image" content="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/featured.png">
   <meta name="twitter:title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rules">
   <meta name="twitter:description" content="Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool.">
 
@@ -102,7 +102,7 @@
     "description": "Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool.",
     "abstract": "When did Microsoft go all covert ops (maybe don\u0026rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/firewall-rule-policy-changes\/",
+    "url" : "https:\/\/memv.ennbee.uk\/posts\/firewall-rule-policy-conversion\/",
     "author" : {
       "@type": "Person",
       "name": "Nick Benton"
@@ -116,7 +116,7 @@
     "keywords": ["settings catalog","security","firewall","endpoint security","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1041"
+    "wordCount": "1059"
   }]
   </script>
 
@@ -737,7 +737,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/firewall-rule-policy-changes/featured.png);">
+    style="background-image:url(/posts/firewall-rule-policy-conversion/featured.png);">
     
 
 
@@ -1182,7 +1182,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/33bpFN25l6qNW.webp"
+          src="/posts/firewall-rule-policy-conversion/img/33bpFN25l6qNW.webp"
           alt="ridiculous giphy 1"
         />
   
@@ -1392,7 +1392,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/duh.png"
+          src="/posts/firewall-rule-policy-conversion/img/duh.png"
           alt="duhhhhhh"
         />
   
@@ -1416,7 +1416,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/migtool.png"
+          src="/posts/firewall-rule-policy-conversion/img/migtool.png"
           alt="it gone"
         />
   
@@ -1428,7 +1428,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/GSE1BzJG4JVbq.webp"
+          src="/posts/firewall-rule-policy-conversion/img/GSE1BzJG4JVbq.webp"
           alt="ridiculous giphy 2"
         />
   
@@ -1449,33 +1449,33 @@
 <p>I&rsquo;m not using this post to break down exactly <em>how</em> I <del>fixed</del> updated the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/EndpointSecurity/FirewallRuleMigration" target="_blank">PowerShell script</a> in the short term, but in summary I&hellip;</p>
 <ul>
 <li>Removed the reliance on the Microsoft GitHub repo to download content.</li>
-<li>Changed to use the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0" target="_blank">Microsoft.Graph</a> PowerShell module.</li>
-<li>Changed to use <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest?view=graph-powershell-1.0" target="_blank">Invoke-MgGraphRequest</a> for calls to Graph.</li>
-<li>Forced the script to use Endpoint Security templates for firewall rule policies instead of Configuration Profiles.</li>
-<li>Changed the Authentication approach to Graph to use <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#delegated-access" target="_blank">device authentication</a> as I&rsquo;m a dirty macOS user.</li>
-<li>Disabled sending of telemetry on success and failure of rule creation, as Microsoft have too much data on me already.</li>
-<li>Fixed an issue when checking for profile name matching when there are no existing firewall rule policies.</li>
+<li>Changed authentication to use the <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started?view=graph-powershell-1.0" target="_blank">Microsoft.Graph</a> PowerShell module.</li>
+<li>Changed the web requests to use <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest?view=graph-powershell-1.0" target="_blank">Invoke-MgGraphRequest</a> for calls to Graph.</li>
+<li>Forced the PowerShell script to create Endpoint Security templates for firewall rule policies instead of Configuration Profiles.</li>
+<li>Changed the Authentication to Graph to use <a href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#delegated-access" target="_blank">device authentication</a> as I&rsquo;m a dirty macOS user.</li>
+<li>Disabled sending any telemetry data on success and failure of rule creation to Microsoft, as they have too much data on me already.</li>
+<li>Fixed an issue when checking for profile name matching when there are no existing firewall rule policies in Microsoft Intune.</li>
 </ul>
 
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/QJfu2a1r1Ks6OaL7WV.webp"
+          src="/posts/firewall-rule-policy-conversion/img/QJfu2a1r1Ks6OaL7WV.webp"
           alt="ridiculous giphy 3"
         />
   
   
   </figure>
-<p>To use the script itself:</p>
+<p>To use the script itself, you:</p>
 <ul>
 <li>Download the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/EndpointSecurity/FirewallRuleMigration/FirewallRuleMigration.zip" target="_blank">FirewallRuleMigration.zip</a> file and extract on your Windows device.</li>
 <li>Open PowerShell as Administrator.</li>
 <li>Navigate to the extracted folder, your PowerShell prompt should be in the <strong>FirewallRuleMigration</strong> folder.</li>
-<li>Run <code>Set-ExecutionPolicy Bypass</code> accepting all prompts.</li>
+<li>Run <code>Set-ExecutionPolicy Bypass</code> accepting all prompts like a good little child.</li>
 <li>Run <code>./Export-FirewallRules.ps1</code> with the corresponding switches (<code>includeDisabledRules</code>, <code>includeLocalRules</code>) if required.</li>
-<li>Authenticate (device authentication) to Graph using a Global Admin account, twice*.</li>
-<li>Enter a profile name for the Firewall rules policy when prompted.</li>
-<li>Wait for rules to be uploaded.</li>
+<li>Authenticate to Graph using a Global Admin account, twice*.</li>
+<li>Enter a new profile name for the Firewall rules policy when prompted.</li>
+<li>Wait for rules to be uploaded to Microsoft Intune.</li>
 </ul>
 <blockquote>
 <p>*The script will disconnect all existing Graph sessions, and connect twice; once to allow for consent to be provided, the following to allow the script to run following the consent request.</p>
@@ -1503,7 +1503,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/mdmrules_hu06aabd23bc4d6b0228d15d596fd14503_63128_filter_10174713424540972685.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/mdmrules_hu06aabd23bc4d6b0228d15d596fd14503_63128_filter_10174713424540972685.png"
           alt="MDM Firewall Rules"
         />
         <figcaption>Firewall Rule Policies created using the Migration Tool.</figcaption>
@@ -1517,7 +1517,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/senserules_hue4205c8917513191d475d736da25322a_66350_filter_12073096587687937106.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/senserules_hue4205c8917513191d475d736da25322a_66350_filter_12073096587687937106.png"
           alt="MDM Firewall Rules"
         />
         <figcaption>Firewall Rule Policies converted using Microsoft secret sauce.</figcaption>
@@ -1528,7 +1528,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/37smQpbdHrBjVsxEhM.webp"
+          src="/posts/firewall-rule-policy-conversion/img/37smQpbdHrBjVsxEhM.webp"
           alt="ridiculous giphy 89"
         />
   
@@ -1568,7 +1568,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/ruledetail_hu489abee2f6503e68b96ef6568b8cfb79_259867_filter_2150311967383726471.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/ruledetail_hu489abee2f6503e68b96ef6568b8cfb79_259867_filter_2150311967383726471.png"
           alt="MDM Firewall Rules"
         />
         <figcaption>Firewall Rule Policies the old worse way of dealing with them.</figcaption>
@@ -1582,7 +1582,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/audit_hu4981a06e2e0e7c5c620a56a6a21e5ddf_132056_filter_4073383220476389778.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/audit_hu4981a06e2e0e7c5c620a56a6a21e5ddf_132056_filter_4073383220476389778.png"
           alt="Definitely real audit log"
         />
         <figcaption>Definitely real and not made up Microsoft Intune audit log.</figcaption>
@@ -1597,7 +1597,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/migrating_hucef59188ae2b4a3de5db7cb3c64306d2_99565_filter_2735583170243876831.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/migrating_hucef59188ae2b4a3de5db7cb3c64306d2_99565_filter_2735583170243876831.png"
           alt="Still real audit log"
         />
         <figcaption>Still a real and not made up Microsoft Intune audit log but with more detail.</figcaption>
@@ -1611,7 +1611,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/zoom_hu84dbea48aa37e4dd01c64a949e43d90b_32257_filter_14568808755894879723.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/zoom_hu84dbea48aa37e4dd01c64a949e43d90b_32257_filter_14568808755894879723.png"
           alt="Still real audit log"
         />
         <figcaption>OMG it&rsquo;s migrating.</figcaption>
@@ -1620,7 +1620,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/doge.webp"
+          src="/posts/firewall-rule-policy-conversion/img/doge.webp"
           alt="rip doge"
         />
   
@@ -1634,7 +1634,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/firewall-rule-policy-changes/img/zoomier_hu23e6872264ea90638f40e95dc90dc8c1_91795_filter_3654846983260944251.png"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/zoomier_hu23e6872264ea90638f40e95dc90dc8c1_91795_filter_3654846983260944251.png"
           alt="Still real audit log"
         />
         <figcaption>Zoom and enhance.</figcaption>
@@ -1661,7 +1661,7 @@
 <figure>
         <img
           class="my-0 rounded-md nozoom"
-          src="/posts/firewall-rule-policy-changes/img/SWVzkIlHdEckF81gnA.webp"
+          src="/posts/firewall-rule-policy-conversion/img/SWVzkIlHdEckF81gnA.webp"
           alt="pretty sure he&#39;s used this one himself"
         />
   
@@ -1699,7 +1699,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1718,7 +1718,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;text=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;text=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1736,7 +1736,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1755,7 +1755,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title=""
       aria-label=""
       >
@@ -1774,7 +1774,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title=""
       aria-label=""
       >
@@ -1793,7 +1793,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;description=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;description=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1812,7 +1812,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;quote=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;quote=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1831,7 +1831,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/firewall-rule-policy-changes/&amp;subject=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="mailto:?body=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;subject=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -2361,8 +2361,8 @@
           
         
       <script>
-        var oid = "views_posts\/Firewall-Rule-Policy-Changes\/index.md"
-        var oid_likes = "likes_posts\/Firewall-Rule-Policy-Changes\/index.md"
+        var oid = "views_posts\/Firewall-Rule-Policy-Conversion\/index.md"
+        var oid_likes = "likes_posts\/Firewall-Rule-Policy-Conversion\/index.md"
       </script>
       
       
