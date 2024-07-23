@@ -116,7 +116,7 @@
     "keywords": ["settings catalog","security","firewall","endpoint security","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1075"
+    "wordCount": "1081"
   }]
   </script>
 
@@ -1641,7 +1641,20 @@
       </figure></p>
 <p>Yeah this means nothing.</p>
 <p>The audit log is showing that a new legacy Firewall Rule policy is being created, how do we know? Well it&rsquo;s still using the old Endpoint Security templateId value of <strong>4356d05c-a4ab-4a07-9ece-739f7c792910</strong>.</p>
-<p>Run a quick <a href="https://developer.microsoft.com/en-us/graph/graph-explorer" target="_blank">Graph Explorer</a> <strong>GET</strong> request to:</p>
+<p>
+
+
+
+      <figure>
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/img/templateId_hu0d66b83c2726a38e085683311d736904_14426_filter_8331365660553126055.png"
+          alt="Endpoint Security templateId"
+        />
+        <figcaption>Another screenshot of some audit stuff.</figcaption>
+      </figure></p>
+<p>Running a quick <a href="https://developer.microsoft.com/en-us/graph/graph-explorer" target="_blank">Graph Explorer</a> <strong>GET</strong> request to:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">https://graph.microsoft.com/beta/deviceManagement/templates?`$filter=(isof(%27microsoft.graph.securityBaselineTemplate%27))
 </span></span></code></pre></div><p>and you&rsquo;ll see all the Endpoint Security Templates, and specifically this one:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
