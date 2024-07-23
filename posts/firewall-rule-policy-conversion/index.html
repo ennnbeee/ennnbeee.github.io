@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Microsoft Intune and the Curious Case of the Converting Firewall Rules</title>
-  <meta name="title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rules" />
+  <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
+  <meta name="title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy" />
   
   <meta name="description" content="Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool." />
   <meta name="keywords" content="settings catalog, security, firewall, endpoint security, powershell, " />
@@ -71,7 +71,7 @@
   
   <meta property="og:url" content="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Device Management">
-  <meta property="og:title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rules">
+  <meta property="og:title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy">
   <meta property="og:description" content="Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
@@ -88,7 +88,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/featured.png">
-  <meta name="twitter:title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rules">
+  <meta name="twitter:title" content="Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy">
   <meta name="twitter:description" content="Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool.">
 
   
@@ -97,8 +97,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Microsoft Intune and the Curious Case of the Converting Firewall Rules",
-    "headline": "Microsoft Intune and the Curious Case of the Converting Firewall Rules",
+    "name": "Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy",
+    "headline": "Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy",
     "description": "Microsoft Intune mdm firewall rule policies in Endpoint Security automatically converting to the new Settings Catalog profiles using the Migration Tool.",
     "abstract": "When did Microsoft go all covert ops (maybe don\u0026rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?",
     "inLanguage": "en",
@@ -116,7 +116,7 @@
     "keywords": ["settings catalog","security","firewall","endpoint security","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1108"
+    "wordCount": "1053"
   }]
   </script>
 
@@ -763,7 +763,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Microsoft Intune and the Curious Case of the Converting Firewall Rules
+      Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1073,7 +1073,7 @@
     <li><a href="#3-firewall-rules-2-the-conversioning">3. Firewall Rules 2: The Conversioning</a></li>
     <li><a href="#4-are-microsoft-magicians">4. Are Microsoft Magicians?</a></li>
     <li><a href="#5-the-truthening">5. The Truthening</a></li>
-    <li><a href="#summary">Summary</a></li>
+    <li><a href="#5-summary">5. Summary</a></li>
   </ul>
 </nav>
   </div>
@@ -1092,7 +1092,7 @@
     <li><a href="#3-firewall-rules-2-the-conversioning">3. Firewall Rules 2: The Conversioning</a></li>
     <li><a href="#4-are-microsoft-magicians">4. Are Microsoft Magicians?</a></li>
     <li><a href="#5-the-truthening">5. The Truthening</a></li>
-    <li><a href="#summary">Summary</a></li>
+    <li><a href="#5-summary">5. Summary</a></li>
   </ul>
 </nav>
   </div>
@@ -1639,24 +1639,36 @@
         />
         <figcaption>Zoom and enhance.</figcaption>
       </figure></p>
-<p>Anything else in the audit log entry? There is? Wow?</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Old Value:
-</span></span><span class="line"><span class="cl">Property: $Collection.Settings.Value.ValueJson[96]
-</span></span><span class="line"><span class="cl">New Value: {&#34;displayName&#34;:&#34;Microsoft Media Foundation Network Source OUT [TCP ALL]&#34;,&#34;description&#34;:&#34;OutBound Rule for the Microsoft Media Foundation&#39;s Capture SVC to open TCP port to enable RTSP&#34;,&#34;trafficDirec...
-</span></span><span class="line"><span class="cl">Old Value:
-</span></span><span class="line"><span class="cl">Property: $Collection.Settings.Value.ValueJson[97]
-</span></span><span class="line"><span class="cl">New Value: {&#34;displayName&#34;:&#34;Core Networking - Neighbour Discovery Advertisement (ICMPv6-Out)&#34;,&#34;description&#34;:&#34;Neighbour Discovery Advertisement messages are sent by nodes to notify other nodes of link-layer add...
-</span></span><span class="line"><span class="cl">Old Value:
-</span></span><span class="line"><span class="cl">Property: $Collection.Settings.Value.ValueJson[98]
-</span></span><span class="line"><span class="cl">New Value: {&#34;displayName&#34;:&#34;AllJoyn Router (UDP-Out)&#34;,&#34;description&#34;:&#34;Outbound rule for AllJoyn Router traffic [UDP]&#34;,&#34;trafficDirection&#34;:&#34;out&#34;,&#34;action&#34;:&#34;allowed&#34;,&#34;profileTypes&#34;:[&#34;domain&#34;,&#34;private&#34;],&#34;packageFami...
-</span></span><span class="line"><span class="cl">Old Value:
-</span></span><span class="line"><span class="cl">Property: $Collection.Settings.Value.ValueJson[99]
-</span></span><span class="line"><span class="cl">New Value: {&#34;displayName&#34;:&#34;AllJoyn Router (UDP-Out)&#34;,&#34;description&#34;:&#34;Outbound rule for AllJoyn Router traffic [UDP]&#34;,&#34;trafficDirection&#34;:&#34;out&#34;,&#34;action&#34;:&#34;allowed&#34;,&#34;profileTypes&#34;:[&#34;domain&#34;,&#34;private&#34;],&#34;packageFami...
-</span></span><span class="line"><span class="cl">Old Value:
-</span></span><span class="line"><span class="cl">Property: $Collection.Settings.ValueJson[0]
-</span></span><span class="line"><span class="cl">New Value: [{&#34;displayName&#34;:&#34;Wi-Fi Direct Spooler Use (Out)&#34;,&#34;description&#34;:&#34;Outbound rule to use WSD printers on Wi-Fi Direct networks.&#34;,&#34;trafficDirection&#34;:&#34;out&#34;, &#34;action&#34; :&#34;allowed&#34;,&#34;profileTypes&#34;:[&#34;public&#34;
-</span></span></code></pre></div><p>You can see that Microsoft are actually taking your legacy Firewall rule policies and converting them on your behalf like the good little soldiers they are.</p>
-<p>Go check your own, I bet they&rsquo;ll be the new Settings Catalog ones. I&rsquo;ll wait (hint, I won&rsquo;t).</p>
+<p>Yeah this means nothing.</p>
+<p>The audit log is showing that a new legacy Firewall Rule policy is being created, how do we know well it&rsquo;s using the old Endpoint Security templateId value of <strong>4356d05c-a4ab-4a07-9ece-739f7c792910</strong>.</p>
+<p>Run a quick <a href="https://developer.microsoft.com/en-us/graph/graph-explorer" target="_blank">Graph Explorer</a> <strong>GET</strong> request to:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">https://graph.microsoft.com/beta/deviceManagement/templates?`$filter=(isof(%27microsoft.graph.securityBaselineTemplate%27))
+</span></span></code></pre></div><p>and you&rsquo;ll see all the Templates, and specifically this one:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;@odata.type&#34;</span><span class="p">:</span> <span class="s2">&#34;#microsoft.graph.securityBaselineTemplate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;4356d05c-a4ab-4a07-9ece-739f7c792910&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;displayName&#34;</span><span class="p">:</span> <span class="s2">&#34;Windows Firewall rules&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Windows Firewall allows administrators to define granular Firewall rules. Define firewall rules with specific ports, protocols, applications and networks, to allow or block network traffic.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;versionInfo&#34;</span><span class="p">:</span> <span class="s2">&#34;2006&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;isDeprecated&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;intentCount&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;templateType&#34;</span><span class="p">:</span> <span class="s2">&#34;securityTemplate&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;platformType&#34;</span><span class="p">:</span> <span class="s2">&#34;windows10AndLater&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;templateSubtype&#34;</span><span class="p">:</span> <span class="s2">&#34;firewall&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;publishedDateTime&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-03-11T00:00:00Z&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Either way Microsoft is doing some wizardry behind the scenes not available to see with the naked eye.</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md nozoom"
+          src="/posts/firewall-rule-policy-conversion/img/Sf0lxerEx2eNG.webp"
+          alt="sack magique"
+        />
+  
+  
+  </figure>
+<p>So go check your own Firewall Rule policies, I bet they&rsquo;ll be the new Settings Catalog ones. I&rsquo;ll wait (hint, I won&rsquo;t).</p>
 
 <figure>
         <img
@@ -1667,19 +1679,16 @@
   
   
   </figure>
-<p>How do I know this is happening?</p>
-<p>Well I spent effing ages working out the required JSON formatting for Firewall Rule policies in Settings Catalog profiles when I created my conversion script all that time ago, and can see the very same JSON format in the audit log.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;displayName&#34;</span><span class="p">:</span><span class="s2">&#34;Wi-Fi Direct Spooler Use (Out)&#34;</span><span class="p">,</span><span class="nt">&#34;description&#34;</span><span class="p">:</span><span class="s2">&#34;Outbound rule to use WSD printers on Wi-Fi Direct networks.&#34;</span><span class="p">,</span><span class="nt">&#34;trafficDirection&#34;</span><span class="p">:</span><span class="s2">&#34;out&#34;</span><span class="p">,</span> <span class="nt">&#34;action&#34;</span> <span class="p">:</span><span class="s2">&#34;allowed&#34;</span><span class="p">,</span><span class="nt">&#34;profileTypes&#34;</span><span class="p">:[</span><span class="s2">&#34;public&#34;</span><span class="err">...</span>
-</span></span></code></pre></div><p>#betternotbitter</p>
+<p>Or if you like, use the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/EndpointSecurity/FirewallRuleMigration" target="_blank">PowerShell script</a> to create some new old ones, then just wait a little bit and see them evolve into Settings Catalog policies.</p>
 
 
-<h2 class="relative group">Summary 
-    <div id="summary" class="anchor"></div>
+<h2 class="relative group">5. Summary 
+    <div id="5-summary" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#5-summary" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
@@ -1701,7 +1710,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1720,7 +1729,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;text=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;text=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1738,7 +1747,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1757,7 +1766,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title=""
       aria-label=""
       >
@@ -1776,7 +1785,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;resubmit=true&amp;title=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title=""
       aria-label=""
       >
@@ -1795,7 +1804,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;description=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;description=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1814,7 +1823,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;quote=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;quote=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1833,7 +1842,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;subject=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rules"
+      href="mailto:?body=https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/&amp;subject=Microsoft%20Intune%20and%20the%20Curious%20Case%20of%20the%20Converting%20Firewall%20Rule%20Policy"
       title="Send via email"
       aria-label="Send via email"
       >
