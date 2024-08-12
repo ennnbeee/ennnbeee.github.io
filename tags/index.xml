@@ -69,31 +69,11 @@
     </item>
     
     <item>
-      <title>Center for Internet Security (CIS)</title>
-      <link>https://memv.ennbee.uk/tags/cis/</link>
-      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/cis/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Custom Profiles</title>
       <link>https://memv.ennbee.uk/tags/custom-profiles/</link>
-      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
+      <pubDate>Tue, 02 Jul 2024 21:25:20 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Remediation Scripts</title>
-      <link>https://memv.ennbee.uk/tags/remediation/</link>
-      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/remediation/</guid>
       <description></description>
       
     </item>
@@ -114,6 +94,16 @@
       <pubDate>Tue, 02 Jul 2024 21:25:20 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/windows-autopilot-v2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Center for Internet Security (CIS)</title>
+      <link>https://memv.ennbee.uk/tags/cis/</link>
+      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/cis/</guid>
       <description></description>
       
     </item>
@@ -254,6 +244,16 @@
       <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/shell-script/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Remediation Scripts</title>
+      <link>https://memv.ennbee.uk/tags/remediation/</link>
+      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/remediation/</guid>
       <description></description>
       
     </item>
