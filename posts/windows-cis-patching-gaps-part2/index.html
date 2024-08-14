@@ -120,7 +120,7 @@
     "keywords": ["security","cis","windows autopilot","windows hello","settings catalog","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2258"
+    "wordCount": "2309"
   }]
   </script>
 
@@ -2059,7 +2059,7 @@
     </span>        
     
 </h3>
-<p>Now <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/" target="_blank">Windows Hello for Business</a> isn&rsquo;t strictly a Windows Autopilot thing, but if you&rsquo;re deploying a <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/configure#configure-windows-hello-for-business-using-microsoft-intune" target="_blank">Windows Hello policy</a> to either your users, then they&rsquo;re going to get prompted to configure Windows Hello when they sign in.</p>
+<p>Now <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/" target="_blank">Windows Hello for Business</a> isn&rsquo;t strictly a Windows Autopilot thing, but if you&rsquo;re deploying a <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/configure#configure-windows-hello-for-business-using-microsoft-intune" target="_blank">Windows Hello for Business policy</a> to either your users or devices, then they&rsquo;re going to get prompted to configure Windows Hello when they sign in.</p>
 <p>So we were happy to see the use of Windows Hello for Business as an authentication method, to add multi-factor authentication to Windows 11 accounts, recommend by CIS 🎉.</p>
 
 <div class="flex mt-2">
@@ -2117,11 +2117,11 @@
           class="my-0 rounded-md"
           loading="lazy"
           src="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/img/cis-whfb_hu754bacb475f848e622cb2c008218821c_36340_filter_5591716951390168861.png"
-          alt="Windows Hello for Business"
+          alt="Windows Hello"
         />
         <figcaption>Account options in Windows 11 unable to configure Windows Hello PIN.</figcaption>
       </figure></p>
-<p>What&rsquo;s that? You have? You&rsquo;re advising that Windows Hello should be used to protect accounts, but you&rsquo;re <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/user-profiles-and-logon/cannot-configure-a-convenience-pin" target="_blank">stopping the use of convenience PINs</a>, that are required to setup Windows Hello.</p>
+<p>What&rsquo;s that? You have? You&rsquo;re advising that Windows Hello for Business should be used to protect accounts, but you&rsquo;re <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/user-profiles-and-logon/cannot-configure-a-convenience-pin" target="_blank">stopping the use of convenience PINs</a>, that are required to setup Windows Hello.</p>
 
 <div class="flex mt-2">
 <span
@@ -2158,44 +2158,8 @@
 </tr>
 </tbody>
 </table>
-<p>Are you ok CIS?</p>
-<p>Quick fix though, just change the above setting <em>if and only if</em> you&rsquo;re actively using Windows Hello for Business, from <strong>Disabled</strong> to <strong>Enabled</strong>:</p>
-
-<div class="flex mt-2">
-<span
-  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
->
-  <span class="flex flex-row items-center">
-    
-    <span class="mr-1">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 32h214.6v214.6H0V32zm233.4 0H448v214.6H233.4V32zM0 265.4h214.6V480H0V265.4zm233.4 0H448V480H233.4V265.4z"/></svg>
-
-  </span>
-
-</span>
-    
-    <span><em>CIS (L1) Admin Templates - System - Windows 11 Intune 3.0.1</em></span>
-  </span>
-</span>
-</div>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Administrative Templates &gt; System &gt; Logon</td>
-<td style="text-align:left">Turn on convenience PIN sign-in</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-</tbody>
-</table>
+<p>As pointed out in the comments, this isn&rsquo;t strictly true; although <strong>Windows Hello</strong> and <strong>Windows Hello for Business</strong> share the same &ldquo;Windows Hello&rdquo; family name, they aren&rsquo;t actually related, sort of like a <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/#the-difference-between-windows-hello-and-windows-hello-for-business" target="_blank">step-brother</a> 👀 setup.</p>
+<p>So although the above setting will stop a user from setting up a PIN in the more traditional sense, it will not stop the Windows Hello for Business configuration from applying.</p>
 <p>Be aware though, there are settings in the <strong>CIS (L1) Device Lock &amp; WHFB - Windows 11 Intune 3.0.1</strong> profile, that will impact the configuration of Windows Hello if you don&rsquo;t have a policy in place to require PIN complexity settings.</p>
 <p>
 
@@ -2272,6 +2236,36 @@
 </tr>
 </tbody>
 </table>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >These <a href="https://learn.microsoft.com/en-us/autopilot/troubleshooting-faq#troubleshooting-policy-conflicts-with-windows-autopilot:~:text=a%20deletion%20occurs.-,Device%20restriction,-/Password%20Policy" target="_blank">Device Lock</a> settings are known to cause problems with Windows Autopilot, to get around that, it is recommended to assign the below profile to <strong>Users</strong> and not devices where applicable.</span>
+</div>
+
 <p>So make sure you&rsquo;ve got a <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/configure" target="_blank">Windows Hello for Business policy</a> already created and deployed to your <strong>users</strong>, with at least the below setting configured to enable Windows Hello for Business.</p>
 
 <div class="flex mt-2">
