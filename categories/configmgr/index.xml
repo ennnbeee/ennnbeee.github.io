@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Wed, 01 Mar 2023 21:26:30 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/configmgr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Sep 2024 20:43:33 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/configmgr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
+      <link>https://memv.ennbee.uk/posts/configmgr-client-install-cmg/</link>
+      <pubDate>Mon, 02 Sep 2024 20:43:33 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/configmgr-client-install-cmg/</guid>
+      <description>You&amp;rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&amp;rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/featured.png" />
+    </item>
+    
     <item>
       <title>Co-Managing Windows Autopilot Hybrid Join Devices</title>
       <link>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</link>
