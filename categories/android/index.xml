@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 13 Feb 2023 20:46:43 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Sep 2024 11:11:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self-Service Software Update Deployments</title>
+      <link>https://memv.ennbee.uk/posts/updates-self-service-deployment/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/updates-self-service-deployment/</guid>
+      <description>Fancy letting your end users select what day of the week they get their device updates allowing them to be truly empowered but still ensure a level of device security, sure you do.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updates-self-service-deployment/featured.png" />
+    </item>
+    
     <item>
       <title>Assigning Intune Mobile Apps Quickly and Consistently</title>
       <link>https://memv.ennbee.uk/posts/assigning-intune-applications/</link>

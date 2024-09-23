@@ -7,7 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 02 Sep 2024 20:43:33 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Sep 2024 11:11:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android</title>
+      <link>https://memv.ennbee.uk/categories/android/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/android/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>iOS/iPadOS</title>
+      <link>https://memv.ennbee.uk/categories/ios/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/ios/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>macOS</title>
+      <link>https://memv.ennbee.uk/categories/macos/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/macos/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Microsoft Intune</title>
+      <link>https://memv.ennbee.uk/categories/intune/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/intune/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows 10 and later</title>
+      <link>https://memv.ennbee.uk/categories/windows/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/windows/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Microsoft Configuration Manager</title>
       <link>https://memv.ennbee.uk/categories/configmgr/</link>
@@ -19,61 +69,11 @@
     </item>
     
     <item>
-      <title>Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/categories/intune/</link>
-      <pubDate>Mon, 02 Sep 2024 20:43:33 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/intune/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/categories/windows/</link>
-      <pubDate>Mon, 02 Sep 2024 20:43:33 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/windows/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Power Automate</title>
       <link>https://memv.ennbee.uk/categories/power-automate/</link>
       <pubDate>Fri, 26 Jul 2024 12:54:24 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/power-automate/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>macOS</title>
-      <link>https://memv.ennbee.uk/categories/macos/</link>
-      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/macos/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://memv.ennbee.uk/categories/android/</link>
-      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/android/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>iOS/iPadOS</title>
-      <link>https://memv.ennbee.uk/categories/ios/</link>
-      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/ios/</guid>
       <description></description>
       
     </item>
