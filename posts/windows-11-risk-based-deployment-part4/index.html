@@ -1391,34 +1391,34 @@
       </figure></p>
 <p>Providing us with the information I promised it would, including the generated Dynamic Security Group rules allowing your to create them in Entra ID to support the Windows 11 23H2 Feature Update deployment:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Group</th>
-<th style="text-align:left">Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Low Risk</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq  LowRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Medium Risk</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq  MediumRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">High Risk</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq  HighRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Not Ready</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq  NotReady-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Unknown</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq  Unknown-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Group</th>
+          <th style="text-align: left">Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Low Risk</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq  LowRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Medium Risk</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq  MediumRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">High Risk</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq  HighRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Not Ready</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq  NotReady-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Unknown</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq  Unknown-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+  </tbody>
 </table>
 
 

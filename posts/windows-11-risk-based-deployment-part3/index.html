@@ -1324,34 +1324,34 @@
 <p>If you&rsquo;ve gotten to this part of the series and you&rsquo;re still wondering why your reports are empty, it&rsquo;s probably the fact that when Windows 10 was first released all those years ago, you aggressively disabled telemetry reporting for fear of Microsoft using your data.</p>
 <p>Well, here we are now, needed this telemetry data, go and configure a <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog</a> profile with the settings below and assign it to all your devices, do it now.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">System</td>
-<td style="text-align:left">Allow Telemetry</td>
-<td style="text-align:left"><code>Basic</code></td>
-<td style="text-align:left">Sends all required telemetry information to Microsoft.</td>
-</tr>
-<tr>
-<td style="text-align:left">System</td>
-<td style="text-align:left">Configure Telemetry Opt In Change Notification</td>
-<td style="text-align:left"><code>Disable telemetry change notifications</code></td>
-<td style="text-align:left">Stops users panicking about data, what they don&rsquo;t know won&rsquo;t hurt them.</td>
-</tr>
-<tr>
-<td style="text-align:left">System</td>
-<td style="text-align:left">Configure Telemetry Opt In Settings Ux</td>
-<td style="text-align:left"><code>Disable Telemetry opt-in Settings</code></td>
-<td style="text-align:left">Stops users from changing telemetry settings</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Allow Telemetry</td>
+          <td style="text-align: left"><code>Basic</code></td>
+          <td style="text-align: left">Sends all required telemetry information to Microsoft.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Configure Telemetry Opt In Change Notification</td>
+          <td style="text-align: left"><code>Disable telemetry change notifications</code></td>
+          <td style="text-align: left">Stops users panicking about data, what they don&rsquo;t know won&rsquo;t hurt them.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Configure Telemetry Opt In Settings Ux</td>
+          <td style="text-align: left"><code>Disable Telemetry opt-in Settings</code></td>
+          <td style="text-align: left">Stops users from changing telemetry settings</td>
+      </tr>
+  </tbody>
 </table>
 <p>This, once Microsoft has processed your data, will allow for the delivery of Feature Updates.</p>
 <p>We&rsquo;re almost done, I promise.</p>
@@ -1370,22 +1370,22 @@
 <p>Well, who&rsquo;s been caught out with the issue where monthly updates happily deploy, but you&rsquo;ve been scratching your head about why Feature Updates haven&rsquo;t been offered to a device yet?</p>
 <p>Yeah <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/deployment/windows-update-issues-troubleshooting#feature-updates-arent-being-offered-while-other-updates-are" target="_blank">me neither</a>, but we should at least be definite with this requirement that the <code>Microsoft Account Sign-In Assistant (wlidsvc)</code> is not disabled.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Accounts</td>
-<td style="text-align:left">Allow Microsoft Account Sign In Assistant</td>
-<td style="text-align:left"><code>Manual start</code></td>
-<td style="text-align:left">If this is disabled, will block the use of Feature Updates on Windows 10 and later devices.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Accounts</td>
+          <td style="text-align: left">Allow Microsoft Account Sign In Assistant</td>
+          <td style="text-align: left"><code>Manual start</code></td>
+          <td style="text-align: left">If this is disabled, will block the use of Feature Updates on Windows 10 and later devices.</td>
+      </tr>
+  </tbody>
 </table>
 <p>This will set the service is set to Manual (Trigger Start), which allows it to run when needed. You may as well lob the above setting into the same Settings Catalog profile as the telemetry data settings, saves creating multiple granular profiles when you&rsquo;re not dealing with specific exclusions, giving us something like the below.</p>
 <p>
@@ -1434,34 +1434,34 @@
       </figure></p>
 <p>So go and create some new groups in Entra ID with the below rules to capture your corporate owned Windows devices at each Feature Update version</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Group</th>
-<th style="text-align:left">Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Windows 10 21H2</td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.19044&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 10 22H2</td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.19045&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 11 21H2</td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22000&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 11 22H2</td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22621&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 11 23H2</td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22631&quot;)</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Group</th>
+          <th style="text-align: left">Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Windows 10 21H2</td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.19044&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 10 22H2</td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.19045&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 11 21H2</td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22000&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 11 22H2</td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22621&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 11 23H2</td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOSVersion -startswith &quot;10.0.22631&quot;)</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Your mileage may vary with this, as it could be you&rsquo;ve got other devices that aren&rsquo;t covered by one of these Feature Update profile versions, if that is the case create dynamic device groups for these other versions too, and we&rsquo;ll work out what to do with them later.</p>
 
@@ -1478,40 +1478,40 @@
 </h3>
 <p>With our grouped devices based on version at hand, we can now create Feature Update Profiles for each of these versions, configuring them to be immediately available, and assigned to the dynamic device groups we/ve just created.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Feature Update Version</th>
-<th style="text-align:left">Rollout options</th>
-<th style="text-align:left">Group</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Windows 10, version 21H2</td>
-<td style="text-align:left"><code>Make update available as soon as possible</code></td>
-<td style="text-align:left">Windows 10 21H2</td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 10, version 22H2</td>
-<td style="text-align:left"><code>Make update available as soon as possible</code></td>
-<td style="text-align:left">Windows 10 22H2</td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 11, version 21H2</td>
-<td style="text-align:left"><code>Make update available as soon as possible</code></td>
-<td style="text-align:left">Windows 11 21H2</td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 11, version 22H2</td>
-<td style="text-align:left"><code>Make update available as soon as possible</code></td>
-<td style="text-align:left">Windows 11 22H2</td>
-</tr>
-<tr>
-<td style="text-align:left">Windows 11, version 23H2</td>
-<td style="text-align:left"><code>Make update available as soon as possible</code></td>
-<td style="text-align:left">Windows 11 23H2</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature Update Version</th>
+          <th style="text-align: left">Rollout options</th>
+          <th style="text-align: left">Group</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Windows 10, version 21H2</td>
+          <td style="text-align: left"><code>Make update available as soon as possible</code></td>
+          <td style="text-align: left">Windows 10 21H2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 10, version 22H2</td>
+          <td style="text-align: left"><code>Make update available as soon as possible</code></td>
+          <td style="text-align: left">Windows 10 22H2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 11, version 21H2</td>
+          <td style="text-align: left"><code>Make update available as soon as possible</code></td>
+          <td style="text-align: left">Windows 11 21H2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 11, version 22H2</td>
+          <td style="text-align: left"><code>Make update available as soon as possible</code></td>
+          <td style="text-align: left">Windows 11 22H2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows 11, version 23H2</td>
+          <td style="text-align: left"><code>Make update available as soon as possible</code></td>
+          <td style="text-align: left">Windows 11 23H2</td>
+      </tr>
+  </tbody>
 </table>
 <p>For your devices that are running lower versions of Windows 10, then you&rsquo;ve got a couple of options, either assign the group to one of the above newly created version targeting Feature Update profiles, or, using a Settings Catalog profile with <a href="https://learn.microsoft.com/en-gb/windows/client-management/mdm/policy-csp-Update?WT.mc_id=Portal-Microsoft_Intune_Workflows#targetreleaseversion" target="_blank"><code>Target Release Version</code></a> configured to the required version to keep your <a href="https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview" target="_blank">LTSC</a> or otherwise Windows 10 devices exactly where they need to be.</p>
 <p>With these now in place, we can happily remove the Feature Update deferral settings in our Windows Update rings, without the fear that devices are just going to jump to a version we don&rsquo;t want them to be on, yet.</p>

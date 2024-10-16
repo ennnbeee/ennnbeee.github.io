@@ -1531,34 +1531,34 @@
 </h3>
 <p>So off you go, create some groups with the below rules, and if you&rsquo;ve been following along, you&rsquo;ll realise that we now have ring-fenced devices based on just how ready they are to update to Windows 11. Cool eh? (rhetorical, it is <em>obviously</em> cool.)</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Group</th>
-<th style="text-align:left">Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Low Risk</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq LowRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Medium Risk</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq MediumRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">High Risk</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq HighRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Not Ready</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq NotReady-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Unknown</td>
-<td style="text-align:left"><code>(device.extensionAttribute15 -eq Unknown-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Group</th>
+          <th style="text-align: left">Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Low Risk</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq LowRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Medium Risk</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq MediumRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">High Risk</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq HighRisk-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Not Ready</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq NotReady-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Unknown</td>
+          <td style="text-align: left"><code>(device.extensionAttribute15 -eq Unknown-W11-23H2) and (device.deviceOSType -eq Windows) and (device.deviceOwnership -eq Company)</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Give the groups a little while to populate, hopefully not <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-troubleshooting#:~:text=If%20everything%20looks%20good%2C%20please%20allow%20some%20time%20for%20the%20group%20to%20populate.%20Depending%20on%20the%20size%20of%20your%20Microsoft%20Entra%20organization%2C%20the%20group%20may%20take%20up%20to%2024%20hours%20for%20populating%20for%20the%20first%20time%20or%20after%20a%20rule%20change." target="_blank">24 hours</a>, but all being well and good, the members should flood in.</p>
 

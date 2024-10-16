@@ -1374,42 +1374,42 @@
 </h3>
 <p>If you&rsquo;re still here, and want to see how to let your users choose when they get their updates, we can look at creating the following Device Categories based on the the day of the week:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Day of Update</th>
-<th style="text-align:left">Device Category</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Sunday</td>
-<td style="text-align:left"><code>Update my device on a Sunday</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Monday</td>
-<td style="text-align:left"><code>Update my device on a Monday</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Tuesday</td>
-<td style="text-align:left"><code>Update my device on a Tuesday</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Wednesday</td>
-<td style="text-align:left"><code>Update my device on a Wednesday</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Thursday</td>
-<td style="text-align:left"><code>Update my device on a Thursday</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Friday</td>
-<td style="text-align:left"><code>Update my device on a Friday</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Saturday</td>
-<td style="text-align:left"><code>Update my device on a Saturday</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Day of Update</th>
+          <th style="text-align: left">Device Category</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Sunday</td>
+          <td style="text-align: left"><code>Update my device on a Sunday</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monday</td>
+          <td style="text-align: left"><code>Update my device on a Monday</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tuesday</td>
+          <td style="text-align: left"><code>Update my device on a Tuesday</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wednesday</td>
+          <td style="text-align: left"><code>Update my device on a Wednesday</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thursday</td>
+          <td style="text-align: left"><code>Update my device on a Thursday</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friday</td>
+          <td style="text-align: left"><code>Update my device on a Friday</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Saturday</td>
+          <td style="text-align: left"><code>Update my device on a Saturday</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>You can of course name these Device Categories something more suitable to your environment, and limit the days of the week if you&rsquo;d like, just remember that this is an end user selecting a category, so some fancy naming convention won&rsquo;t necessarily make as much sense to them as it does to you.</p>
 <p>With the Device Categories now in place, we can take on the advice of Microsoft for a change:</p>
@@ -1445,50 +1445,50 @@
 </h3>
 <p>These are the obvious ones, as we&rsquo;ve created our Device Categories now, we need corresponding groups in Entra that we can use to capture the devices based on the category selected. Obviously my group rule matches my category names, yours might be different.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Day of Update</th>
-<th style="text-align:left">Group Name</th>
-<th style="text-align:left">Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Sunday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Sunday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Sunday&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Monday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Monday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Monday&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Tuesday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Tuesday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Tuesday&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Wednesday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Wednesday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Wednesday&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Thursday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Thursday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Thursday&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Friday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Friday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Friday&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Saturday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Saturday</td>
-<td style="text-align:left"><code>(device.deviceCategory -eq &quot;Update my device on a Saturday&quot;)</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Day of Update</th>
+          <th style="text-align: left">Group Name</th>
+          <th style="text-align: left">Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Sunday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Sunday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Sunday&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Monday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Monday&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tuesday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Tuesday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Tuesday&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wednesday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Wednesday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Wednesday&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thursday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Thursday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Thursday&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Friday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Friday&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Saturday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Saturday</td>
+          <td style="text-align: left"><code>(device.deviceCategory -eq &quot;Update my device on a Saturday&quot;)</code></td>
+      </tr>
+  </tbody>
 </table>
 
   
@@ -1537,25 +1537,25 @@
 <p>So what if we still want some phasing across supported update policies (it&rsquo;s Windows, <em>only</em> Windows), and you don&rsquo;t want all the users who selected the <code>Update my device on a Thursday</code> Device Category to get the update on the same Thursday?</p>
 <p>Well with a couple of additional Dynamic Security Groups, we can have two update policies for the same day but a week apart, splitting devices roughly in half.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Scope</th>
-<th style="text-align:left">Group Name</th>
-<th style="text-align:left">Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Initial Production</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and ((device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;a&quot;) or (device.deviceId -startsWith &quot;c&quot;) or (device.deviceId -startsWith &quot;e&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Scope</th>
+          <th style="text-align: left">Group Name</th>
+          <th style="text-align: left">Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Initial Production</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and ((device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;a&quot;) or (device.deviceId -startsWith &quot;c&quot;) or (device.deviceId -startsWith &quot;e&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>We&rsquo;ve seen these types of groups <a href="/posts/flexible-update-deployments/#efficient-dynamic-groups" rel="noopener" target="_blank">before</a> so they shouldn&rsquo;t be too much of a surprise to you, but in short, we&rsquo;re splitting all the devices into ~50% groups using the UUID associated with each deviceId object in Entra.</p>
 <p>We can then use these groups when creating our <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-10-update-rings" target="_blank">Windows Update rings</a> for our weekday specific updates.</p>
@@ -1624,100 +1624,100 @@
 <li><strong>Deadline for quality updates</strong> - <code>0 days</code></li>
 <li><strong>Automatic behaviour frequency:</strong>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Day of Update</th>
-<th style="text-align:left">Week</th>
-<th style="text-align:left">Include Assignment</th>
-<th style="text-align:left">Exclude Assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Sunday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Sunday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Sunday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Sunday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-<tr>
-<td style="text-align:left">Monday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Monday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Monday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Monday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-<tr>
-<td style="text-align:left">Tuesday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Tuesday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Tuesday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Tuesday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-<tr>
-<td style="text-align:left">Wednesday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Wednesday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Wednesday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Wednesday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-<tr>
-<td style="text-align:left">Thursday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Thursday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Thursday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Thursday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-<tr>
-<td style="text-align:left">Friday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Friday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Friday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Friday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-<tr>
-<td style="text-align:left">Saturday</td>
-<td style="text-align:left"><code>Second week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Saturday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_B</td>
-</tr>
-<tr>
-<td style="text-align:left">Saturday</td>
-<td style="text-align:left"><code>Third week of the month</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Saturday</td>
-<td style="text-align:left">SG_MDM_Devices_Updates_A</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Day of Update</th>
+          <th style="text-align: left">Week</th>
+          <th style="text-align: left">Include Assignment</th>
+          <th style="text-align: left">Exclude Assignment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Sunday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Sunday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sunday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Sunday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Monday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Monday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tuesday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Tuesday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tuesday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Tuesday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wednesday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Wednesday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wednesday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Wednesday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thursday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Thursday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thursday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Thursday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Friday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Friday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Saturday</td>
+          <td style="text-align: left"><code>Second week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Saturday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Saturday</td>
+          <td style="text-align: left"><code>Third week of the month</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Saturday</td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_A</td>
+      </tr>
+  </tbody>
 </table>
 </li>
 </ul>
@@ -1741,50 +1741,50 @@
 <li><strong>Time zone</strong> - <code>UTC±00</code> (select your own time zone)</li>
 <li><strong>Time window:</strong>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Day of Update</th>
-<th style="text-align:left">Time Window</th>
-<th style="text-align:left">Assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Sunday</td>
-<td style="text-align:left"><code>Sunday 12AM - Monday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Sunday</td>
-</tr>
-<tr>
-<td style="text-align:left">Monday</td>
-<td style="text-align:left"><code>Monday 12AM - Tuesday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Monday</td>
-</tr>
-<tr>
-<td style="text-align:left">Tuesday</td>
-<td style="text-align:left"><code>Tuesday 12AM - Wednesday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Tuesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Wednesday</td>
-<td style="text-align:left"><code>Wednesday 12AM - Thursday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Wednesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Thursday</td>
-<td style="text-align:left"><code>Thursday 12AM - Friday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Thursday</td>
-</tr>
-<tr>
-<td style="text-align:left">Friday</td>
-<td style="text-align:left"><code>Friday 12AM - Saturday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Friday</td>
-</tr>
-<tr>
-<td style="text-align:left">Saturday</td>
-<td style="text-align:left"><code>Saturday 12AM - Sunday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Saturday</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Day of Update</th>
+          <th style="text-align: left">Time Window</th>
+          <th style="text-align: left">Assignment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Sunday</td>
+          <td style="text-align: left"><code>Sunday 12AM - Monday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Sunday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monday</td>
+          <td style="text-align: left"><code>Monday 12AM - Tuesday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Monday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tuesday</td>
+          <td style="text-align: left"><code>Tuesday 12AM - Wednesday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Tuesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wednesday</td>
+          <td style="text-align: left"><code>Wednesday 12AM - Thursday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Wednesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thursday</td>
+          <td style="text-align: left"><code>Thursday 12AM - Friday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Thursday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friday</td>
+          <td style="text-align: left"><code>Friday 12AM - Saturday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Friday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Saturday</td>
+          <td style="text-align: left"><code>Saturday 12AM - Sunday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Saturday</td>
+      </tr>
+  </tbody>
 </table>
 </li>
 </ul>
@@ -1821,50 +1821,50 @@
 <li><strong>Time zone</strong> - <code>UTC±00</code> (select your own time zone)</li>
 <li><strong>Time window:</strong>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Day of Update</th>
-<th style="text-align:left">Time Window</th>
-<th style="text-align:left">Assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Sunday</td>
-<td style="text-align:left"><code>Sunday 12AM - Monday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Sunday</td>
-</tr>
-<tr>
-<td style="text-align:left">Monday</td>
-<td style="text-align:left"><code>Monday 12AM - Tuesday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Monday</td>
-</tr>
-<tr>
-<td style="text-align:left">Tuesday</td>
-<td style="text-align:left"><code>Tuesday 12AM - Wednesday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Tuesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Wednesday</td>
-<td style="text-align:left"><code>Wednesday 12AM - Thursday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Wednesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Thursday</td>
-<td style="text-align:left"><code>Thursday 12AM - Friday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Thursday</td>
-</tr>
-<tr>
-<td style="text-align:left">Friday</td>
-<td style="text-align:left"><code>Friday 12AM - Saturday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Friday</td>
-</tr>
-<tr>
-<td style="text-align:left">Saturday</td>
-<td style="text-align:left"><code>Saturday 12AM - Sunday 12AM</code></td>
-<td style="text-align:left">SG_MDM_Devices_Updates_Saturday</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Day of Update</th>
+          <th style="text-align: left">Time Window</th>
+          <th style="text-align: left">Assignment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Sunday</td>
+          <td style="text-align: left"><code>Sunday 12AM - Monday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Sunday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monday</td>
+          <td style="text-align: left"><code>Monday 12AM - Tuesday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Monday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tuesday</td>
+          <td style="text-align: left"><code>Tuesday 12AM - Wednesday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Tuesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wednesday</td>
+          <td style="text-align: left"><code>Wednesday 12AM - Thursday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Wednesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thursday</td>
+          <td style="text-align: left"><code>Thursday 12AM - Friday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Thursday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friday</td>
+          <td style="text-align: left"><code>Friday 12AM - Saturday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Friday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Saturday</td>
+          <td style="text-align: left"><code>Saturday 12AM - Sunday 12AM</code></td>
+          <td style="text-align: left">SG_MDM_Devices_Updates_Saturday</td>
+      </tr>
+  </tbody>
 </table>
 </li>
 </ul>

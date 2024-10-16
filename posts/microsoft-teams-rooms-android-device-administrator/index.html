@@ -1303,45 +1303,45 @@
 <p>This is where we use some of the more advanced features of Dynamic User groups, in the <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership#multi-value-properties" target="_blank">multi-value properties</a> and in particular the use of licenses assigned to users. For this, we need to understand which licenses the MTR resource accounts have assigned, and find the correlating <a href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference" target="_blank">Service Plan Id</a> for each service contained within the licenses.</p>
 <p>The below table details the common services for both the &lsquo;Microsoft Teams Rooms Pro&rsquo; and &lsquo;Microsoft Teams Rooms Pro without Audio Conferencing&rsquo; licenses that allows for enrolment into Intune, the Services, and the Service Plan Ids:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Friendly Name</th>
-<th style="text-align:left">Service Name</th>
-<th style="text-align:left">Service Plan Id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Azure Active Directory Premium P1</td>
-<td style="text-align:left"><code>AAD_PREMIUM</code></td>
-<td style="text-align:left"><code>41781fb2-bc02-4b7c-bd55-b576c07bb09d</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft 365 Phone System</td>
-<td style="text-align:left"><code>MCOEV</code></td>
-<td style="text-align:left"><code>4828c8ec-dc2e-4779-b502-87ac9ce28ab7</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Intune</td>
-<td style="text-align:left"><code>INTUNE_A</code></td>
-<td style="text-align:left"><code>c1ec4a95-1f05-45b3-a911-aa3fa01094f5</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Teams</td>
-<td style="text-align:left"><code>TEAMS1</code></td>
-<td style="text-align:left"><code>57ff2da0-773e-42df-b2af-ffb7a2317929</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Skype for Business Online (Plan 2)</td>
-<td style="text-align:left"><code>MCOSTANDARD</code></td>
-<td style="text-align:left"><code>0feaeb32-d00e-4d66-bd5a-43b5b83db82c</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Whiteboard (Plan 3)</td>
-<td style="text-align:left"><code>WHITEBOARD_PLAN3</code></td>
-<td style="text-align:left"><code>4a51bca5-1eff-43f5-878c-177680f191af</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Friendly Name</th>
+          <th style="text-align: left">Service Name</th>
+          <th style="text-align: left">Service Plan Id</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Azure Active Directory Premium P1</td>
+          <td style="text-align: left"><code>AAD_PREMIUM</code></td>
+          <td style="text-align: left"><code>41781fb2-bc02-4b7c-bd55-b576c07bb09d</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft 365 Phone System</td>
+          <td style="text-align: left"><code>MCOEV</code></td>
+          <td style="text-align: left"><code>4828c8ec-dc2e-4779-b502-87ac9ce28ab7</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Intune</td>
+          <td style="text-align: left"><code>INTUNE_A</code></td>
+          <td style="text-align: left"><code>c1ec4a95-1f05-45b3-a911-aa3fa01094f5</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Teams</td>
+          <td style="text-align: left"><code>TEAMS1</code></td>
+          <td style="text-align: left"><code>57ff2da0-773e-42df-b2af-ffb7a2317929</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Skype for Business Online (Plan 2)</td>
+          <td style="text-align: left"><code>MCOSTANDARD</code></td>
+          <td style="text-align: left"><code>0feaeb32-d00e-4d66-bd5a-43b5b83db82c</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Whiteboard (Plan 3)</td>
+          <td style="text-align: left"><code>WHITEBOARD_PLAN3</code></td>
+          <td style="text-align: left"><code>4a51bca5-1eff-43f5-878c-177680f191af</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>So with this we can attempt to construct a Dynamic User group based on these services that are assigned and enabled for the MTR accounts.</p>
 
@@ -1361,42 +1361,42 @@
 <p>We&rsquo;re actually using the Service Name captured from the <code>Get-AzureADUser -User 'MTR-Room1@ennbee.uk' | Select -ExpandProperty AssignedPlans</code> PowerShell command here, to cover off all plan types under the service, as there are so many Exchange Online plan types and I want to make this as clean as possible without having to list all the Exchange Online or SharePoint Online service plan Ids.</p>
 <p>So here&rsquo;s the logic we&rsquo;re using to find only the MTR accounts using a Dynamic Group.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Logic</th>
-<th style="text-align:left">Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">User <strong>is assigned</strong> a Microsoft 365 Phone System license and is enabled</td>
-<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">User <strong>is assigned any</strong> Intune license and is enabled</td>
-<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;SCO&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">User <strong>is assigned any</strong> Teams license and is enabled</td>
-<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;TeamspaceAPI&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">User <strong>is assigned any</strong> Skype for Business license and is enabled</td>
-<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;MicrosoftCommunicationsOnline&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">User <strong>is assigned</strong> a WhiteBoard Plan 3 license and is enabled</td>
-<td style="text-align:left"><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4a51bca5-1eff-43f5-878c-177680f191af&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">User <strong>is not assigned any</strong> Exchange Online license that is enabled or deleted</td>
-<td style="text-align:left"><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;exchange&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
-</tr>
-<tr>
-<td style="text-align:left">User <strong>is not assigned any</strong> SharePoint Online license that is enabled or deleted</td>
-<td style="text-align:left"><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;SharePoint&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Logic</th>
+          <th style="text-align: left">Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">User <strong>is assigned</strong> a Microsoft 365 Phone System license and is enabled</td>
+          <td style="text-align: left"><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4828c8ec-dc2e-4779-b502-87ac9ce28ab7&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User <strong>is assigned any</strong> Intune license and is enabled</td>
+          <td style="text-align: left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;SCO&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User <strong>is assigned any</strong> Teams license and is enabled</td>
+          <td style="text-align: left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;TeamspaceAPI&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User <strong>is assigned any</strong> Skype for Business license and is enabled</td>
+          <td style="text-align: left"><code>(user.assignedPlans -any (assignedPlan.service -eq &quot;MicrosoftCommunicationsOnline&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User <strong>is assigned</strong> a WhiteBoard Plan 3 license and is enabled</td>
+          <td style="text-align: left"><code>(user.assignedPlans -any (assignedPlan.servicePlanId -eq &quot;4a51bca5-1eff-43f5-878c-177680f191af&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User <strong>is not assigned any</strong> Exchange Online license that is enabled or deleted</td>
+          <td style="text-align: left"><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;exchange&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User <strong>is not assigned any</strong> SharePoint Online license that is enabled or deleted</td>
+          <td style="text-align: left"><code>(user.assignedPlans -all (assignedPlan.service -ne &quot;SharePoint&quot; -and assignedPlan.capabilityStatus -eq &quot;Enabled&quot; -or assignedPlan.capabilityStatus -eq &quot;Deleted&quot;))</code></td>
+      </tr>
+  </tbody>
 </table>
 
 

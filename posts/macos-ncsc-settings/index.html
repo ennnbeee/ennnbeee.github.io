@@ -1238,25 +1238,25 @@
 <p>Now the NCSC guidelines advise that Operating System and Software updates should be applied automatically, with no deferral of when they are available or installed.</p>
 <p>From the NCSC documentation:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Defer macOS Updates</td>
-<td style="text-align:left"><code>No</code></td>
-<td style="text-align:left">n/a</td>
-</tr>
-<tr>
-<td style="text-align:left">Defer app Updates</td>
-<td style="text-align:left"><code>No</code></td>
-<td style="text-align:left">n/a</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Comments</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Defer macOS Updates</td>
+          <td style="text-align: left"><code>No</code></td>
+          <td style="text-align: left">n/a</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Defer app Updates</td>
+          <td style="text-align: left"><code>No</code></td>
+          <td style="text-align: left">n/a</td>
+      </tr>
+  </tbody>
 </table>
 <p>This one is pretty definite in what it wants.</p>
 <p>Sadly, there isn&rsquo;t an option in Microsoft Intune to enforce this setting, but we can achieve this using a custom profile and generated mobileconfig file.</p>
@@ -1362,25 +1362,25 @@
 <p>Apparently Fast User Switching is a bad thing, as is automatically logging in, so they want this disabled too.</p>
 <p>From the NCSC documentation:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Enable Fast User Switching</td>
-<td style="text-align:left"><code>No</code></td>
-<td style="text-align:left">n/a</td>
-</tr>
-<tr>
-<td style="text-align:left">Disable automatic login</td>
-<td style="text-align:left"><code>Yes</code></td>
-<td style="text-align:left">n/a</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Comments</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Enable Fast User Switching</td>
+          <td style="text-align: left"><code>No</code></td>
+          <td style="text-align: left">n/a</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Disable automatic login</td>
+          <td style="text-align: left"><code>Yes</code></td>
+          <td style="text-align: left">n/a</td>
+      </tr>
+  </tbody>
 </table>
 <p>I wish they would stick with either &lsquo;Enable&rsquo; or &lsquo;Disable&rsquo;, the mixture is headache inducing. However, mobileconfig file to the rescue.</p>
 
@@ -1479,20 +1479,20 @@
 <p>This one makes more sense, as you don&rsquo;t want users meddling with certain System Preferences such as, iCloud, Sharing, Startup Disk and Security.</p>
 <p>From the NCSC documentation:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Restrict items in System Preferences</td>
-<td style="text-align:left"><code>Yes (disable selected items)</code></td>
-<td style="text-align:left">iCloud Profiles Security &amp; Privacy Startup Disk Sharing (enables remote management) Siri Xsan - If not in use FibreChannel - if not in use</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Comments</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Restrict items in System Preferences</td>
+          <td style="text-align: left"><code>Yes (disable selected items)</code></td>
+          <td style="text-align: left">iCloud Profiles Security &amp; Privacy Startup Disk Sharing (enables remote management) Siri Xsan - If not in use FibreChannel - if not in use</td>
+      </tr>
+  </tbody>
 </table>
 <p>Now you <em>could</em> flat out disable them, but remember, NCSC is a guideline, so we&rsquo;re just going to hide them instead&hellip;</p>
 
@@ -1584,20 +1584,20 @@
 <p>Not so sure on this one, must be down to ensuring that the system time is correct for validation of certificates&hellip;maybe.</p>
 <p>From the NCSC documentation:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Time Server</td>
-<td style="text-align:left"><code>Specify time server by device location</code></td>
-<td style="text-align:left">Organisations should refer to their MDM documentation for instructions on setting this up</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Comments</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Time Server</td>
+          <td style="text-align: left"><code>Specify time server by device location</code></td>
+          <td style="text-align: left">Organisations should refer to their MDM documentation for instructions on setting this up</td>
+      </tr>
+  </tbody>
 </table>
 <p>See what I mean about it being complicated, thanks NCSC.</p>
 <p>Anyway, here&rsquo;s the mobileconfig file setting the time servers to be <code>time.euro.apple.com</code> if you&rsquo;re in Europe obviously.</p>

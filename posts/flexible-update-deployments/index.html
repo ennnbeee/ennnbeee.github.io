@@ -1306,46 +1306,46 @@
 <p>For the members of Test and Pilot groups, these should be targeted members, not just any old device, so ensure you populate these groups with true test devices, and suitable pilot devices for update testing.</p>
 <p>You&rsquo;ll notice that this time we&rsquo;re using Dynamic Groups across all the pre-production and production groups, and using a new attribute of <code>deviceId</code>, which is a wonderful UUID associated with <em>all</em> Entra computer objects, and it being a UUID gives us a nice split of devices based on the queries used.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Group</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Membership</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Test Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pre-Production Group</td>
-<td style="text-align:left">Dynamic Device</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[0-1,a]&quot;)</code></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production Group</td>
-<td style="text-align:left">Dynamic Device</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production Group</td>
-<td style="text-align:left">Dynamic Device</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Group</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Membership</th>
+          <th style="text-align: left"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Test Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pre-Production Group</td>
+          <td style="text-align: left">Dynamic Device</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[0-1,a]&quot;)</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production Group</td>
+          <td style="text-align: left">Dynamic Device</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[2-4,b-c]&quot;)</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production Group</td>
+          <td style="text-align: left">Dynamic Device</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and (device.deviceId -match &quot;^[5-9,d-f]&quot;)</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
 </table>
 <p>With the start of the <code>deviceId</code> only ever being in the range of <code>0-9</code> or <code>a-f</code> we&rsquo;ve an easy way to split our devices across the three production level groups, and ensure that we are capturing all devices, using the <code>match</code> operator, and the regular expression similar to <code>^[0-9,a-f]</code> to detect whether the <code>deviceId</code> starts with one of the values in the ranges provided.</p>
 
@@ -1393,46 +1393,46 @@
 </h3>
 <p>If you want to please Microsoft Daddy, then you could use these alternative queries for the groups, Test and Pilot are still assigned, so don&rsquo;t forget to populate those members.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Group</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Membership</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Test Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pre-Production Group</td>
-<td style="text-align:left">Dynamic Device</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production Group</td>
-<td style="text-align:left">Dynamic Device</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production Group</td>
-<td style="text-align:left">Dynamic Device</td>
-<td style="text-align:left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Group</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Membership</th>
+          <th style="text-align: left"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Test Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pre-Production Group</td>
+          <td style="text-align: left">Dynamic Device</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;0&quot;) or (device.deviceId -startsWith &quot;1&quot;) or (device.deviceId -startsWith &quot;a&quot;))</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production Group</td>
+          <td style="text-align: left">Dynamic Device</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;2&quot;) or (device.deviceId -startsWith &quot;3&quot;) or (device.deviceId -startsWith &quot;4&quot;) or (device.deviceId -startsWith &quot;b&quot;) or (device.deviceId -startsWith &quot;c&quot;))</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production Group</td>
+          <td style="text-align: left">Dynamic Device</td>
+          <td style="text-align: left"><code>(device.deviceManagementAppId -ne null) and (device.deviceOSType -eq &quot;Windows&quot;) and (device.deviceOwnership -eq &quot;Company&quot;) and ((device.deviceId -startsWith &quot;5&quot;) or (device.deviceId -startsWith &quot;6&quot;) or (device.deviceId -startsWith &quot;7&quot;) or (device.deviceId -startsWith &quot;8&quot;) or (device.deviceId -startsWith &quot;9&quot;) or (device.deviceId -startsWith &quot;d&quot;) or (device.deviceId -startsWith &quot;e&quot;) or (device.deviceId -startsWith &quot;f&quot;))</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
 </table>
 <p>Much more efficient.</p>
 
@@ -1450,34 +1450,34 @@
 <p>What about those people who complain about when they&rsquo;re getting updates, I mean you could tell them <del>to jog on</del> that you can&rsquo;t change the behaviour, or you could cater for the more VIP user, and allow for their device to sit in a different update group.</p>
 <p>So more assigned groups are required for each potential exception or change to production level deployment options.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Group</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Membership</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">VIP Pre-Production Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">VIP Initial Production Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">VIP Final Production Group</td>
-<td style="text-align:left">Assigned</td>
-<td style="text-align:left">TBC</td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Group</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Membership</th>
+          <th style="text-align: left"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">VIP Pre-Production Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">VIP Initial Production Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">VIP Final Production Group</td>
+          <td style="text-align: left">Assigned</td>
+          <td style="text-align: left">TBC</td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
 </table>
 <p>See, we <em>can</em> please the senior members of the company with IT solutions.</p>
 
@@ -1494,52 +1494,52 @@
 </h2>
 <p>Now with suitable groups at our disposal, we can create our Windows Update Rings in Microsoft Intune for each of the five phases, and after reviewing and experiencing Windows Update Rings personally instead of just recommending them, I&rsquo;ve decided to set zero-day installation deadlines, in favour of longer grace periods, still working within the <a href="https://www.ncsc.gov.uk/collection/device-security-guidance/platform-guides/windows" target="_blank">National Cyber Security Centre</a> 14-day window.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Update Ring</th>
-<th style="text-align:left">Deferral</th>
-<th style="text-align:left">Deadline</th>
-<th style="text-align:left">Grace Period</th>
-<th style="text-align:left">Updates Installed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Test</td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left">After 1 day, Wednesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot</td>
-<td style="text-align:left"><code>2 days</code></td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left">After 3 days, Friday</td>
-</tr>
-<tr>
-<td style="text-align:left">Pre-Production</td>
-<td style="text-align:left"><code>5 days</code></td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>2 days</code></td>
-<td style="text-align:left">After 7 days, Tuesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production</td>
-<td style="text-align:left"><code>8 days</code></td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>2 days</code></td>
-<td style="text-align:left">After 10 days, Friday</td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production</td>
-<td style="text-align:left"><code>11 days</code></td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>3 days</code></td>
-<td style="text-align:left">After 14 days, Tuesday</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Update Ring</th>
+          <th style="text-align: left">Deferral</th>
+          <th style="text-align: left">Deadline</th>
+          <th style="text-align: left">Grace Period</th>
+          <th style="text-align: left">Updates Installed</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Test</td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left">After 1 day, Wednesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot</td>
+          <td style="text-align: left"><code>2 days</code></td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left">After 3 days, Friday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pre-Production</td>
+          <td style="text-align: left"><code>5 days</code></td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>2 days</code></td>
+          <td style="text-align: left">After 7 days, Tuesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production</td>
+          <td style="text-align: left"><code>8 days</code></td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>2 days</code></td>
+          <td style="text-align: left">After 10 days, Friday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production</td>
+          <td style="text-align: left"><code>11 days</code></td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>3 days</code></td>
+          <td style="text-align: left">After 14 days, Tuesday</td>
+      </tr>
+  </tbody>
 </table>
 <p>You see something else new? Yes, I&rsquo;ve avoided device restarts on weekends following a chat with fellow lover of Microsoft Intune, <a href="https://deploymentshare.com/" target="_blank">Jonathan Fallis</a>, meaning that for a weekday based &lsquo;working week&rsquo;, updates get installed and devices restarted when the device is actually on, not over a weekend when realistically the device is still in the office and powered off, or being used to watch Netflix in bed.</p>
 <p>This also allows for our VIP users to pick which day they actually want their device to restart, based on whatever day they&rsquo;re not playing golf 🏌️‍♀️.</p>
@@ -1558,50 +1558,50 @@
 <p>Oooooh this one is new, and straight up robbed from Windows Autopatch, and although doesn&rsquo;t exist as a dedicated blade in Microsoft Intune, we can use the glorious <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog</a> profiles to configure Office Update Channels, deferral, and deadline settings for Microsoft 365 App updates.</p>
 <p>To start, we need to configure some baseline Office Update settings. So go create yourself a new Settings Catalog profile, and throw the below settings into it.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Location for updates: (Device)</td>
-<td style="text-align:left"><code>http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Enable Automatic Updates</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Hide option to enable or disable updates</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Hide Update Notifications</td>
-<td style="text-align:left"><code>Disabled</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Update Channel</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Channel Name (Device)</td>
-<td style="text-align:left"><code>Monthly Enterprise Channel</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Microsoft Office 2016 (Machine) &gt; Updates</td>
-<td style="text-align:left">Update Path</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Location for updates: (Device)</td>
+          <td style="text-align: left"><code>http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Enable Automatic Updates</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Hide option to enable or disable updates</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Hide Update Notifications</td>
+          <td style="text-align: left"><code>Disabled</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Update Channel</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Channel Name (Device)</td>
+          <td style="text-align: left"><code>Monthly Enterprise Channel</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microsoft Office 2016 (Machine) &gt; Updates</td>
+          <td style="text-align: left">Update Path</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>With the update channel configured to Monthly Enterprise, and a bit of a change to the user experience, let&rsquo;s see what else we can borrow from <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/operate/windows-autopatch-microsoft-365-apps-enterprise" target="_blank">Windows Autopatch</a>.</p>
 
@@ -1650,58 +1650,58 @@
 <p>With a similar approach to the Windows Update Rings, we can create corresponding Settings Catalog profiles for our five deployment phases, aligning as best we can the end result, which is installed updates, to the restart of the updates delivered as part of the Windows Update ring configuration.</p>
 <p>All settings exist under the same category as before, <strong>Microsoft Office 2016 (Machine) &gt; Updates</strong>.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Update Ring</th>
-<th style="text-align:left">Delay downloading and installing updates for Office</th>
-<th style="text-align:left">Days: (Device)</th>
-<th style="text-align:left">Update Deadline</th>
-<th style="text-align:left">Deadline: (Device)</th>
-<th style="text-align:left">Updates Installed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Test</td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>0</code></td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>1</code></td>
-<td style="text-align:left">After 1 day, Wednesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot</td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>2</code></td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>1</code></td>
-<td style="text-align:left">After 3 days, Friday</td>
-</tr>
-<tr>
-<td style="text-align:left">Pre-Production</td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>5</code></td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>2</code></td>
-<td style="text-align:left">After 7 days, Tuesday</td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production</td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>8</code></td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>2</code></td>
-<td style="text-align:left">After 10 days, Friday</td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production</td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>11</code></td>
-<td style="text-align:left"><code>Enabled</code></td>
-<td style="text-align:left"><code>3</code></td>
-<td style="text-align:left">After 14 days, Tuesday</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Update Ring</th>
+          <th style="text-align: left">Delay downloading and installing updates for Office</th>
+          <th style="text-align: left">Days: (Device)</th>
+          <th style="text-align: left">Update Deadline</th>
+          <th style="text-align: left">Deadline: (Device)</th>
+          <th style="text-align: left">Updates Installed</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Test</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>0</code></td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>1</code></td>
+          <td style="text-align: left">After 1 day, Wednesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>2</code></td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>1</code></td>
+          <td style="text-align: left">After 3 days, Friday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pre-Production</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>5</code></td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>2</code></td>
+          <td style="text-align: left">After 7 days, Tuesday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>8</code></td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>2</code></td>
+          <td style="text-align: left">After 10 days, Friday</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>11</code></td>
+          <td style="text-align: left"><code>Enabled</code></td>
+          <td style="text-align: left"><code>3</code></td>
+          <td style="text-align: left">After 14 days, Tuesday</td>
+      </tr>
+  </tbody>
 </table>
 <p>As Office Updates are released with the same <a href="https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels#comparison-of-the-update-channels-for-microsoft-365-apps" target="_blank">update cadence</a> as our normal updates on a &lsquo;Patch Tuesday&rsquo;, then the installation time falls on the same days, meaning that <strong>all</strong> updates should be installed and the device restarted on the same day, reducing overall disruption to the users.</p>
 
@@ -1749,46 +1749,46 @@
 </div>
 
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Update Ring</th>
-<th style="text-align:left">Included Groups</th>
-<th style="text-align:left">Excluded Groups</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Test</td>
-<td style="text-align:left">Test Group</td>
-<td style="text-align:left">-</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot</td>
-<td style="text-align:left">Pilot Group</td>
-<td style="text-align:left">Test Group</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pre-Production</td>
-<td style="text-align:left">Pre-Production Group</td>
-<td style="text-align:left">Test Group, Pilot Group</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production</td>
-<td style="text-align:left">Initial Production Group</td>
-<td style="text-align:left">Test Group, Pilot Group</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production</td>
-<td style="text-align:left">Final Production Group</td>
-<td style="text-align:left">Test Group, Pilot Group</td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Update Ring</th>
+          <th style="text-align: left">Included Groups</th>
+          <th style="text-align: left">Excluded Groups</th>
+          <th style="text-align: left"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Test</td>
+          <td style="text-align: left">Test Group</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot</td>
+          <td style="text-align: left">Pilot Group</td>
+          <td style="text-align: left">Test Group</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pre-Production</td>
+          <td style="text-align: left">Pre-Production Group</td>
+          <td style="text-align: left">Test Group, Pilot Group</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production</td>
+          <td style="text-align: left">Initial Production Group</td>
+          <td style="text-align: left">Test Group, Pilot Group</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production</td>
+          <td style="text-align: left">Final Production Group</td>
+          <td style="text-align: left">Test Group, Pilot Group</td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
 </table>
 <p>I&rsquo;m assuming here that you aren&rsquo;t putting VIP user devices in Test and Pilot, because you don&rsquo;t want to anger them, maybe do it on your last day .</p>
 
@@ -1837,46 +1837,46 @@
 <p>To get the expected behaviour for our VIP groups, we need to consider what happens when we want to ensure a VIP device is in the correct Update Ring, which includes making sure there are no conflicts across the rings.</p>
 <p>Changing the assignments of our Update Rings to the below, will allow for the manual assignment based on a devices VIP group membership.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Update Ring</th>
-<th style="text-align:left">Included Groups</th>
-<th style="text-align:left">Excluded Groups</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Test</td>
-<td style="text-align:left">Test Group</td>
-<td style="text-align:left">-</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot</td>
-<td style="text-align:left">Pilot Group</td>
-<td style="text-align:left">Test Group</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Pre-Production</td>
-<td style="text-align:left">Pre-Production Group, <em>VIP Pre-Production</em></td>
-<td style="text-align:left">Test Group, Pilot Group, <em>VIP Initial Production</em>, <em>VIP Final Production</em></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production</td>
-<td style="text-align:left">Initial-Production Group, <em>VIP Initial-Production</em></td>
-<td style="text-align:left">Test Group, Pilot Group, <em>VIP Pre-Production,</em> <em>VIP Final Production</em></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production</td>
-<td style="text-align:left">Final Production, <em>VIP Final Production</em></td>
-<td style="text-align:left">Test Group, Pilot Group, <em>VIP Pre-Production</em>, <em>VIP Initial Production</em></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Update Ring</th>
+          <th style="text-align: left">Included Groups</th>
+          <th style="text-align: left">Excluded Groups</th>
+          <th style="text-align: left"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Test</td>
+          <td style="text-align: left">Test Group</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot</td>
+          <td style="text-align: left">Pilot Group</td>
+          <td style="text-align: left">Test Group</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pre-Production</td>
+          <td style="text-align: left">Pre-Production Group, <em>VIP Pre-Production</em></td>
+          <td style="text-align: left">Test Group, Pilot Group, <em>VIP Initial Production</em>, <em>VIP Final Production</em></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production</td>
+          <td style="text-align: left">Initial-Production Group, <em>VIP Initial-Production</em></td>
+          <td style="text-align: left">Test Group, Pilot Group, <em>VIP Pre-Production,</em> <em>VIP Final Production</em></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production</td>
+          <td style="text-align: left">Final Production, <em>VIP Final Production</em></td>
+          <td style="text-align: left">Test Group, Pilot Group, <em>VIP Pre-Production</em>, <em>VIP Initial Production</em></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
 </table>
 <p>For example if device name <code>VIP-7wa7f4c35</code>, with deviceId <code>ec759183-4492-44f4-a2ec-dbc33470bf48</code> (which will captured by the &lsquo;Final Production&rsquo; dynamic group), is added to group <code>VIP Initial Production</code>, it will exclude the device from the &lsquo;Final Production&rsquo; Update Ring, and assign the Update Ring for &lsquo;Initial Production&rsquo;, with the device restarting after updates on a Friday.</p>
 <p>Adding in not only new include assignments, but exclude assignments, will ensure that devices in these groups are assigned to the correct Update Ring.</p>

@@ -1254,50 +1254,50 @@
 </span></span></code></pre></div><p>Pretty straight forward for one of my documented scripts, but either way, save the file locally as something you can remember.</p>
 <p>Create the rule in Intune with the below settings:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Requirement Type</td>
-<td style="text-align:left"><code>Script</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Script Name</td>
-<td style="text-align:left"><code>Autopilot_Not_Running.ps1</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Script content</td>
-<td style="text-align:left"><code>{{Script Content}}</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Run script as 32-bit process on 64-bit clients</td>
-<td style="text-align:left"><code>No</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Run this script using the logged on credentials</td>
-<td style="text-align:left"><code>No</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Enforce script signature check</td>
-<td style="text-align:left"><code>No</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Select Output data type</td>
-<td style="text-align:left"><code>String</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Operator</td>
-<td style="text-align:left"><code>Equals</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Value</td>
-<td style="text-align:left"><code>Install</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Requirement Type</td>
+          <td style="text-align: left"><code>Script</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Script Name</td>
+          <td style="text-align: left"><code>Autopilot_Not_Running.ps1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Script content</td>
+          <td style="text-align: left"><code>{{Script Content}}</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Run script as 32-bit process on 64-bit clients</td>
+          <td style="text-align: left"><code>No</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Run this script using the logged on credentials</td>
+          <td style="text-align: left"><code>No</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Enforce script signature check</td>
+          <td style="text-align: left"><code>No</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Select Output data type</td>
+          <td style="text-align: left"><code>String</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Operator</td>
+          <td style="text-align: left"><code>Equals</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Value</td>
+          <td style="text-align: left"><code>Install</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Giving us something like this:</p>
 <p>
@@ -1326,34 +1326,34 @@
 <p>What we do want, is a quick and easy way to ensure that the setup files exist on the device, then we can let the <strong>ccmsetup.exe</strong> do it&rsquo;s magical thing and install the Client and the associated service.</p>
 <p>So for the detection rule, we&rsquo;ll just look for the presence of the setup file:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Rule Type</td>
-<td style="text-align:left"><code>File</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Path</td>
-<td style="text-align:left"><code>%windir%\ccmsetup</code></td>
-</tr>
-<tr>
-<td style="text-align:left">File or Folder</td>
-<td style="text-align:left"><code>ccmsetup.exe</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Detection Method</td>
-<td style="text-align:left"><code>File or Folder Exists</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Associated with a 32-bit app on 64-bit client</td>
-<td style="text-align:left"><code>No</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Rule Type</td>
+          <td style="text-align: left"><code>File</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Path</td>
+          <td style="text-align: left"><code>%windir%\ccmsetup</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">File or Folder</td>
+          <td style="text-align: left"><code>ccmsetup.exe</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Detection Method</td>
+          <td style="text-align: left"><code>File or Folder Exists</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Associated with a 32-bit app on 64-bit client</td>
+          <td style="text-align: left"><code>No</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>This looks a little bit like the below:</p>
 <p>

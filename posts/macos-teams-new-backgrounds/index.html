@@ -1462,35 +1462,35 @@
 </h2>
 <p>With the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadNewTeamsBackgrounds.sh" target="_blank">script</a> to hand, we can now use <a href="https://learn.microsoft.com/en-us/mem/intune/apps/macos-shell-scripts" target="_blank">Microsoft Intune Shell Scripts</a> to deploy the script to our device estate with the below settings, having uploaded the downloaded file.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Run script as signed-in user</td>
-<td style="text-align:left"><code>Yes</code></td>
-<td style="text-align:left">The background upload directory is a user directory.</td>
-</tr>
-<tr>
-<td style="text-align:left">Hide script notifications on devices</td>
-<td style="text-align:left"><code>Yes</code></td>
-<td style="text-align:left">Don&rsquo;t tell users things are happening.</td>
-</tr>
-<tr>
-<td style="text-align:left">Script frequency</td>
-<td style="text-align:left"><code>Not Configured</code></td>
-<td style="text-align:left">We don&rsquo;t want the script to run multiple times.</td>
-</tr>
-<tr>
-<td style="text-align:left">Max number of times to retry if script fails</td>
-<td style="text-align:left"><code>3 times</code></td>
-<td style="text-align:left">If Teams isn&rsquo;t installed and the device is restarted, we need a way to re-run the script.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Run script as signed-in user</td>
+          <td style="text-align: left"><code>Yes</code></td>
+          <td style="text-align: left">The background upload directory is a user directory.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hide script notifications on devices</td>
+          <td style="text-align: left"><code>Yes</code></td>
+          <td style="text-align: left">Don&rsquo;t tell users things are happening.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Script frequency</td>
+          <td style="text-align: left"><code>Not Configured</code></td>
+          <td style="text-align: left">We don&rsquo;t want the script to run multiple times.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Max number of times to retry if script fails</td>
+          <td style="text-align: left"><code>3 times</code></td>
+          <td style="text-align: left">If Teams isn&rsquo;t installed and the device is restarted, we need a way to re-run the script.</td>
+      </tr>
+  </tbody>
 </table>
 <p>Assign this to a test group of macOS devices that has one of the Microsoft Teams apps installed, otherwise you&rsquo;ll be waiting a long time to see the results.</p>
 

@@ -1561,76 +1561,76 @@
 <p>Luckily for us, Microsoft provide <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementconfigurationpolicy-assign?view=graph-rest-beta" target="_blank">documentation</a> for the JSON format of the payload required to create a new assignment, and as we have our own function to get existing assignments, we can quite easily build out the required data in PowerShell based on each of the methods for assignment.</p>
 <p>The table below details the data used for each assignment method, so this is useful reference for us when building our own assignment function.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Target</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Group</td>
-<td style="text-align:left">Include</td>
-<td style="text-align:left"><code>@odata.type</code></td>
-<td style="text-align:left"><code>#microsoft.graph.groupAssignmentTarget</code></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"><code>groupId</code></td>
-<td style="text-align:left"><em>Id of the Assignment Group</em></td>
-</tr>
-<tr>
-<td style="text-align:left">Group</td>
-<td style="text-align:left">Exclude</td>
-<td style="text-align:left"><code>@odata.type</code></td>
-<td style="text-align:left"><code>#microsoft.graph.exclusionGroupAssignmentTarget</code></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"><code>groupId</code></td>
-<td style="text-align:left"><em>Id of the Assignment Group</em></td>
-</tr>
-<tr>
-<td style="text-align:left">All Users</td>
-<td style="text-align:left">Include</td>
-<td style="text-align:left"><code>@odata.type</code></td>
-<td style="text-align:left"><code>#microsoft.graph.allLicensedUsersAssignmentTarget</code></td>
-</tr>
-<tr>
-<td style="text-align:left">All Devices</td>
-<td style="text-align:left">Include</td>
-<td style="text-align:left"><code>@odata.type</code></td>
-<td style="text-align:left"><code>#microsoft.graph.allDevicesAssignmentTarget</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Filter</td>
-<td style="text-align:left">Include</td>
-<td style="text-align:left"><code>deviceAndAppManagementAssignmentFilterType</code></td>
-<td style="text-align:left"><code>Include</code></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"><code>deviceAndAppManagementAssignmentFilterId</code></td>
-<td style="text-align:left"><em>Id of the Device Filter</em></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Filter</td>
-<td style="text-align:left">Exclude</td>
-<td style="text-align:left"><code>deviceAndAppManagementAssignmentFilterType</code></td>
-<td style="text-align:left"><code>Exclude</code></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"><code>deviceAndAppManagementAssignmentFilterId</code></td>
-<td style="text-align:left"><em>Id of the Device Filter</em></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Target</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Group</td>
+          <td style="text-align: left">Include</td>
+          <td style="text-align: left"><code>@odata.type</code></td>
+          <td style="text-align: left"><code>#microsoft.graph.groupAssignmentTarget</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>groupId</code></td>
+          <td style="text-align: left"><em>Id of the Assignment Group</em></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Group</td>
+          <td style="text-align: left">Exclude</td>
+          <td style="text-align: left"><code>@odata.type</code></td>
+          <td style="text-align: left"><code>#microsoft.graph.exclusionGroupAssignmentTarget</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>groupId</code></td>
+          <td style="text-align: left"><em>Id of the Assignment Group</em></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">All Users</td>
+          <td style="text-align: left">Include</td>
+          <td style="text-align: left"><code>@odata.type</code></td>
+          <td style="text-align: left"><code>#microsoft.graph.allLicensedUsersAssignmentTarget</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">All Devices</td>
+          <td style="text-align: left">Include</td>
+          <td style="text-align: left"><code>@odata.type</code></td>
+          <td style="text-align: left"><code>#microsoft.graph.allDevicesAssignmentTarget</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Filter</td>
+          <td style="text-align: left">Include</td>
+          <td style="text-align: left"><code>deviceAndAppManagementAssignmentFilterType</code></td>
+          <td style="text-align: left"><code>Include</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>deviceAndAppManagementAssignmentFilterId</code></td>
+          <td style="text-align: left"><em>Id of the Device Filter</em></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Filter</td>
+          <td style="text-align: left">Exclude</td>
+          <td style="text-align: left"><code>deviceAndAppManagementAssignmentFilterType</code></td>
+          <td style="text-align: left"><code>Exclude</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>deviceAndAppManagementAssignmentFilterId</code></td>
+          <td style="text-align: left"><em>Id of the Device Filter</em></td>
+      </tr>
+  </tbody>
 </table>
 <p>So we can take the above and using the below excerpt from an existing assignment function, build the required JSON data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$TargetGroup</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">psobject</span>

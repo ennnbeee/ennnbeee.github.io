@@ -1293,77 +1293,77 @@
 </h3>
 <p>A straight copy/paste from the <a href="https://learn.microsoft.com/en-us/defender-endpoint/mac-schedule-scan#schedule-a-scan-with-microsoft-defender-for-endpoint-on-macos" target="_blank">Microsoft Learn</a> article, we can see the below options that can be configured:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Accepted values</th>
-<th style="text-align:left">Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>scheduledScan</code></td>
-<td style="text-align:left"><code>enabled</code> or <code>disabled</code></td>
-<td style="text-align:left">We&rsquo;re going to set this as enabled by default, otherwise what&rsquo;s the point?</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>scanType</code></td>
-<td style="text-align:left"><code>quick</code> or <code>full</code></td>
-<td style="text-align:left">Again we&rsquo;re going to want at least one full scan.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>ignoreExclusions</code></td>
-<td style="text-align:left"><code>true</code> or <code>false</code></td>
-<td style="text-align:left">Probably don&rsquo;t want to ignore the <a href="https://learn.microsoft.com/en-us/defender-endpoint/mac-exclusions" target="_blank">exclusions</a>, they&rsquo;re exclusions for a reason.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>lowPriorityScheduledScan</code></td>
-<td style="text-align:left"><code>true</code> or <code>false</code></td>
-<td style="text-align:left">Yeah maybe we make this true by default, it&rsquo;s not like people complain about Defender being resource hungry 😅.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>dayOfWeek</code></td>
-<td style="text-align:left">Integer range between <code>0</code> and <code>8</code></td>
-<td style="text-align:left"><code>0</code> is everyday, <code>8</code> is never, the rest start Sunday through to Saturday.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>timeOfDay</code></td>
-<td style="text-align:left">The number of minutes after midnight</td>
-<td style="text-align:left">Here&rsquo;s that maths I was talking about, we&rsquo;ll sort this.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>interval</code></td>
-<td style="text-align:left">Integer range between <code>0</code> and <code>24</code></td>
-<td style="text-align:left"><code>0</code> is no interval, the other represents hours, with <code>24</code> being once a day.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>randomizeScanStartTime</code></td>
-<td style="text-align:left">Integer range between <code>0</code> and <code>23</code></td>
-<td style="text-align:left">How many hours between the scheduled start time and this many hours after a scan will randomly start between.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Parameter</th>
+          <th style="text-align: left">Accepted values</th>
+          <th style="text-align: left">Information</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>scheduledScan</code></td>
+          <td style="text-align: left"><code>enabled</code> or <code>disabled</code></td>
+          <td style="text-align: left">We&rsquo;re going to set this as enabled by default, otherwise what&rsquo;s the point?</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>scanType</code></td>
+          <td style="text-align: left"><code>quick</code> or <code>full</code></td>
+          <td style="text-align: left">Again we&rsquo;re going to want at least one full scan.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ignoreExclusions</code></td>
+          <td style="text-align: left"><code>true</code> or <code>false</code></td>
+          <td style="text-align: left">Probably don&rsquo;t want to ignore the <a href="https://learn.microsoft.com/en-us/defender-endpoint/mac-exclusions" target="_blank">exclusions</a>, they&rsquo;re exclusions for a reason.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>lowPriorityScheduledScan</code></td>
+          <td style="text-align: left"><code>true</code> or <code>false</code></td>
+          <td style="text-align: left">Yeah maybe we make this true by default, it&rsquo;s not like people complain about Defender being resource hungry 😅.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>dayOfWeek</code></td>
+          <td style="text-align: left">Integer range between <code>0</code> and <code>8</code></td>
+          <td style="text-align: left"><code>0</code> is everyday, <code>8</code> is never, the rest start Sunday through to Saturday.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>timeOfDay</code></td>
+          <td style="text-align: left">The number of minutes after midnight</td>
+          <td style="text-align: left">Here&rsquo;s that maths I was talking about, we&rsquo;ll sort this.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>interval</code></td>
+          <td style="text-align: left">Integer range between <code>0</code> and <code>24</code></td>
+          <td style="text-align: left"><code>0</code> is no interval, the other represents hours, with <code>24</code> being once a day.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>randomizeScanStartTime</code></td>
+          <td style="text-align: left">Integer range between <code>0</code> and <code>23</code></td>
+          <td style="text-align: left">How many hours between the scheduled start time and this many hours after a scan will randomly start between.</td>
+      </tr>
+  </tbody>
 </table>
 <p>And some sneaky additional options from the <a href="https://github.com/microsoft/mdatp-xplat/blob/master/macos/schema/schema.json" target="_blank">Defender macOS Schema</a> documentation that we can also play around with:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Accepted values</th>
-<th style="text-align:left">Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>checkForDefinitionsUpdate</code></td>
-<td style="text-align:left"><code>true</code> or <code>false</code></td>
-<td style="text-align:left">Check for new updates before running a scheduled scan. Yes please.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>runScanWhenIdle</code></td>
-<td style="text-align:left"><code>true</code> or <code>false</code></td>
-<td style="text-align:left">Will delay a scheduled weekly full scan until the device is doing nothing.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Parameter</th>
+          <th style="text-align: left">Accepted values</th>
+          <th style="text-align: left">Information</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>checkForDefinitionsUpdate</code></td>
+          <td style="text-align: left"><code>true</code> or <code>false</code></td>
+          <td style="text-align: left">Check for new updates before running a scheduled scan. Yes please.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>runScanWhenIdle</code></td>
+          <td style="text-align: left"><code>true</code> or <code>false</code></td>
+          <td style="text-align: left">Will delay a scheduled weekly full scan until the device is doing nothing.</td>
+      </tr>
+  </tbody>
 </table>
 <p>Now with the Defender antivirus settings we can actually configure, we can look to leverage these as parameters in a script to build the required configuration files.</p>
 
@@ -2424,40 +2424,40 @@
       </figure></p>
 <p>Doing a bit of <a href="https://www.youtube.com/watch?v=3M_5oYU-IsU" target="_blank">quick maths</a> and comparing to the parameters:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Configuration</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Weekly full scan running on a Wednesday</td>
-<td style="text-align:left"><code>weekly_scan_configuration &gt; day_of_week</code></td>
-<td style="text-align:left"><code>4</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Weekly full scan running on a Wednesday at 11:30</td>
-<td style="text-align:left"><code>weekly_scan_configuration &gt; time_of_day</code></td>
-<td style="text-align:left"><code>690</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Daily quick scan running at 14:15</td>
-<td style="text-align:left"><code>daily_scan_configuration &gt; time_of_day</code></td>
-<td style="text-align:left"><code>855</code></td>
-</tr>
-<tr>
-<td style="text-align:left">No regular daily scan</td>
-<td style="text-align:left"><code>daily_scan_configuration &gt; interval</code></td>
-<td style="text-align:left"><code>0</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Check for updates before scan is enabled</td>
-<td style="text-align:left"><code>check_for_definitions_update</code></td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Configuration</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Weekly full scan running on a Wednesday</td>
+          <td style="text-align: left"><code>weekly_scan_configuration &gt; day_of_week</code></td>
+          <td style="text-align: left"><code>4</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weekly full scan running on a Wednesday at 11:30</td>
+          <td style="text-align: left"><code>weekly_scan_configuration &gt; time_of_day</code></td>
+          <td style="text-align: left"><code>690</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Daily quick scan running at 14:15</td>
+          <td style="text-align: left"><code>daily_scan_configuration &gt; time_of_day</code></td>
+          <td style="text-align: left"><code>855</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">No regular daily scan</td>
+          <td style="text-align: left"><code>daily_scan_configuration &gt; interval</code></td>
+          <td style="text-align: left"><code>0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Check for updates before scan is enabled</td>
+          <td style="text-align: left"><code>check_for_definitions_update</code></td>
+          <td style="text-align: left"><code>true</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>The other settings such as <code>low_priority</code>, <code>run_scan_when_idle</code>, <code>ignore_exclusions</code>, and <code>randomize_scan_start_time</code> in the profile were set with default values within the PowerShell script; these can be adjusted based on your needs by configuring the parameters when running the script.</p>
 

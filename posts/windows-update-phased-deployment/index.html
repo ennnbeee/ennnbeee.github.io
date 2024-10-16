@@ -1244,45 +1244,45 @@
 <p>Taking the Update Rings above, we should ensure that the end result of deferral, deadlines, and grace periods is that that there is no crossover between the timings. What I mean is that you don&rsquo;t want to discover an issue with devices in the Pilot Ring after the Initial Production Ring has already started deploying updates, this sounds like a nightmare.</p>
 <p>So we can use settings similar to those in the below table to ensure that one phase doesn&rsquo;t start until the previous has completed.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Update Ring</th>
-<th style="text-align:left">Deferral</th>
-<th style="text-align:left">Deadline</th>
-<th style="text-align:left">Grace Period</th>
-<th style="text-align:left">Updates Installed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Testing Ring</td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left"><code>0 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot Ring</td>
-<td style="text-align:left"><code>2 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left"><code>4 days</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production Ring</td>
-<td style="text-align:left"><code>6 days</code></td>
-<td style="text-align:left"><code>2 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left"><code>9 days</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production Ring</td>
-<td style="text-align:left"><code>10 days</code></td>
-<td style="text-align:left"><code>2 days</code></td>
-<td style="text-align:left"><code>1 day</code></td>
-<td style="text-align:left"><code>13 days</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Update Ring</th>
+          <th style="text-align: left">Deferral</th>
+          <th style="text-align: left">Deadline</th>
+          <th style="text-align: left">Grace Period</th>
+          <th style="text-align: left">Updates Installed</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Testing Ring</td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left"><code>0 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot Ring</td>
+          <td style="text-align: left"><code>2 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left"><code>4 days</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production Ring</td>
+          <td style="text-align: left"><code>6 days</code></td>
+          <td style="text-align: left"><code>2 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left"><code>9 days</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production Ring</td>
+          <td style="text-align: left"><code>10 days</code></td>
+          <td style="text-align: left"><code>2 days</code></td>
+          <td style="text-align: left"><code>1 day</code></td>
+          <td style="text-align: left"><code>13 days</code></td>
+      </tr>
+  </tbody>
 </table>
 
   
@@ -1478,45 +1478,45 @@
 <p>Well for the final ring, we need to cover all remaining Windows corporate owned devices, so we can use the built-in &lsquo;All Devices&rsquo; group and a Device Filter that only pulls back corporate owned devices, so something like <code>(device.deviceOwnership -eq &quot;Corporate&quot;)</code>.</p>
 <p>Now we can start assigning, but we need to make sure that there is no conflict with the profiles, so we&rsquo;ll make use of both Include and Exclude assignment targets, detailed in the table below.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Update Ring</th>
-<th style="text-align:left">Include Group</th>
-<th style="text-align:left">Filter</th>
-<th style="text-align:left">Mode</th>
-<th style="text-align:left">Exclude Groups</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Testing Ring</td>
-<td style="text-align:left"><code>Windows Updates Testing</code></td>
-<td style="text-align:left">n/a</td>
-<td style="text-align:left">n/a</td>
-<td style="text-align:left">n/a</td>
-</tr>
-<tr>
-<td style="text-align:left">Pilot Ring</td>
-<td style="text-align:left"><code>Windows Updates Pilot</code></td>
-<td style="text-align:left">n/a</td>
-<td style="text-align:left">n/a</td>
-<td style="text-align:left"><code>Windows Updates Testing</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Initial Production Ring</td>
-<td style="text-align:left"><code>Windows Updates Initial Production</code></td>
-<td style="text-align:left">n/a</td>
-<td style="text-align:left">n/a</td>
-<td style="text-align:left"><code>Windows Updates Testing</code>, <code>Windows Updates Pilot</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Final Production Ring</td>
-<td style="text-align:left"><code>All Devices</code></td>
-<td style="text-align:left"><code>Corporate Windows</code></td>
-<td style="text-align:left"><code>Include</code></td>
-<td style="text-align:left"><code>Windows Updates Testing</code>, <code>Windows Updates Pilot</code>, <code>Windows Updates Initial Production</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Update Ring</th>
+          <th style="text-align: left">Include Group</th>
+          <th style="text-align: left">Filter</th>
+          <th style="text-align: left">Mode</th>
+          <th style="text-align: left">Exclude Groups</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Testing Ring</td>
+          <td style="text-align: left"><code>Windows Updates Testing</code></td>
+          <td style="text-align: left">n/a</td>
+          <td style="text-align: left">n/a</td>
+          <td style="text-align: left">n/a</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pilot Ring</td>
+          <td style="text-align: left"><code>Windows Updates Pilot</code></td>
+          <td style="text-align: left">n/a</td>
+          <td style="text-align: left">n/a</td>
+          <td style="text-align: left"><code>Windows Updates Testing</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Initial Production Ring</td>
+          <td style="text-align: left"><code>Windows Updates Initial Production</code></td>
+          <td style="text-align: left">n/a</td>
+          <td style="text-align: left">n/a</td>
+          <td style="text-align: left"><code>Windows Updates Testing</code>, <code>Windows Updates Pilot</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Final Production Ring</td>
+          <td style="text-align: left"><code>All Devices</code></td>
+          <td style="text-align: left"><code>Corporate Windows</code></td>
+          <td style="text-align: left"><code>Include</code></td>
+          <td style="text-align: left"><code>Windows Updates Testing</code>, <code>Windows Updates Pilot</code>, <code>Windows Updates Initial Production</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Once you&rsquo;ve assigned the Update Rings and confirmed that devices are receiving the correct one, you&rsquo;re good to go. Simple really.</p>
 

@@ -1435,20 +1435,20 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Administrative Templates &gt; MSS (Legacy)</td>
-<td style="text-align:left">MSS: (AutoAdminLogon) Enable Automatic Logon (not recommended)</td>
-<td style="text-align:left"><code>Disabled</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Administrative Templates &gt; MSS (Legacy)</td>
+          <td style="text-align: left">MSS: (AutoAdminLogon) Enable Automatic Logon (not recommended)</td>
+          <td style="text-align: left"><code>Disabled</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>The above configuration, will bin out the <a href="https://learn.microsoft.com/en-us/autopilot/enrollment-status" target="_blank">Enrolment Status Page</a>, reboot, and leave you with a Windows Autopilot device at a logon screen with the <strong>defaultuser0</strong> being your only option for sign in, and pretty much nothing from Microsoft Intune applied to it:</p>
 <p>
@@ -1733,25 +1733,25 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Local Policies Security Options</td>
-<td style="text-align:left">Interactive Logon Message Text For Users Attempting To Log On</td>
-<td style="text-align:left"><code>Configured</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Local Policies Security Options</td>
-<td style="text-align:left">Interactive Logon Message Title For Users Attempting To Log On</td>
-<td style="text-align:left"><code>Configured</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Local Policies Security Options</td>
+          <td style="text-align: left">Interactive Logon Message Text For Users Attempting To Log On</td>
+          <td style="text-align: left"><code>Configured</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Local Policies Security Options</td>
+          <td style="text-align: left">Interactive Logon Message Title For Users Attempting To Log On</td>
+          <td style="text-align: left"><code>Configured</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>I know a logon message is important, and is included in other security baselines and not just for Windows devices either, but come on now, do we really need this?</p>
 <p>Well yes if you want to stick with the CIS benchmark.</p>
@@ -1777,25 +1777,25 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Local Policies Security Options</td>
-<td style="text-align:left">Interactive Logon Message Text For Users Attempting To Log On</td>
-<td style="text-align:left"><code>Configured</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Local Policies Security Options</td>
-<td style="text-align:left">Interactive Logon Message Title For Users Attempting To Log On</td>
-<td style="text-align:left"><code>Configured</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Local Policies Security Options</td>
+          <td style="text-align: left">Interactive Logon Message Text For Users Attempting To Log On</td>
+          <td style="text-align: left"><code>Configured</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Local Policies Security Options</td>
+          <td style="text-align: left">Interactive Logon Message Title For Users Attempting To Log On</td>
+          <td style="text-align: left"><code>Configured</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Don&rsquo;t forget to actually configure these settings, unlike in the CIS profiles where they&rsquo;re just set to <strong>Test test test</strong> 😂:</p>
 <p>
@@ -1876,35 +1876,35 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Device Guard</td>
-<td style="text-align:left">Configure System Guard Launch</td>
-<td style="text-align:left"><code>Unmanaged Enables Secure Launch if supported by hardware</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Guard</td>
-<td style="text-align:left">Credential Guard</td>
-<td style="text-align:left"><code>Configured</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Guard</td>
-<td style="text-align:left">Enable Virtualization Based Security</td>
-<td style="text-align:left"><code>enable virtualization based security.</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Guard</td>
-<td style="text-align:left">Require Platform Security Features</td>
-<td style="text-align:left"><code>Turns on VBS with Secure Boot.</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Device Guard</td>
+          <td style="text-align: left">Configure System Guard Launch</td>
+          <td style="text-align: left"><code>Unmanaged Enables Secure Launch if supported by hardware</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Guard</td>
+          <td style="text-align: left">Credential Guard</td>
+          <td style="text-align: left"><code>Configured</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Guard</td>
+          <td style="text-align: left">Enable Virtualization Based Security</td>
+          <td style="text-align: left"><code>enable virtualization based security.</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Guard</td>
+          <td style="text-align: left">Require Platform Security Features</td>
+          <td style="text-align: left"><code>Turns on VBS with Secure Boot.</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Yeah it&rsquo;s those ones, that are specifically <a href="https://learn.microsoft.com/en-us/autopilot/policy-conflicts#:~:text=Enable%20virtualization%20based%20security" target="_blank">called out</a> to cause device restarts.</p>
 <blockquote>
@@ -1946,20 +1946,20 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Administrative Templates &gt; System &gt; Logon</td>
-<td style="text-align:left">Do not display network selection UI</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Administrative Templates &gt; System &gt; Logon</td>
+          <td style="text-align: left">Do not display network selection UI</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>With a user deploying their own device, they&rsquo;re asked to connect to a wireless network (who has network cables in their own house? Jonathan apparently 😅) before starting Windows Autopilot, so this network will now be available at logon, and no need to select a new one.</p>
 <p>With pre-provisioned deployments, only the network that was connected to during deployment, and/or wireless or wired networks deployed to the device from Microsoft Intune are available to connect to from the logon screen.</p>
@@ -1999,20 +1999,20 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Administrative Templates &gt; System &gt; Logon</td>
-<td style="text-align:left">Do not display network selection UI</td>
-<td style="text-align:left"><code>Disabled</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Administrative Templates &gt; System &gt; Logon</td>
+          <td style="text-align: left">Do not display network selection UI</td>
+          <td style="text-align: left"><code>Disabled</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Then assign it to your corporate devices, excluding Dynamic Security Groups containing Windows Autopilot Devices where their profile allows the use of pre-provisioning as in the <a href="/posts/windows-cis-patching-gaps-part2/#interactive-logon-messages">Interactive Logon Messages</a> section.</p>
 <p>This will enable these devices, and these only, to select a new network not previously connected to, before logging onto their device, which if they&rsquo;ve been deployed somewhere other than the current location, means they can actually sign in 😆.</p>
@@ -2082,30 +2082,30 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Windows Hello For Business</td>
-<td style="text-align:left">Minimum PIN Length</td>
-<td style="text-align:left"><code>6</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Windows Hello For Business</td>
-<td style="text-align:left">Require Security Device</td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Windows Hello For Business</td>
-<td style="text-align:left">Facial Features Use Enhanced Anti Spoofing</td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Windows Hello For Business</td>
+          <td style="text-align: left">Minimum PIN Length</td>
+          <td style="text-align: left"><code>6</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows Hello For Business</td>
+          <td style="text-align: left">Require Security Device</td>
+          <td style="text-align: left"><code>true</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Windows Hello For Business</td>
+          <td style="text-align: left">Facial Features Use Enhanced Anti Spoofing</td>
+          <td style="text-align: left"><code>true</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>You haven&rsquo;t configured additional settings somewhere else that will impact the use of Windows Hello have you CIS?</p>
 <p>
@@ -2143,20 +2143,20 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Administrative Templates &gt; System &gt; Logon</td>
-<td style="text-align:left">Turn on convenience PIN sign-in</td>
-<td style="text-align:left"><code>Disabled</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Administrative Templates &gt; System &gt; Logon</td>
+          <td style="text-align: left">Turn on convenience PIN sign-in</td>
+          <td style="text-align: left"><code>Disabled</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>As pointed out in the comments, this isn&rsquo;t strictly true; although <strong>Windows Hello</strong> and <strong>Windows Hello for Business</strong> share the same &ldquo;Windows Hello&rdquo; family name, they aren&rsquo;t actually related, sort of like a <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/#the-difference-between-windows-hello-and-windows-hello-for-business" target="_blank">step-brother</a> 👀 setup.</p>
 <p>So although the above setting will stop a user from setting up a PIN in the more traditional sense, it will not stop the Windows Hello for Business configuration from applying.</p>
@@ -2196,45 +2196,45 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Device Lock</td>
-<td style="text-align:left">Device Password Enabled</td>
-<td style="text-align:left"><code>Enabled</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Lock</td>
-<td style="text-align:left">Alphanumeric Device Password Required</td>
-<td style="text-align:left"><code>Password, Numeric PIN, or Alphanumeric PIN required.</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Lock</td>
-<td style="text-align:left">Device Password Expiration</td>
-<td style="text-align:left"><code>365</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Lock</td>
-<td style="text-align:left">Device Password History</td>
-<td style="text-align:left"><code>24</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Lock</td>
-<td style="text-align:left">Min Device Password Length</td>
-<td style="text-align:left"><code>14</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Device Lock</td>
-<td style="text-align:left">Minimum Password Age</td>
-<td style="text-align:left"><code>1</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Device Lock</td>
+          <td style="text-align: left">Device Password Enabled</td>
+          <td style="text-align: left"><code>Enabled</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Lock</td>
+          <td style="text-align: left">Alphanumeric Device Password Required</td>
+          <td style="text-align: left"><code>Password, Numeric PIN, or Alphanumeric PIN required.</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Lock</td>
+          <td style="text-align: left">Device Password Expiration</td>
+          <td style="text-align: left"><code>365</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Lock</td>
+          <td style="text-align: left">Device Password History</td>
+          <td style="text-align: left"><code>24</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Lock</td>
+          <td style="text-align: left">Min Device Password Length</td>
+          <td style="text-align: left"><code>14</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device Lock</td>
+          <td style="text-align: left">Minimum Password Age</td>
+          <td style="text-align: left"><code>1</code></td>
+      </tr>
+  </tbody>
 </table>
 
   
@@ -2288,20 +2288,20 @@
 </span>
 </div>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Category</th>
-<th style="text-align:left">Setting</th>
-<th style="text-align:left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Windows Hello For Business</td>
-<td style="text-align:left">Use Passport For Work (User)</td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Windows Hello For Business</td>
+          <td style="text-align: left">Use Passport For Work (User)</td>
+          <td style="text-align: left"><code>true</code></td>
+      </tr>
+  </tbody>
 </table>
 
   

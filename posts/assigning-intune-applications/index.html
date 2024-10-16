@@ -1327,26 +1327,26 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>We&rsquo;ve built JSON data in PowerShell before, so this one isn&rsquo;t any different, we do however need to cater for Installation Intents, Assignment Groups, Device Filters, and Device Filter States. These can be broken down as below, with the ones we actually care about in <strong>bold</strong>.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:left">Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Installation Intents</td>
-<td style="text-align:left"><strong>Required</strong>, <strong>Available for Enrolled Devices</strong>, Available for Un-enrolled Devices, Uninstall</td>
-</tr>
-<tr>
-<td style="text-align:left">Assignment Groups</td>
-<td style="text-align:left"><strong>All Users</strong>, <strong>All Devices</strong>, <strong>Groups</strong></td>
-</tr>
-<tr>
-<td style="text-align:left">Filters States</td>
-<td style="text-align:left"><strong>Include</strong>, <strong>Exclude</strong></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Installation Intents</td>
+          <td style="text-align: left"><strong>Required</strong>, <strong>Available for Enrolled Devices</strong>, Available for Un-enrolled Devices, Uninstall</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Assignment Groups</td>
+          <td style="text-align: left"><strong>All Users</strong>, <strong>All Devices</strong>, <strong>Groups</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Filters States</td>
+          <td style="text-align: left"><strong>Include</strong>, <strong>Exclude</strong></td>
+      </tr>
+  </tbody>
 </table>
 <p>We need to allow for the ability to assign Mobile Apps to all permutations of the above, whether this is a Required installation to All Devices, including a Device Filter, or an Available installation to a Group of Users. You get the picture.</p>
 
@@ -1660,58 +1660,58 @@
 </h3>
 <p>I&rsquo;ve niced myself here and given options for the application of the function, covering all our requirements for assignment. A break down of the parameters can be found below:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Description</th>
-<th style="text-align:left">Required</th>
-<th style="text-align:left">Data</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>Id</code></td>
-<td style="text-align:left">The Id of the Mobile App, obtained via <code>Get-MobileApps</code></td>
-<td style="text-align:left">True</td>
-<td style="text-align:left">String</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>TargetGroupId</code></td>
-<td style="text-align:left">The Id of a Group if assigning to a Group obtained via <code>Get-MDMGroup</code></td>
-<td style="text-align:left">False</td>
-<td style="text-align:left">String</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>InstallIntent</code></td>
-<td style="text-align:left">Whether the Assignment is set as Available or Required</td>
-<td style="text-align:left">True</td>
-<td style="text-align:left">Available/Required</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>FilterID</code></td>
-<td style="text-align:left">The ID of a Device Filter if assigning using Device Filters obtained via <code>Get-DeviceFilter</code></td>
-<td style="text-align:left">False</td>
-<td style="text-align:left">String</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>FilterMode</code></td>
-<td style="text-align:left">The Filter mode if assigning using Device Filters</td>
-<td style="text-align:left">False</td>
-<td style="text-align:left">Include/Exclude</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>All</code></td>
-<td style="text-align:left">Used if assigning to the in-built &lsquo;All Users&rsquo; or &lsquo;All Devices&rsquo; groups</td>
-<td style="text-align:left">False</td>
-<td style="text-align:left">Devices/Users</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>Action</code></td>
-<td style="text-align:left">Whether to Add to existing Assignments, or to Replace them</td>
-<td style="text-align:left">True</td>
-<td style="text-align:left">Add/Replace</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Parameter</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Required</th>
+          <th style="text-align: left">Data</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>Id</code></td>
+          <td style="text-align: left">The Id of the Mobile App, obtained via <code>Get-MobileApps</code></td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">String</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TargetGroupId</code></td>
+          <td style="text-align: left">The Id of a Group if assigning to a Group obtained via <code>Get-MDMGroup</code></td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">String</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>InstallIntent</code></td>
+          <td style="text-align: left">Whether the Assignment is set as Available or Required</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">Available/Required</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FilterID</code></td>
+          <td style="text-align: left">The ID of a Device Filter if assigning using Device Filters obtained via <code>Get-DeviceFilter</code></td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">String</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FilterMode</code></td>
+          <td style="text-align: left">The Filter mode if assigning using Device Filters</td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">Include/Exclude</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>All</code></td>
+          <td style="text-align: left">Used if assigning to the in-built &lsquo;All Users&rsquo; or &lsquo;All Devices&rsquo; groups</td>
+          <td style="text-align: left">False</td>
+          <td style="text-align: left">Devices/Users</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>Action</code></td>
+          <td style="text-align: left">Whether to Add to existing Assignments, or to Replace them</td>
+          <td style="text-align: left">True</td>
+          <td style="text-align: left">Add/Replace</td>
+      </tr>
+  </tbody>
 </table>
 
 

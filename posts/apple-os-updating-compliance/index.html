@@ -1288,40 +1288,40 @@
 <p>Now we all know where I stand on <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Device Filters</a> and they come to the rescue once again, as we need separate Compliance Policies and the ability to target these to the correct devices.</p>
 <p>We can create filters for each of the current supported (at time of writing) iOS/iPadOS and macOS operating systems:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Description</th>
-<th style="text-align:left">OS</th>
-<th style="text-align:left">Filter Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">All Corporate iOS 15 devices</td>
-<td style="text-align:left"><code>iOS</code></td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;15&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">All Corporate iOS 16 devices</td>
-<td style="text-align:left"><code>iOS</code></td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;16&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">All Corporate Big Sur devices</td>
-<td style="text-align:left"><code>macOS</code></td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;11&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">All Corporate Monterey devices</td>
-<td style="text-align:left"><code>macOS</code></td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;12&quot;)</code></td>
-</tr>
-<tr>
-<td style="text-align:left">All Corporate Ventura devices</td>
-<td style="text-align:left"><code>macOS</code></td>
-<td style="text-align:left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;13&quot;)</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">OS</th>
+          <th style="text-align: left">Filter Rule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">All Corporate iOS 15 devices</td>
+          <td style="text-align: left"><code>iOS</code></td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;15&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">All Corporate iOS 16 devices</td>
+          <td style="text-align: left"><code>iOS</code></td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;16&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">All Corporate Big Sur devices</td>
+          <td style="text-align: left"><code>macOS</code></td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;11&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">All Corporate Monterey devices</td>
+          <td style="text-align: left"><code>macOS</code></td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;12&quot;)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">All Corporate Ventura devices</td>
+          <td style="text-align: left"><code>macOS</code></td>
+          <td style="text-align: left"><code>(device.deviceOwnership -eq &quot;Corporate&quot;) and (device.osVersion -startsWith &quot;13&quot;)</code></td>
+      </tr>
+  </tbody>
 </table>
 <p>Using these we can now create a Compliance Policy for each Operating System version, assigning it to the <code>All Devices</code> or <code>All Users</code> groups and include the corresponding Device Filter.</p>
 
@@ -1340,40 +1340,40 @@
 <p>As the Apple build versions are unique, we don&rsquo;t need to add in the settings <code>Minimum OS version</code> and <code>Maximum OS version</code>, though they are both a useful visual aide, and I could do with referencing them when I come to write a script to update the Compliance Policy.</p>
 <p>So go ahead and create your Compliance Policies for each supported Operating System version, assigning them to the required group and filter:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">OS</th>
-<th style="text-align:left">Version</th>
-<th style="text-align:left">Minimum OS version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">iOS</td>
-<td style="text-align:left">iOS 15</td>
-<td style="text-align:left">15.0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">iOS</td>
-<td style="text-align:left">iOS 16</td>
-<td style="text-align:left">16.0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">macOS</td>
-<td style="text-align:left">Big Sur</td>
-<td style="text-align:left">11.0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">macOS</td>
-<td style="text-align:left">Monterey</td>
-<td style="text-align:left">12.0.0</td>
-</tr>
-<tr>
-<td style="text-align:left">macOS</td>
-<td style="text-align:left">Ventura</td>
-<td style="text-align:left">13.0.0</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">OS</th>
+          <th style="text-align: left">Version</th>
+          <th style="text-align: left">Minimum OS version</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">iOS</td>
+          <td style="text-align: left">iOS 15</td>
+          <td style="text-align: left">15.0.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">iOS</td>
+          <td style="text-align: left">iOS 16</td>
+          <td style="text-align: left">16.0.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">macOS</td>
+          <td style="text-align: left">Big Sur</td>
+          <td style="text-align: left">11.0.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">macOS</td>
+          <td style="text-align: left">Monterey</td>
+          <td style="text-align: left">12.0.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">macOS</td>
+          <td style="text-align: left">Ventura</td>
+          <td style="text-align: left">13.0.0</td>
+      </tr>
+  </tbody>
 </table>
 <p>With both the Compliance Policies and the Device Filters in place, now we can move onto how we update the Build Versions.</p>
 

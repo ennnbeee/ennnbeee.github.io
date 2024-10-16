@@ -1759,38 +1759,38 @@
 </h3>
 <p>Firstly is a translation of the risk state number to something useful, looking at the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#windows-feature-update-device-readiness-report" target="_blank">documentation</a> we can establish that the values captured translate to the below.</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Readiness status value</th>
-<th style="text-align:left">Report value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>0</code></td>
-<td style="text-align:left">Low risk</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>1</code></td>
-<td style="text-align:left">Medium risk</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>2</code></td>
-<td style="text-align:left">High risk</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>3</code></td>
-<td style="text-align:left">Replace device</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>4</code></td>
-<td style="text-align:left">Upgraded</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>5</code></td>
-<td style="text-align:left">Unknown</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Readiness status value</th>
+          <th style="text-align: left">Report value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>0</code></td>
+          <td style="text-align: left">Low risk</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>1</code></td>
+          <td style="text-align: left">Medium risk</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>2</code></td>
+          <td style="text-align: left">High risk</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>3</code></td>
+          <td style="text-align: left">Replace device</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>4</code></td>
+          <td style="text-align: left">Upgraded</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>5</code></td>
+          <td style="text-align: left">Unknown</td>
+      </tr>
+  </tbody>
 </table>
 <p>With this, we should have some foresight that whatever value we&rsquo;re assigning to each status value must be repeatable, so let&rsquo;s use a <code>switch</code> on the value in the <code>foreach</code> loop, and assign a string based on the risk state, and Feature Update version associated with that risk state. This <code>$riskState</code> variable can then be added into the <code>$reportArray</code> array.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$reportArray</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
