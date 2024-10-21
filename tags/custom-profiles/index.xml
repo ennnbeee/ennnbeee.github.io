@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 08 Oct 2024 15:14:25 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/custom-profiles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Oct 2024 11:13:46 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/custom-profiles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Converting AppLocker Policies to Intune Profiles</title>
+      <link>https://memv.ennbee.uk/posts/windows-applocker-intune/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-applocker-intune/</guid>
+      <description>We know that there is no native configuration for AppLocker in Intune, and we should be looking at App Control for Business already, but there is still a place for AppLocker, and I haven&amp;rsquo;t got time to manually do anything, so let&amp;rsquo;s use PowerShell to create out AppLocker policies from exported XML files.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-applocker-intune/featured.png" />
+    </item>
+    
     <item>
       <title>Scheduling macOS Defender Antivirus Scans in Intune</title>
       <link>https://memv.ennbee.uk/posts/macos-defender-scan-settings/</link>

@@ -7,7 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 08 Oct 2024 15:14:25 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Oct 2024 11:13:46 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AppLocker</title>
+      <link>https://memv.ennbee.uk/tags/applocker/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/applocker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Custom Profiles</title>
+      <link>https://memv.ennbee.uk/tags/custom-profiles/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Graph API</title>
+      <link>https://memv.ennbee.uk/tags/graph/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/graph/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://memv.ennbee.uk/tags/powershell/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://memv.ennbee.uk/tags/security/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/security/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Configuration</title>
       <link>https://memv.ennbee.uk/tags/configuration/</link>
@@ -19,41 +69,11 @@
     </item>
     
     <item>
-      <title>Custom Profiles</title>
-      <link>https://memv.ennbee.uk/tags/custom-profiles/</link>
-      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Jamf</title>
       <link>https://memv.ennbee.uk/tags/jamf/</link>
       <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/jamf/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>PowerShell</title>
-      <link>https://memv.ennbee.uk/tags/powershell/</link>
-      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://memv.ennbee.uk/tags/security/</link>
-      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/security/</guid>
       <description></description>
       
     </item>
@@ -214,16 +234,6 @@
       <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/device-enrolment/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Graph API</title>
-      <link>https://memv.ennbee.uk/tags/graph/</link>
-      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/graph/</guid>
       <description></description>
       
     </item>
@@ -454,16 +464,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/apple/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>AppLocker</title>
-      <link>https://memv.ennbee.uk/tags/applocker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/applocker/</guid>
       <description></description>
       
     </item>

@@ -7,23 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 08 Oct 2024 15:14:25 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Oct 2024 11:13:46 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Intune</title>
+      <link>https://memv.ennbee.uk/categories/intune/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/intune/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows 10 and later</title>
+      <link>https://memv.ennbee.uk/categories/windows/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/windows/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>macOS</title>
       <link>https://memv.ennbee.uk/categories/macos/</link>
       <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/macos/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/categories/intune/</link>
-      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/intune/</guid>
       <description></description>
       
     </item>
@@ -44,16 +54,6 @@
       <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/ios/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/categories/windows/</link>
-      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/windows/</guid>
       <description></description>
       
     </item>
