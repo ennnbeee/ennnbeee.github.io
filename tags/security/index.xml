@@ -9,7 +9,7 @@
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Tue, 08 Oct 2024 15:14:25 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Scheduling macOS Defender Antivirus Scans with PowerShell</title>
+      <title>Scheduling macOS Defender Antivirus Scans in Intune</title>
       <link>https://memv.ennbee.uk/posts/macos-defender-scan-settings/</link>
       <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
       
