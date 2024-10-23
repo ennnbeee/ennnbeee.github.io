@@ -105,7 +105,7 @@
     "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-applocker-intune\/",
     "author" : {
       "@type": "Person",
-      "name": ""
+      "name": "Nick Benton"
     },
     "copyrightYear": "2024",
     "dateCreated": "2024-10-22T11:13:46\u002b01:00",
@@ -2269,11 +2269,10 @@
 <p>So to run the script and create your AppLocker policy in Intune, you ping the following into a PowerShell prompt:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Convert-AppLockertoIntune</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;36019fe7-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-xmlPath</span> <span class="s1">&#39;C:\Source\github\mve-scripts\Intune\EndpointSecurity\AppLockerConversion\AppLockerRules-Audit.xml&#39;</span> <span class="n">-displayName</span> <span class="s1">&#39;WIN_COPE_AppLocker_Test&#39;</span> <span class="n">-grouping</span> <span class="s1">&#39;Testing&#39;</span> <span class="n">-enforcement</span> <span class="n">Enforce</span>
 </span></span></code></pre></div><p>You get the following, authenticating obviously:</p>
-<video controls preload="auto" width="100%"  playsinline class="html-video">
-    <source src="/posts/windows-applocker-intune/img/al-script.mp4" type="video/mp4">
-    <span></span>
-</video>
-
+<video controls preload="auto" width="800px"  playsinline class="html-video">
+        <source src="/posts/windows-applocker-intune/img/al-script.mp4" type="video/mp4">
+      <span></span>
+    </video>
 
 
 <h3 class="relative group">Validation 
