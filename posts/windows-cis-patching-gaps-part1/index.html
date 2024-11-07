@@ -120,7 +120,7 @@
     "keywords": ["security","cis","custom profiles","bitlocker","dma","settings catalog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2371"
+    "wordCount": "2405"
   }]
   </script>
 
@@ -1374,6 +1374,36 @@
           <p>With the release of the <a href="https://www.cisecurity.org/" target="_blank">CIS</a> (Center for Internet Security) <a href="https://www.cisecurity.org/benchmark/intune" target="_blank">Windows 11 Benchmark 3.0.1</a>, the corresponding release of the Microsoft Intune build kit, and my colleague <a href="https://www.linkedin.com/in/jonathan-fallis" target="_blank">Jonathan Fallis</a> covering the CIS <a href="https://www.everything365.online/2023/09/18/cis-microsoft-intune-for-windows-11-benchmark-in-settings-catalog-json/" target="_blank">community version</a> of the benchmark (and the limitations) on his <a href="https://deploymentshare.com/articles/bp-cis/" target="_blank">website</a>, we both thought it would be best to share our combined experience when working with the newly available CIS build kit; focussing on BitLocker security settings in the initial part of this series.</p>
 <p>Over the course of <del>three</del> four posts, we&rsquo;ll be aiming to find and fix any issues the build kit profiles create for Windows 11 cloud native devices, improve functionality using Microsoft Intune where we can, and add any missing configurations between the <a href="https://www.cisecurity.org/benchmark/intune" target="_blank">downloadable benchmark documents</a> and the build kit.</p>
 <p>Let&rsquo;s start with the obvious place.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >As Custom Profile settings are on their way out (see Message Centre MC822716 and this <a href="https://ourcloudnetwork.com/microsoft-to-start-blocking-custom-oma-uri-settings-in-intune/" target="_blank">post</a> by <a href="https://www.linkedin.com/in/danielbradley2/" target="_blank">Daniel Bradley</a>) this post has been updated, along with the exported profiles, to use Settings Catalog profiles.</span>
+</div>
+
 
 
 <h2 class="relative group">CIS Build Kits 
