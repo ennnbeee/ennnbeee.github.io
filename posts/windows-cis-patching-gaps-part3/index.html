@@ -120,7 +120,7 @@
     "keywords": ["security","cis","endpoint security","remediation","powershell","settings catalog","custom profiles"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4237"
+    "wordCount": "4297"
   }]
   </script>
 
@@ -1518,7 +1518,37 @@
     </span>        
     
 </h3>
-<p>These settings that exist in the benchmark document, can only, as of today, be added into Microsoft Intune using a <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/custom-settings-configure" target="_blank">Custom Profile</a> which should be pretty easy (foreshadowing).</p>
+<p><del>These settings that exist in the benchmark document, can only, as of today, be added into Microsoft Intune using a <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/custom-settings-configure" target="_blank">Custom Profile</a> which should be pretty easy (foreshadowing).</del></p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >This setting now exists within <strong>Settings Catalog</strong>, so we no longer need a Custom Profile.</span>
+</div>
+
 <p>
 
 
@@ -1532,7 +1562,7 @@
         />
         <figcaption>CIS Level 1 Miscellaneous settings document.</figcaption>
       </figure></p>
-<p>So we should create a new profile to capture the three CIS Level 1 settings detailed in the document with the below Custom Profile settings.</p>
+<p>So we should create a new profile to capture the three CIS Level 1 settings detailed in the document with the below Settings Catalog settings.</p>
 
 <div class="flex mt-2">
 <span
@@ -1556,30 +1586,26 @@
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Name</th>
-          <th style="text-align: left">OMA-URI</th>
-          <th style="text-align: left">Data Type</th>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
           <th style="text-align: left">Value</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-applicationmanagement#blocknonadminuserinstall" target="_blank">BlockNonAdminUserInstall</a></td>
-          <td style="text-align: left"><code>./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/BlockNonAdminUserInstall</code></td>
-          <td style="text-align: left">Integer</td>
-          <td style="text-align: left"><code>1</code></td>
+          <td style="text-align: left">Experience</td>
+          <td style="text-align: left">Allow Windows Consumer Features</td>
+          <td style="text-align: left"><code>Block</code></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-experience#allowwindowsconsumerfeatures" target="_blank">AllowWindowsConsumerFeatures</a></td>
-          <td style="text-align: left"><code>./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsConsumerFeatures</code></td>
-          <td style="text-align: left">Integer</td>
-          <td style="text-align: left"><code>0</code></td>
+          <td style="text-align: left">Microsoft App Store</td>
+          <td style="text-align: left">Block Non Admin User Install</td>
+          <td style="text-align: left"><code>Allow</code></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-wifi#allowautoconnecttowifisensehotspots" target="_blank">AllowAutoConnectToWiFiSenseHotspots</a></td>
-          <td style="text-align: left"><code>./Device/Vendor/MSFT/Policy/Config/Wifi/AllowAutoConnectToWiFiSenseHotspots</code></td>
-          <td style="text-align: left">Integer</td>
-          <td style="text-align: left"><code>0</code></td>
+          <td style="text-align: left">Wi-Fi Settings</td>
+          <td style="text-align: left">Allow Auto Connect To Wi Fi Sense Hotspots</td>
+          <td style="text-align: left"><code>Block</code></td>
       </tr>
   </tbody>
 </table>
@@ -1611,9 +1637,40 @@
   <span
     
       class="dark:text-neutral-300"
-    >Here&rsquo;s a Custom Profile for you, <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Configuration/CIS/Windows/L1" target="_blank">CIS (L1) Level 1 Misc - Windows 11 Intune 3.0.1</a>, exporting using the <a href="https://github.com/Micke-K/IntuneManagement" target="_blank">Intune Management</a> tool.</span>
+    >You can now import the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Configuration/CIS/Windows/L1" target="_blank">CIS (L1) Level 1 Misc - Windows 11 Intune 3.0.1</a> into your Microsoft Intune tenant instead of having to use a Custom profile.</span>
 </div>
 
+<p>For reference, the below are the legacy custom profiles settings.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">OMA-URI</th>
+          <th style="text-align: left">Data Type</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-applicationmanagement#blocknonadminuserinstall" target="_blank">BlockNonAdminUserInstall</a></td>
+          <td style="text-align: left"><code>./Device/Vendor/MSFT/Policy/Config/ApplicationManagement/BlockNonAdminUserInstall</code></td>
+          <td style="text-align: left">Integer</td>
+          <td style="text-align: left"><code>1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-experience#allowwindowsconsumerfeatures" target="_blank">AllowWindowsConsumerFeatures</a></td>
+          <td style="text-align: left"><code>./Device/Vendor/MSFT/Policy/Config/Experience/AllowWindowsConsumerFeatures</code></td>
+          <td style="text-align: left">Integer</td>
+          <td style="text-align: left"><code>0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-wifi#allowautoconnecttowifisensehotspots" target="_blank">AllowAutoConnectToWiFiSenseHotspots</a></td>
+          <td style="text-align: left"><code>./Device/Vendor/MSFT/Policy/Config/Wifi/AllowAutoConnectToWiFiSenseHotspots</code></td>
+          <td style="text-align: left">Integer</td>
+          <td style="text-align: left"><code>0</code></td>
+      </tr>
+  </tbody>
+</table>
 <p>Anyone spot a problem? I&rsquo;ll give you a minute.</p>
 <p>Now we can&rsquo;t blame CIS for the issues their recommended settings cause, as this one fully goes to Microsoft. Devices getting the setting <strong>BlockNonAdminUserInstall</strong> set to enabled, causes <a href="https://www.theregister.com/2024/06/19/problems_upgrading_win_11_pro/" target="_blank">issues with the Photos app</a> on the device for devices running the <a href="https://support.microsoft.com/en-gb/topic/april-9-2024-kb5036893-os-builds-22621-3447-and-22631-3447-a674a67b-85f5-4a40-8d74-5f8af8ead5bb" target="_blank">April 2024 patch</a>.</p>
 

@@ -120,7 +120,7 @@
     "keywords": ["security","cis","custom profiles","settings catalog","remediation","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2920"
+    "wordCount": "2970"
   }]
   </script>
 
@@ -1609,7 +1609,7 @@
     </span>        
     
 </h3>
-<p>As with CIS Level 1, there are some settings they couldn&rsquo;t shoehorn into a Settings Catalog policy, leaving us to create a new Custom Profile picking up the pieces.</p>
+<p>As with CIS Level 1, there <del>are</del> were some settings they couldn&rsquo;t shoehorn into a Settings Catalog policy, <del>leaving us to create a new Custom Profile picking up the pieces</del> allowing us now to create a Settings Catalog policies with the previously miscellaneous Custom profiles settings.</p>
 
 <div class="flex mt-2">
 <span
@@ -1630,6 +1630,69 @@
   </span>
 </span>
 </div>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Microsoft App Store</td>
+          <td style="text-align: left">Allow Shared User App Data</td>
+          <td style="text-align: left"><code>Block</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Notifications</td>
+          <td style="text-align: left">Disallow Cloud Notification</td>
+          <td style="text-align: left"><code>Allow</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Allow Location</td>
+          <td style="text-align: left"><code>Force Location Off.</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Disable Enterprise Auth Proxy</td>
+          <td style="text-align: left"><code>Enable</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >You can now import the <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Configuration/CIS/Windows/L2" target="_blank">CIS (L2) Level 2 Misc - Windows 11 Intune 3.0.1</a> into your Microsoft Intune tenant instead of having to use a Custom profile.</span>
+</div>
+
+<p>For reference the custom profiles contained the below settings:</p>
 <table>
   <thead>
       <tr>
@@ -1667,37 +1730,6 @@
   </tbody>
 </table>
 <p>We&rsquo;ll deal with the impact of these settings later on, for now just be happy we can create them in Microsoft Intune.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >A Custom profile for you to import, <a href="https://github.com/ennnbeee/mve-scripts/tree/main/Intune/Configuration/CIS/Windows/L2" target="_blank">CIS (L2) Level 1 Misc - Windows 11 Intune 3.0.1</a>, these were exported using <a href="https://github.com/Micke-K/IntuneManagement" target="_blank">Intune Management</a> so you&rsquo;ll need to import them using the same tool.</span>
-</div>
-
 
 
 <h2 class="relative group">CIS Level 2 Settings 

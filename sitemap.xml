@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://memv.ennbee.uk/posts/windows-applocker-intune/</loc>
-    <lastmod>2024-10-22T11:13:46+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://memv.ennbee.uk/</loc>
-    <lastmod>2024-10-22T11:13:46+01:00</lastmod>
+    <lastmod>2025-01-05T17:06:20+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://memv.ennbee.uk/posts/</loc>
+    <lastmod>2025-01-05T17:06:20+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://memv.ennbee.uk/posts/windows-applocker-intune/</loc>
     <lastmod>2024-10-22T11:13:46+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
