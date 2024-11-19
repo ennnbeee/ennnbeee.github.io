@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f86f937d29d1ddb2537e25814a1ffc0b10780a2013643c69a186c009f9654050cce36ef1fd4f02cadb1184a421d6c1e68256c55f3a86a74719683c087682e98a.css"
-    integrity="sha512-&#43;G&#43;TfSnR3bJTfiWBSh/8CxB4CiATZDxpoYbACfllQFDM427x/U8CytsRhKQh1sHmglbFXzqGp0cZaDwIdoLpig==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.57f2dfa2200987381e878e049a45a5c25b6fc55952bd2f4480444211e4b0dda282fdcc2745176527d2118c7cec7baf279840339cf94c8c161dff4b3e83fb2c3e.css"
+    integrity="sha512-V/LfoiAJhzgeh44EmkWlwltvxVlSvS9EgERCEeSw3aKC/cwnRRdlJ9IRjHzse68nmEAznPlMjBYd/0s&#43;g/ssPg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.c0cef16810371b941395136ccb2eafe40a48addc95809feade6ac669e5cb276c86ffb755cf434a980188e8005aae6536e268b5906003d9fbf92313dd1eb9597e.js"
-    integrity="sha512-wM7xaBA3G5QTlRNsyy6v5ApIrdyVgJ/q3mrGaeXLJ2yG/7dVz0NKmAGI6ABarmU24mi1kGAD2fv5IxPdHrlZfg==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.cab249ec2f87c8efdec1594e650838fcb9837dff59bf06c71a79fe5e0a7a0f19fcca05399fe094d181e68eb57354ed0b2328cfe53accab2b24257f0beda841a9.js"
+    integrity="sha512-yrJJ7C&#43;HyO/ewVlOZQg4/LmDff9ZvwbHGnn&#43;Xgp6Dxn8ygU5n&#43;CU0YHmjrVzVO0LIyjP5TrMqyskJX8L7ahBqQ==" data-copy="" data-copied=""></script>
   
   
   <script src="/js/zoom.min.js"></script>
@@ -115,7 +115,7 @@
     "keywords": ["updates","remediation","powershell","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1296"
+    "wordCount": "1316"
   }]
   </script>
 
@@ -571,7 +571,7 @@
 
                      
   <li class="mt-1">
-    <a href="" class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
             Topics
@@ -1219,7 +1219,7 @@
         <img
           class="my-0 rounded-md"
           loading="lazy"
-          src="https://memv.ennbee.uk/posts/windows-feature-updates-assessment/img/fu-report_hu13053881903137166645.png"
+          src="https://memv.ennbee.uk/posts/windows-feature-updates-assessment/img/fu-report_hu3217480758713920127.png"
           alt="Feature Update Readiness Report"
         />
         <figcaption>Windows 11 Feature Update Readiness report.</figcaption>
@@ -1280,9 +1280,10 @@
     </span>        
     
 </h3>
-<p>As I&rsquo;m only interested in the latest and greatest Windows 11 Feature Update compatibility data, we only really need to check on the following registry keys located in:</p>
+<p>As I&rsquo;m only interested in the latest and greatest Windows 11 Feature Update compatibility data, we only really need to check on the keys located in:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\CompatMarkers\
-</span></span></code></pre></div><table>
+</span></span></code></pre></div><p>Specifically these ones:</p>
+<table>
   <thead>
       <tr>
           <th style="text-align: left">Registry Key</th>
@@ -1306,7 +1307,11 @@
 </span></span><span class="line"><span class="cl"><span class="c">#$featureUpdate = &#39;NI23H2&#39; # Windows 11 23H2</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$registry</span> <span class="p">=</span> <span class="s2">&#34;HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\CompatMarkers\</span><span class="nv">$featureUpdate</span><span class="s2">&#34;</span>
 </span></span></code></pre></div><p>If the registry key does exist, we can then query the value of the string <strong>TimestampEpochString</strong> which is populated by the App Compatibility tool when it was last run successfully, and compare it to the date and time when the script runs, minus a set number of hours (in <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Epoch</a> format), configured using the <code>$schedule</code> variable.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$lastRun</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="n">TimestampEpochString</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$featureUpdate</span> <span class="p">=</span> <span class="s1">&#39;GE24H2&#39;</span> <span class="c"># Windows 11 24H2</span>
+</span></span><span class="line"><span class="cl"><span class="c">#$featureUpdate = &#39;NI23H2&#39; # Windows 11 23H2</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$registry</span> <span class="p">=</span> <span class="s2">&#34;HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\CompatMarkers\</span><span class="nv">$featureUpdate</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$lastRun</span> <span class="p">=</span> <span class="nb">Get-ItemPropertyValue</span> <span class="n">-Path</span> <span class="nv">$registry</span> <span class="n">-Name</span> <span class="n">TimestampEpochString</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$schedule</span> <span class="p">=</span> <span class="mf">24</span> <span class="c"># update based on the remediation schedule</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$nowLessHours</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="vm">$</span><span class="p">((</span><span class="nb">Get-Date</span><span class="p">).</span><span class="py">AddHours</span><span class="p">(-</span><span class="nv">$schedule</span><span class="p">))</span> <span class="n">-UFormat</span> <span class="p">+</span><span class="k">%</span><span class="n">s</span>
 </span></span><span class="line"><span class="cl">
@@ -1345,7 +1350,7 @@
     >Depending on your Remediation script schedule will depend on the value of this variable, you don&rsquo;t want remediations running indefinitely.</span>
 </div>
 
-<p>If you&rsquo;re running this every seven days for example, you want to set <code>$schedule = 168</code>, so the remediation will only run if the App Compatibility tool hasn&rsquo;t run in the last seven days (7 x 24 =168), more <a href="https://www.youtube.com/watch?v=M3ujv8xdK2w" target="_blank">quick maths</a>.</p>
+<p>If you&rsquo;re running this every seven days for example, you want to set <code>$schedule = 168</code>, so the remediation will only run if the App Compatibility tool hasn&rsquo;t run in the last seven days (7 x 24 = 168), more <a href="https://www.youtube.com/watch?v=M3ujv8xdK2w" target="_blank">quick maths</a>.</p>
 <p>
 
 
