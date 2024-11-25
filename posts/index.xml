@@ -9,16 +9,6 @@
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Fri, 31 Jan 2025 11:12:55 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
-      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</link>
-      <pubDate>Tue, 26 Nov 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</guid>
-      <description>An unexpected update to the Windows 11 Feature Update deployment series, looking at how to tag users instead of devices, and an improved way to get the readiness report data, and other performance improvements. What a day.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/featured.jpg" />
-    </item>
-    
-    <item>
       <title>Forcing Windows 11 Feature Update Readiness Assessments</title>
       <link>https://memv.ennbee.uk/posts/windows-feature-updates-assessment/</link>
       <pubDate>Tue, 19 Nov 2024 17:06:20 +0000</pubDate>
