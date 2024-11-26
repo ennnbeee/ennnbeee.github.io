@@ -9,6 +9,16 @@
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Tue, 19 Nov 2024 17:06:20 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Feature Updates</title>
+      <link>https://memv.ennbee.uk/tags/feature-updates/</link>
+      <pubDate>Tue, 19 Nov 2024 17:06:20 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/feature-updates/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>PowerShell</title>
       <link>https://memv.ennbee.uk/tags/powershell/</link>
       <pubDate>Tue, 19 Nov 2024 17:06:20 +0000</pubDate>
@@ -64,6 +74,16 @@
       <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Endpoint Security</title>
+      <link>https://memv.ennbee.uk/tags/endpoint-security/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/endpoint-security/</guid>
       <description></description>
       
     </item>
@@ -154,16 +174,6 @@
       <pubDate>Fri, 26 Jul 2024 12:54:24 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/automation/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Endpoint Security</title>
-      <link>https://memv.ennbee.uk/tags/endpoint-security/</link>
-      <pubDate>Mon, 22 Jul 2024 21:14:28 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/endpoint-security/</guid>
       <description></description>
       
     </item>
@@ -484,6 +494,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/tags/oemconfig/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Resource Access</title>
+      <link>https://memv.ennbee.uk/tags/resource-access/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/tags/resource-access/</guid>
       <description></description>
       
     </item>

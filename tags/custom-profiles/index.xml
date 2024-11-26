@@ -79,6 +79,16 @@
     </item>
     
     <item>
+      <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link>
+      <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
+      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/featured.png" />
+    </item>
+    
+    <item>
       <title>macOS National Cyber Security Centre Security Settings in Intune</title>
       <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>

@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 22 Jul 2024 21:14:28 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/endpoint-security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Oct 2024 11:13:46 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/endpoint-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Converting AppLocker Policies to Intune Profiles</title>
+      <link>https://memv.ennbee.uk/posts/windows-applocker-intune/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-applocker-intune/</guid>
+      <description>We know that there is no native configuration for AppLocker in Intune, and we should be looking at App Control for Business already, but there is still a place for AppLocker, and I haven&amp;rsquo;t got time to manually do anything, so let&amp;rsquo;s use PowerShell to create out AppLocker policies from exported XML files.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-applocker-intune/featured.png" />
+    </item>
+    
+    <item>
+      <title>Scheduling Defender for macOS Antivirus Scans in Intune</title>
+      <link>https://memv.ennbee.uk/posts/macos-defender-scan-settings/</link>
+      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-defender-scan-settings/</guid>
+      <description>You&amp;rsquo;d think creating Defender antivirus scan schedules should be pretty easy, even if the devices you&amp;rsquo;re working with are running macOS. Why are we having to create mobileconfig files for this in Microsoft Intune? Surely we can make this a little better?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-defender-scan-settings/featured.png" />
+    </item>
+    
     <item>
       <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
       <link>https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/</link>
@@ -29,6 +49,16 @@
     </item>
     
     <item>
+      <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
+      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</link>
+      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</guid>
+      <description>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/featured.png" />
+    </item>
+    
+    <item>
       <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
       <link>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</link>
       <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
@@ -36,6 +66,16 @@
       <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
       <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Automatically Resizing the WinRE Partition for Windows Update KB5034441</title>
+      <link>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</link>
+      <pubDate>Wed, 31 Jan 2024 20:54:12 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</guid>
+      <description>When Microsoft releases an update that won&amp;rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/featured.jpg" />
     </item>
     
     <item>
@@ -49,6 +89,16 @@
     </item>
     
     <item>
+      <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link>
+      <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
+      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/featured.png" />
+    </item>
+    
+    <item>
       <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
       <link>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</link>
       <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
@@ -56,6 +106,16 @@
       <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
       <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>macOS National Cyber Security Centre Security Settings in Intune</title>
+      <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
+      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
+      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg" />
     </item>
     
   </channel>
