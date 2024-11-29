@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.7bc0f74ad613e540578d3676aafe60e8878b514f95b897830dad1894033e2dc1feed7d6d8941bcfa251051a88b6ca9b17366911bf43a82089ff9050000643c00.css"
-    integrity="sha512-e8D3StYT5UBXjTZ2qv5g6IeLUU&#43;VuJeDDa0YlAM&#43;LcH&#43;7X1tiUG8&#43;iUQUaiLbKmxc2aRG/Q6ggif&#43;QUAAGQ8AA==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5fa9e6acaa92643a19a5f8c9fd64677e9b1aaf2781c61cb32a133133fc454bab6e862cb35a5c9ae2f6ec6175a478bd3f1d254b57c3e84316cee98b49cf93259a.css"
+    integrity="sha512-X6nmrKqSZDoZpfjJ/WRnfpsaryeBxhyzKhMxM/xFS6tuhiyzWlya4vbsYXWkeL0/HSVLV8PoQxbO6YtJz5Mlmg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.94423161281b8fd1ac69e1efd2cdbbd6c0ab06d7e5e3bc444b9784e8c3050834518955d2a9ce0479ece7055f350b513d5facc34cbb9fb4ad4d02c7733ba643c1.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.cab249ec2f87c8efdec1594e650838fcb9837dff59bf06c71a79fe5e0a7a0f19fcca05399fe094d181e68eb57354ed0b2328cfe53accab2b24257f0beda841a9.js"
-    integrity="sha512-yrJJ7C&#43;HyO/ewVlOZQg4/LmDff9ZvwbHGnn&#43;Xgp6Dxn8ygU5n&#43;CU0YHmjrVzVO0LIyjP5TrMqyskJX8L7ahBqQ==" data-copy="" data-copied=""></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.c0cef16810371b941395136ccb2eafe40a48addc95809feade6ac669e5cb276c86ffb755cf434a980188e8005aae6536e268b5906003d9fbf92313dd1eb9597e.js"
+    integrity="sha512-wM7xaBA3G5QTlRNsyy6v5ApIrdyVgJ/q3mrGaeXLJ2yG/7dVz0NKmAGI6ABarmU24mi1kGAD2fv5IxPdHrlZfg==" data-copy="" data-copied=""></script>
   
   
   <script src="/js/zoom.min.js"></script>
@@ -115,7 +115,7 @@
     "keywords": ["compliance","security","antivirus","powershell"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1484"
+    "wordCount": "1554"
   }]
   </script>
 
@@ -596,7 +596,7 @@
 
                      
   <li class="mt-1">
-    <a class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="" class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
             Topics
@@ -1295,8 +1295,10 @@
     </span>        
     
 </h3>
-<p>We need a way to get information about the expected active Antivirus product, in this instance &lsquo;Sophos Antivirus&rsquo;, installed on device; to do this we can use the WMI Class <code>AntiVirusProduct</code> within the <code>root\SecurityCenter2</code> namespace.</p>
+<p>We need a way to get information about the expected active Antivirus product, in this instance &lsquo;Sophos Antivirus&rsquo;, installed on device; to do this we can use the WMI Class <code>AntiVirusProduct</code> within the <code>root\SecurityCenter2</code> namespace using either:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s2">&#34;root\SecurityCenter2&#34;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span>
+</span></span></code></pre></div><p>Or</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;root\SecurityCenter2&#34;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span>
 </span></span></code></pre></div><p>This will pull back details about the Antivirus software registered by Windows, as you can see from the below, it will pull back <em>all</em>  products registered, including Windows Defender.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">__GENUS                  : 2
 </span></span><span class="line"><span class="cl">__CLASS                  : AntiVirusProduct
@@ -1307,7 +1309,7 @@
 </span></span><span class="line"><span class="cl">__DERIVATION             : {}
 </span></span><span class="line"><span class="cl">__SERVER                 : LT01540
 </span></span><span class="line"><span class="cl">__NAMESPACE              : ROOT\SecurityCenter2
-</span></span><span class="line"><span class="cl">__PATH                   : \\LT01540\ROOT\SecurityCenter2:AntiVirusProduct.instanceGuid=&#34;{8E0623B8-CF1C-DFFE-CEA3-AA41BDA4B8EE}&#34;
+</span></span><span class="line"><span class="cl">__PATH                   : \\COMPUTERNAME\ROOT\SecurityCenter2:AntiVirusProduct.instanceGuid=&#34;{8E0623B8-CF1C-DFFE-CEA3-AA41BDA4B8EE}&#34;
 </span></span><span class="line hl"><span class="cl">displayName              : Sophos Anti-Virus
 </span></span><span class="line"><span class="cl">instanceGuid             : {8E0623B8-CF1C-DFFE-CEA3-AA41BDA4B8EE}
 </span></span><span class="line"><span class="cl">pathToSignedProductExe   : C:\Program Files (x86)\Sophos\Sophos Anti-Virus\WSCClient.exe
@@ -1443,6 +1445,36 @@
 <p>We&rsquo;ve used the <code>$AVClient</code> variable, which will allow re-use of the script depending on which product is installed across your device estate.</p>
 <p>We also have to be able to capture and present back when the script doesn&rsquo;t detect the specified <code>$AVClient</code> variable, otherwise we&rsquo;ll get some grim looking compliance errors on those devices.</p>
 
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >These commands and scripts have now been updated to use <code>Get-CimInstance</code> due to Microsoft <a href="https://techcommunity.microsoft.com/blog/windows-itpro-blog/wmi-command-line-wmic-utility-deprecation-next-steps/4039242" target="_blank">deprecating WMIC</a> commands.</span>
+</div>
+
+
 
 
 
@@ -1462,7 +1494,8 @@
   
   
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nv">$avClient</span> <span class="p">=</span> <span class="s1">&#39;Sophos Anti-Virus&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$avProduct</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Namespace</span> <span class="s1">&#39;root\SecurityCenter2&#39;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">displayName</span> <span class="o">-eq</span> <span class="nv">$avClient</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$avProduct</span> <span class="p">=</span> <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s1">&#39;root\SecurityCenter2&#39;</span> <span class="n">-Class</span> <span class="n">AntiVirusProduct</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">displayName</span> <span class="o">-eq</span> <span class="nv">$avClient</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="c">#$avProduct = Get-WmiObject -Namespace &#39;root\SecurityCenter2&#39; -Class AntiVirusProduct | Where-Object { $_.displayName -eq $avClient } | Select-Object -First 1</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$avSummary</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSObject</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">If</span> <span class="p">(</span><span class="nv">$avProduct</span><span class="p">)</span> <span class="p">{</span>
@@ -1499,7 +1532,13 @@
 
 
 <p>Running this script on a machine with the Antivirus product installed would be a good idea to test that the scripts works, and is outputting the correct information in the required format for Intune to translate.</p>
-<p>The output from the script should look a little bit like the below:</p>
+<p>The uncompressed output from the script should look a little bit like the below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Sophos Anti-Virus&#34;</span><span class="p">:</span> <span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">:</span> <span class="s2">&#34;On&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">:</span> <span class="s2">&#34;Up to Date&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>With the compressed version looking like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;Sophos Anti-Virus&#34;</span><span class="p">:</span><span class="s2">&#34;Sophos Anti-Virus&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus real time protection enabled&#34;</span><span class="p">:</span><span class="s2">&#34;On&#34;</span><span class="p">,</span><span class="nt">&#34;Sophos Anti-Virus definitions up-to-date&#34;</span><span class="p">:</span><span class="s2">&#34;Up to Date&#34;</span><span class="p">}</span>
 </span></span></code></pre></div>
 
@@ -1638,7 +1677,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-script_hu4222066016953488092.webp#left" alt="Compliance Script" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-script_hu4676728687844497633.webp#left" alt="Compliance Script" />
         <figcaption>Compliance Policy script in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Following this, we can now create our Custom Compliance policy for Windows; select the previously created PowerShell script, and we&rsquo;ll need to upload the JSON file created earlier.</p>
@@ -1647,7 +1686,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu303787373383876960.webp#left" alt="Custom Compliance" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu14943661698015172099.webp#left" alt="Custom Compliance" />
         <figcaption>Compliance Policy in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Once we&rsquo;ve got this in place, we can now assign the Compliance Policy.</p>
@@ -1664,10 +1703,8 @@
     
 </h3>
 <p>With the Custom Compliance policy deployed, and waiting a little while for devices to start reporting back, we can check on the status of the devices it has been assigned to.</p>
-<ul>
-<li>
-<p>We have some good devices
-
+<p>We have some good devices:</p>
+<p>
 
 
 
@@ -1675,10 +1712,8 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu4750766967299416236.webp#left" alt="Good Compliance" />
         <figcaption>Microsoft Intune Compliance check with good results.</figcaption>
       </figure></p>
-</li>
-<li>
-<p>Some not so good
-
+<p>Some not so good:</p>
+<p>
 
 
 
@@ -1686,10 +1721,8 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu16982831921463229777.webp#left" alt="Poor Compliance" />
         <figcaption>Microsoft Intune Compliance check with poor results.</figcaption>
       </figure></p>
-</li>
-<li>
-<p>and some truly problematic
-
+<p>Some truly problematic:</p>
+<p>
 
 
 
@@ -1697,8 +1730,6 @@
         <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu16640815954010120472.webp#left" alt="Bad Compliance" />
         <figcaption>Microsoft Intune Compliance check with bad results.</figcaption>
       </figure></p>
-</li>
-</ul>
 <p>With this Compliance Policy now in place, we not only get a view of the device estate, but can integrate Compliance into <a href="https://docs.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune" target="_blank">Conditional Access Policies</a>, so it&rsquo;s not a bad situation to be in at all.</p>
 
 
