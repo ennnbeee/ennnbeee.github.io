@@ -11,7 +11,7 @@
   <title>Detailed Compliance for Non-Microsoft Antivirus Solutions</title>
   <meta name="title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions" />
   
-  <meta name="description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions." />
+  <meta name="description" content="Creation of Microsoft Intune device custom compliance policies for third party antivirus and anti spyware solutions." />
   <meta name="keywords" content="compliance, security, antivirus, powershell, " />
   
   <meta name="robots" content="all" />
@@ -72,7 +72,7 @@
   <meta property="og:url" content="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Endpoint Management">
   <meta property="og:title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions">
-  <meta property="og:description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions.">
+  <meta property="og:description" content="Creation of Microsoft Intune device custom compliance policies for third party antivirus and anti spyware solutions.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -88,7 +88,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/featured.png">
   <meta name="twitter:title" content="Detailed Compliance for Non-Microsoft Antivirus Solutions">
-  <meta name="twitter:description" content="Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions.">
+  <meta name="twitter:description" content="Creation of Microsoft Intune device custom compliance policies for third party antivirus and anti spyware solutions.">
 
   
   <script type="application/ld+json">
@@ -98,7 +98,7 @@
     "articleSection": "Posts",
     "name": "Detailed Compliance for Non-Microsoft Antivirus Solutions",
     "headline": "Detailed Compliance for Non-Microsoft Antivirus Solutions",
-    "description": "Creation of Microsoft Intune device compliance policies for third party antivirus and anti spyware solutions.",
+    "description": "Creation of Microsoft Intune device custom compliance policies for third party antivirus and anti spyware solutions.",
     "abstract": "So what happens when you\u0026rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you\u0026rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?",
     "inLanguage": "en",
     "url" : "https:\/\/memv.ennbee.uk\/posts\/custom-compliance-third-party-av\/",
@@ -1677,7 +1677,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-script_hu4676728687844497633.webp#left" alt="Compliance Script" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-script_hu4468981269162974169.png#left" alt="Compliance Script" />
         <figcaption>Compliance Policy script in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Following this, we can now create our Custom Compliance policy for Windows; select the previously created PowerShell script, and we&rsquo;ll need to upload the JSON file created earlier.</p>
@@ -1686,7 +1686,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu14943661698015172099.webp#left" alt="Custom Compliance" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu9661022913433039778.png#left" alt="Custom Compliance" />
         <figcaption>Compliance Policy in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Once we&rsquo;ve got this in place, we can now assign the Compliance Policy.</p>
@@ -1709,7 +1709,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu4750766967299416236.webp#left" alt="Good Compliance" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu18104616886117894312.png#left" alt="Good Compliance" />
         <figcaption>Microsoft Intune Compliance check with good results.</figcaption>
       </figure></p>
 <p>Some not so good:</p>
@@ -1718,7 +1718,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu16982831921463229777.webp#left" alt="Poor Compliance" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu4210813298382531906.png#left" alt="Poor Compliance" />
         <figcaption>Microsoft Intune Compliance check with poor results.</figcaption>
       </figure></p>
 <p>Some truly problematic:</p>
@@ -1727,7 +1727,7 @@
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu16640815954010120472.webp#left" alt="Bad Compliance" />
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu5481684350231682538.png#left" alt="Bad Compliance" />
         <figcaption>Microsoft Intune Compliance check with bad results.</figcaption>
       </figure></p>
 <p>With this Compliance Policy now in place, we not only get a view of the device estate, but can integrate Compliance into <a href="https://docs.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune" target="_blank">Conditional Access Policies</a>, so it&rsquo;s not a bad situation to be in at all.</p>
