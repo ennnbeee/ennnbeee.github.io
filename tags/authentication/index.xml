@@ -8,6 +8,7 @@
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
     <lastBuildDate>Tue, 01 Nov 2022 19:54:44 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/authentication/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Migrating from AzureAD Authentication for Graph API</title>
       <link>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</link>
