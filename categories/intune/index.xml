@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microsoft Intune on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
+    <title>Intune on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
     <link>https://memv.ennbee.uk/categories/intune/</link>
-    <description>Recent content in Microsoft Intune on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
+    <description>Recent content in Intune on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 19 Nov 2024 17:06:20 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/intune/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memv.ennbee.uk/categories/intune/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Forcing Windows 11 Feature Update Readiness Assessments</title>
@@ -290,7 +290,7 @@
     </item>
     
     <item>
-      <title>Managing Assignments in Microsoft Intune: Settings Catalog Profiles</title>
+      <title>Managing Settings Catalog Profile Assignments in Microsoft Intune</title>
       <link>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</link>
       <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
       

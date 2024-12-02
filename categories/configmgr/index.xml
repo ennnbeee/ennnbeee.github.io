@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microsoft Configuration Manager on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
+    <title>Configuration Manager on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
     <link>https://memv.ennbee.uk/categories/configmgr/</link>
-    <description>Recent content in Microsoft Configuration Manager on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
+    <description>Recent content in Configuration Manager on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 02 Sep 2024 20:43:33 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/configmgr/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memv.ennbee.uk/categories/configmgr/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Fri, 26 Jul 2024 12:54:24 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memv.ennbee.uk/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Automatically Setting an Out of Office Message with Power Automate</title>
@@ -80,7 +80,7 @@
     </item>
     
     <item>
-      <title>Managing Assignments in Microsoft Intune: Settings Catalog Profiles</title>
+      <title>Managing Settings Catalog Profile Assignments in Microsoft Intune</title>
       <link>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</link>
       <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
       
