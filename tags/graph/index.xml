@@ -10,6 +10,16 @@
     <atom:link href="https://memv.ennbee.uk/tags/graph/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</link>
+      <pubDate>Tue, 03 Dec 2024 18:12:49 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</guid>
+      <description>An unexpected update to the Windows 11 Feature Update deployment series, looking at how to tag users instead of devices, and an improved way to get the readiness report data, and other performance improvements. What a day.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/featured.jpg" />
+    </item>
+    
+    <item>
       <title>Converting AppLocker Policies to Intune Profiles</title>
       <link>https://memv.ennbee.uk/posts/windows-applocker-intune/</link>
       <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>

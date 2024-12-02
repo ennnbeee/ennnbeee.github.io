@@ -10,6 +10,16 @@
     <atom:link href="https://memv.ennbee.uk/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
+      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</link>
+      <pubDate>Tue, 03 Dec 2024 18:12:49 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</guid>
+      <description>An unexpected update to the Windows 11 Feature Update deployment series, looking at how to tag users instead of devices, and an improved way to get the readiness report data, and other performance improvements. What a day.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/featured.jpg" />
+    </item>
+    
+    <item>
       <title>Automatically Setting an Out of Office Message with Power Automate</title>
       <link>https://memv.ennbee.uk/posts/powerautomate-out-of-office/</link>
       <pubDate>Fri, 26 Jul 2024 12:54:24 +0100</pubDate>
