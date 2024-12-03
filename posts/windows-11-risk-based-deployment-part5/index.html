@@ -77,7 +77,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-12-03T18:12:49+00:00">
-    <meta property="article:modified_time" content="2024-12-02T19:00:08+00:00">
+    <meta property="article:modified_time" content="2024-12-03T12:30:01+00:00">
     <meta property="article:tag" content="Software Updates">
     <meta property="article:tag" content="Feature Updates">
     <meta property="article:tag" content="Dynamic Groups">
@@ -116,12 +116,12 @@
     "dateCreated": "2024-12-03T18:12:49\u002b00:00",
     "datePublished": "2024-12-03T18:12:49\u002b00:00",
     
-    "dateModified": "2024-12-02T19:00:08\u002b00:00",
+    "dateModified": "2024-12-03T12:30:01\u002b00:00",
     
     "keywords": ["updates","feature updates","dynamic groups","powershell","graph","automation"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1484"
+    "wordCount": "1499"
   }]
   </script>
 
@@ -1320,7 +1320,7 @@
 <li>Running the script in <em>whatif</em> mode</li>
 <li>Something about Windows 11 24H2 being released.</li>
 </ol>
-<p>So how does that impact this series of posts?</p>
+<p>So how does that impact this series of posts and the updated <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11AcceleratorUpdate.ps1" target="_blank">Windows 11 Accelerator script</a>?</p>
 
 
 <h2 class="relative group">Graph Authentication 
@@ -1334,7 +1334,7 @@
     
 </h2>
 <p>Honestly I just straight up robbed the <a href="https://github.com/andrew-s-taylor/public/blob/main/Powershell%20Scripts/Intune/connect-tograph-function.ps1" target="_blank">authentication function</a> that <a href="https://andrewstaylor.com/" target="_blank">Andrew Taylor</a> created. Is it really stealing if it&rsquo;s community content? 😘</p>
-<p>So to allow for the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11AcceleratorUpdate.ps1" target="_blank">script</a> to authenticate to Graph. we now need to create an <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret#configure-platform-settings" target="_blank">Entra App registration</a>, associated <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret" target="_blank">Client Secret</a>, and give the <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph" target="_blank">app permissions</a> to Microsoft Graph.</p>
+<p>So to allow for the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11AcceleratorUpdate.ps1" target="_blank">updated script</a> to authenticate to Graph. we now need to create an <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret#configure-platform-settings" target="_blank">Entra App registration</a>, associated <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret" target="_blank">Client Secret</a>, and give the <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph" target="_blank">app permissions</a> to Microsoft Graph.</p>
 
   
 
@@ -1767,7 +1767,37 @@
         />
         <figcaption>Device Attributes only being updated if they have changed.</figcaption>
       </figure></p>
-<p>To be honest this was only possible after the implementation of hashtables for speed.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >To be honest this was only possible after the implementation of hashtables for speed.</span>
+</div>
+
 <p>Sensible nice.</p>
 
 
@@ -1812,7 +1842,7 @@
     
 </h2>
 <p>As the Windows 11 24H2 report data is now available, we should be able to query the data in Intune. So a quick update to the calls to Graph to use <code>GE24H2</code> for the correct Feature Update version (compared with <code>NI23H2</code> for Windows 11 23H2), and we can get the report data and tag things with their risk state:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-Windows11AcceleratorUpdate</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-featureUpdateBuild</span> <span class="n">24H2</span> <span class="n">-tenantId</span> <span class="nv">$tenantId</span> <span class="n">-target</span> <span class="n">device</span> <span class="n">-extensionAttribute</span> <span class="mf">15</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-Windows11AcceleratorUpdate</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-featureUpdateBuild</span> <span class="n">24H2</span> <span class="n">-tenantId</span> <span class="nv">$tenantId</span> <span class="n">-target</span> <span class="n">device</span> <span class="n">-extensionAttribute</span> <span class="mf">11</span>
 </span></span></code></pre></div><p>
 
 
@@ -1840,7 +1870,7 @@
     
 </h2>
 <p>Yes I know I should have probably looked at these when I first released the series of blog posts, but I didn&rsquo;t. Be thankful I&rsquo;ve revisited this series and not just thrown myself into Autopilot v2 or Windows 365 Link posts 😅.</p>
-<p>Either way, you should now have no excuse to avoid moving to Windows 11 24H2 or otherwise, so crack on, time is ticking.</p>
+<p>Either way, you should now have no excuse to avoid moving to Windows 11 24H2 or otherwise, so crack on, start using the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Reports/GetWindows11Ready/Invoke-Windows11AcceleratorUpdate.ps1" target="_blank">Windows 11 Accelerator script</a>, time is ticking.</p>
 
           
           
