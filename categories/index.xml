@@ -10,29 +10,9 @@
     <lastBuildDate>Tue, 03 Dec 2024 18:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Android</title>
-      <link>https://memv.ennbee.uk/categories/android/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/android/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Configuration Manager</title>
-      <link>https://memv.ennbee.uk/categories/configmgr/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/configmgr/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Intune</title>
       <link>https://memv.ennbee.uk/categories/intune/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Dec 2024 18:12:49 +0000</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/intune/</guid>
       <description></description>
@@ -40,11 +20,11 @@
     </item>
     
     <item>
-      <title>iOS/iPadOS</title>
-      <link>https://memv.ennbee.uk/categories/ios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Windows 10 and later</title>
+      <link>https://memv.ennbee.uk/categories/windows/</link>
+      <pubDate>Tue, 03 Dec 2024 18:12:49 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/categories/ios/</guid>
+      <guid>https://memv.ennbee.uk/categories/windows/</guid>
       <description></description>
       
     </item>
@@ -52,7 +32,7 @@
     <item>
       <title>macOS</title>
       <link>https://memv.ennbee.uk/categories/macos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/categories/macos/</guid>
       <description></description>
@@ -60,21 +40,41 @@
     </item>
     
     <item>
-      <title>Power Automate</title>
-      <link>https://memv.ennbee.uk/categories/power-automate/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Android</title>
+      <link>https://memv.ennbee.uk/categories/android/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/categories/power-automate/</guid>
+      <guid>https://memv.ennbee.uk/categories/android/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/categories/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>iOS/iPadOS</title>
+      <link>https://memv.ennbee.uk/categories/ios/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/categories/windows/</guid>
+      <guid>https://memv.ennbee.uk/categories/ios/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Configuration Manager</title>
+      <link>https://memv.ennbee.uk/categories/configmgr/</link>
+      <pubDate>Mon, 02 Sep 2024 20:43:33 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/configmgr/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Power Automate</title>
+      <link>https://memv.ennbee.uk/categories/power-automate/</link>
+      <pubDate>Fri, 26 Jul 2024 12:54:24 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/categories/power-automate/</guid>
       <description></description>
       
     </item>

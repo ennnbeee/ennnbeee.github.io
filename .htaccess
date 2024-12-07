@@ -1,6 +1,0 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^ennbee.uk$ [OR]
-  RewriteCond %{HTTP_HOST} ^www.ennbee.uk$
-  RewriteRule (.*)$ https://memv.ennbee.uk/$1 [R=301,L]
-</IfModule>
