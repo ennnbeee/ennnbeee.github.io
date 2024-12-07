@@ -71,12 +71,12 @@
     
     <item>
       <title>Automatically Resizing the WinRE Partition for Windows Update KB5034441</title>
-      <link>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</link>
+      <link>https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/</link>
       <pubDate>Wed, 31 Jan 2024 20:54:12 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</guid>
+      <guid>https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/</guid>
       <description>When Microsoft releases an update that won&amp;rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/featured.jpg" />
     </item>
     
     <item>

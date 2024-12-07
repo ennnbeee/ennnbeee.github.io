@@ -161,22 +161,22 @@
     
     <item>
       <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/updating-windows-store-apps/</link>
+      <link>https://memv.ennbee.uk/posts/windows-updating-store-apps/</link>
       <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/updating-windows-store-apps/</guid>
+      <guid>https://memv.ennbee.uk/posts/windows-updating-store-apps/</guid>
       <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updating-windows-store-apps/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-updating-store-apps/featured.png" />
     </item>
     
     <item>
       <title>Automatically Resizing the WinRE Partition for Windows Update KB5034441</title>
-      <link>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</link>
+      <link>https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/</link>
       <pubDate>Wed, 31 Jan 2024 20:54:12 +0000</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/</guid>
+      <guid>https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/</guid>
       <description>When Microsoft releases an update that won&amp;rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/winre-parition-resize-kb5034441/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/featured.jpg" />
     </item>
     
     <item>

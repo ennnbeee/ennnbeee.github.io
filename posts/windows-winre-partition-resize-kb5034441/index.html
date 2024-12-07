@@ -8,16 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
-  <meta name="title" content="Keeping Windows Store Apps Updated with Microsoft Intune" />
+  <title>Automatically Resizing the WinRE Partition for Windows Update KB5034441</title>
+  <meta name="title" content="Automatically Resizing the WinRE Partition for Windows Update KB5034441" />
   
-  <meta name="description" content="Using Microsoft Intune to update Windows Store Apps using PowerShell and remediation scripts." />
-  <meta name="keywords" content="updates, remediation, apps, powershell, windows autopilot, security, " />
+  <meta name="description" content="Using Microsoft Intune Remediation PowerShell scripts to increase the Windows Recovery partition size for KB5034441." />
+  <meta name="keywords" content="updates, powershell, remediation, bitlocker, endpoint security, security, " />
   
   <meta name="robots" content="all" />
   
   
-  <link rel="canonical" href="https://memv.ennbee.uk/posts/updating-windows-store-apps/" />
+  <link rel="canonical" href="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/" />
   
   
   
@@ -69,28 +69,28 @@
   
   
   
-  <meta property="og:url" content="https://memv.ennbee.uk/posts/updating-windows-store-apps/">
+  <meta property="og:url" content="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Endpoint Management">
-  <meta property="og:title" content="Keeping Windows Store Apps Updated with Microsoft Intune">
-  <meta property="og:description" content="Using Microsoft Intune to update Windows Store Apps using PowerShell and remediation scripts.">
+  <meta property="og:title" content="Automatically Resizing the WinRE Partition for Windows Update KB5034441">
+  <meta property="og:description" content="Using Microsoft Intune Remediation PowerShell scripts to increase the Windows Recovery partition size for KB5034441.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-02-06T21:03:00+00:00">
-    <meta property="article:modified_time" content="2024-12-07T15:29:47+00:00">
+    <meta property="article:published_time" content="2024-01-31T20:54:12+00:00">
+    <meta property="article:modified_time" content="2024-12-07T16:00:46+00:00">
     <meta property="article:tag" content="Software Updates">
-    <meta property="article:tag" content="Remediation Scripts">
-    <meta property="article:tag" content="Apps">
     <meta property="article:tag" content="PowerShell">
-    <meta property="article:tag" content="Windows Autopilot">
+    <meta property="article:tag" content="Remediation Scripts">
+    <meta property="article:tag" content="BitLocker">
+    <meta property="article:tag" content="Endpoint Security">
     <meta property="article:tag" content="Security">
-    <meta property="og:image" content="https://memv.ennbee.uk/posts/updating-windows-store-apps/featured.png">
+    <meta property="og:image" content="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/featured.jpg">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://memv.ennbee.uk/posts/updating-windows-store-apps/featured.png">
-  <meta name="twitter:title" content="Keeping Windows Store Apps Updated with Microsoft Intune">
-  <meta name="twitter:description" content="Using Microsoft Intune to update Windows Store Apps using PowerShell and remediation scripts.">
+  <meta name="twitter:image" content="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/featured.jpg">
+  <meta name="twitter:title" content="Automatically Resizing the WinRE Partition for Windows Update KB5034441">
+  <meta name="twitter:description" content="Using Microsoft Intune Remediation PowerShell scripts to increase the Windows Recovery partition size for KB5034441.">
 
   
   <script type="application/ld+json">
@@ -98,26 +98,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Keeping Windows Store Apps Updated with Microsoft Intune",
-    "headline": "Keeping Windows Store Apps Updated with Microsoft Intune",
-    "description": "Using Microsoft Intune to update Windows Store Apps using PowerShell and remediation scripts.",
-    "abstract": "Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.",
+    "name": "Automatically Resizing the WinRE Partition for Windows Update KB5034441",
+    "headline": "Automatically Resizing the WinRE Partition for Windows Update KB5034441",
+    "description": "Using Microsoft Intune Remediation PowerShell scripts to increase the Windows Recovery partition size for KB5034441.",
+    "abstract": "When Microsoft releases an update that won\u0026rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?",
     "inLanguage": "en",
-    "url" : "https:\/\/memv.ennbee.uk\/posts\/updating-windows-store-apps\/",
+    "url" : "https:\/\/memv.ennbee.uk\/posts\/windows-winre-partition-resize-kb5034441\/",
     "author" : {
       "@type": "Person",
       "name": "Nick Benton"
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-02-06T21:03:00\u002b00:00",
-    "datePublished": "2024-02-06T21:03:00\u002b00:00",
+    "dateCreated": "2024-01-31T20:54:12\u002b00:00",
+    "datePublished": "2024-01-31T20:54:12\u002b00:00",
     
-    "dateModified": "2024-12-07T15:29:47\u002b00:00",
+    "dateModified": "2024-12-07T16:00:46\u002b00:00",
     
-    "keywords": ["updates","remediation","apps","powershell","windows autopilot","security"],
+    "keywords": ["updates","powershell","remediation","bitlocker","endpoint security","security"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "973"
+    "wordCount": "1687"
   }]
   </script>
 
@@ -792,7 +792,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/updating-windows-store-apps/featured.png);">
+    style="background-image:url(/posts/windows-winre-partition-resize-kb5034441/featured.jpg);">
     
 
 
@@ -818,7 +818,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Keeping Windows Store Apps Updated with Microsoft Intune
+      Automatically Resizing the WinRE Partition for Windows Update KB5034441
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -861,7 +861,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-02-06T21:03:00&#43;00:00">6 February 2024</time><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-01-31T20:54:12&#43;00:00">31 January 2024</time><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -932,22 +932,6 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Remediation Scripts
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/apps/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Apps
-  </span>
-</span>
-  </span>
-  
   <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
@@ -956,10 +940,26 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows-autopilot/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows Autopilot
+    Remediation Scripts
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/bitlocker/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    BitLocker
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/endpoint-security/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Endpoint Security
   </span>
 </span>
   </span>
@@ -1132,12 +1132,16 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#allowing-app-updates">Allowing App Updates</a></li>
-    <li><a href="#forcing-app-updates">Forcing App Updates</a></li>
-    <li><a href="#remediation-settings">Remediation Settings</a>
+    <li><a href="#detection-methods">Detection Methods</a>
       <ul>
-        <li><a href="#detection-script">Detection Script</a></li>
-        <li><a href="#remediation-script">Remediation Script</a></li>
+        <li><a href="#first-we-detect">First We Detect</a></li>
+        <li><a href="#then-we-report">Then We Report</a></li>
+      </ul>
+    </li>
+    <li><a href="#remediation-methods">Remediation Methods</a>
+      <ul>
+        <li><a href="#script-breakdown">Script Breakdown</a></li>
+        <li><a href="#now-we-attack">Now We Attack</a></li>
       </ul>
     </li>
     <li><a href="#deploying-the-remediation">Deploying the Remediation</a></li>
@@ -1155,12 +1159,16 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#allowing-app-updates">Allowing App Updates</a></li>
-    <li><a href="#forcing-app-updates">Forcing App Updates</a></li>
-    <li><a href="#remediation-settings">Remediation Settings</a>
+    <li><a href="#detection-methods">Detection Methods</a>
       <ul>
-        <li><a href="#detection-script">Detection Script</a></li>
-        <li><a href="#remediation-script">Remediation Script</a></li>
+        <li><a href="#first-we-detect">First We Detect</a></li>
+        <li><a href="#then-we-report">Then We Report</a></li>
+      </ul>
+    </li>
+    <li><a href="#remediation-methods">Remediation Methods</a>
+      <ul>
+        <li><a href="#script-breakdown">Script Breakdown</a></li>
+        <li><a href="#now-we-attack">Now We Attack</a></li>
       </ul>
     </li>
     <li><a href="#deploying-the-remediation">Deploying the Remediation</a></li>
@@ -1248,81 +1256,35 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft" target="_blank">New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>
+          <p>If you&rsquo;ve been under a rock, or like me, don&rsquo;t have to manage updates on a Windows device estate any more, chances are you might not have seen the issues with the size of the <a href="https://support.microsoft.com/en-us/windows/create-a-recovery-drive-abb4691b-5324-6d4a-8766-73fab304c246" target="_blank">Windows Recovery Environment</a> or WinRE, partition when applying Windows Updates like <a href="https://support.microsoft.com/en-au/topic/kb5034441-windows-recovery-environment-update-for-windows-10-version-21h2-and-22h2-january-9-2024-62c04204-aaa5-4fee-a02a-2fdea17075a8" target="_blank">KB5034441</a>, luckily Microsoft released a &lsquo;fix&rsquo; for this in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf" target="_blank">KB5028997</a> to resize the partition to allow for updates to install.</p>
+<p>Now if this were me, I&rsquo;d be looking for a way to push out this fix to the impacted devices, and thanks to <a href="https://www.reddit.com/user/InternetStranger4You/" target="_blank">u/InternetStranger4You</a>, they created a PowerShell script to do <a href="https://www.reddit.com/r/sysadmin/comments/19dyiuz/script_to_fix_kb5028997/" target="_blank">just that</a>, so all credit goes their way.</p>
+<p>So why I am writing this? Well, let&rsquo;s find a way to use <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">Microsoft Intune Remediations</a>, to detect and fix devices that are falling short of the partition size requirement.</p>
 
 
-<h2 class="relative group">Allowing App Updates 
-    <div id="allowing-app-updates" class="anchor"></div>
+<h2 class="relative group">Detection Methods 
+    <div id="detection-methods" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#allowing-app-updates" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#detection-methods" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Regardless of how you are blocking or allowing the Microsoft Store, remembering that the store needs to be <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft#prerequisites" target="_blank">available</a> to allow for apps from Microsoft Intune to be deployed, we should at least configure devices to allow for updates.</p>
-<p>A simple <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/settings-catalog" target="_blank">Settings Catalog</a> profile will do the job here, with the below settings configured.</p>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Category</th>
-          <th style="text-align: left">Setting</th>
-          <th style="text-align: left">Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Microsoft App Store</td>
-          <td style="text-align: left">Allow apps from the Microsoft app store to auto update</td>
-          <td style="text-align: left"><code>Allowed</code></td>
-      </tr>
-  </tbody>
-</table>
-<p>
+<p>To get ourselves in a good position, we should look at a way to detect that the existing Windows Recovery Environment partition is of a suitable size, from this we can either leave it well alone, or hack at it to increase it&rsquo;s size, once, and only once.</p>
 
 
-
-      <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-setcat_hu9116583890982876688.webp#left" alt="Settings Catalog Profile" />
-        <figcaption>Settings Catalog profile for Microsoft Store.</figcaption>
-      </figure></p>
-<p>Assign this profile to your devices, all of them obviously, no testing needed here.</p>
-
-
-<h2 class="relative group">Forcing App Updates 
-    <div id="forcing-app-updates" class="anchor"></div>
+<h3 class="relative group">First We Detect 
+    <div id="first-we-detect" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#forcing-app-updates" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#first-we-detect" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
-<p>There&rsquo;s a lot of chatter about how to force store apps to update, but essentially we can kick off an update using the below <strong>Get-CimInstance</strong> query.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">UpdateScanMethod</span>
-</span></span></code></pre></div><p>Now as we&rsquo;re calling areas that require elevation, standard users are bang out of luck from running this, and even running this elevated as Administrator does absolutely nothing for the apps themselves, something about install context.</p>
-<p>So what are our options? Well for testing it&rsquo;s <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank">PsExec</a>.</p>
-<p>Running the above from PowerShell running as system using <code>PsExec.exe -s -i powershell.exe</code>, we can kick off the app update query.</p>
-<p>
-
-
-
-      <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-psexec_hu4569810841804989441.webp#left" alt="PsExec Run" />
-        <figcaption>PSEXEC running the store app update command.</figcaption>
-      </figure></p>
-<p>Nothing much to look at here, but if you&rsquo;ve got the store open, you should now see updates in the Downloads and Updates section, if you&rsquo;re lazy run <code>start ms-windows-store://downloadsandupdates</code> as a standard user to open the correct area of the store.</p>
-<p>
-
-
-
-      <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-update_hu10928596022045516241.webp#left" alt="Store App Updates" />
-        <figcaption>The Microsoft Store updating apps.</figcaption>
-      </figure></p>
-<p>Brilliant, apps are now trying their hardest to update. Now we&rsquo;ve got a method to update the apps, no one is going to run this manually on a regular basis, and we love a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank">Microsoft Intune Remediation</a>.</p>
+</h3>
+<p>Working with the remediation format and capture of information, we can quite simply loop through all physical disks with <code>Get-PhysicalDisk</code>, detecting where one of these disks contains partitions with a &lsquo;C&rsquo; drive (Yes I am assuming here that the disk holding the C drive is holding the Recovery Partition, prove me wrong though), using <code>Get-Partition</code>, <del>and then comparing the size of the disk to our variable in bytes, <code>$partitionSize</code>.</del> and then get the amount of free space available in the volume with <code>Get-Volume</code>, comparing this to our variable for required space <code>$freePartitionSpace</code>.</p>
 
   
 
@@ -1336,6 +1298,367 @@
   <span
     
       class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >The detection method has been updated to detect free space in the Recovery Partition, instead of blindly increasing it by 250MB.</span>
+</div>
+
+
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+  
+
+  
+  
+  
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c">#Recovery Partition free size required for KB5028997</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$freePartitionSpace</span> <span class="p">=</span> <span class="s1">&#39;250000000&#39;</span> <span class="c">#bytes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$computerDisks</span> <span class="p">=</span> <span class="nb">Get-PhysicalDisk</span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$computerDisk</span> <span class="k">in</span> <span class="nv">$computerDisks</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$diskPartitions</span> <span class="p">=</span> <span class="nb">Get-Partition</span> <span class="n">-DiskNumber</span> <span class="nv">$computerDisk</span><span class="p">.</span><span class="py">DeviceId</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$diskPartitions</span><span class="p">.</span><span class="py">DriveLetter</span> <span class="o">-contains</span> <span class="s1">&#39;C&#39;</span> <span class="o">-and</span> <span class="vm">$null</span> <span class="o">-ne</span> <span class="nv">$diskPartitions</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$systemDrive</span> <span class="p">=</span> <span class="nv">$computerDisk</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$recPartition</span> <span class="p">=</span> <span class="nb">Get-Partition</span> <span class="n">-DiskNumber</span> <span class="nv">$systemDrive</span><span class="p">.</span><span class="py">DeviceId</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="nb">Type </span><span class="o">-eq</span> <span class="s1">&#39;Recovery&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$recVolume</span> <span class="p">=</span> <span class="nb">Get-Volume</span> <span class="n">-Partition</span> <span class="nv">$recPartition</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$recVolume</span><span class="p">.</span><span class="py">SizeRemaining</span> <span class="o">-le</span> <span class="nv">$freePartitionSpace</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Recovery Partition Free Space </span><span class="p">$(</span><span class="vm">$</span><span class="p">(</span><span class="nv">$recVolume</span><span class="p">.</span><span class="n">SizeRemaining</span><span class="p">)</span> <span class="p">/</span> <span class="mf">1000000</span><span class="p">)</span><span class="s2"> MB is smaller than required </span><span class="p">$(</span><span class="nv">$freePartitionSpace</span> <span class="p">/</span> <span class="mf">1000000</span><span class="p">)</span><span class="s2"> MB&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Recovery Partition Free Space </span><span class="p">$(</span><span class="vm">$</span><span class="p">(</span><span class="nv">$recVolume</span><span class="p">.</span><span class="n">SizeRemaining</span><span class="p">)</span> <span class="p">/</span> <span class="mf">1000000</span><span class="p">)</span><span class="s2"> MB is larger than required </span><span class="p">$(</span><span class="nv">$freePartitionSpace</span> <span class="p">/</span> <span class="mf">1000000</span><span class="p">)</span><span class="s2"> MB&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;Recovery Partition not found.&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+
+<p>If the result of the comparison is that the <del>size of the partition is smaller than the 750MB configured in <code>$partitionSize</code></del> free space of the partition is smaller than the 250MB configured in <code>$freePartitionSpace</code>, then we&rsquo;ll report the status with <code>Write-Output</code> and <code>Exit 1</code>, otherwise, all is OK so we <code>Exit 0</code> still reporting something.</p>
+
+
+<h3 class="relative group">Then We Report 
+    <div id="then-we-report" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#then-we-report" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>So, we should see how many devices are effected by a small partition size, so for fun, we can push out <strong>just</strong> the <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" target="_blank">detection script</a> using a Remediation, but with a non-functioning <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_ReportRemediation.ps1" target="_blank">remediation script</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+  
+
+  
+  
+  
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;Reporting Only&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Exit</span> <span class="mf">0</span>
+</span></span></code></pre></div>
+
+
+<p>This will at least give you some idea of the devices that would be impacted by the true remediation script.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-report_hu11473516106707491564.webp#left" alt="Remediation Reporting" />
+        <figcaption>Microsoft Intune Remediation Script for reporting.</figcaption>
+      </figure></p>
+<p>I&rsquo;ve assigned this to the <strong>All Devices</strong> group, but with a Device Filter for only corporate owned devices, set to run once, as we&rsquo;re just reporting on this issue for now.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign_hu5871613541766208257.webp#left" alt="Remediation Assignment" />
+        <figcaption>Microsoft Intune Remediation assignment for reporting.</figcaption>
+      </figure></p>
+<p>After waiting a little while, or if you&rsquo;re impatient use the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations#run-a-remediation-script-on-demand-preview" target="_blank">on-demand feature</a>, we can then review the results; we can see several devices that are now complaining that their WinRE partition is too small.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue_hu16368015267966766429.png#left" alt="Remediation Reporting Detail" />
+        <figcaption>Microsoft Intune Remediation reporting results.</figcaption>
+      </figure></p>
+<p>Luckily for us, there are at least some devices where they are happy with the size of their partition.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok_hu15617166034431731039.png#left" alt="Remediation Reporting Detail" />
+        <figcaption>Microsoft Intune Remediation reporting detail.</figcaption>
+      </figure></p>
+
+
+<h2 class="relative group">Remediation Methods 
+    <div id="remediation-methods" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#remediation-methods" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>As we have a good understanding following the implementation of the report only style Remediation, we can now investigate how best to actually fix the issue. For this, we can take the existing script by <a href="https://www.reddit.com/user/InternetStranger4You/" target="_blank">u/InternetStranger4You</a> and modifying it to support the required exit codes for Microsoft Intune.</p>
+
+
+<h3 class="relative group">Script Breakdown 
+    <div id="script-breakdown" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#script-breakdown" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The script itself is taking the manual steps detailed by Microsoft in <a href="https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf" target="_blank">KB5028997</a>, and wrapping them nicely in PowerShell, but I&rsquo;ll walk through the settings so we&rsquo;re all on the same page:</p>
+<ul>
+<li>Ensures that the script can read the contents of the <code>reagentc.exe</code> command by capture the output of the process using <code>New-Object System.Diagnostics.ProcessStartInfo</code> as the output data is used throughout the script.</li>
+<li>Checks if there is anything wrong with WinRE with <code>if (($stdout.IndexOf('harddisk') -ne -1) -and ($stdout.IndexOf('partition') -ne -1))</code>, and if so exits.</li>
+<li>Disables the recovery environment <code>Start-Process 'reagentc.exe' -ArgumentList '/disable' -Wait -NoNewWindow</code> to allow for modification to the partition.</li>
+<li>Captures information about the Disk the Recovery partition sits on, and the partition itself.</li>
+<li>Resizes the partition beneath the Recovery partition by 250MB <code>Get-Disk $diskNum | Resize-Partition -PartitionNumber ($recPartNum - 1) -Size ($size - 250MB)</code></li>
+<li>Removes the existing Recovery partition aggressively <code>Get-Disk $diskNum | Remove-Partition -PartitionNumber $recPartNum -Confirm:$false</code></li>
+<li>Passes the required arguments for <code>DiskPart</code> to a text file &lsquo;ResizeREScript.txt&rsquo; located in <code>$env:TEMP</code> that can be called on later that:
+<ul>
+<li>Creates a new partition on the disk based on whether the partition style is GPO or MBR</li>
+<li>Applies the correct attributes to the new partition to configure it as a Recovery partition</li>
+<li>Formats the partition in NTFS format</li>
+</ul>
+</li>
+<li>Finally enabling the recovery agent with <code>Start-Process 'reagentc.exe' -ArgumentList '/enable' -Wait -NoNewWindow</code> to allow for the failing update to be installed.</li>
+</ul>
+<p>All of these settings are exactly as per the Microsoft provided document, but you know, done for you.</p>
+
+
+<h3 class="relative group">Now We Attack 
+    <div id="now-we-attack" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#now-we-attack" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To allow the script to work within a Remediation, we need to ensure that the data being passed back to Microsoft Intune is suitable, and other that wrapping the bulk of the script in some <code>Try</code> and <code>Catch</code> logic, and handling the output of the commands with <code>Write-Output</code> and corresponding <code>Exit</code> codes, there isn&rsquo;t a whole heap for us to do thankfully.</p>
+
+
+
+
+
+
+
+  
+  
+
+  
+    
+  
+  
+  
+
+  
+  
+  
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="c">#Script to fix the recovery partition for KB5028997 by /u/InternetStranger4You, updated by Nick Benton</span>
+</span></span><span class="line"><span class="cl"><span class="c">#Mostly Powershell version of Microsoft&#39;s support article: https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf</span>
+</span></span><span class="line"><span class="cl"><span class="c">#Test in your own environment before running. Not responsible for any damages.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#Run reagentc.exe /info and save the output</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Diagnostics</span><span class="p">.</span><span class="py">ProcessStartInfo</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span><span class="p">.</span><span class="py">FileName</span> <span class="p">=</span> <span class="s1">&#39;reagentc.exe&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span><span class="p">.</span><span class="py">RedirectStandardOutput</span> <span class="p">=</span> <span class="vm">$true</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span><span class="p">.</span><span class="py">UseShellExecute</span> <span class="p">=</span> <span class="vm">$false</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pinfo</span><span class="p">.</span><span class="py">Arguments</span> <span class="p">=</span> <span class="s1">&#39;/info&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$p</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Diagnostics</span><span class="p">.</span><span class="k">Process</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$p</span><span class="p">.</span><span class="py">StartInfo</span> <span class="p">=</span> <span class="nv">$pinfo</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$p</span><span class="p">.</span><span class="py">Start</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$p</span><span class="p">.</span><span class="py">WaitForExit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$stdout</span> <span class="p">=</span> <span class="nv">$p</span><span class="p">.</span><span class="py">StandardOutput</span><span class="p">.</span><span class="py">ReadToEnd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">#Verify that disk and partition are listed in reagentc.exe /info. If blank, then something is wrong with WinRE</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="nv">$stdout</span><span class="p">.</span><span class="py">IndexOf</span><span class="p">(</span><span class="s1">&#39;harddisk&#39;</span><span class="p">)</span> <span class="o">-ne</span> <span class="mf">-1</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$stdout</span><span class="p">.</span><span class="py">IndexOf</span><span class="p">(</span><span class="s1">&#39;partition&#39;</span><span class="p">)</span> <span class="o">-ne</span> <span class="mf">-1</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Disable Windows recovery environment</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Start-Process</span> <span class="s1">&#39;reagentc.exe&#39;</span> <span class="n">-ArgumentList</span> <span class="s1">&#39;/disable&#39;</span> <span class="n">-Wait</span> <span class="n">-NoNewWindow</span>
+</span></span><span class="line"><span class="cl">        <span class="c">#Get recovery disk number and partition number</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$diskNum</span> <span class="p">=</span> <span class="nv">$stdout</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="nv">$stdout</span><span class="p">.</span><span class="py">IndexOf</span><span class="p">(</span><span class="s1">&#39;harddisk&#39;</span><span class="p">)</span> <span class="p">+</span> <span class="mf">8</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$recPartNum</span> <span class="p">=</span> <span class="nv">$stdout</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="nv">$stdout</span><span class="p">.</span><span class="py">IndexOf</span><span class="p">(</span><span class="s1">&#39;partition&#39;</span><span class="p">)</span> <span class="p">+</span> <span class="mf">9</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Resize partition before the recovery partition</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$size</span> <span class="p">=</span> <span class="nb">Get-Disk</span> <span class="nv">$diskNum</span> <span class="p">|</span> <span class="nb">Get-Partition</span> <span class="n">-PartitionNumber</span> <span class="p">(</span><span class="nv">$recPartNum</span> <span class="p">-</span> <span class="mf">1</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">Size</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Get-Disk</span> <span class="nv">$diskNum</span> <span class="p">|</span> <span class="nb">Resize-Partition</span> <span class="n">-PartitionNumber</span> <span class="p">(</span><span class="nv">$recPartNum</span> <span class="p">-</span> <span class="mf">1</span><span class="p">)</span> <span class="n">-Size</span> <span class="p">(</span><span class="nv">$size</span> <span class="p">-</span> <span class="mf">250</span><span class="p">MB)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Remove the recovery partition</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Get-Disk</span> <span class="nv">$diskNum</span> <span class="p">|</span> <span class="nb">Remove-Partition</span> <span class="n">-PartitionNumber</span> <span class="nv">$recPartNum</span> <span class="n">-Confirm:</span><span class="vm">$false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Create new partion with diskpart script</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$diskpartScriptPath</span> <span class="p">=</span> <span class="nv">$env:TEMP</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$diskpartScriptName</span> <span class="p">=</span> <span class="s1">&#39;ResizeREScript.txt&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$diskpartScript</span> <span class="p">=</span> <span class="nv">$diskpartScriptPath</span> <span class="p">+</span> <span class="s1">&#39;\&#39;</span> <span class="p">+</span> <span class="nv">$diskpartScriptName</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;sel disk </span><span class="p">$(</span><span class="nv">$diskNum</span><span class="p">)</span><span class="s2">&#34;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="nv">$diskpartScript</span> <span class="n">-Encoding</span> <span class="n">utf8</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$PartStyle</span> <span class="p">=</span> <span class="nb">Get-Disk</span> <span class="nv">$diskNum</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">PartitionStyle</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$partStyle</span> <span class="o">-eq</span> <span class="s1">&#39;GPT&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c">#GPT partition commands</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;create partition primary id=de94bba4-06d1-4d40-a16a-bfd50179d6ac&#39;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="nv">$diskpartScript</span> <span class="n">-Encoding</span> <span class="n">utf8</span> <span class="n">-Append</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;gpt attributes =0x8000000000000001&#39;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="nv">$diskpartScript</span> <span class="n">-Encoding</span> <span class="n">utf8</span> <span class="n">-Append</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c">#MBR partition command</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;create partition primary id=27&#39;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="nv">$diskpartScript</span> <span class="n">-Encoding</span> <span class="n">utf8</span> <span class="n">-Append</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;format quick fs=ntfs label=</span><span class="se">`&#34;</span><span class="s2">Windows RE tools</span><span class="se">`&#34;</span><span class="s2">&#34;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="nv">$diskpartScript</span> <span class="n">-Encoding</span> <span class="n">utf8</span> <span class="n">-Append</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Start-Process</span> <span class="s1">&#39;diskpart.exe&#39;</span> <span class="n">-ArgumentList</span> <span class="s2">&#34;/s </span><span class="p">$(</span><span class="nv">$diskpartScriptName</span><span class="p">)</span><span class="s2">&#34;</span> <span class="n">-Wait</span> <span class="n">-NoNewWindow</span> <span class="n">-WorkingDirectory</span> <span class="nv">$diskpartScriptPath</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Enable the recovery environment</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Start-Process</span> <span class="s1">&#39;reagentc.exe&#39;</span> <span class="n">-ArgumentList</span> <span class="s1">&#39;/enable&#39;</span> <span class="n">-Wait</span> <span class="n">-NoNewWindow</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s1">&#39;Recovery Partition Extended Successfully.&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s1">&#39;Recovery partition not found. Aborting script.&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s1">&#39;Unable to update Recovery Partition on the device.&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+
+<p>With the script now in a more useful format, on to how we deploy this to a select group of test devices.</p>
+
+
+<h2 class="relative group">Deploying the Remediation 
+    <div id="deploying-the-remediation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#deploying-the-remediation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>I would strongly advised testing this in small numbers before you go deploying the the <code>All Devices</code> group, and use a new Remediation with the same <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" target="_blank">detection script</a> method as before, but this time with the fully functioning <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Remediation.ps1" target="_blank">remediation script</a>, so we can actually fix this issue that Microsoft has caused.</p>
+<p>The Remediation should look something like the below, again with a schedule for once as we don&rsquo;t need this running more than once.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-run_hu16183441204815289693.webp#left" alt="Remediation Run Issue" />
+        <figcaption>Microsoft Intune Remediation Script.</figcaption>
+      </figure></p>
+<p>If we&rsquo;ve been successful in our deployment we should start seeing device report back the status of the remediation, and advise where there are issues with the size of the WinRE partition.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue_hu12228284822660781971.webp#left" alt="Remediation Run Issue" />
+        <figcaption>Microsoft Intune Remediation Detection results.</figcaption>
+      </figure></p>
+<p>Following the successful run of the remediation script, we now have an output of the results with a device that had issues with the partition size, now successfully remediated.</p>
+<p>
+
+
+
+      <figure>
+        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok_hu11668511510235069452.webp#left" alt="Remediation Run OK" />
+        <figcaption>Microsoft Intune Remediation Remediation results.</figcaption>
+      </figure></p>
+<p>All is left to do now, is find some more test devices to add to the assignment group, and monitor their progress.</p>
+
+
+<h2 class="relative group">Summary 
+    <div id="summary" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>In short, this should allow you to get over the hurdle caused by the failing update delivery, and also give the devices with the issue a push in the right direction following the update to their recovery partition size, to allow them to realise they can now install the update. I can&rsquo;t take credit for the scripting of the Microsoft published resolution, that goes to <a href="https://www.reddit.com/user/InternetStranger4You/" target="_blank">u/InternetStranger4You</a>, but with this and moving it to a Remediation in Microsoft Intune, means that it can do the heavy lifting on your behalf.</p>
+<p>Or you can just wait for Microsoft to release a fix, totally up to you.</p>
+<p>Thanks to <a href="https://github.com/piotrxj" target="_blank">piotrxj</a> in the comments for the updated detection method.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #e63946"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #1d3557"
     >
 
     
@@ -1350,209 +1673,8 @@
 
   <span
     
-      class="dark:text-neutral-300"
-    >This method will only update Store Apps installed in the <strong>System</strong> context if there is no user signed into the device; for Apps installed in the <strong>User</strong> context, a user must be signed in for the apps to update. Go figure 😅.</span>
-</div>
-
-
-
-<h2 class="relative group">Remediation Settings 
-    <div id="remediation-settings" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#remediation-settings" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>So now we&rsquo;ve got a way to start the update of the apps, let&rsquo;s find a way to work out if we need to kick off an update. Back to the initial query we created, and if we run the below section of the command, we&rsquo;ll get an output that we might be able to work with.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span>
-</span></span></code></pre></div><p>
-
-
-
-      <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-output_hu8981061137418686979.webp#left" alt="Command Output" />
-        <figcaption>The result of the Get-CimInstance query.</figcaption>
-      </figure></p>
-<p>Guess what, we do, that <strong>LastScanError</strong> is looking mighty interesting, and it being Microsoft I bet that an exit code of zero means success, but we should have a look at the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp#deviceappmanagementlastscanerror" target="_blank">reference document</a> just in case.</p>
-<blockquote>
-<p>Reports the last error code returned by the update scan.</p>
-<p>This is a required node.</p>
-</blockquote>
-<p>OK, so it isn&rsquo;t that clear, but we&rsquo;ve got a way to detect whether the last update of apps was successful, and with the Settings Catalog policy created earlier we should be keeping apps up to date from then on.</p>
-
-
-<h3 class="relative group">Detection Script 
-    <div id="detection-script" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#detection-script" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>We can use the above, and a little logic to detect whether the result of the <strong>LastScanError</strong> is a zero or not, and if it&rsquo;s not a zero throw an <strong>Exit 1</strong> to allow a remediation to run.</p>
-
-
-
-
-
-
-
-  
-  
-
-  
-    
-  
-  
-  
-
-  
-  
-  
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$wmiObj</span> <span class="p">=</span> <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$wmiObj</span><span class="p">.</span><span class="py">LastScanError</span> <span class="o">-ne</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps not updated.&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">1</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps updated.&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Exit</span> <span class="mf">0</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Unable to query Store App Update status.&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-
-
-<p>On to the remediation portion.</p>
-
-
-<h3 class="relative group">Remediation Script 
-    <div id="remediation-script" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#remediation-script" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>We&rsquo;ve already done the ground work with the previous queries to test the update of apps, so this one is very straightforward.</p>
-
-
-
-
-
-
-
-  
-  
-
-  
-    
-  
-  
-  
-
-  
-  
-  
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="k">Try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span> <span class="p">|</span> <span class="nb">Invoke-CimMethod</span> <span class="n">-MethodName</span> <span class="n">UpdateScanMethod</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps updated.&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">0</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">Catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">Write-Output</span> <span class="s2">&#34;Windows Store Apps not updated.&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Exit</span> <span class="mf">2000</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-
-
-<p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
-
-
-<h2 class="relative group">Deploying the Remediation 
-    <div id="deploying-the-remediation" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deploying-the-remediation" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>We&rsquo;ve seen remediations a <a href="/tags/remediation/" rel="noopener" target="_blank">handful</a> of times now in this blog, so go ahead and create a new Remediation Script in Microsoft Intune mirroring the below settings. Be aware that we definitely do not want to be running this as the user, we <em>need</em> that glorious system context.</p>
-<p>
-
-
-
-      <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-script_hu15265573827139796870.webp#left" alt="Remediation Script" />
-        <figcaption>Microsoft Intune Remediation Script.</figcaption>
-      </figure></p>
-<p>I&rsquo;ve assigned this to <strong>All Devices</strong> with my beloved <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank">Device Filters</a> on a daily schedule, but if you&rsquo;re more cautious than I am, assign this to a smaller proof-of-concept group.</p>
-<p>After a while, you should start seeing the results of the Remediation, and hopefully positive ones to boot.</p>
-<p>
-
-
-
-      <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/updating-windows-store-apps/img/storeapps-results_hu9262254536749359581.webp#left" alt="Remediation Results" />
-        <figcaption>Microsoft Intune Remediation Results.</figcaption>
-      </figure></p>
-<p>If all goes well, your devices will start actually updating the &lsquo;Built In&rsquo; apps you haven&rsquo;t ripped out with a PowerShell script, and Microsoft Intune UWP store apps you&rsquo;ve deployed, though your users may start complaining about the apps looking like they&rsquo;re loading in the Start Menu 😂.</p>
-
-
-<h2 class="relative group">Summary 
-    <div id="summary" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>All in all a quick and dirty solution to a very simple problem with new Windows Autopilot devices and existing Microsoft Intune managed Windows devices, at least this way they&rsquo;ll do what they should have done in the first place and just keep themselves updated.</p>
-<p>If only all the issues I encounter during my days could be solved with a simple Remediation script.</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-<path fill="currentColor"  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >The detection and remediation scripts are available, as always in my <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Remediation/UpdateStoreApps" target="_blank">Github Repo</a>.</span>
+      style="color: #f1faee"
+    >I hold no responsibility for the impact to your devices or environments, please, please, please test this on devices you do not care about first before even contemplating pushing this to a wider audience.</span>
 </div>
 
 
@@ -1572,7 +1694,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;title=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;title=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1591,7 +1713,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;text=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;text=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1609,7 +1731,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune&#43;https://memv.ennbee.uk/posts/updating-windows-store-apps/"
+      href="https://bsky.app/intent/compose?text=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441&#43;https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/"
       title="Post on Bluesky"
       aria-label="Post on Bluesky"
       >
@@ -1627,7 +1749,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;resubmit=true&amp;title=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;resubmit=true&amp;title=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1646,7 +1768,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;resubmit=true&amp;title=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;resubmit=true&amp;title=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Share via WhatsApp"
       aria-label="Share via WhatsApp"
       >
@@ -1665,7 +1787,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;resubmit=true&amp;title=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;resubmit=true&amp;title=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Share via Telegram"
       aria-label="Share via Telegram"
       >
@@ -1684,7 +1806,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;description=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;description=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1703,7 +1825,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;quote=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;quote=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1722,7 +1844,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/updating-windows-store-apps/&amp;subject=Keeping%20Windows%20Store%20Apps%20Updated%20with%20Microsoft%20Intune"
+      href="mailto:?body=https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/&amp;subject=Automatically%20Resizing%20the%20WinRE%20Partition%20for%20Windows%20Update%20KB5034441"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -1745,166 +1867,6 @@
 
 <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-  
-  
-
-  <a href="/posts/winre-parition-resize-kb5034441/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/winre-parition-resize-kb5034441/featured.jpg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/winre-parition-resize-kb5034441/">Automatically Resizing the WinRE Partition for Windows Update KB5034441</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2024-01-31T20:54:12&#43;00:00">31 January 2024</time>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Intune
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows 10 and later
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/updates/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Software Updates
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    PowerShell
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Remediation Scripts
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/bitlocker/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    BitLocker
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/endpoint-security/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Endpoint Security
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Security
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
   
   
 
@@ -2052,11 +2014,11 @@
   
   
 
-  <a href="/posts/configmgr-client-hybrid-autopilot/" class="min-w-full">
+  <a href="/posts/settings-catalog-firewall-rules/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/configmgr-client-hybrid-autopilot/featured.png);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/settings-catalog-firewall-rules/featured.png);"></div>
         
       
 
@@ -2064,7 +2026,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/configmgr-client-hybrid-autopilot/">Co-Managing Windows Autopilot Hybrid Join Devices</div>
+          href="/posts/settings-catalog-firewall-rules/">Modernising Microsoft Intune Firewall Rule Policies</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2103,7 +2065,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-03-01T21:26:30&#43;00:00">1 March 2023</time>
+  <time datetime="2023-09-12T21:40:50&#43;01:00">12 September 2023</time>
   
 
   
@@ -2129,10 +2091,170 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/configmgr/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/windows/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Configuration Manager
+    Windows 10 and later
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/powershell/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    PowerShell
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/settings-catalog/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Settings Catalog
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Security
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/firewall/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Firewall
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/automation/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Automation
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/endpoint-security/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Endpoint Security
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+  
+  
+
+  <a href="/posts/automate-endpoint-privilege-management/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/automate-endpoint-privilege-management/featured.jpg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/automate-endpoint-privilege-management/">Automating Endpoint Privilege Management Policies with PowerShell</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2023-06-01T18:58:40&#43;01:00">1 June 2023</time>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/intune/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Intune
   </span>
 </span>
   </span>
@@ -2153,18 +2275,34 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/windows-autopilot/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/security/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows Autopilot
+    Security
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remediation/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/settings-catalog/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Remediation Scripts
+    Settings Catalog
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/endpoint-privilege-management/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Endpoint Privilege Management
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/graph/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Graph API
   </span>
 </span>
   </span>
@@ -2177,18 +2315,18 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hybrid-join/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/automation/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Hybrid Entra Join
+    Automation
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/co-management/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/endpoint-security/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Co-management
+    Endpoint Security
   </span>
 </span>
   </span>
@@ -2223,8 +2361,8 @@
           
         
       <script>
-        var oid = "views_posts\/Updating-Windows-Store-Apps\/index.md"
-        var oid_likes = "likes_posts\/Updating-Windows-Store-Apps\/index.md"
+        var oid = "views_posts\/Windows-WinRE-Partition-Resize-KB5034441\/index.md"
+        var oid_likes = "likes_posts\/Windows-WinRE-Partition-Resize-KB5034441\/index.md"
       </script>
       
       
@@ -2247,7 +2385,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/macos-teams-new-backgrounds/">
+            <a class="flex group mr-3" href="/posts/windows-updating-store-apps/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -2259,11 +2397,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Custom Backgrounds for macOS New and Classic Microsoft Teams Apps</span
+                  >Keeping Windows Store Apps Updated with Microsoft Intune</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-02-14T21:39:58&#43;00:00">14 February 2024</time>
+                    <time datetime="2024-02-06T21:03:00&#43;00:00">6 February 2024</time>
                   
                 </span>
               </span>
@@ -2272,15 +2410,15 @@
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/winre-parition-resize-kb5034441/">
+            <a class="flex text-right group ml-3" href="/posts/device-attributes-cap/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Automatically Resizing the WinRE Partition for Windows Update KB5034441</span
+                  >Using Entra ID Device Attributes for Conditional Access Exceptions</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-01-31T20:54:12&#43;00:00">31 January 2024</time>
+                    <time datetime="2024-01-10T20:08:21&#43;00:00">10 January 2024</time>
                   
                 </span>
               </span>
