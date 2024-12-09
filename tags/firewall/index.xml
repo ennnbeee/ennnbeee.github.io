@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Mon, 22 Jul 2024 21:14:28 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memv.ennbee.uk/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>

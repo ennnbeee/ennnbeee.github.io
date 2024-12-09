@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows 10 Update Management on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
+    <link>https://memv.ennbee.uk/keywords/windows-10-update-management/</link>
+    <description>Recent content in Windows 10 Update Management on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Tue, 24 Sep 2024 11:11:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/keywords/windows-10-update-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Self-Service Software Update Deployments</title>
+      <link>https://memv.ennbee.uk/posts/updates-self-service-deployment/</link>
+      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/updates-self-service-deployment/</guid>
+      <description>Fancy letting your end users select what day of the week they get their device updates allowing them to be truly empowered but still ensure a level of device security, sure you do.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updates-self-service-deployment/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

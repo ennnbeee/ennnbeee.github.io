@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 24 Sep 2024 11:11:47 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memv.ennbee.uk/categories/android/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Self-Service Software Update Deployments</title>
@@ -41,12 +41,12 @@
     
     <item>
       <title>The Easy Way to Approve Managed Google Play Apps</title>
-      <link>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</link>
+      <link>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</link>
       <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
       
-      <guid>https://memv.ennbee.uk/posts/approving-managed-google-play-apps/</guid>
+      <guid>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</guid>
       <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/approving-managed-google-play-apps/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/featured.png" />
     </item>
     
     <item>

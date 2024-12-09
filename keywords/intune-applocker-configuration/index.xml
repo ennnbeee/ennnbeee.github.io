@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intune AppLocker Configuration on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
+    <link>https://memv.ennbee.uk/keywords/intune-applocker-configuration/</link>
+    <description>Recent content in Intune AppLocker Configuration on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Tue, 22 Oct 2024 11:13:46 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/keywords/intune-applocker-configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Converting AppLocker Policies to Intune Profiles</title>
+      <link>https://memv.ennbee.uk/posts/windows-applocker-intune/</link>
+      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/windows-applocker-intune/</guid>
+      <description>We know that there is no native configuration for AppLocker in Intune, and we should be looking at App Control for Business already, but there is still a place for AppLocker, and I haven&amp;rsquo;t got time to manually do anything, so let&amp;rsquo;s use PowerShell to create out AppLocker policies from exported XML files.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-applocker-intune/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
