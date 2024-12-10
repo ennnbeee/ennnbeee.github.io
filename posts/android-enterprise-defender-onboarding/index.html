@@ -76,7 +76,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-12-10T11:12:55+00:00">
-    <meta property="article:modified_time" content="2024-12-10T13:56:23+00:00">
+    <meta property="article:modified_time" content="2024-12-10T14:04:17+00:00">
     <meta property="article:tag" content="Microsoft Defender">
     <meta property="article:tag" content="Security">
     <meta property="article:tag" content="OEMConfig">
@@ -108,12 +108,12 @@
     "dateCreated": "2024-12-10T11:12:55\u002b00:00",
     "datePublished": "2024-12-10T11:12:55\u002b00:00",
     
-    "dateModified": "2024-12-10T13:56:23\u002b00:00",
+    "dateModified": "2024-12-10T14:04:17\u002b00:00",
     
     "keywords": ["samsung knox service plugin","Android Enterprise Defender onboarding","Microsoft Defender for Endpoint","Intune Android onboarding"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1830"
+    "wordCount": "1813"
   }]
   </script>
 
@@ -1429,7 +1429,6 @@
 <p>We&rsquo;ve dealt with the VPN, but it&rsquo;s still going to ask for the following permissions:</p>
 <ul>
 <li>File Access</li>
-<li>VPN Creation</li>
 <li>Location Access</li>
 <li>Permanent Protection</li>
 <li>Accessibility</li>
@@ -1448,7 +1447,7 @@
         />
         <figcaption>Defender app on Android Enterprise requesting permissions.</figcaption>
       </figure></p>
-<p>Now for <em>all</em> Android Enterprise devices we can only make this onboarding a little easier with Intune, by updating our App Configuration policy for Defender to include the below permissions and settings.</p>
+<p>Now for <em>all</em> Android Enterprise device types we can only make this onboarding a little easier with Intune, by updating our App Configuration policy for Defender to include the below permissions and settings.</p>
 
 
 <h4 class="relative group">App Settings 
@@ -1461,7 +1460,7 @@
     </span>        
     
 </h4>
-<p>These allow for the configuration of the low-touch onboarding approach, and are still in preview so may change in the future. For now, they seem to work ok.</p>
+<p>These settings allow for the configuration of the low-touch onboarding approach:</p>
 <table>
   <thead>
       <tr>
@@ -1601,7 +1600,7 @@
         />
         <figcaption>Defender app on Android Enterprise permissions in an App Configuration policy.</figcaption>
       </figure></p>
-<p>This now means that users now won&rsquo;t be prompted for three of the six permissions <del>the greedy</del> Defender app is requesting.</p>
+<p>This now means that users now won&rsquo;t be prompted for three of the six permissions the <del>greedy</del> Defender app is requesting.</p>
 <p>Can we sort out the remaining permissions though?</p>
 
 
@@ -1615,12 +1614,12 @@
     </span>        
     
 </h2>
-<p>Maybe is the answer, and only if you have Samsung Android Enterprise devices running at least <a href="https://docs.samsungknox.com/admin/knox-platform-for-enterprise/knox-service-plugin/kbas/kba-1261-grant-special-permissions-for-an-app/#:~:text=EMM-,Environment,-Knox%20Service%20Plugin" target="_blank">Android 13</a>.</p>
+<p>The answer is <em>maybe</em>, and only if you have Samsung Android Enterprise devices running at least <a href="https://docs.samsungknox.com/admin/knox-platform-for-enterprise/knox-service-plugin/kbas/kba-1261-grant-special-permissions-for-an-app/#:~:text=EMM-,Environment,-Knox%20Service%20Plugin" target="_blank">Android 13</a>.</p>
 <blockquote>
 <p>If a special permission is granted through the policy, the device doesn’t request the permission from the device user.</p>
 </blockquote>
 <p>What started me on this journey was a post about the changes to the <a href="https://techcommunity.microsoft.com/blog/microsoftendpointmanagerblog/frontline-workers-get-a-better-experience-from-microsoft-and-samsung/4078801" target="_blank">Shared Device mode for Android Enterprise on Samsung devices</a> detailing how to use the <a href="https://docs.samsungknox.com/admin/knox-platform-for-enterprise/knox-service-plugin/welcome/" target="_blank">Knox Service Plugin</a> and an <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/android-oem-configuration-overview" target="_blank">OEMConfig profile</a> in Intune to give Microsoft Launcher overlay, or display over other app permissions on-behalf of a user.</p>
-<p>Surely we can do the same for Defender on our Samsung devices?</p>
+<p>Surely we can do the same for Defender on our supported Samsung devices?</p>
 
 
 <h3 class="relative group">Knox Service Plugin 
