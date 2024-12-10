@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Lower-Touch Onboarding of Android Devices to Defender for Endpoint</title>
-  <meta name="title" content="Lower-Touch Onboarding of Android Devices to Defender for Endpoint" />
+  <title>Lower-Touch Defender for Endpoint Onboarding for Android Devices</title>
+  <meta name="title" content="Lower-Touch Defender for Endpoint Onboarding for Android Devices" />
   
   <meta name="description" content="Using Intune and OEMConfig for Samsung Knox Android Enterprise devices to improve the onboarding of devices to Defender for Endpoint." />
-  <meta name="keywords" content="defender, security, oemconfig, intune, android">
+  <meta name="keywords" content="defender, security, oemconfig, intune, android, samsung knox service plugin, Android Enterprise Defender onboarding, Microsoft Defender for Endpoint, Intune Android onboarding">
   <meta name="robots" content="all" />
   
   
@@ -70,13 +70,13 @@
   
   <meta property="og:url" content="https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/">
   <meta property="og:site_name" content="MEM v ENNBEE - Battles with Modern Endpoint Management">
-  <meta property="og:title" content="Lower-Touch Onboarding of Android Devices to Defender for Endpoint">
+  <meta property="og:title" content="Lower-Touch Defender for Endpoint Onboarding for Android Devices">
   <meta property="og:description" content="Using Intune and OEMConfig for Samsung Knox Android Enterprise devices to improve the onboarding of devices to Defender for Endpoint.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-12-10T11:12:55+00:00">
-    <meta property="article:modified_time" content="2024-12-10T13:51:22+00:00">
+    <meta property="article:modified_time" content="2024-12-10T13:56:23+00:00">
     <meta property="article:tag" content="Microsoft Defender">
     <meta property="article:tag" content="Security">
     <meta property="article:tag" content="OEMConfig">
@@ -85,7 +85,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/featured.png">
-  <meta name="twitter:title" content="Lower-Touch Onboarding of Android Devices to Defender for Endpoint">
+  <meta name="twitter:title" content="Lower-Touch Defender for Endpoint Onboarding for Android Devices">
   <meta name="twitter:description" content="Using Intune and OEMConfig for Samsung Knox Android Enterprise devices to improve the onboarding of devices to Defender for Endpoint.">
 
   
@@ -94,8 +94,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Lower-Touch Onboarding of Android Devices to Defender for Endpoint",
-    "headline": "Lower-Touch Onboarding of Android Devices to Defender for Endpoint",
+    "name": "Lower-Touch Defender for Endpoint Onboarding for Android Devices",
+    "headline": "Lower-Touch Defender for Endpoint Onboarding for Android Devices",
     "description": "Using Intune and OEMConfig for Samsung Knox Android Enterprise devices to improve the onboarding of devices to Defender for Endpoint.",
     "abstract": "Can we improve upon the onboarding of Android Enterprise devices to Defender for Endpoint and make users lives a little easier, and Security Teams hearts a little less restless having to rely on end users to implement their own security controls?",
     "inLanguage": "en",
@@ -108,12 +108,12 @@
     "dateCreated": "2024-12-10T11:12:55\u002b00:00",
     "datePublished": "2024-12-10T11:12:55\u002b00:00",
     
-    "dateModified": "2024-12-10T13:51:22\u002b00:00",
+    "dateModified": "2024-12-10T13:56:23\u002b00:00",
     
-    "keywords": ["defender","security","oemconfig"],
+    "keywords": ["samsung knox service plugin","Android Enterprise Defender onboarding","Microsoft Defender for Endpoint","Intune Android onboarding"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1838"
+    "wordCount": "1830"
   }]
   </script>
 
@@ -814,7 +814,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Lower-Touch Onboarding of Android Devices to Defender for Endpoint
+      Lower-Touch Defender for Endpoint Onboarding for Android Devices
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1246,19 +1246,6 @@
         <div class="article-content max-w-prose mb-20">
           <p>Onboarding corporate mobile devices managed by Intune into Defender for Endpoint shouldn&rsquo;t require your end users to do <em>anything</em>, and with supervised iOS/iPadOS devices this is exactly the case with Microsoft providing <a href="https://learn.microsoft.com/en-us/defender-endpoint/ios-install" target="_blank">great documentation</a> on the process and corresponding configuration profiles to support silent onboarding.</p>
 <p>The same however can&rsquo;t be said for Android Enterprise devices, even with the feature for <a href="https://learn.microsoft.com/en-us/defender-endpoint/android-intune#configure-low-touch-onboarding" target="_blank">low-touch onboarding</a> <del>currently in preview</del> now <a href="https://learn.microsoft.com/en-us/defender-endpoint/android-whatsnew#android-low-touch-onboarding-is-now-ga" target="_blank">Generally Available</a>.</p>
-<p>
-
-
-
-      <figure>
-        <img
-          class="my-0 rounded-md"
-          loading="lazy"
-          src="https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/img/amde-preview_hu14894472488771461755.png"
-          alt="Android Low-touch onboarding preview message"
-        />
-        <figcaption>Warning about Android low-touch onboarding being in preview.</figcaption>
-      </figure></p>
 <p>Although low-touch onboarding reduces the amount of hoops a user has to jump through, it doesn&rsquo;t remove them all.</p>
 <p>Can we help with that?</p>
 
@@ -1904,7 +1891,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;title=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;title=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1923,7 +1910,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;text=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://twitter.com/intent/tweet/?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;text=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1941,7 +1928,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint&#43;https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/"
+      href="https://bsky.app/intent/compose?text=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices&#43;https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/"
       title="Post on Bluesky"
       aria-label="Post on Bluesky"
       >
@@ -1959,7 +1946,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;resubmit=true&amp;title=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://reddit.com/submit/?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;resubmit=true&amp;title=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1978,7 +1965,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;resubmit=true&amp;title=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://api.whatsapp.com/send?text=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;resubmit=true&amp;title=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Share via WhatsApp"
       aria-label="Share via WhatsApp"
       >
@@ -1997,7 +1984,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;resubmit=true&amp;title=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://t.me/share/url?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;resubmit=true&amp;title=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Share via Telegram"
       aria-label="Share via Telegram"
       >
@@ -2016,7 +2003,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;description=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;description=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -2035,7 +2022,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;quote=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;quote=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -2054,7 +2041,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;subject=Lower-Touch%20Onboarding%20of%20Android%20Devices%20to%20Defender%20for%20Endpoint"
+      href="mailto:?body=https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/&amp;subject=Lower-Touch%20Defender%20for%20Endpoint%20Onboarding%20for%20Android%20Devices"
       title="Send via email"
       aria-label="Send via email"
       >
