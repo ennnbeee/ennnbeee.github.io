@@ -10,6 +10,16 @@
     <atom:link href="https://memv.ennbee.uk/categories/intune/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Lower-Touch Onboarding of Android Devices to Defender for Endpoint</title>
+      <link>https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/</link>
+      <pubDate>Tue, 10 Dec 2024 11:12:55 +0000</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/</guid>
+      <description>Can we improve upon the onboarding of Android Enterprise devices to Defender for Endpoint and make users lives a little easier, and Security Teams hearts a little less restless having to rely on end users to implement their own security controls?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/featured.png" />
+    </item>
+    
+    <item>
       <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
       <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</link>
       <pubDate>Tue, 03 Dec 2024 18:12:49 +0000</pubDate>
