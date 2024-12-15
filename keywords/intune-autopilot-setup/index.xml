@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intune Autopilot Setup on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
+    <link>https://memv.ennbee.uk/keywords/intune-autopilot-setup/</link>
+    <description>Recent content in Intune Autopilot Setup on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
+    <lastBuildDate>Mon, 03 Jun 2024 18:20:55 +0100</lastBuildDate><atom:link href="https://memv.ennbee.uk/keywords/intune-autopilot-setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Creating Windows Autopilot Virtual Machines on macOS</title>
+      <link>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</link>
+      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
+      
+      <guid>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</guid>
+      <description>With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but still need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to deploy a Windows Autopilot Virtual machine on your macOS device for testing.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
