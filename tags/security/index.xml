@@ -205,7 +205,7 @@
       <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
-      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..</description>
+      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/featured.png" />
     </item>
     
@@ -250,16 +250,6 @@
     </item>
     
     <item>
-      <title>Windows Operating System Compliance Updates</title>
-      <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
-      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/featured.png" />
-    </item>
-    
-    <item>
       <title>macOS National Cyber Security Centre Security Settings in Intune</title>
       <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
       <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
@@ -267,16 +257,6 @@
       <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
       <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Enabling BitLocker and WinRE on failed Windows Devices</title>
-      <link>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</link>
-      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/featured.png" />
     </item>
     
   </channel>

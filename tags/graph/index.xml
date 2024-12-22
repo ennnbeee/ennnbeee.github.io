@@ -150,16 +150,6 @@
     </item>
     
     <item>
-      <title>Migrating from AzureAD Authentication for Graph API</title>
-      <link>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</link>
-      <pubDate>Tue, 01 Nov 2022 19:54:44 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</guid>
-      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/featured.png" />
-    </item>
-    
-    <item>
       <title>Updating Defender Antivirus Compliance Settings</title>
       <link>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</link>
       <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
@@ -200,16 +190,6 @@
     </item>
     
     <item>
-      <title>Windows Operating System Compliance Updates</title>
-      <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
-      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/featured.png" />
-    </item>
-    
-    <item>
       <title>Retrofitting Windows Autopilot Group Tags</title>
       <link>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
@@ -217,16 +197,6 @@
       <guid>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
       <description>Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&amp;rsquo;t bother doing their part of the deal.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/featured.png" />
-    </item>
-    
-    <item>
-      <title>Bulk Adding Device Notes to Enrolled Devices</title>
-      <link>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</link>
-      <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
-      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/featured.png" />
     </item>
     
   </channel>

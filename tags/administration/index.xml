@@ -30,16 +30,6 @@
     </item>
     
     <item>
-      <title>Migrating from AzureAD Authentication for Graph API</title>
-      <link>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</link>
-      <pubDate>Tue, 01 Nov 2022 19:54:44 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</guid>
-      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/featured.png" />
-    </item>
-    
-    <item>
       <title>The Easy Way to Approve Managed Google Play Apps</title>
       <link>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</link>
       <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
@@ -87,16 +77,6 @@
       <guid>https://memv.ennbee.uk/posts/endpoint-manager-device-filters/</guid>
       <description>Now if you&amp;rsquo;ve ever spoken to me about Microsoft Intune and using Dynamic Groups for management of users and devices, I probably would have talked your ears off about the attribute usage, which attributes are suitable, and that moving away from assigned groups to dynamic is the only way forward for Modern Device Management.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/endpoint-manager-device-filters/featured.png" />
-    </item>
-    
-    <item>
-      <title>Bulk Adding Device Notes to Enrolled Devices</title>
-      <link>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</link>
-      <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
-      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/featured.png" />
     </item>
     
   </channel>

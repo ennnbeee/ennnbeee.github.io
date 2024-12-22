@@ -290,16 +290,6 @@
     </item>
     
     <item>
-      <title>Migrating from AzureAD Authentication for Graph API</title>
-      <link>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</link>
-      <pubDate>Tue, 01 Nov 2022 19:54:44 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/</guid>
-      <description>With the impending retirement of the Azure AD Graph API and ADAL authentication methods, and by impending, I mean the end of 2022, we should probably look at how we move away from the existing authentication methods.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/finally-moving-to-msal-auth/featured.png" />
-    </item>
-    
-    <item>
       <title>Updating Defender Antivirus Compliance Settings</title>
       <link>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</link>
       <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
@@ -360,16 +350,6 @@
     </item>
     
     <item>
-      <title>Windows Operating System Compliance Updates</title>
-      <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
-      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/featured.png" />
-    </item>
-    
-    <item>
       <title>Retrofitting Windows Autopilot Group Tags</title>
       <link>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
       <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
@@ -390,16 +370,6 @@
     </item>
     
     <item>
-      <title>Bulk Adding Device Notes to Enrolled Devices</title>
-      <link>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</link>
-      <pubDate>Thu, 05 May 2022 17:22:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/bulk-adding-device-notes/</guid>
-      <description>Ever had to add notes to Intune Managed Devices in bulk? Me either, well not until a few weeks ago when I needed an easy way to update the notes field on 100&amp;rsquo;s of devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bulk-adding-device-notes/featured.png" />
-    </item>
-    
-    <item>
       <title>Renaming Windows Autopilot Hybrid Joined Devices</title>
       <link>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</link>
       <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
@@ -407,16 +377,6 @@
       <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
       <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename/featured.png" />
-    </item>
-    
-    <item>
-      <title>Enabling BitLocker and WinRE on failed Windows Devices</title>
-      <link>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</link>
-      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/featured.png" />
     </item>
     
   </channel>

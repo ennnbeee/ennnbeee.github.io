@@ -125,7 +125,7 @@
       <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
       
       <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
-      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune..</description>
+      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/featured.png" />
     </item>
     
@@ -147,16 +147,6 @@
       <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
       <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Windows Operating System Compliance Updates</title>
-      <link>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</link>
-      <pubDate>Thu, 30 Jun 2022 11:20:36 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/operating-system-compliance-updates/</guid>
-      <description>Let&amp;rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &amp;lsquo;Minimum OS Version&amp;rsquo; and &amp;lsquo;Maximum OS Version&amp;rsquo; is dumb and you should definitely check yourself if you&amp;rsquo;re using this in your environment.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/operating-system-compliance-updates/featured.png" />
     </item>
     
   </channel>

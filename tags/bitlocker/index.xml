@@ -39,15 +39,5 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/featured.jpg" />
     </item>
     
-    <item>
-      <title>Enabling BitLocker and WinRE on failed Windows Devices</title>
-      <link>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</link>
-      <pubDate>Thu, 17 Mar 2022 16:44:09 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/</guid>
-      <description>You may have enabled and configure BitLocker for silent encryption on your Windows 10 Autopilot joined devices, but have you had the headache of devices that don&amp;rsquo;t have a Windows Recovery Environment (WinRE) configured? Yep? Me too&amp;hellip;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/enable-bitlocker-and-winre/featured.png" />
-    </item>
-    
   </channel>
 </rss>
