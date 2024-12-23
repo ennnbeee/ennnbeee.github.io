@@ -80,7 +80,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-09-02T20:43:33+01:00">
-    <meta property="article:modified_time" content="2024-12-23T11:47:13+00:00">
+    <meta property="article:modified_time" content="2024-12-23T12:19:23+00:00">
     <meta property="article:tag" content="PowerShell">
     <meta property="article:tag" content="Apps">
     <meta property="article:tag" content="Co-management">
@@ -112,7 +112,7 @@
     "dateCreated": "2024-09-02T20:43:33\u002b01:00",
     "datePublished": "2024-09-02T20:43:33\u002b01:00",
     
-    "dateModified": "2024-12-23T11:47:13\u002b00:00",
+    "dateModified": "2024-12-23T12:19:23\u002b00:00",
     
     "keywords": ["Configuration Manager client installation","orphaned internet devices","Intune co-management","Windows 10 client setup","Cloud Management Gateway"],
     
@@ -1644,7 +1644,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-folder_hu2209175228332537900.png#left" alt="Configuration Manager Client folder" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-folder_hu2209175228332537900.png"
+          alt="Configuration Manager Client folder"
+        />
         <figcaption>Configuration Manager client installation files.</figcaption>
       </figure></p>
 <p>Time to package the files.</p>
@@ -1668,7 +1673,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-package_hu656046284529120503.png#left" alt="Microsoft-Win32-Content-Prep-Tool Output" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-package_hu656046284529120503.png"
+          alt="Microsoft-Win32-Content-Prep-Tool Output"
+        />
         <figcaption>Output of the Microsoft-Win32-Content-Prep-Tool command.</figcaption>
       </figure></p>
 <p>And a new file <strong>Install-ConfigMgrClientCMG.intunewin</strong> in <strong>C:\Source\Installers</strong> ready to be uploaded to Microsoft Intune.</p>
@@ -1691,7 +1701,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-appinfo_hu15183893065812224569.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-appinfo_hu15183893065812224569.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>App Info section in Microsoft Intune for the Win32app.</figcaption>
       </figure></p>
 
@@ -1746,7 +1761,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-program_hu12954437774450160278.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-program_hu12954437774450160278.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>Program section in Microsoft Intune for the Win32app for PKI authentication.</figcaption>
       </figure></p>
 
@@ -1786,7 +1806,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-pkireqs_hu11799747003780748598.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-pkireqs_hu11799747003780748598.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>Requirements section in Microsoft Intune for the Win32app for PKI authentication.</figcaption>
       </figure></p>
 <p>Moving on to the next page in the process, we need to create our Detection rule using the <strong>.tag</strong> file that gets created during the installation. So go and add a new detection rule using the File option, with the path to the file being <strong>%ProgramData%\Microsoft\CCMCMGInstall</strong> and checking if the <strong>Install-ConfigMgrClientCMG.ps1.tag</strong> file exists:</p>
@@ -1795,7 +1820,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-appdetect_hu17629975824624602717.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-appdetect_hu17629975824624602717.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>Detection Rule section in Microsoft Intune for the Win32app for PKI authentication.</figcaption>
       </figure></p>
 <p>We can skip to the end of the process, as we have no further settings to configure, and I&rsquo;d suggest assigning this on a small Proof-of-Concept group as part of testing, prior to just launching it to your entire device estate.</p>
@@ -1822,7 +1852,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-program_hu12954437774450160278.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-program_hu12954437774450160278.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>Program section in Microsoft Intune for the Win32app for Entra authentication.</figcaption>
       </figure></p>
 <p>As with the PKI authentication configuration we need to add our Entra requirement <a href="https://github.com/ennnbeee/mve-scripts/blob/main/Intune/Apps/ConfigMgrCMG/Requirement-ConfigMgrClientEntra.ps1" target="_blank">script</a>, updating the output data type to <code>String</code> and value of <code>Ready</code>.</p>
@@ -1831,7 +1866,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-entrareqs_hu3687296696028158997.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-entrareqs_hu3687296696028158997.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>Requirements section in Microsoft Intune for the Win32app for Entra authentication.</figcaption>
       </figure></p>
 <p>Same as with PKI authentication we need to create our Detection rule using the very same <code>.tag</code> file.</p>
@@ -1840,7 +1880,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-appdetect_hu17629975824624602717.png#left" alt="Microsoft Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-appdetect_hu17629975824624602717.png"
+          alt="Microsoft Intune Win32App"
+        />
         <figcaption>Detection Rule section in Microsoft Intune for the Win32app for Entra authentication.</figcaption>
       </figure></p>
 <p>Click Click Next OK-ing our way to the end, we now have both applications ready to be deployed to our orphaned Configuration Manager client devices.</p>
@@ -1876,7 +1921,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-reqsfail_hu7799812460221954909.png#left" alt="Configuration Manager PKI Client App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-reqsfail_hu7799812460221954909.png"
+          alt="Configuration Manager PKI Client App"
+        />
         <figcaption>A device failing the PKI requirements check in Microsoft Intune.</figcaption>
       </figure></p>
 
@@ -1916,7 +1966,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-win_hu13051094983508365866.png#left" alt="Configuration Manager PKI Client App Overview" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-win_hu13051094983508365866.png"
+          alt="Configuration Manager PKI Client App Overview"
+        />
         <figcaption>App installation overview in Microsoft Intune.</figcaption>
       </figure></p>
 <p>This isn&rsquo;t the end of the story though, as Microsoft Intune is just telling us whether the client setup files are now on the targeted devices after meeting either the Entra Join or Client Certificate requirements.</p>
@@ -1939,7 +1994,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-setuplog_hu1966181293988183575.png#left" alt="Configuration Manager Sup Intune Win32App" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/img/cmg-setuplog_hu1966181293988183575.png"
+          alt="Configuration Manager Sup Intune Win32App"
+        />
         <figcaption>The ccmsetup.log log file running the Configuration Manager client installation.</figcaption>
       </figure></p>
 <p>You can now trail this log to make sure that the device is authenticating to the Cloud Management Gateway, and await for a final exit code of either <strong>0</strong>, successful install or <strong>7</strong>, pending restart, with both denote that the client has successfully installed, and communicated to Configuration Manager.</p>

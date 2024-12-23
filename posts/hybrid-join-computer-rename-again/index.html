@@ -80,7 +80,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-01-12T20:10:32+00:00">
-    <meta property="article:modified_time" content="2024-12-23T11:47:13+00:00">
+    <meta property="article:modified_time" content="2024-12-23T12:19:23+00:00">
     <meta property="article:tag" content="Windows Autopilot">
     <meta property="article:tag" content="Remediation Scripts">
     <meta property="article:tag" content="Hybrid Entra Join">
@@ -113,7 +113,7 @@
     "dateCreated": "2023-01-12T20:10:32\u002b00:00",
     "datePublished": "2023-01-12T20:10:32\u002b00:00",
     
-    "dateModified": "2024-12-23T11:47:13\u002b00:00",
+    "dateModified": "2024-12-23T12:19:23\u002b00:00",
     
     "keywords": ["windows autopilot","remediation","hybrid join","powershell"],
     
@@ -1366,7 +1366,12 @@ broke device certificates and an Always On VPN connection that relied on them as
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-restart_hu14549348552935719596.webp#left" alt="Restart Prompt" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-restart_hu14549348552935719596.webp"
+          alt="Restart Prompt"
+        />
         <figcaption>Restart notification in Windows.</figcaption>
       </figure></p>
 <p>All components now in place, we have the full script wrapped in the needed Try/Catch operators, otherwise the good practice PowerShell Police will get you:</p>
@@ -1444,7 +1449,12 @@ broke device certificates and an Always On VPN connection that relied on them as
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-pa_hu14539457820720644581.webp#left" alt="Proactive Remediation" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-pa_hu14539457820720644581.webp"
+          alt="Proactive Remediation"
+        />
         <figcaption>Remediation script in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Go ahead and assign this to a test group of devices, or if you&rsquo;re brave or don&rsquo;t care about testing, all devices with a <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Device Filter</a>, giving the assignment a schedule; I&rsquo;ve gone with daily repeating every day, but amend this to your environment requirements:</p>
@@ -1453,7 +1463,12 @@ broke device certificates and an Always On VPN connection that relied on them as
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule_hu15279872816182450217.webp#left" alt="Proactive Remediation Schedule" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule_hu15279872816182450217.webp"
+          alt="Proactive Remediation Schedule"
+        />
         <figcaption>Remediation schedule in Microsoft Intune.</figcaption>
       </figure></p>
 <p>Now we have to sit back and wait for devices to receive the script package, execute it, and where applicable remediate.</p>
@@ -1463,7 +1478,12 @@ broke device certificates and an Always On VPN connection that relied on them as
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult_hu3883342894368819931.webp#left" alt="Proactive Remediation Results" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult_hu3883342894368819931.webp"
+          alt="Proactive Remediation Results"
+        />
         <figcaption>Remediation results in Microsoft Intune.</figcaption>
       </figure></p>
 <p>I didn&rsquo;t get a screenshot in time for detection picking up errors, only the success, but you get the gist.</p>

@@ -80,7 +80,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-03-25T23:32:16+00:00">
-    <meta property="article:modified_time" content="2024-12-23T11:47:13+00:00">
+    <meta property="article:modified_time" content="2024-12-23T12:19:23+00:00">
     <meta property="article:tag" content="Software Updates">
     <meta property="article:tag" content="Feature Updates">
     <meta property="article:tag" content="Dynamic Groups">
@@ -119,7 +119,7 @@
     "dateCreated": "2024-03-25T23:32:16\u002b00:00",
     "datePublished": "2024-03-25T23:32:16\u002b00:00",
     
-    "dateModified": "2024-12-23T11:47:13\u002b00:00",
+    "dateModified": "2024-12-23T12:19:23\u002b00:00",
     
     "keywords": ["updates","feature updates","dynamic groups","powershell","graph","automation"],
     
@@ -1322,7 +1322,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report_hu8780840468642661843.png#left" alt="Feature Update Readiness Report" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report_hu8780840468642661843.png"
+          alt="Feature Update Readiness Report"
+        />
         <figcaption>Microsoft Feature Update readiness report.</figcaption>
       </figure></p>
 <p>These readiness states are all going to be pretty handy, as we hopefully can capture those devices that are at a level of risk, or unknown risk of an update to Windows 11, and allow a targeted and safe deployment of the Feature Update.</p>
@@ -1458,7 +1463,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status_hu1416475172722776370.webp#left" alt="Feature Update Readiness Report Status" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status_hu1416475172722776370.webp"
+          alt="Feature Update Readiness Report Status"
+        />
         <figcaption>Graph Explorer showing Feature Update readiness report.</figcaption>
       </figure></p>
 <p>So let&rsquo;s create ourselves a function to handle getting the Feature Update Readiness report.</p>
@@ -1560,7 +1570,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get_hu13373945547331135867.webp#left" alt="Feature Update Readiness Report Get" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get_hu13373945547331135867.webp"
+          alt="Feature Update Readiness Report Get"
+        />
         <figcaption>Graph Explorer with created readiness report.</figcaption>
       </figure></p>
 <p>When I first looked at this call to Graph, the report data was passed back nicely inline, not any more though, it downloads a file, but at least the file is just a plain text file and contains all the data for the first 50 devices.</p>
@@ -1752,7 +1767,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array_hu3609411893549392883.webp#left" alt="Feature Update Readiness Report Array" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array_hu3609411893549392883.webp"
+          alt="Feature Update Readiness Report Array"
+        />
         <figcaption>Readiness report data array.</figcaption>
       </figure></p>
 <p>You might not know what&rsquo;s coming in part two of this series, but luckily I do, so, there are two bits of information we are going to add into the new report array that will be very useful.</p>
@@ -1919,7 +1939,12 @@ crossorigin="anonymous"></script>
 
 
       <figure>
-        <img class="my-0 rounded-md" loading="lazy" src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup_hu12847659777763487346.webp#left" alt="Feature Update Readiness Report Array Updates" />
+        <img
+          class="my-0 rounded-md"
+          loading="lazy"
+          src="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup_hu12847659777763487346.webp"
+          alt="Feature Update Readiness Report Array Updates"
+        />
         <figcaption>Updated Readiness report data array.</figcaption>
       </figure></p>
 <p>The array now has all the data we need for part two, we have the device details, including the Entra ID computer object Id, the risk state, and everything else we could possibly ask for to make our lives easier when deploying Windows 11 Feature Updates.</p>
