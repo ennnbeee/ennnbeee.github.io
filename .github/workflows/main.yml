@@ -14,5 +14,5 @@ jobs:
       - name: Run IndexNow
         uses: bojieyang/indexnow-action@v2
         with:
-          sitemap-location: "https://memv.ennbee.uk/sitemap.xml"
-          key: ${{ secrets.INDEXNOW_KEY }}
+          sitemap-location: "https://www.oddsandendpoints.co.uk/sitemap.xml"
+          key: ${{ secrets.indexnow }}
