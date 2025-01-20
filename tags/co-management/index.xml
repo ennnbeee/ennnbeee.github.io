@@ -1,33 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Co-management on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/co-management/</link>
-    <description>Recent content in Co-management on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/co-management/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-client-install-cmg/</link>
-      <pubDate>Mon, 02 Sep 2024 20:43:33 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-client-install-cmg/</guid>
-      <description>You&amp;rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&amp;rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/featured.png" />
-    </item>
-    
-    <item>
-      <title>Co-Managing Windows Autopilot Hybrid Join Devices</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</link>
-      <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</guid>
-      <description>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Co-management - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/co-management/</link>
+        <description>Co-management - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/co-management/" rel="self" type="application/rss+xml" /><item>
+    <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</link>
+    <pubDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-install-cmg/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?]]></description>
+</item><item>
+    <title>Co-Managing Windows Autopilot Hybrid Join Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-hybrid-autopilot/</link>
+    <pubDate>Wed, 01 Mar 2023 21:26:30 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-hybrid-autopilot/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-hybrid-autopilot/featured.png" referrerpolicy="no-referrer">
+            </div>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?]]></description>
+</item></channel>
 </rss>

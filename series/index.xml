@@ -1,43 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Series on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/series/</link>
-    <description>Recent content in Series on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 03 Dec 2024 18:12:49 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Intune Assignments</title>
-      <link>https://memv.ennbee.uk/series/intune-assignments/</link>
-      <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/series/intune-assignments/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark</title>
-      <link>https://memv.ennbee.uk/series/patching-gaps-in-the-cis-windows-11-benchmark/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/series/patching-gaps-in-the-cis-windows-11-benchmark/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Risk Based Windows 11 Feature Update Deployment</title>
-      <link>https://memv.ennbee.uk/series/risk-based-windows-11-feature-update-deployment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/series/risk-based-windows-11-feature-update-deployment/</guid>
-      <description></description>
-      
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Series - Series - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/series/</link>
+        <description>Series - Series - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/series/" rel="self" type="application/rss+xml" /><item>
+    <title>Risk Based Windows 11 Feature Update Deployment</title>
+    <link>https://www.oddsandendpoints.co.uk/series/risk-based-windows-11-feature-update-deployment/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/series/risk-based-windows-11-feature-update-deployment/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark</title>
+    <link>https://www.oddsandendpoints.co.uk/series/patching-gaps-in-the-cis-windows-11-benchmark/</link>
+    <pubDate>Mon, 12 Aug 2024 21:26:37 &#43;0100</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/series/patching-gaps-in-the-cis-windows-11-benchmark/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

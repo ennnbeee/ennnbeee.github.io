@@ -1,23 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Windows Hello on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/windows-hello/</link>
-    <description>Recent content in Windows Hello on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/windows-hello/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</link>
-      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</guid>
-      <description>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Windows Hello - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/windows-hello/</link>
+        <description>Windows Hello - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Jun 2024 21:26:37 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/windows-hello/" rel="self" type="application/rss+xml" /><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</link>
+    <pubDate>Sun, 23 Jun 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part2/featured.png" referrerpolicy="no-referrer">
+            </div>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.]]></description>
+</item></channel>
 </rss>

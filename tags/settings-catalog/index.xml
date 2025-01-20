@@ -1,103 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Settings Catalog on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
-    <description>Recent content in Settings Catalog on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/settings-catalog/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</link>
-      <pubDate>Mon, 12 Aug 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</guid>
-      <description>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&amp;rsquo;d like to say that we&amp;rsquo;ve saved the best post for last, but we&amp;rsquo;d be lying. Surely the Level 2 settings can&amp;rsquo;t be worse than the Level 1?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/featured.png" />
-    </item>
-    
-    <item>
-      <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
-      <link>https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/</link>
-      <pubDate>Mon, 22 Jul 2024 21:14:28 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/</guid>
-      <description>When did Microsoft go all covert ops (maybe don&amp;rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows 11</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/</link>
-      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/</guid>
-      <description>The impact of the CIS settings on BitLocker and Windows Autopilot now done and dusted, we should broaden our horizons and start to look at what other problems the CIS level 1 benchmark brings to Windows 11 as a whole. Are there any? Will it be smooth sailing? Yeah, no.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</link>
-      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</guid>
-      <description>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</link>
-      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</guid>
-      <description>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/featured.png" />
-    </item>
-    
-    <item>
-      <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
-      <link>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</link>
-      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Modernising Microsoft Intune Firewall Rule Policies</title>
-      <link>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</link>
-      <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
-      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/featured.png" />
-    </item>
-    
-    <item>
-      <title>Managing Settings Catalog Profile Assignments in Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</link>
-      <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
-      <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/featured.png" />
-    </item>
-    
-    <item>
-      <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
-      <link>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</link>
-      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
-      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Settings Catalog - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/settings-catalog/</link>
+        <description>Settings Catalog - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Aug 2024 21:26:37 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/settings-catalog/" rel="self" type="application/rss+xml" /><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/</link>
+    <pubDate>Mon, 12 Aug 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part4/featured.png" referrerpolicy="no-referrer">
+            </div>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&rsquo;d like to say that we&rsquo;ve saved the best post for last, but we&rsquo;d be lying. Surely the Level 2 settings can&rsquo;t be worse than the Level 1?]]></description>
+</item><item>
+    <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</link>
+    <pubDate>Mon, 22 Jul 2024 21:14:28 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/firewall-rule-policy-conversion/featured.png" referrerpolicy="no-referrer">
+            </div>When did Microsoft go all covert ops (maybe don&rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows 11</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/</link>
+    <pubDate>Mon, 15 Jul 2024 11:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part3/featured.png" referrerpolicy="no-referrer">
+            </div>The impact of the CIS settings on BitLocker and Windows Autopilot now done and dusted, we should broaden our horizons and start to look at what other problems the CIS level 1 benchmark brings to Windows 11 as a whole. Are there any? Will it be smooth sailing? Yeah, no.]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</link>
+    <pubDate>Sun, 23 Jun 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part2/featured.png" referrerpolicy="no-referrer">
+            </div>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/</link>
+    <pubDate>Sat, 15 Jun 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part1/featured.png" referrerpolicy="no-referrer">
+            </div>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?]]></description>
+</item><item>
+    <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/</link>
+    <pubDate>Sat, 09 Mar 2024 21:12:54 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/resusable-firewall-settings-microsoft-online/featured.jpg" referrerpolicy="no-referrer">
+            </div>It&rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.]]></description>
+</item><item>
+    <title>Modernising Microsoft Intune Firewall Rule Policies</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/</link>
+    <pubDate>Tue, 12 Sep 2023 21:40:50 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/settings-catalog-firewall-rules/featured.png" referrerpolicy="no-referrer">
+            </div>If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&rsquo;s the catch?]]></description>
+</item><item>
+    <title>Managing Settings Catalog Profile Assignments in Microsoft Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/managing-intune-assignment-settingscatalog/</link>
+    <pubDate>Tue, 27 Jun 2023 19:17:02 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/managing-intune-assignment-settingscatalog/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/managing-intune-assignment-settingscatalog/featured.png" referrerpolicy="no-referrer">
+            </div>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.]]></description>
+</item><item>
+    <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/</link>
+    <pubDate>Thu, 01 Jun 2023 18:58:40 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/automate-endpoint-privilege-management/featured.jpg" referrerpolicy="no-referrer">
+            </div>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?]]></description>
+</item></channel>
 </rss>

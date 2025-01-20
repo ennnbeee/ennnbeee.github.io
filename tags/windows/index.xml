@@ -1,0 +1,71 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Windows - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/windows/</link>
+        <description>Windows - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/windows/" rel="self" type="application/rss+xml" /><item>
+    <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</link>
+    <pubDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-install-cmg/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?]]></description>
+</item><item>
+    <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</link>
+    <pubDate>Mon, 22 Jul 2024 21:14:28 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/firewall-rule-policy-conversion/featured.png" referrerpolicy="no-referrer">
+            </div>When did Microsoft go all covert ops (maybe don&rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?]]></description>
+</item><item>
+    <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/</link>
+    <pubDate>Sat, 09 Mar 2024 21:12:54 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/resusable-firewall-settings-microsoft-online/featured.jpg" referrerpolicy="no-referrer">
+            </div>It&rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.]]></description>
+</item><item>
+    <title>Modernising Microsoft Intune Firewall Rule Policies</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/</link>
+    <pubDate>Tue, 12 Sep 2023 21:40:50 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/settings-catalog-firewall-rules/featured.png" referrerpolicy="no-referrer">
+            </div>If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&rsquo;s the catch?]]></description>
+</item><item>
+    <title>Reinstalling the Configuration Manager Client on Migrated Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-migration/</link>
+    <pubDate>Thu, 15 Dec 2022 22:16:54 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-migration/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-migration/featured.png" referrerpolicy="no-referrer">
+            </div>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&rsquo;re in luck.]]></description>
+</item><item>
+    <title>Updating Defender Antivirus Compliance Settings</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/defender-antivirus-compliance-updates/</link>
+    <pubDate>Tue, 25 Oct 2022 22:04:47 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/defender-antivirus-compliance-updates/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/defender-antivirus-compliance-updates/featured.jpg" referrerpolicy="no-referrer">
+            </div>We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.]]></description>
+</item><item>
+    <title>Retrofitting Windows Autopilot Group Tags</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
+    <pubDate>Sun, 19 Jun 2022 15:55:02 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-autopilot-retrofitting-group-tags/featured.png" referrerpolicy="no-referrer">
+            </div>Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.]]></description>
+</item><item>
+    <title>The Hidden Power of Windows Autopilot Group Tags</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/</link>
+    <pubDate>Thu, 28 Apr 2022 10:03:55 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/autopilot-power-of-group-tags/featured.jpg" referrerpolicy="no-referrer">
+            </div>A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?]]></description>
+</item></channel>
+</rss>

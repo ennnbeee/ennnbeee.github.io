@@ -1,113 +1,88 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Windows Autopilot on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/windows-autopilot/</link>
-    <description>Recent content in Windows Autopilot on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/windows-autopilot/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Renaming Windows Autopilot v2 Devices</title>
-      <link>https://memv.ennbee.uk/posts/windows-autopilot-v2-renaming/</link>
-      <pubDate>Tue, 02 Jul 2024 21:25:20 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-autopilot-v2-renaming/</guid>
-      <description>So Microsoft released Windows Autopilot Device Preparation, or more commonly known as APv2, into General Availability a little while ago. So with this production release we should be able to name our corporate owned Windows devices right Microsoft? Right?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-v2-renaming/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</link>
-      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</guid>
-      <description>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/featured.png" />
-    </item>
-    
-    <item>
-      <title>Creating Windows Autopilot Virtual Machines on macOS</title>
-      <link>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</link>
-      <pubDate>Mon, 03 Jun 2024 18:20:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/</guid>
-      <description>With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but still need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to deploy a Windows Autopilot Virtual machine on your macOS device for testing.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-windows-autopilot-utm/featured.png" />
-    </item>
-    
-    <item>
-      <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/windows-updating-store-apps/</link>
-      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-updating-store-apps/</guid>
-      <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-updating-store-apps/featured.png" />
-    </item>
-    
-    <item>
-      <title>Co-Managing Windows Autopilot Hybrid Join Devices</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</link>
-      <pubDate>Wed, 01 Mar 2023 21:26:30 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/</guid>
-      <description>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-hybrid-autopilot/featured.png" />
-    </item>
-    
-    <item>
-      <title>Proactively Renaming Hybrid Azure AD Joined Devices</title>
-      <link>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</link>
-      <pubDate>Thu, 12 Jan 2023 20:10:32 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/</guid>
-      <description>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&amp;rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&amp;rsquo;t a good enough identification method for Windows devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename-again/featured.png" />
-    </item>
-    
-    <item>
-      <title>Retrofitting Windows Autopilot Group Tags</title>
-      <link>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
-      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
-      <description>Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&amp;rsquo;t bother doing their part of the deal.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/featured.png" />
-    </item>
-    
-    <item>
-      <title>Configuring Available User Languages on Windows Devices</title>
-      <link>https://memv.ennbee.uk/posts/windows-autopilot-languages/</link>
-      <pubDate>Sat, 21 May 2022 14:22:53 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-autopilot-languages/</guid>
-      <description>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&amp;rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-languages/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>The Hidden Power of Windows Autopilot Group Tags</title>
-      <link>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</link>
-      <pubDate>Thu, 28 Apr 2022 10:03:55 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/</guid>
-      <description>A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/autopilot-power-of-group-tags/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Renaming Windows Autopilot Hybrid Joined Devices</title>
-      <link>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</link>
-      <pubDate>Sun, 20 Mar 2022 21:01:33 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/hybrid-join-computer-rename/</guid>
-      <description>You&amp;rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&amp;rsquo;s it.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/hybrid-join-computer-rename/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Windows Autopilot - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/windows-autopilot/</link>
+        <description>Windows Autopilot - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 02 Jul 2024 21:25:20 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/windows-autopilot/" rel="self" type="application/rss+xml" /><item>
+    <title>Renaming Windows Autopilot v2 Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-v2-renaming/</link>
+    <pubDate>Tue, 02 Jul 2024 21:25:20 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-v2-renaming/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-autopilot-v2-renaming/featured.png" referrerpolicy="no-referrer">
+            </div>So Microsoft released Windows Autopilot Device Preparation, or more commonly known as APv2, into General Availability a little while ago. So with this production release we should be able to name our corporate owned Windows devices right Microsoft? Right?]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</link>
+    <pubDate>Sun, 23 Jun 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part2/featured.png" referrerpolicy="no-referrer">
+            </div>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.]]></description>
+</item><item>
+    <title>Creating Windows Autopilot Virtual Machines on macOS</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-windows-autopilot-utm/</link>
+    <pubDate>Mon, 03 Jun 2024 18:20:55 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-windows-autopilot-utm/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-windows-autopilot-utm/featured.png" referrerpolicy="no-referrer">
+            </div>With all this chat about macOS device management in Microsoft Intune, I wonder how many people are macOS users but still need to test Microsoft Intune settings on Windows devices? Well fear not, there is a way to deploy a Windows Autopilot Virtual machine on your macOS device for testing.]]></description>
+</item><item>
+    <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-updating-store-apps/</link>
+    <pubDate>Tue, 06 Feb 2024 21:03:00 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-updating-store-apps/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-updating-store-apps/featured.png" referrerpolicy="no-referrer">
+            </div><p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft" target="_blank" rel="noopener noreferrer">New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>]]></description>
+</item><item>
+    <title>Co-Managing Windows Autopilot Hybrid Join Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-hybrid-autopilot/</link>
+    <pubDate>Wed, 01 Mar 2023 21:26:30 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-hybrid-autopilot/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-hybrid-autopilot/featured.png" referrerpolicy="no-referrer">
+            </div>Installing the Configuration Manager client on Hybrid Azure AD Joined Autopilot devices should be an easy process right?]]></description>
+</item><item>
+    <title>Proactively Renaming Hybrid Azure AD Joined Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/hybrid-join-computer-rename-again/</link>
+    <pubDate>Thu, 12 Jan 2023 20:10:32 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/hybrid-join-computer-rename-again/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/hybrid-join-computer-rename-again/featured.png" referrerpolicy="no-referrer">
+            </div>Nothing has really changed in the Hybrid Join Autopilot space when it comes to device names, and we&rsquo;re still stuck with useless naming conventions for these devices; sometimes a prefix and random characters just isn&rsquo;t a good enough identification method for Windows devices.]]></description>
+</item><item>
+    <title>Retrofitting Windows Autopilot Group Tags</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
+    <pubDate>Sun, 19 Jun 2022 15:55:02 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-autopilot-retrofitting-group-tags/featured.png" referrerpolicy="no-referrer">
+            </div>Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&rsquo;t bother doing their part of the deal.]]></description>
+</item><item>
+    <title>Configuring Available User Languages on Windows Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-languages/</link>
+    <pubDate>Sat, 21 May 2022 14:22:53 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-languages/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-autopilot-languages/featured.jpg" referrerpolicy="no-referrer">
+            </div>Have you ever wondered how to ensure that a number of languages are available for selection to end users on shared Windows 10 devices? The thought hadn&rsquo;t crossed my mind, but then again, you encounter new use cases and requirements on a weekly basis. This was one of those occasions.]]></description>
+</item><item>
+    <title>The Hidden Power of Windows Autopilot Group Tags</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/</link>
+    <pubDate>Thu, 28 Apr 2022 10:03:55 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/autopilot-power-of-group-tags/featured.jpg" referrerpolicy="no-referrer">
+            </div>A hidden gem with Autopilot service, is the Group Tag attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported. What can we use it for in Intune?]]></description>
+</item><item>
+    <title>Renaming Windows Autopilot Hybrid Joined Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/hybrid-join-computer-rename/</link>
+    <pubDate>Sun, 20 Mar 2022 21:01:33 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/hybrid-join-computer-rename/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/hybrid-join-computer-rename/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;ve probably hit the limitation with Windows Autopilot Hybrid Azure AD Join deployments and the device name templates being less than flexible, restricting to only a prefix and, well, that&rsquo;s it.]]></description>
+</item></channel>
 </rss>

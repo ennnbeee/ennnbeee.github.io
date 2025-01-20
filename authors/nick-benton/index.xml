@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Nick Benton - Author - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/authors/nick-benton/</link>
+        <description>Nick Benton - Author - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/authors/nick-benton/" rel="self" type="application/rss+xml" /><item>
+    <title>Lower-Touch Defender for Endpoint Onboarding for Android Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/android-enterprise-defender-onboarding/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/android-enterprise-defender-onboarding/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/android-enterprise-defender-onboarding/featured.png" referrerpolicy="no-referrer">
+            </div>Can we improve upon the onboarding of Android Enterprise devices to Defender for Endpoint and make users lives a little easier, and Security Teams hearts a little less restless having to rely on end users to implement their own security controls?]]></description>
+</item><item>
+    <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part5/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part5/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-11-risk-based-deployment-part5/featured.jpg" referrerpolicy="no-referrer">
+            </div>An unexpected update to the Windows 11 Feature Update deployment series, looking at how to tag users instead of devices, and an improved way to get the readiness report data, and other performance improvements. What a day.]]></description>
+</item><item>
+    <title>Forcing Windows 11 Feature Update Readiness Assessments</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-feature-updates-assessment/</link>
+    <pubDate>Tue, 19 Nov 2024 17:06:20 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-feature-updates-assessment/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-feature-updates-assessment/featured.png" referrerpolicy="no-referrer">
+            </div>As a migration to Windows 11 is fast upon us, I thought I&rsquo;d help your devices on their way into understanding whether they will support Windows 11 and what risks you may encounter with the update, by forcing devices to evaluate their readiness states.]]></description>
+</item><item>
+    <title>Converting AppLocker Policies to Intune Profiles</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/</link>
+    <pubDate>Tue, 22 Oct 2024 11:13:46 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-applocker-intune/featured.png" referrerpolicy="no-referrer">
+            </div>We know that there is no native configuration for AppLocker in Intune, and we should be looking at App Control for Business already, but there is still a place for AppLocker, and I haven&rsquo;t got time to manually do anything, so let&rsquo;s use PowerShell to create out AppLocker policies from exported XML files.]]></description>
+</item><item>
+    <title>Scheduling Defender for macOS Antivirus Scans in Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-defender-scan-settings/</link>
+    <pubDate>Tue, 08 Oct 2024 15:14:25 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-defender-scan-settings/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-defender-scan-settings/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;d think creating Defender antivirus scan schedules should be pretty easy, even if the devices you&rsquo;re working with are running macOS. Why are we having to create mobileconfig files for this in Microsoft Intune? Surely we can make this a little better?]]></description>
+</item><item>
+    <title>Self-Service Software Update Deployments</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/updates-self-service-deployment/</link>
+    <pubDate>Tue, 24 Sep 2024 11:11:47 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/updates-self-service-deployment/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/updates-self-service-deployment/featured.png" referrerpolicy="no-referrer">
+            </div>Fancy letting your end users select what day of the week they get their device updates allowing them to be truly empowered but still ensure a level of device security, sure you do.]]></description>
+</item><item>
+    <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</link>
+    <pubDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-install-cmg/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/</link>
+    <pubDate>Mon, 12 Aug 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part4/featured.png" referrerpolicy="no-referrer">
+            </div>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&rsquo;d like to say that we&rsquo;ve saved the best post for last, but we&rsquo;d be lying. Surely the Level 2 settings can&rsquo;t be worse than the Level 1?]]></description>
+</item><item>
+    <title>Automatically Setting an Out of Office Message with Power Automate</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/powerautomate-out-of-office/</link>
+    <pubDate>Fri, 26 Jul 2024 12:54:24 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/powerautomate-out-of-office/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/powerautomate-out-of-office/featured.png" referrerpolicy="no-referrer">
+            </div>I&rsquo;m not sure what I&rsquo;m doing playing around with Power Automate, but here we are. Like many people, I have a habit of forgetting to set an Out of Office message when I&rsquo;m actually on holiday, or when I&rsquo;m working with customers. Let&rsquo;s see if we can make something do this for us.]]></description>
+</item><item>
+    <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</link>
+    <pubDate>Mon, 22 Jul 2024 21:14:28 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/firewall-rule-policy-conversion/featured.png" referrerpolicy="no-referrer">
+            </div>When did Microsoft go all covert ops (maybe don&rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?]]></description>
+</item></channel>
+</rss>

@@ -1,83 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/categories/</link>
-    <description>Recent content in Categories on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 10 Dec 2024 11:12:55 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Android</title>
-      <link>https://memv.ennbee.uk/categories/android/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/android/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Configuration Manager</title>
-      <link>https://memv.ennbee.uk/categories/configmgr/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/configmgr/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Intune</title>
-      <link>https://memv.ennbee.uk/categories/intune/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/intune/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>iOS/iPadOS</title>
-      <link>https://memv.ennbee.uk/categories/ios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/ios/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>macOS</title>
-      <link>https://memv.ennbee.uk/categories/macos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/macos/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Power Automate</title>
-      <link>https://memv.ennbee.uk/categories/power-automate/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/power-automate/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows 10 and later</title>
-      <link>https://memv.ennbee.uk/categories/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/categories/windows/</guid>
-      <description></description>
-      
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/categories/</link>
+        <description>Categories - Category - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Android</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/android/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/android/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Windows</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/windows/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/windows/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>macOS</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/macos/</link>
+    <pubDate>Tue, 08 Oct 2024 15:14:25 &#43;0100</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/macos/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>iOS/iPadOS</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/ios/</link>
+    <pubDate>Tue, 24 Sep 2024 11:11:47 &#43;0100</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/ios/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Configuration Manager</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/configmgr/</link>
+    <pubDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/configmgr/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Power Automate</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/power-automate/</link>
+    <pubDate>Fri, 26 Jul 2024 12:54:24 &#43;0100</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/power-automate/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/intune/</link>
+    <pubDate>Mon, 22 Jul 2024 21:14:28 &#43;0100</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/intune/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Entra ID</title>
+    <link>https://www.oddsandendpoints.co.uk/categories/entra-id/</link>
+    <pubDate>Wed, 10 Jan 2024 20:08:21 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/categories/entra-id/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

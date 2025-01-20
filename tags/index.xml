@@ -1,513 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/</link>
-    <description>Recent content in Tags on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <lastBuildDate>Tue, 10 Dec 2024 11:12:55 +0000</lastBuildDate><atom:link href="https://memv.ennbee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Endpoint Security</title>
-      <link>https://memv.ennbee.uk/tags/endpoint-security/</link>
-      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/endpoint-security/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Accessibility</title>
-      <link>https://memv.ennbee.uk/tags/accessibility/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/accessibility/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Administration</title>
-      <link>https://memv.ennbee.uk/tags/administration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/administration/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Antivirus</title>
-      <link>https://memv.ennbee.uk/tags/antivirus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/antivirus/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Apple</title>
-      <link>https://memv.ennbee.uk/tags/apple/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/apple/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>AppLocker</title>
-      <link>https://memv.ennbee.uk/tags/applocker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/applocker/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Apps</title>
-      <link>https://memv.ennbee.uk/tags/apps/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/apps/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Assignments</title>
-      <link>https://memv.ennbee.uk/tags/assignments/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/assignments/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Authentication</title>
-      <link>https://memv.ennbee.uk/tags/authentication/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/authentication/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Automated Device Enrolment</title>
-      <link>https://memv.ennbee.uk/tags/automated-device-enrolment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/automated-device-enrolment/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Automation</title>
-      <link>https://memv.ennbee.uk/tags/automation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/automation/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>BIOS</title>
-      <link>https://memv.ennbee.uk/tags/bios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/bios/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>BitLocker</title>
-      <link>https://memv.ennbee.uk/tags/bitlocker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/bitlocker/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Center for Internet Security (CIS)</title>
-      <link>https://memv.ennbee.uk/tags/cis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/cis/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Co-management</title>
-      <link>https://memv.ennbee.uk/tags/co-management/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/co-management/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Collections</title>
-      <link>https://memv.ennbee.uk/tags/collections/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/collections/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Compliance</title>
-      <link>https://memv.ennbee.uk/tags/compliance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/compliance/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Conditional Access</title>
-      <link>https://memv.ennbee.uk/tags/conditional-access/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/conditional-access/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Configuration</title>
-      <link>https://memv.ennbee.uk/tags/configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/configuration/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Custom Profiles</title>
-      <link>https://memv.ennbee.uk/tags/custom-profiles/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/custom-profiles/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Cyber Essentials</title>
-      <link>https://memv.ennbee.uk/tags/cyber-essentials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/cyber-essentials/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Dell</title>
-      <link>https://memv.ennbee.uk/tags/dell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/dell/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Device Enrolment</title>
-      <link>https://memv.ennbee.uk/tags/device-enrolment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/device-enrolment/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Device Filters</title>
-      <link>https://memv.ennbee.uk/tags/device-filters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/device-filters/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Direct Memory Access</title>
-      <link>https://memv.ennbee.uk/tags/dma/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/dma/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Dynamic Groups</title>
-      <link>https://memv.ennbee.uk/tags/dynamic-groups/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/dynamic-groups/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Encryption</title>
-      <link>https://memv.ennbee.uk/tags/encryption/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/encryption/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Endpoint Privilege Management</title>
-      <link>https://memv.ennbee.uk/tags/endpoint-privilege-management/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/endpoint-privilege-management/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Feature Updates</title>
-      <link>https://memv.ennbee.uk/tags/feature-updates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/feature-updates/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Firewall</title>
-      <link>https://memv.ennbee.uk/tags/firewall/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/firewall/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Google</title>
-      <link>https://memv.ennbee.uk/tags/google/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/google/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Graph API</title>
-      <link>https://memv.ennbee.uk/tags/graph/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/graph/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Hardware</title>
-      <link>https://memv.ennbee.uk/tags/hardware/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/hardware/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Hybrid Entra Join</title>
-      <link>https://memv.ennbee.uk/tags/hybrid-join/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/hybrid-join/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Jamf</title>
-      <link>https://memv.ennbee.uk/tags/jamf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/jamf/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Microsoft Defender</title>
-      <link>https://memv.ennbee.uk/tags/defender/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/defender/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Microsoft Teams</title>
-      <link>https://memv.ennbee.uk/tags/microsoft-teams/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/microsoft-teams/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>National Cyber Security Centre (NCSC)</title>
-      <link>https://memv.ennbee.uk/tags/ncsc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/ncsc/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>OEMConfig</title>
-      <link>https://memv.ennbee.uk/tags/oemconfig/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/oemconfig/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Platform SSO</title>
-      <link>https://memv.ennbee.uk/tags/platform-sso/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/platform-sso/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>PowerShell</title>
-      <link>https://memv.ennbee.uk/tags/powershell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/powershell/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Remediation Scripts</title>
-      <link>https://memv.ennbee.uk/tags/remediation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/remediation/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Resource Access</title>
-      <link>https://memv.ennbee.uk/tags/resource-access/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/resource-access/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://memv.ennbee.uk/tags/security/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/security/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Settings Catalog</title>
-      <link>https://memv.ennbee.uk/tags/settings-catalog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/settings-catalog/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Shell Script</title>
-      <link>https://memv.ennbee.uk/tags/shell-script/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/shell-script/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Software Updates</title>
-      <link>https://memv.ennbee.uk/tags/updates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/updates/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/tags/windows-autopilot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows-autopilot/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows Autopilot Device Preparation</title>
-      <link>https://memv.ennbee.uk/tags/windows-autopilot-v2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows-autopilot-v2/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows Hello</title>
-      <link>https://memv.ennbee.uk/tags/windows-hello/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/tags/windows-hello/</guid>
-      <description></description>
-      
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/</link>
+        <description>Tags - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/intune/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/intune/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Microsoft Defender</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/defender/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/defender/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>OEMConfig</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/oemconfig/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/oemconfig/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Security</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/security/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/security/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Automation</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/automation/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/automation/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Dynamic Groups</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/dynamic-groups/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/dynamic-groups/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Feature Updates</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/feature-updates/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/feature-updates/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Graph API</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/graph/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/graph/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>PowerShell</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/powershell/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/powershell/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Software Updates</title>
+    <link>https://www.oddsandendpoints.co.uk/tags/updates/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+        <name>Nick Benton</name>
+    </author><guid>https://www.oddsandendpoints.co.uk/tags/updates/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

@@ -1,203 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Automation on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/automation/</link>
-    <description>Recent content in Automation on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/automation/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
-      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</link>
-      <pubDate>Tue, 03 Dec 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/</guid>
-      <description>An unexpected update to the Windows 11 Feature Update deployment series, looking at how to tag users instead of devices, and an improved way to get the readiness report data, and other performance improvements. What a day.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part5/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Automatically Setting an Out of Office Message with Power Automate</title>
-      <link>https://memv.ennbee.uk/posts/powerautomate-out-of-office/</link>
-      <pubDate>Fri, 26 Jul 2024 12:54:24 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/powerautomate-out-of-office/</guid>
-      <description>I&amp;rsquo;m not sure what I&amp;rsquo;m doing playing around with Power Automate, but here we are. Like many people, I have a habit of forgetting to set an Out of Office message when I&amp;rsquo;m actually on holiday, or when I&amp;rsquo;m working with customers. Let&amp;rsquo;s see if we can make something do this for us.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/powerautomate-out-of-office/featured.png" />
-    </item>
-    
-    <item>
-      <title>Risk Based Windows 11 Feature Update Deployment - Automation</title>
-      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</link>
-      <pubDate>Sat, 18 May 2024 18:12:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/</guid>
-      <description>The final part in this series looks at how to bring everything together under a single, repeatable script, allowing for the capture of readiness state, the tagging of devices to support the distribution of Windows 11 23H2.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part4/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title>
-      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</link>
-      <pubDate>Fri, 19 Apr 2024 23:11:03 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/</guid>
-      <description>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part2/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
-      <link>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</link>
-      <pubDate>Mon, 25 Mar 2024 23:32:16 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/</guid>
-      <description>With Windows 10 support coming to an end sooner than you&amp;rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-11-risk-based-deployment-part1/featured.png" />
-    </item>
-    
-    <item>
-      <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
-      <link>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</link>
-      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Using Entra ID Device Attributes for Conditional Access Exceptions</title>
-      <link>https://memv.ennbee.uk/posts/device-attributes-cap/</link>
-      <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/device-attributes-cap/</guid>
-      <description>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&amp;rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/device-attributes-cap/featured.png" />
-    </item>
-    
-    <item>
-      <title>Modernising Microsoft Intune Firewall Rule Policies</title>
-      <link>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</link>
-      <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
-      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/featured.png" />
-    </item>
-    
-    <item>
-      <title>Managing Settings Catalog Profile Assignments in Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</link>
-      <pubDate>Tue, 27 Jun 2023 19:17:02 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/</guid>
-      <description>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/managing-intune-assignment-settingscatalog/featured.png" />
-    </item>
-    
-    <item>
-      <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
-      <link>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</link>
-      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
-      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Assigning Intune Mobile Apps Quickly and Consistently</title>
-      <link>https://memv.ennbee.uk/posts/assigning-intune-applications/</link>
-      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
-      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/featured.png" />
-    </item>
-    
-    <item>
-      <title>Updating Apple Operating System Compliance Policies</title>
-      <link>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</link>
-      <pubDate>Thu, 02 Feb 2023 20:08:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</guid>
-      <description>Apple devices shouldn&amp;rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/featured.png" />
-    </item>
-    
-    <item>
-      <title>Device Migration and Automated Device Enrolment Profile Assignment</title>
-      <link>https://memv.ennbee.uk/posts/apple-ade-profile-assignment/</link>
-      <pubDate>Fri, 20 Jan 2023 19:57:07 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/apple-ade-profile-assignment/</guid>
-      <description>Migrating iOS/iPadOS device to Microsoft Intune shouldn&amp;rsquo;t be a headache, and assignment of Automated Device Enrolment profiles with Apple Business Manager integration isn&amp;rsquo;t the exception.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-ade-profile-assignment/featured.png" />
-    </item>
-    
-    <item>
-      <title>Reinstalling the Configuration Manager Client on Migrated Devices</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-client-migration/</link>
-      <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/featured.png" />
-    </item>
-    
-    <item>
-      <title>Updating Defender Antivirus Compliance Settings</title>
-      <link>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</link>
-      <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
-      <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>The Easy Way to Approve Managed Google Play Apps</title>
-      <link>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</link>
-      <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</guid>
-      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/featured.png" />
-    </item>
-    
-    <item>
-      <title>Creating and Assigning App Categories the Smart Way</title>
-      <link>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</link>
-      <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/featured.png" />
-    </item>
-    
-    <item>
-      <title>Converting Configuration Manager Direct Membership Collections</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/</link>
-      <pubDate>Thu, 28 Jul 2022 08:22:08 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/</guid>
-      <description>You may be using Direct Membership Rules in your Microsoft Configuration Manager environment, but should you really for critical production collections?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-converting-direct-member-collections/featured.png" />
-    </item>
-    
-    <item>
-      <title>Retrofitting Windows Autopilot Group Tags</title>
-      <link>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
-      <pubDate>Sun, 19 Jun 2022 15:55:02 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/</guid>
-      <description>Now that we know how powerful Autopilot Group Tags can be, we should look into how we can retrofit devices with these Group Tags when the OEM or Supplier didn&amp;rsquo;t bother doing their part of the deal.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-autopilot-retrofitting-group-tags/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Automation - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/automation/</link>
+        <description>Automation - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/automation/" rel="self" type="application/rss+xml" /><item>
+    <title>Risk Based Windows 11 Feature Update Deployment - Improvements</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part5/</link>
+    <pubDate>Tue, 03 Dec 2024 18:12:49 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part5/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-11-risk-based-deployment-part5/featured.jpg" referrerpolicy="no-referrer">
+            </div>An unexpected update to the Windows 11 Feature Update deployment series, looking at how to tag users instead of devices, and an improved way to get the readiness report data, and other performance improvements. What a day.]]></description>
+</item><item>
+    <title>Automatically Setting an Out of Office Message with Power Automate</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/powerautomate-out-of-office/</link>
+    <pubDate>Fri, 26 Jul 2024 12:54:24 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/powerautomate-out-of-office/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/powerautomate-out-of-office/featured.png" referrerpolicy="no-referrer">
+            </div>I&rsquo;m not sure what I&rsquo;m doing playing around with Power Automate, but here we are. Like many people, I have a habit of forgetting to set an Out of Office message when I&rsquo;m actually on holiday, or when I&rsquo;m working with customers. Let&rsquo;s see if we can make something do this for us.]]></description>
+</item><item>
+    <title>Risk Based Windows 11 Feature Update Deployment - Automation</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part4/</link>
+    <pubDate>Sat, 18 May 2024 18:12:49 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part4/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-11-risk-based-deployment-part4/featured.jpg" referrerpolicy="no-referrer">
+            </div>The final part in this series looks at how to bring everything together under a single, repeatable script, allowing for the capture of readiness state, the tagging of devices to support the distribution of Windows 11 23H2.]]></description>
+</item><item>
+    <title>Risk Based Windows 11 Feature Update Deployment - Device Attributes</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part2/</link>
+    <pubDate>Fri, 19 Apr 2024 23:11:03 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-11-risk-based-deployment-part2/featured.jpg" referrerpolicy="no-referrer">
+            </div>Having looked into capturing the Feature Update Readiness data for Windows 11 23H2 for our Windows devices, we can now use this risk based data to tag them with their associated risk, grouping them together to allow for sensible Feature Update profile assignment.]]></description>
+</item><item>
+    <title>Risk Based Windows 11 Feature Update Deployment - Reporting</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part1/</link>
+    <pubDate>Mon, 25 Mar 2024 23:32:16 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-11-risk-based-deployment-part1/featured.png" referrerpolicy="no-referrer">
+            </div>With Windows 10 support coming to an end sooner than you&rsquo;d expect, in the first part of this series we look at ways to capture Feature Update Readiness Report data using PowerShell and Graph to help with the rollout of the new Windows 11 operating system.]]></description>
+</item><item>
+    <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/</link>
+    <pubDate>Sat, 09 Mar 2024 21:12:54 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/resusable-firewall-settings-microsoft-online/featured.jpg" referrerpolicy="no-referrer">
+            </div>It&rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.]]></description>
+</item><item>
+    <title>Using Entra ID Device Attributes for Conditional Access Exceptions</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/</link>
+    <pubDate>Wed, 10 Jan 2024 20:08:21 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/device-attributes-cap/featured.png" referrerpolicy="no-referrer">
+            </div>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.]]></description>
+</item><item>
+    <title>Modernising Microsoft Intune Firewall Rule Policies</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/</link>
+    <pubDate>Tue, 12 Sep 2023 21:40:50 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/settings-catalog-firewall-rules/featured.png" referrerpolicy="no-referrer">
+            </div>If you&rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&rsquo;s the catch?]]></description>
+</item><item>
+    <title>Managing Settings Catalog Profile Assignments in Microsoft Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/managing-intune-assignment-settingscatalog/</link>
+    <pubDate>Tue, 27 Jun 2023 19:17:02 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/managing-intune-assignment-settingscatalog/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/managing-intune-assignment-settingscatalog/featured.png" referrerpolicy="no-referrer">
+            </div>Ever wanted to the ability to re-assign all of your Setting Catalog profiles in Intune to additional device and user groups without having to painstakingly go through each one manually? Well this post is for you.]]></description>
+</item><item>
+    <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/</link>
+    <pubDate>Thu, 01 Jun 2023 18:58:40 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/automate-endpoint-privilege-management/featured.jpg" referrerpolicy="no-referrer">
+            </div>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?]]></description>
+</item></channel>
 </rss>

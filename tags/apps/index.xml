@@ -1,103 +1,79 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Apps on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/apps/</link>
-    <description>Recent content in Apps on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/apps/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-client-install-cmg/</link>
-      <pubDate>Mon, 02 Sep 2024 20:43:33 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-client-install-cmg/</guid>
-      <description>You&amp;rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&amp;rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-install-cmg/featured.png" />
-    </item>
-    
-    <item>
-      <title>Custom Backgrounds for macOS New and Classic Microsoft Teams Apps</title>
-      <link>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</link>
-      <pubDate>Wed, 14 Feb 2024 21:39:58 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/</guid>
-      <description>With the availability of the new Microsoft Teams client for macOS, we should build upon an existing script to deploy backgrounds, and update it to support not just the new version but the classic version as well.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-new-backgrounds/featured.png" />
-    </item>
-    
-    <item>
-      <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/windows-updating-store-apps/</link>
-      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-updating-store-apps/</guid>
-      <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-updating-store-apps/featured.png" />
-    </item>
-    
-    <item>
-      <title>Deploying Teams Backgrounds to macOS Devices</title>
-      <link>https://memv.ennbee.uk/posts/macos-teams-backgrounds/</link>
-      <pubDate>Tue, 14 Mar 2023 20:39:58 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-teams-backgrounds/</guid>
-      <description>What happens when a stranger on the Internet asks you to look at something they&amp;rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-teams-backgrounds/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Assigning Intune Mobile Apps Quickly and Consistently</title>
-      <link>https://memv.ennbee.uk/posts/assigning-intune-applications/</link>
-      <pubDate>Mon, 13 Feb 2023 20:46:43 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/assigning-intune-applications/</guid>
-      <description>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&amp;rsquo;s, so we should find a solution for this bulk assignment approach.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/assigning-intune-applications/featured.png" />
-    </item>
-    
-    <item>
-      <title>Reinstalling the Configuration Manager Client on Migrated Devices</title>
-      <link>https://memv.ennbee.uk/posts/configmgr-client-migration/</link>
-      <pubDate>Thu, 15 Dec 2022 22:16:54 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/configmgr-client-migration/</guid>
-      <description>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&amp;rsquo;re in luck.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/configmgr-client-migration/featured.png" />
-    </item>
-    
-    <item>
-      <title>The Easy Way to Approve Managed Google Play Apps</title>
-      <link>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</link>
-      <pubDate>Tue, 27 Sep 2022 22:13:24 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/</guid>
-      <description>We&amp;rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&amp;rsquo;s see if we can make this easier and less clicky.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-approving-google-play-apps/featured.png" />
-    </item>
-    
-    <item>
-      <title>Creating and Assigning App Categories the Smart Way</title>
-      <link>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</link>
-      <pubDate>Sat, 10 Sep 2022 19:57:54 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/creating-assigning-app-categories/</guid>
-      <description>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&amp;rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/creating-assigning-app-categories/featured.png" />
-    </item>
-    
-    <item>
-      <title>Configuring Dell BIOS Settings with Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</link>
-      <pubDate>Sun, 10 Jul 2022 20:34:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/dell-bios-settings-intune/</guid>
-      <description>What if you&amp;rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/dell-bios-settings-intune/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Apps - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/apps/</link>
+        <description>Apps - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/apps/" rel="self" type="application/rss+xml" /><item>
+    <title>Installing the Configuration Manager Client on Orphaned Internet Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</link>
+    <pubDate>Mon, 02 Sep 2024 20:43:33 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-install-cmg/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;ve just implemented a Cloud Management Gateway to help your hybrid joined Windows devices communicate to Configuration Manager over the internet, but what if they&rsquo;re orphaned and unable to communicate to Configuration Manager to get the new Client Settings?]]></description>
+</item><item>
+    <title>Custom Backgrounds for macOS New and Classic Microsoft Teams Apps</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-teams-new-backgrounds/</link>
+    <pubDate>Wed, 14 Feb 2024 21:39:58 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-teams-new-backgrounds/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-teams-new-backgrounds/featured.png" referrerpolicy="no-referrer">
+            </div>With the availability of the new Microsoft Teams client for macOS, we should build upon an existing script to deploy backgrounds, and update it to support not just the new version but the classic version as well.]]></description>
+</item><item>
+    <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-updating-store-apps/</link>
+    <pubDate>Tue, 06 Feb 2024 21:03:00 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-updating-store-apps/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-updating-store-apps/featured.png" referrerpolicy="no-referrer">
+            </div><p>So we&rsquo;re all onboard with the <a href="https://learn.microsoft.com/en-us/mem/intune/apps/store-apps-microsoft" target="_blank" rel="noopener noreferrer">New Microsoft Store</a>, and deploying both UWP and Win32 apps from Microsoft Intune is an absolute breeze, and reduces the effort of deploying applications to a click click next OK exercise. What about the UWP apps that are already installed on a Windows Autopilot device, shouldn&rsquo;t we give them a bit of love? If you care at all about users and security you should.</p>]]></description>
+</item><item>
+    <title>Deploying Teams Backgrounds to macOS Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-teams-backgrounds/</link>
+    <pubDate>Tue, 14 Mar 2023 20:39:58 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-teams-backgrounds/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-teams-backgrounds/featured.jpg" referrerpolicy="no-referrer">
+            </div>What happens when a stranger on the Internet asks you to look at something they&rsquo;ve got a problem with? Here we are, looking at how to deploy Microsoft Teams Backgrounds to macOS devices.]]></description>
+</item><item>
+    <title>Assigning Intune Mobile Apps Quickly and Consistently</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/assigning-intune-applications/</link>
+    <pubDate>Mon, 13 Feb 2023 20:46:43 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/assigning-intune-applications/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/assigning-intune-applications/featured.png" referrerpolicy="no-referrer">
+            </div>No one, and I mean no one, really wants to manually and individually assign Mobile Apps to Users or Devices in Intune in their 100&rsquo;s, so we should find a solution for this bulk assignment approach.]]></description>
+</item><item>
+    <title>Reinstalling the Configuration Manager Client on Migrated Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/configmgr-client-migration/</link>
+    <pubDate>Thu, 15 Dec 2022 22:16:54 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/configmgr-client-migration/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/configmgr-client-migration/featured.png" referrerpolicy="no-referrer">
+            </div>Have you ever had the pleasure of migrating Configuration Manager clients from one domain to another, or maybe between Configuration Manager environments? Tired of manually reinstalling the client from the Console? Wanting a quick and easy way to keep on top of migrated devices? You&rsquo;re in luck.]]></description>
+</item><item>
+    <title>The Easy Way to Approve Managed Google Play Apps</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/android-enterprise-approving-google-play-apps/</link>
+    <pubDate>Tue, 27 Sep 2022 22:13:24 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/android-enterprise-approving-google-play-apps/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/android-enterprise-approving-google-play-apps/featured.png" referrerpolicy="no-referrer">
+            </div>We&rsquo;ve all had to add Managed Google Play Apps in bulk to Microsoft Intune for your Android Enterprise enrolled devices, sometimes in the hundreds, let&rsquo;s see if we can make this easier and less clicky.]]></description>
+</item><item>
+    <title>Creating and Assigning App Categories the Smart Way</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/creating-assigning-app-categories/</link>
+    <pubDate>Sat, 10 Sep 2022 19:57:54 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/creating-assigning-app-categories/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/creating-assigning-app-categories/featured.png" referrerpolicy="no-referrer">
+            </div>What about assigning App Categories, do you want to be manually updating hundreds of Apps with categories? Let&rsquo;s make one laborious task, less laborious, with a hacky PowerShell script.]]></description>
+</item><item>
+    <title>Configuring Dell BIOS Settings with Microsoft Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/dell-bios-settings-intune/</link>
+    <pubDate>Sun, 10 Jul 2022 20:34:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/dell-bios-settings-intune/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/dell-bios-settings-intune/featured.png" referrerpolicy="no-referrer">
+            </div>What if you&rsquo;ve only got Microsoft Intune to configure your Dell BIOS settings and not the glory that is Configuration Manager? How much do you like PowerShell, Win32 Apps and passwords in plain text?]]></description>
+</item></channel>
 </rss>

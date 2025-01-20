@@ -1,263 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Security on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/security/</link>
-    <description>Recent content in Security on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/security/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Lower-Touch Defender for Endpoint Onboarding for Android Devices</title>
-      <link>https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/</link>
-      <pubDate>Tue, 10 Dec 2024 11:12:55 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/</guid>
-      <description>Can we improve upon the onboarding of Android Enterprise devices to Defender for Endpoint and make users lives a little easier, and Security Teams hearts a little less restless having to rely on end users to implement their own security controls?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/android-enterprise-defender-onboarding/featured.png" />
-    </item>
-    
-    <item>
-      <title>Forcing Windows 11 Feature Update Readiness Assessments</title>
-      <link>https://memv.ennbee.uk/posts/windows-feature-updates-assessment/</link>
-      <pubDate>Tue, 19 Nov 2024 17:06:20 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-feature-updates-assessment/</guid>
-      <description>As a migration to Windows 11 is fast upon us, I thought I&amp;rsquo;d help your devices on their way into understanding whether they will support Windows 11 and what risks you may encounter with the update, by forcing devices to evaluate their readiness states.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-feature-updates-assessment/featured.png" />
-    </item>
-    
-    <item>
-      <title>Converting AppLocker Policies to Intune Profiles</title>
-      <link>https://memv.ennbee.uk/posts/windows-applocker-intune/</link>
-      <pubDate>Tue, 22 Oct 2024 11:13:46 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-applocker-intune/</guid>
-      <description>We know that there is no native configuration for AppLocker in Intune, and we should be looking at App Control for Business already, but there is still a place for AppLocker, and I haven&amp;rsquo;t got time to manually do anything, so let&amp;rsquo;s use PowerShell to create out AppLocker policies from exported XML files.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-applocker-intune/featured.png" />
-    </item>
-    
-    <item>
-      <title>Scheduling Defender for macOS Antivirus Scans in Intune</title>
-      <link>https://memv.ennbee.uk/posts/macos-defender-scan-settings/</link>
-      <pubDate>Tue, 08 Oct 2024 15:14:25 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-defender-scan-settings/</guid>
-      <description>You&amp;rsquo;d think creating Defender antivirus scan schedules should be pretty easy, even if the devices you&amp;rsquo;re working with are running macOS. Why are we having to create mobileconfig files for this in Microsoft Intune? Surely we can make this a little better?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-defender-scan-settings/featured.png" />
-    </item>
-    
-    <item>
-      <title>Self-Service Software Update Deployments</title>
-      <link>https://memv.ennbee.uk/posts/updates-self-service-deployment/</link>
-      <pubDate>Tue, 24 Sep 2024 11:11:47 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/updates-self-service-deployment/</guid>
-      <description>Fancy letting your end users select what day of the week they get their device updates allowing them to be truly empowered but still ensure a level of device security, sure you do.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/updates-self-service-deployment/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</link>
-      <pubDate>Mon, 12 Aug 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/</guid>
-      <description>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&amp;rsquo;d like to say that we&amp;rsquo;ve saved the best post for last, but we&amp;rsquo;d be lying. Surely the Level 2 settings can&amp;rsquo;t be worse than the Level 1?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part4/featured.png" />
-    </item>
-    
-    <item>
-      <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
-      <link>https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/</link>
-      <pubDate>Mon, 22 Jul 2024 21:14:28 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/</guid>
-      <description>When did Microsoft go all covert ops (maybe don&amp;rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/firewall-rule-policy-conversion/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows 11</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/</link>
-      <pubDate>Mon, 15 Jul 2024 11:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/</guid>
-      <description>The impact of the CIS settings on BitLocker and Windows Autopilot now done and dusted, we should broaden our horizons and start to look at what other problems the CIS level 1 benchmark brings to Windows 11 as a whole. Are there any? Will it be smooth sailing? Yeah, no.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part3/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</link>
-      <pubDate>Sun, 23 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/</guid>
-      <description>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part2/featured.png" />
-    </item>
-    
-    <item>
-      <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
-      <link>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</link>
-      <pubDate>Sat, 15 Jun 2024 21:26:37 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/</guid>
-      <description>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-cis-patching-gaps-part1/featured.png" />
-    </item>
-    
-    <item>
-      <title>Configuring Google Chrome on macOS for Platform Single Sign-On</title>
-      <link>https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/</link>
-      <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/</guid>
-      <description>With all the hype about Platform SSO on macOS devices, now is the time to try out not just the standard functionality, but the integration into web browsers such as Google Chrome. We take a look at how to configure this using Microsoft Intune.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Software Update Deployment Rings for Managed macOS Devices</title>
-      <link>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</link>
-      <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
-      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.png" />
-    </item>
-    
-    <item>
-      <title>Remediating BitLocker DMA Exception Errors with Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/</link>
-      <pubDate>Sat, 16 Mar 2024 20:39:11 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/</guid>
-      <description>So you&amp;rsquo;ve configured BitLocker encryption in Microsoft Intune, but some of your devices are failing to encrypt complaining about a DMA exception issue as part of Automatic Encryption. How can we fix that without creating a gaping security hole?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/bitlocker-dma-exceptions/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Creating Reusable Groups of Firewall Settings for Microsoft Online Services</title>
-      <link>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</link>
-      <pubDate>Sat, 09 Mar 2024 21:12:54 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/</guid>
-      <description>It&amp;rsquo;s time to remove another manual process, this time the creation of Microsoft 365 network endpoints for Windows Firewall Rules in Microsoft Intune, because nobody should be creating these manually.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/resusable-firewall-settings-microsoft-online/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>A Flexible Approach to Microsoft Update Deployments</title>
-      <link>https://memv.ennbee.uk/posts/flexible-update-deployments/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid>
-      <description>It&amp;rsquo;s been a while since we&amp;rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Keeping Windows Store Apps Updated with Microsoft Intune</title>
-      <link>https://memv.ennbee.uk/posts/windows-updating-store-apps/</link>
-      <pubDate>Tue, 06 Feb 2024 21:03:00 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-updating-store-apps/</guid>
-      <description>Now we all love the new Windows Store, especially for deploying applications from Microsoft Intune, but we should find a way to keep these UWP applications up to date without additional license cost.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-updating-store-apps/featured.png" />
-    </item>
-    
-    <item>
-      <title>Automatically Resizing the WinRE Partition for Windows Update KB5034441</title>
-      <link>https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/</link>
-      <pubDate>Wed, 31 Jan 2024 20:54:12 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/</guid>
-      <description>When Microsoft releases an update that won&amp;rsquo;t install due to the size of a Recovery partition, what do you do? Follow the manual steps provided by Microsoft or blindly follow a script created by a stranger on the internet?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-winre-partition-resize-kb5034441/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Using Entra ID Device Attributes for Conditional Access Exceptions</title>
-      <link>https://memv.ennbee.uk/posts/device-attributes-cap/</link>
-      <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/device-attributes-cap/</guid>
-      <description>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&amp;rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/device-attributes-cap/featured.png" />
-    </item>
-    
-    <item>
-      <title>Modernising Microsoft Intune Firewall Rule Policies</title>
-      <link>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</link>
-      <pubDate>Tue, 12 Sep 2023 21:40:50 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/</guid>
-      <description>If you&amp;rsquo;ve ever experienced the joys of migrating Group Policy and in particular Windows Defender Firewall rules away from Group Policy to Microsoft Intune, you&amp;rsquo;ve probably encountered the Rule Migration Tool, and for now this tool has worked well. So what&amp;rsquo;s the catch?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/settings-catalog-firewall-rules/featured.png" />
-    </item>
-    
-    <item>
-      <title>Intelligent Phased Windows Update for Business Deployments</title>
-      <link>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</link>
-      <pubDate>Mon, 17 Jul 2023 20:07:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/windows-update-phased-deployment/</guid>
-      <description>You might have been asked the question, especially from organisations that currently utilise Microsoft Configuration Manager, about how you mimic existing Device Collections used for Software Update deployments in Microsoft Intune.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/windows-update-phased-deployment/featured.png" />
-    </item>
-    
-    <item>
-      <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
-      <link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link>
-      <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
-      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/featured.png" />
-    </item>
-    
-    <item>
-      <title>Detailed Compliance for Non-Microsoft Antivirus Solutions</title>
-      <link>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</link>
-      <pubDate>Sun, 11 Jun 2023 21:25:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
-      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/featured.png" />
-    </item>
-    
-    <item>
-      <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
-      <link>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</link>
-      <pubDate>Thu, 01 Jun 2023 18:58:40 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/</guid>
-      <description>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/automate-endpoint-privilege-management/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Updating Defender Antivirus Compliance Settings</title>
-      <link>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</link>
-      <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
-      <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>macOS National Cyber Security Centre Security Settings in Intune</title>
-      <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
-      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
-      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Security - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/security/</link>
+        <description>Security - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/security/" rel="self" type="application/rss+xml" /><item>
+    <title>Lower-Touch Defender for Endpoint Onboarding for Android Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/android-enterprise-defender-onboarding/</link>
+    <pubDate>Tue, 10 Dec 2024 11:12:55 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/android-enterprise-defender-onboarding/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/android-enterprise-defender-onboarding/featured.png" referrerpolicy="no-referrer">
+            </div>Can we improve upon the onboarding of Android Enterprise devices to Defender for Endpoint and make users lives a little easier, and Security Teams hearts a little less restless having to rely on end users to implement their own security controls?]]></description>
+</item><item>
+    <title>Forcing Windows 11 Feature Update Readiness Assessments</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-feature-updates-assessment/</link>
+    <pubDate>Tue, 19 Nov 2024 17:06:20 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-feature-updates-assessment/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-feature-updates-assessment/featured.png" referrerpolicy="no-referrer">
+            </div>As a migration to Windows 11 is fast upon us, I thought I&rsquo;d help your devices on their way into understanding whether they will support Windows 11 and what risks you may encounter with the update, by forcing devices to evaluate their readiness states.]]></description>
+</item><item>
+    <title>Converting AppLocker Policies to Intune Profiles</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/</link>
+    <pubDate>Tue, 22 Oct 2024 11:13:46 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-applocker-intune/featured.png" referrerpolicy="no-referrer">
+            </div>We know that there is no native configuration for AppLocker in Intune, and we should be looking at App Control for Business already, but there is still a place for AppLocker, and I haven&rsquo;t got time to manually do anything, so let&rsquo;s use PowerShell to create out AppLocker policies from exported XML files.]]></description>
+</item><item>
+    <title>Scheduling Defender for macOS Antivirus Scans in Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-defender-scan-settings/</link>
+    <pubDate>Tue, 08 Oct 2024 15:14:25 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-defender-scan-settings/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-defender-scan-settings/featured.png" referrerpolicy="no-referrer">
+            </div>You&rsquo;d think creating Defender antivirus scan schedules should be pretty easy, even if the devices you&rsquo;re working with are running macOS. Why are we having to create mobileconfig files for this in Microsoft Intune? Surely we can make this a little better?]]></description>
+</item><item>
+    <title>Self-Service Software Update Deployments</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/updates-self-service-deployment/</link>
+    <pubDate>Tue, 24 Sep 2024 11:11:47 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/updates-self-service-deployment/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/updates-self-service-deployment/featured.png" referrerpolicy="no-referrer">
+            </div>Fancy letting your end users select what day of the week they get their device updates allowing them to be truly empowered but still ensure a level of device security, sure you do.]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 2 Windows 11</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/</link>
+    <pubDate>Mon, 12 Aug 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part4/featured.png" referrerpolicy="no-referrer">
+            </div>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&rsquo;d like to say that we&rsquo;ve saved the best post for last, but we&rsquo;d be lying. Surely the Level 2 settings can&rsquo;t be worse than the Level 1?]]></description>
+</item><item>
+    <title>Microsoft Intune and the Curious Case of the Converting Firewall Rule Policy</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</link>
+    <pubDate>Mon, 22 Jul 2024 21:14:28 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/firewall-rule-policy-conversion/featured.png" referrerpolicy="no-referrer">
+            </div>When did Microsoft go all covert ops (maybe don&rsquo;t answer that question) and start making changes to your very own Firewall Rule policies in Microsoft Intune without letting anyone know? Or did they?]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows 11</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/</link>
+    <pubDate>Mon, 15 Jul 2024 11:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part3/featured.png" referrerpolicy="no-referrer">
+            </div>The impact of the CIS settings on BitLocker and Windows Autopilot now done and dusted, we should broaden our horizons and start to look at what other problems the CIS level 1 benchmark brings to Windows 11 as a whole. Are there any? Will it be smooth sailing? Yeah, no.]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows Autopilot</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</link>
+    <pubDate>Sun, 23 Jun 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part2/featured.png" referrerpolicy="no-referrer">
+            </div>With the CIS BitLocker and associated DMA settings reviewed and updated, now is time to delve into the Windows 11 specific settings that exist in the CIS Level 1 benchmark. What issues do they bring to Windows Autopilot, what solutions can we find? Honestly, who knows.]]></description>
+</item><item>
+    <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/</link>
+    <pubDate>Sat, 15 Jun 2024 21:26:37 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><author>
+                        <name>Jonathan Fallis</name><uri>https://deploymentshare.com/author/jonathan-fallis/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-cis-patching-gaps-part1/featured.png" referrerpolicy="no-referrer">
+            </div>Everyone loves a security benchmark, and with the imminent move to Windows 11 for everyone, the Center for Internet Security released version 3.0.1 of theirs, including a build kit for Microsoft Intune, but what does this build kit break for BitLocker encryption?]]></description>
+</item></channel>
 </rss>

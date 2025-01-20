@@ -1,53 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>National Cyber Security Centre (NCSC) on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/ncsc/</link>
-    <description>Recent content in National Cyber Security Centre (NCSC) on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/ncsc/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Software Update Deployment Rings for Managed macOS Devices</title>
-      <link>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</link>
-      <pubDate>Sat, 06 Apr 2024 20:05:09 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-updates-phased-deployment/</guid>
-      <description>So you&amp;rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-updates-phased-deployment/featured.png" />
-    </item>
-    
-    <item>
-      <title>A Flexible Approach to Microsoft Update Deployments</title>
-      <link>https://memv.ennbee.uk/posts/flexible-update-deployments/</link>
-      <pubDate>Mon, 19 Feb 2024 20:07:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/flexible-update-deployments/</guid>
-      <description>It&amp;rsquo;s been a while since we&amp;rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/flexible-update-deployments/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
-      <link>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</link>
-      <pubDate>Tue, 11 Jul 2023 13:22:07 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-ncsc-revisited/</guid>
-      <description>With the improved support for macOS devices in Microsoft Intune, it&amp;rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-revisited/featured.png" />
-    </item>
-    
-    <item>
-      <title>macOS National Cyber Security Centre Security Settings in Intune</title>
-      <link>https://memv.ennbee.uk/posts/macos-ncsc-settings/</link>
-      <pubDate>Thu, 21 Apr 2022 11:55:11 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-ncsc-settings/</guid>
-      <description>If you&amp;rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&amp;rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-ncsc-settings/featured.jpg" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>National Cyber Security Centre (NCSC) - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/ncsc/</link>
+        <description>National Cyber Security Centre (NCSC) - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 06 Apr 2024 20:05:09 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/ncsc/" rel="self" type="application/rss+xml" /><item>
+    <title>Software Update Deployment Rings for Managed macOS Devices</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-updates-phased-deployment/</link>
+    <pubDate>Sat, 06 Apr 2024 20:05:09 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-updates-phased-deployment/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-updates-phased-deployment/featured.png" referrerpolicy="no-referrer">
+            </div>So you&rsquo;ve pulled the trigger on managing macOS devices in Microsoft Intune, and with this year being the year of macOS for Microsoft (this seems like an oxymoron), you should probably look at how to handle software updates.]]></description>
+</item><item>
+    <title>A Flexible Approach to Microsoft Update Deployments</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/flexible-update-deployments/</link>
+    <pubDate>Mon, 19 Feb 2024 20:07:23 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/flexible-update-deployments/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/flexible-update-deployments/featured.jpg" referrerpolicy="no-referrer">
+            </div>It&rsquo;s been a while since we&rsquo;ve looked at deploying Microsoft and Windows Updates using Microsoft Intune, this time we look at different ways to phase our deployments across a device estate.]]></description>
+</item><item>
+    <title>Revisiting macOS National Cyber Security Centre Security Settings</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-ncsc-revisited/</link>
+    <pubDate>Tue, 11 Jul 2023 13:22:07 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-ncsc-revisited/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-ncsc-revisited/featured.png" referrerpolicy="no-referrer">
+            </div>With the improved support for macOS devices in Microsoft Intune, it&rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.]]></description>
+</item><item>
+    <title>macOS National Cyber Security Centre Security Settings in Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-ncsc-settings/</link>
+    <pubDate>Thu, 21 Apr 2022 11:55:11 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-ncsc-settings/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-ncsc-settings/featured.jpg" referrerpolicy="no-referrer">
+            </div>If you&rsquo;ve ever had to implement baseline security settings, whether this be Centre for Internet Security, Cyber Essentials, or National Cyber Security Centre, you&rsquo;ll probably have encountered some level of pain when it comes to non-Microsoft devices, as the guidance, is, well, complicated. Here we unpick these settings for macOS devices.]]></description>
+</item></channel>
 </rss>

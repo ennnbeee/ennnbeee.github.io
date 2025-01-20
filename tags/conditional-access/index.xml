@@ -1,33 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Conditional Access on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/conditional-access/</link>
-    <description>Recent content in Conditional Access on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/conditional-access/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Configuring Google Chrome on macOS for Platform Single Sign-On</title>
-      <link>https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/</link>
-      <pubDate>Wed, 08 May 2024 22:49:39 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/</guid>
-      <description>With all the hype about Platform SSO on macOS devices, now is the time to try out not just the standard functionality, but the integration into web browsers such as Google Chrome. We take a look at how to configure this using Microsoft Intune.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/macos-platformsso-google-chrome/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Using Entra ID Device Attributes for Conditional Access Exceptions</title>
-      <link>https://memv.ennbee.uk/posts/device-attributes-cap/</link>
-      <pubDate>Wed, 10 Jan 2024 20:08:21 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/device-attributes-cap/</guid>
-      <description>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&amp;rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/device-attributes-cap/featured.png" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Conditional Access - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/conditional-access/</link>
+        <description>Conditional Access - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 08 May 2024 22:49:39 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/conditional-access/" rel="self" type="application/rss+xml" /><item>
+    <title>Configuring Google Chrome on macOS for Platform Single Sign-On</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/macos-platformsso-google-chrome/</link>
+    <pubDate>Wed, 08 May 2024 22:49:39 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/macos-platformsso-google-chrome/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/macos-platformsso-google-chrome/featured.jpg" referrerpolicy="no-referrer">
+            </div>With all the hype about Platform SSO on macOS devices, now is the time to try out not just the standard functionality, but the integration into web browsers such as Google Chrome. We take a look at how to configure this using Microsoft Intune.]]></description>
+</item><item>
+    <title>Using Entra ID Device Attributes for Conditional Access Exceptions</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/</link>
+    <pubDate>Wed, 10 Jan 2024 20:08:21 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/device-attributes-cap/featured.png" referrerpolicy="no-referrer">
+            </div>So you like Intune Device Compliance and the integration with Conditional Access, what about if you&rsquo;ve got VDI or Remote Desktop infrastructure that you want to exclude from specific policies, how do you go about that in a safe and controlled way.]]></description>
+</item></channel>
 </rss>

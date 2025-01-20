@@ -1,43 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Compliance on MEM v ENNBEE - Battles with Modern Endpoint Management</title>
-    <link>https://memv.ennbee.uk/tags/compliance/</link>
-    <description>Recent content in Compliance on MEM v ENNBEE - Battles with Modern Endpoint Management</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2025 Nick Benton, MEM v ENNBEE</copyright>
-    <atom:link href="https://memv.ennbee.uk/tags/compliance/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Detailed Compliance for Non-Microsoft Antivirus Solutions</title>
-      <link>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</link>
-      <pubDate>Sun, 11 Jun 2023 21:25:23 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/custom-compliance-third-party-av/</guid>
-      <description>So what happens when you&amp;rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&amp;rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/custom-compliance-third-party-av/featured.png" />
-    </item>
-    
-    <item>
-      <title>Updating Apple Operating System Compliance Policies</title>
-      <link>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</link>
-      <pubDate>Thu, 02 Feb 2023 20:08:49 +0000</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/apple-os-updating-compliance/</guid>
-      <description>Apple devices shouldn&amp;rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/apple-os-updating-compliance/featured.png" />
-    </item>
-    
-    <item>
-      <title>Updating Defender Antivirus Compliance Settings</title>
-      <link>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</link>
-      <pubDate>Tue, 25 Oct 2022 22:04:47 +0100</pubDate>
-      
-      <guid>https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/</guid>
-      <description>We&amp;rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://memv.ennbee.uk/posts/defender-antivirus-compliance-updates/featured.jpg" />
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Compliance - Tag - odds&#43;endpoints</title>
+        <link>https://www.oddsandendpoints.co.uk/tags/compliance/</link>
+        <description>Compliance - Tag - odds&#43;endpoints</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 11 Jun 2023 21:25:23 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/compliance/" rel="self" type="application/rss+xml" /><item>
+    <title>Detailed Compliance for Non-Microsoft Antivirus Solutions</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/custom-compliance-third-party-av/</link>
+    <pubDate>Sun, 11 Jun 2023 21:25:23 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/custom-compliance-third-party-av/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/custom-compliance-third-party-av/featured.png" referrerpolicy="no-referrer">
+            </div>So what happens when you&rsquo;re not using Windows Defender on your Windows 10 and later Microsoft Intune enrolled devices, and you&rsquo;re not happy with the basic compliance checks for Third-Party Antivirus products?]]></description>
+</item><item>
+    <title>Updating Apple Operating System Compliance Policies</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/apple-os-updating-compliance/</link>
+    <pubDate>Thu, 02 Feb 2023 20:08:49 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/apple-os-updating-compliance/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/apple-os-updating-compliance/featured.png" referrerpolicy="no-referrer">
+            </div>Apple devices shouldn&rsquo;t be exempt from Operating System compliance policies, and these policies should share the same fate as Windows ones, and be updated monthly in line with update release cycles.]]></description>
+</item><item>
+    <title>Updating Defender Antivirus Compliance Settings</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/defender-antivirus-compliance-updates/</link>
+    <pubDate>Tue, 25 Oct 2022 22:04:47 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/defender-antivirus-compliance-updates/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/defender-antivirus-compliance-updates/featured.jpg" referrerpolicy="no-referrer">
+            </div>We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.]]></description>
+</item></channel>
 </rss>
