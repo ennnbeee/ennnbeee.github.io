@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/macos-ncsc-settings/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/hybrid-join-computer-rename/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -371,7 +373,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-33" 
+    id="codeblock-id-32" 
     class="
       chroma 
       !tw-block 
@@ -582,7 +584,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-35" 
+    id="codeblock-id-33" 
     class="
       chroma 
       !tw-block 
@@ -782,7 +784,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-38" 
+    id="codeblock-id-34" 
     class="
       chroma 
       !tw-block 
@@ -976,7 +978,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-40" 
+    id="codeblock-id-35" 
     class="
       chroma 
       !tw-block 
@@ -1060,17 +1062,25 @@
 <h3 id="creating-custom-configuration-profiles" class="headerLink">
     <a href="#creating-custom-configuration-profiles" class="header-mark"></a>1.5 Creating Custom Configuration Profiles</h3><p>Now that we have the required mobileconfig files, and that you&rsquo;ve saved them with that file extension (it&rsquo;s basically glorified XML to be honest), we can look at creating these Custom Configuration Profiles:</p>
 <p>Browse to the <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesMacOsMenu/configProfiles" target="_blank" rel="noopener noreferrer">macOS Configuration page</a> and select <strong>Create profile</strong>:
-<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-config.webp" title="macOS Config Profile" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-config.webp" data-sub-html="<h2>macOS Configuration profiles in Microsoft Intune.</h2><p>macOS Config Profile</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-config.webp   alt="macOS Config Profile" height="400" width="800"></a><figcaption class="image-caption">macOS Configuration profiles in Microsoft Intune.</figcaption>
-</figure></p>
+<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-config_hu5535528655357547585.webp" title="macOS Config Profile" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-config_hu5535528655357547585.webp" data-sub-html="<h2>macOS Configuration profiles in Microsoft Intune.</h2><p>macOS Config Profile</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-config_hu5535528655357547585.webp   alt="macOS Config Profile"  ></a><figcaption class="image-caption">macOS Configuration profiles in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Under <strong>Profile type</strong> select <strong>Templates</strong>, then select <strong>Custom</strong> and then select <strong>Create</strong>:
-<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-custom.webp" title="macOS Custom Profile" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-custom.webp" data-sub-html="<h2>macOS Configuration profile templates in Microsoft Intune.</h2><p>macOS Custom Profile</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-custom.webp   alt="macOS Custom Profile" height="371" width="585"></a><figcaption class="image-caption">macOS Configuration profile templates in Microsoft Intune.</figcaption>
-</figure></p>
+<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-custom_hu6814983053238325660.webp" title="macOS Custom Profile" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-custom_hu6814983053238325660.webp" data-sub-html="<h2>macOS Configuration profile templates in Microsoft Intune.</h2><p>macOS Custom Profile</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-custom_hu6814983053238325660.webp   alt="macOS Custom Profile"  ></a><figcaption class="image-caption">macOS Configuration profile templates in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Give the Custom profile a suitable name and select <strong>Next</strong>:
-<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-name.webp" title="macOS Custom Profile Name" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-name.webp" data-sub-html="<h2>macOS Configuration custom profile naming in Microsoft Intune.</h2><p>macOS Custom Profile Name</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-name.webp   alt="macOS Custom Profile Name" height="425" width="786"></a><figcaption class="image-caption">macOS Configuration custom profile naming in Microsoft Intune.</figcaption>
-</figure></p>
+<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-name_hu6133176320206600281.webp" title="macOS Custom Profile Name" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-name_hu6133176320206600281.webp" data-sub-html="<h2>macOS Configuration custom profile naming in Microsoft Intune.</h2><p>macOS Custom Profile Name</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-name_hu6133176320206600281.webp   alt="macOS Custom Profile Name"  ></a><figcaption class="image-caption">macOS Configuration custom profile naming in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Give the Custom configuration profile name a suitable name, ensure the Deployment channel is &lsquo;Device channel&rsquo; and upload the mobileconfig file:
-<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-profile.webp" title="macOS Custom Profile Name" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-profile.webp" data-sub-html="<h2>macOS Configuration custom profile in Microsoft Intune.</h2><p>macOS Custom Profile Name</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-profile.webp   alt="macOS Custom Profile Name" height="740" width="800"></a><figcaption class="image-caption">macOS Configuration custom profile in Microsoft Intune.</figcaption>
-</figure></p>
+<figure><a class="lightgallery" href="/posts/macos-ncsc-settings/img/ncsc-macos-profile_hu17784103276909746629.webp" title="macOS Custom Profile Name" data-thumbnail="/posts/macos-ncsc-settings/img/ncsc-macos-profile_hu17784103276909746629.webp" data-sub-html="<h2>macOS Configuration custom profile in Microsoft Intune.</h2><p>macOS Custom Profile Name</p>"><img  loading="lazy" src=/posts/macos-ncsc-settings/img/ncsc-macos-profile_hu17784103276909746629.webp   alt="macOS Custom Profile Name"  ></a><figcaption class="image-caption">macOS Configuration custom profile in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Select <strong>Next</strong> and assign the profile to the required Device Group. Repeat for all the mobileconfig files created.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>2 Summary</h2><p>This was a bit of a whirlwind tour of Custom Configuration Profiles for macOS, and there is a huge amount that can be controlled, managed, and dictated using them. If you have a macOS device, you can use Apple Configuration 2 to create these files, if you don&rsquo;t, then have fun with the <a href="https://developer.apple.com/documentation/devicemanagement" target="_blank" rel="noopener noreferrer">Apple Developer Device Management Guide</a>, like I did&hellip;</p>

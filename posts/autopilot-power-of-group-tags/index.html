@@ -26,7 +26,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/macos-ncsc-settings/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/windows-autopilot-languages/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -238,8 +240,10 @@
 <h2 id="configuration" class="headerLink">
     <a href="#configuration" class="header-mark"></a>1 Configuration</h2><p>If you&rsquo;ve got this far, you&rsquo;ll probably know that Windows Autopilot is the modern deployment method for Windows 10/11 devices, allowing an organisation to pre-register corporate-owned devices (using their unique hardware hashes) and link these devices to the Azure AD tenant. Once the device is attached to the tenant, it is considered a trusted device that can be enrolled using Autopilot.</p>
 <p>Below is an overview of the Windows Autopilot process, the bit we&rsquo;re talking about is the Hardware Vendor adding the Device IDs; this is where the Vendor can also add Group Tags.</p>
-<p><figure><a class="lightgallery" href="/posts/autopilot-power-of-group-tags/img/autopilot-tags-process.png" title="Autopilot Tag Process" data-thumbnail="/posts/autopilot-power-of-group-tags/img/autopilot-tags-process.png" data-sub-html="<h2>Autopilot Group Tag Assignment process.</h2><p>Autopilot Tag Process</p>"><img  loading="lazy" src=/posts/autopilot-power-of-group-tags/img/autopilot-tags-process.png   alt="Autopilot Tag Process" height="934" width="1852"></a><figcaption class="image-caption">Autopilot Group Tag Assignment process.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/autopilot-power-of-group-tags/img/autopilot-tags-process_hu5522849186749415274.png" title="Autopilot Tag Process" data-thumbnail="/posts/autopilot-power-of-group-tags/img/autopilot-tags-process_hu5522849186749415274.png" data-sub-html="<h2>Autopilot Group Tag Assignment process.</h2><p>Autopilot Tag Process</p>"><img  loading="lazy" src=/posts/autopilot-power-of-group-tags/img/autopilot-tags-process_hu5522849186749415274.png   alt="Autopilot Tag Process"  ></a><figcaption class="image-caption">Autopilot Group Tag Assignment process.</figcaption>
+</figure>
+
+</p>
 <h3 id="group-tags" class="headerLink">
     <a href="#group-tags" class="header-mark"></a>1.1 Group Tags</h3><p>A hidden gem with Autopilot service, is the <strong>Group Tag</strong> attribute for Autopilot devices, this tag can be provided during the pre-registration by a supplier or OEM, and can be configured or updated after the device has been imported.</p>
 <p>This attribute is attached the computer object that exists in Azure AD, sadly not labelled as &ldquo;Group Tag&rdquo;, but as &ldquo;OrderID&rdquo; (this will be important later). As this attribute exists, we can utilise it with Dynamic Device groups&hellip;do you see where this is going?</p>

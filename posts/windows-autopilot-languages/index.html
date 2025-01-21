@@ -27,7 +27,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-autopilot-languages/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/autopilot-power-of-group-tags/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/endpoint-manager-device-filters/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -640,11 +642,15 @@
 <p>Now we&rsquo;ve got the bones of the script, we can put it all together and deploy it using Microsoft Intune. The full script can be found <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/PlatformScripts/PowerShell/AutopilotLanguages/Set-WindowsLanguages.ps1" target="_blank" rel="noopener noreferrer">here</a></p>
 <h3 id="deployment" class="headerLink">
     <a href="#deployment" class="header-mark"></a>1.5 Deployment</h3><p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell" target="_blank" rel="noopener noreferrer">Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-languages/img/autopilot-lang-deploy.webp" title="Language Deployment" data-thumbnail="/posts/windows-autopilot-languages/img/autopilot-lang-deploy.webp" data-sub-html="<h2>Platform script in Microsoft Intune.</h2><p>Language Deployment</p>"><img  loading="lazy" src=/posts/windows-autopilot-languages/img/autopilot-lang-deploy.webp   alt="Language Deployment" height="452" width="1043"></a><figcaption class="image-caption">Platform script in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-languages/img/autopilot-lang-deploy_hu11356562341770123340.webp" title="Language Deployment" data-thumbnail="/posts/windows-autopilot-languages/img/autopilot-lang-deploy_hu11356562341770123340.webp" data-sub-html="<h2>Platform script in Microsoft Intune.</h2><p>Language Deployment</p>"><img  loading="lazy" src=/posts/windows-autopilot-languages/img/autopilot-lang-deploy_hu11356562341770123340.webp   alt="Language Deployment"  ></a><figcaption class="image-caption">Platform script in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Now we have a way to deploy additional languages to Windows 10 devices, and have the Keyboard inputs available when the user has logged onto the device. The user just needs to select the language from the notification area.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-languages/img/autopilot-lang-settings.webp" title="Language Notification" data-thumbnail="/posts/windows-autopilot-languages/img/autopilot-lang-settings.webp" data-sub-html="<h2>Language options on a Windows device.</h2><p>Language Notification</p>"><img  loading="lazy" src=/posts/windows-autopilot-languages/img/autopilot-lang-settings.webp   alt="Language Notification" height="829" width="933"></a><figcaption class="image-caption">Language options on a Windows device.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-languages/img/autopilot-lang-settings_hu580705965115918457.webp" title="Language Notification" data-thumbnail="/posts/windows-autopilot-languages/img/autopilot-lang-settings_hu580705965115918457.webp" data-sub-html="<h2>Language options on a Windows device.</h2><p>Language Notification</p>"><img  loading="lazy" src=/posts/windows-autopilot-languages/img/autopilot-lang-settings_hu580705965115918457.webp   alt="Language Notification"  ></a><figcaption class="image-caption">Language options on a Windows device.</figcaption>
+</figure>
+
+</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>2 Summary</h2><p>Pretty straight forward right? Setting the language list, letting &lsquo;Windows Features on Demand&rsquo; just download the required files, plus, you can amend the languages within the script and re-deploy, allowing you to add or remove any required languages for your users without having to deal with Language Packs.</p>
 </div>

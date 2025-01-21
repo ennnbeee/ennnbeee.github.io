@@ -27,7 +27,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/android-enterprise-defender-onboarding/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part5/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -271,8 +273,10 @@
 <h2 id="defender-app" class="headerLink">
     <a href="#defender-app" class="header-mark"></a>1 Defender App</h2><p>First off, before we go configuring devices with their Microsoft Defender for Endpoint onboarding settings, we actually need our devices to have the app itself.</p>
 <p>So go and <a href="https://learn.microsoft.com/en-us/defender-endpoint/android-intune#add-microsoft-defender-for-endpoint-on-android-as-a-managed-google-play-app" target="_blank" rel="noopener noreferrer">add the app</a> following along with Microsoft nicely.</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-app.png" title="Defender for Endpoint Android App" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-app.png" data-sub-html="<h2>Managed Google Play Store app for Microsoft Defender.</h2><p>Defender for Endpoint Android App</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-app.png   alt="Defender for Endpoint Android App" height="819" width="1350"></a><figcaption class="image-caption">Managed Google Play Store app for Microsoft Defender.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-app_hu13105443500634062492.png" title="Defender for Endpoint Android App" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-app_hu13105443500634062492.png" data-sub-html="<h2>Managed Google Play Store app for Microsoft Defender.</h2><p>Defender for Endpoint Android App</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-app_hu13105443500634062492.png   alt="Defender for Endpoint Android App"  ></a><figcaption class="image-caption">Managed Google Play Store app for Microsoft Defender.</figcaption>
+</figure>
+
+</p>
 <p>Once added to your Intune tenant, you&rsquo;re going to need to deploy it, with a <strong>Required</strong> assignment target.</p>
 <p>Good, your devices have the app, but what about the configuration.</p>
 <h2 id="low-touch-onboarding" class="headerLink">
@@ -284,8 +288,10 @@
 <p>We&rsquo;ll expand a bit more on some of the other permission and configurations you can apply, but for now we&rsquo;ll just deal with onboarding the Microsoft way.</p>
 <h3 id="app-configuration-policy" class="headerLink">
     <a href="#app-configuration-policy" class="header-mark"></a>2.1 App Configuration Policy</h3><p>If you skipped ahead when following the Microsoft article about deploying the Android Enterprise App, you may have noticed the section from <a href="https://learn.microsoft.com/en-us/defender-endpoint/android-intune#:~:text=for%20Endpoint%20supports-,App%20configuration%20policies,-for%20managed%20devices" target="_blank" rel="noopener noreferrer">Step 9</a> about App Configuration policies.</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-config.png" title="Defender for Endpoint Android App Config Policy" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-config.png" data-sub-html="<h2>App Configuration policy for Defender.</h2><p>Defender for Endpoint Android App Config Policy</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-config.png   alt="Defender for Endpoint Android App Config Policy" height="1114" width="2560"></a><figcaption class="image-caption">App Configuration policy for Defender.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-config_hu2857531897910528725.png" title="Defender for Endpoint Android App Config Policy" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-config_hu2857531897910528725.png" data-sub-html="<h2>App Configuration policy for Defender.</h2><p>Defender for Endpoint Android App Config Policy</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-config_hu2857531897910528725.png   alt="Defender for Endpoint Android App Config Policy"  ></a><figcaption class="image-caption">App Configuration policy for Defender.</figcaption>
+</figure>
+
+</p>
 <p>We&rsquo;ll need one of these to turn on or off Defender App settings, or at least be definite with our choices instead of relying on the defaults.</p>
 <p>To make sure that the Defender App is actually doing something, go ahead and configure a new policy with the below Configuration Settings.</p>
 
@@ -359,8 +365,10 @@
   </table>
 </div>
 <p>The Package ID of <strong>com.microsoft.scmx</strong> is the Defender for Endpoint Android app, we&rsquo;ll need this later on.</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-vpn.png" title="Defender for Endpoint Loopback VPN" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-vpn.png" data-sub-html="<h2>Android Enterprise Device Restriction profile for the Defender VPN.</h2><p>Defender for Endpoint Loopback VPN</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-vpn.png   alt="Defender for Endpoint Loopback VPN" height="515" width="765"></a><figcaption class="image-caption">Android Enterprise Device Restriction profile for the Defender VPN.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-vpn_hu15074294099150152756.png" title="Defender for Endpoint Loopback VPN" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-vpn_hu15074294099150152756.png" data-sub-html="<h2>Android Enterprise Device Restriction profile for the Defender VPN.</h2><p>Defender for Endpoint Loopback VPN</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-vpn_hu15074294099150152756.png   alt="Defender for Endpoint Loopback VPN"  ></a><figcaption class="image-caption">Android Enterprise Device Restriction profile for the Defender VPN.</figcaption>
+</figure>
+
+</p>
 <p>With the VPN in place, we can now look at the specific Low-Touch onboarding settings.</p>
 <h3 id="low-touch-onboarding-settings" class="headerLink">
     <a href="#low-touch-onboarding-settings" class="header-mark"></a>2.3 Low-Touch Onboarding Settings</h3><p>If we just configure the above, a user will still need to approve the permissions the Defender App is requesting.</p>
@@ -372,8 +380,10 @@
 <li>Accessibility</li>
 <li>Display over other apps</li>
 </ul>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-permsprompt.png" title="Defender for Endpoint Permission request" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-permsprompt.png" data-sub-html="<h2>Defender app on Android Enterprise requesting permissions.</h2><p>Defender for Endpoint Permission request</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-permsprompt.png   alt="Defender for Endpoint Permission request" height="634" width="400"></a><figcaption class="image-caption">Defender app on Android Enterprise requesting permissions.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-permsprompt_hu7991475683302792455.png" title="Defender for Endpoint Permission request" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-permsprompt_hu7991475683302792455.png" data-sub-html="<h2>Defender app on Android Enterprise requesting permissions.</h2><p>Defender for Endpoint Permission request</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-permsprompt_hu7991475683302792455.png   alt="Defender for Endpoint Permission request"  ></a><figcaption class="image-caption">Defender app on Android Enterprise requesting permissions.</figcaption>
+</figure>
+
+</p>
 <p>Now for <em>all</em> Android Enterprise device types we can only make this onboarding a little easier with Intune, by updating our App Configuration policy for Defender to include the below permissions and settings.</p>
 <h4 id="app-settings" class="headerLink">
     <a href="#app-settings" class="header-mark"></a>2.3.1 App Settings</h4><p>These settings allow for the configuration of the low-touch onboarding approach:</p>
@@ -452,8 +462,10 @@
     </div>
     <div class="details-content">
         <div class="admonition-content">The <strong>Location access (background)</strong> permission isn&rsquo;t mentioned in the documentation, but it is required by the Defender app.</div></div></div>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-perms.png" title="Defender for Endpoint Permissions in Intune" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-perms.png" data-sub-html="<h2>Defender app on Android Enterprise permissions in an App Configuration policy.</h2><p>Defender for Endpoint Permissions in Intune</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-perms.png   alt="Defender for Endpoint Permissions in Intune" height="191" width="933"></a><figcaption class="image-caption">Defender app on Android Enterprise permissions in an App Configuration policy.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-perms_hu552541024667285942.png" title="Defender for Endpoint Permissions in Intune" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-perms_hu552541024667285942.png" data-sub-html="<h2>Defender app on Android Enterprise permissions in an App Configuration policy.</h2><p>Defender for Endpoint Permissions in Intune</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-perms_hu552541024667285942.png   alt="Defender for Endpoint Permissions in Intune"  ></a><figcaption class="image-caption">Defender app on Android Enterprise permissions in an App Configuration policy.</figcaption>
+</figure>
+
+</p>
 <p>This now means that users now won&rsquo;t be prompted for three of the six permissions the <del>greedy</del> Defender app is requesting.</p>
 <p>Can we sort out the remaining permissions though?</p>
 <h2 id="lower-touch-onboarding" class="headerLink">
@@ -465,8 +477,10 @@
 <p>Surely we can do the same for Defender on our supported Samsung devices?</p>
 <h3 id="knox-service-plugin" class="headerLink">
     <a href="#knox-service-plugin" class="header-mark"></a>3.1 Knox Service Plugin</h3><p>Before we dive into attempting to configure these additional permissions for our users, we need an OEMConfig App available in Intune. So go an approve the Knox Service Plugin from the Managed Google Play Store.</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-ksp.png" title="Knox Service Plugin App" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-ksp.png" data-sub-html="<h2>Knox Service Plugin app in the Managed Google Play Store.</h2><p>Knox Service Plugin App</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-ksp.png   alt="Knox Service Plugin App" height="383" width="592"></a><figcaption class="image-caption">Knox Service Plugin app in the Managed Google Play Store.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-ksp_hu6975619743381805337.png" title="Knox Service Plugin App" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-ksp_hu6975619743381805337.png" data-sub-html="<h2>Knox Service Plugin app in the Managed Google Play Store.</h2><p>Knox Service Plugin App</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-ksp_hu6975619743381805337.png   alt="Knox Service Plugin App"  ></a><figcaption class="image-caption">Knox Service Plugin app in the Managed Google Play Store.</figcaption>
+</figure>
+
+</p>
 <p>Once available in Intune, I strongly suggest deploying this to all your Samsung Android Enterprise devices as the app is required before the configuration will apply.</p>
 <p>Use a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank" rel="noopener noreferrer">Device Filter</a> with a rule looking like the below for your assignment:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
@@ -673,8 +687,10 @@
         <div class="admonition-content">For reference to how to configure these additional special permissions, the <a href="https://docs.samsungknox.com/admin/knox-platform-for-enterprise/knox-service-plugin/kbas/kba-1261-grant-special-permissions-for-an-app/" target="_blank" rel="noopener noreferrer">Knox documentation</a> covers it in more detail.</div></div></div>
 <p>What we have here is a new profile that should help our users on their way to onboarding their devices to Defender, without having to faff about setting up the additional requested permissions that Defender needs.</p>
 <p>So when a user now opens the Defender app, they are only presented with one permission for Accessibility to configure:</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-lowertouch.png" title="Defender for Endpoint App Permissions" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-lowertouch.png" data-sub-html="<h2>Defender app on Android Enterprise requesting permissions.</h2><p>Defender for Endpoint App Permissions</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-lowertouch.png   alt="Defender for Endpoint App Permissions" height="910" width="800"></a><figcaption class="image-caption">Defender app on Android Enterprise requesting permissions.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-defender-onboarding/img/amde-lowertouch_hu251197857006727851.png" title="Defender for Endpoint App Permissions" data-thumbnail="/posts/android-enterprise-defender-onboarding/img/amde-lowertouch_hu251197857006727851.png" data-sub-html="<h2>Defender app on Android Enterprise requesting permissions.</h2><p>Defender for Endpoint App Permissions</p>"><img  loading="lazy" src=/posts/android-enterprise-defender-onboarding/img/amde-lowertouch_hu251197857006727851.png   alt="Defender for Endpoint App Permissions"  ></a><figcaption class="image-caption">Defender app on Android Enterprise requesting permissions.</figcaption>
+</figure>
+
+</p>
 <p>I haven&rsquo;t worked out a way to implement this using Intune or the Knox Service Plugin, so you&rsquo;re end users will still have to do something to finish the onboarding process, sorry 🫠.</p>
 <h2 id="defender-features" class="headerLink">
     <a href="#defender-features" class="header-mark"></a>4 Defender Features</h2><p>Now that you&rsquo;ve got your Android Enterprise, and/or Samsung devices onboarded to Defender for Endpoint, it&rsquo;s worth covering off some additional <a href="https://learn.microsoft.com/en-us/defender-endpoint/android-configure" target="_blank" rel="noopener noreferrer">settings and features</a> to ensure that the app is not either misused, or to just be definite with some default settings.</p>

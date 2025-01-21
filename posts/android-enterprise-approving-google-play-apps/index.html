@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/android-enterprise-approving-google-play-apps/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/creating-assigning-app-categories/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/defender-antivirus-compliance-updates/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -987,11 +989,15 @@
 </div>
 <p>The full <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/Apps/AddGoogleApps/Invoke-AddGoogleApps.ps1" target="_blank" rel="noopener noreferrer">Script</a> can be found in my <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/" target="_blank" rel="noopener noreferrer">GitHub Repo</a> and as always, please test this before adding hundreds of apps to the variable, you&rsquo;ll thank me later.</p>
 <p>Running the script gives us the following output:</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-script.png" title="Script Output" data-thumbnail="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-script.png" data-sub-html="<h2>PowerShell script output.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-script.png   alt="Script Output" height="501" width="594"></a><figcaption class="image-caption">PowerShell script output.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-script_hu15154580889457409339.png" title="Script Output" data-thumbnail="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-script_hu15154580889457409339.png" data-sub-html="<h2>PowerShell script output.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-script_hu15154580889457409339.png   alt="Script Output"  ></a><figcaption class="image-caption">PowerShell script output.</figcaption>
+</figure>
+
+</p>
 <p>After a little while, we&rsquo;ll see the Mobile Apps in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsAndroidMenu/~/androidApps" target="_blank" rel="noopener noreferrer">Microsoft Intune Android Apps Portal</a>:</p>
-<p><figure><a class="lightgallery" href="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-apps.png" title="Mobile Apps" data-thumbnail="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-apps.png" data-sub-html="<h2>Microsoft Intune approved android apps.</h2><p>Mobile Apps</p>"><img  loading="lazy" src=/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-apps.png   alt="Mobile Apps" height="714" width="1462"></a><figcaption class="image-caption">Microsoft Intune approved android apps.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-apps_hu11089420964440352526.png" title="Mobile Apps" data-thumbnail="/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-apps_hu11089420964440352526.png" data-sub-html="<h2>Microsoft Intune approved android apps.</h2><p>Mobile Apps</p>"><img  loading="lazy" src=/posts/android-enterprise-approving-google-play-apps/img/googleplayapps-apps_hu11089420964440352526.png   alt="Mobile Apps"  ></a><figcaption class="image-caption">Microsoft Intune approved android apps.</figcaption>
+</figure>
+
+</p>
 <p>With the Mobile Apps now in the tenant, you can go ahead and assign them to your hearts content&hellip;or maybe script something to do this for you?</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>5 Summary</h2><p>Even if grabbing the <strong>packageId</strong> for each mobile app you want to approve and synchronise to Microsoft Intune is a a bit of a pain, and trust me, I looked at free ways to query the Play Store, this at least cuts the time down for synchronising Managed Google Play apps, especially as part of a migration to Intune.</p>

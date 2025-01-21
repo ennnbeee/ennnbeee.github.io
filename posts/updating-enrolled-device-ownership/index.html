@@ -27,7 +27,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/updating-enrolled-device-ownership/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/configmgr-converting-direct-member-collections/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/creating-assigning-app-categories/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -265,8 +267,10 @@
 <p>This is more of a common situation than you think, with the need to get remote devices managed in a timely fashion, many organisations used User Driven enrolment methods, such as via the Company Portal, to enrol devices into Microsoft Intune, and without Corporate Device Identifiers, or for the case of Windows no support for them, these devices get enrolled as personal devices.</p>
 <h2 id="corporate-device-identifiers" class="headerLink">
     <a href="#corporate-device-identifiers" class="header-mark"></a>1 Corporate Device Identifiers</h2><p><a href="https://docs.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add" target="_blank" rel="noopener noreferrer">Corporate Device Identifiers</a> are useful for tagging devices as corporate for devices that have not yet enrolled into Microsoft Intune, but what about those that have, and what about the poor devices that just don&rsquo;t have a place in the <a href="https://docs.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number" target="_blank" rel="noopener noreferrer">supported corporate device identifier</a> world:</p>
-<p><figure><a class="lightgallery" href="/posts/updating-enrolled-device-ownership/img/ownership-chg-cdi.webp" title="Corp Device Identifiers" data-thumbnail="/posts/updating-enrolled-device-ownership/img/ownership-chg-cdi.webp" data-sub-html="<h2>Details of supported corporate device identifiers in Microsoft Intune.</h2><p>Corp Device Identifiers</p>"><img  loading="lazy" src=/posts/updating-enrolled-device-ownership/img/ownership-chg-cdi.webp   alt="Corp Device Identifiers" height="490" width="865"></a><figcaption class="image-caption">Details of supported corporate device identifiers in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/updating-enrolled-device-ownership/img/ownership-chg-cdi_hu5571407115317741683.webp" title="Corp Device Identifiers" data-thumbnail="/posts/updating-enrolled-device-ownership/img/ownership-chg-cdi_hu5571407115317741683.webp" data-sub-html="<h2>Details of supported corporate device identifiers in Microsoft Intune.</h2><p>Corp Device Identifiers</p>"><img  loading="lazy" src=/posts/updating-enrolled-device-ownership/img/ownership-chg-cdi_hu5571407115317741683.webp   alt="Corp Device Identifiers"  ></a><figcaption class="image-caption">Details of supported corporate device identifiers in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>We need to find a way to update devices we know are corporate owned and change the ownership type, sadly there isn&rsquo;t a native way of doing this using <a href="https://docs.microsoft.com/en-us/mem/intune/remote-actions/bulk-device-actions" target="_blank" rel="noopener noreferrer">Bulk Device Actions</a> in Microsoft Intune, so Graph API and PowerShell it is.</p>
 <h2 id="device-ownership-change" class="headerLink">
     <a href="#device-ownership-change" class="header-mark"></a>2 Device Ownership Change</h2><p>We&rsquo;re going to leverage Graph API to update devices that we know should be marked as corporate, to corporate ownership in Microsoft Intune. You could manually change this within each device properties page, but if you&rsquo;ve got 100&rsquo;s of devices, this isn&rsquo;t a task I&rsquo;d be willing to do.</p>
@@ -1229,11 +1233,15 @@
 <li>Panic and exit the script</li>
 </ul>
 <p>After this, the script will just do it&rsquo;s thing and go and get each device in either the CSV or the group, change the ownership, and then tell you about it:</p>
-<p><figure><a class="lightgallery" href="/posts/updating-enrolled-device-ownership/img/ownership-chg-script.webp" title="Ownership Update" data-thumbnail="/posts/updating-enrolled-device-ownership/img/ownership-chg-script.webp" data-sub-html="<h2>PowerShell script updating Device Ownership.</h2><p>Ownership Update</p>"><img  loading="lazy" src=/posts/updating-enrolled-device-ownership/img/ownership-chg-script.webp   alt="Ownership Update" height="337" width="813"></a><figcaption class="image-caption">PowerShell script updating Device Ownership.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/updating-enrolled-device-ownership/img/ownership-chg-script_hu9033917784955355788.webp" title="Ownership Update" data-thumbnail="/posts/updating-enrolled-device-ownership/img/ownership-chg-script_hu9033917784955355788.webp" data-sub-html="<h2>PowerShell script updating Device Ownership.</h2><p>Ownership Update</p>"><img  loading="lazy" src=/posts/updating-enrolled-device-ownership/img/ownership-chg-script_hu9033917784955355788.webp   alt="Ownership Update"  ></a><figcaption class="image-caption">PowerShell script updating Device Ownership.</figcaption>
+</figure>
+
+</p>
 <p>You can check the results for yourself in the Microsoft Intune portal:</p>
-<p><figure><a class="lightgallery" href="/posts/updating-enrolled-device-ownership/img/ownership-chg-corp.webp" title="Ownership Check" data-thumbnail="/posts/updating-enrolled-device-ownership/img/ownership-chg-corp.webp" data-sub-html="<h2>A device with updated ownership status in Microsoft Intune.</h2><p>Ownership Check</p>"><img  loading="lazy" src=/posts/updating-enrolled-device-ownership/img/ownership-chg-corp.webp   alt="Ownership Check" height="345" width="557"></a><figcaption class="image-caption">A device with updated ownership status in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/updating-enrolled-device-ownership/img/ownership-chg-corp_hu7542338024913686655.webp" title="Ownership Check" data-thumbnail="/posts/updating-enrolled-device-ownership/img/ownership-chg-corp_hu7542338024913686655.webp" data-sub-html="<h2>A device with updated ownership status in Microsoft Intune.</h2><p>Ownership Check</p>"><img  loading="lazy" src=/posts/updating-enrolled-device-ownership/img/ownership-chg-corp_hu7542338024913686655.webp   alt="Ownership Check"  ></a><figcaption class="image-caption">A device with updated ownership status in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <h3 id="testing-the-script" class="headerLink">
     <a href="#testing-the-script" class="header-mark"></a>3.1 Testing the Script</h3><p>I haven&rsquo;t put an option to prompt you to continue, and definitely no &lsquo;whatif&rsquo; option, so I&rsquo;d strongly recommend testing this with a small number of devices, whether this be via CSV or an Assigned Azure AD device group instead of a Dynamic one.</p>
 <p>Don&rsquo;t worry though, there is logic in the script to catch errors for the following:</p>

@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-autopilot-retrofitting-group-tags/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/endpoint-manager-device-filters/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/dell-bios-settings-intune/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -279,8 +281,10 @@
     <a href="#the-approach" class="header-mark"></a>1 The Approach</h2><p>Now I needed an easy way to tag specific devices with Group Tags, and then anything that didn&rsquo;t have a specific Group Tag to get a default one&hellip;so we&rsquo;re working with two distinct use cases here.</p>
 <h2 id="ready-aim" class="headerLink">
     <a href="#ready-aim" class="header-mark"></a>2 Ready, Aim</h2><p>For the first, we&rsquo;ll start with exporting the Autopilot Devices from the tenant, as this CSV file will contain the Serial Numbers we need further down the line.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export.webp" title="Autopilot Devices" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export.webp" data-sub-html="<h2>Export of Windows Autopilot devices to csv from Microsoft Intune.</h2><p>Autopilot Devices</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export.webp   alt="Autopilot Devices" height="466" width="1121"></a><figcaption class="image-caption">Export of Windows Autopilot devices to csv from Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu3586663809741180591.webp" title="Autopilot Devices" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu3586663809741180591.webp" data-sub-html="<h2>Export of Windows Autopilot devices to csv from Microsoft Intune.</h2><p>Autopilot Devices</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-export_hu3586663809741180591.webp   alt="Autopilot Devices"  ></a><figcaption class="image-caption">Export of Windows Autopilot devices to csv from Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Now with the CSV file exported, and looking something like the below:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -905,8 +909,10 @@
       "><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Set-AutopilotGroupTag</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;bb690aa6-53c6-4d51-affe-ab80c6d710de&#39;</span> <span class="n">-method</span> <span class="n">csv</span></span></span></code></pre>
 </div>
 <p>We first have to Authenticate, we&rsquo;re using Device Authentication so following the instructions in the script:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth.png" title="Graph Authentication" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth.png" data-sub-html="<h2>Authentication prompt to Graph.</h2><p>Graph Authentication</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth.png   alt="Graph Authentication" height="150" width="900"></a><figcaption class="image-caption">Authentication prompt to Graph.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth_hu849546517978709551.png" title="Graph Authentication" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth_hu849546517978709551.png" data-sub-html="<h2>Authentication prompt to Graph.</h2><p>Graph Authentication</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-auth_hu849546517978709551.png   alt="Graph Authentication"  ></a><figcaption class="image-caption">Authentication prompt to Graph.</figcaption>
+</figure>
+
+</p>
 <p>Now we need to provide the path to the CSV file:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -1005,11 +1011,15 @@
       "><span class="line"><span class="cl">Please provide the path to the CSV file containing a list of device serial numbers and new Group Tag  e.g. C:\temp\devices.csv:</span></span></code></pre>
 </div>
 <p>Now the script will run and update all the devices in the CSV file with their corresponding Group Tags:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv.webp" title="Script Output" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv.webp" data-sub-html="<h2>The PowerShell script output after assigning Group Tags.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv.webp   alt="Script Output" height="235" width="1323"></a><figcaption class="image-caption">The PowerShell script output after assigning Group Tags.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv_hu1788267939278774173.webp" title="Script Output" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv_hu1788267939278774173.webp" data-sub-html="<h2>The PowerShell script output after assigning Group Tags.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv_hu1788267939278774173.webp   alt="Script Output"  ></a><figcaption class="image-caption">The PowerShell script output after assigning Group Tags.</figcaption>
+</figure>
+
+</p>
 <p>And if we check in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged.webp" title="Group Tag" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged.webp" data-sub-html="<h2>The updated Group Tags on Autopilot devices in Microsoft Intune.</h2><p>Group Tag</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged.webp   alt="Group Tag" height="342" width="848"></a><figcaption class="image-caption">The updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged_hu15965043522791020073.webp" title="Group Tag" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged_hu15965043522791020073.webp" data-sub-html="<h2>The updated Group Tags on Autopilot devices in Microsoft Intune.</h2><p>Group Tag</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-csv-tagged_hu15965043522791020073.webp   alt="Group Tag"  ></a><figcaption class="image-caption">The updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Which amazingly, the Group Tag matches the data in the CSV file we created earlier. Too early to call this a win outright, but we&rsquo;re on the way.</p>
 <h3 id="shotgun-approach" class="headerLink">
     <a href="#shotgun-approach" class="header-mark"></a>5.2 Shotgun Approach</h3><p>We need to now clear up the remaining devices without Group Tags, this one we can&rsquo;t really test, unless you fancy improving the script.</p>
@@ -1208,11 +1218,15 @@
       "><span class="line"><span class="cl">Please enter the default group tag for devices without a tag: Entra</span></span></code></pre>
 </div>
 <p>Then the script will go and update Autopilot devices missing the group tag:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online.webp" title="Script Output" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online.webp" data-sub-html="<h2>The PowerShell script output after assigning Group Tags.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online.webp   alt="Script Output" height="125" width="1378"></a><figcaption class="image-caption">The PowerShell script output after assigning Group Tags.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online_hu2452652556695137412.webp" title="Script Output" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online_hu2452652556695137412.webp" data-sub-html="<h2>The PowerShell script output after assigning Group Tags.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online_hu2452652556695137412.webp   alt="Script Output"  ></a><figcaption class="image-caption">The PowerShell script output after assigning Group Tags.</figcaption>
+</figure>
+
+</p>
 <p>And if we check in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged.webp" title="Group Tag" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged.webp" data-sub-html="<h2>The updated Group Tags on Autopilot devices in Microsoft Intune.</h2><p>Group Tag</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged.webp   alt="Group Tag" height="321" width="853"></a><figcaption class="image-caption">The updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged_hu15666879221771805474.webp" title="Group Tag" data-thumbnail="/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged_hu15666879221771805474.webp" data-sub-html="<h2>The updated Group Tags on Autopilot devices in Microsoft Intune.</h2><p>Group Tag</p>"><img  loading="lazy" src=/posts/windows-autopilot-retrofitting-group-tags/img/autopilot-bulk-tag-online-tagged_hu15666879221771805474.webp   alt="Group Tag"  ></a><figcaption class="image-caption">The updated Group Tags on Autopilot devices in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>This Group Tag matches the prompted tag we set when running the script. I&rsquo;d call this one a win.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>6 Summary</h2><p>There might be easier ways of doing this, or a little less caffeine fuelled at least, but if you want to bulk set Group Tags to your existing Autopilot devices, this does seem like a half decent approach.</p>

@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/macos-defender-scan-settings/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/updates-self-service-deployment/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -944,7 +946,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-6" 
+    id="codeblock-id-8" 
     class="
       chroma 
       !tw-block 
@@ -1242,7 +1244,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-8" 
+    id="codeblock-id-9" 
     class="
       chroma 
       !tw-block 
@@ -2367,7 +2369,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-16" 
+    id="codeblock-id-15" 
     class="
       chroma 
       !tw-block 
@@ -2435,13 +2437,17 @@
 <li>Check for updates before scan is enabled</li>
 </ul>
 <p>So go create a new <a href="https://learn.microsoft.com/en-us/mem/intune/configuration/custom-settings-macos" target="_blank" rel="noopener noreferrer">Custom Profile</a> in Microsoft Intune, and upload the mobileconfig file we created:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-defender-scan-settings/img/macmde-intune.png" title="macOS Custom profile" data-thumbnail="/posts/macos-defender-scan-settings/img/macmde-intune.png" data-sub-html="<h2>Microsoft Intune macOS custom profile for Defender Scheduled scan settings.</h2><p>macOS Custom profile</p>"><img  loading="lazy" src=/posts/macos-defender-scan-settings/img/macmde-intune.png   alt="macOS Custom profile" height="791" width="849"></a><figcaption class="image-caption">Microsoft Intune macOS custom profile for Defender Scheduled scan settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-defender-scan-settings/img/macmde-intune_hu480819925069151172.png" title="macOS Custom profile" data-thumbnail="/posts/macos-defender-scan-settings/img/macmde-intune_hu480819925069151172.png" data-sub-html="<h2>Microsoft Intune macOS custom profile for Defender Scheduled scan settings.</h2><p>macOS Custom profile</p>"><img  loading="lazy" src=/posts/macos-defender-scan-settings/img/macmde-intune_hu480819925069151172.png   alt="macOS Custom profile"  ></a><figcaption class="image-caption">Microsoft Intune macOS custom profile for Defender Scheduled scan settings.</figcaption>
+</figure>
+
+</p>
 <p>Make sure you&rsquo;re selecting <strong>Device channel</strong>, then go assign this to your macOS devices, and wait some length of time for Intune to report a deployment success.</p>
 <h3 id="validation" class="headerLink">
     <a href="#validation" class="header-mark"></a>3.2 Validation</h3><p>Once your devices have checked in to Intune, there should be a new profile on the device with the Defender scan schedule settings:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-defender-scan-settings/img/macmde-profile.png" title="macOS profile" data-thumbnail="/posts/macos-defender-scan-settings/img/macmde-profile.png" data-sub-html="<h2>macOS profile for Defender Scheduled scan settings.</h2><p>macOS profile</p>"><img  loading="lazy" src=/posts/macos-defender-scan-settings/img/macmde-profile.png   alt="macOS profile" height="1268" width="1458"></a><figcaption class="image-caption">macOS profile for Defender Scheduled scan settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-defender-scan-settings/img/macmde-profile_hu4521842655706616923.png" title="macOS profile" data-thumbnail="/posts/macos-defender-scan-settings/img/macmde-profile_hu4521842655706616923.png" data-sub-html="<h2>macOS profile for Defender Scheduled scan settings.</h2><p>macOS profile</p>"><img  loading="lazy" src=/posts/macos-defender-scan-settings/img/macmde-profile_hu4521842655706616923.png   alt="macOS profile"  ></a><figcaption class="image-caption">macOS profile for Defender Scheduled scan settings.</figcaption>
+</figure>
+
+</p>
 <p>To double down and be super-serious about ensuring that the settings match the configured parameters, they can be checked against the profile using the below command in a Terminal on a macOS device, to see if those scan settings have applied:</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -2540,8 +2546,10 @@
       "><span class="line"><span class="cl">mdatp health --details scheduled_scan</span></span></code></pre>
 </div>
 <p>Which should give us something like this:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-defender-scan-settings/img/macmde-mdatp.png" title="macOS profile" data-thumbnail="/posts/macos-defender-scan-settings/img/macmde-mdatp.png" data-sub-html="<h2>macOS profile for Defender Scheduled scan settings.</h2><p>macOS profile</p>"><img  loading="lazy" src=/posts/macos-defender-scan-settings/img/macmde-mdatp.png   alt="macOS profile" height="632" width="1594"></a><figcaption class="image-caption">macOS profile for Defender Scheduled scan settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-defender-scan-settings/img/macmde-mdatp_hu13424168941322114325.png" title="macOS profile" data-thumbnail="/posts/macos-defender-scan-settings/img/macmde-mdatp_hu13424168941322114325.png" data-sub-html="<h2>macOS profile for Defender Scheduled scan settings.</h2><p>macOS profile</p>"><img  loading="lazy" src=/posts/macos-defender-scan-settings/img/macmde-mdatp_hu13424168941322114325.png   alt="macOS profile"  ></a><figcaption class="image-caption">macOS profile for Defender Scheduled scan settings.</figcaption>
+</figure>
+
+</p>
 <p>Doing a bit of <a href="https://www.youtube.com/watch?v=3M_5oYU-IsU" target="_blank" rel="noopener noreferrer">quick maths</a> and comparing to the parameters:</p>
 
 <div class="table-wrapper">

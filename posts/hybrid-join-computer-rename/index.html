@@ -26,7 +26,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/hybrid-join-computer-rename/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/macos-ncsc-settings/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -549,8 +551,10 @@
     <a href="#the-whole-thing" class="header-mark"></a>1.4 The Whole Thing</h3><p>The full script can be found <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/PlatformScripts/PowerShell/HDJDeviceRename/Invoke-ComputerRename-HDJ.ps1" target="_blank" rel="noopener noreferrer">here</a>, I would <strong>strongly</strong> advise testing this prior to pushing it out via Microsoft Intune.</p>
 <h2 id="deployment" class="headerLink">
     <a href="#deployment" class="header-mark"></a>2 Deployment</h2><p>Save the above script and create a new PowerShell script deployment in <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/powershell" target="_blank" rel="noopener noreferrer">Microsoft Intune</a> using the following configuration settings, then deploy to a test group of devices:</p>
-<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename/img/computer-name-script.webp" title="PowerShell Script" data-thumbnail="/posts/hybrid-join-computer-rename/img/computer-name-script.webp" data-sub-html="<h2>Platform script in Microsoft Intune.</h2><p>PowerShell Script</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename/img/computer-name-script.webp   alt="PowerShell Script" height="330" width="832"></a><figcaption class="image-caption">Platform script in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename/img/computer-name-script_hu10892623788002999154.webp" title="PowerShell Script" data-thumbnail="/posts/hybrid-join-computer-rename/img/computer-name-script_hu10892623788002999154.webp" data-sub-html="<h2>Platform script in Microsoft Intune.</h2><p>PowerShell Script</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename/img/computer-name-script_hu10892623788002999154.webp   alt="PowerShell Script"  ></a><figcaption class="image-caption">Platform script in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Bingo! another battle won.</p>
 </div>
 

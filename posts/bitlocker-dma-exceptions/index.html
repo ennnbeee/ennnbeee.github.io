@@ -28,7 +28,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/bitlocker-dma-exceptions/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part1/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -349,8 +351,10 @@
 </span></span><span class="line"><span class="cl">    PCI\VEN_8086&amp;DEV_51B1 (Intel(R) PCI Express Root Port #10 - 51B1)</span></span></code></pre>
 </div>
 <p>And System Information showing something like this:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png" title="BitLocker System Info" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png" data-sub-html="<h2>System Information showing DMA Exceptions.</h2><p>BitLocker System Info</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png   alt="BitLocker System Info" height="749" width="1000"></a><figcaption class="image-caption">System Information showing DMA Exceptions.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu3943174023617342076.png" title="BitLocker System Info" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu3943174023617342076.png" data-sub-html="<h2>System Information showing DMA Exceptions.</h2><p>BitLocker System Info</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu3943174023617342076.png   alt="BitLocker System Info"  ></a><figcaption class="image-caption">System Information showing DMA Exceptions.</figcaption>
+</figure>
+
+</p>
 <p>Instead of having to manually create the recommended registry settings, only after changing permissions on the Key to allow for these exceptions detailed in the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank" rel="noopener noreferrer">Microsoft Support Article</a>, we should find a way to do this automatically.</p>
 <h2 id="platform-scripts" class="headerLink">
     <a href="#platform-scripts" class="header-mark"></a>2 Platform Scripts</h2><p>You might be wondering why we&rsquo;re going for a &ldquo;dumb&rdquo; PowerShell script instead of the &ldquo;fancy&rdquo; <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank" rel="noopener noreferrer">remediation</a> approach that I am fond of?</p>
@@ -842,8 +846,10 @@
 <h3 id="script-testing" class="headerLink">
     <a href="#script-testing" class="header-mark"></a>3.1 Script Testing</h3><p>Now as the registry key has restrictive permissions, you can modify these manually for testing as per the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank" rel="noopener noreferrer">article</a>, or you can use <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank" rel="noopener noreferrer">PsExec</a> to run PowerShell as <strong>SYSTEM</strong> using <strong>PsExec.exe -s -i powershell.exe</strong>.</p>
 <p>Allowing you to test locally on devices before deploying using Microsoft Intune, and with a bit of luck, you should see something like the below:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-reg.png" title="Registry DMA Exceptions" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-reg.png" data-sub-html="<h2>Registry settings showing DMA Exception values.</h2><p>Registry DMA Exceptions</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-reg.png   alt="Registry DMA Exceptions" height="519" width="1137"></a><figcaption class="image-caption">Registry settings showing DMA Exception values.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-reg_hu14425651826395935406.png" title="Registry DMA Exceptions" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-reg_hu14425651826395935406.png" data-sub-html="<h2>Registry settings showing DMA Exception values.</h2><p>Registry DMA Exceptions</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-reg_hu14425651826395935406.png   alt="Registry DMA Exceptions"  ></a><figcaption class="image-caption">Registry settings showing DMA Exception values.</figcaption>
+</figure>
+
+</p>
 <p>After successful testing, you&rsquo;re now ready to deploy this as a Platform Script in Microsoft Intune, using the below configuration.</p>
 
 <div class="table-wrapper">

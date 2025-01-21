@@ -32,7 +32,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part4/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/powerautomate-out-of-office/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/configmgr-client-install-cmg/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -299,22 +301,30 @@
         <div class="admonition-content">As Custom Profile settings are on their way out (see Message Centre MC822716 and this <a href="https://ourcloudnetwork.com/microsoft-to-start-blocking-custom-oma-uri-settings-in-intune/" target="_blank" rel="noopener noreferrer">post</a> by <a href="https://www.linkedin.com/in/danielbradley2/" target="_blank" rel="noopener noreferrer">Daniel Bradley</a>) this post has been updated, along with the exported profiles, to use Settings Catalog profiles.</div></div></div>
 <h2 id="cis-level-2-issues" class="headerLink">
     <a href="#cis-level-2-issues" class="header-mark"></a>1 CIS Level 2 Issues</h2><p>Remember that the CIS Level 2 settings on their own aren&rsquo;t particularly useful without their BitLocker and Level 1 counterparts, issues or otherwise 😄.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-settings.png" title="CIS Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-settings.png" data-sub-html="<h2>All CIS profiles in Microsoft Intune.</h2><p>CIS Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-settings.png   alt="CIS Settings" height="572" width="940"></a><figcaption class="image-caption">All CIS profiles in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-settings_hu9076659674962058852.png" title="CIS Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-settings_hu9076659674962058852.png" data-sub-html="<h2>All CIS profiles in Microsoft Intune.</h2><p>CIS Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-settings_hu9076659674962058852.png   alt="CIS Settings"  ></a><figcaption class="image-caption">All CIS profiles in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>So make sure you have a good understanding of the impact of these levels by looking at all posts in this series.</p>
 <p>For now though, let&rsquo;s continue into CIS Level 2 build kit profiles and work out where the issues sit.</p>
 <h3 id="windows-enterprise-edition" class="headerLink">
     <a href="#windows-enterprise-edition" class="header-mark"></a>1.1 Windows Enterprise Edition</h3><p>Before we even look at the problems enabling the <strong>DisableStoreOriginatedApps</strong> setting will cause, it&rsquo;s worth mentioning that this setting is a <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-applicationmanagement#disablestoreoriginatedapps" target="_blank" rel="noopener noreferrer">Windows Enterprise/Education edition</a> <em>only</em> configuration:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-cspstoreed.png" title="PolicyCSP Windows Edition Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-cspstoreed.png" data-sub-html="<h2>PolicyCSP Edition settings for DisableStoreOriginatedApps</h2><p>PolicyCSP Windows Edition Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-cspstoreed.png   alt="PolicyCSP Windows Edition Settings" height="315" width="885"></a><figcaption class="image-caption">PolicyCSP Edition settings for DisableStoreOriginatedApps</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-cspstoreed_hu7507608126729680869.png" title="PolicyCSP Windows Edition Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-cspstoreed_hu7507608126729680869.png" data-sub-html="<h2>PolicyCSP Edition settings for DisableStoreOriginatedApps</h2><p>PolicyCSP Windows Edition Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-cspstoreed_hu7507608126729680869.png   alt="PolicyCSP Windows Edition Settings"  ></a><figcaption class="image-caption">PolicyCSP Edition settings for DisableStoreOriginatedApps</figcaption>
+</figure>
+
+</p>
 <p>So exactly like the <a href="/posts/windows-cis-patching-gaps-part3/#windows-edition-requirements" rel="noopener" target="_blank">previous post</a>, a quick PowerShell script <em>would</em> allow us to configure the <a href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.WindowsStore::DisableStoreApps" target="_blank" rel="noopener noreferrer">registry equivalent</a> setting.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-regwindowsstore.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-regwindowsstore.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-regwindowsstore.png   alt="Windows Pro registry settings" height="271" width="995"></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-regwindowsstore_hu4876137933447729892.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-regwindowsstore_hu4876137933447729892.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-regwindowsstore_hu4876137933447729892.png   alt="Windows Pro registry settings"  ></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</figcaption>
+</figure>
+
+</p>
 <p>Sadly though, this is a true Windows Enterprise/Education setting and will do absolutely nothing on any other Windows edition, so there&rsquo;s no point in building a PowerShell script to apply the registry setting to our Windows Professional or otherwise devices.</p>
 <h3 id="user-settings" class="headerLink">
     <a href="#user-settings" class="header-mark"></a>1.2 User Settings</h3><p>We&rsquo;ve seen this <a href="/posts/windows-cis-patching-gaps-part3/#user-settings" rel="noopener" target="_blank">previously</a> so for the sake of completeness we should also break out the user specific settings into their own profiles, and assign these to <strong>users</strong> and not devices.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-userna.png" title="User Settings Not Applicable" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-userna.png" data-sub-html="<h2>User Only settings not applying to the device context in Microsoft Intune.</h2><p>User Settings Not Applicable</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-userna.png   alt="User Settings Not Applicable" height="306" width="1112"></a><figcaption class="image-caption">User Only settings not applying to the device context in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-userna_hu10339725638513505476.png" title="User Settings Not Applicable" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-userna_hu10339725638513505476.png" data-sub-html="<h2>User Only settings not applying to the device context in Microsoft Intune.</h2><p>User Settings Not Applicable</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-userna_hu10339725638513505476.png   alt="User Settings Not Applicable"  ></a><figcaption class="image-caption">User Only settings not applying to the device context in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg> <em>CIS (L2) Administrative Templates (User) - Windows 11 Intune 3.0.1</em></p>
 
@@ -460,13 +470,17 @@
 <p>We&rsquo;ll deal with the impact of these settings later on, for now just be happy we can create them in Microsoft Intune.</p>
 <h2 id="cis-level-2-settings" class="headerLink">
     <a href="#cis-level-2-settings" class="header-mark"></a>2 CIS Level 2 Settings</h2><p>Now we&rsquo;ve covered the missing or at least misconfigured CIS Level 2 settings, let&rsquo;s dig into their impact on Windows 11 cloud native devices.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-import.png" title="CIS Level 2 Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-import.png" data-sub-html="<h2>CIS Level 2 settings in Microsoft Intune.</h2><p>CIS Level 2 Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-import.png   alt="CIS Level 2 Settings" height="419" width="923"></a><figcaption class="image-caption">CIS Level 2 settings in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-import_hu2939405886989178867.png" title="CIS Level 2 Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-import_hu2939405886989178867.png" data-sub-html="<h2>CIS Level 2 settings in Microsoft Intune.</h2><p>CIS Level 2 Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-import_hu2939405886989178867.png   alt="CIS Level 2 Settings"  ></a><figcaption class="image-caption">CIS Level 2 settings in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Starting in no particular order (we lied, it&rsquo;s the worst one first).</p>
 <h3 id="blocking-store-apps" class="headerLink">
     <a href="#blocking-store-apps" class="header-mark"></a>2.1 Blocking Store Apps</h3><p>Well this one is a a bit of a kicker, we could deal with some end user experience changes as part of the CIS benchmark, what we can&rsquo;t deal with are Microsoft Store apps being disabled entirely.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-blockmsg.png" title="Application Block Message" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-blockmsg.png" data-sub-html="<h2>Application Blocked message in Windows 11.</h2><p>Application Block Message</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-blockmsg.png   alt="Application Block Message" height="198" width="680"></a><figcaption class="image-caption">Application Blocked message in Windows 11.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-blockmsg_hu2044471675293420138.png" title="Application Block Message" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-blockmsg_hu2044471675293420138.png" data-sub-html="<h2>Application Blocked message in Windows 11.</h2><p>Application Block Message</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-blockmsg_hu2044471675293420138.png   alt="Application Block Message"  ></a><figcaption class="image-caption">Application Blocked message in Windows 11.</figcaption>
+</figure>
+
+</p>
 <p><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg> <em>CIS (L2) Section 11.1 - 80 (No Services) - Windows 11 Intune 3.0.1</em></p>
 
@@ -616,8 +630,10 @@
 </blockquote><p>It looks like you might be able to get away with not disabling this, <em>if</em> you&rsquo;re controlling the <strong>Allow log on through Remote Desktop Services</strong>, which we actually are, in the Level 1 profile <strong>CIS (L1) User Rights Global - Windows 11 Intune 3.0.1</strong>.</p>
 <h3 id="locating-devices" class="headerLink">
     <a href="#locating-devices" class="header-mark"></a>2.6 Locating Devices</h3><p>You might not have any interest in using the <a href="https://learn.microsoft.com/en-us/mem/intune/remote-actions/device-locate" target="_blank" rel="noopener noreferrer">locate device</a> functionality within Microsoft Intune, to legitimately find lost or stolen Windows devices (and not to be nosey and abuse privileges), but some people do.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-location.png" title="Located Device" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-location.png" data-sub-html="<h2>Locate device failing in Microsoft Intune.</h2><p>Located Device</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-location.png   alt="Located Device" height="655" width="1126"></a><figcaption class="image-caption">Locate device failing in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-location_hu8716994598830867992.png" title="Located Device" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-location_hu8716994598830867992.png" data-sub-html="<h2>Locate device failing in Microsoft Intune.</h2><p>Located Device</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-location_hu8716994598830867992.png   alt="Located Device"  ></a><figcaption class="image-caption">Locate device failing in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Those people should not try and align themselves to CIS Level 2, as one of the key requirements for locating a device, is allowing location services, which after we configured the miscellaneous settings earlier is now disabled.</p>
 <p><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg> <em>CIS (L2) Level 2 Misc - Windows 11 Intune 3.0.1</em></p>
@@ -812,8 +828,10 @@
   </table>
 </div>
 <p>If after understanding the entire impact of disabling these services, you still <del>want to</del> have to disable them, you can deploy the provided PowerShell script using Microsoft Intune with deployment settings:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-l2script.png" title="CIS Level 2 System Services Script" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-l2script.png" data-sub-html="<h2>CIS Level 2 services PowerShell Script in Microsoft Intune.</h2><p>CIS Level 2 System Services Script</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-l2script.png   alt="CIS Level 2 System Services Script" height="568" width="929"></a><figcaption class="image-caption">CIS Level 2 services PowerShell Script in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-l2script_hu12574743417839640070.png" title="CIS Level 2 System Services Script" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-l2script_hu12574743417839640070.png" data-sub-html="<h2>CIS Level 2 services PowerShell Script in Microsoft Intune.</h2><p>CIS Level 2 System Services Script</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-l2script_hu12574743417839640070.png   alt="CIS Level 2 System Services Script"  ></a><figcaption class="image-caption">CIS Level 2 services PowerShell Script in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">
         <span class="icon"><svg class="icon"
@@ -925,7 +943,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-17" 
+    id="codeblock-id-18" 
     class="
       chroma 
       !tw-block 
@@ -1097,7 +1115,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-19" 
+    id="codeblock-id-20" 
     class="
       chroma 
       !tw-block 
@@ -1167,8 +1185,10 @@
 
 
 <p>Deployed using Microsoft Intune to your devices:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-l2remediation.png" title="CIS Level 2 System Services Remediation" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-l2remediation.png" data-sub-html="<h2>CIS Level 2 services remediation in Microsoft Intune.</h2><p>CIS Level 2 System Services Remediation</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-l2remediation.png   alt="CIS Level 2 System Services Remediation" height="753" width="1038"></a><figcaption class="image-caption">CIS Level 2 services remediation in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part4/img/cis-l2remediation_hu4041068386732128208.png" title="CIS Level 2 System Services Remediation" data-thumbnail="/posts/windows-cis-patching-gaps-part4/img/cis-l2remediation_hu4041068386732128208.png" data-sub-html="<h2>CIS Level 2 services remediation in Microsoft Intune.</h2><p>CIS Level 2 System Services Remediation</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part4/img/cis-l2remediation_hu4041068386732128208.png   alt="CIS Level 2 System Services Remediation"  ></a><figcaption class="image-caption">CIS Level 2 services remediation in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Set a suitable schedule for the remediation to run, so you know, you&rsquo;re breaking things on the regular.</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">

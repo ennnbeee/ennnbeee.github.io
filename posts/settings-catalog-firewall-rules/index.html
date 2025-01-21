@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/settings-catalog-firewall-rules/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/windows-update-phased-deployment/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -700,8 +702,10 @@
 </div>
 <h3 id="capturing-firewall-rules" class="headerLink">
     <a href="#capturing-firewall-rules" class="header-mark"></a>1.4 Capturing Firewall Rules</h3><p>Using existing legacy Endpoint Security Firewall Rule profiles in a tenant, we just need to know their names so we can pass them into an array variable, so we can use the below profile names as examples.</p>
-<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-legacy.webp" title="Legacy Firewall Rules" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-legacy.webp" data-sub-html="<h2>Legacy Firewall Rule policies in Microsoft Intune.</h2><p>Legacy Firewall Rules</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-legacy.webp   alt="Legacy Firewall Rules" height="336" width="1079"></a><figcaption class="image-caption">Legacy Firewall Rule policies in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-legacy_hu10465146903454094555.webp" title="Legacy Firewall Rules" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-legacy_hu10465146903454094555.webp" data-sub-html="<h2>Legacy Firewall Rule policies in Microsoft Intune.</h2><p>Legacy Firewall Rules</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-legacy_hu10465146903454094555.webp   alt="Legacy Firewall Rules"  ></a><figcaption class="image-caption">Legacy Firewall Rule policies in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Adding them into an array so we can loop through each one of them, and extract the needed data.</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
@@ -3129,14 +3133,20 @@
     </div>
     <div class="details-content">
         <div class="admonition-content">The clue is the &lsquo;Target&rsquo; being <code>mdm,microsoftSense</code> not just <code>mdm</code></div></div></div>
-<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-new.webp" title="New Firewall Rules" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-new.webp" data-sub-html="<h2>New Firewall Rule policies in Microsoft Intune.</h2><p>New Firewall Rules</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-new.webp   alt="New Firewall Rules" height="502" width="1098"></a><figcaption class="image-caption">New Firewall Rule policies in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-new_hu14367847416398885986.webp" title="New Firewall Rules" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-new_hu14367847416398885986.webp" data-sub-html="<h2>New Firewall Rule policies in Microsoft Intune.</h2><p>New Firewall Rules</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-new_hu14367847416398885986.webp   alt="New Firewall Rules"  ></a><figcaption class="image-caption">New Firewall Rule policies in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Let&rsquo;s have a gander at comparing the rules between the profiles, with the old profile looking like the below with the rule detail.</p>
-<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-legacydetail.webp" title="Old Firewall Rule Detail" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-legacydetail.webp" data-sub-html="<h2>Legacy Firewall Rule policy settings in Microsoft Intune.</h2><p>Old Firewall Rule Detail</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-legacydetail.webp   alt="Old Firewall Rule Detail" height="860" width="1676"></a><figcaption class="image-caption">Legacy Firewall Rule policy settings in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-legacydetail_hu2313331485906410460.webp" title="Old Firewall Rule Detail" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-legacydetail_hu2313331485906410460.webp" data-sub-html="<h2>Legacy Firewall Rule policy settings in Microsoft Intune.</h2><p>Old Firewall Rule Detail</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-legacydetail_hu2313331485906410460.webp   alt="Old Firewall Rule Detail"  ></a><figcaption class="image-caption">Legacy Firewall Rule policy settings in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>And the new policy looking pretty damn good.</p>
-<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-newdetail.webp" title="New Firewall Rule Detail" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-newdetail.webp" data-sub-html="<h2>New Firewall Rule policy settings in Microsoft Intune.</h2><p>New Firewall Rule Detail</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-newdetail.webp   alt="New Firewall Rule Detail" height="846" width="1658"></a><figcaption class="image-caption">New Firewall Rule policy settings in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/settings-catalog-firewall-rules/img/fw-newdetail_hu9101097458750470164.webp" title="New Firewall Rule Detail" data-thumbnail="/posts/settings-catalog-firewall-rules/img/fw-newdetail_hu9101097458750470164.webp" data-sub-html="<h2>New Firewall Rule policy settings in Microsoft Intune.</h2><p>New Firewall Rule Detail</p>"><img  loading="lazy" src=/posts/settings-catalog-firewall-rules/img/fw-newdetail_hu9101097458750470164.webp   alt="New Firewall Rule Detail"  ></a><figcaption class="image-caption">New Firewall Rule policy settings in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>I think we&rsquo;re done.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>4 Summary</h2><p>This, and the <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/EndpointSecurity/ConvertFirewallRules/Invoke-MgConvertFirewallRules.ps1" target="_blank" rel="noopener noreferrer">script</a>, as usual all came about from improving a Customers Microsoft Intune environment. The customer being very security focussed was blocking legitimately everything inbound and outbound unless there was a firewall rule; this included all Microsoft 365 endpoints.</p>

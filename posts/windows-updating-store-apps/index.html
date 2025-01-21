@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-updating-store-apps/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/windows-winre-partition-resize-kb5034441/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/macos-teams-new-backgrounds/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -256,8 +258,10 @@
     </tbody>
   </table>
 </div>
-<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-setcat.png" title="Settings Catalog Profile" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-setcat.png" data-sub-html="<h2>Settings Catalog profile for Microsoft Store.</h2><p>Settings Catalog Profile</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-setcat.png   alt="Settings Catalog Profile" height="238" width="788"></a><figcaption class="image-caption">Settings Catalog profile for Microsoft Store.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-setcat_hu5524794191685922137.png" title="Settings Catalog Profile" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-setcat_hu5524794191685922137.png" data-sub-html="<h2>Settings Catalog profile for Microsoft Store.</h2><p>Settings Catalog Profile</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-setcat_hu5524794191685922137.png   alt="Settings Catalog Profile"  ></a><figcaption class="image-caption">Settings Catalog profile for Microsoft Store.</figcaption>
+</figure>
+
+</p>
 <p>Assign this profile to your devices, all of them obviously, no testing needed here.</p>
 <h2 id="forcing-app-updates" class="headerLink">
     <a href="#forcing-app-updates" class="header-mark"></a>2 Forcing App Updates</h2><p>There&rsquo;s a lot of chatter about how to force store apps to update, but essentially we can kick off an update using the below <strong>Get-CimInstance</strong> query.</p>
@@ -360,11 +364,15 @@
 <p>Now as we&rsquo;re calling areas that require elevation, standard users are bang out of luck from running this, and even running this elevated as Administrator does absolutely nothing for the apps themselves, something about install context.</p>
 <p>So what are our options? Well for testing it&rsquo;s <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank" rel="noopener noreferrer">PsExec</a>.</p>
 <p>Running the above from PowerShell running as system using <code>PsExec.exe -s -i powershell.exe</code>, we can kick off the app update query.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-psexec.png" title="PsExec Run" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-psexec.png" data-sub-html="<h2>PSEXEC running the store app update command.</h2><p>PsExec Run</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-psexec.png   alt="PsExec Run" height="516" width="979"></a><figcaption class="image-caption">PSEXEC running the store app update command.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-psexec_hu15835890309341541696.png" title="PsExec Run" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-psexec_hu15835890309341541696.png" data-sub-html="<h2>PSEXEC running the store app update command.</h2><p>PsExec Run</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-psexec_hu15835890309341541696.png   alt="PsExec Run"  ></a><figcaption class="image-caption">PSEXEC running the store app update command.</figcaption>
+</figure>
+
+</p>
 <p>Nothing much to look at here, but if you&rsquo;ve got the store open, you should now see updates in the Downloads and Updates section, if you&rsquo;re lazy run <code>start ms-windows-store://downloadsandupdates</code> as a standard user to open the correct area of the store.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-update.png" title="Store App Updates" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-update.png" data-sub-html="<h2>The Microsoft Store updating apps.</h2><p>Store App Updates</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-update.png   alt="Store App Updates" height="935" width="1202"></a><figcaption class="image-caption">The Microsoft Store updating apps.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-update_hu1053873780841404275.png" title="Store App Updates" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-update_hu1053873780841404275.png" data-sub-html="<h2>The Microsoft Store updating apps.</h2><p>Store App Updates</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-update_hu1053873780841404275.png   alt="Store App Updates"  ></a><figcaption class="image-caption">The Microsoft Store updating apps.</figcaption>
+</figure>
+
+</p>
 <p>Brilliant, apps are now trying their hardest to update. Now we&rsquo;ve got a method to update the apps, no one is going to run this manually on a regular basis, and we love a <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations" target="_blank" rel="noopener noreferrer">Microsoft Intune Remediation</a>.</p>
 <div class="details admonition tip open">
     <div class="details-summary admonition-title">
@@ -472,8 +480,10 @@
       tw-scrollbar-thin
       "><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="s2">&#34;Root\cimv2\mdm\dmmap&#34;</span> <span class="n">-ClassName</span> <span class="s2">&#34;MDM_EnterpriseModernAppManagement_AppManagement01&#34;</span></span></span></code></pre>
 </div>
-<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-output.png" title="Command Output" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-output.png" data-sub-html="<h2>The result of the Get-CimInstance query.</h2><p>Command Output</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-output.png   alt="Command Output" height="628" width="1115"></a><figcaption class="image-caption">The result of the Get-CimInstance query.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-output_hu14411115358264282165.png" title="Command Output" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-output_hu14411115358264282165.png" data-sub-html="<h2>The result of the Get-CimInstance query.</h2><p>Command Output</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-output_hu14411115358264282165.png   alt="Command Output"  ></a><figcaption class="image-caption">The result of the Get-CimInstance query.</figcaption>
+</figure>
+
+</p>
 <p>Guess what, we do, that <strong>LastScanError</strong> is looking mighty interesting, and it being Microsoft I bet that an exit code of zero means success, but we should have a look at the <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp#deviceappmanagementlastscanerror" target="_blank" rel="noopener noreferrer">reference document</a> just in case.</p>
 <blockquote>
   <p>Reports the last error code returned by the update scan.</p>
@@ -582,7 +592,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-32" 
+    id="codeblock-id-37" 
     class="
       chroma 
       !tw-block 
@@ -718,7 +728,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-34" 
+    id="codeblock-id-38" 
     class="
       chroma 
       !tw-block 
@@ -748,12 +758,16 @@
 <p>Just make sure we&rsquo;re exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.</p>
 <h2 id="deploying-the-remediation" class="headerLink">
     <a href="#deploying-the-remediation" class="header-mark"></a>4 Deploying the Remediation</h2><p>We&rsquo;ve seen remediations a <a href="/tags/remediation/" rel="noopener" target="_blank">handful</a> of times now in this blog, so go ahead and create a new Remediation Script in Microsoft Intune mirroring the below settings. Be aware that we definitely do not want to be running this as the user, we <em>need</em> that glorious system context.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-script.png" title="Remediation Script" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-script.png" data-sub-html="<h2>Microsoft Intune Remediation Script.</h2><p>Remediation Script</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-script.png   alt="Remediation Script" height="739" width="838"></a><figcaption class="image-caption">Microsoft Intune Remediation Script.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-script_hu6383375289726989952.png" title="Remediation Script" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-script_hu6383375289726989952.png" data-sub-html="<h2>Microsoft Intune Remediation Script.</h2><p>Remediation Script</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-script_hu6383375289726989952.png   alt="Remediation Script"  ></a><figcaption class="image-caption">Microsoft Intune Remediation Script.</figcaption>
+</figure>
+
+</p>
 <p>I&rsquo;ve assigned this to <strong>All Devices</strong> with my beloved <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank" rel="noopener noreferrer">Device Filters</a> on a daily schedule, but if you&rsquo;re more cautious than I am, assign this to a smaller proof-of-concept group.</p>
 <p>After a while, you should start seeing the results of the Remediation, and hopefully positive ones to boot.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-results.png" title="Remediation Results" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-results.png" data-sub-html="<h2>Microsoft Intune Remediation Results.</h2><p>Remediation Results</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-results.png   alt="Remediation Results" height="646" width="1323"></a><figcaption class="image-caption">Microsoft Intune Remediation Results.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-updating-store-apps/img/storeapps-results_hu17728294939196917785.png" title="Remediation Results" data-thumbnail="/posts/windows-updating-store-apps/img/storeapps-results_hu17728294939196917785.png" data-sub-html="<h2>Microsoft Intune Remediation Results.</h2><p>Remediation Results</p>"><img  loading="lazy" src=/posts/windows-updating-store-apps/img/storeapps-results_hu17728294939196917785.png   alt="Remediation Results"  ></a><figcaption class="image-caption">Microsoft Intune Remediation Results.</figcaption>
+</figure>
+
+</p>
 <p>If all goes well, your devices will start actually updating the &lsquo;Built In&rsquo; apps you haven&rsquo;t ripped out with a PowerShell script, and Microsoft Intune UWP store apps you&rsquo;ve deployed, though your users may start complaining about the apps looking like they&rsquo;re loading in the Start Menu 😂.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>5 Summary</h2><p>All in all a quick and dirty solution to a very simple problem with new Windows Autopilot devices and existing Microsoft Intune managed Windows devices, at least this way they&rsquo;ll do what they should have done in the first place and just keep themselves updated.</p>

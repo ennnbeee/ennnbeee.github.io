@@ -28,7 +28,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/macos-updates-phased-deployment/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part1/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part2/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -413,8 +415,10 @@
     </tbody>
   </table>
 </div>
-<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-updateintune.png" title="maOS Software Update Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-updateintune.png" data-sub-html="<h2>Microsoft Intune Settings Catalog for macOS Software Update settings.</h2><p>maOS Software Update Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-updateintune.png   alt="maOS Software Update Configuration" height="491" width="751"></a><figcaption class="image-caption">Microsoft Intune Settings Catalog for macOS Software Update settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-updateintune_hu4877875413811107713.png" title="maOS Software Update Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-updateintune_hu4877875413811107713.png" data-sub-html="<h2>Microsoft Intune Settings Catalog for macOS Software Update settings.</h2><p>maOS Software Update Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-updateintune_hu4877875413811107713.png   alt="maOS Software Update Configuration"  ></a><figcaption class="image-caption">Microsoft Intune Settings Catalog for macOS Software Update settings.</figcaption>
+</figure>
+
+</p>
 <p>You&rsquo;ll notice that for <code>Critical Update Install</code> and <code>Config Data Install</code> we&rsquo;re allowing these to just happen, you should, as they&rsquo;re important. What we want to control is when devices get OS updates, not leaving gaping security flaws in devices.</p>
 <h3 id="phased-software-updates" class="headerLink">
     <a href="#phased-software-updates" class="header-mark"></a>3.1 Phased Software Updates</h3><p>The phasing of Software update is a little bit of a pain, but it can be achieved using the below settings, creating one Settings Catalog profile for each deployment group. Now you don&rsquo;t get the same pause and uninstall functionality as you would with Windows Update Rings, but at least you&rsquo;re not pushing out updates all at once to devices.</p>
@@ -488,12 +492,16 @@
         <div class="admonition-content">When assigning these profiles to the created deployment groups, ensure that you are excluding the <code>Pilot</code> group from the pre-production and production profiles.</div></div></div>
 <h3 id="software-update-results" class="headerLink">
     <a href="#software-update-results" class="header-mark"></a>3.2 Software Update Results</h3><p>Seeing the Settings Catalog profiles in action, with a first look at the configuration being applied:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-updatesettings.webp" title="macOS Update Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-updatesettings.webp" data-sub-html="<h2>macOS Update Configuration Settings.</h2><p>macOS Update Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-updatesettings.webp   alt="macOS Update Configuration" height="625" width="715"></a><figcaption class="image-caption">macOS Update Configuration Settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-updatesettings_hu4544149223998250555.webp" title="macOS Update Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-updatesettings_hu4544149223998250555.webp" data-sub-html="<h2>macOS Update Configuration Settings.</h2><p>macOS Update Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-updatesettings_hu4544149223998250555.webp   alt="macOS Update Configuration"  ></a><figcaption class="image-caption">macOS Update Configuration Settings.</figcaption>
+</figure>
+
+</p>
 <p>Looks good, and matches what we&rsquo;ve configured in our baseline software update profile.</p>
 <p>Checking on the status of the updates, we&rsquo;ve actually got Sonoma 14.4 available on this device, regardless of the deployment group it&rsquo;s a member of, as 7+12=19 (quick maths) which is less than the date of this post:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-update.webp" title="macOS Update Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-update.webp" data-sub-html="<h2>macOS Update Configuration Settings.</h2><p>macOS Update Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-update.webp   alt="macOS Update Configuration" height="324" width="715"></a><figcaption class="image-caption">macOS Update Configuration Settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-update_hu16085560291411896259.webp" title="macOS Update Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-update_hu16085560291411896259.webp" data-sub-html="<h2>macOS Update Configuration Settings.</h2><p>macOS Update Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-update_hu16085560291411896259.webp   alt="macOS Update Configuration"  ></a><figcaption class="image-caption">macOS Update Configuration Settings.</figcaption>
+</figure>
+
+</p>
 <p>Luckily we&rsquo;ll be ready with our configured deferral settings for the next macOS software update release, and I hope it goes a little better than this release.</p>
 <h2 id="microsoft-autoupdate-settings" class="headerLink">
     <a href="#microsoft-autoupdate-settings" class="header-mark"></a>4 Microsoft AutoUpdate Settings</h2><p>Bringing additional functionality to our update deployments, and to allow for the management of visibility and installation of any update covered under the Microsoft AutoUpdate (MAU) application, we need to to implement some more baseline settings to configure Microsoft AutoUpdate.</p>
@@ -542,8 +550,10 @@
     </tbody>
   </table>
 </div>
-<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-mau.png" title="maOS Microsoft AutoUpdate Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-mau.png" data-sub-html="<h2>Microsoft Intune Settings Catalog for macOS Microsoft AutoUpdate settings.</h2><p>maOS Microsoft AutoUpdate Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-mau.png   alt="maOS Microsoft AutoUpdate Configuration" height="460" width="785"></a><figcaption class="image-caption">Microsoft Intune Settings Catalog for macOS Microsoft AutoUpdate settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-mau_hu5722900315915559421.png" title="maOS Microsoft AutoUpdate Configuration" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-mau_hu5722900315915559421.png" data-sub-html="<h2>Microsoft Intune Settings Catalog for macOS Microsoft AutoUpdate settings.</h2><p>maOS Microsoft AutoUpdate Configuration</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-mau_hu5722900315915559421.png   alt="maOS Microsoft AutoUpdate Configuration"  ></a><figcaption class="image-caption">Microsoft Intune Settings Catalog for macOS Microsoft AutoUpdate settings.</figcaption>
+</figure>
+
+</p>
 <p>Feel free to amened the <code>Number of minutes for the final countdown timer</code> and <code>Update check frequency (mins)</code> if you like your user base more than I do.</p>
 <div class="details admonition note open">
     <div class="details-summary admonition-title">
@@ -605,12 +615,16 @@
         <div class="admonition-content">When assigning these profiles to the created deployment groups, ensure that you are excluding the <code>Pilot</code> group from the pre-production and production profiles.</div></div></div>
 <h3 id="microsoft-update-results" class="headerLink">
     <a href="#microsoft-update-results" class="header-mark"></a>4.2 Microsoft Update Results</h3><p>Checking in on a device that is set to defer and delay the installation of Microsoft Updates, we can see that the profile has applied correctly:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-mausettings.webp" title="Microsoft AutoUpdate settings" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-mausettings.webp" data-sub-html="<h2>Microsoft AutoUpdate Settings.</h2><p>Microsoft AutoUpdate settings</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-mausettings.webp   alt="Microsoft AutoUpdate settings" height="586" width="1298"></a><figcaption class="image-caption">Microsoft AutoUpdate Settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-mausettings_hu5101745764569136277.webp" title="Microsoft AutoUpdate settings" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-mausettings_hu5101745764569136277.webp" data-sub-html="<h2>Microsoft AutoUpdate Settings.</h2><p>Microsoft AutoUpdate settings</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-mausettings_hu5101745764569136277.webp   alt="Microsoft AutoUpdate settings"  ></a><figcaption class="image-caption">Microsoft AutoUpdate Settings.</figcaption>
+</figure>
+
+</p>
 <p>With no ability for the end user to install the updates on their own, and the correct configuration applied to the device we&rsquo;re off to a good start.</p>
 <p>Let&rsquo;s look at the updates themselves:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-maudef.webp" title="Microsoft AutoUpdate Updates" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-maudef.webp" data-sub-html="<h2>Microsoft AutoUpdate Updates.</h2><p>Microsoft AutoUpdate Updates</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-maudef.webp   alt="Microsoft AutoUpdate Updates" height="783" width="888"></a><figcaption class="image-caption">Microsoft AutoUpdate Updates.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/macos-updates-phased-deployment/img/macup-maudef_hu5124875792273063496.webp" title="Microsoft AutoUpdate Updates" data-thumbnail="/posts/macos-updates-phased-deployment/img/macup-maudef_hu5124875792273063496.webp" data-sub-html="<h2>Microsoft AutoUpdate Updates.</h2><p>Microsoft AutoUpdate Updates</p>"><img  loading="lazy" src=/posts/macos-updates-phased-deployment/img/macup-maudef_hu5124875792273063496.webp   alt="Microsoft AutoUpdate Updates"  ></a><figcaption class="image-caption">Microsoft AutoUpdate Updates.</figcaption>
+</figure>
+
+</p>
 <p>Perfect, the Microsoft AutoUpdate application has detected that there are actually updates, but will adhere to the deferral and deadline settings, ensuring that the application updates do get installed, but when we want them to, not at the whim of the end user.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>5 Summary</h2><p>With each deployment group now configured to get update deferrals and installation deadlines for Software, Operating System, and Microsoft Applications aligned to the same day, we have the ability to unify the deployment approach of updates to Microsoft Intune managed macOS devices.</p>

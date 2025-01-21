@@ -28,7 +28,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/custom-compliance-third-party-av/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/managing-intune-assignment-settingscatalog/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -850,7 +852,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-25" 
+    id="codeblock-id-21" 
     class="
       chroma 
       !tw-block 
@@ -1219,7 +1221,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-26" 
+    id="codeblock-id-22" 
     class="
       chroma 
       !tw-block 
@@ -1286,23 +1288,33 @@
 <h2 id="deploying-custom-compliance" class="headerLink">
     <a href="#deploying-custom-compliance" class="header-mark"></a>2 Deploying Custom Compliance</h2><p>We&rsquo;ve now got both a PowerShell script and JSON file, so the last steps are to throw these into Microsoft Intune.</p>
 <p>First off we need to add the PowerShell script in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesComplianceMenu/~/customComplianceScripts" target="_blank" rel="noopener noreferrer">Compliance Scripts</a> section.</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-script.png" title="Compliance Script" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-script.png" data-sub-html="<h2>Compliance Policy script in Microsoft Intune.</h2><p>Compliance Script</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-script.png   alt="Compliance Script" height="549" width="1113"></a><figcaption class="image-caption">Compliance Policy script in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-script_hu6614408204849082561.png" title="Compliance Script" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-script_hu6614408204849082561.png" data-sub-html="<h2>Compliance Policy script in Microsoft Intune.</h2><p>Compliance Script</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-script_hu6614408204849082561.png   alt="Compliance Script"  ></a><figcaption class="image-caption">Compliance Policy script in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Following this, we can now create our Custom Compliance policy for Windows; select the previously created PowerShell script, and we&rsquo;ll need to upload the JSON file created earlier.</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliance.png" title="Custom Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliance.png" data-sub-html="<h2>Compliance Policy in Microsoft Intune.</h2><p>Custom Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliance.png   alt="Custom Compliance" height="702" width="796"></a><figcaption class="image-caption">Compliance Policy in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu5534133940361304622.png" title="Custom Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu5534133940361304622.png" data-sub-html="<h2>Compliance Policy in Microsoft Intune.</h2><p>Custom Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu5534133940361304622.png   alt="Custom Compliance"  ></a><figcaption class="image-caption">Compliance Policy in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Once we&rsquo;ve got this in place, we can now assign the Compliance Policy.</p>
 <h3 id="checking-compliance-state" class="headerLink">
     <a href="#checking-compliance-state" class="header-mark"></a>2.1 Checking Compliance State</h3><p>With the Custom Compliance policy deployed, and waiting a little while for devices to start reporting back, we can check on the status of the devices it has been assigned to.</p>
 <p>We have some good devices:</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliant.png" title="Good Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliant.png" data-sub-html="<h2>Microsoft Intune Compliance check with good results.</h2><p>Good Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliant.png   alt="Good Compliance" height="141" width="800"></a><figcaption class="image-caption">Microsoft Intune Compliance check with good results.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu18423689730102348095.png" title="Good Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu18423689730102348095.png" data-sub-html="<h2>Microsoft Intune Compliance check with good results.</h2><p>Good Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu18423689730102348095.png   alt="Good Compliance"  ></a><figcaption class="image-caption">Microsoft Intune Compliance check with good results.</figcaption>
+</figure>
+
+</p>
 <p>Some not so good:</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs.png" title="Poor Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs.png" data-sub-html="<h2>Microsoft Intune Compliance check with poor results.</h2><p>Poor Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs.png   alt="Poor Compliance" height="141" width="800"></a><figcaption class="image-caption">Microsoft Intune Compliance check with poor results.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu659352779300842213.png" title="Poor Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu659352779300842213.png" data-sub-html="<h2>Microsoft Intune Compliance check with poor results.</h2><p>Poor Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu659352779300842213.png   alt="Poor Compliance"  ></a><figcaption class="image-caption">Microsoft Intune Compliance check with poor results.</figcaption>
+</figure>
+
+</p>
 <p>Some truly problematic:</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all.png" title="Bad Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all.png" data-sub-html="<h2>Microsoft Intune Compliance check with bad results.</h2><p>Bad Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all.png   alt="Bad Compliance" height="141" width="800"></a><figcaption class="image-caption">Microsoft Intune Compliance check with bad results.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu14776849313132852546.png" title="Bad Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu14776849313132852546.png" data-sub-html="<h2>Microsoft Intune Compliance check with bad results.</h2><p>Bad Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu14776849313132852546.png   alt="Bad Compliance"  ></a><figcaption class="image-caption">Microsoft Intune Compliance check with bad results.</figcaption>
+</figure>
+
+</p>
 <p>With this Compliance Policy now in place, we not only get a view of the device estate, but can integrate Compliance into <a href="https://docs.microsoft.com/en-us/mem/intune/protect/create-conditional-access-intune" target="_blank" rel="noopener noreferrer">Conditional Access Policies</a>, so it&rsquo;s not a bad situation to be in at all.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>3 Summary</h2><p>Custom Compliance does seem like a bit of an effort, and it currently has minimal operators for the JSON check, an inability to add more than one PowerShell script to a single policy, an eight hour wait for the Compliance state to update after remediation, and a <a href="https://docs.microsoft.com/en-us/mem/intune/protect/compliance-use-custom-settings#troubleshooting" target="_blank" rel="noopener noreferrer">few other limitations</a>, but for those organisations that aren&rsquo;t fully in bed with Microsoft when it comes down to endpoint protection products, it does offer a way to extend compliance to these solutions.</p>

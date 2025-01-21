@@ -32,7 +32,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/windows-autopilot-v2-renaming/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/firewall-rule-policy-conversion/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -408,8 +410,10 @@
     </div>
     <div class="details-content">
         <div class="admonition-content">This setting now exists within <strong>Settings Catalog</strong>, so we no longer need a Custom Profile.</div></div></div>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-misc.png" title="CIS Level 1 Miscellaneous settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-misc.png" data-sub-html="<h2>CIS Level 1 Miscellaneous settings document.</h2><p>CIS Level 1 Miscellaneous settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-misc.png   alt="CIS Level 1 Miscellaneous settings" height="230" width="850"></a><figcaption class="image-caption">CIS Level 1 Miscellaneous settings document.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-misc_hu8803615032782650631.png" title="CIS Level 1 Miscellaneous settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-misc_hu8803615032782650631.png" data-sub-html="<h2>CIS Level 1 Miscellaneous settings document.</h2><p>CIS Level 1 Miscellaneous settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-misc_hu8803615032782650631.png   alt="CIS Level 1 Miscellaneous settings"  ></a><figcaption class="image-caption">CIS Level 1 Miscellaneous settings document.</figcaption>
+</figure>
+
+</p>
 <p>So we should create a new profile to capture the three CIS Level 1 settings detailed in the document with the below Settings Catalog settings.</p>
 <p><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg> <em>CIS (L1) Level 1 Misc - Windows 11 Intune 3.0.1</em></p>
@@ -510,11 +514,15 @@
   </table>
 </div>
 <p>We also can&rsquo;t blame CIS for both <strong>AllowWindowsConsumerFeatures</strong> and <strong>BlockNonAdminUserInstall</strong> failing to apply to devices either, as due to the <a href="https://support.microsoft.com/en-gb/topic/june-11-2024-kb5039212-os-builds-22621-3737-and-22631-3737-d7f574c0-2b13-48ca-a9fc-a63093b1a2c2" target="_blank" rel="noopener noreferrer">June 2024 patch</a> devices which <em>should</em> be activated to <strong>Windows 11 Enterprise</strong> as part of subscription activation, don&rsquo;t, leaving devices at their original Windows edition, in this case Windows Pro.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-miscerror.png" title="CIS Level 1 Miscellaneous settings error" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-miscerror.png" data-sub-html="<h2>CIS Level 1 Miscellaneous setting custom profile assignment error.</h2><p>CIS Level 1 Miscellaneous settings error</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-miscerror.png   alt="CIS Level 1 Miscellaneous settings error" height="375" width="1118"></a><figcaption class="image-caption">CIS Level 1 Miscellaneous setting custom profile assignment error.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-miscerror_hu5937999524059801304.png" title="CIS Level 1 Miscellaneous settings error" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-miscerror_hu5937999524059801304.png" data-sub-html="<h2>CIS Level 1 Miscellaneous setting custom profile assignment error.</h2><p>CIS Level 1 Miscellaneous settings error</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-miscerror_hu5937999524059801304.png   alt="CIS Level 1 Miscellaneous settings error"  ></a><figcaption class="image-caption">CIS Level 1 Miscellaneous setting custom profile assignment error.</figcaption>
+</figure>
+
+</p>
 <p>Meaning that neither <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-experience#allowwindowsconsumerfeatures" target="_blank" rel="noopener noreferrer">AllowWindowsConsumerFeatures</a> and <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-applicationmanagement#blocknonadminuserinstall" target="_blank" rel="noopener noreferrer">BlockNonAdminUserInstall</a> will apply to non-Enterprise editions of Windows:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-cspnonadeds.png" title="PolicyCSP Windows Edition Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-cspnonadeds.png" data-sub-html="<h2>PolicyCSP Edition settings for BlockNonAdminUserInstall</h2><p>PolicyCSP Windows Edition Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-cspnonadeds.png   alt="PolicyCSP Windows Edition Settings" height="200" width="900"></a><figcaption class="image-caption">PolicyCSP Edition settings for BlockNonAdminUserInstall</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-cspnonadeds_hu10881234072394426803.png" title="PolicyCSP Windows Edition Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-cspnonadeds_hu10881234072394426803.png" data-sub-html="<h2>PolicyCSP Edition settings for BlockNonAdminUserInstall</h2><p>PolicyCSP Windows Edition Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-cspnonadeds_hu10881234072394426803.png   alt="PolicyCSP Windows Edition Settings"  ></a><figcaption class="image-caption">PolicyCSP Edition settings for BlockNonAdminUserInstall</figcaption>
+</figure>
+
+</p>
 <p>Are there any other settings in the benchmark require specific Windows editions?</p>
 <h3 id="windows-edition-requirements" class="headerLink">
     <a href="#windows-edition-requirements" class="header-mark"></a>1.3 Windows Edition Requirements</h3><p>The Windows subscription activation issues, and subsequent edition downgrade, highlighted something I hadn&rsquo;t considered, just how many settings in the CIS 3.0.1 benchmark for Level 1 actually require an Enterprise or Education editions of Windows, or at least just don&rsquo;t work on Pro editions?</p>
@@ -561,8 +569,10 @@
   </table>
 </div>
 <p>If you&rsquo;ve only got devices running Windows Professional, you can say goodbye to blocking the Windows Consumer Features, or by requiring the Windows Private Store, blocking access to the store itself, or worse, device security settings in <strong>Credential Guard</strong> and <strong>Secure Boot</strong> not applying.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-entna.png" title="Enterprise Edition settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-entna.png" data-sub-html="<h2>Settings that require Windows Enterprise editions to apply to a device.</h2><p>Enterprise Edition settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-entna.png   alt="Enterprise Edition settings" height="268" width="843"></a><figcaption class="image-caption">Settings that require Windows Enterprise editions to apply to a device.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-entna_hu17271106910465872308.png" title="Enterprise Edition settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-entna_hu17271106910465872308.png" data-sub-html="<h2>Settings that require Windows Enterprise editions to apply to a device.</h2><p>Enterprise Edition settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-entna_hu17271106910465872308.png   alt="Enterprise Edition settings"  ></a><figcaption class="image-caption">Settings that require Windows Enterprise editions to apply to a device.</figcaption>
+</figure>
+
+</p>
 <p>So this leaves a bit of a gap in the Level 1 benchmark for these Windows Professional cloud native devices, or does it?</p>
 <p>Well no, we just can&rsquo;t use Microsoft Intune native settings to configure them. What we can do is use our favourite tooling <del>Group Policy</del>, PowerShell, to go and set some corresponding registry settings to ensure we&rsquo;re in-line with the benchmark.</p>
 <p>We can create a PowerShell script to create the six, (yes I said six), registry settings. These exist in the <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/hklm-system-currentcontrolset-services-registry-tree" target="_blank" rel="noopener noreferrer">HKLM</a> registry hive, so we can happily update them using a PowerShell and a Platform Script in Microsoft Intune.</p>
@@ -668,7 +678,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-20" 
+    id="codeblock-id-23" 
     class="
       chroma 
       !tw-block 
@@ -718,18 +728,28 @@
     <div class="details-content">
         <div class="admonition-content">Jonathan has informed me that you could apply the <strong>Allow Spotlight Collection</strong> setting in <strong>HKCU</strong> using the <a href="https://psappdeploytoolkit.com/" target="_blank" rel="noopener noreferrer">PSAppDeployToolkit</a>, specifically the <a href="https://psappdeploytoolkit.com/docs/reference/functions/Invoke-HKCURegistrySettingsForAllUsers/" target="_blank" rel="noopener noreferrer">Invoke-HKCURegistrySettingsForAllUsers</a> functionality, so off you trot and do that.</div></div></div>
 <p>The rest of registry entries in <strong>CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1</strong> are fine, so deploy them to your devices using a Platform Script:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-entscript.png" title="CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-entscript.png" data-sub-html="<h2>Platform Script configuring Windows Enterprise only Policy CSP Settings.</h2><p>CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-entscript.png   alt="CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1" height="541" width="921"></a><figcaption class="image-caption">Platform Script configuring Windows Enterprise only Policy CSP Settings.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-entscript_hu10141317979799125749.png" title="CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-entscript_hu10141317979799125749.png" data-sub-html="<h2>Platform Script configuring Windows Enterprise only Policy CSP Settings.</h2><p>CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-entscript_hu10141317979799125749.png   alt="CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1"  ></a><figcaption class="image-caption">Platform Script configuring Windows Enterprise only Policy CSP Settings.</figcaption>
+</figure>
+
+</p>
 <p>Using Platform Scripts, we&rsquo;re currently limited to assignments without <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/filters" target="_blank" rel="noopener noreferrer">Device Filters</a>, so we don&rsquo;t have a way to target just Windows devices that aren&rsquo;t on Windows 11 Enterprise/Education (operating system edition isn&rsquo;t an attribute stored in the Entra ID computer object, so no Dynamic Groups either).</p>
 <p>Seeing the script do it&rsquo;s thing, we now have the configured registry settings, (at least those in HKLM), set on the device, with the expected behaviour of the CIS benchmark:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regcloudcontent.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regcloudcontent.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\CloudContent.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regcloudcontent.png   alt="Windows Pro registry settings" height="263" width="1122"></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\CloudContent.</figcaption>
-</figure></p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regappx.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regappx.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\Appx.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regappx.png   alt="Windows Pro registry settings" height="210" width="1210"></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\Appx.</figcaption>
-</figure></p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regwindowsstore.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regwindowsstore.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regwindowsstore.png   alt="Windows Pro registry settings" height="217" width="989"></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</figcaption>
-</figure></p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regdeviceguard.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regdeviceguard.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\DeviceGuard.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regdeviceguard.png   alt="Windows Pro registry settings" height="243" width="979"></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\DeviceGuard.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regcloudcontent_hu5664787048198827840.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regcloudcontent_hu5664787048198827840.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\CloudContent.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regcloudcontent_hu5664787048198827840.png   alt="Windows Pro registry settings"  ></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\CloudContent.</figcaption>
+</figure>
+
+</p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regappx_hu1031939694171443774.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regappx_hu1031939694171443774.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\Appx.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regappx_hu1031939694171443774.png   alt="Windows Pro registry settings"  ></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\Appx.</figcaption>
+</figure>
+
+</p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regwindowsstore_hu4689366291580548639.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regwindowsstore_hu4689366291580548639.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regwindowsstore_hu4689366291580548639.png   alt="Windows Pro registry settings"  ></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\WindowsStore.</figcaption>
+</figure>
+
+</p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-regdeviceguard_hu6220608841821512501.png" title="Windows Pro registry settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-regdeviceguard_hu6220608841821512501.png" data-sub-html="<h2>Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\DeviceGuard.</h2><p>Windows Pro registry settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-regdeviceguard_hu6220608841821512501.png   alt="Windows Pro registry settings"  ></a><figcaption class="image-caption">Windows Pro registry settings under HKLM:\Software\Policies\Microsoft\Windows\DeviceGuard.</figcaption>
+</figure>
+
+</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">
         <span class="icon"><svg class="icon"
@@ -741,8 +761,10 @@
 <h3 id="user-settings" class="headerLink">
     <a href="#user-settings" class="header-mark"></a>1.4 User Settings</h3><p>Any other assignment issues you want to throw our way and not document CIS? No? Are you sure?</p>
 <p>Having reviewed the device assignment states after by default assigning the imported build kit settings to groups of devices in Microsoft Intune, I was left pondering as to why CIS wouldn&rsquo;t mention that there are User only settings in each of the profiles.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-userna.png" title="User Settings Not Applicable" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-userna.png" data-sub-html="<h2>User Only settings not applying to the device context in Microsoft Intune.</h2><p>User Settings Not Applicable</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-userna.png   alt="User Settings Not Applicable" height="370" width="788"></a><figcaption class="image-caption">User Only settings not applying to the device context in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-userna_hu6065841223591785371.png" title="User Settings Not Applicable" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-userna_hu6065841223591785371.png" data-sub-html="<h2>User Only settings not applying to the device context in Microsoft Intune.</h2><p>User Settings Not Applicable</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-userna_hu6065841223591785371.png   alt="User Settings Not Applicable"  ></a><figcaption class="image-caption">User Only settings not applying to the device context in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>This isn&rsquo;t such a bad thing, as you&rsquo;re just going to get a <strong>Not Applicable</strong> state when assigned to the SYSTEM context of the device, the user on the device will be fine though.</p>
 <p>However, for good practice assignment, we should split out the user settings from the profiles, and create new ones, allowing a consistent assignment of settings.</p>
 <p><svg class="icon"
@@ -847,8 +869,10 @@
     <a href="#local-administrator-password-solution" class="header-mark"></a>2.1 Local Administrator Password Solution</h3><p>On to recommendations that exist in the Benchmark <a href="https://www.cisecurity.org/benchmark/intune" target="_blank" rel="noopener noreferrer">document</a> but not in the build kit, we can start with <a href="https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-overview" target="_blank" rel="noopener noreferrer">Windows LAPS</a>.</p>
 <p>The Windows LAPS settings don&rsquo;t exist in the build kit as it&rsquo;s configured under <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-account-protection-policy" target="_blank" rel="noopener noreferrer">Account Protection</a> in the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-policy" target="_blank" rel="noopener noreferrer">Endpoint Security</a> section of Microsoft Intune, so I assume CIS just didn&rsquo;t include it as there is no native import functionality.</p>
 <p>Taking the information provided in the benchmark document, we need to cover off everything under section <strong>85 Windows LAPS</strong>, as they&rsquo;re all CIS Level 1 settings.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-laps.png" title="CIS Section 85 Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-laps.png" data-sub-html="<h2>An excerpt from the CIS 3.0.1 benchmark for Windows LAPS.</h2><p>CIS Section 85 Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-laps.png   alt="CIS Section 85 Settings" height="619" width="754"></a><figcaption class="image-caption">An excerpt from the CIS 3.0.1 benchmark for Windows LAPS.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-laps_hu4142651437742914006.png" title="CIS Section 85 Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-laps_hu4142651437742914006.png" data-sub-html="<h2>An excerpt from the CIS 3.0.1 benchmark for Windows LAPS.</h2><p>CIS Section 85 Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-laps_hu4142651437742914006.png   alt="CIS Section 85 Settings"  ></a><figcaption class="image-caption">An excerpt from the CIS 3.0.1 benchmark for Windows LAPS.</figcaption>
+</figure>
+
+</p>
 <p>We can easily create a new <strong>Account Protection</strong> policy in Microsoft Intune to meet these requirements, with the settings below:</p>
 <p><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg> <em>CIS (L1) Windows LAPS - Windows 11 Intune 3.0.1</em></p>
@@ -999,8 +1023,10 @@
 </div>
 <p>Oh.</p>
 <p>It&rsquo;s OK, we can have any of the settings available to us in Microsoft Intune, just not <strong>HTTP blended with Internet peering.</strong></p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-docdo.png" title="CIS Delivery Optimisation Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-docdo.png" data-sub-html="<h2>Section 22.1 (L1) Ensure &#39;DO Download Mode&#39; is NOT set to &#39;HTTP blended with Internet Peering&#39;.</h2><p>CIS Delivery Optimisation Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-docdo.png   alt="CIS Delivery Optimisation Settings" height="560" width="700"></a><figcaption class="image-caption">Section 22.1 (L1) Ensure 'DO Download Mode' is NOT set to 'HTTP blended with Internet Peering'.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-docdo_hu2330496237581311247.png" title="CIS Delivery Optimisation Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-docdo_hu2330496237581311247.png" data-sub-html="<h2>Section 22.1 (L1) Ensure &#39;DO Download Mode&#39; is NOT set to &#39;HTTP blended with Internet Peering&#39;.</h2><p>CIS Delivery Optimisation Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-docdo_hu2330496237581311247.png   alt="CIS Delivery Optimisation Settings"  ></a><figcaption class="image-caption">Section 22.1 (L1) Ensure 'DO Download Mode' is NOT set to 'HTTP blended with Internet Peering'.</figcaption>
+</figure>
+
+</p>
 <p>Just goes to show that you do really need to read the associated CIS Benchmark document along with using the build kit, or just take the word of someone on the internet that things work 😬.</p>
 <h3 id="microsoft-store" class="headerLink">
     <a href="#microsoft-store" class="header-mark"></a>2.3 Microsoft Store</h3><p>As mentioned previously, having a Microsoft Intune setting to <strong>Require Private Store Only</strong> is only a Windows Enterprise edition feature, however we sorted that with the PowerShell script, so now that the setting is applying to all devices correctly, it blocks the store.</p>
@@ -1026,8 +1052,10 @@
   </table>
 </div>
 <p>As there isn&rsquo;t such as thing as a Private Store now the the <a href="https://learn.microsoft.com/en-us/microsoft-store/" target="_blank" rel="noopener noreferrer">Microsoft Store for Business</a> has been retired (has it?), then the outcome of the setting above just blocks access to the store.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-storeblocked.png" title="Blocked Microsoft Store" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-storeblocked.png" data-sub-html="<h2>The Microsoft Store blocked by the Require Private Store setting in Microsoft Intune.</h2><p>Blocked Microsoft Store</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-storeblocked.png   alt="Blocked Microsoft Store" height="632" width="800"></a><figcaption class="image-caption">The Microsoft Store blocked by the Require Private Store setting in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-storeblocked_hu10678417505412952579.png" title="Blocked Microsoft Store" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-storeblocked_hu10678417505412952579.png" data-sub-html="<h2>The Microsoft Store blocked by the Require Private Store setting in Microsoft Intune.</h2><p>Blocked Microsoft Store</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-storeblocked_hu10678417505412952579.png   alt="Blocked Microsoft Store"  ></a><figcaption class="image-caption">The Microsoft Store blocked by the Require Private Store setting in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>In the same profile though at least the store apps are being kept up to date:</p>
 <p><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg> <em>CIS (L1) Section 22 - 80 - Windows 11 Intune 3.0.1</em></p>
@@ -1291,8 +1319,10 @@
   </table>
 </div>
 <p>So happy with all the functionality that is being prevented, we can deploy the provided script using Microsoft Intune Platform Scripts with deployment settings looking something like this:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-l1script.png" title="CIS Level 1 System Services Script" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-l1script.png" data-sub-html="<h2>CIS Level 1 services PowerShell Script in Microsoft Intune.</h2><p>CIS Level 1 System Services Script</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-l1script.png   alt="CIS Level 1 System Services Script" height="548" width="924"></a><figcaption class="image-caption">CIS Level 1 services PowerShell Script in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-l1script_hu13966388748538685744.png" title="CIS Level 1 System Services Script" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-l1script_hu13966388748538685744.png" data-sub-html="<h2>CIS Level 1 services PowerShell Script in Microsoft Intune.</h2><p>CIS Level 1 System Services Script</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-l1script_hu13966388748538685744.png   alt="CIS Level 1 System Services Script"  ></a><figcaption class="image-caption">CIS Level 1 services PowerShell Script in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">
         <span class="icon"><svg class="icon"
@@ -1406,7 +1436,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-21" 
+    id="codeblock-id-24" 
     class="
       chroma 
       !tw-block 
@@ -1575,7 +1605,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-23" 
+    id="codeblock-id-25" 
     class="
       chroma 
       !tw-block 
@@ -1642,8 +1672,10 @@
 
 
 <p>Deployed using Microsoft Intune to your devices:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-l1remediation.png" title="CIS Level 1 System Services Remediation" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-l1remediation.png" data-sub-html="<h2>CIS Level 1 services remediation in Microsoft Intune.</h2><p>CIS Level 1 System Services Remediation</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-l1remediation.png   alt="CIS Level 1 System Services Remediation" height="727" width="1036"></a><figcaption class="image-caption">CIS Level 1 services remediation in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part3/img/cis-l1remediation_hu2369371251310624113.png" title="CIS Level 1 System Services Remediation" data-thumbnail="/posts/windows-cis-patching-gaps-part3/img/cis-l1remediation_hu2369371251310624113.png" data-sub-html="<h2>CIS Level 1 services remediation in Microsoft Intune.</h2><p>CIS Level 1 System Services Remediation</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part3/img/cis-l1remediation_hu2369371251310624113.png   alt="CIS Level 1 System Services Remediation"  ></a><figcaption class="image-caption">CIS Level 1 services remediation in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Ensuring you set a suitable schedule for the remediation to run, daily is probably overkill, just make sure it&rsquo;s running before any kind of CIS audit 😂.</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">

@@ -29,7 +29,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/resusable-firewall-settings-microsoft-online/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/flexible-update-deployments/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/bitlocker-dma-exceptions/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -447,8 +449,10 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <p>Comparing this with the created reusable group below, we can see that each <code>children</code> section of the JSON structure is looking after each of created items.</p>
-<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1.webp" title="Reusable Setting Test" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1.webp" data-sub-html="<h2>Reusable firewall settings in Microsoft Intune.</h2><p>Reusable Setting Test</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1.webp   alt="Reusable Setting Test" height="312" width="766"></a><figcaption class="image-caption">Reusable firewall settings in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1_hu12158728002769607756.webp" title="Reusable Setting Test" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1_hu12158728002769607756.webp" data-sub-html="<h2>Reusable firewall settings in Microsoft Intune.</h2><p>Reusable Setting Test</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-test1_hu12158728002769607756.webp   alt="Reusable Setting Test"  ></a><figcaption class="image-caption">Reusable firewall settings in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>With a single <code>children</code> section for each auto resolve URL, and one section containing each of the IP addresses, and luckily for us, the structure of the JSON is the same whether it&rsquo;s the first setting in the list or the last, bar a trailing <code>,</code>.</p>
 <p>Let&rsquo;s look at how we can use PowerShell to build out our JSON structure for a reusable settings group.</p>
 <h3 id="building-the-json-format" class="headerLink">
@@ -825,8 +829,10 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <p>Using Graph Explorer with a <code>POST</code> request to <code>https://graph.microsoft.com/beta/deviceManagement/reusablePolicySettings/</code> and the above JSON we get a happy looking <code>201</code> <a href="https://learn.microsoft.com/en-us/graph/api/intune-deviceconfigv2-devicemanagementreusablepolicysetting-create?view=graph-rest-beta#response-1" target="_blank" rel="noopener noreferrer">response</a>, and checking in Microsoft Intune, we now have a new reusable group at our disposal.</p>
-<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2.webp" title="Reusable Setting Test" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2.webp" data-sub-html="<h2>Reusable firewall settings created using Graph Explorer in Microsoft Intune.</h2><p>Reusable Setting Test</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2.webp   alt="Reusable Setting Test" height="312" width="766"></a><figcaption class="image-caption">Reusable firewall settings created using Graph Explorer in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2_hu7265898036228841416.webp" title="Reusable Setting Test" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2_hu7265898036228841416.webp" data-sub-html="<h2>Reusable firewall settings created using Graph Explorer in Microsoft Intune.</h2><p>Reusable Setting Test</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-test2_hu7265898036228841416.webp   alt="Reusable Setting Test"  ></a><figcaption class="image-caption">Reusable firewall settings created using Graph Explorer in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Though one new reusable group setting, with a single URL and IP address isn&rsquo;t really going to help us when there are quite a lot Microsoft Network Endpoints to deal with. So what now?</p>
 <h2 id="microsoft-network-endpoint-web-service" class="headerLink">
     <a href="#microsoft-network-endpoint-web-service" class="header-mark"></a>2 Microsoft Network Endpoint Web Service</h2><p>As we now have a way to create the reusable group settings, albeit basic, we should look at how we get the network endpoints for Microsoft services from the web service.</p>
@@ -1783,12 +1789,16 @@
       "><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-MgReusableFirewall</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;45019fd4-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-tenantName</span> <span class="s1">&#39;ennnbeee&#39;</span> <span class="n">-instance</span> <span class="n">Worldwide</span> <span class="n">-groupBy</span> <span class="s1">&#39;service&#39;</span></span></span></code></pre>
 </div>
 <p>All being well the script will go do it&rsquo;s thing and create the settings in Microsoft Intune for you:</p>
-<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-service.png" title="Service Area Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-service.png" data-sub-html="<h2>Script created reusable firewall settings grouped by service area.</h2><p>Service Area Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-service.png   alt="Service Area Grouped Reusable Settings" height="710" width="1389"></a><figcaption class="image-caption">Script created reusable firewall settings grouped by service area.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-service_hu9438164564113004969.png" title="Service Area Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-service_hu9438164564113004969.png" data-sub-html="<h2>Script created reusable firewall settings grouped by service area.</h2><p>Service Area Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-service_hu9438164564113004969.png   alt="Service Area Grouped Reusable Settings"  ></a><figcaption class="image-caption">Script created reusable firewall settings grouped by service area.</figcaption>
+</figure>
+
+</p>
 <p>It did, well done Microsoft Intune :clapping_hands:.</p>
 <p>Digging into the <code>Microsoft Endpoint Manager URLS and IPs</code> setting, we can see that the URLs are and IP addresses are now contained within the reusable setting.</p>
-<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings.webp" title="Service Area Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings.webp" data-sub-html="<h2>Script created reusable firewall settings grouped by service area for IP Addresses.</h2><p>Service Area Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings.webp   alt="Service Area Grouped Reusable Settings" height="835" width="1325"></a><figcaption class="image-caption">Script created reusable firewall settings grouped by service area for IP Addresses.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings_hu15344907552934025920.webp" title="Service Area Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings_hu15344907552934025920.webp" data-sub-html="<h2>Script created reusable firewall settings grouped by service area for IP Addresses.</h2><p>Service Area Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-servicesettings_hu15344907552934025920.webp   alt="Service Area Grouped Reusable Settings"  ></a><figcaption class="image-caption">Script created reusable firewall settings grouped by service area for IP Addresses.</figcaption>
+</figure>
+
+</p>
 <p>Take my word for it, or use the script, to see the other reusable settings.</p>
 <h3 id="deploying-port-based-settings" class="headerLink">
     <a href="#deploying-port-based-settings" class="header-mark"></a>4.2 Deploying Port Based Settings</h3><p>To add the reusable settings grouped by the <code>tcpPorts</code> and <code>udpPorts</code> for all services in scope, use the below as an example:</p>
@@ -1889,11 +1899,15 @@
       "><span class="line"><span class="cl"><span class="p">.\</span><span class="nb">Invoke-MgReusableFirewall</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantId</span> <span class="s1">&#39;45019fd4-a342-4d98-9126-1b6f94904ac7&#39;</span> <span class="n">-tenantName</span> <span class="s1">&#39;ennnbeee&#39;</span> <span class="n">-instance</span> <span class="n">Worldwide</span> <span class="n">-groupBy</span> <span class="s1">&#39;ports&#39;</span></span></span></code></pre>
 </div>
 <p>And after the script works out what to do with all the values, we get the below in Microsoft Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-port.png" title="Port Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-port.png" data-sub-html="<h2>Script created reusable firewall settings grouped by network port.</h2><p>Port Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-port.png   alt="Port Grouped Reusable Settings" height="777" width="1298"></a><figcaption class="image-caption">Script created reusable firewall settings grouped by network port.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-port_hu15154134023080414483.png" title="Port Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-port_hu15154134023080414483.png" data-sub-html="<h2>Script created reusable firewall settings grouped by network port.</h2><p>Port Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-port_hu15154134023080414483.png   alt="Port Grouped Reusable Settings"  ></a><figcaption class="image-caption">Script created reusable firewall settings grouped by network port.</figcaption>
+</figure>
+
+</p>
 <p>Now looking at the <code>Exchange Online URLs and IPs TCP 143,587,993,995</code> setting, again all required URLs and IP addresses have been added to the group.</p>
-<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings.png" title="Port Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings.png" data-sub-html="<h2>Script created reusable firewall settings IP addresses grouped by network port.</h2><p>Port Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings.png   alt="Port Grouped Reusable Settings" height="843" width="1303"></a><figcaption class="image-caption">Script created reusable firewall settings IP addresses grouped by network port.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings_hu18230108279345531167.png" title="Port Grouped Reusable Settings" data-thumbnail="/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings_hu18230108279345531167.png" data-sub-html="<h2>Script created reusable firewall settings IP addresses grouped by network port.</h2><p>Port Grouped Reusable Settings</p>"><img  loading="lazy" src=/posts/resusable-firewall-settings-microsoft-online/img/fwru-portsettings_hu18230108279345531167.png   alt="Port Grouped Reusable Settings"  ></a><figcaption class="image-caption">Script created reusable firewall settings IP addresses grouped by network port.</figcaption>
+</figure>
+
+</p>
 <p>Brilliant, no more copy/paste for me, or in fact, you.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>5 Summary</h2><p>With the reusable firewall settings now in place in Microsoft Intune after being deployed using the <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/EndpointSecurity/ReusableFirewallGroups/Invoke-MgReusableFirewall.ps1" target="_blank" rel="noopener noreferrer">script</a>, you can use these groups in existing or new firewall rules policies that support <a href="https://learn.microsoft.com/en-us/mem/intune/protect/endpoint-security-firewall-policy#add-reusable-settings-groups-to-profiles-for-firewall-rules" target="_blank" rel="noopener noreferrer">reusable settings</a>, allowing you to either configure a blanket allow all for the service areas, or be more specific and allow only the port requirements for each service area based on data provided by Microsoft in their web service.</p>

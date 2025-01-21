@@ -33,7 +33,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part3/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part2/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/macos-platformsso-google-chrome/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -360,16 +362,20 @@
   </table>
 </div>
 <p>This will set the service is set to Manual (Trigger Start), which allows it to run when needed. You may as well lob the above setting into the same Settings Catalog profile as the telemetry data settings, saves creating multiple granular profiles when you&rsquo;re not dealing with specific exclusions, giving us something like the below.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq.webp" title="Feature Update Pre-reqs" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq.webp" data-sub-html="<h2>Microsoft Intune settings catalog policy.</h2><p>Feature Update Pre-reqs</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq.webp   alt="Feature Update Pre-reqs" height="480" width="765"></a><figcaption class="image-caption">Microsoft Intune settings catalog policy.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq_hu5423911376793091779.webp" title="Feature Update Pre-reqs" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq_hu5423911376793091779.webp" data-sub-html="<h2>Microsoft Intune settings catalog policy.</h2><p>Feature Update Pre-reqs</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-prereq_hu5423911376793091779.webp   alt="Feature Update Pre-reqs"  ></a><figcaption class="image-caption">Microsoft Intune settings catalog policy.</figcaption>
+</figure>
+
+</p>
 <p>Right, on to setting up the Feature Update profiles.</p>
 <h2 id="targetting-feature-update-profiles" class="headerLink">
     <a href="#targetting-feature-update-profiles" class="header-mark"></a>2 Targetting Feature Update Profiles</h2><p>As we&rsquo;re not using <a href="https://learn.microsoft.com/en-us/windows/deployment/update/waas-manage-updates-wufb#defer-an-update" target="_blank" rel="noopener noreferrer">deferral settings</a> within Windows Update Rings, and instead opting for the use of Feature Update profiles to deploy new versions of the Windows operating system, we need to set all Feature Update deferrals in our existing Update Rings to be zero, but to stop the flood of devices attempt to update to a newer version of Windows 10 or 11, before we change this setting, let&rsquo;s look at how we keep devices at the required level.</p>
 <h3 id="feature-update-dynamic-groups" class="headerLink">
     <a href="#feature-update-dynamic-groups" class="header-mark"></a>2.1 Feature Update Dynamic Groups</h3><p>That&rsquo;s right, more Dynamic Device Security Groups, this time we&rsquo;re going to ring-fence devices based on the operating system they are currently running, and assign a corresponding Feature Update of the same version, yes this sounds a little backward when our end goal is to upgrade devices to Windows 11 23H2, but bear with me there&rsquo;s logic around this.</p>
 <p>Based on the current (at time of writing) Feature Update versions available in Microsoft Intune, we need to create at groups for at least each of the below versions.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions.webp" title="Feature Update Versions" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions.webp" data-sub-html="<h2>Microsoft Feature Update profile with immediate installation.</h2><p>Feature Update Versions</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions.webp   alt="Feature Update Versions" height="681" width="849"></a><figcaption class="image-caption">Microsoft Feature Update profile with immediate installation.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions_hu10860017163112712485.webp" title="Feature Update Versions" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions_hu10860017163112712485.webp" data-sub-html="<h2>Microsoft Feature Update profile with immediate installation.</h2><p>Feature Update Versions</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-versions_hu10860017163112712485.webp   alt="Feature Update Versions"  ></a><figcaption class="image-caption">Microsoft Feature Update profile with immediate installation.</figcaption>
+</figure>
+
+</p>
 <p>So go and create some new groups in Entra ID with the below rules to capture your corporate owned Windows devices at each Feature Update version</p>
 
 <div class="table-wrapper">
@@ -458,8 +464,10 @@
 <p>So this behaviour is exactly what we need, a way to keep devices on their current version, until they are in scope of a newer version, in this case, Windows 11 23H2.</p>
 <h3 id="deploying-windows-11-feature-updates" class="headerLink">
     <a href="#deploying-windows-11-feature-updates" class="header-mark"></a>3.1 Deploying Windows 11 Feature Updates</h3><p>Onto the fun part, the fruition of <del>my</del> our hard work, being able to roll out Windows 11 23H2 safely. Let&rsquo;s go and create a new Feature Update profile for Windows 11 23H2 for our low risk devices, this time instead of an immediate roll out option, we&rsquo;re going to utilise the &lsquo;Make update available gradually&rsquo; option, which uses magic &#x1fa84;.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy.webp" title="Feature Update Deployment" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy.webp" data-sub-html="<h2>Microsoft Feature Update profile with phased installation.</h2><p>Feature Update Deployment</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy.webp   alt="Feature Update Deployment" height="703" width="832"></a><figcaption class="image-caption">Microsoft Feature Update profile with phased installation.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy_hu5020906014657511569.webp" title="Feature Update Deployment" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy_hu5020906014657511569.webp" data-sub-html="<h2>Microsoft Feature Update profile with phased installation.</h2><p>Feature Update Deployment</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-deploy_hu5020906014657511569.webp   alt="Feature Update Deployment"  ></a><figcaption class="image-caption">Microsoft Feature Update profile with phased installation.</figcaption>
+</figure>
+
+</p>
 <p>Well it&rsquo;s not necessarily magic, there must be something in the background that allows the splitting of a targeted include assignment group or groups into equal sized smaller manageable <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-rollout-options#make-updates-available-gradually" target="_blank" rel="noopener noreferrer">virtual groups</a> between the start date and end date, separated by number of days between them.</p>
 <p>A few things to note before we go and assign this profile:</p>
 <ol>
@@ -468,8 +476,10 @@
 <li>Installation deadlines and grace periods in Windows Update rings are adhered to, so ensure that you have this configured to something sensible, and lower than the number of days between groups otherwise you&rsquo;ll end up with overlapping deployments.</li>
 </ol>
 <p>We&rsquo;re here, the end, we have a profile for deploying Windows 11 23H2 and we can assign this to our ready to go, low risk tagged, group of Windows 10 devices, that&rsquo;s exciting.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign.webp" title="Feature Update Assignment" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign.webp" data-sub-html="<h2>Microsoft Feature Update profile assignment.</h2><p>Feature Update Assignment</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign.webp   alt="Feature Update Assignment" height="430" width="601"></a><figcaption class="image-caption">Microsoft Feature Update profile assignment.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign_hu18066675157658235290.webp" title="Feature Update Assignment" data-thumbnail="/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign_hu18066675157658235290.webp" data-sub-html="<h2>Microsoft Feature Update profile assignment.</h2><p>Feature Update Assignment</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part3/img/w11risk-assign_hu18066675157658235290.webp   alt="Feature Update Assignment"  ></a><figcaption class="image-caption">Microsoft Feature Update profile assignment.</figcaption>
+</figure>
+
+</p>
 <p>With these devices telling you that they&rsquo;re happy to update to Windows 11, you can safely sit back and watch the <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-reports#reports-for-windows-10-and-later-feature-updates-policy" target="_blank" rel="noopener noreferrer">reports</a> update with the status of the Feature Update deployment, giving you time to work through the issues reported by the medium and high risk device issues.</p>
 <p>Or if you&rsquo;re like me, just take a chance deploying the Feature Update to the medium risk devices, I mean who cares if a driver get&rsquo;s removed, you should be <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-driver-updates-overview" target="_blank" rel="noopener noreferrer">updating</a> them anyway 😂.</p>
 <h2 id="summary" class="headerLink">

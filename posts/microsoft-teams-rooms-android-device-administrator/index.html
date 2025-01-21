@@ -26,7 +26,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/microsoft-teams-rooms-android-device-administrator/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/defender-antivirus-compliance-updates/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/configmgr-client-migration/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -265,16 +267,22 @@
     <a href="#device-enrolment" class="header-mark"></a>1 Device Enrolment</h2><p>First off is creating an Enrolment Restriction profile that allows for Android Device Administrator enrolment, secondly is how we let Intune know that the devices are corporate owned, as they will be picked up as personal devices due to the enrolment method, and finally a way to capture all the MTR resource accounts together.</p>
 <h3 id="enrolment-restrictions" class="headerLink">
     <a href="#enrolment-restrictions" class="header-mark"></a>1.1 Enrolment Restrictions</h3><p>We can create a new Enrolment Restriction to allow for a group of users to enrol Android devices using the Device Administrator enrolment method, and we should block personal devices as well:</p>
-<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-restrictions.webp" title="Enrolment Restriction" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-restrictions.webp" data-sub-html="<h2>Android enrolment restrictions in Microsoft Intune.</h2><p>Enrolment Restriction</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-restrictions.webp   alt="Enrolment Restriction" height="796" width="2826"></a><figcaption class="image-caption">Android enrolment restrictions in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-restrictions_hu4677629376875756386.webp" title="Enrolment Restriction" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-restrictions_hu4677629376875756386.webp" data-sub-html="<h2>Android enrolment restrictions in Microsoft Intune.</h2><p>Enrolment Restriction</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-restrictions_hu4677629376875756386.webp   alt="Enrolment Restriction"  ></a><figcaption class="image-caption">Android enrolment restrictions in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>With the restriction now created, we need to make sure that this restriction has a higher priority than any other enrolment restriction applying to either All Users or any other group that may contains the MTR resource accounts:</p>
-<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-priority.webp" title="Enrolment Restriction" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-priority.webp" data-sub-html="<h2>Android enrolment restriction priority in Microsoft Intune.</h2><p>Enrolment Restriction</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-priority.webp   alt="Enrolment Restriction" height="736" width="2280"></a><figcaption class="image-caption">Android enrolment restriction priority in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-priority_hu12553136035235483779.webp" title="Enrolment Restriction" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-priority_hu12553136035235483779.webp" data-sub-html="<h2>Android enrolment restriction priority in Microsoft Intune.</h2><p>Enrolment Restriction</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-priority_hu12553136035235483779.webp   alt="Enrolment Restriction"  ></a><figcaption class="image-caption">Android enrolment restriction priority in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <p>Perfect.</p>
 <h3 id="corporate-device-identifiers" class="headerLink">
     <a href="#corporate-device-identifiers" class="header-mark"></a>1.2 Corporate Device Identifiers</h3><p>With the Android Device Administrator enrolment being user driven, and not a method for device enrolment that will automatically set the device as corporate owned, if we attempted to enrol these MTR devices into Intune now, we&rsquo;d get an error about the platform not being supported due to us blocking personal devices in the restriction we created.</p>
-<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-blocked.webp" title="Enrolment Blocked" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-blocked.webp" data-sub-html="<h2>Android blocked enrolment.</h2><p>Enrolment Blocked</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-blocked.webp   alt="Enrolment Blocked" height="768" width="432"></a><figcaption class="image-caption">Android blocked enrolment.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-blocked_hu2991520194158149161.webp" title="Enrolment Blocked" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-blocked_hu2991520194158149161.webp" data-sub-html="<h2>Android blocked enrolment.</h2><p>Enrolment Blocked</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-blocked_hu2991520194158149161.webp   alt="Enrolment Blocked"  ></a><figcaption class="image-caption">Android blocked enrolment.</figcaption>
+</figure>
+
+</p>
 <p><a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add" target="_blank" rel="noopener noreferrer">Corporate Device Identifiers</a> to the rescue, kind of, basically this allows us to upload a unique identifier of a device so that when a device goes through an enrolment process, Intune knows it&rsquo;s a corporate owned device.</p>
 <p>So if the devices are running <a href="https://learn.microsoft.com/en-us/mem/intune/enrollment/corporate-identifiers-add#identify-corporate-owned-devices-with-imei-or-serial-number" target="_blank" rel="noopener noreferrer">Android 10 and above</a>, we&rsquo;re straight out of luck and need to amend our restriction profile to allow personally owned device enrolment.</p>
 <p>However, if the device has below Android 10, we can add either the device IMEI number (don&rsquo;t use this) or Serial number (do use this) in Intune to identify the device as corporate.</p>
@@ -477,15 +485,21 @@
 <h3 id="the-dynamic-group" class="headerLink">
     <a href="#the-dynamic-group" class="header-mark"></a>3.1 The Dynamic Group</h3><p>Once created we now have a group and a set of rules that you should validate in your own environment before putting into production use. You may also need to tweak the logic based on which services you have enabled as part of your MTR licensing assignment.</p>
 <p>If all goes well, and you&rsquo;ve managed to copy and paste successfully, you should have a group with rules like the below:</p>
-<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-dg.webp" title="Dynamic Security Group" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-dg.webp" data-sub-html="<h2>Dynamic Group rule in Entra ID.</h2><p>Dynamic Security Group</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-dg.webp   alt="Dynamic Security Group" height="750" width="2786"></a><figcaption class="image-caption">Dynamic Group rule in Entra ID.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-dg_hu8831461879645332485.webp" title="Dynamic Security Group" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-dg_hu8831461879645332485.webp" data-sub-html="<h2>Dynamic Group rule in Entra ID.</h2><p>Dynamic Security Group</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-dg_hu8831461879645332485.webp   alt="Dynamic Security Group"  ></a><figcaption class="image-caption">Dynamic Group rule in Entra ID.</figcaption>
+</figure>
+
+</p>
 <p>If you&rsquo;re really lucky, the group will only populate with the user accounts you are using for the Microsoft Team Room systems, including the Android devices.</p>
-<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-members.webp" title="Group Members" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-members.webp" data-sub-html="<h2>Dynamic Group members in Entra ID.</h2><p>Group Members</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-members.webp   alt="Group Members" height="1166" width="1964"></a><figcaption class="image-caption">Dynamic Group members in Entra ID.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-members_hu3451380531337725947.webp" title="Group Members" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-members_hu3451380531337725947.webp" data-sub-html="<h2>Dynamic Group members in Entra ID.</h2><p>Group Members</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-members_hu3451380531337725947.webp   alt="Group Members"  ></a><figcaption class="image-caption">Dynamic Group members in Entra ID.</figcaption>
+</figure>
+
+</p>
 <h3 id="updating-the-enrolment-restriction" class="headerLink">
     <a href="#updating-the-enrolment-restriction" class="header-mark"></a>3.2 Updating the Enrolment Restriction</h3><p>Now armed with the new group, we can use this as part of the restriction to allow these users to enrol Android devices using the Android Device Administrator method:</p>
-<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-assigned.webp" title="Restriction" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-assigned.webp" data-sub-html="<h2>Android enrolment restriction assignment in Microsoft Intune.</h2><p>Restriction</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-assigned.webp   alt="Restriction" height="1134" width="2392"></a><figcaption class="image-caption">Android enrolment restriction assignment in Microsoft Intune.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-assigned_hu18396930977682070840.webp" title="Restriction" data-thumbnail="/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-assigned_hu18396930977682070840.webp" data-sub-html="<h2>Android enrolment restriction assignment in Microsoft Intune.</h2><p>Restriction</p>"><img  loading="lazy" src=/posts/microsoft-teams-rooms-android-device-administrator/img/mtr-assigned_hu18396930977682070840.webp   alt="Restriction"  ></a><figcaption class="image-caption">Android enrolment restriction assignment in Microsoft Intune.</figcaption>
+</figure>
+
+</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>4 Summary</h2><p>You&rsquo;ve seen here that with a bit of time and patience, you can leverage Dynamic Groups and some of the advanced rules to your advantage, even with an edge use case like allowing only Microsoft Teams Room system accounts the ability to enrol using Android Device Administrator.</p>
 <p>This is one of many applications of Dynamic Groups throughout Microsoft Intune, and although I <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">bad mouthed</a> them in favour of Device Filters, they are still a necessity when you need a level of <a href="/posts/windows-update-phased-deployment" rel="noopener" target="_blank">advanced logic</a> that the filters can&rsquo;t handle.</p>

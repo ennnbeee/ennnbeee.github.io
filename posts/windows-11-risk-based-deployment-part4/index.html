@@ -33,7 +33,9 @@
 <meta name="application-name" content="odds&#43;endpoints">
 <meta name="apple-mobile-web-app-title" content="odds&#43;endpoints">
 
-<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#ffffff"><meta name="twitter:creator" content="@ennnbee" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea580c">
 
 <link rel="canonical" href="https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part4/" /><link rel="prev" href="https://www.oddsandendpoints.co.uk/posts/macos-platformsso-google-chrome/" /><link rel="next" href="https://www.oddsandendpoints.co.uk/posts/macos-windows-autopilot-utm/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
@@ -384,8 +386,10 @@
 <h3 id="deployment-preparation" class="headerLink">
     <a href="#deployment-preparation" class="header-mark"></a>2.1 Deployment Preparation</h3><p>Following the authentication to Microsoft Graph PowerShell with <code>Connect-MgGraph</code>, with the scopes configured in the script as
 <code>Group.ReadWrite.All, Device.ReadWrite.All, DeviceManagementManagedDevices.ReadWrite.All, DeviceManagementConfiguration.ReadWrite.All</code>, we&rsquo;re presented with the first stage in the process:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start.webp" title="Start of the Get Ready for Windows 11 script" data-thumbnail="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start.webp" data-sub-html="<h2>The start of the Get Ready for Windows 11 PowerShell script.</h2><p>Start of the Get Ready for Windows 11 script</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start.webp   alt="Start of the Get Ready for Windows 11 script" height="894" width="1115"></a><figcaption class="image-caption">The start of the Get Ready for Windows 11 PowerShell script.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start_hu12358504582886101967.webp" title="Start of the Get Ready for Windows 11 script" data-thumbnail="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start_hu12358504582886101967.webp" data-sub-html="<h2>The start of the Get Ready for Windows 11 PowerShell script.</h2><p>Start of the Get Ready for Windows 11 script</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-start_hu12358504582886101967.webp   alt="Start of the Get Ready for Windows 11 script"  ></a><figcaption class="image-caption">The start of the Get Ready for Windows 11 PowerShell script.</figcaption>
+</figure>
+
+</p>
 <p>Providing us with the information I promised it would, including the generated Dynamic Security Group rules allowing your to create them in Entra ID to support the Windows 11 23H2 Feature Update deployment:</p>
 
 <div class="table-wrapper">
@@ -422,8 +426,10 @@
 </div>
 <h3 id="getting-device-information" class="headerLink">
     <a href="#getting-device-information" class="header-mark"></a>2.2 Getting Device Information</h3><p>Blindly continuing the script, as so far the script has actually done nothing, it will happily go and get all your Windows devices from Entra ID, and check if there is any existing data we don&rsquo;t want, in the selected <code>extensionAttribute15</code>, for us this time, we&rsquo;re all clear, so it continues and starts the Feature Update Readiness report for Windows 11 23H2, and  processes all the associated data:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle.webp" title="Confirmation section of the Get Windows 11 Ready Script" data-thumbnail="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle.webp" data-sub-html="<h2>The confirmation section of the Get Ready for Windows 11 PowerShell script.</h2><p>Confirmation section of the Get Windows 11 Ready Script</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle.webp   alt="Confirmation section of the Get Windows 11 Ready Script" height="894" width="1115"></a><figcaption class="image-caption">The confirmation section of the Get Ready for Windows 11 PowerShell script.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle_hu12779051476565038179.webp" title="Confirmation section of the Get Windows 11 Ready Script" data-thumbnail="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle_hu12779051476565038179.webp" data-sub-html="<h2>The confirmation section of the Get Ready for Windows 11 PowerShell script.</h2><p>Confirmation section of the Get Windows 11 Ready Script</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-middle_hu12779051476565038179.webp   alt="Confirmation section of the Get Windows 11 Ready Script"  ></a><figcaption class="image-caption">The confirmation section of the Get Ready for Windows 11 PowerShell script.</figcaption>
+</figure>
+
+</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">
         <span class="icon"><svg class="icon"
@@ -445,8 +451,10 @@
 <li><strong>Unknown</strong> - A readiness status couldn&rsquo;t be determined. Ensure that the device is properly configured to send Windows diagnostic data.</li>
 </ul>
 <p>In the format of <strong>[RiskState]-W11-[FeatureUpdate]</strong> i.e., <strong>LowRisk-W11-23H2</strong>, <strong>NotReady-W11-23H2</strong>.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign.webp" title="Assignment section of the Get Windows 11 Ready Script" data-thumbnail="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign.webp" data-sub-html="<h2>The assignment section of the Get Ready for Windows 11 PowerShell script.</h2><p>Assignment section of the Get Windows 11 Ready Script</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign.webp   alt="Assignment section of the Get Windows 11 Ready Script" height="628" width="1115"></a><figcaption class="image-caption">The assignment section of the Get Ready for Windows 11 PowerShell script.</figcaption>
-</figure></p>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign_hu4308592799584632051.webp" title="Assignment section of the Get Windows 11 Ready Script" data-thumbnail="/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign_hu4308592799584632051.webp" data-sub-html="<h2>The assignment section of the Get Ready for Windows 11 PowerShell script.</h2><p>Assignment section of the Get Windows 11 Ready Script</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part4/img/w11risk-script-assign_hu4308592799584632051.webp   alt="Assignment section of the Get Windows 11 Ready Script"  ></a><figcaption class="image-caption">The assignment section of the Get Ready for Windows 11 PowerShell script.</figcaption>
+</figure>
+
+</p>
 <p>I thought I&rsquo;d colour code the output of this section, though it serves no purpose other than to look nice.</p>
 <p>What it does show though, are devices being assigned to their respective risk rating where appropriate, and when a device has been updated to Windows 11 23H2, it will clear the <code>extensionAttribute</code>. If you&rsquo;ve created the Dynamic Security Groups based on the rules provided by the script, they should now start slowly populating with devices.</p>
 <p>Leaping back to <a href="/posts/windows-11-risk-based-deployment-part3" rel="noopener" target="_blank">part three</a> in the series, you&rsquo;re now in a position to create your Feature Update profiles, allowing you to safely deploy the Windows 11 23H2 Feature Update to your devices categorised as low risk, whilst you assign someone else in your team to investigate the issues with the medium and high risk devices 😂.</p>
