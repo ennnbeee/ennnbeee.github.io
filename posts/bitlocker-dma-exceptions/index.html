@@ -243,7 +243,14 @@
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content" data-pagefind-body><p>Configuring silent encryption for Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices" target="_blank" rel="noopener noreferrer">Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device, setting the encryption algorithm used, and ensuring that the data on the device is protected.</p>
+            </div><div class="content" id="content" data-pagefind-body><div class="details admonition note open">
+    <div class="details-summary admonition-title">
+        <span class="icon"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span>Note<span class="details-icon"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content">This article was last updated on <span class="timeago" datetime="2024-03-16T20:39:11" title="March 16, 2024">16 March 2024</span>, the content may be out of date.</div></div></div><p>Configuring silent encryption for Windows 10 and later devices in <a href="https://learn.microsoft.com/en-us/mem/intune/protect/encrypt-devices#silently-enable-bitlocker-on-devices" target="_blank" rel="noopener noreferrer">Microsoft Intune</a> isn&rsquo;t anything new, removing reliance on Administrator permissions to encrypt a device, setting the encryption algorithm used, and ensuring that the data on the device is protected.</p>
 <p>But what happens when your devices configured for silent encryption, don&rsquo;t even <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#bitlocker-automatic-device-encryption" target="_blank" rel="noopener noreferrer">automatically encrypt</a>, with devices complaining about the detection of <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank" rel="noopener noreferrer">Un-allowed DMA capable bus/device(s)</a> in the event log, preventing automatic encryption from starting.</p>
 <p>With the Microsoft recommendation to create registry items to allow for these exceptions on the devices failing to automatically encrypt, we should see if a bit of PowerShell and Microsoft Intune can do to fix this issue.</p>
 <h2 id="direct-memory-access-exceptions" class="headerLink">
@@ -777,7 +784,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-5" 
+    id="codeblock-id-4" 
     class="
       chroma 
       !tw-block 
@@ -964,7 +971,7 @@
         })();
     </script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/lightgallery/lightgallery.min.css">
         <noscript><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"></noscript>
-<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":null,"findAllMatches":null,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":null,"ignoreLocation":null,"isCaseSensitive":null,"location":null,"maxResultLength":10,"minMatchCharLength":null,"noResultsFound":"No results found","snippetLength":40,"threshold":null,"type":"fuse","useExtendedSearch":null},"sharerjs":true};</script><script
+<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":40,"threshold":0.6,"type":"fuse","useExtendedSearch":true},"sharerjs":true};</script><script
     src="/lib/lightgallery/lightgallery.min.js"
     
       defer
