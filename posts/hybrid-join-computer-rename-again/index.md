@@ -39,7 +39,7 @@ Now that we have new tools at our disposal, and modify permissions for 'SELF' al
 
 First off we need a something to check that the device is Domain Joined *(Lines 1-6)*, what the new Computer name is expected to be based on whether a desktop or laptop *(Lines 8-21)*, and what the existing Computer name is *(Lines 23-26)*. As we already have a starter for ten, this wasn't too much of a hassle to throw together quickly.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/HDJDeviceRename/HDJRename_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="HDJRename_Detection.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/HDJDeviceRename/HDJRename_Detection.ps1" type="PowerShell" >}}
 
 With Proactive Remediation scripts, we need to pass back the results of this check, and any checks, with [Exit Codes](https://learn.microsoft.com/en-us/mem/analytics/proactive-remediations#bkmk_requirements) and some kind of descriptive text.
 
@@ -92,7 +92,7 @@ This gives the user some notice that the restart is going to happen:
 
 All components now in place, we have the full script wrapped in the needed Try/Catch operators, otherwise the good practice PowerShell Police will get you:
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/HDJDeviceRename/HDJRename_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="HDJRename_Remediation.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/HDJDeviceRename/HDJRename_Remediation.ps1" type="PowerShell" >}}
 
 ### Deployment in Intune
 

@@ -114,7 +114,7 @@ We also have to be able to capture and present back when the script doesn't dete
 These commands and scripts have now been updated to use `Get-CimInstance` due to Microsoft [deprecating WMIC](https://techcommunity.microsoft.com/blog/windows-itpro-blog/wmi-command-line-wmic-utility-deprecation-next-steps/4039242) commands.
 {{< /admonition >}}
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Compliance/Custom/ThirdPartyAV/ThirdPartyAV.ps1" type="PowerShell" >}}
+{{< codeimporter title="ThirdPartyAV.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Compliance/Custom/ThirdPartyAV/ThirdPartyAV.ps1" type="PowerShell" >}}
 
 Running this script on a machine with the Antivirus product installed would be a good idea to test that the scripts works, and is outputting the correct information in the required format for Intune to translate.
 
@@ -150,7 +150,7 @@ You will need to change the `Operand` for the first Rule to match the Antivirus 
 Updated to include improved presentation to the end user of the issues as displayed in the Company Portal.
 {{< /admonition >}}
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Compliance/Custom/ThirdPartyAV/ThirdPartyAV.json" type="JSON" >}}
+{{< codeimporter title="ThirdPartyAV.json" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Compliance/Custom/ThirdPartyAV/ThirdPartyAV.json" type="JSON" >}}
 
 ## Deploying Custom Compliance
 

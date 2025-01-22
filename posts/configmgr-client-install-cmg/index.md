@@ -45,7 +45,7 @@ So as part of our soon to be packaged Win32 app, we need to utilise a PowerShell
 
 Throwing together a quick script and updating the `$certCA` with the distinguished name of your Issuing Certification Authority, we can loop through all certificates issued to the device, making sure that the certificate has come from your internal CA, then check if the date is valid.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Apps/ConfigMgrCMG/Requirement-ConfigMgrClientPKI.ps1" type="PowerShell" >}}
+{{< codeimporter title="Requirement-ConfigMgrClientPKI.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Apps/ConfigMgrCMG/Requirement-ConfigMgrClientPKI.ps1" type="PowerShell" >}}
 
 If the script finds at least one certificate, as really the Configuration Manager client isn't that fussy about which certificate it uses, just that there is one, the script will return a `Ready` output back to Microsoft Intune, which we can then use as a positive identifier that the app installation can start.
 
@@ -55,7 +55,7 @@ If you decided that you couldn't be bothered with PKI authentication (I mean who
 
 The one we care about is the join state, as really this is the only one we can query from the client itself, so more PowerShell and using the ever trusty [dsregcmd](https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-device-dsregcmd) to get the join state of the device.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Apps/ConfigMgrCMG/Requirement-ConfigMgrClientEntra.ps1" type="PowerShell" >}}
+{{< codeimporter title="Requirement-ConfigMgrClientEntra.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Apps/ConfigMgrCMG/Requirement-ConfigMgrClientEntra.ps1" type="PowerShell" >}}
 
 With a bit of a hack, we can take the output of `dsregcmd /status` and throw it into a new `PSObject`, which gives us an sample output of the below:
 
@@ -126,7 +126,7 @@ I've left these as non-mandatory and without any flight checks, as you're not go
 
 So we now have an installation script in all its glory, ready to be packaged along with the ConfigMgr client installation files so we can punt it into Microsoft Intune.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Apps/ConfigMgrCMG/Install-ConfigMgrClientCMG.ps1" type="PowerShell" >}}
+{{< codeimporter title="Install-ConfigMgrClientCMG.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Apps/ConfigMgrCMG/Install-ConfigMgrClientCMG.ps1" type="PowerShell" >}}
 
 {{< admonition type=info >}}
 To allow us to detect whether the installation of the app has happened, and to avoid using native detection methods, I've included the creation of a **.tag** file in the script, which we can look for as part of the detection.

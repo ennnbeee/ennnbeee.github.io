@@ -1242,7 +1242,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">PowerShell</p>
+      <p class="tw-select-none !tw-my-1">Set-CollectionDirectToQueryMembership.ps1</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -1298,7 +1298,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-20" 
+    id="codeblock-id-18" 
     class="
       chroma 
       !tw-block 
@@ -1441,7 +1441,7 @@
 
 
 <p>Let&rsquo;s run it on a test collection we know has direct members:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct.png" title="Device Collection" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct.png" data-sub-html="<h2>A Configuration Manager collection with direct members.</h2><p>Device Collection</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct.png   alt="Device Collection" height="541" width="518"></a><figcaption class="image-caption">A Configuration Manager collection with direct members.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct_hu4594828807478944860.png" title="Device Collection" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct_hu4594828807478944860.png" data-sub-html="<h2>A Configuration Manager collection with direct members.</h2><p>Device Collection</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-direct_hu4594828807478944860.png   alt="Device Collection"  ></a><figcaption class="image-caption">A Configuration Manager collection with direct members.</figcaption>
 </figure>
 
 </p>
@@ -1544,34 +1544,34 @@
 </div>
 <h3 id="oh-the-choices" class="headerLink">
     <a href="#oh-the-choices" class="header-mark"></a>3.1 Oh the Choices</h3><p>Doing so will prompt you with options, oooo exciting, here we&rsquo;ll select <strong>Option 1</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt.png" title="Script Options" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt.png" data-sub-html="<h2>The PowerShell window with script options.</h2><p>Script Options</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt.png   alt="Script Options" height="217" width="773"></a><figcaption class="image-caption">The PowerShell window with script options.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt_hu16728225005117156825.png" title="Script Options" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt_hu16728225005117156825.png" data-sub-html="<h2>The PowerShell window with script options.</h2><p>Script Options</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-prompt_hu16728225005117156825.png   alt="Script Options"  ></a><figcaption class="image-caption">The PowerShell window with script options.</figcaption>
 </figure>
 
 </p>
 <p>Doing so will open a grid view of the collections in your Configuration Manager environment, this may take a while to load, and you should wait for them to load before selecting and confirming your Collections:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid.png" title="PowerShell Grid" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid.png" data-sub-html="<h2>The PowerShell script grid view of Configuration Manager collections.</h2><p>PowerShell Grid</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid.png   alt="PowerShell Grid" height="508" width="900"></a><figcaption class="image-caption">The PowerShell script grid view of Configuration Manager collections.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid_hu5407065862541360533.png" title="PowerShell Grid" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid_hu5407065862541360533.png" data-sub-html="<h2>The PowerShell script grid view of Configuration Manager collections.</h2><p>PowerShell Grid</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-grid_hu5407065862541360533.png   alt="PowerShell Grid"  ></a><figcaption class="image-caption">The PowerShell script grid view of Configuration Manager collections.</figcaption>
 </figure>
 
 </p>
 <p>Search for the Collection you want to update and select <strong>OK</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select.png" title="PowerShell Selection" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select.png" data-sub-html="<h2>The PowerShell script grid view results of a search for a Configuration Manager collection.</h2><p>PowerShell Selection</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select.png   alt="PowerShell Selection" height="509" width="901"></a><figcaption class="image-caption">The PowerShell script grid view results of a search for a Configuration Manager collection.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select_hu11699460772362339514.png" title="PowerShell Selection" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select_hu11699460772362339514.png" data-sub-html="<h2>The PowerShell script grid view results of a search for a Configuration Manager collection.</h2><p>PowerShell Selection</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-select_hu11699460772362339514.png   alt="PowerShell Selection"  ></a><figcaption class="image-caption">The PowerShell script grid view results of a search for a Configuration Manager collection.</figcaption>
 </figure>
 
 </p>
 <h3 id="converting-the-rules" class="headerLink">
     <a href="#converting-the-rules" class="header-mark"></a>3.2 Converting the Rules</h3><p>Now the magic happens, including a nice little output table of the results of the conversion:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results.png" title="Script Output" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results.png" data-sub-html="<h2>The PowerShell window with the results of the script.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results.png   alt="Script Output" height="360" width="794"></a><figcaption class="image-caption">The PowerShell window with the results of the script.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results_hu2276729973402802452.png" title="Script Output" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results_hu2276729973402802452.png" data-sub-html="<h2>The PowerShell window with the results of the script.</h2><p>Script Output</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-results_hu2276729973402802452.png   alt="Script Output"  ></a><figcaption class="image-caption">The PowerShell window with the results of the script.</figcaption>
 </figure>
 
 </p>
 <h3 id="the-results-speak-for-themselves" class="headerLink">
     <a href="#the-results-speak-for-themselves" class="header-mark"></a>3.3 The Results Speak for Themselves</h3><p>Now the script has completed, we can go and check on the results on the Device Collection itself, look no Direct Members any more:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection.png" title="Collection Results" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection.png" data-sub-html="<h2>A Configuration Manager collection with query based members.</h2><p>Collection Results</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection.png   alt="Collection Results" height="536" width="515"></a><figcaption class="image-caption">A Configuration Manager collection with query based members.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection_hu3196045937661371404.png" title="Collection Results" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection_hu3196045937661371404.png" data-sub-html="<h2>A Configuration Manager collection with query based members.</h2><p>Collection Results</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-collection_hu3196045937661371404.png   alt="Collection Results"  ></a><figcaption class="image-caption">A Configuration Manager collection with query based members.</figcaption>
 </figure>
 
 </p>
 <p>With the new Query in place:</p>
-<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query.png" title="Collection Query" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query.png" data-sub-html="<h2>A query rule of a Configuration Manager collection.</h2><p>Collection Query</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query.png   alt="Collection Query" height="484" width="407"></a><figcaption class="image-caption">A query rule of a Configuration Manager collection.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query_hu2095134130499884174.png" title="Collection Query" data-thumbnail="/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query_hu2095134130499884174.png" data-sub-html="<h2>A query rule of a Configuration Manager collection.</h2><p>Collection Query</p>"><img  loading="lazy" src=/posts/configmgr-converting-direct-member-collections/img/configmgr-dm-query_hu2095134130499884174.png   alt="Collection Query"  ></a><figcaption class="image-caption">A query rule of a Configuration Manager collection.</figcaption>
 </figure>
 
 </p>

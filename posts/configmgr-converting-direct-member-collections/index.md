@@ -123,7 +123,7 @@ foreach ($DirectMember in $DirectMembers) {
 
 Now we have all the bits we needed in place (*cough logging cough*), we can launch the [script](https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1) and use the option to select a Collection first as a test before we run it across the entire environment.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1" type="PowerShell" >}}
+{{< codeimporter title="Set-CollectionDirectToQueryMembership.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/ConfigMgr/Collections/DirectToQuery/Set-CollectionDirectToQueryMembership.ps1" type="PowerShell" >}}
 
 Let's run it on a test collection we know has direct members:
 

@@ -357,7 +357,7 @@
 </span></span><span class="line"><span class="cl">    PCI\VEN_8086&amp;DEV_51B1 (Intel(R) PCI Express Root Port #10 - 51B1)</span></span></code></pre>
 </div>
 <p>And System Information showing something like this:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png" title="BitLocker System Info" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png" data-sub-html="<h2>System Information showing DMA Exceptions.</h2><p>BitLocker System Info</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png   alt="BitLocker System Info" height="749" width="1000"></a><figcaption class="image-caption">System Information showing DMA Exceptions.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu947086036357555679.png" title="BitLocker System Info" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu947086036357555679.png" data-sub-html="<h2>System Information showing DMA Exceptions.</h2><p>BitLocker System Info</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu947086036357555679.png   alt="BitLocker System Info"  ></a><figcaption class="image-caption">System Information showing DMA Exceptions.</figcaption>
 </figure>
 
 </p>
@@ -727,7 +727,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">PowerShell</p>
+      <p class="tw-select-none !tw-my-1">Set-BitLockerDMAExceptions.ps1</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -783,7 +783,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-4" 
+    id="codeblock-id-5" 
     class="
       chroma 
       !tw-block 
@@ -852,7 +852,7 @@
 <h3 id="script-testing" class="headerLink">
     <a href="#script-testing" class="header-mark"></a>3.1 Script Testing</h3><p>Now as the registry key has restrictive permissions, you can modify these manually for testing as per the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank" rel="noopener noreferrer">article</a>, or you can use <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank" rel="noopener noreferrer">PsExec</a> to run PowerShell as <strong>SYSTEM</strong> using <strong>PsExec.exe -s -i powershell.exe</strong>.</p>
 <p>Allowing you to test locally on devices before deploying using Microsoft Intune, and with a bit of luck, you should see something like the below:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-reg.png" title="Registry DMA Exceptions" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-reg.png" data-sub-html="<h2>Registry settings showing DMA Exception values.</h2><p>Registry DMA Exceptions</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-reg.png   alt="Registry DMA Exceptions" height="519" width="1137"></a><figcaption class="image-caption">Registry settings showing DMA Exception values.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-reg_hu3327037655489492541.png" title="Registry DMA Exceptions" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-reg_hu3327037655489492541.png" data-sub-html="<h2>Registry settings showing DMA Exception values.</h2><p>Registry DMA Exceptions</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-reg_hu3327037655489492541.png   alt="Registry DMA Exceptions"  ></a><figcaption class="image-caption">Registry settings showing DMA Exception values.</figcaption>
 </figure>
 
 </p>

@@ -267,13 +267,13 @@ And following on from the previous improvement, you can deploy a [Remediation](h
 
 {{< fa-icon brands windows >}} *CIS (L2) System Services - Windows 11 Intune 3.0.1_Detection.ps1*
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L2/CIS (L2) System Services - Windows 11 Intune 3.0.1_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L2) System Services - Windows 11 Intune 3.0.1_Detection.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L2/CIS (L2) System Services - Windows 11 Intune 3.0.1_Detection.ps1" type="PowerShell" >}}
 
 Along with a suitable remediation script, to ensure that the CIS Level 2 services are set to disabled, and all the nice functionality is gone.
 
 {{< fa-icon brands windows >}} *CIS (L2) System Services - Windows 11 Intune 3.0.1_Remediation.ps1*
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L2/CIS (L2) System Services - Windows 11 Intune 3.0.1_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L2) System Services - Windows 11 Intune 3.0.1_Remediation.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L2/CIS (L2) System Services - Windows 11 Intune 3.0.1_Remediation.ps1" type="PowerShell" >}}
 
 Deployed using Microsoft Intune to your devices:
 

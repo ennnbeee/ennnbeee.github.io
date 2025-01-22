@@ -88,7 +88,7 @@ So if you have multiple models with the same `PCI\VEN_8086&DEV_A30D` exception f
 
 Combining both the device model logic, and the creation of new registry items in the correct location, we have the below, which can act as a template or example for the rest of your devices with these issues.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1" type="PowerShell" >}}
+{{< codeimporter title="Set-BitLockerDMAExceptions.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/PlatformScripts/PowerShell/BitLockerDMAExceptions/Set-BitLockerDMAExceptions.ps1" type="PowerShell" >}}
 
 This can be modified based on your own device estate, grouping devices by manufacturer or model, or just by which exceptions need to be made.
 

@@ -296,12 +296,12 @@
 <h2 id="firewall-rules-2-the-conversioning" class="headerLink">
     <a href="#firewall-rules-2-the-conversioning" class="header-mark"></a>3 Firewall Rules 2: The Conversioning</h2><p>What I did not expect when running the PowerShell script, and after it created the Firewall Rule policies in Microsoft Intune, were them to just <em>change</em>.</p>
 <p>What I expected, is that I&rsquo;d have to use my old script to actually convert them from the old versions&hellip;</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/mdmrules.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/mdmrules.png" data-sub-html="<h2>Firewall Rule Policies created using the Migration Tool.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/mdmrules.png   alt="MDM Firewall Rules" height="517" width="2626"></a><figcaption class="image-caption">Firewall Rule Policies created using the Migration Tool.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/mdmrules_hu13594430948195316964.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/mdmrules_hu13594430948195316964.png" data-sub-html="<h2>Firewall Rule Policies created using the Migration Tool.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/mdmrules_hu13594430948195316964.png   alt="MDM Firewall Rules"  ></a><figcaption class="image-caption">Firewall Rule Policies created using the Migration Tool.</figcaption>
 </figure>
 
 </p>
 <p>&hellip;and not just wait ten minutes for them to transition to new rules.</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/senserules.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/senserules.png" data-sub-html="<h2>Firewall Rule Policies converted using Microsoft secret sauce.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/senserules.png   alt="MDM Firewall Rules" height="520" width="2538"></a><figcaption class="image-caption">Firewall Rule Policies converted using Microsoft secret sauce.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/senserules_hu4677582510969141045.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/senserules_hu4677582510969141045.png" data-sub-html="<h2>Firewall Rule Policies converted using Microsoft secret sauce.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/senserules_hu4677582510969141045.png   alt="MDM Firewall Rules"  ></a><figcaption class="image-caption">Firewall Rule Policies converted using Microsoft secret sauce.</figcaption>
 </figure>
 
 </p>
@@ -315,23 +315,23 @@
     <a href="#are-microsoft-magicians" class="header-mark"></a>4 Are Microsoft Magicians?</h2><p>Yes.</p>
 <h2 id="the-truthening" class="headerLink">
     <a href="#the-truthening" class="header-mark"></a>5 The Truthening</h2><p>The original Firewall Rule policies created by my wonderful PowerShell script are still using the legacy templates in Microsoft Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/ruledetail.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/ruledetail.png" data-sub-html="<h2>Firewall Rule Policies the old worse way of dealing with them.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/ruledetail.png   alt="MDM Firewall Rules" height="1586" width="2094"></a><figcaption class="image-caption">Firewall Rule Policies the old worse way of dealing with them.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/ruledetail_hu9692496304390523687.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/ruledetail_hu9692496304390523687.png" data-sub-html="<h2>Firewall Rule Policies the old worse way of dealing with them.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/ruledetail_hu9692496304390523687.png   alt="MDM Firewall Rules"  ></a><figcaption class="image-caption">Firewall Rule Policies the old worse way of dealing with them.</figcaption>
 </figure>
 
 </p>
 <p>And to prove I didn&rsquo;t spend my evening somehow manually creating 150 firewall rules in a way you can no longer create them, you can see the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/monitor-audit-logs" target="_blank" rel="noopener noreferrer">audit log</a> showing that the policies were created at the timestamp:</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/audit.png" title="Definitely real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/audit.png" data-sub-html="<h2>Definitely real and not made up Microsoft Intune audit log.</h2><p>Definitely real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/audit.png   alt="Definitely real audit log" height="660" width="3150"></a><figcaption class="image-caption">Definitely real and not made up Microsoft Intune audit log.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/audit_hu5800268109609178345.png" title="Definitely real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/audit_hu5800268109609178345.png" data-sub-html="<h2>Definitely real and not made up Microsoft Intune audit log.</h2><p>Definitely real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/audit_hu5800268109609178345.png   alt="Definitely real audit log"  ></a><figcaption class="image-caption">Definitely real and not made up Microsoft Intune audit log.</figcaption>
 </figure>
 
 </p>
 <p>But oh what have we found here with our super secret snooping skills?</p>
 <p>Clicking on one of the items that were created by the PowerShell script, we get a bit more detail:</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/migrating.png" title="Still real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/migrating.png" data-sub-html="<h2>Still a real and not made up Microsoft Intune audit log but with more detail.</h2><p>Still real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/migrating.png   alt="Still real audit log" height="562" width="600"></a><figcaption class="image-caption">Still a real and not made up Microsoft Intune audit log but with more detail.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/migrating_hu266794019652043520.png" title="Still real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/migrating_hu266794019652043520.png" data-sub-html="<h2>Still a real and not made up Microsoft Intune audit log but with more detail.</h2><p>Still real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/migrating_hu266794019652043520.png   alt="Still real audit log"  ></a><figcaption class="image-caption">Still a real and not made up Microsoft Intune audit log but with more detail.</figcaption>
 </figure>
 
 </p>
 <p>But what&rsquo;s this at the bottom of the entry:</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/zoom.png" title="Still real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/zoom.png" data-sub-html="<h2>OMG it&#39;s migrating.</h2><p>Still real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/zoom.png   alt="Still real audit log" height="468" width="842"></a><figcaption class="image-caption">OMG it's migrating.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/zoom_hu17937397103710855799.png" title="Still real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/zoom_hu17937397103710855799.png" data-sub-html="<h2>OMG it&#39;s migrating.</h2><p>Still real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/zoom_hu17937397103710855799.png   alt="Still real audit log"  ></a><figcaption class="image-caption">OMG it's migrating.</figcaption>
 </figure>
 
 </p>
@@ -339,13 +339,13 @@
     alt="rip doge">
 </figure>
 
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/zoomier.png" title="Still real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/zoomier.png" data-sub-html="<h2>Zoom and enhance.</h2><p>Still real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/zoomier.png   alt="Still real audit log" height="271" width="1309"></a><figcaption class="image-caption">Zoom and enhance.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/zoomier_hu3376319762915796968.png" title="Still real audit log" data-thumbnail="/posts/firewall-rule-policy-conversion/img/zoomier_hu3376319762915796968.png" data-sub-html="<h2>Zoom and enhance.</h2><p>Still real audit log</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/zoomier_hu3376319762915796968.png   alt="Still real audit log"  ></a><figcaption class="image-caption">Zoom and enhance.</figcaption>
 </figure>
 
 </p>
 <p>Yeah this means nothing.</p>
 <p>The audit log is showing that a new legacy Firewall Rule policy is being created, how do we know? Well it&rsquo;s still using the old Endpoint Security templateId value of <strong>4356d05c-a4ab-4a07-9ece-739f7c792910</strong>.</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/templateId.png" title="Endpoint Security templateId" data-thumbnail="/posts/firewall-rule-policy-conversion/img/templateId.png" data-sub-html="<h2>Another screenshot of some audit stuff.</h2><p>Endpoint Security templateId</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/templateId.png   alt="Endpoint Security templateId" height="398" width="418"></a><figcaption class="image-caption">Another screenshot of some audit stuff.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/templateId_hu3169507387512495570.png" title="Endpoint Security templateId" data-thumbnail="/posts/firewall-rule-policy-conversion/img/templateId_hu3169507387512495570.png" data-sub-html="<h2>Another screenshot of some audit stuff.</h2><p>Endpoint Security templateId</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/templateId_hu3169507387512495570.png   alt="Endpoint Security templateId"  ></a><figcaption class="image-caption">Another screenshot of some audit stuff.</figcaption>
 </figure>
 
 </p>
@@ -572,7 +572,7 @@
 </figure>
 
 <p>It&rsquo;s a Settings Catalog policy for Firewall Rules!</p>
-<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/newruledetail.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/newruledetail.png" data-sub-html="<h2>Firewall Rule Policies the new much better way of dealing with them.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/newruledetail.png   alt="MDM Firewall Rules" height="825" width="861"></a><figcaption class="image-caption">Firewall Rule Policies the new much better way of dealing with them.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/firewall-rule-policy-conversion/img/newruledetail_hu14858439413278369023.png" title="MDM Firewall Rules" data-thumbnail="/posts/firewall-rule-policy-conversion/img/newruledetail_hu14858439413278369023.png" data-sub-html="<h2>Firewall Rule Policies the new much better way of dealing with them.</h2><p>MDM Firewall Rules</p>"><img  loading="lazy" src=/posts/firewall-rule-policy-conversion/img/newruledetail_hu14858439413278369023.png   alt="MDM Firewall Rules"  ></a><figcaption class="image-caption">Firewall Rule Policies the new much better way of dealing with them.</figcaption>
 </figure>
 
 </p>

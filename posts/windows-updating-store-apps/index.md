@@ -67,7 +67,7 @@ OK, so it isn't that clear, but we've got a way to detect whether the last updat
 
 We can use the above, and a little logic to detect whether the result of the **LastScanError** is a zero or not, and if it's not a zero throw an **Exit 1** to allow a remediation to run.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/UpdateStoreApps/Update-StoreApps_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="Update-StoreApps_Detection.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/UpdateStoreApps/Update-StoreApps_Detection.ps1" type="PowerShell" >}}
 
 On to the remediation portion.
 
@@ -75,7 +75,7 @@ On to the remediation portion.
 
 We've already done the ground work with the previous queries to test the update of apps, so this one is very straightforward.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/UpdateStoreApps/Update-StoreApps_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="Update-StoreApps_Remediation.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/UpdateStoreApps/Update-StoreApps_Remediation.ps1" type="PowerShell" >}}
 
 Just make sure we're exiting with the correct codes, and giving an explanation, as per the detection script, of the result of the remediation.
 

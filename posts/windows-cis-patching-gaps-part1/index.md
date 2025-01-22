@@ -124,7 +124,7 @@ Well to remove a user from the equation, we can deploy a PowerShell script to se
 
 {{< fa-icon brands windows >}} *CIS (BL) BitLocker TPMandPIN - Windows 11 Intune 3.0.1.ps1*
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/PlatformScripts/PowerShell/CIS/BL/CIS (BL) BitLocker TPMandPIN - Windows 11 Intune 3.0.1.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (BL) BitLocker TPMandPIN - Windows 11 Intune 3.0.1.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/PlatformScripts/PowerShell/CIS/BL/CIS (BL) BitLocker TPMandPIN - Windows 11 Intune 3.0.1.ps1" type="PowerShell" >}}
 
 The script, in short will carry out the following:
 

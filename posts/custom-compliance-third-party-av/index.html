@@ -795,7 +795,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">PowerShell</p>
+      <p class="tw-select-none !tw-my-1">ThirdPartyAV.ps1</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -851,7 +851,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-22" 
+    id="codeblock-id-21" 
     class="
       chroma 
       !tw-block 
@@ -1164,7 +1164,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">JSON</p>
+      <p class="tw-select-none !tw-my-1">ThirdPartyAV.json</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -1220,7 +1220,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-25" 
+    id="codeblock-id-22" 
     class="
       chroma 
       !tw-block 
@@ -1287,12 +1287,12 @@
 <h2 id="deploying-custom-compliance" class="headerLink">
     <a href="#deploying-custom-compliance" class="header-mark"></a>2 Deploying Custom Compliance</h2><p>We&rsquo;ve now got both a PowerShell script and JSON file, so the last steps are to throw these into Microsoft Intune.</p>
 <p>First off we need to add the PowerShell script in the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesComplianceMenu/~/customComplianceScripts" target="_blank" rel="noopener noreferrer">Compliance Scripts</a> section.</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-script.png" title="Compliance Script" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-script.png" data-sub-html="<h2>Compliance Policy script in Microsoft Intune.</h2><p>Compliance Script</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-script.png   alt="Compliance Script" height="549" width="1113"></a><figcaption class="image-caption">Compliance Policy script in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-script_hu5898688249122876784.png" title="Compliance Script" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-script_hu5898688249122876784.png" data-sub-html="<h2>Compliance Policy script in Microsoft Intune.</h2><p>Compliance Script</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-script_hu5898688249122876784.png   alt="Compliance Script"  ></a><figcaption class="image-caption">Compliance Policy script in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>Following this, we can now create our Custom Compliance policy for Windows; select the previously created PowerShell script, and we&rsquo;ll need to upload the JSON file created earlier.</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliance.png" title="Custom Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliance.png" data-sub-html="<h2>Compliance Policy in Microsoft Intune.</h2><p>Custom Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliance.png   alt="Custom Compliance" height="702" width="796"></a><figcaption class="image-caption">Compliance Policy in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu17896635400441496474.png" title="Custom Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu17896635400441496474.png" data-sub-html="<h2>Compliance Policy in Microsoft Intune.</h2><p>Custom Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliance_hu17896635400441496474.png   alt="Custom Compliance"  ></a><figcaption class="image-caption">Compliance Policy in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
@@ -1300,17 +1300,17 @@
 <h3 id="checking-compliance-state" class="headerLink">
     <a href="#checking-compliance-state" class="header-mark"></a>2.1 Checking Compliance State</h3><p>With the Custom Compliance policy deployed, and waiting a little while for devices to start reporting back, we can check on the status of the devices it has been assigned to.</p>
 <p>We have some good devices:</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliant.png" title="Good Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliant.png" data-sub-html="<h2>Microsoft Intune Compliance check with good results.</h2><p>Good Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliant.png   alt="Good Compliance" height="141" width="800"></a><figcaption class="image-caption">Microsoft Intune Compliance check with good results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu9213408185211863896.png" title="Good Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu9213408185211863896.png" data-sub-html="<h2>Microsoft Intune Compliance check with good results.</h2><p>Good Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-compliant_hu9213408185211863896.png   alt="Good Compliance"  ></a><figcaption class="image-caption">Microsoft Intune Compliance check with good results.</figcaption>
 </figure>
 
 </p>
 <p>Some not so good:</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs.png" title="Poor Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs.png" data-sub-html="<h2>Microsoft Intune Compliance check with poor results.</h2><p>Poor Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs.png   alt="Poor Compliance" height="141" width="800"></a><figcaption class="image-caption">Microsoft Intune Compliance check with poor results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu13950987367443934815.png" title="Poor Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu13950987367443934815.png" data-sub-html="<h2>Microsoft Intune Compliance check with poor results.</h2><p>Poor Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-defs_hu13950987367443934815.png   alt="Poor Compliance"  ></a><figcaption class="image-caption">Microsoft Intune Compliance check with poor results.</figcaption>
 </figure>
 
 </p>
 <p>Some truly problematic:</p>
-<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all.png" title="Bad Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all.png" data-sub-html="<h2>Microsoft Intune Compliance check with bad results.</h2><p>Bad Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all.png   alt="Bad Compliance" height="141" width="800"></a><figcaption class="image-caption">Microsoft Intune Compliance check with bad results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu14462504174040679209.png" title="Bad Compliance" data-thumbnail="/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu14462504174040679209.png" data-sub-html="<h2>Microsoft Intune Compliance check with bad results.</h2><p>Bad Compliance</p>"><img  loading="lazy" src=/posts/custom-compliance-third-party-av/img/avcomp-noncompliant-all_hu14462504174040679209.png   alt="Bad Compliance"  ></a><figcaption class="image-caption">Microsoft Intune Compliance check with bad results.</figcaption>
 </figure>
 
 </p>

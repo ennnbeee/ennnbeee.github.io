@@ -117,7 +117,7 @@ As we're focusing solely on the forced installation of the [Microsoft Single Sig
 
 We need to update the settings under the key **installation_mode** setting the string value to **force_installed**, this in conjunction with the ID of the extension we want to force install **ppnbnpeolgkicgegkbkbjmhlideopiji** (which we can get from the extension URL itself), allows us to configure a custom profile for Google Chrome to ensure that the extension that unlocks all the Platform SSO goodness is deployed to devices with Google Chrome installed.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/macOS/PlatformSSO/GoogleChromepSSO.mobileconfig" type="XML" >}}
+{{< codeimporter title="GoogleChromepSSO.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/macOS/PlatformSSO/GoogleChromepSSO.mobileconfig" type="XML" >}}
 
 The other settings in the [profile](https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/Configuration/macOS/PlatformSSO/GoogleChromepSSO.mobileconfig) ensure that the profile is installed in the system context and cannot be removed by an end user.
 

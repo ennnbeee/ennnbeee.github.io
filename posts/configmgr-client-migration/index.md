@@ -133,7 +133,7 @@ This way, we can let Configuration Manager do all our heavy lifting, without man
 
 The full script in all it's glory can as always be found in [GitHub](https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/ConfigMgr/Apps/ForceCCMClientInstall/Install-CCMClientAlways.ps1)
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/ConfigMgr/Apps/ForceCCMClientInstall/Install-CCMClientAlways.ps1" type="PowerShell" >}}
+{{< codeimporter title="Install-CCMClientAlways.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/ConfigMgr/Apps/ForceCCMClientInstall/Install-CCMClientAlways.ps1" type="PowerShell" >}}
 
 If you need to keep this running on an on-going basis as part of a phased migration, I'd recommend hooking this into a Scheduled Task running from the Primary Site server, or if you're feeling fancy, a [Status Filter Rule](https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/use-status-system#manage-status-filter-rules) to have the script triggered on an event captured by a one of the million Configuration Manager logs files for its components.
 

@@ -212,7 +212,7 @@ To create the config file to configure Defender with the following settings:
 
 {{< fa-icon brands microsoft >}} *example1.com.microsoft.wdav.mobileconfig*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example1.com.microsoft.wdav.mobileconfig" type="XML" title="example1.com.microsoft.wdav.mobileconfig" >}}
+{{< codeimporter title="example1.com.microsoft.wdav.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example1.com.microsoft.wdav.mobileconfig" type="XML" title="example1.com.microsoft.wdav.mobileconfig" >}}
 
 #### Example 1 - Third-Party MDM
 
@@ -222,7 +222,7 @@ To create the config file to configure Defender with the following settings:
 
 {{< fa-icon brands apple >}} *example1.com.microsoft.wdav.plist*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example1.com.microsoft.wdav.plist" type="XML" >}}
+{{< codeimporter title="example1.com.microsoft.wdav.plist" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example1.com.microsoft.wdav.plist" type="XML" >}}
 
 ### Example 2
 
@@ -243,7 +243,7 @@ To create the config file to configure Defender with the following settings:
 
 {{< fa-icon brands microsoft >}} *example2.com.microsoft.wdav.mobileconfig*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example2.com.microsoft.wdav.mobileconfig" type="XML" >}}
+{{< codeimporter title="example2.com.microsoft.wdav.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example2.com.microsoft.wdav.mobileconfig" type="XML" >}}
 
 #### Example 2 - Third-Party MDM
 
@@ -253,7 +253,7 @@ To create the config file to configure Defender with the following settings:
 
 {{< fa-icon brands apple >}} *example2.com.microsoft.wdav.plist*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example2.com.microsoft.wdav.plist" type="XML" >}}
+{{< codeimporter title="example2.com.microsoft.wdav.plist" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example2.com.microsoft.wdav.plist" type="XML" >}}
 
 ### Example 3
 
@@ -275,7 +275,7 @@ To create the config file to configure Defender with the following settings:
 
 {{< fa-icon brands microsoft >}} *example3.com.microsoft.wdav.mobileconfig*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example3.com.microsoft.wdav.mobileconfig" type="XML" >}}
+{{< codeimporter title="example3.com.microsoft.wdav.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example3.com.microsoft.wdav.mobileconfig" type="XML" >}}
 
 #### Example 3 - Third-Party MDM
 
@@ -285,7 +285,7 @@ To create the config file to configure Defender with the following settings:
 
 {{< fa-icon brands apple >}} *example3.com.microsoft.wdav.plist*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example3.com.microsoft.wdav.plist" type="XML" >}}
+{{< codeimporter title="example3.com.microsoft.wdav.plist" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Configuration/macOS/DefenderScheduleScan/example3.com.microsoft.wdav.plist" type="XML" >}}
 
 Hopefully by this point you get the idea 🙃.
 

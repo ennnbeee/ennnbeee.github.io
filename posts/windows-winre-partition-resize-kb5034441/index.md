@@ -19,7 +19,7 @@ Working with the remediation format and capture of information, we can quite sim
 The detection method has been updated to detect free space in the Recovery Partition, instead of blindly increasing it by 250MB.
 {{< /admonition >}}
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="Set-WinRE_Detection.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" type="PowerShell" >}}
 
 If the result of the comparison is that the ~~size of the partition is smaller than the 750MB configured in `$partitionSize`~~ free space of the partition is smaller than the 250MB configured in `$freePartitionSpace`, then we'll report the status with `Write-Output` and `Exit 1`, otherwise, all is OK so we `Exit 0` still reporting something.
 
@@ -27,7 +27,7 @@ If the result of the comparison is that the ~~size of the partition is smaller t
 
 So, we should see how many devices are effected by a small partition size, so for fun, we can push out **just** the [detection script](https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1) using a Remediation, but with a non-functioning [remediation script](https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_ReportRemediation.ps1).
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/WinREPartition/Set-WinRE_ReportRemediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="Set-WinRE_ReportRemediation" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/WinREPartition/Set-WinRE_ReportRemediation.ps1" type="PowerShell" >}}
 
 This will at least give you some idea of the devices that would be impacted by the true remediation script.
 
@@ -71,7 +71,7 @@ All of these settings are exactly as per the Microsoft provided document, but yo
 
 To allow the script to work within a Remediation, we need to ensure that the data being passed back to Microsoft Intune is suitable, and other that wrapping the bulk of the script in some `Try` and `Catch` logic, and handling the output of the commands with `Write-Output` and corresponding `Exit` codes, there isn't a whole heap for us to do thankfully.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/WinREPartition/Set-WinRE_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="Set-WinRE_Remediation.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/WinREPartition/Set-WinRE_Remediation.ps1" type="PowerShell" >}}
 
 With the script now in a more useful format, on to how we deploy this to a select group of test devices.
 

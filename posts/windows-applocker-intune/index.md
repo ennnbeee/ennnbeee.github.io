@@ -35,7 +35,7 @@ We'll start off with our exported AppLocker policy, which has either come from [
 
 Which after you've saved the file, gives you an XML file looking something like the below.
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/refs/heads/main/Intune/EndpointSecurity/AppLockerConversion/AppLockerRules-Audit.xml" type="XML" >}}
+{{< codeimporter title="AppLockerRules-Audit.xml" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/refs/heads/main/Intune/EndpointSecurity/AppLockerConversion/AppLockerRules-Audit.xml" type="XML" >}}
 
 We'll need this later.
 
@@ -95,7 +95,7 @@ To give you an understanding of what it's doing before you blindly run it:
 - Can change the Enforcement mode of the policies to **Audit** (safety first) or **Enforce** (you hate your users)
 - Creates a new Custom Profile in Intune with the AppLocker Policy
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/refs/heads/main/Intune/EndpointSecurity/AppLockerConversion/Convert-AppLockertoIntune.ps1" type="PowerShell" >}}
+{{< codeimporter title="Convert-AppLockertoIntune.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/refs/heads/main/Intune/EndpointSecurity/AppLockerConversion/Convert-AppLockertoIntune.ps1" type="PowerShell" >}}
 
 ### Running the Script
 

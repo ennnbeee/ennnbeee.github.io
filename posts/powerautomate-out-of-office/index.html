@@ -235,17 +235,17 @@
     <a href="#creating-the-flow" class="header-mark"></a>1 Creating the Flow</h2><p>We&rsquo;ll cut to the chase here, as this isn&rsquo;t Microsoft Intune, and although follows a similar <em>Click Click Next OK</em> setup, doesn&rsquo;t require as much thought.</p>
 <h3 id="setting-a-calendar-event-trigger" class="headerLink">
     <a href="#setting-a-calendar-event-trigger" class="header-mark"></a>1.1 Setting a Calendar Event Trigger</h3><p>To create a flow and associated <a href="https://learn.microsoft.com/en-us/power-automate/triggers-introduction?tabs=classic-designer" target="_blank" rel="noopener noreferrer">trigger</a> go sign in to <a href="https://make.powerautomate.com/" target="_blank" rel="noopener noreferrer">Power Automate</a>, select <strong>Create</strong>, then select <strong>Automated cloud flow</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Create.png" title="Create a Flow" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Create.png" data-sub-html="<h2>Creating a new automated cloud flow.</h2><p>Create a Flow</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Create.png   alt="Create a Flow" height="352" width="845"></a><figcaption class="image-caption">Creating a new automated cloud flow.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Create_hu10160229687156263351.png" title="Create a Flow" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Create_hu10160229687156263351.png" data-sub-html="<h2>Creating a new automated cloud flow.</h2><p>Create a Flow</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Create_hu10160229687156263351.png   alt="Create a Flow"  ></a><figcaption class="image-caption">Creating a new automated cloud flow.</figcaption>
 </figure>
 
 </p>
 <p>Give it a name, and enter in <strong>When an upcoming event is starting soon (V3)</strong> in the search field for the trigger for the flow to start, and select <strong>Create</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Trigger.png" title="Creating a Trigger" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Trigger.png" data-sub-html="<h2>Adding a trigger to an automated cloud flow.</h2><p>Creating a Trigger</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Trigger.png   alt="Creating a Trigger" height="563" width="894"></a><figcaption class="image-caption">Adding a trigger to an automated cloud flow.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Trigger_hu5552611866275512669.png" title="Creating a Trigger" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Trigger_hu5552611866275512669.png" data-sub-html="<h2>Adding a trigger to an automated cloud flow.</h2><p>Creating a Trigger</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Trigger_hu5552611866275512669.png   alt="Creating a Trigger"  ></a><figcaption class="image-caption">Adding a trigger to an automated cloud flow.</figcaption>
 </figure>
 
 </p>
 <p>Once created, select the trigger, and if required allow the connection to your Exchange Online calendar, the select the <strong>Calendar Id</strong>, you can then update the settings for how often to check for events:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-TriggerSettings.png" title="Configuring Trigger settings" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-TriggerSettings.png" data-sub-html="<h2>Updating the trigger settings in the flow.</h2><p>Configuring Trigger settings</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-TriggerSettings.png   alt="Configuring Trigger settings" height="620" width="618"></a><figcaption class="image-caption">Updating the trigger settings in the flow.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-TriggerSettings_hu17428751440466983014.png" title="Configuring Trigger settings" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-TriggerSettings_hu17428751440466983014.png" data-sub-html="<h2>Updating the trigger settings in the flow.</h2><p>Configuring Trigger settings</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-TriggerSettings_hu17428751440466983014.png   alt="Configuring Trigger settings"  ></a><figcaption class="image-caption">Updating the trigger settings in the flow.</figcaption>
 </figure>
 
 </p>
@@ -253,12 +253,12 @@
 <h3 id="setting-an-out-of-office-condition" class="headerLink">
     <a href="#setting-an-out-of-office-condition" class="header-mark"></a>1.2 Setting an Out of Office Condition</h3><p>As we only care about calendar events marked as Out of Office, we should add in a <a href="https://learn.microsoft.com/en-us/power-automate/add-condition" target="_blank" rel="noopener noreferrer">Condition</a>.</p>
 <p>Select the little <strong>+</strong> sign under the trigger, and select <strong>Add add an action</strong> (we&rsquo;ll be doing this a few times, so get familiar with it):</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Action.png" title="Create an Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Action.png" data-sub-html="<h2>Adding an action to the flow trigger.</h2><p>Create an Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Action.png   alt="Create an Action" height="217" width="332"></a><figcaption class="image-caption">Adding an action to the flow trigger.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Action_hu9150192349760026024.png" title="Create an Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Action_hu9150192349760026024.png" data-sub-html="<h2>Adding an action to the flow trigger.</h2><p>Create an Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Action_hu9150192349760026024.png   alt="Create an Action"  ></a><figcaption class="image-caption">Adding an action to the flow trigger.</figcaption>
 </figure>
 
 </p>
 <p>Search for <strong>Condition</strong> and oddly enough, select <strong>Condition</strong> in the search results:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Condition.png" title="Create a Condition Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Condition.png" data-sub-html="<h2>Adding a Condition action to the flow trigger.</h2><p>Create a Condition Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Condition.png   alt="Create a Condition Action" height="286" width="603"></a><figcaption class="image-caption">Adding a Condition action to the flow trigger.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Condition_hu9964486852196648298.png" title="Create a Condition Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Condition_hu9964486852196648298.png" data-sub-html="<h2>Adding a Condition action to the flow trigger.</h2><p>Create a Condition Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Condition_hu9964486852196648298.png   alt="Create a Condition Action"  ></a><figcaption class="image-caption">Adding a Condition action to the flow trigger.</figcaption>
 </figure>
 
 </p>
@@ -285,7 +285,7 @@
 
 
 , to use data from the trigger above, and search for <strong>Show as</strong> selecting it, and updating the condition to look like the below:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ShowAs.png" title="Configuring a Condition Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ShowAs.png" data-sub-html="<h2>Adding logic into the Condition action for Out of Office events.</h2><p>Configuring a Condition Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ShowAs.png   alt="Configuring a Condition Action" height="340" width="625"></a><figcaption class="image-caption">Adding logic into the Condition action for Out of Office events.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ShowAs_hu4786153668421491409.png" title="Configuring a Condition Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ShowAs_hu4786153668421491409.png" data-sub-html="<h2>Adding logic into the Condition action for Out of Office events.</h2><p>Configuring a Condition Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ShowAs_hu4786153668421491409.png   alt="Configuring a Condition Action"  ></a><figcaption class="image-caption">Adding logic into the Condition action for Out of Office events.</figcaption>
 </figure>
 
 </p>
@@ -294,7 +294,7 @@
     <a href="#setting-a-private-status-condition" class="header-mark"></a>1.3 Setting a Private Status Condition</h3><p>As I also like to take time off from work, I thought best we leverage the flow to not only set up an automatic reply when I&rsquo;m working with a customer, but also when I am genuinely Out of the Office.</p>
 <p>To make life easier for myself, I mark actual holidays in my calendar as <strong>Private</strong>, so we can use this additional flag on the calendar event and add another condition to the flow under the <strong>True</strong> section of the Condition we created previously.</p>
 <p>Same as before, select the little <strong>+</strong> sign under the <strong>True</strong> option, and select <strong>Add add an action</strong> searching again for <strong>Condition</strong>, this time after selecting Harry Potter, search for <strong>Sensitivity</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Private.png" title="Configuring a Condition Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Private.png" data-sub-html="<h2>Adding logic into the Condition action for Private events.</h2><p>Configuring a Condition Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Private.png   alt="Configuring a Condition Action" height="365" width="622"></a><figcaption class="image-caption">Adding logic into the Condition action for Private events.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Private_hu13839644465649958987.png" title="Configuring a Condition Action" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Private_hu13839644465649958987.png" data-sub-html="<h2>Adding logic into the Condition action for Private events.</h2><p>Configuring a Condition Action</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Private_hu13839644465649958987.png   alt="Configuring a Condition Action"  ></a><figcaption class="image-caption">Adding logic into the Condition action for Private events.</figcaption>
 </figure>
 
 </p>
@@ -302,7 +302,7 @@
 <p>Now onto the <em>something</em>.</p>
 <h3 id="setting-the-out-of-office-for-holidays" class="headerLink">
     <a href="#setting-the-out-of-office-for-holidays" class="header-mark"></a>1.4 Setting the Out of Office for Holidays</h3><p>For our holiday automatic reply, we&rsquo;re working under the <strong>True</strong> section of the condition, select <strong>Add an action</strong> again, this time search for <strong>Set up automatic replies (V2)</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Reply.png" title="Configuring Automatic Reply" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Reply.png" data-sub-html="<h2>Adding an automatic reply under the True condition.</h2><p>Configuring Automatic Reply</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Reply.png   alt="Configuring Automatic Reply" height="366" width="620"></a><figcaption class="image-caption">Adding an automatic reply under the True condition.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Reply_hu1354922169648084158.png" title="Configuring Automatic Reply" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Reply_hu1354922169648084158.png" data-sub-html="<h2>Adding an automatic reply under the True condition.</h2><p>Configuring Automatic Reply</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Reply_hu1354922169648084158.png   alt="Configuring Automatic Reply"  ></a><figcaption class="image-caption">Adding an automatic reply under the True condition.</figcaption>
 </figure>
 
 </p>
@@ -345,7 +345,7 @@
   </table>
 </div>
 <p>With the above settings looking like the below:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings.png" title="Configuring Automatic Reply" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings.png" data-sub-html="<h2>Configuring automatic reply settings under the True condition.</h2><p>Configuring Automatic Reply</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings.png   alt="Configuring Automatic Reply" height="650" width="594"></a><figcaption class="image-caption">Configuring automatic reply settings under the True condition.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings_hu12963890557159767959.png" title="Configuring Automatic Reply" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings_hu12963890557159767959.png" data-sub-html="<h2>Configuring automatic reply settings under the True condition.</h2><p>Configuring Automatic Reply</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings_hu12963890557159767959.png   alt="Configuring Automatic Reply"  ></a><figcaption class="image-caption">Configuring automatic reply settings under the True condition.</figcaption>
 </figure>
 
 </p>
@@ -374,7 +374,7 @@
   </table>
 </div>
 <p>Looking like the below in the flow:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage.png" title="Configuring Automatic Reply Messages" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage.png" data-sub-html="<h2>Configuring automatic reply messages under the True condition.</h2><p>Configuring Automatic Reply Messages</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage.png   alt="Configuring Automatic Reply Messages" height="193" width="600"></a><figcaption class="image-caption">Configuring automatic reply messages under the True condition.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage_hu6718441368431666470.png" title="Configuring Automatic Reply Messages" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage_hu6718441368431666470.png" data-sub-html="<h2>Configuring automatic reply messages under the True condition.</h2><p>Configuring Automatic Reply Messages</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage_hu6718441368431666470.png   alt="Configuring Automatic Reply Messages"  ></a><figcaption class="image-caption">Configuring automatic reply messages under the True condition.</figcaption>
 </figure>
 
 </p>
@@ -382,17 +382,17 @@
 <h3 id="setting-the-out-of-office-for-engagements" class="headerLink">
     <a href="#setting-the-out-of-office-for-engagements" class="header-mark"></a>1.5 Setting the Out of Office for Engagements</h3><p>With our customer engagement automatic reply, we&rsquo;re working under the <strong>False</strong> section of the same condition, but still adding a new action by selecting <strong>Add an action</strong> again, searching for <strong>Set up automatic replies (V2)</strong>.</p>
 <p>Fill in the same settings as we did for the holiday message, but this time we should have a different reply message, as you know, we&rsquo;re still able to respond to emails, just not quickly:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings.png" title="Configuring Automatic Reply" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings.png" data-sub-html="<h2>Configuring automatic reply settings under the True condition.</h2><p>Configuring Automatic Reply</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings.png   alt="Configuring Automatic Reply" height="650" width="594"></a><figcaption class="image-caption">Configuring automatic reply settings under the True condition.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings_hu12963890557159767959.png" title="Configuring Automatic Reply" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings_hu12963890557159767959.png" data-sub-html="<h2>Configuring automatic reply settings under the True condition.</h2><p>Configuring Automatic Reply</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplySettings_hu12963890557159767959.png   alt="Configuring Automatic Reply"  ></a><figcaption class="image-caption">Configuring automatic reply settings under the True condition.</figcaption>
 </figure>
 
 </p>
 <p>Adding in a suitable but more professional message to both internal and external recipients:</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage2.png" title="Configuring Automatic Reply Messages" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage2.png" data-sub-html="<h2>Configuring automatic reply messages under the False condition.</h2><p>Configuring Automatic Reply Messages</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage2.png   alt="Configuring Automatic Reply Messages" height="193" width="595"></a><figcaption class="image-caption">Configuring automatic reply messages under the False condition.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage2_hu1697645177776905603.png" title="Configuring Automatic Reply Messages" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage2_hu1697645177776905603.png" data-sub-html="<h2>Configuring automatic reply messages under the False condition.</h2><p>Configuring Automatic Reply Messages</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-ReplyMessage2_hu1697645177776905603.png   alt="Configuring Automatic Reply Messages"  ></a><figcaption class="image-caption">Configuring automatic reply messages under the False condition.</figcaption>
 </figure>
 
 </p>
 <p>That&rsquo;s it, you&rsquo;re done. The whole flow should look something like the below, and obviously you can rename things to make like easier.</p>
-<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Flow.png" title="The whole Flow" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Flow.png" data-sub-html="<h2>Overview of the entire Flow.</h2><p>The whole Flow</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Flow.png   alt="The whole Flow" height="833" width="969"></a><figcaption class="image-caption">Overview of the entire Flow.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/powerautomate-out-of-office/img/PAOoO-Flow_hu11610792991204148988.png" title="The whole Flow" data-thumbnail="/posts/powerautomate-out-of-office/img/PAOoO-Flow_hu11610792991204148988.png" data-sub-html="<h2>Overview of the entire Flow.</h2><p>The whole Flow</p>"><img  loading="lazy" src=/posts/powerautomate-out-of-office/img/PAOoO-Flow_hu11610792991204148988.png   alt="The whole Flow"  ></a><figcaption class="image-caption">Overview of the entire Flow.</figcaption>
 </figure>
 
 </p>

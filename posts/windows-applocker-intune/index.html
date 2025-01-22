@@ -290,7 +290,7 @@
 <p>All of this sounds painfully manual, so let&rsquo;s write us some PowerShell to do this for us.</p>
 <h3 id="exported-policy" class="headerLink">
     <a href="#exported-policy" class="header-mark"></a>1.1 Exported Policy</h3><p>We&rsquo;ll start off with our exported AppLocker policy, which has either come from <a href="https://github.com/microsoft/AaronLocker" target="_blank" rel="noopener noreferrer">AaronLocker</a>, or by just exporting your policy from <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/how-to-configure-security-policy-settings" target="_blank" rel="noopener noreferrer">secpol.msc</a></p>
-<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-export.png" title="AppLocker Policy in Security Policy MMC" data-thumbnail="/posts/windows-applocker-intune/img/al-export.png" data-sub-html="<h2>Exporting an AppLocker Policy in Security Policy MMC.</h2><p>AppLocker Policy in Security Policy MMC</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-export.png   alt="AppLocker Policy in Security Policy MMC" height="568" width="788"></a><figcaption class="image-caption">Exporting an AppLocker Policy in Security Policy MMC.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-export_hu11314097531437606939.png" title="AppLocker Policy in Security Policy MMC" data-thumbnail="/posts/windows-applocker-intune/img/al-export_hu11314097531437606939.png" data-sub-html="<h2>Exporting an AppLocker Policy in Security Policy MMC.</h2><p>AppLocker Policy in Security Policy MMC</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-export_hu11314097531437606939.png   alt="AppLocker Policy in Security Policy MMC"  ></a><figcaption class="image-caption">Exporting an AppLocker Policy in Security Policy MMC.</figcaption>
 </figure>
 
 </p>
@@ -339,7 +339,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">XML</p>
+      <p class="tw-select-none !tw-my-1">AppLockerRules-Audit.xml</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -1152,7 +1152,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">PowerShell</p>
+      <p class="tw-select-none !tw-my-1">Convert-AppLockertoIntune.ps1</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -1208,7 +1208,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-5" 
+    id="codeblock-id-4" 
     class="
       chroma 
       !tw-block 
@@ -1608,22 +1608,22 @@
     </video>
 <h3 id="validation" class="headerLink">
     <a href="#validation" class="header-mark"></a>2.2 Validation</h3><p>Checking in Intune for much need validation <del>from Microsoft Daddy</del>, we now have a new Custom Profile AppLocker policy, with a date and time stamp just for fun:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-custom.png" title="AppLocker Policy in Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-custom.png" data-sub-html="<h2>Imported AppLocker Policy in Microsoft Intune.</h2><p>AppLocker Policy in Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-custom.png   alt="AppLocker Policy in Intune" height="549" width="822"></a><figcaption class="image-caption">Imported AppLocker Policy in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-custom_hu10570568264731178172.png" title="AppLocker Policy in Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-custom_hu10570568264731178172.png" data-sub-html="<h2>Imported AppLocker Policy in Microsoft Intune.</h2><p>AppLocker Policy in Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-custom_hu10570568264731178172.png   alt="AppLocker Policy in Intune"  ></a><figcaption class="image-caption">Imported AppLocker Policy in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>Digging into the profile itself, we can see each of the required OMA-URI settings for each Rule collection, with the specified grouping of <strong>Testing</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-omauri.png" title="AppLocker Policy Settings in Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-omauri.png" data-sub-html="<h2>Imported AppLocker Policy OMA-URI setting in Microsoft Intune.</h2><p>AppLocker Policy Settings in Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-omauri.png   alt="AppLocker Policy Settings in Intune" height="337" width="803"></a><figcaption class="image-caption">Imported AppLocker Policy OMA-URI setting in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-omauri_hu3348754013213325327.png" title="AppLocker Policy Settings in Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-omauri_hu3348754013213325327.png" data-sub-html="<h2>Imported AppLocker Policy OMA-URI setting in Microsoft Intune.</h2><p>AppLocker Policy Settings in Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-omauri_hu3348754013213325327.png   alt="AppLocker Policy Settings in Intune"  ></a><figcaption class="image-caption">Imported AppLocker Policy OMA-URI setting in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>As we specified that we&rsquo;d like to <del>piss off</del> secure our users on their devices, by enforcing the AppLocker policy, the content of each OMA-URI setting has updated the enforcement mode to <strong>Enabled</strong> from the setting in the original XML, which was <strong>AuditOnly</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-xml.png" title="AppLocker Policy XML setting in Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-xml.png" data-sub-html="<h2>Imported AppLocker Policy RuleCollection setting in Microsoft Intune.</h2><p>AppLocker Policy XML setting in Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-xml.png   alt="AppLocker Policy XML setting in Intune" height="421" width="575"></a><figcaption class="image-caption">Imported AppLocker Policy RuleCollection setting in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-xml_hu3944266421569395710.png" title="AppLocker Policy XML setting in Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-xml_hu3944266421569395710.png" data-sub-html="<h2>Imported AppLocker Policy RuleCollection setting in Microsoft Intune.</h2><p>AppLocker Policy XML setting in Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-xml_hu3944266421569395710.png   alt="AppLocker Policy XML setting in Intune"  ></a><figcaption class="image-caption">Imported AppLocker Policy RuleCollection setting in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>Applying this to devices, should result in some happy reports in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-report.png" title="AppLocker Policy Reports Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-report.png" data-sub-html="<h2>Imported AppLocker Policy assignment report in Microsoft Intune.</h2><p>AppLocker Policy Reports Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-report.png   alt="AppLocker Policy Reports Intune" height="265" width="822"></a><figcaption class="image-caption">Imported AppLocker Policy assignment report in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-applocker-intune/img/al-report_hu14609987979713388512.png" title="AppLocker Policy Reports Intune" data-thumbnail="/posts/windows-applocker-intune/img/al-report_hu14609987979713388512.png" data-sub-html="<h2>Imported AppLocker Policy assignment report in Microsoft Intune.</h2><p>AppLocker Policy Reports Intune</p>"><img  loading="lazy" src=/posts/windows-applocker-intune/img/al-report_hu14609987979713388512.png   alt="AppLocker Policy Reports Intune"  ></a><figcaption class="image-caption">Imported AppLocker Policy assignment report in Microsoft Intune.</figcaption>
 </figure>
 
 </p>

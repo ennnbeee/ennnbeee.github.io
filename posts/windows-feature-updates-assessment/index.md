@@ -87,7 +87,7 @@ If you're running this every seven days for example, you want to set `$schedule 
 
 So with a bit of error capture, we now have a complete detection script that can be tailored based on the Feature Update we want the data for, and the schedule that the remediation in Intune will be run.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Remediation/FeatureUpdateAppraisal/Check-FeatureUpdateAppraisal-Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="Check-FeatureUpdateAppraisal-Detection.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/refs/heads/main/Intune/Remediation/FeatureUpdateAppraisal/Check-FeatureUpdateAppraisal-Detection.ps1" type="PowerShell" >}}
 
 ### Remediation
 
@@ -119,7 +119,7 @@ And all being well, the App Compatibility tool will have run successfully, and t
 
 So throwing those three lines into something that should handle errors, we get a remediation script.
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/refs/heads/main/Intune/Remediation/FeatureUpdateAppraisal/Check-FeatureUpdateAppraisal-Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="Check-FeatureUpdateAppraisal-Remediation.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/refs/heads/main/Intune/Remediation/FeatureUpdateAppraisal/Check-FeatureUpdateAppraisal-Remediation.ps1" type="PowerShell" >}}
 
 So if the detection identifies either that the key doesn't exist, or if the last time the App Compatibility tool was run is outside of your schedule, it will kick off the tool to run and evaluate the Feature Updates it has available.
 

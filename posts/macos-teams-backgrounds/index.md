@@ -112,7 +112,7 @@ This will make sure that each downloaded background file gets a new filename, th
 
 The [full script](https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh) looks pretty much like the below, which is just a squishing together of the bits we've already covered in this post.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh" type="Bash" >}}
+{{< codeimporter title="downloadTeamsBackground.sh" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/PlatformScripts/Shell/TeamsBackgrounds/downloadTeamsBackground.sh" type="Bash" >}}
 
 Time to add this into Intune and reap the rewards.
 

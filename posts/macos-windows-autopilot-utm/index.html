@@ -450,7 +450,7 @@
       "><span class="line"><span class="cl">brew install crystalfetch</span></span></code></pre>
 </div>
 <p>Once you&rsquo;ve installed CrystalFetch, launch it and kick off the download of the version of Windows 11 you want:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-crystal.png" title="CrystalFetch downloading Windows 11 ARM" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-crystal.png" data-sub-html="<h2>CrystalFetch preparing to download Windows 11 ARM en-gb.</h2><p>CrystalFetch downloading Windows 11 ARM</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-crystal.png   alt="CrystalFetch downloading Windows 11 ARM" height="904" width="1804"></a><figcaption class="image-caption">CrystalFetch preparing to download Windows 11 ARM en-gb.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-crystal_hu14696896431587152082.png" title="CrystalFetch downloading Windows 11 ARM" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-crystal_hu14696896431587152082.png" data-sub-html="<h2>CrystalFetch preparing to download Windows 11 ARM en-gb.</h2><p>CrystalFetch downloading Windows 11 ARM</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-crystal_hu14696896431587152082.png   alt="CrystalFetch downloading Windows 11 ARM"  ></a><figcaption class="image-caption">CrystalFetch preparing to download Windows 11 ARM en-gb.</figcaption>
 </figure>
 
 </p>
@@ -612,7 +612,7 @@
       <span></span>
     </video>
 <p>Now after we&rsquo;ve authenticated to Microsoft Entra, there appears to be an issue&hellip;PowerShell <a href="https://www.youtube.com/watch?v=T1GYsCMCLpo" target="_blank" rel="noopener noreferrer">you&rsquo;ve got red on you</a>.</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-noserial.png" title="Capturing Windows Autopilot Hardware Hash" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-noserial.png" data-sub-html="<h2>Failing to get the hardware hash from the device.</h2><p>Capturing Windows Autopilot Hardware Hash</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-noserial.png   alt="Capturing Windows Autopilot Hardware Hash" height="844" width="1058"></a><figcaption class="image-caption">Failing to get the hardware hash from the device.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-noserial_hu4920652342867962211.png" title="Capturing Windows Autopilot Hardware Hash" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-noserial_hu4920652342867962211.png" data-sub-html="<h2>Failing to get the hardware hash from the device.</h2><p>Capturing Windows Autopilot Hardware Hash</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-noserial_hu4920652342867962211.png   alt="Capturing Windows Autopilot Hardware Hash"  ></a><figcaption class="image-caption">Failing to get the hardware hash from the device.</figcaption>
 </figure>
 
 </p>
@@ -622,12 +622,12 @@
     <a href="#adding-a-serial-number" class="header-mark"></a>2.2 Adding a Serial Number</h3><p>Well sadly our Virtual Machine is missing a serial number, it can&rsquo;t pull a rogue one through from the macOS host like it would using Hyper-V on a Windows host, and UTM isn&rsquo;t giving it one. So I guess we need to sort this out ourselves.</p>
 <p>As UTM is built upon <a href="https://www.qemu.org/" target="_blank" rel="noopener noreferrer">QEMU</a> we have the ability to pass through QEMU parameters to the Virtual Machine, one of which gives us the option to configure a serial number. Wonderful.</p>
 <p>Go ahead and gracefully shutdown your Windows Virtual Machine, and <strong>right click</strong> and select <strong>edit</strong> in UTM:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-edit.png" title="UTM Virtual Machine edit" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-edit.png" data-sub-html="<h2>UTM Virtual Machine edit menu.</h2><p>UTM Virtual Machine edit</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-edit.png   alt="UTM Virtual Machine edit" height="723" width="1000"></a><figcaption class="image-caption">UTM Virtual Machine edit menu.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-edit_hu16540249482487547841.png" title="UTM Virtual Machine edit" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-edit_hu16540249482487547841.png" data-sub-html="<h2>UTM Virtual Machine edit menu.</h2><p>UTM Virtual Machine edit</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-edit_hu16540249482487547841.png   alt="UTM Virtual Machine edit"  ></a><figcaption class="image-caption">UTM Virtual Machine edit menu.</figcaption>
 </figure>
 
 </p>
 <p>Then navigate to <strong>QEMU &gt; Arguments</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-qemu.png" title="QEMU Parameters" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-qemu.png" data-sub-html="<h2>UTM Virtual Machine QEMU parameters.</h2><p>QEMU Parameters</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-qemu.png   alt="QEMU Parameters" height="683" width="929"></a><figcaption class="image-caption">UTM Virtual Machine QEMU parameters.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-qemu_hu17616543980260129747.png" title="QEMU Parameters" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-qemu_hu17616543980260129747.png" data-sub-html="<h2>UTM Virtual Machine QEMU parameters.</h2><p>QEMU Parameters</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-qemu_hu17616543980260129747.png   alt="QEMU Parameters"  ></a><figcaption class="image-caption">UTM Virtual Machine QEMU parameters.</figcaption>
 </figure>
 
 </p>
@@ -931,7 +931,7 @@
       "><span class="line"><span class="cl">type=1,serial=DNuesTLjtKit</span></span></code></pre>
 </div>
 <p>Which should look like the below in the parameters:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-serial.png" title="QEMU parameters for serial number" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-serial.png" data-sub-html="<h2>Serial number parameters in the QEMU parameter settings in the Virtual Machine.</h2><p>QEMU parameters for serial number</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-serial.png   alt="QEMU parameters for serial number" height="687" width="934"></a><figcaption class="image-caption">Serial number parameters in the QEMU parameter settings in the Virtual Machine.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-serial_hu15652195365212503705.png" title="QEMU parameters for serial number" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-serial_hu15652195365212503705.png" data-sub-html="<h2>Serial number parameters in the QEMU parameter settings in the Virtual Machine.</h2><p>QEMU parameters for serial number</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-serial_hu15652195365212503705.png   alt="QEMU parameters for serial number"  ></a><figcaption class="image-caption">Serial number parameters in the QEMU parameter settings in the Virtual Machine.</figcaption>
 </figure>
 
 </p>
@@ -965,12 +965,12 @@
     <div class="details-content">
         <div class="admonition-content">I didn&rsquo;t record audio with the video so just hum some royalty free music to yourself.</div></div></div>
 <p>We can see now that as the device has a serial number, the PowerShell script can successfully capture the hardware hash and upload this to Microsoft Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-sync.png" title="Windows Autopilot device upload" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-sync.png" data-sub-html="<h2>Completed synchronisation of a new Windows Autopilot device.</h2><p>Windows Autopilot device upload</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-sync.png   alt="Windows Autopilot device upload" height="833" width="1051"></a><figcaption class="image-caption">Completed synchronisation of a new Windows Autopilot device.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-sync_hu18244896920428267174.png" title="Windows Autopilot device upload" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-sync_hu18244896920428267174.png" data-sub-html="<h2>Completed synchronisation of a new Windows Autopilot device.</h2><p>Windows Autopilot device upload</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-sync_hu18244896920428267174.png   alt="Windows Autopilot device upload"  ></a><figcaption class="image-caption">Completed synchronisation of a new Windows Autopilot device.</figcaption>
 </figure>
 
 </p>
 <p>We can check the progress of the upload in Microsoft Intune, so navigate to <strong>Devices &gt; Enrollment</strong> and under the <strong>Windows Autopilot</strong> heading select <strong>Devices</strong>, and we should now see our newly uploaded device:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-autopilot.png" title="Windows Autopilot Devices" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-autopilot.png" data-sub-html="<h2>Windows Autopilot Devices in Microsoft Intune.</h2><p>Windows Autopilot Devices</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-autopilot.png   alt="Windows Autopilot Devices" height="982" width="2580"></a><figcaption class="image-caption">Windows Autopilot Devices in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-autopilot_hu11928936784754943434.png" title="Windows Autopilot Devices" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-autopilot_hu11928936784754943434.png" data-sub-html="<h2>Windows Autopilot Devices in Microsoft Intune.</h2><p>Windows Autopilot Devices</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-autopilot_hu11928936784754943434.png   alt="Windows Autopilot Devices"  ></a><figcaption class="image-caption">Windows Autopilot Devices in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
@@ -1072,12 +1072,12 @@
       "><span class="line"><span class="cl"><span class="nb">Get-WindowsAutopilotInfoCommunity</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-Online</span> <span class="n">-GroupTag</span> <span class="n">Entra</span></span></span></code></pre>
 </div>
 <p>But I didn&rsquo;t, so assigning that Group Tag now will allow for a Deployment Profile to be assigned:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-grouptag.png" title="Windows Autopilot Group Tag" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-grouptag.png" data-sub-html="<h2>Windows Autopilot devices with Group Tag and profile assigned in Microsoft Intune.</h2><p>Windows Autopilot Group Tag</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-grouptag.png   alt="Windows Autopilot Group Tag" height="638" width="1000"></a><figcaption class="image-caption">Windows Autopilot devices with Group Tag and profile assigned in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-grouptag_hu3622077303872004163.png" title="Windows Autopilot Group Tag" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-grouptag_hu3622077303872004163.png" data-sub-html="<h2>Windows Autopilot devices with Group Tag and profile assigned in Microsoft Intune.</h2><p>Windows Autopilot Group Tag</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-grouptag_hu3622077303872004163.png   alt="Windows Autopilot Group Tag"  ></a><figcaption class="image-caption">Windows Autopilot devices with Group Tag and profile assigned in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>We can now restart our Windows 11 device, and low and behold it&rsquo;s ready to start the Windows Autopilot deployment process:</p>
-<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-deploy.png" title="Windows Autopilot Deployment" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-deploy.png" data-sub-html="<h2>Virtual Machine starting the Windows Autopilot Deployment.</h2><p>Windows Autopilot Deployment</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-deploy.png   alt="Windows Autopilot Deployment" height="768" width="1025"></a><figcaption class="image-caption">Virtual Machine starting the Windows Autopilot Deployment.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/macos-windows-autopilot-utm/img/macutm-deploy_hu5605228328850963669.png" title="Windows Autopilot Deployment" data-thumbnail="/posts/macos-windows-autopilot-utm/img/macutm-deploy_hu5605228328850963669.png" data-sub-html="<h2>Virtual Machine starting the Windows Autopilot Deployment.</h2><p>Windows Autopilot Deployment</p>"><img  loading="lazy" src=/posts/macos-windows-autopilot-utm/img/macutm-deploy_hu5605228328850963669.png   alt="Windows Autopilot Deployment"  ></a><figcaption class="image-caption">Virtual Machine starting the Windows Autopilot Deployment.</figcaption>
 </figure>
 
 </p>

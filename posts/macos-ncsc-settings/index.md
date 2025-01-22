@@ -29,7 +29,7 @@ This one is pretty definite in what it wants.
 
 Sadly, there isn't an option in Microsoft Intune to enforce this setting, but we can achieve this using a custom profile and generated mobileconfig file.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/deferUpdates.mobileconfig" type="XML" >}}
+{{< codeimporter title="deferUpdates.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/deferUpdates.mobileconfig" type="XML" >}}
 
 ### Fast User Switching and Automatic Logon
 
@@ -44,7 +44,7 @@ From the NCSC documentation:
 
 I wish they would stick with either 'Enable' or 'Disable', the mixture is headache inducing. However, mobileconfig file to the rescue.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/logonSettings.mobileconfig" type="XML" >}}
+{{< codeimporter title="logonSettings.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/logonSettings.mobileconfig" type="XML" >}}
 
 ### Hiding System Preferences
 
@@ -58,7 +58,7 @@ From the NCSC documentation:
 
 Now you *could* flat out disable them, but remember, NCSC is a guideline, so we're just going to hide them instead...
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/hideSystemPrefs.mobileconfig" type="XML" >}}
+{{< codeimporter title="hideSystemPrefs.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/hideSystemPrefs.mobileconfig" type="XML" >}}
 
 ### Time Servers
 
@@ -74,7 +74,7 @@ See what I mean about it being complicated, thanks NCSC.
 
 Anyway, here's the mobileconfig file setting the time servers to be `time.euro.apple.com` if you're in Europe obviously.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/timeServers.mobileconfig" type="XML" >}}
+{{< codeimporter title="timeServers.mobileconfig" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Configuration/NCSC/macOS/timeServers.mobileconfig" type="XML" >}}
 
 ### Creating Custom Configuration Profiles
 

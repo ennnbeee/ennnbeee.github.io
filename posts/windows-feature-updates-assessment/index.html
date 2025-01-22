@@ -241,7 +241,7 @@
 </ul>
 <p>Using the data within the report to tag devices with their update risk score, hopefully making that move to Windows 11 a little smoother and without incident.</p>
 <p>What happens to your devices that haven&rsquo;t sent their precious readiness data to Microsoft for <del>snooping</del> processing, or those devices with results that have changed from say <a href="https://learn.microsoft.com/en-us/mem/intune/protect/windows-update-compatibility-reports#use-the-windows-feature-update-device-readiness-report:~:text=following%20applies%20to-,Readiness%20status,-%3A" target="_blank" rel="noopener noreferrer">High to Low risk</a>, or the devices that are marked as Unknown by the report because the data hasn&rsquo;t been sent yet?</p>
-<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-report.png" title="Feature Update Readiness Report" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-report.png" data-sub-html="<h2>Windows 11 Feature Update Readiness report.</h2><p>Feature Update Readiness Report</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-report.png   alt="Feature Update Readiness Report" height="344" width="1144"></a><figcaption class="image-caption">Windows 11 Feature Update Readiness report.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-report_hu2672335862271116624.png" title="Feature Update Readiness Report" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-report_hu2672335862271116624.png" data-sub-html="<h2>Windows 11 Feature Update Readiness report.</h2><p>Feature Update Readiness Report</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-report_hu2672335862271116624.png   alt="Feature Update Readiness Report"  ></a><figcaption class="image-caption">Windows 11 Feature Update Readiness report.</figcaption>
 </figure>
 
 </p>
@@ -249,7 +249,7 @@
 <p>Sure we can.</p>
 <h2 id="microsoft-compatibility-appraiser" class="headerLink">
     <a href="#microsoft-compatibility-appraiser" class="header-mark"></a>1 Microsoft Compatibility Appraiser</h2><p>Before we start fiddling (ahem) with settings on devices to get them to send their data to Microsoft, we need an understanding of where the Feature Update Readiness data is stored on the device&hellip;</p>
-<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-reg23H2.png" title="Feature Update Readiness settings" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-reg23H2.png" data-sub-html="<h2>App Compatibility Registry settings.</h2><p>Feature Update Readiness settings</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-reg23H2.png   alt="Feature Update Readiness settings" height="690" width="1033"></a><figcaption class="image-caption">App Compatibility Registry settings.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-reg23H2_hu2418910247565212877.png" title="Feature Update Readiness settings" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-reg23H2_hu2418910247565212877.png" data-sub-html="<h2>App Compatibility Registry settings.</h2><p>Feature Update Readiness settings</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-reg23H2_hu2418910247565212877.png   alt="Feature Update Readiness settings"  ></a><figcaption class="image-caption">App Compatibility Registry settings.</figcaption>
 </figure>
 
 </p>
@@ -595,7 +595,7 @@
     <div class="details-content">
         <div class="admonition-content">Depending on your Remediation script schedule will depend on the value of this variable, you don&rsquo;t want remediations running indefinitely.</div></div></div>
 <p>If you&rsquo;re running this every seven days for example, you want to set <code>$schedule = 168</code>, so the remediation will only run if the App Compatibility tool hasn&rsquo;t run in the last seven days (7 x 24 = 168), more <a href="https://www.youtube.com/watch?v=M3ujv8xdK2w" target="_blank" rel="noopener noreferrer">quick maths</a>.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-schedule.png" title="Feature Update Readiness Remediation Schedule " data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-schedule.png" data-sub-html="<h2>App Compatibility Remediation Script schedule in Intune.</h2><p>Feature Update Readiness Remediation Schedule </p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-schedule.png   alt="Feature Update Readiness Remediation Schedule " height="340" width="310"></a><figcaption class="image-caption">App Compatibility Remediation Script schedule in Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-schedule_hu10196894247133464088.png" title="Feature Update Readiness Remediation Schedule " data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-schedule_hu10196894247133464088.png" data-sub-html="<h2>App Compatibility Remediation Script schedule in Intune.</h2><p>Feature Update Readiness Remediation Schedule </p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-schedule_hu10196894247133464088.png   alt="Feature Update Readiness Remediation Schedule "  ></a><figcaption class="image-caption">App Compatibility Remediation Script schedule in Intune.</figcaption>
 </figure>
 
 </p>
@@ -644,7 +644,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">PowerShell</p>
+      <p class="tw-select-none !tw-my-1">Check-FeatureUpdateAppraisal-Detection.ps1</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -953,7 +953,7 @@
       <span></span>
     </video>
 <p>And all being well, the App Compatibility tool will have run successfully, and the registry will be populated with the report information we so desperately need:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-reg24H2.png" title="Feature Update Readiness settings" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-reg24H2.png" data-sub-html="<h2>App Compatibility Registry settings.</h2><p>Feature Update Readiness settings</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-reg24H2.png   alt="Feature Update Readiness settings" height="626" width="1075"></a><figcaption class="image-caption">App Compatibility Registry settings.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-reg24H2_hu10231845447271998701.png" title="Feature Update Readiness settings" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-reg24H2_hu10231845447271998701.png" data-sub-html="<h2>App Compatibility Registry settings.</h2><p>Feature Update Readiness settings</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-reg24H2_hu10231845447271998701.png   alt="Feature Update Readiness settings"  ></a><figcaption class="image-caption">App Compatibility Registry settings.</figcaption>
 </figure>
 
 </p>
@@ -1002,7 +1002,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
 
     <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">PowerShell</p>
+      <p class="tw-select-none !tw-my-1">Check-FeatureUpdateAppraisal-Remediation.ps1</p>
     </div>
     <div class="tw-flex">
       <button 
@@ -1098,13 +1098,13 @@
 <p>So if the detection identifies either that the key doesn&rsquo;t exist, or if the last time the App Compatibility tool was run is outside of your schedule, it will kick off the tool to run and evaluate the Feature Updates it has available.</p>
 <h2 id="deployment" class="headerLink">
     <a href="#deployment" class="header-mark"></a>3 Deployment</h2><p>You should be using remediation scripts in Intune already, so go and create one using the <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/tree/main/Intune/Remediation/FeatureUpdateAppraisal" target="_blank" rel="noopener noreferrer">two provided scripts</a> after updating the variables in the detection script, with it looking something like this:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-intune.png" title="Feature Update Readiness remediation" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-intune.png" data-sub-html="<h2>Feature Update remediation script settings in Intune.</h2><p>Feature Update Readiness remediation</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-intune.png   alt="Feature Update Readiness remediation" height="632" width="806"></a><figcaption class="image-caption">Feature Update remediation script settings in Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-intune_hu10273177460541838803.png" title="Feature Update Readiness remediation" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-intune_hu10273177460541838803.png" data-sub-html="<h2>Feature Update remediation script settings in Intune.</h2><p>Feature Update Readiness remediation</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-intune_hu10273177460541838803.png   alt="Feature Update Readiness remediation"  ></a><figcaption class="image-caption">Feature Update remediation script settings in Intune.</figcaption>
 </figure>
 
 </p>
 <p>With whatever schedule you&rsquo;ve decided and updated the <code>$schedule</code> variable in the detection script to, in this example it&rsquo;s once daily i.e., 24 hours.</p>
 <p>If you&rsquo;re lucky your devices will then start checking to see the last time the tool was run, and kick off a new run if needed.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-result.png" title="Feature Update Readiness Remediation Report" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-result.png" data-sub-html="<h2>Feature Update remediation report status.</h2><p>Feature Update Readiness Remediation Report</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-result.png   alt="Feature Update Readiness Remediation Report" height="215" width="948"></a><figcaption class="image-caption">Feature Update remediation report status.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-feature-updates-assessment/img/fu-result_hu4953534107867494066.png" title="Feature Update Readiness Remediation Report" data-thumbnail="/posts/windows-feature-updates-assessment/img/fu-result_hu4953534107867494066.png" data-sub-html="<h2>Feature Update remediation report status.</h2><p>Feature Update Readiness Remediation Report</p>"><img  loading="lazy" src=/posts/windows-feature-updates-assessment/img/fu-result_hu4953534107867494066.png   alt="Feature Update Readiness Remediation Report"  ></a><figcaption class="image-caption">Feature Update remediation report status.</figcaption>
 </figure>
 
 </p>

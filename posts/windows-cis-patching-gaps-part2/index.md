@@ -51,13 +51,13 @@ The detection script will look for the **AutoAdminLogon** string value, and if i
 
 {{< fa-icon brands windows >}} *CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1_Detection.ps1*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/CIS/L1/CIS%20(L1)%20Section%203.5.1%20-%20Windows%2011%20Intune%203.0.1_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1_Detection.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/CIS/L1/CIS%20(L1)%20Section%203.5.1%20-%20Windows%2011%20Intune%203.0.1_Detection.ps1" type="PowerShell" >}}
 
 With the remediation configured to create the **AutoAdminLogon** if required, and set it to **0**, to disable this option:
 
 {{< fa-icon brands windows >}} *CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1_Remediation.ps1*
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/CIS/L1/CIS%20(L1)%20Section%203.5.1%20-%20Windows%2011%20Intune%203.0.1_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L1) Section 3.5.1 - Windows 11 Intune 3.0.1_Remediation.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/CIS/L1/CIS%20(L1)%20Section%203.5.1%20-%20Windows%2011%20Intune%203.0.1_Remediation.ps1" type="PowerShell" >}}
 
 Deploying this to a group of users in Microsoft Intune, with settings similar to the below, with a suitable evaluation schedule:
 

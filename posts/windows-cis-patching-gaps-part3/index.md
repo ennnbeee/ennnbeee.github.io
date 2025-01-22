@@ -141,7 +141,7 @@ We can create a PowerShell script to create the six, (yes I said six), registry 
 
 {{< fa-icon brands windows >}} *CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1*
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/PlatformScripts/PowerShell/CIS/L1/CIS%20(L1)%20Windows%20Pro%20Settings%20-%20Windows%2011%20Intune%203.0.1.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L1) Windows Pro Settings - Windows 11 Intune 3.0.1.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/PlatformScripts/PowerShell/CIS/L1/CIS%20(L1)%20Windows%20Pro%20Settings%20-%20Windows%2011%20Intune%203.0.1.ps1" type="PowerShell" >}}
 
 Sadly, the **Allow Spotlight Collection** setting, only exists in the [HKCU](https://admx.help/?Category=Windows_11_2022&Policy=Microsoft.Policies.CloudContent::DisableSpotlightCollectionOnDesktop) part of the registry, and sits under the **HKCU:\Software\Policies** key which standard users don't have access to write to. So we don't have a way to create this new item using PowerShell and Platform Scripts natively.
 
@@ -392,13 +392,13 @@ A quick modification to the existing script, to use some logic round how many of
 
 {{< fa-icon brands windows >}} *CIS (L1) System Services - Windows 11 Intune 3.0.1_Detection.ps1*
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L1/CIS (L1) System Services - Windows 11 Intune 3.0.1_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L1) System Services - Windows 11 Intune 3.0.1_Detection.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L1/CIS (L1) System Services - Windows 11 Intune 3.0.1_Detection.ps1" type="PowerShell" >}}
 
 Then a simple remediation script to loop through each service and disable it:
 
 {{< fa-icon brands windows >}} *CIS (L1) System Services - Windows 11 Intune 3.0.1_Remediation.ps1*
 
-{{< codeimporter url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L1/CIS (L1) System Services - Windows 11 Intune 3.0.1_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="CIS (L1) System Services - Windows 11 Intune 3.0.1_Remediation.ps1" url="https://raw.githubusercontent.com/ennnbeee/oddsandendpoints-scripts/main/Intune/Remediation/CIS/L1/CIS (L1) System Services - Windows 11 Intune 3.0.1_Remediation.ps1" type="PowerShell" >}}
 
 Deployed using Microsoft Intune to your devices:
 

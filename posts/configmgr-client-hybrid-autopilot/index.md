@@ -103,13 +103,13 @@ As I've mentioned {{< reftab href="/posts/hybrid-join-computer-rename-again/#pro
 
 As with all Proactive Remediation scripts, we need a method to detect, which is run initially upon assessment, and subsequently after remediation. A standard check, fix, check situation. For the detection method, we're looking for both the Registry Key and the item.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/Co-ManagementAuthority/Override_Co-Canagement_Detection.ps1" type="PowerShell" >}}
+{{< codeimporter title="Override_Co-Management_Detection.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/Co-ManagementAuthority/Override_Co-Management_Detection.ps1" type="PowerShell" >}}
 
 #### Remediation Script
 
 If either the Key or the Data are not detected, we have a Remediation script that configures either the Key and the Data, or just the Data.
 
-{{< codeimporter url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/Co-ManagementAuthority/Override_Co-Canagement_Remediation.ps1" type="PowerShell" >}}
+{{< codeimporter title="Override_Co-Management_Remediation.ps1" url="https://github.com/ennnbeee/oddsandendpoints-scripts/raw/main/Intune/Remediation/Co-ManagementAuthority/Override_Co-Management_Remediation.ps1" type="PowerShell" >}}
 
 ### Creating a Custom Script
 
