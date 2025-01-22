@@ -3,7 +3,15 @@
         <title>Endpoint Security - Tag - odds&#43;endpoints</title>
         <link>https://www.oddsandendpoints.co.uk/tags/endpoint-security/</link>
         <description>Endpoint Security - Tag - odds&#43;endpoints</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 22 Oct 2024 11:13:46 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/endpoint-security/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Jan 2025 16:39:24 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/endpoint-security/" rel="self" type="application/rss+xml" /><item>
+    <title>BitLocker Recovery Key Rotation Requirements in Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/bitlocker-key-rotation-requirements/</link>
+    <pubDate>Tue, 21 Jan 2025 16:39:24 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/bitlocker-key-rotation-requirements/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/bitlocker-key-rotation-requirements/featured.png" referrerpolicy="no-referrer">
+            </div>What are the actual settings you require to allow for BitLocker recovery key rotation from the Intune console? Which BitLocker profile support the key rotation settings? Are these settings actually documented anywhere? Well yes, they are now.]]></description>
+</item><item>
     <title>Converting AppLocker Policies to Intune Profiles</title>
     <link>https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/</link>
     <pubDate>Tue, 22 Oct 2024 11:13:46 &#43;0100</pubDate><author>
@@ -76,13 +84,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/macos-ncsc-revisited/featured.png" referrerpolicy="no-referrer">
             </div>With the improved support for macOS devices in Microsoft Intune, it&rsquo;s time we revisited how to secure macOS devices aligned the National Cyber Security Centre guidance.]]></description>
-</item><item>
-    <title>Automating Endpoint Privilege Management Policies with PowerShell</title>
-    <link>https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/</link>
-    <pubDate>Thu, 01 Jun 2023 18:58:40 &#43;0100</pubDate><author>
-                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/automate-endpoint-privilege-management/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/posts/automate-endpoint-privilege-management/featured.jpg" referrerpolicy="no-referrer">
-            </div>So you’re interested in Endpoint Privilege Management in Microsoft Intune and in you’re excitement you’ve gone and deployed a new policy to audit using the Reporting Scope options, all elevations across your managed Windows 10 and later devices. Now what?]]></description>
 </item></channel>
 </rss>

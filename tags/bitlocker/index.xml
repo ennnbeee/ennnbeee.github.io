@@ -3,7 +3,15 @@
         <title>BitLocker - Tag - odds&#43;endpoints</title>
         <link>https://www.oddsandendpoints.co.uk/tags/bitlocker/</link>
         <description>BitLocker - Tag - odds&#43;endpoints</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 15 Jun 2024 21:26:37 &#43;0100</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/bitlocker/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Jan 2025 16:39:24 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/bitlocker/" rel="self" type="application/rss+xml" /><item>
+    <title>BitLocker Recovery Key Rotation Requirements in Intune</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/bitlocker-key-rotation-requirements/</link>
+    <pubDate>Tue, 21 Jan 2025 16:39:24 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/bitlocker-key-rotation-requirements/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/bitlocker-key-rotation-requirements/featured.png" referrerpolicy="no-referrer">
+            </div>What are the actual settings you require to allow for BitLocker recovery key rotation from the Intune console? Which BitLocker profile support the key rotation settings? Are these settings actually documented anywhere? Well yes, they are now.]]></description>
+</item><item>
     <title>Patching Gaps in the CIS Windows 11 Benchmark - BitLocker</title>
     <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/</link>
     <pubDate>Sat, 15 Jun 2024 21:26:37 &#43;0100</pubDate><author>
