@@ -1,5 +1,3 @@
-# Algolia-Crawler-Verif: B226A53BEEF2909E
-
 User-agent: MJ12bot
 Disallow: /
 
@@ -58,6 +56,10 @@ User-agent: ZoominfoBot
 Disallow: /
 
 User-agent: *
+Allow: /
+
+# Algolia-Crawler-Verif: B226A53BEEF2909E
+User-agent: Algolia Crawler
 Allow: /
 
 Sitemap: https://www.oddsandendpoints.co.uk/sitemap.xml
