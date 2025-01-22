@@ -463,7 +463,7 @@ broke device certificates and an Always On VPN connection that relied on them as
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-30" 
+    id="codeblock-id-28" 
     class="
       chroma 
       !tw-block 
@@ -829,7 +829,7 @@ broke device certificates and an Always On VPN connection that relied on them as
 </span></span><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;Computer renamed from </span><span class="p">$(</span><span class="nv">$Details</span><span class="p">.</span><span class="n">CsName</span><span class="p">)</span><span class="s2"> to </span><span class="nv">$newName</span><span class="s2">&#34;</span></span></span></code></pre>
 </div>
 <p>This gives the user some notice that the restart is going to happen:</p>
-<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-restart_hu4681013446044115813.webp" title="Restart Prompt" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-restart_hu4681013446044115813.webp" data-sub-html="<h2>Restart notification in Windows.</h2><p>Restart Prompt</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-restart_hu4681013446044115813.webp   alt="Restart Prompt"  ></a><figcaption class="image-caption">Restart notification in Windows.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-restart.webp" title="Restart Prompt" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-restart.webp" data-sub-html="<h2>Restart notification in Windows.</h2><p>Restart Prompt</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-restart.webp   alt="Restart Prompt" height="151" width="364"></a><figcaption class="image-caption">Restart notification in Windows.</figcaption>
 </figure>
 
 </p>
@@ -934,7 +934,7 @@ broke device certificates and an Always On VPN connection that relied on them as
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-31" 
+    id="codeblock-id-30" 
     class="
       chroma 
       !tw-block 
@@ -988,18 +988,18 @@ broke device certificates and an Always On VPN connection that relied on them as
 <h3 id="deployment-in-intune" class="headerLink">
     <a href="#deployment-in-intune" class="header-mark"></a>2.3 Deployment in Intune</h3><p>Throwing ourselves into the safe space that is Intune, go and find the <a href="https://endpoint.microsoft.com/#view/Microsoft_Intune_Enrollment/UXAnalyticsMenu/~/proactiveRemediations" target="_blank" rel="noopener noreferrer">Proactive Remediation</a> section, I&rsquo;ll give you a hint, it&rsquo;s under Reports &gt; Endpoint Analytics.</p>
 <p>Create a new Script Package, selecting and uploading both the detection and remediation scripts as you go, you can get these from <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/tree/main/Intune/Remediation/HDJDeviceRename" target="_blank" rel="noopener noreferrer">GitHub</a>. Make sure you select &lsquo;Run script in 64-bit PowerShell&rsquo; as I couldn&rsquo;t be bothered scripting a check if PowerShell was running in the 64-bit context.</p>
-<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-pa_hu14780736087492626776.webp" title="Proactive Remediation" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-pa_hu14780736087492626776.webp" data-sub-html="<h2>Remediation script in Microsoft Intune.</h2><p>Proactive Remediation</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-pa_hu14780736087492626776.webp   alt="Proactive Remediation"  ></a><figcaption class="image-caption">Remediation script in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-pa.webp" title="Proactive Remediation" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-pa.webp" data-sub-html="<h2>Remediation script in Microsoft Intune.</h2><p>Proactive Remediation</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-pa.webp   alt="Proactive Remediation" height="646" width="824"></a><figcaption class="image-caption">Remediation script in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>Go ahead and assign this to a test group of devices, or if you&rsquo;re brave or don&rsquo;t care about testing, all devices with a <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Device Filter</a>, giving the assignment a schedule; I&rsquo;ve gone with daily repeating every day, but amend this to your environment requirements:</p>
-<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule_hu15069417666629574832.webp" title="Proactive Remediation Schedule" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule_hu15069417666629574832.webp" data-sub-html="<h2>Remediation schedule in Microsoft Intune.</h2><p>Proactive Remediation Schedule</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule_hu15069417666629574832.webp   alt="Proactive Remediation Schedule"  ></a><figcaption class="image-caption">Remediation schedule in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule.webp" title="Proactive Remediation Schedule" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule.webp" data-sub-html="<h2>Remediation schedule in Microsoft Intune.</h2><p>Proactive Remediation Schedule</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-paschedule.webp   alt="Proactive Remediation Schedule" height="332" width="306"></a><figcaption class="image-caption">Remediation schedule in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>Now we have to sit back and wait for devices to receive the script package, execute it, and where applicable remediate.</p>
 <p>When the devices do check in, you will be able to see the results in Intune under the Device Status, make sure you&rsquo;ve added both the &lsquo;Pre-remediation detection output&rsquo; and &lsquo;Post-remediation detection output&rsquo;:</p>
-<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult_hu11650489678291859178.webp" title="Proactive Remediation Results" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult_hu11650489678291859178.webp" data-sub-html="<h2>Remediation results in Microsoft Intune.</h2><p>Proactive Remediation Results</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult_hu11650489678291859178.webp   alt="Proactive Remediation Results"  ></a><figcaption class="image-caption">Remediation results in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult.webp" title="Proactive Remediation Results" data-thumbnail="/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult.webp" data-sub-html="<h2>Remediation results in Microsoft Intune.</h2><p>Proactive Remediation Results</p>"><img  loading="lazy" src=/posts/hybrid-join-computer-rename-again/img/computer-rename-paresult.webp   alt="Proactive Remediation Results" height="166" width="1083"></a><figcaption class="image-caption">Remediation results in Microsoft Intune.</figcaption>
 </figure>
 
 </p>

@@ -231,7 +231,7 @@
 <p>Guess what? There are.</p>
 <h2 id="renaming-devices" class="headerLink">
     <a href="#renaming-devices" class="header-mark"></a>1 Renaming Devices</h2><p>I&rsquo;ll be frank, this method is misaligned to good practice (which is nice way of saying, <em>&ldquo;janky&rdquo;</em>), but until there is a way to do this in Microsoft Intune within the device preparation policy itself, and you still care about naming your devices and not just leaving users to decide their device names on Windows Pro devices at least&hellip;</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-nameprompt_hu10753744247253198653.png" title="User based device naming" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-nameprompt_hu10753744247253198653.png" data-sub-html="<h2>Windows Autopilot Device Name prompt.</h2><p>User based device naming</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-nameprompt_hu10753744247253198653.png   alt="User based device naming"  ></a><figcaption class="image-caption">Windows Autopilot Device Name prompt.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-nameprompt.png" title="User based device naming" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-nameprompt.png" data-sub-html="<h2>Windows Autopilot Device Name prompt.</h2><p>User based device naming</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-nameprompt.png   alt="User based device naming" height="765" width="1019"></a><figcaption class="image-caption">Windows Autopilot Device Name prompt.</figcaption>
 </figure>
 
 </p>
@@ -248,7 +248,7 @@
   <p>We recommend using <code>%SERIAL%</code> or <code>%RAND:x%</code> with a high character limit to reduce the chance of name collision when generating a random name. This feature doesn&rsquo;t check if a particular name is already present in the environment.</p>
 
 </blockquote><p>So when configuring our device name, we can utilise a prefix and a variable such as <strong>ENB-%SERIAL%</strong> to hope there are no device name clashes:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-dnscomputername_hu15140608786770058288.png" title="DNSComputerName Settings" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-dnscomputername_hu15140608786770058288.png" data-sub-html="<h2>Setting the device name using DNSComputerName in Microsoft Intune.</h2><p>DNSComputerName Settings</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-dnscomputername_hu15140608786770058288.png   alt="DNSComputerName Settings"  ></a><figcaption class="image-caption">Setting the device name using DNSComputerName in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-dnscomputername.png" title="DNSComputerName Settings" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-dnscomputername.png" data-sub-html="<h2>Setting the device name using DNSComputerName in Microsoft Intune.</h2><p>DNSComputerName Settings</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-dnscomputername.png   alt="DNSComputerName Settings" height="456" width="579"></a><figcaption class="image-caption">Setting the device name using DNSComputerName in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
@@ -331,12 +331,12 @@
     <div class="details-content">
         <div class="admonition-content">I picked <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-deviceguard#enablevirtualizationbasedsecurity" target="_blank" rel="noopener noreferrer">EnableVirtualizationBasedSecurity</a> but you can select any in the document, they all cause some type of restart during OOBE.</div></div></div>
 <p>Making sure to assign this new profile to the same <a href="https://learn.microsoft.com/en-us/autopilot/device-preparation/tutorial/user-driven/entra-join-device-group" target="_blank" rel="noopener noreferrer">group of devices</a> used in your APDP (<em>is this really any better than APv2?</em>) policy:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-apdpgroup_hu7754554625097907112.png" title="APDP Policy Group" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-apdpgroup_hu7754554625097907112.png" data-sub-html="<h2>Windows Autopilot Device Preparation Policy device group assignment.</h2><p>APDP Policy Group</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-apdpgroup_hu7754554625097907112.png   alt="APDP Policy Group"  ></a><figcaption class="image-caption">Windows Autopilot Device Preparation Policy device group assignment.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-apdpgroup.png" title="APDP Policy Group" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-apdpgroup.png" data-sub-html="<h2>Windows Autopilot Device Preparation Policy device group assignment.</h2><p>APDP Policy Group</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-apdpgroup.png   alt="APDP Policy Group" height="581" width="825"></a><figcaption class="image-caption">Windows Autopilot Device Preparation Policy device group assignment.</figcaption>
 </figure>
 
 </p>
 <p>If you like screenshots of Microsoft Intune, here&rsquo;s another one for you, this time of the Custom Profile:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-apdpcustom_hu13371017110228224037.png" title="APDP Custom Profile" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-apdpcustom_hu13371017110228224037.png" data-sub-html="<h2>Windows Autopilot Device Preparation rename policy assignment.</h2><p>APDP Custom Profile</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-apdpcustom_hu13371017110228224037.png   alt="APDP Custom Profile"  ></a><figcaption class="image-caption">Windows Autopilot Device Preparation rename policy assignment.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-apdpcustom.png" title="APDP Custom Profile" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-apdpcustom.png" data-sub-html="<h2>Windows Autopilot Device Preparation rename policy assignment.</h2><p>APDP Custom Profile</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-apdpcustom.png   alt="APDP Custom Profile" height="655" width="815"></a><figcaption class="image-caption">Windows Autopilot Device Preparation rename policy assignment.</figcaption>
 </figure>
 
 </p>
@@ -347,7 +347,7 @@
       <span></span>
     </video>
 <p>Although the device itself is now happily renamed, Microsoft Intune is being a little whinge about the assignment of the profile:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-dnsnameerror_hu14731528895912433361.png" title="DNSComputerName Error" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-dnsnameerror_hu14731528895912433361.png" data-sub-html="<h2>Profile assignment errors in Microsoft Intune for DNSComputerName.</h2><p>DNSComputerName Error</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-dnsnameerror_hu14731528895912433361.png   alt="DNSComputerName Error"  ></a><figcaption class="image-caption">Profile assignment errors in Microsoft Intune for DNSComputerName.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-autopilot-v2-renaming/img/apv2-dnsnameerror.png" title="DNSComputerName Error" data-thumbnail="/posts/windows-autopilot-v2-renaming/img/apv2-dnsnameerror.png" data-sub-html="<h2>Profile assignment errors in Microsoft Intune for DNSComputerName.</h2><p>DNSComputerName Error</p>"><img  loading="lazy" src=/posts/windows-autopilot-v2-renaming/img/apv2-dnsnameerror.png   alt="DNSComputerName Error" height="340" width="1013"></a><figcaption class="image-caption">Profile assignment errors in Microsoft Intune for DNSComputerName.</figcaption>
 </figure>
 
 </p>

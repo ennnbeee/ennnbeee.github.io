@@ -262,7 +262,7 @@
 <p>Right, onto the fruits of <del>my</del> our labour.</p>
 <h2 id="cis-level-1-settings" class="headerLink">
     <a href="#cis-level-1-settings" class="header-mark"></a>1 CIS Level 1 Settings</h2><p>We already have a grasp of the settings that cause problems with Windows Autopilot, so we can start to try and find solutions to the discovered issues, all without reducing the overall security of the Windows 11 operating system <em>too</em> much 🤐.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-import_hu15346090718728646397.png" title="CIS Level 1 Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-import_hu15346090718728646397.png" data-sub-html="<h2>CIS Level 1 settings in Microsoft Intune.</h2><p>CIS Level 1 Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-import_hu15346090718728646397.png   alt="CIS Level 1 Settings"  ></a><figcaption class="image-caption">CIS Level 1 settings in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-import.png" title="CIS Level 1 Settings" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-import.png" data-sub-html="<h2>CIS Level 1 settings in Microsoft Intune.</h2><p>CIS Level 1 Settings</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-import.png   alt="CIS Level 1 Settings" height="710" width="1046"></a><figcaption class="image-caption">CIS Level 1 settings in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
@@ -292,7 +292,7 @@
   </table>
 </div>
 <p>The above configuration, will bin out the <a href="https://learn.microsoft.com/en-us/autopilot/enrollment-status" target="_blank" rel="noopener noreferrer">Enrolment Status Page</a>, reboot, and leave you with a Windows Autopilot device at a logon screen with the <strong>defaultuser0</strong> being your only option for sign in, and pretty much nothing from Microsoft Intune applied to it:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-defaultuser0_hu14304193016770801673.png" title="defaultuser0" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-defaultuser0_hu14304193016770801673.png" data-sub-html="<h2>Windows logon screen with the defaultuser0 logon prompt.</h2><p>defaultuser0</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-defaultuser0_hu14304193016770801673.png   alt="defaultuser0"  ></a><figcaption class="image-caption">Windows logon screen with the defaultuser0 logon prompt.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-defaultuser0.png" title="defaultuser0" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-defaultuser0.png" data-sub-html="<h2>Windows logon screen with the defaultuser0 logon prompt.</h2><p>defaultuser0</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-defaultuser0.png   alt="defaultuser0" height="760" width="1016"></a><figcaption class="image-caption">Windows logon screen with the defaultuser0 logon prompt.</figcaption>
 </figure>
 
 </p>
@@ -307,7 +307,7 @@
     <div class="details-content">
         <div class="admonition-content">As pointed out in the comments, the Policy CSP documentation is a little vague around supported operating system versions, so we&rsquo;ve found an alternative way to meet this requirement without breaking Windows Autopilot deployments.</div></div></div>
 <p>Instead of attempting to using Microsoft Intune native configuration, we can lean on the <a href="https://admx.help/?Category=security-compliance-toolkit&amp;Policy=Microsoft.Policies.MSS::Pol_MSS_AutoAdminLogon" target="_blank" rel="noopener noreferrer">registry setting</a> to configure this CIS level 1 requirement:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-aalreg_hu12562281672830800240.png" title="AutoAdminLogon Registry Setting" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-aalreg_hu12562281672830800240.png" data-sub-html="<h2>AutoAdminLogon registry setting reference.</h2><p>AutoAdminLogon Registry Setting</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-aalreg_hu12562281672830800240.png   alt="AutoAdminLogon Registry Setting"  ></a><figcaption class="image-caption">AutoAdminLogon registry setting reference.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-aalreg.png" title="AutoAdminLogon Registry Setting" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-aalreg.png" data-sub-html="<h2>AutoAdminLogon registry setting reference.</h2><p>AutoAdminLogon Registry Setting</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-aalreg.png   alt="AutoAdminLogon Registry Setting" height="232" width="800"></a><figcaption class="image-caption">AutoAdminLogon registry setting reference.</figcaption>
 </figure>
 
 </p>
@@ -612,7 +612,7 @@
 
 
 <p>Deploying this to a group of users in Microsoft Intune, with settings similar to the below, with a suitable evaluation schedule:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation_hu9273312627668939110.png" title="CIS Level 1 AutoAdminLogon Remediation" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation_hu9273312627668939110.png" data-sub-html="<h2>CIS Level 1 AutoAdminLogon remediation in Microsoft Intune.</h2><p>CIS Level 1 AutoAdminLogon Remediation</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation_hu9273312627668939110.png   alt="CIS Level 1 AutoAdminLogon Remediation"  ></a><figcaption class="image-caption">CIS Level 1 AutoAdminLogon remediation in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation.png" title="CIS Level 1 AutoAdminLogon Remediation" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation.png" data-sub-html="<h2>CIS Level 1 AutoAdminLogon remediation in Microsoft Intune.</h2><p>CIS Level 1 AutoAdminLogon Remediation</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-l1remediation.png   alt="CIS Level 1 AutoAdminLogon Remediation" height="697" width="1000"></a><figcaption class="image-caption">CIS Level 1 AutoAdminLogon remediation in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
@@ -682,7 +682,7 @@
   </table>
 </div>
 <p>Don&rsquo;t forget to actually configure these settings, unlike in the CIS profiles where they&rsquo;re just set to <strong>Test test test</strong> 😂:</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-logonmessage_hu10269599685675134656.png" title="Logon Message" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-logonmessage_hu10269599685675134656.png" data-sub-html="<h2>Windows logon message setting in Microsoft Intune.</h2><p>Logon Message</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-logonmessage_hu10269599685675134656.png   alt="Logon Message"  ></a><figcaption class="image-caption">Windows logon message setting in Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-logonmessage.png" title="Logon Message" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-logonmessage.png" data-sub-html="<h2>Windows logon message setting in Microsoft Intune.</h2><p>Logon Message</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-logonmessage.png   alt="Logon Message" height="286" width="527"></a><figcaption class="image-caption">Windows logon message setting in Microsoft Intune.</figcaption>
 </figure>
 
 </p>
@@ -764,7 +764,7 @@
 <p>With a user deploying their own device, they&rsquo;re asked to connect to a wireless network (who has network cables in their own house? Jonathan apparently 😅) before starting Windows Autopilot, so this network will now be available at logon, and no need to select a new one.</p>
 <p>With pre-provisioned deployments, only the network that was connected to during deployment, and/or wireless or wired networks deployed to the device from Microsoft Intune are available to connect to from the logon screen.</p>
 <p>Meaning if you build devices on-premises, and then give them to end-users to take home, with the setting above, they won&rsquo;t be able to connect to a new network from the logon screen.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-networkui_hu4834996915510705900.png" title="Missing Network Logon Option" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-networkui_hu4834996915510705900.png" data-sub-html="<h2>Windows logon screen with the no network logon prompt.</h2><p>Missing Network Logon Option</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-networkui_hu4834996915510705900.png   alt="Missing Network Logon Option"  ></a><figcaption class="image-caption">Windows logon screen with the no network logon prompt.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-networkui.png" title="Missing Network Logon Option" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-networkui.png" data-sub-html="<h2>Windows logon screen with the no network logon prompt.</h2><p>Missing Network Logon Option</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-networkui.png   alt="Missing Network Logon Option" height="80" width="400"></a><figcaption class="image-caption">Windows logon screen with the no network logon prompt.</figcaption>
 </figure>
 
 </p>
@@ -835,7 +835,7 @@
   </table>
 </div>
 <p>You haven&rsquo;t configured additional settings somewhere else that will impact the use of Windows Hello have you CIS?</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-whfb_hu5260663581258938993.png" title="Windows Hello" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-whfb_hu5260663581258938993.png" data-sub-html="<h2>Account options in Windows 11 unable to configure Windows Hello PIN.</h2><p>Windows Hello</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-whfb_hu5260663581258938993.png   alt="Windows Hello"  ></a><figcaption class="image-caption">Account options in Windows 11 unable to configure Windows Hello PIN.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-whfb.png" title="Windows Hello" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-whfb.png" data-sub-html="<h2>Account options in Windows 11 unable to configure Windows Hello PIN.</h2><p>Windows Hello</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-whfb.png   alt="Windows Hello" height="658" width="1052"></a><figcaption class="image-caption">Account options in Windows 11 unable to configure Windows Hello PIN.</figcaption>
 </figure>
 
 </p>
@@ -864,7 +864,7 @@
 <p>As pointed out in the comments, this isn&rsquo;t strictly true; although <strong>Windows Hello</strong> and <strong>Windows Hello for Business</strong> share the same &ldquo;Windows Hello&rdquo; family name, they aren&rsquo;t actually related, sort of like a <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/#the-difference-between-windows-hello-and-windows-hello-for-business" target="_blank" rel="noopener noreferrer">step-brother</a> 👀 setup.</p>
 <p>So although the above setting will stop a user from setting up a PIN in the more traditional sense, it will not stop the Windows Hello for Business configuration from applying.</p>
 <p>Be aware though, there are settings in the <strong>CIS (L1) Device Lock &amp; WHFB - Windows 11 Intune 3.0.1</strong> profile, that will impact the configuration of Windows Hello if you don&rsquo;t have a policy in place to require PIN complexity settings.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-devicelock_hu157911377142368245.png" title="Device Lock Warning" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-devicelock_hu157911377142368245.png" data-sub-html="<h2>CIS Benchmark Device Lock Warning.</h2><p>Device Lock Warning</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-devicelock_hu157911377142368245.png   alt="Device Lock Warning"  ></a><figcaption class="image-caption">CIS Benchmark Device Lock Warning.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part2/img/cis-devicelock.png" title="Device Lock Warning" data-thumbnail="/posts/windows-cis-patching-gaps-part2/img/cis-devicelock.png" data-sub-html="<h2>CIS Benchmark Device Lock Warning.</h2><p>Device Lock Warning</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part2/img/cis-devicelock.png   alt="Device Lock Warning" height="260" width="800"></a><figcaption class="image-caption">CIS Benchmark Device Lock Warning.</figcaption>
 </figure>
 
 </p>

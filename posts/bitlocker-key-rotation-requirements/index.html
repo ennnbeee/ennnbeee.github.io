@@ -243,7 +243,7 @@
 <p>This hasn&rsquo;t made the translation of settings between policies particularly easy, especially if you&rsquo;ve been keeping up with the <del>Kardashians</del> Joneses, and moving all your profiles to Settings Catalog backed policies like a good little Intune engineer.</p>
 <h2 id="key-rotation-issues" class="headerLink">
     <a href="#key-rotation-issues" class="header-mark"></a>1 Key Rotation Issues</h2><p>What do we actually need though to allow for successful BitLocker key rotation in each of these policy types, and what settings do we need to avoid <strong>Event ID 858</strong> errors in the <strong>BitLocker-API</strong> event log like the below when attempting to rotate the key?</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-error858_hu11553923512470859671.png" title="BitLocker Key Rotation Error" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-error858_hu11553923512470859671.png" data-sub-html="<h2>Screenshot of Event ID 858 error in the BitLocker-API event log.</h2><p>BitLocker Key Rotation Error</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-error858_hu11553923512470859671.png   alt="BitLocker Key Rotation Error"  ></a><figcaption class="image-caption">Screenshot of Event ID 858 error in the BitLocker-API event log.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-error858.png" title="BitLocker Key Rotation Error" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-error858.png" data-sub-html="<h2>Screenshot of Event ID 858 error in the BitLocker-API event log.</h2><p>BitLocker Key Rotation Error</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-error858.png   alt="BitLocker Key Rotation Error" height="385" width="825"></a><figcaption class="image-caption">Screenshot of Event ID 858 error in the BitLocker-API event log.</figcaption>
 </figure>
 
 </p>
@@ -303,7 +303,7 @@
   </table>
 </div>
 <p>With the corresponding setting in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-es-bl_hu2468915609537312571.png" title="BitLocker Endpoint Security policy for BitLocker" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-es-bl_hu2468915609537312571.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Security policy for BitLocker.</h2><p>BitLocker Endpoint Security policy for BitLocker</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-es-bl_hu2468915609537312571.png   alt="BitLocker Endpoint Security policy for BitLocker"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Security policy for BitLocker.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-es-bl.png" title="BitLocker Endpoint Security policy for BitLocker" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-es-bl.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Security policy for BitLocker.</h2><p>BitLocker Endpoint Security policy for BitLocker</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-es-bl.png   alt="BitLocker Endpoint Security policy for BitLocker" height="273" width="795"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Security policy for BitLocker.</figcaption>
 </figure>
 
 </p>
@@ -341,7 +341,7 @@
   </table>
 </div>
 <p>With Intune settings configured with the above values:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-es-os_hu9413632474108089518.png" title="BitLocker Endpoint Security policy for Operating System Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-es-os_hu9413632474108089518.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Security policy for Operating System Drives.</h2><p>BitLocker Endpoint Security policy for Operating System Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-es-os_hu9413632474108089518.png   alt="BitLocker Endpoint Security policy for Operating System Drives"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Security policy for Operating System Drives.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-es-os.png" title="BitLocker Endpoint Security policy for Operating System Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-es-os.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Security policy for Operating System Drives.</h2><p>BitLocker Endpoint Security policy for Operating System Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-es-os.png   alt="BitLocker Endpoint Security policy for Operating System Drives" height="204" width="600"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Security policy for Operating System Drives.</figcaption>
 </figure>
 
 </p>
@@ -371,7 +371,7 @@
   </table>
 </div>
 <p>Configured in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-es-fd_hu15038049562620287190.png" title="BitLocker Endpoint Security policy for Fixed Data Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-es-fd_hu15038049562620287190.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Security policy for Fixed Data Drives.</h2><p>BitLocker Endpoint Security policy for Fixed Data Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-es-fd_hu15038049562620287190.png   alt="BitLocker Endpoint Security policy for Fixed Data Drives"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Security policy for Fixed Data Drives.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-es-fd.png" title="BitLocker Endpoint Security policy for Fixed Data Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-es-fd.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Security policy for Fixed Data Drives.</h2><p>BitLocker Endpoint Security policy for Fixed Data Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-es-fd.png   alt="BitLocker Endpoint Security policy for Fixed Data Drives" height="200" width="600"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Security policy for Fixed Data Drives.</figcaption>
 </figure>
 
 </p>
@@ -416,7 +416,7 @@
   </table>
 </div>
 <p>Looking like the below in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-os_hu6854100134692558694.png" title="BitLocker Endpoint Protection policy for OS Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-os_hu6854100134692558694.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Protection policy for OS Drives.</h2><p>BitLocker Endpoint Protection policy for OS Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-ep-os_hu6854100134692558694.png   alt="BitLocker Endpoint Protection policy for OS Drives"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Protection policy for OS Drives.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-os.png" title="BitLocker Endpoint Protection policy for OS Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-os.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Protection policy for OS Drives.</h2><p>BitLocker Endpoint Protection policy for OS Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-ep-os.png   alt="BitLocker Endpoint Protection policy for OS Drives" height="274" width="724"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Protection policy for OS Drives.</figcaption>
 </figure>
 
 </p>
@@ -454,7 +454,7 @@
   </table>
 </div>
 <p>Intune looking sharp:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-fd_hu4110396567226423484.png" title="BitLocker Endpoint Protection policy for Fixed Data Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-fd_hu4110396567226423484.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Protection policy for Fixed Data Drives.</h2><p>BitLocker Endpoint Protection policy for Fixed Data Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-ep-fd_hu4110396567226423484.png   alt="BitLocker Endpoint Protection policy for Fixed Data Drives"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Protection policy for Fixed Data Drives.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-fd.png" title="BitLocker Endpoint Protection policy for Fixed Data Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-ep-fd.png" data-sub-html="<h2>Screenshot of Intune BitLocker Endpoint Protection policy for Fixed Data Drives.</h2><p>BitLocker Endpoint Protection policy for Fixed Data Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-ep-fd.png   alt="BitLocker Endpoint Protection policy for Fixed Data Drives" height="187" width="732"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Endpoint Protection policy for Fixed Data Drives.</figcaption>
 </figure>
 
 </p>
@@ -481,7 +481,7 @@
   </table>
 </div>
 <p>With the corresponding setting in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-bl_hu1669421632190771497.png" title="BitLocker Settings Catalog policy for BitLocker" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-bl_hu1669421632190771497.png" data-sub-html="<h2>Screenshot of Intune BitLocker Settings Catalog policy for BitLocker.</h2><p>BitLocker Settings Catalog policy for BitLocker</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-sc-bl_hu1669421632190771497.png   alt="BitLocker Settings Catalog policy for BitLocker"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Settings Catalog policy for BitLocker.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-bl.png" title="BitLocker Settings Catalog policy for BitLocker" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-bl.png" data-sub-html="<h2>Screenshot of Intune BitLocker Settings Catalog policy for BitLocker.</h2><p>BitLocker Settings Catalog policy for BitLocker</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-sc-bl.png   alt="BitLocker Settings Catalog policy for BitLocker" height="168" width="751"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Settings Catalog policy for BitLocker.</figcaption>
 </figure>
 
 </p>
@@ -511,7 +511,7 @@
   </table>
 </div>
 <p>Intune settings configured with the above:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-os_hu1466220846469529495.png" title="BitLocker Settings Catalog policy for Operating System Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-os_hu1466220846469529495.png" data-sub-html="<h2>Screenshot of Intune BitLocker Settings Catalog policy for Operating System Drives.</h2><p>BitLocker Settings Catalog policy for Operating System Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-sc-os_hu1466220846469529495.png   alt="BitLocker Settings Catalog policy for Operating System Drives"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Settings Catalog policy for Operating System Drives.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-os.png" title="BitLocker Settings Catalog policy for Operating System Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-os.png" data-sub-html="<h2>Screenshot of Intune BitLocker Settings Catalog policy for Operating System Drives.</h2><p>BitLocker Settings Catalog policy for Operating System Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-sc-os.png   alt="BitLocker Settings Catalog policy for Operating System Drives" height="207" width="682"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Settings Catalog policy for Operating System Drives.</figcaption>
 </figure>
 
 </p>
@@ -541,18 +541,18 @@
   </table>
 </div>
 <p>Configured in Intune:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-fd_hu13971563956181574134.png" title="BitLocker Endpoint Settings Catalog for Fixed Data Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-fd_hu13971563956181574134.png" data-sub-html="<h2>Screenshot of Intune BitLocker Settings Catalog policy for Fixed Data Drives.</h2><p>BitLocker Endpoint Settings Catalog for Fixed Data Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-sc-fd_hu13971563956181574134.png   alt="BitLocker Endpoint Settings Catalog for Fixed Data Drives"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Settings Catalog policy for Fixed Data Drives.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-fd.png" title="BitLocker Endpoint Settings Catalog for Fixed Data Drives" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-sc-fd.png" data-sub-html="<h2>Screenshot of Intune BitLocker Settings Catalog policy for Fixed Data Drives.</h2><p>BitLocker Endpoint Settings Catalog for Fixed Data Drives</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-sc-fd.png   alt="BitLocker Endpoint Settings Catalog for Fixed Data Drives" height="198" width="596"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Settings Catalog policy for Fixed Data Drives.</figcaption>
 </figure>
 
 </p>
 <h2 id="key-rotation-in-action" class="headerLink">
     <a href="#key-rotation-in-action" class="header-mark"></a>3 Key Rotation in Action</h2><p>With one of the above policies applying to your devices, you can initiate a rotation of the BitLocker recovery key from Intune, go find a device, select the <strong>ellipsis</strong> (<strong>&hellip;</strong>) and select <strong>BitLocker key rotation</strong>:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-start_hu4368775121407989426.png" title="BitLocker Key rotation from Intune" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-start_hu4368775121407989426.png" data-sub-html="<h2>Screenshot of Intune BitLocker Recovery Key rotation dialogue menu.</h2><p>BitLocker Key rotation from Intune</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-intune-start_hu4368775121407989426.png   alt="BitLocker Key rotation from Intune"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Recovery Key rotation dialogue menu.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-start.png" title="BitLocker Key rotation from Intune" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-start.png" data-sub-html="<h2>Screenshot of Intune BitLocker Recovery Key rotation dialogue menu.</h2><p>BitLocker Key rotation from Intune</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-intune-start.png   alt="BitLocker Key rotation from Intune" height="419" width="322"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Recovery Key rotation dialogue menu.</figcaption>
 </figure>
 
 </p>
 <p>Read the warning and obviously proceed, you wouldn&rsquo;t be clicking this option unless you know what it does right? 😛</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-notification_hu12762402851533830152.png" title="BitLocker Key rotation warning from Intune" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-notification_hu12762402851533830152.png" data-sub-html="<h2>Screenshot of Intune BitLocker Recovery Key rotation warning message.</h2><p>BitLocker Key rotation warning from Intune</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-intune-notification_hu12762402851533830152.png   alt="BitLocker Key rotation warning from Intune"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Recovery Key rotation warning message.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-notification.png" title="BitLocker Key rotation warning from Intune" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-notification.png" data-sub-html="<h2>Screenshot of Intune BitLocker Recovery Key rotation warning message.</h2><p>BitLocker Key rotation warning from Intune</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-intune-notification.png   alt="BitLocker Key rotation warning from Intune" height="320" width="1080"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Recovery Key rotation warning message.</figcaption>
 </figure>
 
 </p>
@@ -659,7 +659,7 @@
       <span></span>
     </video>
 <p>With a newly escrowed (there&rsquo;s that new word we learned) into the Intune portal:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-key_hu15431331163562688836.png" title="BitLocker Keys in Intune" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-key_hu15431331163562688836.png" data-sub-html="<h2>Screenshot of Intune BitLocker Recovery Key after being rotated.</h2><p>BitLocker Keys in Intune</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-intune-key_hu15431331163562688836.png   alt="BitLocker Keys in Intune"  ></a><figcaption class="image-caption">Screenshot of Intune BitLocker Recovery Key after being rotated.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-key.png" title="BitLocker Keys in Intune" data-thumbnail="/posts/bitlocker-key-rotation-requirements/img/blkr-intune-key.png" data-sub-html="<h2>Screenshot of Intune BitLocker Recovery Key after being rotated.</h2><p>BitLocker Keys in Intune</p>"><img  loading="lazy" src=/posts/bitlocker-key-rotation-requirements/img/blkr-intune-key.png   alt="BitLocker Keys in Intune" height="399" width="1141"></a><figcaption class="image-caption">Screenshot of Intune BitLocker Recovery Key after being rotated.</figcaption>
 </figure>
 
 </p>

@@ -368,7 +368,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-39" 
+    id="codeblock-id-38" 
     class="
       chroma 
       !tw-block 
@@ -518,7 +518,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-40" 
+    id="codeblock-id-39" 
     class="
       chroma 
       !tw-block 
@@ -539,22 +539,22 @@
 
 
 <p>This will at least give you some idea of the devices that would be impacted by the true remediation script.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report_hu3042166325301467461.webp" title="Remediation Reporting" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report_hu3042166325301467461.webp" data-sub-html="<h2>Microsoft Intune Remediation Script for reporting.</h2><p>Remediation Reporting</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report_hu3042166325301467461.webp   alt="Remediation Reporting"  ></a><figcaption class="image-caption">Microsoft Intune Remediation Script for reporting.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report.webp" title="Remediation Reporting" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report.webp" data-sub-html="<h2>Microsoft Intune Remediation Script for reporting.</h2><p>Remediation Reporting</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report.webp   alt="Remediation Reporting" height="750" width="891"></a><figcaption class="image-caption">Microsoft Intune Remediation Script for reporting.</figcaption>
 </figure>
 
 </p>
 <p>I&rsquo;ve assigned this to the <strong>All Devices</strong> group, but with a Device Filter for only corporate owned devices, set to run once, as we&rsquo;re just reporting on this issue for now.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign_hu13787476820935692332.webp" title="Remediation Assignment" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign_hu13787476820935692332.webp" data-sub-html="<h2>Microsoft Intune Remediation assignment for reporting.</h2><p>Remediation Assignment</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign_hu13787476820935692332.webp   alt="Remediation Assignment"  ></a><figcaption class="image-caption">Microsoft Intune Remediation assignment for reporting.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign.webp" title="Remediation Assignment" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign.webp" data-sub-html="<h2>Microsoft Intune Remediation assignment for reporting.</h2><p>Remediation Assignment</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report-assign.webp   alt="Remediation Assignment" height="270" width="682"></a><figcaption class="image-caption">Microsoft Intune Remediation assignment for reporting.</figcaption>
 </figure>
 
 </p>
 <p>After waiting a little while, or if you&rsquo;re impatient use the <a href="https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations#run-a-remediation-script-on-demand-preview" target="_blank" rel="noopener noreferrer">on-demand feature</a>, we can then review the results; we can see several devices that are now complaining that their WinRE partition is too small.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue_hu4170039228420749925.png" title="Remediation Reporting Detail" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue_hu4170039228420749925.png" data-sub-html="<h2>Microsoft Intune Remediation reporting results.</h2><p>Remediation Reporting Detail</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue_hu4170039228420749925.png   alt="Remediation Reporting Detail"  ></a><figcaption class="image-caption">Microsoft Intune Remediation reporting results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue.png" title="Remediation Reporting Detail" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue.png" data-sub-html="<h2>Microsoft Intune Remediation reporting results.</h2><p>Remediation Reporting Detail</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report-issue.png   alt="Remediation Reporting Detail" height="506" width="1482"></a><figcaption class="image-caption">Microsoft Intune Remediation reporting results.</figcaption>
 </figure>
 
 </p>
 <p>Luckily for us, there are at least some devices where they are happy with the size of their partition.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok_hu5186106259232876982.png" title="Remediation Reporting Detail" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok_hu5186106259232876982.png" data-sub-html="<h2>Microsoft Intune Remediation reporting detail.</h2><p>Remediation Reporting Detail</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok_hu5186106259232876982.png   alt="Remediation Reporting Detail"  ></a><figcaption class="image-caption">Microsoft Intune Remediation reporting detail.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok.png" title="Remediation Reporting Detail" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok.png" data-sub-html="<h2>Microsoft Intune Remediation reporting detail.</h2><p>Remediation Reporting Detail</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-report-ok.png   alt="Remediation Reporting Detail" height="340" width="1499"></a><figcaption class="image-caption">Microsoft Intune Remediation reporting detail.</figcaption>
 </figure>
 
 </p>
@@ -769,17 +769,17 @@
 <h2 id="deploying-the-remediation" class="headerLink">
     <a href="#deploying-the-remediation" class="header-mark"></a>3 Deploying the Remediation</h2><p>I would strongly advised testing this in small numbers before you go deploying the the <code>All Devices</code> group, and use a new Remediation with the same <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Detection.ps1" target="_blank" rel="noopener noreferrer">detection script</a> method as before, but this time with the fully functioning <a href="https://github.com/ennnbeee/oddsandendpoints-scripts/blob/main/Intune/Remediation/WinREPartition/Set-WinRE_Remediation.ps1" target="_blank" rel="noopener noreferrer">remediation script</a>, so we can actually fix this issue that Microsoft has caused.</p>
 <p>The Remediation should look something like the below, again with a schedule for once as we don&rsquo;t need this running more than once.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-run_hu16196100112391779347.webp" title="Remediation Run Issue" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-run_hu16196100112391779347.webp" data-sub-html="<h2>Microsoft Intune Remediation Script.</h2><p>Remediation Run Issue</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-run_hu16196100112391779347.webp   alt="Remediation Run Issue"  ></a><figcaption class="image-caption">Microsoft Intune Remediation Script.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-run.webp" title="Remediation Run Issue" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-run.webp" data-sub-html="<h2>Microsoft Intune Remediation Script.</h2><p>Remediation Run Issue</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-run.webp   alt="Remediation Run Issue" height="756" width="851"></a><figcaption class="image-caption">Microsoft Intune Remediation Script.</figcaption>
 </figure>
 
 </p>
 <p>If we&rsquo;ve been successful in our deployment we should start seeing device report back the status of the remediation, and advise where there are issues with the size of the WinRE partition.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue_hu16354044039252855389.webp" title="Remediation Run Issue" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue_hu16354044039252855389.webp" data-sub-html="<h2>Microsoft Intune Remediation Detection results.</h2><p>Remediation Run Issue</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue_hu16354044039252855389.webp   alt="Remediation Run Issue"  ></a><figcaption class="image-caption">Microsoft Intune Remediation Detection results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue.webp" title="Remediation Run Issue" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue.webp" data-sub-html="<h2>Microsoft Intune Remediation Detection results.</h2><p>Remediation Run Issue</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-run-issue.webp   alt="Remediation Run Issue" height="333" width="1521"></a><figcaption class="image-caption">Microsoft Intune Remediation Detection results.</figcaption>
 </figure>
 
 </p>
 <p>Following the successful run of the remediation script, we now have an output of the results with a device that had issues with the partition size, now successfully remediated.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok_hu6499693124223889258.webp" title="Remediation Run OK" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok_hu6499693124223889258.webp" data-sub-html="<h2>Microsoft Intune Remediation Remediation results.</h2><p>Remediation Run OK</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok_hu6499693124223889258.webp   alt="Remediation Run OK"  ></a><figcaption class="image-caption">Microsoft Intune Remediation Remediation results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok.webp" title="Remediation Run OK" data-thumbnail="/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok.webp" data-sub-html="<h2>Microsoft Intune Remediation Remediation results.</h2><p>Remediation Run OK</p>"><img  loading="lazy" src=/posts/windows-winre-partition-resize-kb5034441/img/winre-run-ok.webp   alt="Remediation Run OK" height="364" width="1547"></a><figcaption class="image-caption">Microsoft Intune Remediation Remediation results.</figcaption>
 </figure>
 
 </p>

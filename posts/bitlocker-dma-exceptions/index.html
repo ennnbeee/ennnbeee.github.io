@@ -357,7 +357,7 @@
 </span></span><span class="line"><span class="cl">    PCI\VEN_8086&amp;DEV_51B1 (Intel(R) PCI Express Root Port #10 - 51B1)</span></span></code></pre>
 </div>
 <p>And System Information showing something like this:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu3943174023617342076.png" title="BitLocker System Info" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu3943174023617342076.png" data-sub-html="<h2>System Information showing DMA Exceptions.</h2><p>BitLocker System Info</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-sysinfo_hu3943174023617342076.png   alt="BitLocker System Info"  ></a><figcaption class="image-caption">System Information showing DMA Exceptions.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png" title="BitLocker System Info" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png" data-sub-html="<h2>System Information showing DMA Exceptions.</h2><p>BitLocker System Info</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-sysinfo.png   alt="BitLocker System Info" height="749" width="1000"></a><figcaption class="image-caption">System Information showing DMA Exceptions.</figcaption>
 </figure>
 
 </p>
@@ -783,7 +783,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-5" 
+    id="codeblock-id-4" 
     class="
       chroma 
       !tw-block 
@@ -852,7 +852,7 @@
 <h3 id="script-testing" class="headerLink">
     <a href="#script-testing" class="header-mark"></a>3.1 Script Testing</h3><p>Now as the registry key has restrictive permissions, you can modify these manually for testing as per the <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-bitlocker#un-allowed-dma-capable-busdevices-detected" target="_blank" rel="noopener noreferrer">article</a>, or you can use <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" target="_blank" rel="noopener noreferrer">PsExec</a> to run PowerShell as <strong>SYSTEM</strong> using <strong>PsExec.exe -s -i powershell.exe</strong>.</p>
 <p>Allowing you to test locally on devices before deploying using Microsoft Intune, and with a bit of luck, you should see something like the below:</p>
-<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-reg_hu14425651826395935406.png" title="Registry DMA Exceptions" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-reg_hu14425651826395935406.png" data-sub-html="<h2>Registry settings showing DMA Exception values.</h2><p>Registry DMA Exceptions</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-reg_hu14425651826395935406.png   alt="Registry DMA Exceptions"  ></a><figcaption class="image-caption">Registry settings showing DMA Exception values.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/bitlocker-dma-exceptions/img/bldma-reg.png" title="Registry DMA Exceptions" data-thumbnail="/posts/bitlocker-dma-exceptions/img/bldma-reg.png" data-sub-html="<h2>Registry settings showing DMA Exception values.</h2><p>Registry DMA Exceptions</p>"><img  loading="lazy" src=/posts/bitlocker-dma-exceptions/img/bldma-reg.png   alt="Registry DMA Exceptions" height="519" width="1137"></a><figcaption class="image-caption">Registry settings showing DMA Exception values.</figcaption>
 </figure>
 
 </p>

@@ -305,7 +305,7 @@
 <li>Upgraded - The device is already running a version of Windows equal to or greater than the target OS version.</li>
 <li>Unknown - A readiness status couldn&rsquo;t be determined. Ensure that the device is properly configured to send Windows diagnostic data.</li>
 </ul>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report_hu18006324588943059751.png" title="Feature Update Readiness Report" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report_hu18006324588943059751.png" data-sub-html="<h2>Microsoft Feature Update readiness report.</h2><p>Feature Update Readiness Report</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report_hu18006324588943059751.png   alt="Feature Update Readiness Report"  ></a><figcaption class="image-caption">Microsoft Feature Update readiness report.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report.png" title="Feature Update Readiness Report" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report.png" data-sub-html="<h2>Microsoft Feature Update readiness report.</h2><p>Feature Update Readiness Report</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report.png   alt="Feature Update Readiness Report" height="368" width="1127"></a><figcaption class="image-caption">Microsoft Feature Update readiness report.</figcaption>
 </figure>
 
 </p>
@@ -560,7 +560,7 @@
 <p>We can now start a new report using <code>New-ReportFeatureUpdateReadiness -JSON $JSONContent</code> passing through our JSON content for the creation of a report, now we need to detect whether the report is ready, and then when it is ready, to download the data in the report.</p>
 <h3 id="getting-feature-update-readiness-report-status" class="headerLink">
     <a href="#getting-feature-update-readiness-report-status" class="header-mark"></a>2.2 Getting Feature Update Readiness Report Status</h3><p>More digging with developer mode in Edge reveals surprisingly both a <code>GET</code> request to <code>deviceManagement/reports/cachedReportConfigurations('$Id')</code> (where <code>$Id</code> is the <code>Id</code> of a generated report), this will be useful as the output of this call gives us a status of the report.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status_hu6685877125765591819.webp" title="Feature Update Readiness Report Status" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status_hu6685877125765591819.webp" data-sub-html="<h2>Graph Explorer showing Feature Update readiness report.</h2><p>Feature Update Readiness Report Status</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status_hu6685877125765591819.webp   alt="Feature Update Readiness Report Status"  ></a><figcaption class="image-caption">Graph Explorer showing Feature Update readiness report.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status.webp" title="Feature Update Readiness Report Status" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status.webp" data-sub-html="<h2>Graph Explorer showing Feature Update readiness report.</h2><p>Feature Update Readiness Report Status</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-status.webp   alt="Feature Update Readiness Report Status" height="728" width="1501"></a><figcaption class="image-caption">Graph Explorer showing Feature Update readiness report.</figcaption>
 </figure>
 
 </p>
@@ -932,7 +932,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <p>I tell you what is going to be fun, the fact that this call works between device <code>0</code> in the <code>Skip</code> and device <code>50</code> in the <code>Top</code> parameters, so it isn&rsquo;t pulling back all data for all devices. Well that&rsquo;s great news, who doesn&rsquo;t love pagination?</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get_hu10950505388005762970.webp" title="Feature Update Readiness Report Get" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get_hu10950505388005762970.webp" data-sub-html="<h2>Graph Explorer with created readiness report.</h2><p>Feature Update Readiness Report Get</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get_hu10950505388005762970.webp   alt="Feature Update Readiness Report Get"  ></a><figcaption class="image-caption">Graph Explorer with created readiness report.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get.webp" title="Feature Update Readiness Report Get" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get.webp" data-sub-html="<h2>Graph Explorer with created readiness report.</h2><p>Feature Update Readiness Report Get</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-get.webp   alt="Feature Update Readiness Report Get" height="659" width="1498"></a><figcaption class="image-caption">Graph Explorer with created readiness report.</figcaption>
 </figure>
 
 </p>
@@ -1383,7 +1383,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <p>Giving us something a little easier to reference later down the line.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array_hu2391167987846223133.webp" title="Feature Update Readiness Report Array" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array_hu2391167987846223133.webp" data-sub-html="<h2>Readiness report data array.</h2><p>Feature Update Readiness Report Array</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array_hu2391167987846223133.webp   alt="Feature Update Readiness Report Array"  ></a><figcaption class="image-caption">Readiness report data array.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array.webp" title="Feature Update Readiness Report Array" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array.webp" data-sub-html="<h2>Readiness report data array.</h2><p>Feature Update Readiness Report Array</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-array.webp   alt="Feature Update Readiness Report Array" height="513" width="649"></a><figcaption class="image-caption">Readiness report data array.</figcaption>
 </figure>
 
 </p>
@@ -1812,7 +1812,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <p>A quick glimpse at the data in the array now, not only shows the assigned risk state for the Feature Update version we&rsquo;re looking to deploy, but also the Entra ID ObjectId for each device.</p>
-<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup_hu10350039984850636521.webp" title="Feature Update Readiness Report Array Updates" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup_hu10350039984850636521.webp" data-sub-html="<h2>Updated Readiness report data array.</h2><p>Feature Update Readiness Report Array Updates</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup_hu10350039984850636521.webp   alt="Feature Update Readiness Report Array Updates"  ></a><figcaption class="image-caption">Updated Readiness report data array.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup.webp" title="Feature Update Readiness Report Array Updates" data-thumbnail="/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup.webp" data-sub-html="<h2>Updated Readiness report data array.</h2><p>Feature Update Readiness Report Array Updates</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part1/img/w11risk-report-arrayup.webp   alt="Feature Update Readiness Report Array Updates" height="513" width="596"></a><figcaption class="image-caption">Updated Readiness report data array.</figcaption>
 </figure>
 
 </p>

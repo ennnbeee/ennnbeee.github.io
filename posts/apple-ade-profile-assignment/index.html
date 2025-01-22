@@ -262,13 +262,13 @@
 <p>No one likes clicking <em>that</em> much.</p>
 <h2 id="developer-tool-sneaking" class="headerLink">
     <a href="#developer-tool-sneaking" class="header-mark"></a>1 Developer Tool Sneaking</h2><p>If you hadn&rsquo;t realised already, everything in Microsoft Intune is backed by the Graph API, to the point where if you open your browser developer tools, usually by pressing F12, you can actually see the calls to Graph being made when you click around.</p>
-<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-f12_hu13217049132223407774.png" title="Developer Tools" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-f12_hu13217049132223407774.png" data-sub-html="<h2>Edge Developer Tools and Microsoft Intune.</h2><p>Developer Tools</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-f12_hu13217049132223407774.png   alt="Developer Tools"  ></a><figcaption class="image-caption">Edge Developer Tools and Microsoft Intune.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-f12.png" title="Developer Tools" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-f12.png" data-sub-html="<h2>Edge Developer Tools and Microsoft Intune.</h2><p>Developer Tools</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-f12.png   alt="Developer Tools" height="608" width="1600"></a><figcaption class="image-caption">Edge Developer Tools and Microsoft Intune.</figcaption>
 </figure>
 
 </p>
 <p>This makes it pretty easy to identify the resource in Graph being used, as well as the call you&rsquo;ll be making to the API.</p>
 <p>Using this method, and actually assigning a profile to an iOS/iPadOS device in Intune, and watching what calls are made using the developer tools, allows us to capture the Graph resource endpoint and ultimately throw together the functions we need, in this case, to get and assign the Enrolment Profiles.</p>
-<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign_hu8042948908467028659.png" title="Developer Tools Again" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign_hu8042948908467028659.png" data-sub-html="<h2>Edge Developer Tools and the Graph API call.</h2><p>Developer Tools Again</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign_hu8042948908467028659.png   alt="Developer Tools Again"  ></a><figcaption class="image-caption">Edge Developer Tools and the Graph API call.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign.png" title="Developer Tools Again" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign.png" data-sub-html="<h2>Edge Developer Tools and the Graph API call.</h2><p>Developer Tools Again</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-f12-assign.png   alt="Developer Tools Again" height="642" width="937"></a><figcaption class="image-caption">Edge Developer Tools and the Graph API call.</figcaption>
 </figure>
 
 </p>
@@ -2121,12 +2121,12 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
 <p>After carefully stepping through the script, we can now see the results of our efforts, and although this was only targetted to four devices, the approach will scale:</p>
-<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-results_hu13912016659020905537.png" title="ADE Assignment" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-results_hu13912016659020905537.png" data-sub-html="<h2>Automated Deployment Profile script assignment results.</h2><p>ADE Assignment</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-results_hu13912016659020905537.png   alt="ADE Assignment"  ></a><figcaption class="image-caption">Automated Deployment Profile script assignment results.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-results.png" title="ADE Assignment" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-results.png" data-sub-html="<h2>Automated Deployment Profile script assignment results.</h2><p>ADE Assignment</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-results.png   alt="ADE Assignment" height="173" width="814"></a><figcaption class="image-caption">Automated Deployment Profile script assignment results.</figcaption>
 </figure>
 
 </p>
 <p>Digging in a little deeper, we can see that the device has been assigned to the correct Enrolment Profile:</p>
-<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-device_hu15406231825937999807.png" title="ADE Device" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-device_hu15406231825937999807.png" data-sub-html="<h2>Automated Deployment Profile assignment for a single device.</h2><p>ADE Device</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-device_hu15406231825937999807.png   alt="ADE Device"  ></a><figcaption class="image-caption">Automated Deployment Profile assignment for a single device.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/apple-ade-profile-assignment/img/apple-ade-device.png" title="ADE Device" data-thumbnail="/posts/apple-ade-profile-assignment/img/apple-ade-device.png" data-sub-html="<h2>Automated Deployment Profile assignment for a single device.</h2><p>ADE Device</p>"><img  loading="lazy" src=/posts/apple-ade-profile-assignment/img/apple-ade-device.png   alt="ADE Device" height="624" width="376"></a><figcaption class="image-caption">Automated Deployment Profile assignment for a single device.</figcaption>
 </figure>
 
 </p>

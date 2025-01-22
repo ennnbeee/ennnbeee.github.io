@@ -403,7 +403,7 @@
         <div class="admonition-content">The functions, authentication, and script have now been updated to support the use of the Graph PowerShell SDK.</div></div></div>
 <h2 id="epm-reporting" class="headerLink">
     <a href="#epm-reporting" class="header-mark"></a>1 EPM Reporting</h2><p>The Endpoint elevation report in Microsoft Intune will give us the data we need to create <a href="https://learn.microsoft.com/en-us/mem/intune/protect/epm-policies#about-windows-elevation-rules-policy" target="_blank" rel="noopener noreferrer">hash based</a> rules, so let&rsquo;s find a way to get the report data and export it with some collated information to make reviewing the elevations a little easier, as no one wants to review individual elevations from each user on a case by case basis, unless you&rsquo;re in InfoSec.</p>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-report_hu10669739388133871632.png" title="Elevation Report" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-report_hu10669739388133871632.png" data-sub-html="<h2>Microsoft Intune Elevation Report.</h2><p>Elevation Report</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-report_hu10669739388133871632.png   alt="Elevation Report"  ></a><figcaption class="image-caption">Microsoft Intune Elevation Report.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-report.png" title="Elevation Report" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-report.png" data-sub-html="<h2>Microsoft Intune Elevation Report.</h2><p>Elevation Report</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-report.png   alt="Elevation Report" height="709" width="1357"></a><figcaption class="image-caption">Microsoft Intune Elevation Report.</figcaption>
 </figure>
 
 </p>
@@ -638,7 +638,7 @@
       tw-scrollbar-thin
       "><span class="line"><span class="cl"><span class="nb">Get-DeviceEPMReport</span> <span class="n">-Elevation</span> <span class="n">Unmanaged</span></span></span></code></pre>
 </div>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-get_hu10534639846913813646.png" title="Elevation Report" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-get_hu10534639846913813646.png" data-sub-html="<h2>Screenshot PowerShell script elevation report output.</h2><p>Elevation Report</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-get_hu10534639846913813646.png   alt="Elevation Report"  ></a><figcaption class="image-caption">Screenshot PowerShell script elevation report output.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-get.png" title="Elevation Report" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-get.png" data-sub-html="<h2>Screenshot PowerShell script elevation report output.</h2><p>Elevation Report</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-get.png   alt="Elevation Report" height="521" width="759"></a><figcaption class="image-caption">Screenshot PowerShell script elevation report output.</figcaption>
 </figure>
 
 </p>
@@ -3902,12 +3902,12 @@
       "><span class="line"><span class="cl"><span class="p">./</span><span class="nb">Invoke-EPNRules</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantID</span> <span class="s1">&#39;bb690aa6-53c6-4d51-affe-ab80c6d710de&#39;</span> <span class="n">-Deployment</span> <span class="n">Import</span></span></span></code></pre>
 </div>
 <p>Which will result in the EPM policies being created:</p>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-pols_hu10002722611113865942.png" title="Elevation Policies" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-pols_hu10002722611113865942.png" data-sub-html="<h2>Microsoft Intune Elevation Policy.</h2><p>Elevation Policies</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-pols_hu10002722611113865942.png   alt="Elevation Policies"  ></a><figcaption class="image-caption">Microsoft Intune Elevation Policy.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-pols.png" title="Elevation Policies" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-pols.png" data-sub-html="<h2>Microsoft Intune Elevation Policy.</h2><p>Elevation Policies</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-pols.png   alt="Elevation Policies" height="106" width="1277"></a><figcaption class="image-caption">Microsoft Intune Elevation Policy.</figcaption>
 </figure>
 
 </p>
 <p>Drilling into the EPM policy we can see the rules that were created:</p>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-rules_hu8480037183342844248.png" title="Elevation Rules" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-rules_hu8480037183342844248.png" data-sub-html="<h2>Microsoft Intune Elevation Rules.</h2><p>Elevation Rules</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-rules_hu8480037183342844248.png   alt="Elevation Rules"  ></a><figcaption class="image-caption">Microsoft Intune Elevation Rules.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-rules.png" title="Elevation Rules" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-rules.png" data-sub-html="<h2>Microsoft Intune Elevation Rules.</h2><p>Elevation Rules</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-rules.png   alt="Elevation Rules" height="400" width="808"></a><figcaption class="image-caption">Microsoft Intune Elevation Rules.</figcaption>
 </figure>
 
 </p>
@@ -3915,14 +3915,14 @@
 <ul>
 <li>PowerShell User Approved with Business Justification</li>
 </ul>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-rulepwsh_hu6647391461844203181.png" title="Elevation PowerShell Rule" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-rulepwsh_hu6647391461844203181.png" data-sub-html="<h2>Microsoft Intune Elevation Rules Detail for Business Justification.</h2><p>Elevation PowerShell Rule</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-rulepwsh_hu6647391461844203181.png   alt="Elevation PowerShell Rule"  ></a><figcaption class="image-caption">Microsoft Intune Elevation Rules Detail for Business Justification.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-rulepwsh.png" title="Elevation PowerShell Rule" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-rulepwsh.png" data-sub-html="<h2>Microsoft Intune Elevation Rules Detail for Business Justification.</h2><p>Elevation PowerShell Rule</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-rulepwsh.png   alt="Elevation PowerShell Rule" height="460" width="880"></a><figcaption class="image-caption">Microsoft Intune Elevation Rules Detail for Business Justification.</figcaption>
 </figure>
 
 </p>
 <ul>
 <li>Command Prompt User Approved with Authentication</li>
 </ul>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-rulecmd_hu17707408999907147630.png" title="Elevation CMD Rule" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-rulecmd_hu17707408999907147630.png" data-sub-html="<h2>Microsoft Intune Elevation Rules Detail for Authentication.</h2><p>Elevation CMD Rule</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-rulecmd_hu17707408999907147630.png   alt="Elevation CMD Rule"  ></a><figcaption class="image-caption">Microsoft Intune Elevation Rules Detail for Authentication.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-rulecmd.png" title="Elevation CMD Rule" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-rulecmd.png" data-sub-html="<h2>Microsoft Intune Elevation Rules Detail for Authentication.</h2><p>Elevation CMD Rule</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-rulecmd.png   alt="Elevation CMD Rule" height="460" width="880"></a><figcaption class="image-caption">Microsoft Intune Elevation Rules Detail for Authentication.</figcaption>
 </figure>
 
 </p>
@@ -4025,7 +4025,7 @@
       "><span class="line"><span class="cl"><span class="p">./</span><span class="nb">Invoke-EPNRules</span><span class="p">.</span><span class="py">ps1</span> <span class="n">-tenantID</span> <span class="s1">&#39;bb690aa6-53c6-4d51-affe-ab80c6d710de&#39;</span> <span class="n">-Deployment</span> <span class="n">ImportAssign</span></span></span></code></pre>
 </div>
 <p>Which will give us the above policies created, but also assigned to the relevant groups:</p>
-<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-ruleass_hu3951813505666164701.png" title="Elevation Rule Assignment" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-ruleass_hu3951813505666164701.png" data-sub-html="<h2>Microsoft Intune Elevation Rules assignment.</h2><p>Elevation Rule Assignment</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-ruleass_hu3951813505666164701.png   alt="Elevation Rule Assignment"  ></a><figcaption class="image-caption">Microsoft Intune Elevation Rules assignment.</figcaption>
+<p><figure><a class="lightgallery" href="/posts/automate-endpoint-privilege-management/img/epm-ruleass.png" title="Elevation Rule Assignment" data-thumbnail="/posts/automate-endpoint-privilege-management/img/epm-ruleass.png" data-sub-html="<h2>Microsoft Intune Elevation Rules assignment.</h2><p>Elevation Rule Assignment</p>"><img  loading="lazy" src=/posts/automate-endpoint-privilege-management/img/epm-ruleass.png   alt="Elevation Rule Assignment" height="103" width="1271"></a><figcaption class="image-caption">Microsoft Intune Elevation Rules assignment.</figcaption>
 </figure>
 
 </p>
