@@ -44,7 +44,7 @@
                             "url": "https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/featured.png",
                             "width":  1000 ,
                             "height":  500 
-                        }],"genre": "posts","keywords":["AppLocker policies","Intune profiles","AppLocker to Intune","Windows 10 security","Intune AppLocker configuration"],"wordcount":  4647 ,
+                        }],"genre": "posts","keywords":["AppLocker policies","Intune profiles","AppLocker to Intune","Windows 10 security","Intune AppLocker configuration"],"wordcount":  4735 ,
         "url": "https://www.oddsandendpoints.co.uk/posts/windows-applocker-intune/","datePublished": "2024-10-22T11:13:46+01:00","dateModified": "2024-10-22T11:13:46+01:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Nick Benton","logo": "https://www.oddsandendpoints.co.uk/logo-opengraph.png"},"author": [{
@@ -390,7 +390,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-3" 
+    id="codeblock-id-4" 
     class="
       chroma 
       !tw-block 
@@ -1278,9 +1278,16 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$tenantId</span> <span class="p">=</span> <span class="s1">&#39;437e8ffb-3030-469a-99da-e5b527908010&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$xmlPath</span> <span class="p">=</span> <span class="s1">&#39;C:\Source\github\oddsandendpoints-scripts\Intune\EndpointSecurity\AppLockerConversion\broken.xml&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$xmlPath</span> <span class="p">=</span> <span class="s1">&#39;C:\Source\github\oddsandendpoints-scripts\Intune\EndpointSecurity\AppLockerConversion\AppLockerRules-Audit.xml&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$displayName</span> <span class="p">=</span> <span class="s1">&#39;Demo&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$grouping</span> <span class="p">=</span> <span class="s1">&#39;Demo&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$enforcement</span> <span class="p">=</span> <span class="s1">&#39;Audit&#39;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">#region variables</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">String[]</span><span class="p">]</span><span class="nv">$scopes</span> <span class="p">=</span> <span class="s1">&#39;DeviceManagementConfiguration.ReadWrite.All&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$grouping</span> <span class="p">=</span> <span class="nv">$grouping</span><span class="p">.</span><span class="py">Trim</span><span class="p">()</span> <span class="o">-replace</span> <span class="s1">&#39;\s&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$grouping</span> <span class="p">=</span> <span class="nv">$grouping</span><span class="p">.</span><span class="py">Trim</span><span class="p">()</span> <span class="o">-replace</span> <span class="s1">&#39;\s&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c">#endregion variables</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">#region functions</span>
@@ -1339,7 +1346,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">Process</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Import-Module</span> <span class="n">Microsoft</span><span class="p">.</span><span class="py">Graph</span><span class="p">.</span><span class="py">Authentication</span>
+</span></span><span class="line"><span class="cl">        <span class="c">#Import-Module Microsoft.Graph.Authentication</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$version</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Module</span> <span class="n">microsoft</span><span class="p">.</span><span class="py">graph</span><span class="p">.</span><span class="py">authentication</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">Version</span><span class="p">).</span><span class="py">major</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$AppId</span> <span class="o">-ne</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
@@ -1404,11 +1411,23 @@
 </span></span><span class="line"><span class="cl"><span class="c">#endregion functions</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">#region authentication</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Import-Module</span> <span class="n">Microsoft</span><span class="p">.</span><span class="py">Graph</span><span class="p">.</span><span class="py">Authentication</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$graphModule</span> <span class="p">=</span> <span class="s1">&#39;Microsoft.Graph.Authentication&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;Checking for </span><span class="nv">$graphModule</span><span class="s2"> PowerShell module...&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">If</span> <span class="p">(!(</span><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="nv">$graphModule</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="nv">$graphModule</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s2">&#34;PowerShell Module </span><span class="nv">$graphModule</span><span class="s2"> found.&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!([</span><span class="no">System.AppDomain</span><span class="p">]::</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="py">GetAssemblies</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">FullName</span> <span class="o">-Like</span> <span class="s2">&#34;*</span><span class="nv">$graphModule</span><span class="s2">*&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Import-Module</span> <span class="n">-Name</span> <span class="nv">$graphModule</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nb">Get-MgContext</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Host</span> <span class="s1">&#39;Disconnecting from existing Graph session.&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Disconnect-MgGraph</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">Write-Host</span> <span class="s1">&#39;Connecting to Graph&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Connect-ToGraph</span> <span class="n">-tenantId</span> <span class="nv">$tenantId</span> <span class="n">-Scopes</span> <span class="nv">$scopes</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$existingScopes</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-MgContext</span><span class="p">).</span><span class="py">Scopes</span>
@@ -1427,7 +1446,15 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">$omaSettings</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$xmlFile</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="nv">$xmlPath</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="no">xml</span><span class="p">]</span><span class="nv">$xmlDoc</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="nv">$xmlFile</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$ruleCollections</span> <span class="p">=</span> <span class="nv">$xmlDoc</span><span class="p">.</span><span class="py">ChildNodes</span><span class="p">.</span><span class="py">RuleCollection</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">([</span><span class="no">string</span><span class="p">]::</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="nv">$xmlDoc</span><span class="p">.</span><span class="py">ChildNodes</span><span class="p">.</span><span class="n">RuleCollection</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="s2">&#34;Provided XML file </span><span class="nv">$xmlPath</span><span class="s2"> is not a valid AppLocker export.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">Break</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Found AppLocker Rules in XML file </span><span class="nv">$xmlPath</span><span class="s2">&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ruleCollections</span> <span class="p">=</span> <span class="nv">$xmlDoc</span><span class="p">.</span><span class="py">ChildNodes</span><span class="p">.</span><span class="py">RuleCollection</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$ruleCollection</span> <span class="k">in</span> <span class="nv">$ruleCollections</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$objectAppLockerSettings</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">psobject</span>
@@ -1478,7 +1505,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Created AppLocker Custom Profile </span><span class="nv">$name</span><span class="s2"> in Intune&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Provided AppLocker export does not contain Rule Collections&#34;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Host</span> <span class="s1">&#39;Provided AppLocker export does not contain Rule Collections&#39;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
 </span></span><span class="line"><span class="cl">        <span class="k">Break</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1698,7 +1725,7 @@
         })();
     </script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/lightgallery/lightgallery.min.css">
         <noscript><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"></noscript>
-<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":40,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script
+<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":9,"minMatchCharLength":4,"noResultsFound":"No results found","snippetLength":40,"threshold":0.6,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script
     src="/lib/lightgallery/lightgallery.min.js"
     
       defer

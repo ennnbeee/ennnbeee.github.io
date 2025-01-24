@@ -48,7 +48,7 @@
                             "url": "https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part2/featured.jpg",
                             "width":  1000 ,
                             "height":  500 
-                        }],"genre": "posts","keywords":["intune","updates","feature updates","dynamic groups","powershell","graph","automation"],"wordcount":  1617 ,
+                        }],"genre": "posts","keywords":["intune","updates","feature updates","dynamic groups","powershell","graph","automation"],"wordcount":  1726 ,
         "url": "https://www.oddsandendpoints.co.uk/posts/windows-11-risk-based-deployment-part2/","datePublished": "2024-04-19T23:11:03+00:00","dateModified": "2024-04-19T23:11:03+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Nick Benton","logo": "https://www.oddsandendpoints.co.uk/logo-opengraph.png"},"author": [{
@@ -875,10 +875,178 @@
 </div>
 <p>There we go, we can tag our devices using extension attributes with their risk state, not just once, but many many times, and keep on top of devices that have been updated to Windows 11 already.</p>
 <p>A quick straw poll of devices in Entra ID, we can see that the tag has applied successfully:</p>
-<p><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low.webp" title="Screenshot of Low Risk Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low.webp   alt="Screenshot of Low Risk Device in Entra ID." height="700" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med.webp" title="Screenshot of Medium Risk Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med.webp   alt="Screenshot of Medium Risk Device in Entra ID." height="700" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready.webp" title="Screenshot of Not Ready Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready.webp   alt="Screenshot of Not Ready Device in Entra ID." height="700" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown.webp" title="Screenshot of Unknown Risk Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown.webp   alt="Screenshot of Unknown Risk Device in Entra ID." height="700" width="300px"></a></p>
+<tab-container default-tab="0" class="tw-my-4"><button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-6">Low Risk Device</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-7">Medium Risk Device</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-8">Not Ready Device</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-9">Unknown Risk Device</button>
+  
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-6"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low_hu15601383322801482123.webp" title="Screenshot of Low Risk Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low_hu15601383322801482123.webp" data-sub-html="<h2>Screenshot of Low Risk Device in Entra ID.</h2><p>Screenshot of Low Risk Device in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-low_hu15601383322801482123.webp   alt="Screenshot of Low Risk Device in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Low Risk Device in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-7"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med_hu16128254121950016243.webp" title="Screenshot of Medium Risk Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med_hu16128254121950016243.webp" data-sub-html="<h2>Screenshot of Medium Risk Device in Entra ID.</h2><p>Screenshot of Medium Risk Device in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-med_hu16128254121950016243.webp   alt="Screenshot of Medium Risk Device in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Medium Risk Device in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-8"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready_hu16774474349277632463.webp" title="Screenshot of Not Ready Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready_hu16774474349277632463.webp" data-sub-html="<h2>Screenshot of Not Ready Device in Entra ID.</h2><p>Screenshot of Not Ready Device in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-notready_hu16774474349277632463.webp   alt="Screenshot of Not Ready Device in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Not Ready Device in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-9"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown_hu972509652866755812.webp" title="Screenshot of Unknown Risk Device in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown_hu972509652866755812.webp" data-sub-html="<h2>Screenshot of Unknown Risk Device in Entra ID.</h2><p>Screenshot of Unknown Risk Device in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-device-unknown_hu972509652866755812.webp   alt="Screenshot of Unknown Risk Device in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Unknown Risk Device in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+</tab-container>
+
 <p>We should do something sensible with these tags on the devices now.</p>
 <h2 id="dynamic-security-groups" class="headerLink">
     <a href="#dynamic-security-groups" class="header-mark"></a>2 Dynamic Security Groups</h2><p>Ah my love affair between <a href="/posts/endpoint-manager-device-filters" rel="noopener" target="_blank">Dynamic Security Groups and Device Filters</a> rears it&rsquo;s head again, and despite the recommendations to stop using <a href="https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient" target="_blank" rel="noopener noreferrer">certain</a> operators, there are still times when Dynamic Groups are going to win out over Device Filters.</p>
@@ -939,11 +1107,220 @@
 <li>Unknown - 48 devices</li>
 </ul>
 <p>Now have a look at the obviously un-doctored screenshots of each of our Dynamic Device Security Groups:</p>
-<p><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low.webp" title="Screenshot of Low Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low.webp   alt="Screenshot of Low Risk Devices Dynamic Group in Entra ID." height="660" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med.webp" title="Screenshot of Medium Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med.webp   alt="Screenshot of Medium Risk Devices Dynamic Group in Entra ID." height="660" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high.webp" title="Screenshot of High Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high.webp   alt="Screenshot of High Risk Devices Dynamic Group in Entra ID." height="660" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready.webp" title="Screenshot of Not Ready Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready.webp   alt="Screenshot of Not Ready Devices Dynamic Group in Entra ID." height="660" width="300px"></a>
-<a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown.webp" title="Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown.webp"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown.webp   alt="Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.." height="660" width="300px"></a></p>
+<tab-container default-tab="0" class="tw-my-4"><button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-10">Low Risk Group</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-11">Medium Risk Group</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-12">High Risk Group</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-13">Not Ready Group</button>
+  <button class="
+        tab-button  
+        tw-transition 
+        tw-ease-in-out 
+        tw-duration-300
+        tw-bg-transparent
+        tw-px-4 
+        tw-py-2
+        tw-mr-1
+        tw-shadow-black
+        hover:tw-bg-bgColor-secondary
+        hover:tw-shadow-md
+        aria-selected:tw-font-bold
+        aria-selected:tw-border-b-4
+        aria-selected:tw-text-fgColor-link
+        aria-selected:tw-border-fgColor-link"
+        type="button" 
+        role="tab" 
+        id="tab-id-14">Unknown Risk Group</button>
+  
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-10"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low_hu10871322289070338380.webp" title="Screenshot of Low Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low_hu10871322289070338380.webp" data-sub-html="<h2>Screenshot of Low Risk Devices Dynamic Group in Entra ID.</h2><p>Screenshot of Low Risk Devices Dynamic Group in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-low_hu10871322289070338380.webp   alt="Screenshot of Low Risk Devices Dynamic Group in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Low Risk Devices Dynamic Group in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-11"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med_hu2895230842983911306.webp" title="Screenshot of Medium Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med_hu2895230842983911306.webp" data-sub-html="<h2>Screenshot of Medium Risk Devices Dynamic Group in Entra ID.</h2><p>Screenshot of Medium Risk Devices Dynamic Group in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-med_hu2895230842983911306.webp   alt="Screenshot of Medium Risk Devices Dynamic Group in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Medium Risk Devices Dynamic Group in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-12"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high_hu11490517421226062367.webp" title="Screenshot of High Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high_hu11490517421226062367.webp" data-sub-html="<h2>Screenshot of High Risk Devices Dynamic Group in Entra ID.</h2><p>Screenshot of High Risk Devices Dynamic Group in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-high_hu11490517421226062367.webp   alt="Screenshot of High Risk Devices Dynamic Group in Entra ID."  ></a><figcaption class="image-caption">Screenshot of High Risk Devices Dynamic Group in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-13"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready_hu7264363319940249971.webp" title="Screenshot of Not Ready Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready_hu7264363319940249971.webp" data-sub-html="<h2>Screenshot of Not Ready Devices Dynamic Group in Entra ID.</h2><p>Screenshot of Not Ready Devices Dynamic Group in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-notready_hu7264363319940249971.webp   alt="Screenshot of Not Ready Devices Dynamic Group in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Not Ready Devices Dynamic Group in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+
+
+
+
+<div 
+    role="tabpanel" 
+    aria-labelledby="tab-id-14"
+    class="
+    tw-p-4 
+    tw-border-t-2
+    tw-border-[#f0f0f0]
+    dark:tw-border-[#363636]
+    ">
+    
+        <p><figure><a class="lightgallery" href="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown_hu14650189297829682747.webp" title="Screenshot of Unknown Risk Devices Dynamic Group in Entra ID." data-thumbnail="/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown_hu14650189297829682747.webp" data-sub-html="<h2>Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.</h2><p>Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.</p>"><img  loading="lazy" src=/posts/windows-11-risk-based-deployment-part2/img/w11risk-group-unknown_hu14650189297829682747.webp   alt="Screenshot of Unknown Risk Devices Dynamic Group in Entra ID."  ></a><figcaption class="image-caption">Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.</figcaption>
+</figure>
+
+</p>
+
+    
+</div>
+
+
+</tab-container>
+
 <p>And there you have it, matchy matchy values for each of the risk types. You&rsquo;ll notice there isn&rsquo;t a group for the three devices already upgraded to Windows 11 23H2, as we don&rsquo;t care about these ones for the purpose of a Feature Update to the same version that&rsquo;s already installed.</p>
 <h2 id="summary" class="headerLink">
     <a href="#summary" class="header-mark"></a>3 Summary</h2><p>We&rsquo;re on the home stretch now, having captured all the data we need to truly assess the readiness state of a deployment of a Windows 11 23H2 feature update, successfully tagging the Windows device objects in Entra ID with a suitably named risk state, and gathered all devices of the same risk state using Dynamic Device Security Groups.</p>
@@ -1015,7 +1392,7 @@
         })();
     </script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/lightgallery/lightgallery.min.css">
         <noscript><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"></noscript>
-<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":40,"threshold":0.1,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script
+<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":9,"minMatchCharLength":4,"noResultsFound":"No results found","snippetLength":40,"threshold":0.6,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script
     src="/lib/lightgallery/lightgallery.min.js"
     
       defer
@@ -1033,6 +1410,11 @@
   ></script><script
     src="/lib/sharer/sharer.min.js"
     
+  ></script><script
+    src="/lib/tabs/tabs.min.js"
+    
+      defer
+    type="module"
   ></script><script
     src="/js/theme.min.js"
     

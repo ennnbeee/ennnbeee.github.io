@@ -163,10 +163,25 @@ There we go, we can tag our devices using extension attributes with their risk s
 
 A quick straw poll of devices in Entra ID, we can see that the tag has applied successfully:
 
-{{< image src="img/w11risk-device-low.webp" alt="Screenshot of Low Risk Device in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-device-med.webp" alt="Screenshot of Medium Risk Device in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-device-notready.webp" alt="Screenshot of Not Ready Device in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-device-unknown.webp" alt="Screenshot of Unknown Risk Device in Entra ID." width="300px" >}}
+{{< tabs >}}
+
+{{% tab title="Low Risk Device" %}}
+![Screenshot of Low Risk Device in Entra ID.](img/w11risk-device-low.webp "Screenshot of Low Risk Device in Entra ID.")
+{{% /tab %}}
+
+{{% tab title="Medium Risk Device" %}}
+![Screenshot of Medium Risk Device in Entra ID.](img/w11risk-device-med.webp "Screenshot of Medium Risk Device in Entra ID.")
+{{% /tab %}}
+
+{{% tab title="Not Ready Device" %}}
+![Screenshot of Not Ready Device in Entra ID.](img/w11risk-device-notready.webp "Screenshot of Not Ready Device in Entra ID.")
+{{% /tab %}}
+
+{{% tab title="Unknown Risk Device" %}}
+![Screenshot of Unknown Risk Device in Entra ID.](img/w11risk-device-unknown.webp "Screenshot of Unknown Risk Device in Entra ID.")
+{{% /tab %}}
+
+{{< /tabs >}}
 
 We should do something sensible with these tags on the devices now.
 
@@ -210,11 +225,30 @@ Let's look at the break down of devices in each risk category:
 
 Now have a look at the obviously un-doctored screenshots of each of our Dynamic Device Security Groups:
 
-{{< image src="img/w11risk-group-low.webp" alt="Screenshot of Low Risk Devices Dynamic Group in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-group-med.webp" alt="Screenshot of Medium Risk Devices Dynamic Group in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-group-high.webp" alt="Screenshot of High Risk Devices Dynamic Group in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-group-notready.webp" alt="Screenshot of Not Ready Devices Dynamic Group in Entra ID." width="300px" >}}
-{{< image src="img/w11risk-group-unknown.webp" alt="Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.." width="300px" >}}
+{{< tabs >}}
+
+{{% tab title="Low Risk Group" %}}
+![Screenshot of Low Risk Devices Dynamic Group in Entra ID.](img/w11risk-group-low.webp "Screenshot of Low Risk Devices Dynamic Group in Entra ID.")
+
+{{% /tab %}}
+
+{{% tab title="Medium Risk Group" %}}
+![Screenshot of Medium Risk Devices Dynamic Group in Entra ID.](img/w11risk-group-med.webp "Screenshot of Medium Risk Devices Dynamic Group in Entra ID.")
+{{% /tab %}}
+
+{{% tab title="High Risk Group" %}}
+![Screenshot of High Risk Devices Dynamic Group in Entra ID.](img/w11risk-group-high.webp "Screenshot of High Risk Devices Dynamic Group in Entra ID.")
+{{% /tab %}}
+
+{{% tab title="Not Ready Group" %}}
+![Screenshot of Not Ready Devices Dynamic Group in Entra ID.](img/w11risk-group-notready.webp "Screenshot of Not Ready Devices Dynamic Group in Entra ID.")
+{{% /tab %}}
+
+{{% tab title="Unknown Risk Group" %}}
+![Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.](img/w11risk-group-unknown.webp "Screenshot of Unknown Risk Devices Dynamic Group in Entra ID.")
+{{% /tab %}}
+
+{{< /tabs >}}
 
 And there you have it, matchy matchy values for each of the risk types. You'll notice there isn't a group for the three devices already upgraded to Windows 11 23H2, as we don't care about these ones for the purpose of a Feature Update to the same version that's already installed.
 
