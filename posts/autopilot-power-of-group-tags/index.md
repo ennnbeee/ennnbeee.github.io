@@ -31,19 +31,19 @@ Your convention may differ from the below, as it will be entirely based on your 
 
 | Position | Value | Description |
 | :- | :- | :- |
-| 1-2 | AJ / HJ | The Azure AD Join type - Azure AD or Hybrid Joined  |
-| 3-4 | LT / DT / VM  | The Device Type - Laptop, Desktop or Virtual Machine |
-| 5 | U / S / K | The Device Use Case - User Assigned, Shared or Kiosk  |
-| 6-8 | STD / ADM | The User Type - Standard or Admin |
-| 9-11 | FIN / HR / PAY | The Users Department - Finance, HR or, Payroll etc. |
-| 12-13 | UK / US / FR | The Device Location - United Kingdom, United States, France etc. |
+| 1-2 | `AJ / HJ` | The Azure AD Join type - Azure AD or Hybrid Joined  |
+| 3-4 | `LT / DT / VM`  | The Device Type - Laptop, Desktop or Virtual Machine |
+| 5 | `U / S / K` | The Device Use Case - User Assigned, Shared or Kiosk  |
+| 6-8 | `STD / ADM` | The User Type - Standard or Admin |
+| 9-11 | `FIN / HR / PAY` | The Users Department - Finance, HR or, Payroll etc. |
+| 12-13 | `UK / US / FR` | The Device Location - United Kingdom, United States, France etc. |
 
 With this basic syntax in place, we can build out the Group Tag for devices:
 
 | Group Tag | Description |
-| :- | :- | :- |
-| AJ-LT-U-STD-PAY-US | Azure AD Joined Laptop, assigned to a User, with no Admin rights, in Payroll in the United States |
-| HJ-DT-S-ADM-FIN-UK | Hybrid Azure AD Joined Desktop, configured as a Shared Device, with Admin rights, in Finance in the United Kingdom |
+| :- | :- |
+| `AJ-LT-U-STD-PAY-US` | Azure AD Joined Laptop, assigned to a User, with no Admin rights, in Payroll in the United States |
+| `HJ-DT-S-ADM-FIN-UK` | Hybrid Azure AD Joined Desktop, configured as a Shared Device, with Admin rights, in Finance in the United Kingdom |
 
 ### Dynamic Groups
 

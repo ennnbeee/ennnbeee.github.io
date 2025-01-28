@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-01-10T20:08:21+00:00">
-    <meta property="article:modified_time" content="2024-01-10T20:08:21+00:00">
+    <meta property="article:modified_time" content="2025-01-28T13:58:49+00:00">
     <meta property="article:tag" content="PowerShell">
     <meta property="article:tag" content="Graph API">
     <meta property="article:tag" content="Security">
@@ -44,7 +44,7 @@
                             "width":  1000 ,
                             "height":  500 
                         }],"genre": "posts","keywords":["powershell","graph","security","conditional access","automation"],"wordcount":  2101 ,
-        "url": "https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/","datePublished": "2024-01-10T20:08:21+00:00","dateModified": "2024-01-10T20:08:21+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        "url": "https://www.oddsandendpoints.co.uk/posts/device-attributes-cap/","datePublished": "2024-01-10T20:08:21+00:00","dateModified": "2025-01-28T13:58:49+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Nick Benton","logo": "https://www.oddsandendpoints.co.uk/logo-opengraph.png"},"author": [{
                         "@type": "Person",
@@ -267,14 +267,7 @@
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content" data-pagefind-body><div class="details admonition note open">
-    <div class="details-summary admonition-title">
-        <span class="icon"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span>Note<span class="details-icon"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span>
-    </div>
-    <div class="details-content">
-        <div class="admonition-content">This article was last updated on <span class="timeago" datetime="2024-01-10T20:08:21" title="January 10, 2024">10 January 2024</span>, the content may be out of date.</div></div></div><p>Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting <a href="https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started" target="_blank" rel="noopener noreferrer">Device Compliance</a> policies, and you&rsquo;ve finally pulled the trigger on your shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/conditional-access" target="_blank" rel="noopener noreferrer">Conditional Access Policy</a> that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</p>
+            </div><div class="content" id="content" data-pagefind-body><p>Imagine you&rsquo;ve spent time getting your Windows devices enrolled into Intune, they&rsquo;re all getting <a href="https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started" target="_blank" rel="noopener noreferrer">Device Compliance</a> policies, and you&rsquo;ve finally pulled the trigger on your shiny new <a href="https://learn.microsoft.com/en-us/mem/intune/protect/conditional-access" target="_blank" rel="noopener noreferrer">Conditional Access Policy</a> that require device compliance for all your users across Windows devices, and low and behold, you&rsquo;ve broken access to Microsoft 365 authenticated services from your Remote Desktop service environment, or even VDI environments.</p>
 <p>So what next? Use the <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/location-condition" target="_blank" rel="noopener noreferrer">trusted location exemption</a> in your policy for the virtual environment? What happens if the public facing address range is the same as your workstation environments or that you&rsquo;d rather not blow a massive hole in security by allowing an entire IP address range free access to Microsoft 365 authenticated services? That&rsquo;s not very <a href="https://www.microsoft.com/en-gb/security/business/zero-trust#:~:text=What%20is%20Zero%20Trust%3F,originates%20from%20an%20open%20network." target="_blank" rel="noopener noreferrer">Zero Trust</a> of you is it.</p>
 <h2 id="filtering-devices" class="headerLink">
     <a href="#filtering-devices" class="header-mark"></a>1 Filtering Devices</h2><p>Luckily within the the Conditional Access Policy configuration, there is a way to <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices" target="_blank" rel="noopener noreferrer">filter devices</a> based on the device object registered with Entra ID, there are some useful native <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices#supported-operators-and-device-properties-for-filters" target="_blank" rel="noopener noreferrer">device attributes</a> that can be used as long as your devices have registered in Entra ID (think Hybrid Entra Joined for this VDI environment).</p>
@@ -1564,7 +1557,9 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 10 January 2024</span>
+                <span>Updated on 28 January 2025&nbsp;<a class="git-hash" href="https://github.com/ennnbeee/oddsandendpoints-web/commit/f04d0482336b070f8ca39e9794c7d3e1c5655f68" target="_blank" title="commit by ennnbeee(nickjbenton@gmail.com) f04d0482336b070f8ca39e9794c7d3e1c5655f68: [build]-20250128-135846" rel="noopener noreferrer">
+                                    <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/></svg>f04d048</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -1625,7 +1620,7 @@
         })();
     </script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/lightgallery/lightgallery.min.css">
         <noscript><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"></noscript>
-<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":9,"minMatchCharLength":4,"noResultsFound":"No results found","snippetLength":40,"threshold":0.6,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script
+<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"giscus":{"darkTheme":"dark","dataCategory":"Comments","dataCategoryId":"DIC_kwDOLUU7Ls4CdUYI","dataEmitMetadata":"0","dataInputPosition":"top","dataLang":"en","dataLoading":"lazy","dataMapping":"title","dataReactionsEnabled":"0","dataRepo":"ennnbeee/oddsandendpoints-web","dataRepoId":"R_kgDOLUU7Lg","dataStrict":"0","lightTheme":"light"}},"fuse.min.js":"/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":7,"minMatchCharLength":4,"noResultsFound":"No results found","snippetLength":40,"threshold":0.6,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script
     src="/lib/lightgallery/lightgallery.min.js"
     
       defer
