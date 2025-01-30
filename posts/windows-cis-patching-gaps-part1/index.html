@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-06-15T21:26:37+01:00">
-    <meta property="article:modified_time" content="2025-01-28T13:58:49+00:00">
+    <meta property="article:modified_time" content="2025-01-30T16:07:56+00:00">
     <meta property="article:tag" content="Intune">
     <meta property="article:tag" content="Security">
     <meta property="article:tag" content="Center for Internet Security (CIS)">
@@ -47,8 +47,8 @@
                             "url": "https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/featured.png",
                             "width":  1000 ,
                             "height":  500 
-                        }],"genre": "posts","keywords":["intune","security","cis","custom profiles","bitlocker","dma","settings catalog","endpoint security"],"wordcount":  2413 ,
-        "url": "https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/","datePublished": "2024-06-15T21:26:37+01:00","dateModified": "2025-01-28T13:58:49+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords":["intune","security","cis","custom profiles","bitlocker","dma","settings catalog","endpoint security"],"wordcount":  2511 ,
+        "url": "https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part1/","datePublished": "2024-06-15T21:26:37+01:00","dateModified": "2025-01-30T16:07:56+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Nick Benton","logo": "https://www.oddsandendpoints.co.uk/logo-opengraph.png"},"author": [{
                         "@type": "Person",
@@ -511,7 +511,7 @@
   
   
   
-  <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
     code-block-title 
     
@@ -591,7 +591,7 @@
     </div>
   </div>
   <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-28" 
+    id="codeblock-id-29" 
     class="
       chroma 
       !tw-block 
@@ -611,6 +611,13 @@
 </span></span><span class="line"><span class="cl">    <span class="c"># Detects and removes existing TpmPin key protectors as there can only be one</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$osVolume</span><span class="p">.</span><span class="py">KeyProtector</span><span class="p">.</span><span class="py">KeyProtectorType</span> <span class="o">-contains</span> <span class="s1">&#39;TpmPin&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$osVolume</span><span class="p">.</span><span class="py">KeyProtector</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">KeyProtectorType</span> <span class="o">-eq</span> <span class="s1">&#39;TpmPin&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Remove-BitLockerKeyProtector</span> <span class="n">-MountPoint</span> <span class="nv">$osVolume</span><span class="p">.</span><span class="py">MountPoint</span> <span class="n">-KeyProtectorId</span> <span class="nv">$_</span><span class="p">.</span><span class="py">KeyProtectorId</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># Detects and removes existing Tpm key protectors to ensure the PIN is required</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$osVolume</span><span class="p">.</span><span class="py">KeyProtector</span><span class="p">.</span><span class="py">KeyProtectorType</span> <span class="o">-contains</span> <span class="s1">&#39;Tpm&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$osVolume</span><span class="p">.</span><span class="py">KeyProtector</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">KeyProtectorType</span> <span class="o">-eq</span> <span class="s1">&#39;Tpm&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">Remove-BitLockerKeyProtector</span> <span class="n">-MountPoint</span> <span class="nv">$osVolume</span><span class="p">.</span><span class="py">MountPoint</span> <span class="n">-KeyProtectorId</span> <span class="nv">$_</span><span class="p">.</span><span class="py">KeyProtectorId</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -647,11 +654,20 @@
 <p>The script, in short will carry out the following:</p>
 <ul>
 <li>Removes any existing <strong>TpmPin</strong> key protectors, as there can only be one #highlander.</li>
+<li>Removes any existing <strong>Tpm</strong> key protectors, to allow for only TpmPin key protectors.</li>
 <li>If a <strong>Recovery Key</strong> key protector doesn&rsquo;t exist, it will create one.</li>
 <li>Get the serial number of the device, converting it to uppercase, and shortening it to the first 14-characters if it&rsquo;s longer than that.</li>
 <li>Creates a new <strong>TpmPin</strong> key protector with the PIN set to the converted serial number.</li>
 <li>Backups the recovery key to Entra.</li>
 </ul>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+        <span class="icon"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span>Note<span class="details-icon"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content">The script has been updated due to setting both <strong>Configure TPM startup</strong> and <strong>Configure TPM startup PIN</strong> to <code>Allow</code> sometimes resulted in BitLocker prompting for a password every boot which could then be bypassed by pressing <strong>Esc</strong>, as it would fall back to the regular Tpm unlock.</div></div></div>
 <p>It can then be deployed to your Windows Autopilot devices using a <a href="https://learn.microsoft.com/en-us/mem/intune/apps/intune-management-extension" target="_blank" rel="noopener noreferrer">Platform Script</a> in Microsoft Intune in conjunction with the supplemental policy we created, with the below settings:</p>
 <p><figure><a class="lightgallery" href="/posts/windows-cis-patching-gaps-part1/img/cis-bl_hu4225779165884907679.png" title="BitLocker Serial to PIN Script" data-thumbnail="/posts/windows-cis-patching-gaps-part1/img/cis-bl_hu4225779165884907679.png" data-sub-html="<h2>BitLocker Platform script settings in Microsoft Intune.</h2><p>BitLocker Serial to PIN Script</p>"><img  loading="lazy" src=/posts/windows-cis-patching-gaps-part1/img/cis-bl_hu4225779165884907679.png   alt="BitLocker Serial to PIN Script"  ></a><figcaption class="image-caption">BitLocker Platform script settings in Microsoft Intune.</figcaption>
 </figure>
@@ -839,9 +855,9 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 28 January 2025&nbsp;<a class="git-hash" href="https://github.com/ennnbeee/oddsandendpoints-web/commit/f04d0482336b070f8ca39e9794c7d3e1c5655f68" target="_blank" title="commit by ennnbeee(nickjbenton@gmail.com) f04d0482336b070f8ca39e9794c7d3e1c5655f68: [build]-20250128-135846" rel="noopener noreferrer">
+                <span>Updated on 30 January 2025&nbsp;<a class="git-hash" href="https://github.com/ennnbeee/oddsandendpoints-web/commit/b4b1559372cef09544695cc7df5a7111dca9ceb8" target="_blank" title="commit by ennnbeee(nickjbenton@gmail.com) b4b1559372cef09544695cc7df5a7111dca9ceb8: [build]-20250130-160743" rel="noopener noreferrer">
                                     <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/></svg>f04d048</a></span>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M440.667 182.109l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l14.623-81.891C377.123 38.754 371.468 32 363.997 32h-40.632a12 12 0 0 0-11.813 9.891L296.175 128H197.54l14.623-81.891C213.477 38.754 207.822 32 200.35 32h-40.632a12 12 0 0 0-11.813 9.891L132.528 128H53.432a12 12 0 0 0-11.813 9.891l-7.143 40C33.163 185.246 38.818 192 46.289 192h74.81L98.242 320H19.146a12 12 0 0 0-11.813 9.891l-7.143 40C-1.123 377.246 4.532 384 12.003 384h74.81L72.19 465.891C70.877 473.246 76.532 480 84.003 480h40.632a12 12 0 0 0 11.813-9.891L151.826 384h98.634l-14.623 81.891C234.523 473.246 240.178 480 247.65 480h40.632a12 12 0 0 0 11.813-9.891L315.472 384h79.096a12 12 0 0 0 11.813-9.891l7.143-40c1.313-7.355-4.342-14.109-11.813-14.109h-74.81l22.857-128h79.096a12 12 0 0 0 11.813-9.891zM261.889 320h-98.634l22.857-128h98.634l-22.857 128z"/></svg>b4b1559</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>

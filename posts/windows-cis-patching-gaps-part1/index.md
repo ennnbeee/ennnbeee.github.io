@@ -129,10 +129,15 @@ Well to remove a user from the equation, we can deploy a PowerShell script to se
 The script, in short will carry out the following:
 
 - Removes any existing **TpmPin** key protectors, as there can only be one #highlander.
+- Removes any existing **Tpm** key protectors, to allow for only TpmPin key protectors.
 - If a **Recovery Key** key protector doesn't exist, it will create one.
 - Get the serial number of the device, converting it to uppercase, and shortening it to the first 14-characters if it's longer than that.
 - Creates a new **TpmPin** key protector with the PIN set to the converted serial number.
 - Backups the recovery key to Entra.
+
+{{< admonition type=note >}}
+The script has been updated due to setting both **Configure TPM startup** and **Configure TPM startup PIN** to `Allow` sometimes resulted in BitLocker prompting for a password every boot which could then be bypassed by pressing **Esc**, as it would fall back to the regular Tpm unlock.
+{{< /admonition >}}
 
 It can then be deployed to your Windows Autopilot devices using a [Platform Script](https://learn.microsoft.com/en-us/mem/intune/apps/intune-management-extension) in Microsoft Intune in conjunction with the supplemental policy we created, with the below settings:
 
