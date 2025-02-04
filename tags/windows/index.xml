@@ -52,6 +52,14 @@
                 <img src="/posts/defender-antivirus-compliance-updates/featured.jpg" referrerpolicy="no-referrer">
             </div>We&rsquo;re going to have a look at updating a Microsoft Defender compliance policy with the latest platform update version, automatically.]]></description>
 </item><item>
+    <title>Windows Operating System Compliance Updates</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/windows-os-compliance-updates/</link>
+    <pubDate>Thu, 30 Jun 2022 11:20:36 &#43;0100</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-os-compliance-updates/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/windows-os-compliance-updates/featured.png" referrerpolicy="no-referrer">
+            </div>Let&rsquo;s talk about Windows 10 and above Operating System Compliance in Microsoft Intune, and specifically how using &lsquo;Minimum OS Version&rsquo; and &lsquo;Maximum OS Version&rsquo; is dumb and you should definitely check yourself if you&rsquo;re using this in your environment.]]></description>
+</item><item>
     <title>Retrofitting Windows Autopilot Group Tags</title>
     <link>https://www.oddsandendpoints.co.uk/posts/windows-autopilot-retrofitting-group-tags/</link>
     <pubDate>Sun, 19 Jun 2022 15:55:02 &#43;0100</pubDate><author>
