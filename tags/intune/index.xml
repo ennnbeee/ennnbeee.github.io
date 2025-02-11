@@ -3,7 +3,15 @@
         <title>Intune - Tag - odds&#43;endpoints</title>
         <link>https://www.oddsandendpoints.co.uk/tags/intune/</link>
         <description>Intune - Tag - odds&#43;endpoints</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 21 Jan 2025 16:39:24 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/intune/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 12 Feb 2025 11:40:20 &#43;0000</lastBuildDate><atom:link href="https://www.oddsandendpoints.co.uk/tags/intune/" rel="self" type="application/rss+xml" /><item>
+    <title>Improving the Android Enterprise Enrolment Experience</title>
+    <link>https://www.oddsandendpoints.co.uk/posts/android-enterprise-enrolment-customisation/</link>
+    <pubDate>Wed, 12 Feb 2025 11:40:20 &#43;0000</pubDate><author>
+                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/android-enterprise-enrolment-customisation/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/android-enterprise-enrolment-customisation/featured.png" referrerpolicy="no-referrer">
+            </div>Making your users lives easier with Android Enterprise enrolment into Intune, allowing them to use mobile data or a configured wireless network.]]></description>
+</item><item>
     <title>BitLocker Recovery Key Rotation Requirements in Intune</title>
     <link>https://www.oddsandendpoints.co.uk/posts/bitlocker-key-rotation-requirements/</link>
     <pubDate>Tue, 21 Jan 2025 16:39:24 &#43;0000</pubDate><author>
@@ -76,13 +84,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/windows-cis-patching-gaps-part4/featured.png" referrerpolicy="no-referrer">
             </div>This is the last part in the series around the CIS (Center for Internet Security) benchmark for Windows 11, and we&rsquo;d like to say that we&rsquo;ve saved the best post for last, but we&rsquo;d be lying. Surely the Level 2 settings can&rsquo;t be worse than the Level 1?]]></description>
-</item><item>
-    <title>Patching Gaps in the CIS Windows 11 Benchmark - Level 1 Windows 11</title>
-    <link>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/</link>
-    <pubDate>Mon, 15 Jul 2024 11:26:37 &#43;0100</pubDate><author>
-                        <name>Nick Benton</name><uri>https://www.linkedin.com/in/ennnbeee/</uri></author><guid>https://www.oddsandendpoints.co.uk/posts/windows-cis-patching-gaps-part3/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/posts/windows-cis-patching-gaps-part3/featured.png" referrerpolicy="no-referrer">
-            </div>The impact of the CIS settings on BitLocker and Windows Autopilot now done and dusted, we should broaden our horizons and start to look at what other problems the CIS level 1 benchmark brings to Windows 11 as a whole. Are there any? Will it be smooth sailing? Yeah, no.]]></description>
 </item></channel>
 </rss>
