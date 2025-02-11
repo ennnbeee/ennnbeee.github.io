@@ -15,8 +15,8 @@ jobs:
         uses: bojieyang/indexnow-action@v2
         with:
           sitemap-location: "https://www.oddsandendpoints.co.uk/sitemap.xml"
-          since: 5
-          limit: 500
-          since-unit: "year"
+          since: 1
+          limit: 100
+          since-unit: "week"
           lastmod-required: false
           key: ${{ secrets.indexnow }}
