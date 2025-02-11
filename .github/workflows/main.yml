@@ -17,4 +17,5 @@ jobs:
           sitemap-location: "https://www.oddsandendpoints.co.uk/sitemap.xml"
           since: 5
           since-unit: "year"
+          lastmod-required: false
           key: ${{ secrets.indexnow }}
